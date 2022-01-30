@@ -1,0 +1,21 @@
+{
+  "name": "cdx-next",
+  "version": "0.0.0",
+  "scripts": {
+    "commit": "cz",
+    "lint:commit": "commitlint --from",
+    "prepare": "is-ci || husky install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@git.clarivate.io/cdxn/cdx-next.git"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^16.1.0",
+    "@commitlint/config-conventional": "^16.0.0",
+    "@commitlint/cz-commitlint": "^16.1.0",
+    "commitizen": "^4.2.4",
+    "husky": "^7.0.4",
+    "is-ci": "^3.0.1"
+  }
+}
