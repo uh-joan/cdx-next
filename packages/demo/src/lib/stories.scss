@@ -1,7 +1,7 @@
+@use 'sass:map';
 @use './theme';
 @use './palettes';
-
-@include theme.core();
+@include theme.core;
 
 @each $palette,
   $palette-values
@@ -14,15 +14,16 @@
   .#{$palette}-palette {
     display: flex;
     justify-content: space-evenly;
+
     @each $color, $value in $palette-values {
       @if $color != 'contrast' {
         .bg-#{$color} {
-          background-color: #{$value};
-          color: map-get(map-get($palette-values, 'contrast'), $color);
           width: 75px;
           height: 75px;
-          text-align: center;
           padding-top: 1rem;
+          background-color: #{$value};
+          color: map.get(map.get($palette-values, 'contrast'), $color);
+          text-align: center;
         }
       }
     }
@@ -36,9 +37,9 @@
 
   .example-label {
     display: table-cell;
-    font-size: 14px;
-    margin-left: 8px;
     min-width: 120px;
+    margin-left: 8px;
+    font-size: 14px;
   }
 
   .example-button-row {
@@ -51,14 +52,14 @@
 
   .example-flex-container {
     display: flex;
-    justify-content: space-between;
     flex-wrap: wrap;
+    justify-content: space-between;
   }
 
   .example-button-container {
     display: flex;
-    justify-content: center;
     width: 120px;
+    justify-content: center;
   }
 }
 

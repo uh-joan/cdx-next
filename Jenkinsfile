@@ -42,6 +42,12 @@ pipeline {
             }
         }
 
+        // stage('Check code style') {
+        //     steps {
+        //         sh 'npm run lint'
+        //     }
+        // }
+
         stage('Build Storybook') {
             steps {
                 sh 'npx --no-install nx build-storybook'

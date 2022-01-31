@@ -1,0 +1,21 @@
+{
+  "[html][javascript][javascriptreact][typescript][typescriptreact][json][markdown][scss][css][yaml]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "css.validate": false,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true,
+    "source.fixAll.stylelint": true
+  },
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+  "eslint.format.enable": true,
+  "groovyLint.fix.trigger": "onSave",
+  "groovyLint.insight.enable": false,
+  "less.validate": false,
+  "prettier.requireConfig": true,
+  "prettier.useEditorConfig": false,
+  "scss.validate": false,
+  "stylelint.enable": true,
+  "stylelint.validate": ["css", "postcss", "scss"]
+}

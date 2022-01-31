@@ -16,7 +16,8 @@
           "lint",
           "test",
           "e2e",
-          "build-storybook"
+          "build-storybook",
+          "stylelint"
         ]
       }
     }
@@ -32,5 +33,13 @@
     },
     "@nrwl/angular:component": {}
   },
-  "defaultProject": "demo"
+  "defaultProject": "demo",
+  "implicitDependencies": {
+    "package.json": {
+      "dependencies": "*",
+      "devDependencies": "*"
+    },
+    ".eslintrc.json": "*",
+    ".stylelintrc.json": "*"
+  }
 }

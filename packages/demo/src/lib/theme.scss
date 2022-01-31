@@ -1,3 +1,5 @@
+/* stylelint-disable no-invalid-position-at-import-rule */
+
 @use '@angular/material' as mat;
 @use './palettes';
 
@@ -23,7 +25,6 @@ $cdx-theme: mat.define-light-theme(
         $body-2: mat.define-typography-level(16px, 16px, 600),
         $caption: mat.define-typography-level(12px, 14px, 400),
         $button: mat.define-typography-level(16px, 16px, 600),
-        // TODO Line-height for input must be unit-less fraction of the font-size
         $input: mat.define-typography-level(inherit, 1.2, 400),
       ),
   )
@@ -36,6 +37,6 @@ $cdx-theme: mat.define-light-theme(
   @include mat.core($cdx-theme);
   @include mat.all-component-themes($cdx-theme);
 
-  @include mat.strong-focus-indicators();
+  @include mat.strong-focus-indicators;
   @include mat.strong-focus-indicators-theme(#00c2f2);
 }

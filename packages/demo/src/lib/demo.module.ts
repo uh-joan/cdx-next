@@ -1,12 +1,13 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { InputDemoComponent } from './input-demo/input-demo.component';
-import { MatInputModule } from '@angular/material/input';
-import { MatIconModule } from '@angular/material/icon';
-import { MatFormFieldModule } from '@angular/material/form-field';
+import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
 import { MatTableModule } from '@angular/material/table';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { InputDemoComponent } from './input-demo/input-demo.component';
 
 @NgModule({
   imports: [
@@ -20,6 +21,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatIconModule,
   ],
   declarations: [InputDemoComponent],
-  exports: [InputDemoComponent]
+  exports: [InputDemoComponent],
 })
 export class DemoModule {}

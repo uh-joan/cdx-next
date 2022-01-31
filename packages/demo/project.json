@@ -53,6 +53,16 @@
           "quiet": true
         }
       }
+    },
+    "stylelint": {
+      "executor": "nx-stylelint:lint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": [
+          "packages/demo/**/*.css",
+          "packages/demo/**/*.scss"
+        ]
+      }
     }
   },
   "tags": []

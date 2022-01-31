@@ -1,7 +1,5 @@
 {
-  "root": true,
   "ignorePatterns": ["**/*"],
-  "plugins": ["@nrwl/nx"],
   "overrides": [
     {
       "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
@@ -9,27 +7,34 @@
         "@nrwl/nx/enforce-module-boundaries": [
           "error",
           {
-            "enforceBuildableLibDependency": true,
             "allow": [],
             "depConstraints": [
               {
-                "sourceTag": "*",
-                "onlyDependOnLibsWithTags": ["*"]
+                "onlyDependOnLibsWithTags": ["*"],
+                "sourceTag": "*"
               }
-            ]
+            ],
+            "enforceBuildableLibDependency": true
           }
-        ]
+        ],
+        "import/first": "error",
+        "import/newline-after-import": "error",
+        "import/no-duplicates": "error",
+        "simple-import-sort/exports": "error",
+        "simple-import-sort/imports": "error"
       }
     },
     {
-      "files": ["*.ts", "*.tsx"],
       "extends": ["plugin:@nrwl/nx/typescript"],
+      "files": ["*.ts", "*.tsx"],
       "rules": {}
     },
     {
-      "files": ["*.js", "*.jsx"],
       "extends": ["plugin:@nrwl/nx/javascript"],
+      "files": ["*.js", "*.jsx"],
       "rules": {}
     }
-  ]
+  ],
+  "plugins": ["@nrwl/nx", "import", "simple-import-sort"],
+  "root": true
 }

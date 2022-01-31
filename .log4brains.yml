@@ -1,0 +1,5 @@
+project:
+  name: Digital Experience System
+  tz: America/New_York
+  adrFolder: ./adr
+  packages: []

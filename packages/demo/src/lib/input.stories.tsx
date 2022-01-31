@@ -1,6 +1,7 @@
-import { InputDemoComponent } from './input-demo/input-demo.component';
 import { Meta, moduleMetadata, Story } from '@storybook/angular';
+
 import { DemoModule } from './demo.module';
+import { InputDemoComponent } from './input-demo/input-demo.component';
 
 export default {
   title: 'Sprint 1/Components/Input',
