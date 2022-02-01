@@ -1,0 +1,36 @@
+import { Meta } from '@storybook/addon-docs';
+
+<Meta title="Theme/Typography" />
+
+# Typography
+
+## Levels
+
+> A **typography** level is a collection of typographic styles that corresponds
+> to a specific part of an application's structure, such as a header. Each level
+> includes styles for font family, font weight, font size, and letter spacing.
+> Angular Material uses the typography levels from the
+> [2014 version of the Material Design specification](https://material.io/archive/guidelines/style/typography.html#typography-styles).
+
+<dl className="mat-typography">
+  {[
+    'display-4',
+    'display-3',
+    'display-2',
+    'display-1',
+    'headline',
+    'title',
+    'subheading-2',
+    'subheading-1',
+    'body-1',
+    'body-2',
+    'caption',
+  ].map((level, index) => (
+    <React.Fragment key={index}>
+      <dt>{level}</dt>
+      <dd className={`mat-${level}`}>
+        The quick brown fox jumps over the lazy dog
+      </dd>
+    </React.Fragment>
+  ))}
+</dl>
