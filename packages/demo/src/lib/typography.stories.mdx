@@ -12,6 +12,9 @@ import { Meta } from '@storybook/addon-docs';
 > Angular Material uses the typography levels from the
 > [2014 version of the Material Design specification](https://material.io/archive/guidelines/style/typography.html#typography-styles).
 
+Border and background color are used in the following examples to demonstrate
+that many of the typography levels _also_ adjust spacing by way of margins.
+
 <dl className="mat-typography">
   {[
     'display-4',
@@ -28,9 +31,13 @@ import { Meta } from '@storybook/addon-docs';
   ].map((level, index) => (
     <React.Fragment key={index}>
       <dt>{level}</dt>
-      <dd className={`mat-${level}`}>
-        The quick brown fox jumps over the lazy dog
+      <dd style={{border: '1px dashed', padding: '0', 'background-color': '#ddd'}}>
+        <div className={`mat-${level}`} style={{'background-color': 'white'}}>
+          The quick brown fox jumps over the lazy dog
+        </div>
       </dd>
     </React.Fragment>
   ))}
 </dl>
+
+<!-- TODO show button and input through their components -->
