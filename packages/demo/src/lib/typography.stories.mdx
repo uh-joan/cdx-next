@@ -31,9 +31,13 @@ that many of the typography levels _also_ adjust spacing by way of margins.
   ].map((level, index) => (
     <React.Fragment key={index}>
       <dt>{level}</dt>
-      <dd style={{border: '1px dashed', padding: '0', 'background-color': '#ddd'}}>
-        <div className={`mat-${level}`} style={{'background-color': 'white'}}>
-          The quick brown fox jumps over the lazy dog
+      <dd
+        style={{ border: '1px dashed', padding: '0', backgroundColor: '#ddd' }}
+      >
+        <div>
+          <div className={`mat-${level}`} style={{ backgroundColor: 'white' }}>
+            The quick brown fox jumps over the lazy dog
+          </div>
         </div>
       </dd>
     </React.Fragment>
