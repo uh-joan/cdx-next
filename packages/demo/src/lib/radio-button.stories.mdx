@@ -1,0 +1,34 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import { moduleMetadata } from '@storybook/angular';
+import { MatRadioModule, MAT_RADIO_DEFAULT_OPTIONS } from '@angular/material/radio';
+
+<Meta title="Components/Radio Button" />
+
+<Canvas>
+  <Story
+    name="From Material"
+    decorators={[
+      moduleMetadata({
+        imports: [MatRadioModule],
+        providers: [
+          {
+            provide: MAT_RADIO_DEFAULT_OPTIONS,
+            useValue: { color: 'primary' },
+          },
+        ],
+      }),
+    ]}
+  >
+    {{
+      template: `
+<div class="mat-typography radio-button-story">
+<mat-radio-group aria-label="Select an option">
+  <mat-radio-button value="1" checked>Option 1</mat-radio-button>
+  <mat-radio-button value="2">Option 2</mat-radio-button>
+  <mat-radio-button value="3" disabled>Option 3</mat-radio-button>
+</mat-radio-group>
+</div>
+      `,
+    }}
+  </Story>
+</Canvas>

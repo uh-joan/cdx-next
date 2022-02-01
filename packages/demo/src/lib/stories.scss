@@ -30,3 +30,15 @@
     width: 120px;
   }
 }
+
+.radio-button-story {
+  .mat-radio-button ~ .mat-radio-button {
+    margin-left: 16px;
+  }
+}
+
+.checkbox-story {
+  mat-checkbox ~ mat-checkbox {
+    margin-left: 16px;
+  }
+}
