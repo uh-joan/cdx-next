@@ -24,8 +24,8 @@ $cdx-theme: mat.define-light-theme(
         $body-2: mat.define-typography-level(16px, 16px, 600),
         $caption: mat.define-typography-level(12px, 14px, 400),
         $button: mat.define-typography-level(16px, 16px, 600),
-        // TODO Line-height must be unit-less fraction of the font-size.
-        $input: mat.define-typography-level(inherit, 1, 400),
+        // TODO Line-height must be unit-less fraction of the font-size
+        $input: mat.define-typography-level(16px, 1.2, 400),
       ),
   )
 );
