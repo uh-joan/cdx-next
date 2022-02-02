@@ -1,0 +1,131 @@
+$dark-primary-text: rgba(black, 0.87);
+$light-primary-text: white;
+
+$primary-palette: (
+  50: #EEE7F8,
+  100: #D2C4ED,
+  200: #B49DE2,
+  300: #9675D7,
+  400: #7F56CE,
+  500: #6738C5,
+  600: #5D33Bf,
+  700: #4F2BB6,
+  800: #4125AF,
+  900: #2818A2,
+  contrast: (
+    50: $dark-primary-text,
+    100: $dark-primary-text,
+    200: $dark-primary-text,
+    300: $dark-primary-text,
+    400: $dark-primary-text,
+    500: $light-primary-text,
+    600: $light-primary-text,
+    700: $light-primary-text,
+    800: $light-primary-text,
+    900: $light-primary-text,
+  )
+);
+
+$accent-palette: (
+  50: #E5F5E4,
+  100: #C2E5BC,
+  200: #9AD490,
+  300: #6EC462,
+  400: #49B83D,
+  500: #17AB03,
+  600: #019C00,
+  700: #008B00,
+  800: #007A00,
+  900: #005B00,
+  contrast: (
+    50: $dark-primary-text,
+    100: $dark-primary-text,
+    200: $dark-primary-text,
+    300: $dark-primary-text,
+    400: $dark-primary-text,
+    500: $light-primary-text,
+    600: $light-primary-text,
+    700: $light-primary-text,
+    800: $light-primary-text,
+    900: $light-primary-text,
+  )
+);
+
+// use single warning color (per Angular Material standards)
+// rather than separate error and warning colors
+$warn-palette: (
+  50: #FDE8E6,
+  100: #FFC8B8,
+  200: #FFA48B,
+  300: #FF7F5C,
+  400: #FF6138,
+  500: #FF4010,
+  600: #FA390C,
+  700: #EC3205,
+  800: #DE2900,
+  900: #C61300,
+  contrast: (
+    50: $dark-primary-text,
+    100: $dark-primary-text,
+    200: $dark-primary-text,
+    300: $dark-primary-text,
+    400: $dark-primary-text,
+    500: $light-primary-text,
+    600: $light-primary-text,
+    700: $light-primary-text,
+    800: $light-primary-text,
+    900: $light-primary-text,
+  )
+);
+
+// uses same colors as accent, but separated
+// in the event the accent color changes
+$success-palette: (
+  50: #E5F5E4,
+  100: #C2E5BC,
+  200: #9AD490,
+  300: #6EC462,
+  400: #49B83D,
+  500: #17AB03,
+  600: #019C00,
+  700: #008B00,
+  800: #007A00,
+  900: #005B00,
+  contrast: (
+    50: $dark-primary-text,
+    100: $dark-primary-text,
+    200: $dark-primary-text,
+    300: $dark-primary-text,
+    400: $dark-primary-text,
+    500: $light-primary-text,
+    600: $light-primary-text,
+    700: $light-primary-text,
+    800: $light-primary-text,
+    900: $light-primary-text,
+  )
+);
+
+$info-palette: (
+  50: #E2F5FE,
+  100: #B5E5FB,
+  200: #85D4F8,
+  300: #58C4F4,
+  400: #3AB7F3,
+  500: #28AAF0,
+  600: #249CE1,
+  700: #2089CD,
+  800: #1D78B9,
+  900: #175897,
+  contrast: (
+    50: $dark-primary-text,
+    100: $dark-primary-text,
+    200: $dark-primary-text,
+    300: $dark-primary-text,
+    400: $dark-primary-text,
+    500: $light-primary-text,
+    600: $light-primary-text,
+    700: $light-primary-text,
+    800: $light-primary-text,
+    900: $light-primary-text,
+  )
+);
