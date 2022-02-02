@@ -11,6 +11,7 @@
   ],
   "scripts": {
     "commit": "cz",
+    "deploy:storybook": "deploy-aws-s3-cloudfront --debug --non-interactive --source ./dist/storybook/demo --delete --invalidation-path '/*'",
     "lint:commit": "commitlint --from",
     "prepare": "is-ci || husky install",
     "postinstall": "ngcc --properties es2015 browser module main"
@@ -27,7 +28,7 @@
     "@commitlint/config-conventional": "^16.0.0",
     "@commitlint/cz-commitlint": "^16.1.0",
     "@nrwl/angular": "^13.7.1",
-    "@nrwl/cli": "13.7.1",
+    "@nrwl/cli": "^13.7.1",
     "@nrwl/eslint-plugin-nx": "13.7.1",
     "@nrwl/jest": "13.7.1",
     "@nrwl/linter": "13.7.1",
@@ -43,6 +44,7 @@
     "@typescript-eslint/eslint-plugin": "~5.10.0",
     "@typescript-eslint/parser": "~5.10.0",
     "commitizen": "^4.2.4",
+    "deploy-aws-s3-cloudfront": "^3.6.0",
     "eslint": "~8.7.0",
     "eslint-config-prettier": "8.1.0",
     "husky": "^7.0.4",

@@ -2,11 +2,13 @@
 
 # CDX Next
 
+NonProd: cdx-sparkdsg-feedback.dev.sp.aws.clarivate.net
+
 This project was generated using [Nx](https://nx.dev).
 
-<p style="text-align: center;"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="450"></p>
+run storybook locallyl: `$ nx run demo:storybook`
 
-🔎 **Smart, Fast and Extensible Build System**
+
 
 ## Adding capabilities to your workspace
 
