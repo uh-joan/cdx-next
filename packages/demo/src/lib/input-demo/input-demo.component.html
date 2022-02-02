@@ -1,6 +1,4 @@
-<form
-  class="example-form"
->
+<form class="example-form" [style.fontSize.px]="fontSize">
   <h2>{{ appearance }}</h2>
   <mat-form-field class="example-full-width" [appearance]="appearance">
     <mat-label>Company (disabled)</mat-label>
@@ -15,7 +13,7 @@
           floatLabel="always"
         >
           <mat-label>First name (required)</mat-label>
-          <input matInput required [formControl]="firstName"/>
+          <input matInput required [formControl]="firstName" />
           <mat-error>Something went wrong</mat-error>
         </mat-form-field>
       </td>

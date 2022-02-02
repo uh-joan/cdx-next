@@ -10,6 +10,9 @@ export class InputDemoComponent implements OnInit {
   @Input()
   appearance = '';
 
+  @Input()
+  fontSize = 16;
+
   firstName = new FormControl('', [Validators.required]);
 
   ngOnInit(): void {
