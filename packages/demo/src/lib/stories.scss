@@ -1,3 +1,34 @@
+@use './theme';
+@use './palettes';
+
+@include theme.core();
+
+@each $palette,
+  $palette-values
+    in (
+      primary: palettes.$primary-palette,
+      accent: palettes.$accent-palette,
+      warn: palettes.$warn-palette
+    )
+{
+  .#{$palette}-palette {
+    display: flex;
+    justify-content: space-evenly;
+    @each $color, $value in $palette-values {
+      @if $color != 'contrast' {
+        .bg-#{$color} {
+          background-color: #{$value};
+          color: map-get(map-get($palette-values, 'contrast'), $color);
+          width: 75px;
+          height: 75px;
+          text-align: center;
+          padding-top: 1rem;
+        }
+      }
+    }
+  }
+}
+
 .button-story {
   section {
     display: table;

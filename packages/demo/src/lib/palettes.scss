@@ -1,7 +1,3 @@
-/*
- * for Material theming https://material.angular.io/guide/theming#themes
- */
-
 $primary-palette: (
   50: #eee7f8,
   100: #d2c4ed,
@@ -76,25 +72,3 @@ $warn-palette: (
     900: #fff,
   ),
 );
-
-@each $palette,
-  $palette-values
-    in (primary: $primary-palette, accent: $accent-palette, warn: $warn-palette)
-{
-  .#{$palette}-palette {
-    display: flex;
-    justify-content: space-evenly;
-    @each $color, $value in $palette-values {
-      @if $color != 'contrast' {
-        .bg-#{$color} {
-          background-color: #{$value};
-          color: map-get(map-get($palette-values, 'contrast'), $color);
-          width: 75px;
-          height: 75px;
-          text-align: center;
-          line-height: 75px;
-        }
-      }
-    }
-  }
-}

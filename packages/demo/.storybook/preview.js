@@ -2,11 +2,6 @@
 // we might also be able to use a decorator https://storybook.js.org/docs/react/writing-stories/decorators#global-decorators, but this approach had less moving parts
 // to avoid this for the "real" version, we simply need to make this an app type instead of a library
 
-import theme from '../src/lib/theme.scss';
-const themeStyle = document.createElement('style');
-themeStyle.innerHTML = theme;
-document.body.appendChild(themeStyle);
-
 import stories from '../src/lib/stories.scss';
 const storiesStyle = document.createElement('style');
 storiesStyle.innerHTML = stories;

@@ -1,15 +1,12 @@
 @use '@angular/material' as mat;
-@use './colors' as colors;
-
-@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap');
-@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+@use './palettes';
 
 $cdx-theme: mat.define-light-theme(
   (
     color: (
-      primary: mat.define-palette(colors.$primary-palette),
-      accent: mat.define-palette(colors.$accent-palette),
-      warn: mat.define-palette(colors.$warn-palette)
+      primary: mat.define-palette(palettes.$primary-palette),
+      accent: mat.define-palette(palettes.$accent-palette),
+      warn: mat.define-palette(palettes.$warn-palette),
     ),
     typography:
       mat.define-typography-config(
@@ -27,13 +24,18 @@ $cdx-theme: mat.define-light-theme(
         $caption: mat.define-typography-level(12px, 14px, 400),
         $button: mat.define-typography-level(16px, 16px, 600),
         // TODO Line-height for input must be unit-less fraction of the font-size
-        $input: mat.define-typography-level(inherit, 1.2)
+        $input: mat.define-typography-level(inherit, 1.2),
       ),
   )
 );
 
-@include mat.core($cdx-theme);
-@include mat.all-component-themes($cdx-theme);
+@mixin core() {
+  @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap');
+  @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 
-@include mat.strong-focus-indicators();
-@include mat.strong-focus-indicators-theme(#00C2F2);
+  @include mat.core($cdx-theme);
+  @include mat.all-component-themes($cdx-theme);
+
+  @include mat.strong-focus-indicators();
+  @include mat.strong-focus-indicators-theme(#00c2f2);
+}
