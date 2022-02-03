@@ -1,146 +1,94 @@
-$dark-primary-text: rgba(black, 0.87);
-$light-primary-text: white;
+/*
+ * for Material theming https://material.angular.io/guide/theming#themes
+ */
 
 $primary-palette: (
-  50: #EEE7F8,
-  100: #D2C4ED,
-  200: #B49DE2,
-  300: #9675D7,
-  400: #7F56CE,
-  500: #6738C5,
-  600: #5D33Bf,
-  700: #4F2BB6,
-  800: #4125AF,
-  900: #2818A2,
+  50: #eee7f8,
+  100: #d2c4ed,
+  200: #b49de2,
+  300: #9675d7,
+  400: #7f56ce,
+  500: #5d33bf,
+  600: #4f2bb6,
+  700: #4125af,
+  800: #2818a2,
+  900: #23018e,
   contrast: (
-    50: $dark-primary-text,
-    100: $dark-primary-text,
-    200: $dark-primary-text,
-    300: $dark-primary-text,
-    400: $dark-primary-text,
-    500: $light-primary-text,
-    600: $light-primary-text,
-    700: $light-primary-text,
-    800: $light-primary-text,
-    900: $light-primary-text,
-  )
+    50: #000,
+    100: #000,
+    200: #000,
+    300: #000,
+    400: #fff,
+    500: #fff,
+    600: #fff,
+    700: #fff,
+    800: #fff,
+    900: #fff,
+  ),
 );
 
 $accent-palette: (
-  50: #E5F5E4,
-  100: #C2E5BC,
-  200: #9AD490,
-  300: #6EC462,
-  400: #49B83D,
-  500: #17AB03,
-  600: #019C00,
-  700: #008B00,
-  800: #007A00,
-  900: #005B00,
+  50: #e5f5e4,
+  100: #c2e5bc,
+  200: #9ad490,
+  300: #6ec462,
+  400: #49b83d,
+  500: #16ab03,
+  600: #019c00,
+  700: #008b00,
+  800: #007a00,
+  900: #005b00,
   contrast: (
-    50: $dark-primary-text,
-    100: $dark-primary-text,
-    200: $dark-primary-text,
-    300: $dark-primary-text,
-    400: $dark-primary-text,
-    500: $light-primary-text,
-    600: $light-primary-text,
-    700: $light-primary-text,
-    800: $light-primary-text,
-    900: $light-primary-text,
-  )
+    50: #000,
+    100: #000,
+    200: #000,
+    300: #000,
+    400: #000,
+    500: #000,
+    600: #000,
+    700: #000,
+    800: #fff,
+    900: #fff,
+  ),
 );
 
-// use single warning color (per Angular Material standards)
-// rather than separate error and warning colors
 $warn-palette: (
-  50: #FDE8E6,
-  100: #FFC8B8,
-  200: #FFA48B,
-  300: #FF7F5C,
-  400: #FF6138,
-  500: #FF4010,
-  600: #FA390C,
-  700: #EC3205,
-  800: #DE2900,
-  900: #C61300,
+  50: #fcece8,
+  100: #f6c5b9,
+  200: #f09f8b,
+  300: #e9795d,
+  400: #e3522e,
+  500: #dd2c00,
+  600: #c92800,
+  700: #b52400,
+  800: #a12000,
+  900: #8d1c00,
   contrast: (
-    50: $dark-primary-text,
-    100: $dark-primary-text,
-    200: $dark-primary-text,
-    300: $dark-primary-text,
-    400: $dark-primary-text,
-    500: $light-primary-text,
-    600: $light-primary-text,
-    700: $light-primary-text,
-    800: $light-primary-text,
-    900: $light-primary-text,
-  )
+    50: #000,
+    100: #000,
+    200: #000,
+    300: #000,
+    400: #000,
+    500: #fff,
+    600: #fff,
+    700: #fff,
+    800: #fff,
+    900: #fff,
+  ),
 );
 
-// uses same colors as accent, but separated
-// in the event the accent color changes
-$success-palette: (
-  50: #E5F5E4,
-  100: #C2E5BC,
-  200: #9AD490,
-  300: #6EC462,
-  400: #49B83D,
-  500: #17AB03,
-  600: #019C00,
-  700: #008B00,
-  800: #007A00,
-  900: #005B00,
-  contrast: (
-    50: $dark-primary-text,
-    100: $dark-primary-text,
-    200: $dark-primary-text,
-    300: $dark-primary-text,
-    400: $dark-primary-text,
-    500: $light-primary-text,
-    600: $light-primary-text,
-    700: $light-primary-text,
-    800: $light-primary-text,
-    900: $light-primary-text,
-  )
-);
-
-$info-palette: (
-  50: #E2F5FE,
-  100: #B5E5FB,
-  200: #85D4F8,
-  300: #58C4F4,
-  400: #3AB7F3,
-  500: #28AAF0,
-  600: #249CE1,
-  700: #2089CD,
-  800: #1D78B9,
-  900: #175897,
-  contrast: (
-    50: $dark-primary-text,
-    100: $dark-primary-text,
-    200: $dark-primary-text,
-    300: $dark-primary-text,
-    400: $dark-primary-text,
-    500: $light-primary-text,
-    600: $light-primary-text,
-    700: $light-primary-text,
-    800: $light-primary-text,
-    900: $light-primary-text,
-  )
-);
-
-$palettes: (primary: $primary-palette, accent: $accent-palette, warn: $warn-palette);
-
-@each $palette, $palette-values in $palettes {
+@each $palette,
+  $palette-values
+    in (primary: $primary-palette, accent: $accent-palette, warn: $warn-palette)
+{
   .#{$palette}-palette {
     display: flex;
     justify-content: space-evenly;
     @each $color, $value in $palette-values {
-      @if $color != "contrast" {
+      @if $color != 'contrast' {
         .bg-#{$color} {
           background-color: #{$value};
-          color: map-get(map-get($palette-values, "contrast"), $color);
+          color: map-get(map-get($palette-values, 'contrast'), $color);
           width: 75px;
           height: 75px;
           text-align: center;
