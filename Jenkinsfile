@@ -44,7 +44,7 @@ pipeline {
 
         stage('Build Storybook') {
             steps {
-                sh 'nx build-storybook'
+                sh 'npx --no-install nx build-storybook'
             }
         }
 
