@@ -36,4 +36,4 @@ $cdx-theme: mat.define-light-theme(
 @include mat.all-component-themes($cdx-theme);
 
 @include mat.strong-focus-indicators();
-@include mat.strong-focus-indicators-theme($cdx-theme);
+@include mat.strong-focus-indicators-theme(#00C2F2);
