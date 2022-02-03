@@ -4,7 +4,7 @@ pipeline {
     agent {
         docker {
             label 'docker-slave'
-            image 'platform-docker.repo.clarivate.io/jenkins-base-node:16'
+            image 'platform-docker.repo.clarivate.io/jenkins-base-node:14'
         }
     }
 
