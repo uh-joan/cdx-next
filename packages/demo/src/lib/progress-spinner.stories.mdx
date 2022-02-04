@@ -1,0 +1,41 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import { moduleMetadata } from '@storybook/angular';
+import { html } from 'common-tags';
+import {
+  MatProgressSpinnerModule,
+  MAT_PROGRESS_SPINNER_DEFAULT_OPTIONS,
+} from '@angular/material/progress-spinner';
+import { CommonModule } from '@angular/common';
+
+<Meta title="Sprint 2/Components/Progress Spinner" />
+
+<Canvas>
+  <Story
+    name="From Material"
+    decorators={[
+      moduleMetadata({
+        imports: [MatProgressSpinnerModule, CommonModule],
+        providers: [
+          {
+            provide: MAT_PROGRESS_SPINNER_DEFAULT_OPTIONS,
+            useValue: { diameter: 24, strokeWidth: 2 },
+          },
+        ],
+      }),
+    ]}
+  >
+    {{
+      template: html`
+        <div class="mat-typography progress-spinner-story">
+          <div *ngFor="let mode of ['determinate', 'indeterminate']">
+            <h2>{{ mode }}</h2>
+            <mat-progress-spinner
+              [mode]="mode"
+              value="36"
+            ></mat-progress-spinner>
+          </div>
+        </div>
+      `,
+    }}
+  </Story>
+</Canvas>

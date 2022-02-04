@@ -1,0 +1,52 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import { moduleMetadata } from '@storybook/angular';
+import { html } from 'common-tags';
+import { MatChipsModule } from '@angular/material/chips';
+import { MatIconModule } from '@angular/material/icon';
+
+<Meta title="Sprint 2/Components/Chips" />
+
+<Canvas>
+  <Story
+    name="From Material"
+    decorators={[
+      moduleMetadata({
+        imports: [MatChipsModule, MatIconModule],
+      }),
+    ]}
+  >
+    {{
+      template: html`
+        <div class="mat-typography">
+          <h2>Basic</h2>
+          <mat-chip-list aria-label="Basic chips">
+            <mat-chip selected>selected</mat-chip>
+            <mat-chip>not selected</mat-chip>
+            <mat-chip color="primary" selected>Primary color</mat-chip>
+            <mat-chip color="accent" selected>Accent color</mat-chip>
+            <mat-chip color="warn" selected>Warn color</mat-chip>
+            <mat-chip>
+              with an action
+              <button matChipRemove>
+                <mat-icon>cancel</mat-icon>
+              </button>
+            </mat-chip>
+          </mat-chip-list>
+          <h2>Stacked</h2>
+          <div style="width: 200px">
+            <mat-chip-list
+              class="mat-chip-list-stacked"
+              aria-label="Color selection"
+            >
+              <mat-chip selected>selected</mat-chip>
+              <mat-chip>not selected</mat-chip>
+              <mat-chip color="primary" selected>Primary color</mat-chip>
+              <mat-chip color="accent" selected>Accent color</mat-chip>
+              <mat-chip color="warn" selected>Warn color</mat-chip>
+            </mat-chip-list>
+          </div>
+        </div>
+      `,
+    }}
+  </Story>
+</Canvas>

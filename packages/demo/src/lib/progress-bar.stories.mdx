@@ -1,0 +1,31 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import { moduleMetadata } from '@storybook/angular';
+import { html } from 'common-tags';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { CommonModule } from '@angular/common';
+
+<Meta title="Sprint 2/Components/Progress Bar" />
+
+<Canvas>
+  <Story
+    name="From Material"
+    decorators={[
+      moduleMetadata({
+        imports: [MatProgressBarModule, CommonModule],
+      }),
+    ]}
+  >
+    {{
+      template: html`
+        <div class="mat-typography progress-bar-story">
+          <div
+            *ngFor="let mode of ['determinate', 'indeterminate', 'buffer', 'query']"
+          >
+            <h2>{{ mode }}</h2>
+            <mat-progress-bar [mode]="mode" value="36" bufferValue="73"></mat-progress-bar>
+          </div>
+        </div>
+      `,
+    }}
+  </Story>
+</Canvas>

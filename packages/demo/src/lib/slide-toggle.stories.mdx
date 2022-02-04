@@ -1,0 +1,36 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import { moduleMetadata } from '@storybook/angular';
+import { html } from 'common-tags';
+import {
+  MatSlideToggleModule,
+  MAT_SLIDE_TOGGLE_DEFAULT_OPTIONS,
+} from '@angular/material/slide-toggle';
+
+<Meta title="Sprint 2/Components/Slide Toggle" />
+
+<Canvas>
+  <Story
+    name="From Material"
+    decorators={[
+      moduleMetadata({
+        imports: [MatSlideToggleModule],
+        providers: [
+          {
+            provide: MAT_SLIDE_TOGGLE_DEFAULT_OPTIONS,
+            useValue: { color: 'primary' },
+          },
+        ],
+      }),
+    ]}
+  >
+    {{
+      template: html`
+        <div class="mat-typography">
+          <mat-slide-toggle [checked]="'true'"> Checked </mat-slide-toggle>
+          <mat-slide-toggle [checked]="'false'"> Unchecked </mat-slide-toggle>
+          <mat-slide-toggle [disabled]="'true'"> Disabled </mat-slide-toggle>
+        </div>
+      `,
+    }}
+  </Story>
+</Canvas>

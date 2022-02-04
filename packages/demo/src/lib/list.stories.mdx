@@ -1,0 +1,63 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import { moduleMetadata } from '@storybook/angular';
+import { html } from 'common-tags';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { MatListModule } from '@angular/material/list';
+import { MatDividerModule } from '@angular/material/divider';
+
+<Meta title="Sprint 2/Components/List" />
+
+<Canvas>
+  <Story
+    name="From Material"
+    decorators={[
+      moduleMetadata({
+        imports: [
+          MatIconModule,
+          MatButtonModule,
+          MatListModule,
+          MatDividerModule,
+        ],
+      }),
+    ]}
+  >
+    {{
+      template: html`
+        <div class="mat-typography">
+          <h2>List with sections</h2>
+          <mat-list>
+            <div mat-subheader>Folders</div>
+            <mat-list-item>
+              <mat-icon mat-list-icon>folder</mat-icon>
+              <div mat-line>Photos</div>
+              <div mat-line>Jan. 1, 2016</div>
+            </mat-list-item>
+            <mat-list-item>
+              <mat-icon mat-list-icon>folder</mat-icon>
+              <div mat-line>Recipes</div>
+              <div mat-line>Feb. 16, 2020</div>
+            </mat-list-item>
+            <mat-list-item>
+              <mat-icon mat-list-icon>folder</mat-icon>
+              <div mat-line>Work</div>
+              <div mat-line>July 4, 2021</div>
+            </mat-list-item>
+            <mat-divider></mat-divider>
+            <div mat-subheader>Notes</div>
+            <mat-list-item>
+              <mat-icon mat-list-icon>note</mat-icon>
+              <div mat-line>Vacation itinerary</div>
+              <div mat-line>Feb. 20, 2016</div>
+            </mat-list-item>
+            <mat-list-item>
+              <mat-icon mat-list-icon>note</mat-icon>
+              <div mat-line>Kitchen remodel</div>
+              <div mat-line>Feb. 20, 2016</div>
+            </mat-list-item>
+          </mat-list>
+        </div>
+      `,
+    }}
+  </Story>
+</Canvas>
