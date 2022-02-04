@@ -1,6 +1,9 @@
 @use 'sass:map';
 @use './theme';
 @use './palettes';
+
+@import 'styles/components-main';
+
 @include theme.core;
 
 @each $palette,

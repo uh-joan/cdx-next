@@ -1,0 +1,24 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import { moduleMetadata } from '@storybook/angular';
+import { MatSliderModule } from '@angular/material/slider';
+import { html } from 'common-tags';
+
+<Meta title="Sprint 3/Components/Slider" />
+
+<Canvas>
+  <Story
+    name="From Material"
+    decorators={[
+      moduleMetadata({
+        imports: [MatSliderModule],
+      }),
+    ]}
+  >
+    {{
+      template: html` <div class="mat-typography">
+        <h2>Basic slider</h2>
+        <mat-slider aria-label="unit(s)"> </mat-slider>
+      </div>`,
+    }}
+  </Story>
+</Canvas>

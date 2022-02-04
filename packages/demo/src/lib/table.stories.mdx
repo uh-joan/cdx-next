@@ -1,0 +1,28 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import { moduleMetadata } from '@storybook/angular';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { html } from 'common-tags';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SnackBarDemoComponent } from './snackbar-demo/snackbar.component';
+import { TableBasicDemoComponent } from './table-demo/table-demo.component';
+import { MatTableModule } from '@angular/material/table';
+
+<Meta title="Sprint 3/Components/Table" component={TableBasicDemoComponent} />
+
+<Canvas>
+  <Story
+    name="From Material"
+    decorators={[
+      moduleMetadata({
+        imports: [MatTableModule, BrowserAnimationsModule],
+      }),
+    ]}
+  >
+    {{
+      template: `<cdx-next-table-basic-demo></cdx-next-table-basic-demo>`,
+    }}
+  </Story>
+</Canvas>
