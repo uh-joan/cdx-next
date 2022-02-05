@@ -8,7 +8,7 @@ long-term success of the Digital Experience System.
 Before proposing a change, please:
 
 - Review this Contribution Guide
-- Review the [Architecture Decision Records](./adr)
+- Review the [Architecture Decision Records](/adr)
 
 ## Pull Requests
 
@@ -88,7 +88,7 @@ written and help the team understand the scope and impact of the decision.
 
 ADRs should be managed with
 [log4brains](https://github.com/thomvaill/log4brains#-getting-started). Usage
-instructions can be found in the [ADR README](./adr/README.md).
+instructions can be found in the [ADR README](/adr/README.md).
 
 A convenience script is provided:
 
