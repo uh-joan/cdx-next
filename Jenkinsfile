@@ -8,6 +8,12 @@ pipeline {
         }
     }
 
+    environment {
+        NX_HEAD = "${GIT_COMMIT}"
+        // use the very first commit as base - this is inefficient, but no better option at the moment
+        NX_BASE = '21dab90'
+    }
+
     stages {
         stage('Checkout') {
             steps {
@@ -15,7 +21,7 @@ pipeline {
                     checkout([
                         $class: 'GitSCM',
                         branches: [
-                            [name: '*/main'],
+                            [name: 'refs/heads/*'],
                             [name: 'PR-*']
                         ],
                         extensions: [
@@ -24,7 +30,8 @@ pipeline {
                             ],
                             [
                                 $class: 'CloneOption',
-                                shallow: true
+                                shallow: false,
+                                noTags: false
                             ],
                             [
                                 $class: 'LocalBranch',
@@ -42,11 +49,11 @@ pipeline {
             }
         }
 
-        // stage('Check code style') {
-        //     steps {
-        //         sh 'npm run lint'
-        //     }
-        // }
+        stage('Check code style') {
+            steps {
+                sh 'npm run lint'
+            }
+        }
 
         stage('Build Storybook') {
             steps {

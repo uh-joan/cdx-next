@@ -22,7 +22,11 @@ import { CommonModule } from '@angular/common';
             *ngFor="let mode of ['determinate', 'indeterminate', 'buffer', 'query']"
           >
             <h2>{{ mode }}</h2>
-            <mat-progress-bar [mode]="mode" value="36" bufferValue="73"></mat-progress-bar>
+            <mat-progress-bar
+              [mode]="mode"
+              value="36"
+              bufferValue="73"
+            ></mat-progress-bar>
           </div>
         </div>
       `,
