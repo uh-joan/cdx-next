@@ -50,6 +50,7 @@
     "@angular/language-service": "~13.2.0",
     "@commitlint/cli": "^16.1.0",
     "@commitlint/config-conventional": "^16.0.0",
+    "@commitlint/config-nx-scopes": "^16.2.0",
     "@commitlint/cz-commitlint": "^16.1.0",
     "@nrwl/angular": "^13.7.1",
     "@nrwl/cli": "^13.7.1",
