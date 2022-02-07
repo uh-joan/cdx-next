@@ -25,7 +25,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
  */
 @Component({
   selector: 'cdx-next-table-basic-demo',
-  templateUrl: 'table-demo.component.html',
+  templateUrl: 'table-basic-demo.component.html',
 })
 export class TableBasicDemoComponent {
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];

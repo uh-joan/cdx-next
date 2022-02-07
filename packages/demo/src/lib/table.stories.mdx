@@ -6,23 +6,34 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { SnackBarDemoComponent } from './snackbar-demo/snackbar.component';
-import { TableBasicDemoComponent } from './table-demo/table-demo.component';
 import { MatTableModule } from '@angular/material/table';
+import { DemoModule } from './demo.module';
 
-<Meta title="Sprint 3/Components/Table" component={TableBasicDemoComponent} />
+<Meta title="Sprint 3/Components/Table" />
 
 <Canvas>
   <Story
     name="From Material"
     decorators={[
       moduleMetadata({
-        imports: [MatTableModule, BrowserAnimationsModule],
+        imports: [MatTableModule, BrowserAnimationsModule, DemoModule],
       }),
     ]}
   >
     {{
-      template: `<cdx-next-table-basic-demo></cdx-next-table-basic-demo>`,
+      template: `
+      <div class="mat-typography basic-table">
+        <h2>Basic Table</h2>
+        <cdx-next-table-basic-demo></cdx-next-table-basic-demo>
+      </div>
+      <div class="mat-typography table-expandable-rows">
+        <h2>Table with expandable rows</h2>
+        <cdx-next-table-expandable-rows-demo></cdx-next-table-expandable-rows-demo>
+      </div>
+      <div class="mat-typography table-with-filter">
+        <h2>Table with filter, pagination and sorting</h2>
+        <cdx-next-table-filter-sort-pagination-demo></cdx-next-table-filter-sort-pagination-demo>
+      </div>`,
     }}
   </Story>
 </Canvas>

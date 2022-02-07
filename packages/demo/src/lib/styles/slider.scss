@@ -1,3 +1,32 @@
-mat-slider {
-  width: 300px;
+.slider-basic {
+  margin-bottom: 2rem;
+
+  mat-slider {
+    width: 300px;
+  }
+}
+
+.slider-custom-thumb {
+  margin-bottom: 2rem;
+
+  mat-slider {
+    width: 300px;
+  }
+}
+
+.slider-configurable {
+  .example-h2 {
+    margin: 10px;
+  }
+
+  .example-section {
+    display: flex;
+    height: 60px;
+    align-content: center;
+    align-items: center;
+  }
+
+  .example-margin {
+    margin: 0 10px;
+  }
 }

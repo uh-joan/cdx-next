@@ -2,6 +2,7 @@ import { Meta, Story, Canvas } from '@storybook/addon-docs';
 import { moduleMetadata } from '@storybook/angular';
 import { MatSliderModule } from '@angular/material/slider';
 import { html } from 'common-tags';
+import { DemoModule } from './demo.module';
 
 <Meta title="Sprint 3/Components/Slider" />
 
@@ -10,15 +11,24 @@ import { html } from 'common-tags';
     name="From Material"
     decorators={[
       moduleMetadata({
-        imports: [MatSliderModule],
+        imports: [MatSliderModule, DemoModule],
       }),
     ]}
   >
     {{
-      template: html` <div class="mat-typography">
-        <h2>Basic slider</h2>
-        <mat-slider aria-label="unit(s)"> </mat-slider>
-      </div>`,
+      template: html` <div class="mat-typography slider-basic">
+          <h2>Basic slider</h2>
+          <mat-slider aria-label="unit(s)"> </mat-slider>
+        </div>
+        <div class="mat-typography slider-custom-thumb">
+          <h2>Slider-custom-thumb</h2>
+          <cdx-next-slider-custom-thumb> </cdx-next-slider-custom-thumb>
+        </div>
+        <div class="mat-typography slider-configurable">
+          <h2>Configurable slider</h2>
+          <cdx-next-slider-configurable-demo>
+          </cdx-next-slider-configurable-demo>
+        </div>`,
     }}
   </Story>
 </Canvas>

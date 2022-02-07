@@ -1,6 +1,6 @@
 import { Meta, Story, Canvas } from '@storybook/addon-docs';
 import { moduleMetadata } from '@storybook/angular';
-import { MatButtonModule, MatButton } from '@angular/material/button';
+import { MatButtonModule } from '@angular/material/button';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatSliderModule } from '@angular/material/slider';
 import { html } from 'common-tags';
@@ -25,19 +25,20 @@ import { MatSelectModule } from '@angular/material/select';
           MatInputModule,
           FormsModule,
           MatSelectModule,
+          MatButtonModule,
         ],
       }),
     ]}
   >
     {{
-      template: html` <div class="mat-typography">
+      template: html` <div class="mat-typography basic-sidenav">
           <h2>Basic sidenav</h2>
           <mat-drawer-container class="example-container">
             <mat-drawer mode="side" opened>Drawer content</mat-drawer>
             <mat-drawer-content>Main content</mat-drawer-content>
           </mat-drawer-container>
         </div>
-        <div class="mat-typography">
+        <div class="mat-typography autosize-sidenav">
           <h2>Autosize sidenav</h2>
           <mat-drawer-container class="example-container" autosize>
             <mat-drawer #drawer class="example-sidenav" mode="side">
@@ -54,7 +55,7 @@ import { MatSelectModule } from '@angular/material/select';
             </div>
           </mat-drawer-container>
         </div>
-        <div class="mat-typography">
+        <div class="mat-typography sidenav-with-backdrop">
           <h2>Drawer with explicit backdrop setting</h2>
           <mat-drawer-container
             class="example-container"

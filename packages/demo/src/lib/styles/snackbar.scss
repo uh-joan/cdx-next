@@ -1,3 +1,17 @@
-mat-form-field {
-  margin-right: 12px;
+.snackbar-basic {
+  mat-form-field {
+    margin-right: 12px;
+  }
+}
+
+.snackbar-custom {
+  .mat-form-field {
+    margin-right: 8px;
+  }
+}
+
+.snackbar-positionable {
+  .mat-form-field {
+    margin-right: 8px;
+  }
 }

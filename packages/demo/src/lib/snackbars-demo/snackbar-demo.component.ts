@@ -6,7 +6,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
  */
 @Component({
   selector: 'cdx-next-snack-bar-demo',
-  templateUrl: './snackbar.component.html',
+  templateUrl: './snackbar-demo.component.html',
 })
 export class SnackBarDemoComponent {
   constructor(private _snackBar: MatSnackBar) {}

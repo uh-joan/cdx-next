@@ -6,9 +6,11 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { SnackBarDemoComponent } from './snackbar-demo/snackbar.component';
+import { SnackBarDemoComponent } from './snackbars-demo/snackbar-demo.component';
+import { MatButtonModule } from '@angular/material/button';
+import { DemoModule } from './demo.module';
 
-<Meta title="Sprint 3/Components/Snackbar" component={SnackBarDemoComponent} />
+<Meta title="Sprint 3/Components/Snackbar" />
 
 <Canvas>
   <Story
@@ -21,12 +23,26 @@ import { SnackBarDemoComponent } from './snackbar-demo/snackbar.component';
           MatInputModule,
           FormsModule,
           BrowserAnimationsModule,
+          MatButtonModule,
+          DemoModule,
         ],
       }),
     ]}
   >
     {{
-      template: `<cdx-next-snack-bar-demo></cdx-next-snack-bar-demo>`,
+      template: `
+      <div class="mat-typography snackbar-basic">
+        <h2>Basic snack-bar</h2>
+        <cdx-next-snack-bar-demo></cdx-next-snack-bar-demo>
+      </div>
+      <div class="mat-typography snackbar-custom">
+        <h2>Custom snack-bar</h2>
+        <cdx-next-snack-bar-custom-demo></cdx-next-snack-bar-custom-demo>
+      </div>
+      <div class="mat-typography snackbar-positionable">
+        <h2>Snack-bar configurable position</h2>
+        <cdx-next-snack-bar-position></cdx-next-snack-bar-position>
+      </div>`,
     }}
   </Story>
 </Canvas>
