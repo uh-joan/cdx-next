@@ -9,7 +9,7 @@ import {
  * @title Snack-bar with configurable position
  */
 @Component({
-  selector: 'cdx-next-snack-bar-position',
+  selector: 'cdx-next-snack-bar-position-demo',
   templateUrl: 'snackbar-position-demo.component.html',
 })
 export class SnackBarPositionDemoComponent {

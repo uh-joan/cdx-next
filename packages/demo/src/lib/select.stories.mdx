@@ -1,0 +1,53 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import { moduleMetadata } from '@storybook/angular';
+import { html } from 'common-tags';
+import { DemoModule } from './demo.module';
+
+<Meta title="Sprint 2/Components/Select" />
+
+<Canvas>
+  <Story
+    name="From Material"
+    decorators={[
+      moduleMetadata({
+        imports: [DemoModule],
+      }),
+    ]}
+  >
+    {{
+      template: html`
+        <div class="mat-typography select-story">
+          <ng-container
+            *ngFor="let appearance of ['outline', 'standard', 'fill']"
+          >
+            <h2>{{ appearance }}</h2>
+            <div class="select-basic">
+              <h3>Basic select</h3>
+              <cdx-next-select-basic-demo
+                [appearance]="appearance"
+              ></cdx-next-select-basic-demo>
+            </div>
+            <div class="select-disabled">
+              <h3>Select disabled</h3>
+              <cdx-next-select-disabled-demo
+                [appearance]="appearance"
+              ></cdx-next-select-disabled-demo>
+            </div>
+            <div class="select-option-groups">
+              <h3>Select option groups</h3>
+              <cdx-next-select-option-group-demo
+                [appearance]="appearance"
+              ></cdx-next-select-option-group-demo>
+            </div>
+            <div class="select-multiple-selection">
+              <h3>Select option groups</h3>
+              <cdx-next-select-multiple-selection-demo
+                [appearance]="appearance"
+              ></cdx-next-select-multiple-selection-demo>
+            </div>
+          </ng-container>
+        </div>
+      `,
+    }}
+  </Story>
+</Canvas>

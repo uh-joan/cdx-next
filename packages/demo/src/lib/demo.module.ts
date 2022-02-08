@@ -18,6 +18,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DialogDemoComponent } from './dialog-demo/dialog-demo.component';
 import { DialogExampleComponent } from './dialog-demo/dialog-example.component';
 import { InputDemoComponent } from './input-demo/input-demo.component';
+import { SelectBasicDemoComponent } from './selects-demo/select-basic-demo.component';
+import { SelectDisabledDemoComponent } from './selects-demo/select-disabled-demo.component';
+import { SelectMultipleSelectionDemoComponent } from './selects-demo/select-multiple-selection-demo.component';
+import { SelectOptionGroupDemoComponent } from './selects-demo/select-option-groups-demo.component';
 import { SliderConfigurableDemoComponent } from './sliders-demo/slider-configurable-demo.component';
 import { SliderCustomThumbComponent } from './sliders-demo/slider-custom-thumb-demo.component';
 import { SnackBarCustomDemoComponent } from './snackbars-demo/snackbar-custom-demo.component';
@@ -58,6 +62,10 @@ import { TableWithFilterSortingPaginationDemoComponent } from './tables-demo/tab
     SnackBarCustomDemoComponent,
     SliderConfigurableDemoComponent,
     SliderCustomThumbComponent,
+    SelectBasicDemoComponent,
+    SelectDisabledDemoComponent,
+    SelectOptionGroupDemoComponent,
+    SelectMultipleSelectionDemoComponent,
   ],
   exports: [
     InputDemoComponent,
@@ -71,6 +79,10 @@ import { TableWithFilterSortingPaginationDemoComponent } from './tables-demo/tab
     SnackBarCustomDemoComponent,
     SliderConfigurableDemoComponent,
     SliderCustomThumbComponent,
+    SelectBasicDemoComponent,
+    SelectDisabledDemoComponent,
+    SelectOptionGroupDemoComponent,
+    SelectMultipleSelectionDemoComponent,
   ],
 })
 export class DemoModule {}
