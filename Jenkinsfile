@@ -21,7 +21,7 @@ pipeline {
                     checkout([
                         $class: 'GitSCM',
                         branches: [
-                            [name: 'refs/heads/*'],
+                            [name: '*/main'],
                             [name: 'PR-*']
                         ],
                         extensions: [
