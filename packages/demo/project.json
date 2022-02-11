@@ -1,16 +1,26 @@
 {
+  "prefix": "cdx-next",
   "projectType": "library",
   "root": "packages/demo",
   "sourceRoot": "packages/demo/src",
-  "prefix": "cdx-next",
+  "tags": [],
   "targets": {
-    "test": {
-      "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/packages/demo"],
+    "build-storybook": {
+      "configurations": {
+        "ci": {
+          "quiet": true
+        }
+      },
+      "executor": "@nrwl/storybook:build",
       "options": {
-        "jestConfig": "packages/demo/jest.config.js",
-        "passWithNoTests": true
-      }
+        "config": {
+          "configFolder": "packages/demo/.storybook"
+        },
+        "outputPath": "dist/storybook/demo",
+        "projectBuildConfig": "demo:build-storybook",
+        "uiFramework": "@storybook/angular"
+      },
+      "outputs": ["{options.outputPath}"]
     },
     "lint": {
       "executor": "@nrwl/linter:eslint",
@@ -22,48 +32,38 @@
       }
     },
     "storybook": {
+      "configurations": {
+        "ci": {
+          "quiet": true
+        }
+      },
       "executor": "@nrwl/storybook:storybook",
       "options": {
-        "uiFramework": "@storybook/angular",
+        "config": {
+          "configFolder": "packages/demo/.storybook"
+        },
         "port": 4400,
-        "config": {
-          "configFolder": "packages/demo/.storybook"
-        },
-        "projectBuildConfig": "demo:build-storybook"
-      },
-      "configurations": {
-        "ci": {
-          "quiet": true
-        }
-      }
-    },
-    "build-storybook": {
-      "executor": "@nrwl/storybook:build",
-      "outputs": ["{options.outputPath}"],
-      "options": {
-        "uiFramework": "@storybook/angular",
-        "outputPath": "dist/storybook/demo",
-        "config": {
-          "configFolder": "packages/demo/.storybook"
-        },
-        "projectBuildConfig": "demo:build-storybook"
-      },
-      "configurations": {
-        "ci": {
-          "quiet": true
-        }
+        "projectBuildConfig": "demo:build-storybook",
+        "uiFramework": "@storybook/angular"
       }
     },
     "stylelint": {
       "executor": "nx-stylelint:lint",
-      "outputs": ["{options.outputFile}"],
       "options": {
         "lintFilePatterns": [
           "packages/demo/**/*.css",
           "packages/demo/**/*.scss"
         ]
-      }
+      },
+      "outputs": ["{options.outputFile}"]
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "options": {
+        "jestConfig": "packages/demo/jest.config.js",
+        "passWithNoTests": true
+      },
+      "outputs": ["coverage/packages/demo"]
     }
-  },
-  "tags": []
+  }
 }

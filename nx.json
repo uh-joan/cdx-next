@@ -1,15 +1,34 @@
 {
-  "extends": "@nrwl/workspace/presets/core.json",
-  "npmScope": "cdx-next",
   "affected": {
     "defaultBase": "main"
   },
   "cli": {
     "defaultCollection": "@nrwl/angular"
   },
+  "defaultProject": "demo",
+  "extends": "@nrwl/workspace/presets/core.json",
+  "generators": {
+    "@nrwl/angular:application": {
+      "linter": "eslint",
+      "unitTestRunner": "jest"
+    },
+    "@nrwl/angular:component": {},
+    "@nrwl/angular:library": {
+      "linter": "eslint",
+      "unitTestRunner": "jest"
+    }
+  },
+  "implicitDependencies": {
+    ".eslintrc.json": "*",
+    ".stylelintrc.json": "*",
+    "package.json": {
+      "dependencies": "*",
+      "devDependencies": "*"
+    }
+  },
+  "npmScope": "cdx-next",
   "tasksRunnerOptions": {
     "default": {
-      "runner": "@nrwl/workspace/tasks-runners/default",
       "options": {
         "cacheableOperations": [
           "build",
@@ -19,27 +38,8 @@
           "build-storybook",
           "stylelint"
         ]
-      }
+      },
+      "runner": "@nrwl/workspace/tasks-runners/default"
     }
-  },
-  "generators": {
-    "@nrwl/angular:application": {
-      "linter": "eslint",
-      "unitTestRunner": "jest"
-    },
-    "@nrwl/angular:library": {
-      "linter": "eslint",
-      "unitTestRunner": "jest"
-    },
-    "@nrwl/angular:component": {}
-  },
-  "defaultProject": "demo",
-  "implicitDependencies": {
-    "package.json": {
-      "dependencies": "*",
-      "devDependencies": "*"
-    },
-    ".eslintrc.json": "*",
-    ".stylelintrc.json": "*"
   }
 }

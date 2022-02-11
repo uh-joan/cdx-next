@@ -17,7 +17,7 @@
     "lint": "run-s lint:*",
     "lint:commit": "commitlint --from",
     "lint:jenkins": "npm-groovy-lint --failon warning --noserver --no-insight --ignorepattern **/node_modules/** --files **/Jenkinsfile",
-    "lint:json": "jsonsort --ci --nodemodules=false **/*.json",
+    "lint:json": "jsonsort --ci --nodemodules=false '**.json'",
     "lint:nx": "run-s lint:nx:*",
     "lint:nx:format": "nx format:check",
     "lint:nx:lint": "nx run-many --all --target=lint",
