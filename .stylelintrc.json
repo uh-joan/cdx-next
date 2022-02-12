@@ -8,7 +8,15 @@
         "stylelint-config-prettier"
       ],
       "files": ["**/*.css"],
-      "rules": {}
+      "plugins": ["@namics/stylelint-bem"],
+      "rules": {
+        "plugin/stylelint-bem-namics": {
+          "helperPrefixes": [],
+          "namespaces": ["cdx-"],
+          "patternPrefixes": []
+        },
+        "selector-class-pattern": null
+      }
     },
     {
       "extends": [
@@ -17,8 +25,15 @@
         "stylelint-config-prettier"
       ],
       "files": ["**/*.scss"],
-      "rules": {}
+      "plugins": ["@namics/stylelint-bem"],
+      "rules": {
+        "plugin/stylelint-bem-namics": {
+          "helperPrefixes": [],
+          "namespaces": ["cdx-"],
+          "patternPrefixes": []
+        },
+        "selector-class-pattern": null
+      }
     }
-  ],
-  "rules": {}
+  ]
 }

@@ -4,11 +4,15 @@
   "overrides": [
     {
       "files": ["**/*.css"],
-      "rules": {}
+      "rules": {
+        "plugin/stylelint-bem-namics": null
+      }
     },
     {
       "files": ["**/*.scss"],
-      "rules": {}
+      "rules": {
+        "plugin/stylelint-bem-namics": null
+      }
     }
   ]
 }
