@@ -1,0 +1,75 @@
+{
+  "prefix": "cdx",
+  "projectType": "library",
+  "root": "packages/footer",
+  "sourceRoot": "packages/footer/src",
+  "tags": [],
+  "targets": {
+    "build": {
+      "configurations": {
+        "development": {
+          "tsConfig": "packages/footer/tsconfig.lib.json"
+        },
+        "production": {
+          "tsConfig": "packages/footer/tsconfig.lib.prod.json"
+        }
+      },
+      "defaultConfiguration": "production",
+      "executor": "@nrwl/angular:package",
+      "options": {
+        "project": "packages/footer/ng-package.json"
+      },
+      "outputs": ["dist/packages/footer"]
+    },
+    "build-storybook": {
+      "configurations": {
+        "ci": {
+          "quiet": true
+        }
+      },
+      "executor": "@nrwl/storybook:build",
+      "options": {
+        "config": {
+          "configFolder": "packages/footer/.storybook"
+        },
+        "outputPath": "dist/storybook/footer",
+        "projectBuildConfig": "footer:build-storybook",
+        "uiFramework": "@storybook/angular"
+      },
+      "outputs": ["{options.outputPath}"]
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "packages/footer/src/**/*.ts",
+          "packages/footer/src/**/*.html"
+        ]
+      }
+    },
+    "storybook": {
+      "configurations": {
+        "ci": {
+          "quiet": true
+        }
+      },
+      "executor": "@nrwl/storybook:storybook",
+      "options": {
+        "config": {
+          "configFolder": "packages/footer/.storybook"
+        },
+        "port": 4400,
+        "projectBuildConfig": "footer:build-storybook",
+        "uiFramework": "@storybook/angular"
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "options": {
+        "jestConfig": "packages/footer/jest.config.js",
+        "passWithNoTests": true
+      },
+      "outputs": ["coverage/packages/footer"]
+    }
+  }
+}

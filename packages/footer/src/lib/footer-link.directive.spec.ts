@@ -1,0 +1,19 @@
+import {
+  createDirectiveFactory,
+  SpectatorDirective,
+} from '@ngneat/spectator/jest';
+
+import { FooterLinkDirective } from './footer-link.directive';
+
+describe('FooterLinkComponent', () => {
+  let spectator: SpectatorDirective<FooterLinkDirective>;
+  const createDirective = createDirectiveFactory(FooterLinkDirective);
+
+  beforeEach(() => {
+    spectator = createDirective('<a cdx-footer-link>Foo</a>');
+  });
+
+  it('should set target to _blank', () => {
+    expect((spectator.element as HTMLAnchorElement).target).toEqual('_blank');
+  });
+});
