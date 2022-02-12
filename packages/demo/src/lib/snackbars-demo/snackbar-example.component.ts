@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'cdx-next-snackbar-example',
+  selector: 'demo-snackbar-example',
   templateUrl: 'snackbar-example.component.html',
   styles: [
     `

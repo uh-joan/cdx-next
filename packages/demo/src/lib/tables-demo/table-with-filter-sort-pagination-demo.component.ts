@@ -47,7 +47,7 @@ const NAMES: string[] = [
  * @title Data table with sorting, pagination, and filtering.
  */
 @Component({
-  selector: 'cdx-next-table-filter-sort-pagination-demo',
+  selector: 'demo-table-filter-sort-pagination',
   templateUrl: 'table-with-filter-sort-pagination-demo.component.html',
 })
 export class TableWithFilterSortingPaginationDemoComponent {

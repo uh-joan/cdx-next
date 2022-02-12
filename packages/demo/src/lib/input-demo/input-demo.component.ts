@@ -2,7 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 
 @Component({
-  selector: 'cdx-next-input-demo',
+  selector: 'demo-input',
   templateUrl: './input-demo.component.html',
   styleUrls: ['./input-demo.component.css'],
 })

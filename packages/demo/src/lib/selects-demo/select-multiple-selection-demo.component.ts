@@ -3,7 +3,7 @@ import { FormControl } from '@angular/forms';
 
 /** @title Select with multiple selection */
 @Component({
-  selector: 'cdx-next-select-multiple-selection-demo',
+  selector: 'demo-select-multiple-selection',
   templateUrl: 'select-multiple-selection-demo.component.html',
 })
 export class SelectMultipleSelectionDemoComponent {

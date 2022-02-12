@@ -24,7 +24,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
  * @title Basic use of `<table mat-table>`
  */
 @Component({
-  selector: 'cdx-next-table-basic-demo',
+  selector: 'demo-table-basic',
   templateUrl: 'table-basic-demo.component.html',
 })
 export class TableBasicDemoComponent {

@@ -9,7 +9,7 @@ interface Food {
  * @title Basic select
  */
 @Component({
-  selector: 'cdx-next-select-basic-demo',
+  selector: 'demo-select-basic',
   templateUrl: 'select-basic-demo.component.html',
 })
 export class SelectBasicDemoComponent {

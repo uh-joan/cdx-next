@@ -7,7 +7,7 @@ import { SnackbarExampleComponent } from './snackbar-example.component';
  * @title Snack-bar with a custom component
  */
 @Component({
-  selector: 'cdx-next-snack-bar-custom-demo',
+  selector: 'demo-snack-bar-custom',
   templateUrl: 'snackbar-custom-demo.component.html',
 })
 export class SnackBarCustomDemoComponent {

@@ -23,27 +23,25 @@ import { DemoModule } from './demo.module';
             <h2>{{ appearance }}</h2>
             <div class="select-basic">
               <h3>Basic select</h3>
-              <cdx-next-select-basic-demo
-                [appearance]="appearance"
-              ></cdx-next-select-basic-demo>
+              <demo-select-basic [appearance]="appearance"></demo-select-basic>
             </div>
             <div class="select-disabled">
               <h3>Select disabled</h3>
-              <cdx-next-select-disabled-demo
+              <demo-select-disabled
                 [appearance]="appearance"
-              ></cdx-next-select-disabled-demo>
+              ></demo-select-disabled>
             </div>
             <div class="select-option-groups">
               <h3>Select option groups</h3>
-              <cdx-next-select-option-group-demo
+              <demo-select-option-group
                 [appearance]="appearance"
-              ></cdx-next-select-option-group-demo>
+              ></demo-select-option-group>
             </div>
             <div class="select-multiple-selection">
               <h3>Select option groups</h3>
-              <cdx-next-select-multiple-selection-demo
+              <demo-select-multiple-selection
                 [appearance]="appearance"
-              ></cdx-next-select-multiple-selection-demo>
+              ></demo-select-multiple-selection>
             </div>
           </ng-container>
         </div>

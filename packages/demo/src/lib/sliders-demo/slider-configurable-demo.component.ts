@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
  * @title Configurable slider
  */
 @Component({
-  selector: 'cdx-next-slider-configurable-demo',
+  selector: 'demo-slider-configurable',
   templateUrl: 'slider-configurable-demo.component.html',
 })
 export class SliderConfigurableDemoComponent {

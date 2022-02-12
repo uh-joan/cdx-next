@@ -14,7 +14,7 @@ interface PokemonGroup {
 
 /** @title Select with option groups */
 @Component({
-  selector: 'cdx-next-select-option-group-demo',
+  selector: 'demo-select-option-group',
   templateUrl: 'select-option-groups-demo.component.html',
 })
 export class SelectOptionGroupDemoComponent {

@@ -1,5 +1,5 @@
 {
-  "prefix": "cdx-next",
+  "prefix": "cdx",
   "projectType": "library",
   "root": "packages/demo",
   "sourceRoot": "packages/demo/src",

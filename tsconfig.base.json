@@ -10,7 +10,7 @@
     "module": "esnext",
     "moduleResolution": "node",
     "paths": {
-      "@cdx-next/demo": ["packages/demo/src/index.ts"]
+      "@cdx/demo": ["packages/demo/src/index.ts"]
     },
     "rootDir": ".",
     "skipDefaultLibCheck": true,

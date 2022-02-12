@@ -97,10 +97,6 @@ A convenience script is provided:
 ```shell
 $ npm run adr:new
 
-> cdx-next@0.0.0 adr:new /Users/gregoryhopkins/working/clarivate/src/git.clarivate.io/cdxn/cdx-next
-> log4brains adr new
-
-
 ? Title of the solved problem and its solution? Foo
 
 ? Does this ADR supersede a previous one? No

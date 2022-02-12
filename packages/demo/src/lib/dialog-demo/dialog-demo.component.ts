@@ -7,7 +7,7 @@ import { DialogExampleComponent } from './dialog-example.component';
  * @title Dialog with header, scrollable content and actions
  */
 @Component({
-  selector: 'cdx-next-dialog-demo',
+  selector: 'demo-dialog',
   templateUrl: 'dialog-demo.component.html',
 })
 export class DialogDemoComponent {

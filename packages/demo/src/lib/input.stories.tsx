@@ -22,11 +22,11 @@ const InputStory: Story = (args) => ({
   props: args,
   template: `
     <div class="mat-typography">
-      <cdx-next-input-demo
+      <demo-input
         *ngFor="let appearance of ['outline', 'standard', 'fill']"
         [appearance]="appearance"
         [fontSize]="fontSize">
-      </cdx-next-input-demo>
+      </demo-input>
     </div>
   `,
 });

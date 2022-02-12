@@ -3,7 +3,7 @@ import { FormControl } from '@angular/forms';
 
 /** @title Disabled select */
 @Component({
-  selector: 'cdx-next-select-disabled-demo',
+  selector: 'demo-select-disabled',
   templateUrl: 'select-disabled-demo.component.html',
 })
 export class SelectDisabledDemoComponent {

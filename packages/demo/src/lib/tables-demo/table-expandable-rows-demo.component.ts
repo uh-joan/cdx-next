@@ -11,7 +11,7 @@ import { Component } from '@angular/core';
  * @title Table with expandable rows
  */
 @Component({
-  selector: 'cdx-next-table-expandable-rows-demo',
+  selector: 'demo-table-expandable-rows',
   templateUrl: 'table-expandable-rows-demo.component.html',
   animations: [
     trigger('detailExpand', [

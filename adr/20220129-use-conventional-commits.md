@@ -5,8 +5,8 @@
 
 ## Context and Problem Statement
 
-`@cdx-next` will be long-lived and have contributors from many different parts
-of the Clarivate business, through an inner-source support model.
+`@cdx` will be long-lived and have contributors from many different parts of the
+Clarivate business, through an inner-source support model.
 
 As such, a reasonable standard for quality commit messages is necessary to
 support long-term project health.

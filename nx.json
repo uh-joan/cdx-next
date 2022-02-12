@@ -26,7 +26,7 @@
       "devDependencies": "*"
     }
   },
-  "npmScope": "cdx-next",
+  "npmScope": "cdx",
   "tasksRunnerOptions": {
     "default": {
       "options": {

@@ -1,6 +1,6 @@
 {
-  "name": "cdx-next",
-  "version": "0.0.0",
+  "name": "cdx",
+  "version": "2.0.0-alpha.0",
   "private": true,
   "repository": {
     "type": "git",
