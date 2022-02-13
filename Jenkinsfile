@@ -55,6 +55,12 @@ pipeline {
             }
         }
 
+        stage('Run tests') {
+            steps {
+                sh 'npm run test'
+            }
+        }
+
         stage('Build Storybook') {
             steps {
                 sh 'npx --no-install nx build-storybook'
