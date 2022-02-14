@@ -11,12 +11,7 @@ describe('FooterComponent', () => {
   });
 
   beforeEach(
-    () =>
-      (host = createHost(html`
-        <footer cdx-footer>
-          <h1>stuff</h1>
-        </footer>
-      `)),
+    () => (host = createHost(html` <footer cdx-footer>stuff</footer> `)),
   );
 
   it('should set footer and typography classes', () => {
@@ -32,6 +27,6 @@ describe('FooterComponent', () => {
   });
 
   it('should project child content in content container', () => {
-    expect(host.query('.cdx-footer__content > h1')).toExist();
+    expect(host.element).toContainText('stuff');
   });
 });

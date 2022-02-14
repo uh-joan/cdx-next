@@ -11,7 +11,8 @@
     "moduleResolution": "node",
     "paths": {
       "@cdx/demo": ["packages/demo/src/index.ts"],
-      "@cdx/footer": ["packages/footer/src/index.ts"]
+      "@cdx/footer": ["packages/footer/src/index.ts"],
+      "@cdx/header": ["packages/header/src/index.ts"]
     },
     "rootDir": ".",
     "skipDefaultLibCheck": true,

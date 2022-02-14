@@ -1,0 +1,23 @@
+@use './theme';
+@use './palettes';
+
+@include theme.core;
+
+.cdx-header {
+  &__global-bar {
+    display: flex;
+    height: 44px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 3rem;
+    background: black;
+    color: white;
+  }
+
+  &__logo--clarivate {
+    width: 110px;
+    height: 20px;
+    background-image: url('../assets/images/clarivate-logo.svg');
+    background-repeat: no-repeat;
+  }
+}

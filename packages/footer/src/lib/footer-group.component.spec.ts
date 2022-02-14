@@ -47,7 +47,7 @@ describe('FooterGroupComponent', () => {
     );
 
     it('should project the title first', () => {
-      expect(host.queryHost('cdx-footer-group-title:first-child')).toExist();
+      expect(host.query('cdx-footer-group-title:first-child')).toExist();
     });
   });
 });

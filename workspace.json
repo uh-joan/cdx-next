@@ -1,7 +1,8 @@
 {
   "projects": {
     "demo": "packages/demo",
-    "footer": "packages/footer"
+    "footer": "packages/footer",
+    "header": "packages/header"
   },
   "version": 2
 }
