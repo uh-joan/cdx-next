@@ -2,9 +2,9 @@
   "recommendations": [
     "dbaeumer.vscode-eslint",
     "esbenp.prettier-vscode",
-    "firsttris.vscode-jest-runner",
     "nicolasvuillamy.vscode-groovy-lint",
     "nrwl.angular-console",
+    "Orta.vscode-jest",
     "stylelint.vscode-stylelint"
   ]
 }
