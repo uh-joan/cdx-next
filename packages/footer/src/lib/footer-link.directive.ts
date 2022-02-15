@@ -5,4 +5,5 @@ import { Directive, HostBinding } from '@angular/core';
 })
 export class FooterLinkDirective {
   @HostBinding('target') target = '_blank';
+  @HostBinding('rel') rel = 'noopener noreferrer';
 }

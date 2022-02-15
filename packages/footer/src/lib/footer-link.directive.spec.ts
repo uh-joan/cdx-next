@@ -16,4 +16,11 @@ describe('FooterLinkComponent', () => {
   it('should set target to _blank', () => {
     expect((spectator.element as HTMLAnchorElement).target).toEqual('_blank');
   });
+
+  it('should set rel to "nopener noferrer"', () => {
+    // see https://web.dev/external-anchors-use-rel-noopener/
+    expect((spectator.element as HTMLAnchorElement).rel).toEqual(
+      'noopener noreferrer',
+    );
+  });
 });
