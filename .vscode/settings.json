@@ -12,6 +12,12 @@
   "eslint.format.enable": true,
   "groovyLint.fix.trigger": "onSave",
   "groovyLint.insight.enable": false,
+  "jest.autoRun": {
+    "onSave": "test-src-file",
+    "onStartup": ["all-tests"],
+    "watch": true
+  },
+  "jest.showCoverageOnLoad": true,
   "less.validate": false,
   "prettier.requireConfig": true,
   "prettier.useEditorConfig": false,
