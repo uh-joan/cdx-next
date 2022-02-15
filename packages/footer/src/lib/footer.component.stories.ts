@@ -7,6 +7,9 @@ import { FooterComponent } from './footer.component';
 export default {
   title: 'Footer',
   component: FooterComponent,
+  parameters: {
+    docs: { iframeHeight: 200 },
+  },
   decorators: [
     moduleMetadata({
       imports: [FooterModule],

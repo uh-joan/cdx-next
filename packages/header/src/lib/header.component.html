@@ -1,5 +1,13 @@
 <div class="cdx-header__global-bar">
   <div class="cdx-header__logo--clarivate"></div>
 
-  <ng-content select="cdx-header-utility-navigation"></ng-content>
+  <ng-content select="cdx-header-global"></ng-content>
+</div>
+
+<div class="cdx-header__product-bar mat-elevation-z5">
+  <ng-content
+    select="cdx-header-product-name, img[cdx-header-product-logo]"
+  ></ng-content>
+
+  <ng-content></ng-content>
 </div>

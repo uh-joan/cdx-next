@@ -6,12 +6,12 @@ import {
 } from '@angular/core';
 
 @Component({
-  selector: 'cdx-header-utility-navigation',
+  selector: 'cdx-header-global',
   template: '<ng-content></ng-content>',
-  styleUrls: ['./header-utility-navigation.component.scss'],
+  styleUrls: ['./header-global.component.scss'],
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class HeaderUtilityNavigationComponent {
-  @HostBinding('class') classes = 'cdx-header__utility-navigation';
+export class HeaderGlobalComponent {
+  @HostBinding('class') classes = 'cdx-header__global';
 }

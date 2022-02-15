@@ -3,10 +3,12 @@
 
 @include theme.core;
 
+$footer-spacing: 2rem;
+
 .cdx-footer {
   display: flex;
   flex-wrap: wrap;
-  padding: 3rem;
+  padding: $footer-spacing;
   background-color: black;
   color: white;
 
@@ -14,23 +16,22 @@
     width: 110px;
     height: 20px;
     background-image: url('../assets/images/clarivate-logo.svg');
-    background-repeat: no-repeat;
     margin: {
       top: -4px; // align bottom of logo with bottom of text when on the same "line"
-      right: 2rem;
-      bottom: 2rem;
+      right: $footer-spacing;
+      bottom: $footer-spacing;
     }
   }
 
   &__content {
-    display: grid;
-    flex: 1;
-    gap: 2rem;
-    grid-template-columns: repeat(auto-fill, 10rem);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    column-gap: $footer-spacing;
+    row-gap: $footer-spacing;
 
     > * {
-      align-self: start;
-      justify-self: start;
+      min-width: calc(5 * $footer-spacing);
     }
 
     a {
