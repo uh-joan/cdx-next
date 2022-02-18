@@ -3,7 +3,8 @@
     "branding": "packages/branding",
     "cookies": "packages/cookies",
     "demo": "packages/demo",
-    "theme": "packages/theme"
+    "theme": "packages/theme",
+    "web-components": "packages/web-components"
   },
   "version": 2
 }

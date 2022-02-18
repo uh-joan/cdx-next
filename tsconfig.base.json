@@ -13,7 +13,8 @@
       "@cdx/branding": ["packages/branding/src/index.ts"],
       "@cdx/cookies": ["packages/cookies/src/index.ts"],
       "@cdx/demo": ["packages/demo/src/index.ts"],
-      "@cdx/theme": ["packages/theme/src/index.ts"]
+      "@cdx/theme": ["packages/theme/src/index.ts"],
+      "@cdx/web-components": ["packages/web-components/src/index.ts"]
     },
     "rootDir": ".",
     "skipDefaultLibCheck": true,
