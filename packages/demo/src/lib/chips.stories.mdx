@@ -49,4 +49,71 @@ import { MatIconModule } from '@angular/material/icon';
       `,
     }}
   </Story>
+  <Story
+    name="Alternate layouts"
+    decorators={[
+      moduleMetadata({
+        imports: [MatChipsModule, MatIconModule],
+      }),
+    ]}
+  >
+    {{
+      template: html`
+        <div class="mat-typography">
+          <h2>built-in affordances</h2>
+          <mat-chip-list aria-label="Basic chips">
+            <mat-chip>
+              with a trailing icon
+              <mat-icon>star</mat-icon>
+            </mat-chip>
+            <mat-chip>
+              <img
+                src="https://material.angular.io/assets/img/examples/shiba2.jpg"
+                matChipAvatar
+              />
+              with an avatar image
+            </mat-chip>
+            <mat-chip>
+              <mat-chip-avatar>M</mat-chip-avatar>
+              with avatar text
+            </mat-chip>
+            <mat-chip>
+              removable
+              <button matChipRemove>
+                <mat-icon>cancel</mat-icon>
+              </button>
+            </mat-chip>
+            <mat-chip>
+              <img
+                src="https://material.angular.io/assets/img/examples/shiba2.jpg"
+                matChipAvatar
+              />
+              everything
+              <mat-icon>bathtub</mat-icon>
+              <button matChipRemove>
+                <mat-icon>check</mat-icon>
+              </button>
+            </mat-chip>
+          </mat-chip-list>
+          <h2>requires customization</h2>
+          <mat-chip-list>
+            <mat-chip style="height: auto;">
+              <img
+                src="https://material.angular.io/assets/img/examples/shiba2.jpg"
+                matChipAvatar
+              />
+              <div style="display: block; margin: 0.25rem">
+                <div class="mat-caption">Caption</div>
+                <div>Other stuff that is cool</div>
+              </div>
+              <mat-icon>check</mat-icon>
+              <button matChipRemove>
+                <mat-icon>cancel</mat-icon>
+              </button>
+            </mat-chip>
+          </mat-chip-list>
+        </div>
+      `,
+    }}
+  </Story>
 </Canvas>
