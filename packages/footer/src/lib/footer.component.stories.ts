@@ -1,3 +1,4 @@
+import { OneTrustModule } from '@cdx/cookies';
 import { Meta, moduleMetadata, Story } from '@storybook/angular';
 import { html } from 'common-tags';
 
@@ -17,13 +18,11 @@ export default {
   ],
 } as Meta<FooterComponent>;
 
-const BasicTemplate: Story<FooterComponent> = (args: FooterComponent) => ({
-  props: args,
-  template: html`<footer cdx-footer></footer>`,
+const BasicTemplate: Story<FooterComponent> = () => ({
+  template: '<footer cdx-footer></footer>',
 });
 
-const WithLinksTemplate: Story<FooterComponent> = (args: FooterComponent) => ({
-  props: args,
+const WithLinksTemplate: Story<FooterComponent> = () => ({
   template: html`
     <footer cdx-footer>
       <a cdx-footer-link href="https://stackoverflow.com/">Stack Overflow</a>
@@ -34,10 +33,7 @@ const WithLinksTemplate: Story<FooterComponent> = (args: FooterComponent) => ({
   `,
 });
 
-const WithLinkGroupTemplate: Story<FooterComponent> = (
-  args: FooterComponent,
-) => ({
-  props: args,
+const WithLinkGroupTemplate: Story<FooterComponent> = () => ({
   template: html`
     <footer cdx-footer>
       <cdx-footer-group>
@@ -52,10 +48,7 @@ const WithLinkGroupTemplate: Story<FooterComponent> = (
   `,
 });
 
-const WithLotsOfLinkGroups: Story<FooterComponent> = (
-  args: FooterComponent,
-) => ({
-  props: args,
+const WithLotsOfLinkGroups: Story<FooterComponent> = () => ({
   template: html`
     <footer cdx-footer>
       <cdx-footer-group>
@@ -114,7 +107,22 @@ const WithLotsOfLinkGroups: Story<FooterComponent> = (
   `,
 });
 
+const WithOneTrustEnabledTemplate: Story<FooterComponent> = () => ({
+  template: '<footer cdx-footer></footer>',
+});
+
 export const Basic = BasicTemplate.bind({});
 export const WithLinks = WithLinksTemplate.bind({});
 export const WithLinkGroup = WithLinkGroupTemplate.bind({});
 export const LotsOfLinkGroups = WithLotsOfLinkGroups.bind({});
+export const WithOneTrustEnabled = WithOneTrustEnabledTemplate.bind({});
+WithOneTrustEnabled.decorators = [
+  moduleMetadata({
+    imports: [
+      FooterModule,
+      OneTrustModule.forRoot({
+        domainId: '8b536ee6-9547-4577-843e-314ef3fff451',
+      }),
+    ],
+  }),
+];

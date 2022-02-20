@@ -39,6 +39,7 @@ $footer-spacing: 2rem;
       text-decoration: none;
 
       &:hover {
+        cursor: pointer;
         text-decoration: underline;
       }
     }

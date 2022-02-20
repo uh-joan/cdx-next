@@ -2,8 +2,10 @@ import {
   ChangeDetectionStrategy,
   Component,
   HostBinding,
+  Optional,
   ViewEncapsulation,
 } from '@angular/core';
+import { OneTrustService } from '@cdx/cookies';
 
 @Component({
   selector: 'footer[cdx-footer]',
@@ -14,4 +16,14 @@ import {
 })
 export class FooterComponent {
   @HostBinding('class') classes = 'cdx-footer mat-typography';
+
+  constructor(@Optional() private oneTrustService: OneTrustService) {}
+
+  isCookieManagementEnabled(): boolean {
+    return this.oneTrustService?.isReady();
+  }
+
+  manageCookiePreferences(): void {
+    this.oneTrustService.openInfoDisplay();
+  }
 }

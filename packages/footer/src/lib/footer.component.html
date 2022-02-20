@@ -7,6 +7,13 @@
     <a cdx-footer-link href="https://clarivate.com/legal-center/">
       Legal Center
     </a>
+    <a
+      (click)="manageCookiePreferences()"
+      *ngIf="isCookieManagementEnabled()"
+      cdx-footer-link
+    >
+      Cookie Preferences
+    </a>
   </cdx-footer-group>
 
   <ng-content></ng-content>
