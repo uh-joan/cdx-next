@@ -1,5 +1,6 @@
 {
   "projects": {
+    "cookies": "packages/cookies",
     "demo": "packages/demo",
     "footer": "packages/footer",
     "header": "packages/header"
