@@ -19,16 +19,26 @@ $header-spacing: 2rem;
 
   &__product-bar {
     display: flex;
-    min-height: 44px;
+    min-height: 3rem;
     max-height: 8rem;
     align-items: center;
     justify-content: space-between;
-    padding: 0.5rem $header-spacing;
+    padding: 0 $header-spacing;
     background: white;
     column-gap: $header-spacing;
 
     &:empty {
       display: none;
+    }
+  }
+
+  .mat-tab-nav-bar {
+    align-self: end;
+    border: none;
+
+    &[cdx-header-tab-nav-bar-shrink] .mat-tab-link {
+      width: fit-content;
+      min-width: unset;
     }
   }
 }

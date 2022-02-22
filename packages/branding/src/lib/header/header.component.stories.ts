@@ -1,6 +1,7 @@
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
+import { MatTabsModule } from '@angular/material/tabs';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { Meta, moduleMetadata, Story } from '@storybook/angular';
 import { html } from 'common-tags';
@@ -22,6 +23,7 @@ export default {
         MatInputModule,
         MatButtonModule,
         BrowserAnimationsModule,
+        MatTabsModule,
       ],
     }),
   ],
@@ -163,6 +165,41 @@ const AtLargestSizeTemplate: Story<HeaderComponent> = () => ({
   `,
 });
 
+const WithPrimaryNavTemplate: Story<HeaderComponent> = () => ({
+  template: html`
+    <!-- 
+    PLEASE NOTE: All inline styles are included as examples of how content 
+    can be positioned and are intended for demonstration purposes only. 
+    -->
+    <header cdx-header>
+      <cdx-header-global>
+        <div
+          style="display: inherit; align-items: inherit; margin-right: 1rem;"
+        >
+          English <mat-icon>expand_more</mat-icon>
+        </div>
+        <div style="display: inherit; align-items: inherit;">
+          <mat-icon>apps</mat-icon> Products
+        </div>
+      </cdx-header-global>
+      <cdx-header-product-name>My Product</cdx-header-product-name>
+      <nav mat-tab-nav-bar cdx-header-tab-nav-bar-shrink style="flex: 4">
+        <a mat-tab-link>Foo Bar</a>
+        <a mat-tab-link active>Bar</a>
+        <a mat-tab-link>Bar Baz Buzz</a>
+        <a mat-tab-link disabled>
+          <mat-icon>lock</mat-icon>
+          Disabled Link
+        </a>
+      </nav>
+      <div style="display: inherit; justify-content: end; flex: 1">
+        <button mat-button style="margin-right: 1rem">Sign up</button>
+        <button mat-flat-button color="primary">Login</button>
+      </div>
+    </header>
+  `,
+});
+
 export const Basic = BasicTemplate.bind({});
 export const WithGlobalUtilities = WithGlobalUtilitiesTemplate.bind({});
 export const WithProductName = WithProductNameTemplate.bind({});
@@ -170,3 +207,4 @@ export const WithProductLogo = WithProductLogoTemplate.bind({});
 export const WithProductSearch = WithProductSearchTemplate.bind({});
 export const AtSmallestSize = AtSmallestSizeTemplate.bind({});
 export const AtLargestSize = AtLargestSizeTemplate.bind({});
+export const WithPrimaryNav = WithPrimaryNavTemplate.bind({});
