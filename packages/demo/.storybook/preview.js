@@ -3,6 +3,9 @@
 // to avoid this for the "real" version, we simply need to make this an app type instead of a library
 
 import stories from '../src/lib/stories.scss';
+
 const storiesStyle = document.createElement('style');
 storiesStyle.innerHTML = stories;
 document.body.appendChild(storiesStyle);
+
+document.body.classList.add('mat-typography');

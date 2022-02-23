@@ -1,9 +1,9 @@
 {
   "projects": {
+    "branding": "packages/branding",
     "cookies": "packages/cookies",
     "demo": "packages/demo",
-    "footer": "packages/footer",
-    "header": "packages/header"
+    "theme": "packages/theme"
   },
   "version": 2
 }

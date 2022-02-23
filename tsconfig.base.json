@@ -10,10 +10,10 @@
     "module": "esnext",
     "moduleResolution": "node",
     "paths": {
+      "@cdx/branding": ["packages/branding/src/index.ts"],
       "@cdx/cookies": ["packages/cookies/src/index.ts"],
       "@cdx/demo": ["packages/demo/src/index.ts"],
-      "@cdx/footer": ["packages/footer/src/index.ts"],
-      "@cdx/header": ["packages/header/src/index.ts"]
+      "@cdx/theme": ["packages/theme/src/index.ts"]
     },
     "rootDir": ".",
     "skipDefaultLibCheck": true,

@@ -1,0 +1,34 @@
+$header-spacing: 2rem;
+
+.cdx-header {
+  &__global-bar {
+    display: flex;
+    height: 44px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 $header-spacing;
+    background: black;
+    color: white;
+  }
+
+  &__logo--clarivate {
+    width: 110px;
+    height: 20px;
+    background-image: url('../../assets/images/clarivate-logo.svg');
+  }
+
+  &__product-bar {
+    display: flex;
+    min-height: 44px;
+    max-height: 8rem;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem $header-spacing;
+    background: white;
+    column-gap: $header-spacing;
+
+    &:empty {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "prefix": "cdx",
+  "projectType": "library",
+  "root": "packages/theme",
+  "sourceRoot": "packages/theme/src",
+  "tags": [],
+  "targets": {
+    "build": {
+      "configurations": {
+        "development": {
+          "tsConfig": "packages/theme/tsconfig.lib.json"
+        },
+        "production": {
+          "tsConfig": "packages/theme/tsconfig.lib.prod.json"
+        }
+      },
+      "defaultConfiguration": "production",
+      "executor": "@nrwl/angular:package",
+      "options": {
+        "project": "packages/theme/ng-package.json"
+      },
+      "outputs": ["dist/packages/theme"]
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "packages/theme/src/**/*.ts",
+          "packages/theme/src/**/*.html"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "options": {
+        "jestConfig": "packages/theme/jest.config.js",
+        "passWithNoTests": true
+      },
+      "outputs": ["coverage/packages/theme"]
+    }
+  }
+}

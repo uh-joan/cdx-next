@@ -1,0 +1,18 @@
+@use '@angular/material' as mat;
+
+@mixin typography($typography-config) {
+  .cdx-header {
+    @include mat.typography-level($typography-config, body-1);
+
+    &__product-name-or-logo {
+      @include mat.typography-level($typography-config, title);
+    }
+  }
+}
+
+@mixin theme($theme) {
+  $typography-config: mat.get-typography-config($theme);
+  @if $typography-config {
+    @include typography($typography-config);
+  }
+}
