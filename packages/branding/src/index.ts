@@ -6,4 +6,6 @@ export * from './lib/footer/footer-link.directive';
 export * from './lib/header/header.component';
 export * from './lib/header/header.module';
 export * from './lib/header/header-global.component';
+export * from './lib/header/header-global-utilities/header-global-user-profile.component';
+export * from './lib/header/header-global-utilities/header-global-utilities.module';
 export * from './lib/header/header-product-name-or-logo.component';

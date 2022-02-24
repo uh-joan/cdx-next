@@ -9,6 +9,7 @@ import { html } from 'common-tags';
 
 import { FooterModule } from '../footer/footer.module';
 import { HeaderModule } from '../header/header.module';
+import { HeaderGlobalUtilitiesModule } from '../header/header-global-utilities/header-global-utilities.module';
 
 export default {
   title: 'Layout',
@@ -18,6 +19,7 @@ export default {
         BrowserAnimationsModule,
         FooterModule,
         HeaderModule,
+        HeaderGlobalUtilitiesModule,
         MatButtonModule,
         MatIconModule,
         MatInputModule,
@@ -42,15 +44,12 @@ const HeaderAndFooterTemplate: Story = () => ({
           >
             English <mat-icon>expand_more</mat-icon>
           </div>
-          <div
-            style="display: inherit; align-items: inherit; margin-right: 1rem;"
-          >
+          <div style="display: inherit; align-items: inherit;">
             <mat-icon>apps</mat-icon> Products
           </div>
-          <div style="display: inherit; align-items: inherit;">
-            <mat-icon style="margin-right: 0.25rem;">account_circle</mat-icon>
-            Doe, Jane
-          </div>
+          <cdx-header-global-user-profile
+            userDisplayName="Garcia, Nina"
+          ></cdx-header-global-user-profile>
         </cdx-header-global>
         <cdx-header-product-name>My Product</cdx-header-product-name>
         <nav mat-tab-nav-bar style="flex: 1">

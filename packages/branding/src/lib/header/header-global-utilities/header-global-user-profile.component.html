@@ -1,0 +1,10 @@
+<button mat-button [matMenuTriggerFor]="menu">
+  <mat-icon>account_circle</mat-icon>
+  <ng-container *ngIf="userDisplayName?.length">
+    {{ userDisplayName }}
+  </ng-container>
+</button>
+
+<mat-menu #menu="matMenu" xPosition="before">
+  <button mat-menu-item (click)="logout.emit()">Log out</button>
+</mat-menu>

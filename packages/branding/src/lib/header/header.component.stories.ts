@@ -8,6 +8,7 @@ import { html } from 'common-tags';
 
 import { HeaderComponent } from './header.component';
 import { HeaderModule } from './header.module';
+import { HeaderGlobalUtilitiesModule } from './header-global-utilities/header-global-utilities.module';
 
 export default {
   title: 'Header',
@@ -19,6 +20,7 @@ export default {
     moduleMetadata({
       imports: [
         HeaderModule,
+        HeaderGlobalUtilitiesModule,
         MatIconModule,
         MatInputModule,
         MatButtonModule,
@@ -51,10 +53,9 @@ const WithGlobalUtilitiesTemplate: Story<HeaderComponent> = () => ({
         >
           <mat-icon>apps</mat-icon> Products
         </div>
-        <div style="display: inherit; align-items: inherit;">
-          <mat-icon style="margin-right: 0.25rem;">account_circle</mat-icon>
-          Doe, Jane
-        </div>
+        <cdx-header-global-user-profile
+          userDisplayName="Garcia, Nina"
+        ></cdx-header-global-user-profile>
       </cdx-header-global>
     </header>
   `,
@@ -78,10 +79,9 @@ const WithProductNameTemplate: Story<HeaderComponent> = () => ({
         >
           <mat-icon>apps</mat-icon> Products
         </div>
-        <div style="display: inherit; align-items: inherit;">
-          <mat-icon style="margin-right: 0.25rem;">account_circle</mat-icon>
-          Doe, Jane
-        </div>
+        <cdx-header-global-user-profile
+          userDisplayName="Garcia, Nina"
+        ></cdx-header-global-user-profile>
       </cdx-header-global>
       <cdx-header-product-name>My Product Name</cdx-header-product-name>
       <div style="display: inherit; justify-content: end">
@@ -110,10 +110,9 @@ const WithProductLogoTemplate: Story<HeaderComponent> = () => ({
         >
           <mat-icon>apps</mat-icon> Products
         </div>
-        <div style="display: inherit; align-items: inherit;">
-          <mat-icon style="margin-right: 0.25rem;">account_circle</mat-icon>
-          Doe, Jane
-        </div>
+        <cdx-header-global-user-profile
+          userDisplayName="Garcia, Nina"
+        ></cdx-header-global-user-profile>
       </cdx-header-global>
       <img
         cdx-header-product-logo
@@ -145,10 +144,9 @@ const WithProductSearchTemplate: Story<HeaderComponent> = () => ({
         >
           <mat-icon>apps</mat-icon> Products
         </div>
-        <div style="display: inherit; align-items: inherit;">
-          <mat-icon style="margin-right: 0.25rem;">account_circle</mat-icon>
-          Doe, Jane
-        </div>
+        <cdx-header-global-user-profile
+          userDisplayName="Garcia, Nina"
+        ></cdx-header-global-user-profile>
       </cdx-header-global>
       <img
         cdx-header-product-logo
@@ -207,10 +205,9 @@ const WithPrimaryNavTemplate: Story<HeaderComponent> = () => ({
         >
           <mat-icon>apps</mat-icon> Products
         </div>
-        <div style="display: inherit; align-items: inherit;">
-          <mat-icon style="margin-right: 0.25rem;">account_circle</mat-icon>
-          Doe, Jane
-        </div>
+        <cdx-header-global-user-profile
+          userDisplayName="Garcia, Nina"
+        ></cdx-header-global-user-profile>
       </cdx-header-global>
       <cdx-header-product-name>My Product</cdx-header-product-name>
       <nav mat-tab-nav-bar cdx-size-compact style="flex: 4">
