@@ -13,5 +13,5 @@ import {
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HeaderProductNameOrLogoComponent {
-  @HostBinding('class') classes = 'cdx-header__product-name-or-logo mat-title';
+  @HostBinding('class') classes = 'cdx-header__product-name-or-logo';
 }

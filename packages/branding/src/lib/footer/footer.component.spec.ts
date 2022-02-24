@@ -18,55 +18,94 @@ describe('FooterComponent', () => {
   });
 
   beforeEach(() => {
-    host = createHost('<footer cdx-footer>stuff</footer>');
+    host = createHost('<footer cdx-footer><div>stuff</div></footer>');
     oneTrust = host.inject<OneTrustService>(OneTrustService);
   });
 
-  it('should set footer and typography classes', () => {
-    expect(host.element).toHaveClass(['cdx-footer', 'mat-typography']);
+  it('should set footer class', () => {
+    expect(host.element).toHaveClass('cdx-footer');
   });
 
-  it('should include clarivate logo', () => {
-    expect(host.query('.cdx-footer__logo--clarivate')).toExist();
-  });
-
-  it('should show company group first', () => {
-    expect(host.query('cdx-footer-group:first-child')).toExist();
+  it('should include copyright statement', () => {
+    expect(host.query('.cdx-footer__copyright')).toContainText(
+      '© 2022 Clarivate',
+    );
   });
 
   it('should project child content in content container', () => {
     expect(host.element).toContainText('stuff');
   });
 
-  describe('when cookie management is configured and available', () => {
-    beforeEach(() => {
-      oneTrust.isReady.mockReturnValue(true);
-      host.detectComponentChanges();
-    });
-
-    it('should show "Cookie Preferences" link', () => {
-      expect(host.query(byText('Cookie Preferences'))).toExist();
-    });
-
-    describe('and "Cookie Preferences" link clicked', () => {
+  describe('when Company links', () => {
+    describe('are grouped', () => {
       beforeEach(() => {
-        host.click(byText('Cookie Preferences'));
+        host.setInput({ groupCompanyLinks: true });
       });
 
-      it('should open Cookie Preferences', () => {
-        expect(oneTrust.openInfoDisplay).toHaveBeenCalled();
+      it('should show company group first', () => {
+        expect(host.query('cdx-footer-group:first-child')).toExist();
+      });
+    });
+
+    describe('are not grouped', () => {
+      beforeEach(() => {
+        host.setInput({ groupCompanyLinks: false });
+      });
+
+      it('should show a Company link first', () => {
+        expect(host.query('a[cdx-footer-link]:first-child')).toExist();
       });
     });
   });
 
-  describe('when cookie management is not configured', () => {
-    beforeEach(() => {
-      oneTrust.isReady.mockReturnValue(false);
-      host.detectComponentChanges();
+  describe('with Cookie management', () => {
+    const manageCookiePreferencesLinkText = 'Manage cookie preferences';
+
+    describe('configured and available', () => {
+      beforeEach(() => {
+        oneTrust.isReady.mockReturnValue(true);
+        host.detectComponentChanges();
+      });
+
+      it('should show "Cookie preferences" link', () => {
+        expect(host.query(byText(manageCookiePreferencesLinkText))).toExist();
+      });
+
+      describe('and "Cookie preferences" link clicked', () => {
+        beforeEach(() => {
+          host.click(byText(manageCookiePreferencesLinkText));
+        });
+
+        it('should open Cookie Preferences', () => {
+          expect(oneTrust.openInfoDisplay).toHaveBeenCalled();
+        });
+      });
+
+      describe('and "Cookie preferences" link keydown.enter', () => {
+        beforeEach(() => {
+          host.keyboard.pressEnter(
+            byText(manageCookiePreferencesLinkText),
+            'keydown', // defaults to keyup, which doesn't match the behavior of anchors with href
+          );
+        });
+
+        it('should open Cookie Preferences', () => {
+          expect(oneTrust.openInfoDisplay).toHaveBeenCalled();
+        });
+      });
     });
 
-    it('should not show "Cookie Preferences" link', () => {
-      expect(host.query(byText('Cookie Preferences'))).not.toExist();
+    describe('not configured', () => {
+      beforeEach(() => {
+        oneTrust.isReady.mockReturnValue(false);
+        host.detectComponentChanges();
+      });
+
+      it('should not show "Cookie preferences" link', () => {
+        expect(
+          host.query(byText(manageCookiePreferencesLinkText)),
+        ).not.toExist();
+      });
     });
   });
 });

@@ -14,11 +14,8 @@ describe('HeaderProductNameOrLogoComponent', () => {
         )),
     );
 
-    it('should set product logo and typography classes', () => {
-      expect(host.element).toHaveClass([
-        'cdx-header__product-name-or-logo',
-        'mat-title',
-      ]);
+    it('should set product logo class', () => {
+      expect(host.element).toHaveClass('cdx-header__product-name-or-logo');
     });
 
     it('should project child ontent', () => {

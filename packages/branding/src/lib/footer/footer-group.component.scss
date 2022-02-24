@@ -1,8 +1,10 @@
+$cdx-footer-group-gap: 0.5rem;
+
 .cdx-footer {
   &__group {
     display: flex;
     flex-direction: column;
-    row-gap: 0.5rem;
+    gap: $cdx-footer-group-gap;
 
     > * {
       align-self: start;

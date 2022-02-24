@@ -4,7 +4,7 @@ import { OneTrustModule } from '@cdx/cookies';
 
 import { FooterComponent } from './footer.component';
 import { FooterGroupComponent } from './footer-group.component';
-import { FooterGroupTitleComponent } from './footer-group-title.component';
+import { FooterGroupTitleDirective } from './footer-group-title.directive';
 import { FooterLinkDirective } from './footer-link.directive';
 
 @NgModule({
@@ -13,13 +13,13 @@ import { FooterLinkDirective } from './footer-link.directive';
     FooterComponent,
     FooterLinkDirective,
     FooterGroupComponent,
-    FooterGroupTitleComponent,
+    FooterGroupTitleDirective,
   ],
   exports: [
     FooterComponent,
     FooterLinkDirective,
     FooterGroupComponent,
-    FooterGroupTitleComponent,
+    FooterGroupTitleDirective,
   ],
 })
 export class FooterModule {}

@@ -1,6 +1,6 @@
 .cdx-header {
   &__product-name-or-logo {
-    // remove any margin provided by mat-typography
-    margin: 0;
+    margin: 0; // remove any margin provided by mat-typography
+    white-space: nowrap;
   }
 }

@@ -46,8 +46,14 @@ const WithGlobalUtilitiesTemplate: Story<HeaderComponent> = () => ({
         >
           English <mat-icon>expand_more</mat-icon>
         </div>
-        <div style="display: inherit; align-items: inherit;">
+        <div
+          style="display: inherit; align-items: inherit; margin-right: 1rem;"
+        >
           <mat-icon>apps</mat-icon> Products
+        </div>
+        <div style="display: inherit; align-items: inherit;">
+          <mat-icon style="margin-right: 0.25rem;">account_circle</mat-icon>
+          Doe, Jane
         </div>
       </cdx-header-global>
     </header>
@@ -67,8 +73,14 @@ const WithProductNameTemplate: Story<HeaderComponent> = () => ({
         >
           English <mat-icon>expand_more</mat-icon>
         </div>
-        <div style="display: inherit; align-items: inherit;">
+        <div
+          style="display: inherit; align-items: inherit; margin-right: 1rem;"
+        >
           <mat-icon>apps</mat-icon> Products
+        </div>
+        <div style="display: inherit; align-items: inherit;">
+          <mat-icon style="margin-right: 0.25rem;">account_circle</mat-icon>
+          Doe, Jane
         </div>
       </cdx-header-global>
       <cdx-header-product-name>My Product Name</cdx-header-product-name>
@@ -93,8 +105,14 @@ const WithProductLogoTemplate: Story<HeaderComponent> = () => ({
         >
           English <mat-icon>expand_more</mat-icon>
         </div>
-        <div style="display: inherit; align-items: inherit;">
+        <div
+          style="display: inherit; align-items: inherit; margin-right: 1rem;"
+        >
           <mat-icon>apps</mat-icon> Products
+        </div>
+        <div style="display: inherit; align-items: inherit;">
+          <mat-icon style="margin-right: 0.25rem;">account_circle</mat-icon>
+          Doe, Jane
         </div>
       </cdx-header-global>
       <img
@@ -122,8 +140,14 @@ const WithProductSearchTemplate: Story<HeaderComponent> = () => ({
         >
           English <mat-icon>expand_more</mat-icon>
         </div>
-        <div style="display: inherit; align-items: inherit;">
+        <div
+          style="display: inherit; align-items: inherit; margin-right: 1rem;"
+        >
           <mat-icon>apps</mat-icon> Products
+        </div>
+        <div style="display: inherit; align-items: inherit;">
+          <mat-icon style="margin-right: 0.25rem;">account_circle</mat-icon>
+          Doe, Jane
         </div>
       </cdx-header-global>
       <img
@@ -178,12 +202,18 @@ const WithPrimaryNavTemplate: Story<HeaderComponent> = () => ({
         >
           English <mat-icon>expand_more</mat-icon>
         </div>
-        <div style="display: inherit; align-items: inherit;">
+        <div
+          style="display: inherit; align-items: inherit; margin-right: 1rem;"
+        >
           <mat-icon>apps</mat-icon> Products
+        </div>
+        <div style="display: inherit; align-items: inherit;">
+          <mat-icon style="margin-right: 0.25rem;">account_circle</mat-icon>
+          Doe, Jane
         </div>
       </cdx-header-global>
       <cdx-header-product-name>My Product</cdx-header-product-name>
-      <nav mat-tab-nav-bar cdx-header-tab-nav-bar-shrink style="flex: 4">
+      <nav mat-tab-nav-bar cdx-size-compact style="flex: 4">
         <a mat-tab-link>Foo Bar</a>
         <a mat-tab-link active>Bar</a>
         <a mat-tab-link>Bar Baz Buzz</a>

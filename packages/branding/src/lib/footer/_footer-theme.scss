@@ -1,15 +1,18 @@
 @use '@angular/material' as mat;
+@use '../shared/clarivate_typography' as clv;
 
 @mixin typography($typography-config) {
+  @include clv.clarivate-typography;
+
   .cdx-footer {
-    @include mat.typography-level($typography-config, body-1);
+    @include clv.clarivate-regular;
 
     &__copyright {
-      @include mat.typography-level($typography-config, body-2);
+      @include clv.clarivate-bold;
     }
 
     &__group-title {
-      @include mat.typography-level($typography-config, body-2);
+      @include clv.clarivate-bold;
     }
   }
 }

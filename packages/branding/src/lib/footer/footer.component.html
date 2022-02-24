@@ -1,20 +1,35 @@
-<div class="cdx-footer__logo--clarivate"></div>
+<div class="cdx-footer__copyright">© 2022 Clarivate</div>
 
 <div class="cdx-footer__content">
-  <cdx-footer-group>
-    <cdx-footer-group-title>Company</cdx-footer-group-title>
-    © 2022 Clarivate
+  <ng-template [ngIf]="groupCompanyLinks" [ngIfElse]="companyLinks">
+    <cdx-footer-group>
+      <cdx-footer-group-title>Company</cdx-footer-group-title>
+      <ng-container *ngTemplateOutlet="companyLinks"></ng-container>
+    </cdx-footer-group>
+  </ng-template>
+  <ng-template #companyLinks>
     <a cdx-footer-link href="https://clarivate.com/legal-center/">
-      Legal Center
+      Legal center
+    </a>
+    <a cdx-footer-link href="https://clarivate.com/privacy-center/">
+      Privacy notice
+    </a>
+    <a
+      cdx-footer-link
+      href="https://clarivate.com/privacy-center/notices-policies/cookie-policy/"
+    >
+      Cookie policy
     </a>
     <a
       (click)="manageCookiePreferences()"
+      (keydown.enter)="manageCookiePreferences()"
       *ngIf="isCookieManagementEnabled()"
       cdx-footer-link
+      tabindex="0"
     >
-      Cookie Preferences
+      Manage cookie preferences
     </a>
-  </cdx-footer-group>
+  </ng-template>
 
   <ng-content></ng-content>
 </div>

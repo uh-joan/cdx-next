@@ -13,5 +13,5 @@ import {
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HeaderComponent {
-  @HostBinding('class') classes = 'cdx-header mat-typography';
+  @HostBinding('class') classes = 'cdx-header';
 }
