@@ -1,5 +1,7 @@
 @use '@angular/material' as mat;
 
+$preferred-line-height: 1.3;
+
 $cdx-theme: mat.define-light-theme(
   (
     color: (
@@ -92,15 +94,18 @@ $cdx-theme: mat.define-light-theme(
         $display-3: mat.define-typography-level(56px, 64px, 700),
         $display-2: mat.define-typography-level(48px, 56px, 700),
         $display-1: mat.define-typography-level(32px, 40px, 700),
-        $headline: mat.define-typography-level(26px, 1.7, 700),
-        $title: mat.define-typography-level(20px, 1.7, 600),
-        $subheading-2: mat.define-typography-level(18px, 1.7, 400),
-        $subheading-1: mat.define-typography-level(17px, 1.3, 300),
-        $body-2: mat.define-typography-level(16px, 1.7, 600),
-        $body-1: mat.define-typography-level(16px, 1.3, 400),
+        $headline:
+          mat.define-typography-level(26px, $preferred-line-height, 700),
+        $title: mat.define-typography-level(20px, $preferred-line-height, 600),
+        $subheading-2:
+          mat.define-typography-level(18px, $preferred-line-height, 400),
+        $subheading-1:
+          mat.define-typography-level(17px, $preferred-line-height, 300),
+        $body-2: mat.define-typography-level(16px, $preferred-line-height, 600),
+        $body-1: mat.define-typography-level(16px, $preferred-line-height, 400),
         $button: mat.define-typography-level(14px, 1, 600),
-        $caption: mat.define-typography-level(12px, 1.3, 400),
-        $input: mat.define-typography-level(inherit, 1.2, 400),
+        $caption: mat.define-typography-level(12px, $preferred-line-height, 400),
+        $input: mat.define-typography-level(inherit, 1.185, 400),
       ),
   )
 );
