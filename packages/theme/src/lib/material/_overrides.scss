@@ -1,0 +1,6 @@
+@mixin material-overrides() {
+  // stroked buttons (that are not disabled) should inherit border color
+  .mat-stroked-button:not(.mat-button-disabled) {
+    border-color: inherit;
+  }
+}

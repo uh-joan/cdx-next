@@ -1,4 +1,5 @@
 @use '@angular/material' as mat;
+@use './overrides';
 
 $preferred-line-height: 1.3;
 
@@ -117,4 +118,7 @@ $cdx-theme: mat.define-light-theme(
 
   @include mat.strong-focus-indicators;
   @include mat.strong-focus-indicators-theme(#00c2f2);
+
+  // overrides need to be last
+  @include overrides.material-overrides;
 }
