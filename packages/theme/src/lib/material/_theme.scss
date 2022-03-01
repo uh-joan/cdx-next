@@ -104,7 +104,7 @@ $cdx-theme: mat.define-light-theme(
           mat.define-typography-level(17px, $preferred-line-height, 300),
         $body-2: mat.define-typography-level(16px, $preferred-line-height, 600),
         $body-1: mat.define-typography-level(16px, $preferred-line-height, 400),
-        $button: mat.define-typography-level(14px, 1, 600),
+        $button: mat.define-typography-level(inherit, $font-weight: 600),
         $caption: mat.define-typography-level(12px, $preferred-line-height, 400),
         $input: mat.define-typography-level(inherit, 1.185, 400),
       ),
