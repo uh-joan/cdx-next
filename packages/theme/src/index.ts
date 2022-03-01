@@ -1,1 +1,1 @@
-export * from './lib/theme.module';
+export { ThemeModule as MaterialThemeModule } from '@cdx/theme/material';

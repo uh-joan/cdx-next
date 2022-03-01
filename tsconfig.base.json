@@ -14,6 +14,7 @@
       "@cdx/cookies": ["packages/cookies/src/index.ts"],
       "@cdx/demo": ["packages/demo/src/index.ts"],
       "@cdx/theme": ["packages/theme/src/index.ts"],
+      "@cdx/theme/material": ["packages/theme/material/src/index.ts"],
       "@cdx/web-components": ["packages/web-components/src/index.ts"]
     },
     "rootDir": ".",
