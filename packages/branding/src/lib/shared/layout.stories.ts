@@ -70,6 +70,9 @@ const HeaderAndFooterTemplate: Story = () => ({
         <h2>First</h2>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla aliquet
+          <a href="https://www.clarivate.com"
+            >foo bar buz bazz really long link</a
+          >
           ornare odio at convallis. In hac habitasse platea dictumst. Duis
           accumsan lobortis tortor nec fringilla. Nullam bibendum eros et
           vulputate hendrerit. Curabitur egestas porttitor nisl vestibulum
