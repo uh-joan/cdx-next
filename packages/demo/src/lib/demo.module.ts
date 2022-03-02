@@ -14,6 +14,7 @@ import { MatSliderModule } from '@angular/material/slider';
 import { MatSortModule } from '@angular/material/sort';
 import { MatTableModule } from '@angular/material/table';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ThemeModule } from '@cdx/theme/material';
 
 import { DialogDemoComponent } from './dialog-demo/dialog-demo.component';
 import { DialogExampleComponent } from './dialog-demo/dialog-example.component';
@@ -49,6 +50,7 @@ import { TableWithFilterSortingPaginationDemoComponent } from './tables-demo/tab
     MatCardModule,
     MatSliderModule,
     MatCheckboxModule,
+    ThemeModule,
   ],
   declarations: [
     InputDemoComponent,

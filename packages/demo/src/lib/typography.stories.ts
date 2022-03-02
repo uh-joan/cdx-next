@@ -1,9 +1,10 @@
+import { ThemeModule } from '@cdx/theme/material';
 import { Meta, moduleMetadata, Story } from '@storybook/angular';
 import { html } from 'common-tags';
 
 export default {
   title: 'Sprint 1/Theme',
-  decorators: [moduleMetadata({})],
+  decorators: [moduleMetadata({ imports: [ThemeModule] })],
 } as Meta;
 
 const TypographyTemplate: Story = () => ({

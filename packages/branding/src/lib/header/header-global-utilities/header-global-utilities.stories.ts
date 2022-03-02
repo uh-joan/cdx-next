@@ -1,4 +1,5 @@
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ThemeModule } from '@cdx/theme/material';
 import { action } from '@storybook/addon-actions';
 import { Meta, moduleMetadata, Story } from '@storybook/angular';
 import { html } from 'common-tags';
@@ -17,6 +18,7 @@ export default {
         HeaderModule,
         HeaderGlobalUtilitiesModule,
         BrowserAnimationsModule,
+        ThemeModule,
       ],
     }),
   ],

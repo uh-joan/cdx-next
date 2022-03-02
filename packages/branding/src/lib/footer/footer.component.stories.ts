@@ -1,4 +1,5 @@
 import { OneTrustModule } from '@cdx/cookies';
+import { ThemeModule } from '@cdx/theme/material';
 import { Meta, moduleMetadata, Story } from '@storybook/angular';
 import { html } from 'common-tags';
 
@@ -13,7 +14,7 @@ export default {
   },
   decorators: [
     moduleMetadata({
-      imports: [FooterModule],
+      imports: [FooterModule, ThemeModule],
     }),
   ],
 } as Meta<FooterComponent>;
@@ -123,6 +124,7 @@ BasicWithOneTrust.decorators = [
       OneTrustModule.forRoot({
         domainId: '8b536ee6-9547-4577-843e-314ef3fff451',
       }),
+      ThemeModule,
     ],
   }),
 ];
@@ -134,6 +136,7 @@ WithLinkGroupsAndOneTrust.decorators = [
       OneTrustModule.forRoot({
         domainId: '8b536ee6-9547-4577-843e-314ef3fff451',
       }),
+      ThemeModule,
     ],
   }),
 ];

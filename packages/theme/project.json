@@ -32,6 +32,16 @@
         ]
       }
     },
+    "stylelint": {
+      "executor": "nx-stylelint:lint",
+      "options": {
+        "lintFilePatterns": [
+          "packages/theme/**/*.css",
+          "packages/theme/**/*.scss"
+        ]
+      },
+      "outputs": ["{options.outputFile}"]
+    },
     "test": {
       "executor": "@nrwl/jest:jest",
       "options": {

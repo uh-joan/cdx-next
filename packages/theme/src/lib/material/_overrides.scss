@@ -3,4 +3,17 @@
   .mat-stroked-button:not(.mat-button-disabled) {
     border-color: inherit;
   }
+
+  // make anchor focus state look consistent with mat in footer
+  /* stylelint-disable order/properties-order */
+  .cdx-footer a:focus:not(.mat-button-base) {
+    outline: none; // turn off default user-agent styles
+    /* stylelint-disable-next-line scss/at-extend-no-missing-placeholder */
+    @extend .mat-focus-indicator; // grab construct and colors from mat
+
+    // move the :before border "away" a comfortable amount
+    margin: -5px;
+    padding: 5px;
+  }
+  /* stylelint-enable order/properties-order */
 }

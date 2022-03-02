@@ -4,6 +4,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatTabsModule } from '@angular/material/tabs';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { OneTrustModule } from '@cdx/cookies';
+import { ThemeModule } from '@cdx/theme/material';
 import { Meta, moduleMetadata, Story } from '@storybook/angular';
 import { html } from 'common-tags';
 
@@ -27,6 +28,7 @@ export default {
         OneTrustModule.forRoot({
           domainId: '8b536ee6-9547-4577-843e-314ef3fff451',
         }),
+        ThemeModule,
       ],
     }),
   ],

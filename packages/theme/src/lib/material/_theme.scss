@@ -2,7 +2,6 @@
 @use './overrides';
 
 $preferred-line-height: 1.3;
-
 $cdx-theme: mat.define-light-theme(
   (
     color: (
@@ -113,12 +112,12 @@ $cdx-theme: mat.define-light-theme(
 
 @mixin default() {
   @include mat.core($cdx-theme);
-
   @include mat.all-component-themes($cdx-theme);
+  @include overrides.material-overrides; // overrides need to be last
 
-  @include mat.strong-focus-indicators;
-  @include mat.strong-focus-indicators-theme(#00c2f2);
-
-  // overrides need to be last
-  @include overrides.material-overrides;
+  .cdk-keyboard-focused,
+  .cdk-program-focused {
+    @include mat.strong-focus-indicators;
+    @include mat.strong-focus-indicators-theme(#00c2f2);
+  }
 }

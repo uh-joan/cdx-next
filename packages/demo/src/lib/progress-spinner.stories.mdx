@@ -1,11 +1,9 @@
 import { Meta, Story, Canvas } from '@storybook/addon-docs';
 import { moduleMetadata } from '@storybook/angular';
 import { html } from 'common-tags';
-import {
-  MatProgressSpinnerModule,
-  MAT_PROGRESS_SPINNER_DEFAULT_OPTIONS,
-} from '@angular/material/progress-spinner';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { CommonModule } from '@angular/common';
+import { ThemeModule } from '@cdx/theme/material';
 
 <Meta title="Sprint 2/Components/Progress Spinner" />
 
@@ -14,13 +12,7 @@ import { CommonModule } from '@angular/common';
     name="From Material"
     decorators={[
       moduleMetadata({
-        imports: [MatProgressSpinnerModule, CommonModule],
-        providers: [
-          {
-            provide: MAT_PROGRESS_SPINNER_DEFAULT_OPTIONS,
-            useValue: { diameter: 24, strokeWidth: 2 },
-          },
-        ],
+        imports: [MatProgressSpinnerModule, CommonModule, ThemeModule],
       }),
     ]}
   >

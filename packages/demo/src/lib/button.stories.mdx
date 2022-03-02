@@ -4,6 +4,7 @@ import { MatButtonModule, MatButton } from '@angular/material/button';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatIconModule } from '@angular/material/icon';
 import { html } from 'common-tags';
+import { ThemeModule } from '@cdx/theme/material';
 
 <Meta title="Sprint 1/Components/Button" />
 
@@ -12,7 +13,12 @@ import { html } from 'common-tags';
     name="From Material"
     decorators={[
       moduleMetadata({
-        imports: [MatButtonModule, MatDividerModule, MatIconModule],
+        imports: [
+          MatButtonModule,
+          MatDividerModule,
+          MatIconModule,
+          ThemeModule,
+        ],
       }),
     ]}
   >

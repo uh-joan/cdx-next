@@ -3,6 +3,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatTabsModule } from '@angular/material/tabs';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ThemeModule } from '@cdx/theme/material';
 import { Meta, moduleMetadata, Story } from '@storybook/angular';
 import { html } from 'common-tags';
 
@@ -26,6 +27,7 @@ export default {
         MatButtonModule,
         BrowserAnimationsModule,
         MatTabsModule,
+        ThemeModule,
       ],
     }),
   ],
