@@ -1,11 +1,14 @@
 @use '@angular/material' as mat;
+@use '../shared/clarivate-typography' as clv;
 
 @mixin typography($typography-config) {
+  @include clv.clarivate-font-faces; // this should go someplace global (like a CDN)
+
   .cdx-header {
     @include mat.typography-level($typography-config, body-1);
 
     &__product-name-or-logo {
-      @include mat.typography-level($typography-config, title);
+      @include clv.clarivate-bold(26px); // aligns with "headline"
     }
   }
 }
