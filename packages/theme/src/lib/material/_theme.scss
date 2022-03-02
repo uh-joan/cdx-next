@@ -115,8 +115,7 @@ $cdx-theme: mat.define-light-theme(
   @include mat.all-component-themes($cdx-theme);
   @include overrides.material-overrides; // overrides need to be last
 
-  .cdk-keyboard-focused,
-  .cdk-program-focused {
+  .cdk-keyboard-focused {
     @include mat.strong-focus-indicators;
     @include mat.strong-focus-indicators-theme(#00c2f2);
   }
