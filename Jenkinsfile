@@ -51,6 +51,20 @@ pipeline {
             }
         }
 
+        stage('Run CI?') {
+            agent any
+            steps {
+                script {
+                    // ripped from https://gist.github.com/rufoa/2807ad19328f70dc81fec25c317661b8
+                    /* groovylint-disable-next-line LineLength */
+                    if (sh(script: "git log -1 --pretty=%B | fgrep -ie '[skip ci]' -e '[ci skip]'", returnStatus: true) == 0) {
+                        currentBuild.result = 'NOT_BUILT'
+                        error 'Aborting because commit message contains [skip ci]'
+                    }
+                }
+            }
+        }
+
         stage('Install dependencies') {
             steps {
                 sh 'npm ci'
@@ -101,6 +115,15 @@ pipeline {
 
             steps {
                 sshagent(credentials: ['jenkins-git-clarivate-io']) {
+                    sh 'npm run version:prerelease'
+                    sh '''
+                        OLD_TAG=$(git tag --points-at HEAD)
+                        npm install
+                        git add ./package-lock.json
+                        git commit --amend --no-edit
+                        git tag -f $OLD_TAG
+                    '''
+                    sh 'git push --follow-tags origin main'
                     sh 'npm run publish:prerelease'
                 }
             }
@@ -126,6 +149,15 @@ pipeline {
 
             steps {
                 sshagent(credentials: ['jenkins-git-clarivate-io']) {
+                    sh 'npm run version:release'
+                    sh '''
+                        OLD_TAG=$(git tag --points-at HEAD)
+                        npm install
+                        git add ./package-lock.json
+                        git commit --amend --no-edit
+                        git tag -f $OLD_TAG
+                    '''
+                    sh 'git push --follow-tags origin main'
                     sh 'npm run publish:release'
                 }
             }

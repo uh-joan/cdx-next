@@ -22,11 +22,7 @@
       "outputs": ["dist/packages/theme"]
     },
     "deploy": {
-      "executor": "ngx-deploy-npm:deploy",
-      "options": {
-        "access": "public",
-        "buildTarget": "production"
-      }
+      "executor": "ngx-deploy-npm:deploy"
     },
     "lint": {
       "executor": "@nrwl/linter:eslint",

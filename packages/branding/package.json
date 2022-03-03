@@ -12,8 +12,5 @@
   "peerDependencies": {
     "@angular/common": "^13.2.0",
     "@angular/core": "^13.2.0"
-  },
-  "publishConfig": {
-    "registry": "http://repo.clarivate.io/artifactory/api/npm/npm-cdx/"
   }
 }
