@@ -6,6 +6,7 @@ import {
   NgModule,
 } from '@angular/core';
 import { createCustomElement } from '@angular/elements';
+import { MatDivider } from '@angular/material/divider';
 import { MatIcon } from '@angular/material/icon';
 import { BrowserModule } from '@angular/platform-browser';
 import {
@@ -23,6 +24,19 @@ import {
   FooterGroupTitleWrapperComponent,
   FooterLinkDirectiveWrapperComponent,
 } from './branding/footer';
+import { MatLineWrapperComponent } from './core/line';
+import {
+  MatListAvatarWrapperComponent,
+  MatListDenseWrapperComponent,
+  MatListIconWrapperComponent,
+  MatListItemLinkWrapperComponent,
+  MatListItemWrapperComponent,
+  MatListOptionWrapperComponent,
+  MatListSubheaderWrapperComponent,
+  MatListWrapperComponent,
+  MatNavListWrapperComponent,
+} from './list/list.component';
+import { MatListElementsModule } from './list/list.module';
 import {
   MatBadgeIconComponent,
   MatBadgeSpanComponent,
@@ -99,6 +113,7 @@ import { MatSelectElementsModule } from './material/select.module';
     MatFormsElementsModule,
     MatBadgeElementsModule,
     MatSelectElementsModule,
+    MatListElementsModule,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
@@ -116,6 +131,34 @@ export class WebComponentsModule implements DoBootstrap {
     this.addBrandingComponents();
     this.addMatRadioButtonComponents();
     this.addMatBadgeComponents();
+    this.addListComponents();
+  }
+  
+  private addListComponents() {
+    this.addComp(MatListWrapperComponent, 'c-mat-list');
+    this.addComp(MatListDenseWrapperComponent, 'c-mat-list-dense');
+    this.addComp(MatListItemWrapperComponent, 'c-mat-list-item');
+    this.addComp(
+      MatListItemLinkWrapperComponent,
+      'c-mat-list-item-link',
+    );
+    this.addComp(
+      MatListSubheaderWrapperComponent,
+      'c-mat-list-subheader',
+    );
+    //TODO: Mat line not propagating clicks down
+    this.addComp(MatLineWrapperComponent, 'c-mat-line');
+    this.addComp(MatListIconWrapperComponent, 'c-mat-list-icon');
+    this.addComp(
+      MatListAvatarWrapperComponent,
+      'c-mat-list-avatar',
+    );
+    this.addComp(
+      MatListOptionWrapperComponent,
+      'c-mat-list-option',
+    );
+    this.addComp(MatDivider, 'c-mat-divider');
+    this.addComp(MatNavListWrapperComponent, 'c-mat-nav-list');
   }
 
   private addBrandingComponents() {
