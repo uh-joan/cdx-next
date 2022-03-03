@@ -1,6 +1,6 @@
 @use 'sass:map';
 @use './palettes';
-@use '../../../theme/src/lib/material/theme' as cdx-theme;
+@use '../../../theme/material/styles' as cdx-theme;
 
 @import 'styles/components-main';
 

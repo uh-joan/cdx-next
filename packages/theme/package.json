@@ -1,6 +1,11 @@
 {
   "name": "@cdx/theme",
   "version": "0.0.1",
+  "exports": {
+    "./material": {
+      "sass": "./material/styles/_index.scss"
+    }
+  },
   "dependencies": {
     "tslib": "^2.3.0"
   },
