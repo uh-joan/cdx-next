@@ -4,7 +4,28 @@
     "cookies": "packages/cookies",
     "demo": "packages/demo",
     "theme": "packages/theme",
-    "web-components": "packages/web-components"
+    "web-components": "packages/web-components",
+    "workspace": {
+      "root": ".",
+      "targets": {
+        "version": {
+          "executor": "@jscutlery/semver:version",
+          "options": {
+            "commitMessageFormat": "chore(${projectName}): release version ${version}",
+            "postTargets": [
+              "branding:deploy",
+              "cookies:deploy",
+              "theme:deploy",
+              "web-components:deploy"
+            ],
+            "push": true,
+            "skipProjectChangelog": true,
+            "skipRootChangelog": true,
+            "syncVersions": true
+          }
+        }
+      }
+    }
   },
   "version": 2
 }

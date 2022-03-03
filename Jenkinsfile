@@ -8,6 +8,14 @@ pipeline {
         }
     }
 
+    parameters {
+        booleanParam(
+            name: 'GraduatePrereleaseVersion',
+            defaultValue: false,
+            description: 'If true, graduate a previous prerelease (alpha) and deploy'
+        )
+    }
+
     environment {
         NX_HEAD = "${GIT_COMMIT}"
         // use the very first commit as base - this is inefficient, but no better option at the moment
@@ -73,9 +81,64 @@ pipeline {
             }
         }
 
-        stage('Deploy to pre-prod') {
+        stage('Create and publish pre-release versions') {
             when {
-                branch 'main'
+                allOf {
+                    branch 'main'
+                    expression {
+                        params.GraduatePrereleaseVersion == false
+                    }
+                }
+            }
+
+            environment {
+                GIT_SSH_COMMAND = 'ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no'
+                GIT_AUTHOR_EMAIL = 'platform-jenkins-noreply@clarivate.com'
+                GIT_AUTHOR_NAME = 'Platform Jenkins'
+                GIT_COMMITTER_EMAIL = "${GIT_AUTHOR_EMAIL}"
+                GIT_COMMITTER_NAME = "${GIT_AUTHOR_NAME}"
+            }
+
+            steps {
+                sshagent(credentials: ['jenkins-git-clarivate-io']) {
+                    sh 'npm run publish:prerelease'
+                }
+            }
+        }
+
+        stage('Graduate pre-release versions') {
+            when {
+                allOf {
+                    branch 'main'
+                    expression {
+                        params.GraduatePrereleaseVersion == true
+                    }
+                }
+            }
+
+            environment {
+                GIT_SSH_COMMAND = 'ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no'
+                GIT_AUTHOR_EMAIL = 'platform-jenkins-noreply@clarivate.com'
+                GIT_AUTHOR_NAME = 'Platform Jenkins'
+                GIT_COMMITTER_EMAIL = "${GIT_AUTHOR_EMAIL}"
+                GIT_COMMITTER_NAME = "${GIT_AUTHOR_NAME}"
+            }
+
+            steps {
+                sshagent(credentials: ['jenkins-git-clarivate-io']) {
+                    sh 'npm run publish:release'
+                }
+            }
+        }
+
+        stage('Deploy Storybooks to pre-prod') {
+            when {
+                allOf {
+                    branch 'main'
+                    expression {
+                        params.GraduatePrereleaseVersion == false
+                    }
+                }
             }
 
             steps {
@@ -85,7 +148,7 @@ pipeline {
                     useNode: true
                 ) {
                     sh '''
-                        npm run deploy:storybook -- \
+                        npm run deploy:storybooks -- \
                             --bucket cdx-sparkdsg-feedback.dev.sp.aws.clarivate.net \
                             --distribution E1HMQIDJUJTPGG
                     '''

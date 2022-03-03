@@ -1,6 +1,11 @@
 {
   "name": "@cdx/theme",
-  "version": "0.0.1",
+  "version": "2.0.0-alpha.0",
+  "repository": {
+    "directory": "packages/theme",
+    "type": "git",
+    "url": "ssh://git@git.clarivate.io/cdxn/cdx-next.git"
+  },
   "exports": {
     "./material": {
       "sass": "./material/styles/_index.scss"
@@ -13,5 +18,8 @@
     "@angular/common": "^13.2.0",
     "@angular/core": "^13.2.0",
     "@angular/material": "^13.2.0"
+  },
+  "publishConfig": {
+    "registry": "http://repo.clarivate.io/artifactory/api/npm/npm-cdx/"
   }
 }

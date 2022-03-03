@@ -21,6 +21,13 @@
       },
       "outputs": ["dist/packages/web-components"]
     },
+    "deploy": {
+      "executor": "ngx-deploy-npm:deploy",
+      "options": {
+        "access": "public",
+        "buildTarget": "production"
+      }
+    },
     "lint": {
       "executor": "@nrwl/linter:eslint",
       "options": {

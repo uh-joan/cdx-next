@@ -1,11 +1,19 @@
 {
   "name": "@cdx/branding",
-  "version": "0.0.1",
+  "version": "2.0.0-alpha.0",
+  "repository": {
+    "directory": "packages/branding",
+    "type": "git",
+    "url": "ssh://git@git.clarivate.io/cdxn/cdx-next.git"
+  },
   "dependencies": {
     "tslib": "^2.3.0"
   },
   "peerDependencies": {
     "@angular/common": "^13.2.0",
     "@angular/core": "^13.2.0"
+  },
+  "publishConfig": {
+    "registry": "http://repo.clarivate.io/artifactory/api/npm/npm-cdx/"
   }
 }
