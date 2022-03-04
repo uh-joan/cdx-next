@@ -128,6 +128,7 @@ pipeline {
                         git push --tags
                     '''
                 }
+                sh 'npx nx reset'
                 sh """
                     npx npm-cli-login \
                         -u ${ARTIFACTORY_USR} \
@@ -175,6 +176,7 @@ pipeline {
                         git push --tags
                     '''
                 }
+                sh 'npx nx reset'
                 sh """
                     npx npm-cli-login \
                         -u ${ARTIFACTORY_USR} \
