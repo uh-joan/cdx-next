@@ -105,6 +105,7 @@ pipeline {
             }
 
             environment {
+                ARTIFACTORY = credentials('repo-clarivate-io')
                 GIT_SSH_COMMAND = 'ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no'
                 GIT_AUTHOR_EMAIL = 'platform-jenkins-noreply@clarivate.com'
                 GIT_AUTHOR_NAME = 'Platform Jenkins'
