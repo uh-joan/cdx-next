@@ -52,7 +52,6 @@ pipeline {
         }
 
         stage('Run CI?') {
-            agent any
             steps {
                 script {
                     // ripped from https://gist.github.com/rufoa/2807ad19328f70dc81fec25c317661b8
