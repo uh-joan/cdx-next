@@ -128,7 +128,7 @@ pipeline {
                         git push --tags
                     '''
                 }
-                sh 'npx nx reset'
+                sh 'npm run build'
                 sh """
                     npx npm-cli-login \
                         -u ${ARTIFACTORY_USR} \
@@ -176,7 +176,7 @@ pipeline {
                         git push --tags
                     '''
                 }
-                sh 'npx nx reset'
+                sh 'npm run build'
                 sh """
                     npx npm-cli-login \
                         -u ${ARTIFACTORY_USR} \
