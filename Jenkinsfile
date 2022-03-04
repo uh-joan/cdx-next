@@ -127,7 +127,7 @@ pipeline {
                         git push --tags
                     '''
                 }
-                sh '''
+                sh """
                     npx npm-cli-login \
                         -u ${ARTIFACTORY_USR} \
                         -e ${ARTIFACTORY_USR}@clarivate.com \
@@ -135,7 +135,7 @@ pipeline {
                         -r https://repo.clarivate.io/artifactory/api/npm/npm-cdx \
                         -s @cdx \
                         --config-path=.
-                '''
+                """
                 sh 'npm run publish:prerelease'
             }
         }
@@ -174,7 +174,7 @@ pipeline {
                         git push --tags
                     '''
                 }
-                sh '''
+                sh """
                     npx npm-cli-login \
                         -u ${ARTIFACTORY_USR} \
                         -e ${ARTIFACTORY_USR}@clarivate.com \
@@ -182,7 +182,7 @@ pipeline {
                         -r https://repo.clarivate.io/artifactory/api/npm/npm-cdx \
                         -s @cdx \
                         --config-path=.
-                '''
+                """
                 sh 'npm run publish:release'
             }
         }
