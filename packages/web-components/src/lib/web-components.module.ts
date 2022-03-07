@@ -39,6 +39,8 @@ import {
   MatCardXlImageComponent,
 } from './mat-cards/mat-card';
 import { MatCardsElementsModule } from './mat-cards/mat-cards-elements.module';
+import { MatProgressBarComponent } from './mat-progress-bar/mat-progress-bar-element.component';
+import { MatProgressBarElementsModule } from './mat-progress-bar/mat-progress-bar-elements.module';
 
 @NgModule({
   imports: [
@@ -46,6 +48,7 @@ import { MatCardsElementsModule } from './mat-cards/mat-cards-elements.module';
     BrowserModule,
     MatCardsElementsModule,
     MatButtonsElementsModule,
+    MatProgressBarElementsModule,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
@@ -55,6 +58,7 @@ export class WebComponentsModule implements DoBootstrap {
   ngDoBootstrap() {
     this.addMatCardsComponents();
     this.addMatButtonsComponents();
+    this.addComp(MatProgressBarComponent, 'c-mat-progress-bar');
   }
 
   private addMatCardsComponents() {
