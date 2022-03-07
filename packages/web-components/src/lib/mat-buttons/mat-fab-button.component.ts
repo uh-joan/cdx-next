@@ -12,6 +12,7 @@ import { ThemePalette } from '@angular/material/core';
     mat-fab
     [color]="color"
     [disabled]="disabled"
+    [disableRipple]="disableRipple"
     aria-label="ariaLabel"
   >
     <ng-content></ng-content>
@@ -20,7 +21,7 @@ import { ThemePalette } from '@angular/material/core';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MatFabButtonComponent {
-  @Input() color: ThemePalette = 'primary';
+  @Input() color?: ThemePalette;
   @Input() disableRipple = false;
   @Input() disabled = false;
   @Input() ariaLabel = '';

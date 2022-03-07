@@ -12,6 +12,7 @@ import { ThemePalette } from '@angular/material/core';
     mat-stroked-button
     [color]="color"
     [disabled]="disabled"
+    [disableRipple]="disableRipple"
     [href]="href"
     [target]="target"
     ><ng-content></ng-content
@@ -20,7 +21,7 @@ import { ThemePalette } from '@angular/material/core';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MatStrokedButtonLinkComponent {
-  @Input() color: ThemePalette = 'primary';
+  @Input() color?: ThemePalette;
   @Input() disableRipple = false;
   @Input() disabled = false;
   @Input() href = '';

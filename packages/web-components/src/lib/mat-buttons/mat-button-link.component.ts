@@ -21,7 +21,7 @@ import { ThemePalette } from '@angular/material/core';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MatButtonLinkComponent {
-  @Input() color: ThemePalette = 'primary';
+  @Input() color?: ThemePalette;
   @Input() disableRipple = false;
   @Input() disabled = false;
   @Input() href = '';

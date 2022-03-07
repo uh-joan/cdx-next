@@ -20,7 +20,7 @@ import { ThemePalette } from '@angular/material/core';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MatButtonComponent {
-  @Input() color: ThemePalette = 'primary';
+  @Input() color?: ThemePalette;
   @Input() disableRipple = false;
   @Input() disabled = false;
 }
