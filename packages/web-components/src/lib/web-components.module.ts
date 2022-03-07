@@ -63,6 +63,8 @@ import {
   MatChipWrapperComponent,
 } from './mat-chips/chips';
 import { MatChipsElementsModule } from './mat-chips/chips.module';
+import { FormFieldInputComponent } from './mat-forms-elements/mat-input.component';
+import { MatFormsElementsModule } from './mat-forms-elements/mat-input-elements.module';
 import { MatProgressBarComponent } from './mat-progress-bar/mat-progress-bar-element.component';
 import { MatProgressBarElementsModule } from './mat-progress-bar/mat-progress-bar-elements.module';
 import { MatRadioButtonElementsModule } from './mat-radio-button/mat-radio-button-elements.module';
@@ -87,6 +89,7 @@ import { MatSpinnerElementsModule } from './mat-spinner/mat-spinner-elements.mod
     MatSlideToggleElementsModule,
     MatRadioButtonElementsModule,
     MatCheckboxElementsModule,
+    MatFormsElementsModule,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
@@ -119,6 +122,7 @@ export class WebComponentsModule implements DoBootstrap {
       'c-header-global-user-profile',
     );
     this.addComp(MatIcon, 'c-mat-icon');
+    this.addComp(FormFieldInputComponent, 'c-form-field-input');
   }
 
   private addMatCardsComponents() {

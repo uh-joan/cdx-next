@@ -1,15 +1,24 @@
 import {
   ChangeDetectionStrategy,
   Component,
+  EventEmitter,
   Input,
   OnChanges,
+  OnDestroy,
+  OnInit,
+  Output,
   SimpleChanges,
   ViewEncapsulation,
 } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { ErrorStateMatcher } from '@angular/material/core';
 import { MatFormFieldAppearance } from '@angular/material/form-field';
+import { Subscription } from 'rxjs';
 
+import {
+  InputFieldType,
+  StringBoolean,
+} from '../utils/web-components.interface';
 import { MatInputErrorService } from './mat-input-error.service';
 
 @Component({
@@ -55,24 +64,35 @@ import { MatInputErrorService } from './mat-input-error.service';
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class FormFieldInputComponent implements OnChanges {
+export class FormFieldInputComponent implements OnChanges, OnInit, OnDestroy {
   @Input() formFieldAppearance: MatFormFieldAppearance = 'standard';
   @Input() value = '';
   @Input() inputType = 'text';
-  @Input() readOnly = 'false';
-  @Input() disabled = 'false';
+  @Input() readOnly: StringBoolean = 'false';
+  @Input() disabled: StringBoolean = 'false';
   @Input() placeholder = '';
   @Input() maxlength = '';
-  @Input() fieldType: 'input' | 'textArea' = 'input';
-  @Input() isError = 'false';
-  @Input() validateOnTouch = 'true';
-  @Input() validateOnDirty = 'true';
-  @Input() isSubmitted = 'false';
+  @Input() fieldType: InputFieldType = 'input';
+  @Input() isError: StringBoolean = 'false';
+  @Input() validateOnTouch: StringBoolean = 'true';
+  @Input() validateOnDirty: StringBoolean = 'true';
+  @Input() isSubmitted: StringBoolean = 'false';
+
+  @Output() outputValue = new EventEmitter<string>();
 
   constructor(private matInputErrorService: MatInputErrorService) {}
 
   form: FormControl = new FormControl();
   errorStateMatcher = new FormErrorStateMatcher(this.matInputErrorService);
+  formValueChangesSubscription?: Subscription;
+
+  ngOnInit() {
+    this.formValueChangesSubscription = this.form.valueChanges.subscribe(
+      (value: string) => {
+        this.outputValue.emit(value);
+      },
+    );
+  }
 
   ngOnChanges(changes: SimpleChanges): void {
     this.matInputErrorService.setErrorStatuses(
@@ -85,6 +105,10 @@ export class FormFieldInputComponent implements OnChanges {
     if (changes['value'].currentValue !== changes['value'].previousValue) {
       this.form.setValue(this.value);
     }
+  }
+
+  ngOnDestroy() {
+    this.formValueChangesSubscription?.unsubscribe();
   }
 }
 
