@@ -6,8 +6,23 @@ import {
   NgModule,
 } from '@angular/core';
 import { createCustomElement } from '@angular/elements';
+import { MatIcon } from '@angular/material/icon';
 import { BrowserModule } from '@angular/platform-browser';
+import {
+  FooterComponent,
+  FooterGroupComponent,
+  FooterModule,
+  HeaderComponent,
+  HeaderGlobalComponent,
+  HeaderGlobalUserProfileComponent,
+  HeaderProductNameOrLogoComponent,
+} from '@cdx/branding';
 
+import { BrandingElementsModule } from './branding/branding.module';
+import {
+  FooterGroupTitleWrapperComponent,
+  FooterLinkDirectiveWrapperComponent,
+} from './branding/footer';
 import { MatButtonComponent } from './mat-buttons/mat-button.component';
 import { MatButtonLinkComponent } from './mat-buttons/mat-button-link.component';
 import { MatButtonsElementsModule } from './mat-buttons/mat-buttons-elements.module';
@@ -49,6 +64,8 @@ import { MatProgressBarElementsModule } from './mat-progress-bar/mat-progress-ba
     MatCardsElementsModule,
     MatButtonsElementsModule,
     MatProgressBarElementsModule,
+    FooterModule,
+    BrandingElementsModule,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
@@ -59,6 +76,23 @@ export class WebComponentsModule implements DoBootstrap {
     this.addMatCardsComponents();
     this.addMatButtonsComponents();
     this.addComp(MatProgressBarComponent, 'c-mat-progress-bar');
+    this.addBrandingComponents();
+  }
+
+  private addBrandingComponents() {
+    this.addComp(FooterComponent, 'c-footer');
+    this.addComp(FooterGroupComponent, 'c-footer-group');
+    this.addComp(FooterGroupTitleWrapperComponent, 'c-footer-group-title');
+    this.addComp(FooterLinkDirectiveWrapperComponent, 'c-footer-link');
+
+    this.addComp(HeaderComponent, 'c-header');
+    this.addComp(HeaderGlobalComponent, 'cdx-header-global'); //TODO Check this targeted content projection
+    this.addComp(HeaderProductNameOrLogoComponent, 'c-header-product-name');
+    this.addComp(
+      HeaderGlobalUserProfileComponent,
+      'c-header-global-user-profile',
+    );
+    this.addComp(MatIcon, 'c-mat-icon');
   }
 
   private addMatCardsComponents() {
