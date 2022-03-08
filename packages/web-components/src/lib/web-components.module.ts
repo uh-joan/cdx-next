@@ -79,6 +79,8 @@ import { MatSlideToggleElementComponent } from './mat-slide-toggle/mat-slide-tog
 import { MatSlideToggleElementsModule } from './mat-slide-toggle/mat-slide-toggle-elements.module';
 import { MatProgressSpinnerElementComponent } from './mat-spinner/mat-progress-spinner-element.component';
 import { MatSpinnerElementsModule } from './mat-spinner/mat-spinner-elements.module';
+import { MatSelectWrapperComponent } from './material/select';
+import { MatSelectElementsModule } from './material/select.module';
 
 @NgModule({
   imports: [
@@ -96,6 +98,7 @@ import { MatSpinnerElementsModule } from './mat-spinner/mat-spinner-elements.mod
     MatCheckboxElementsModule,
     MatFormsElementsModule,
     MatBadgeElementsModule,
+    MatSelectElementsModule,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
@@ -130,6 +133,7 @@ export class WebComponentsModule implements DoBootstrap {
     );
     this.addComp(MatIcon, 'c-mat-icon');
     this.addComp(FormFieldInputComponent, 'c-form-field-input');
+    this.addMatSelectComponents();
   }
 
   private addMatCardsComponents() {
@@ -180,6 +184,10 @@ export class WebComponentsModule implements DoBootstrap {
   private addMatRadioButtonComponents() {
     this.addComp(MatRadioButtonItemComponent, 'c-radio-button-item');
     this.addComp(MatRadioButtonWrapperComponent, 'c-radio-button-wrapper');
+  }
+
+  private addMatSelectComponents() {
+    this.addComp(MatSelectWrapperComponent, 'c-mat-select');
   }
 
   private addComp(component: any, name: string): void {
