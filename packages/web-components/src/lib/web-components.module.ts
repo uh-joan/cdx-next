@@ -56,6 +56,8 @@ import {
 import { MatCardsElementsModule } from './mat-cards/mat-cards-elements.module';
 import { MatProgressBarComponent } from './mat-progress-bar/mat-progress-bar-element.component';
 import { MatProgressBarElementsModule } from './mat-progress-bar/mat-progress-bar-elements.module';
+import { MatProgressSpinnerElementComponent } from './mat-spinner/mat-progress-spinner-element.component';
+import { MatSpinnerElementsModule } from './mat-spinner/mat-spinner-elements.module';
 
 @NgModule({
   imports: [
@@ -66,6 +68,7 @@ import { MatProgressBarElementsModule } from './mat-progress-bar/mat-progress-ba
     MatProgressBarElementsModule,
     FooterModule,
     BrandingElementsModule,
+    MatSpinnerElementsModule,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
@@ -76,6 +79,7 @@ export class WebComponentsModule implements DoBootstrap {
     this.addMatCardsComponents();
     this.addMatButtonsComponents();
     this.addComp(MatProgressBarComponent, 'c-mat-progress-bar');
+    this.addComp(MatProgressSpinnerElementComponent, 'c-mat-progress-spinner');
     this.addBrandingComponents();
   }
 
