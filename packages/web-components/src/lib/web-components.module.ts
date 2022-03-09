@@ -54,6 +54,8 @@ import {
   MatCardXlImageComponent,
 } from './mat-cards/mat-card';
 import { MatCardsElementsModule } from './mat-cards/mat-cards-elements.module';
+import { MatCheckboxElementComponent } from './mat-checkbox/mat-checkbox-element.component';
+import { MatCheckboxElementsModule } from './mat-checkbox/mat-checkbox-elements.module';
 import {
   MatChipInputWrapperComponent,
   MatChipListWrapperComponent,
@@ -84,6 +86,7 @@ import { MatSpinnerElementsModule } from './mat-spinner/mat-spinner-elements.mod
     MatSpinnerElementsModule,
     MatSlideToggleElementsModule,
     MatRadioButtonElementsModule,
+    MatCheckboxElementsModule,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
@@ -97,6 +100,7 @@ export class WebComponentsModule implements DoBootstrap {
     this.addComp(MatProgressBarComponent, 'c-mat-progress-bar');
     this.addComp(MatProgressSpinnerElementComponent, 'c-mat-progress-spinner');
     this.addComp(MatSlideToggleElementComponent, 'c-mat-slide-toggle');
+    this.addComp(MatCheckboxElementComponent, 'c-mat-checkbox');
     this.addBrandingComponents();
     this.addMatRadioButtonComponents();
   }
