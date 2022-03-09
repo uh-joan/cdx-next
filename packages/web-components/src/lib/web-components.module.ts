@@ -54,6 +54,12 @@ import {
   MatCardXlImageComponent,
 } from './mat-cards/mat-card';
 import { MatCardsElementsModule } from './mat-cards/mat-cards-elements.module';
+import {
+  MatChipInputWrapperComponent,
+  MatChipListWrapperComponent,
+  MatChipRemoveWrapperComponent,
+  MatChipWrapperComponent,
+} from './mat-chips/chips';
 import { MatProgressBarComponent } from './mat-progress-bar/mat-progress-bar-element.component';
 import { MatProgressBarElementsModule } from './mat-progress-bar/mat-progress-bar-elements.module';
 import { MatProgressSpinnerElementComponent } from './mat-spinner/mat-progress-spinner-element.component';
@@ -78,6 +84,7 @@ export class WebComponentsModule implements DoBootstrap {
   ngDoBootstrap() {
     this.addMatCardsComponents();
     this.addMatButtonsComponents();
+    this.addMatChipsComponents();
     this.addComp(MatProgressBarComponent, 'c-mat-progress-bar');
     this.addComp(MatProgressSpinnerElementComponent, 'c-mat-progress-spinner');
     this.addBrandingComponents();
@@ -114,6 +121,13 @@ export class WebComponentsModule implements DoBootstrap {
     this.addComp(MatCardMdImageComponent, 'c-mat-card-md-image');
     this.addComp(MatCardLgImageComponent, 'c-mat-card-lg-image');
     this.addComp(MatCardXlImageComponent, 'c-mat-card-xl-image');
+  }
+
+  private addMatChipsComponents() {
+    this.addComp(MatChipInputWrapperComponent, 'c-mat-chip-input');
+    this.addComp(MatChipWrapperComponent, 'c-mat-chip');
+    this.addComp(MatChipListWrapperComponent, 'c-mat-chip-list');
+    this.addComp(MatChipRemoveWrapperComponent, 'c-mat-chip-remove');
   }
 
   private addMatButtonsComponents() {
