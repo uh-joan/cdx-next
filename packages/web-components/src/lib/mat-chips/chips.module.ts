@@ -28,4 +28,4 @@ import {
     MatChipRemoveWrapperComponent,
   ],
 })
-export class MatCardsElementsModule {}
+export class MatChipsElementsModule {}

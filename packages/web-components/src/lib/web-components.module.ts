@@ -60,6 +60,7 @@ import {
   MatChipRemoveWrapperComponent,
   MatChipWrapperComponent,
 } from './mat-chips/chips';
+import { MatChipsElementsModule } from './mat-chips/chips.module';
 import { MatProgressBarComponent } from './mat-progress-bar/mat-progress-bar-element.component';
 import { MatProgressBarElementsModule } from './mat-progress-bar/mat-progress-bar-elements.module';
 import { MatProgressSpinnerElementComponent } from './mat-spinner/mat-progress-spinner-element.component';
@@ -70,6 +71,7 @@ import { MatSpinnerElementsModule } from './mat-spinner/mat-spinner-elements.mod
     CommonModule,
     BrowserModule,
     MatCardsElementsModule,
+    MatChipsElementsModule,
     MatButtonsElementsModule,
     MatProgressBarElementsModule,
     FooterModule,
