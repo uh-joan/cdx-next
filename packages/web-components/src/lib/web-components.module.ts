@@ -63,6 +63,9 @@ import {
 import { MatChipsElementsModule } from './mat-chips/chips.module';
 import { MatProgressBarComponent } from './mat-progress-bar/mat-progress-bar-element.component';
 import { MatProgressBarElementsModule } from './mat-progress-bar/mat-progress-bar-elements.module';
+import { MatRadioButtonElementsModule } from './mat-radio-button/mat-radio-button-elements.module';
+import { MatRadioButtonItemComponent } from './mat-radio-button/mat-radio-button-item-element.component';
+import { MatRadioButtonWrapperComponent } from './mat-radio-button/mat-radio-button-wrapper-element.component';
 import { MatSlideToggleElementComponent } from './mat-slide-toggle/mat-slide-toggle-element.component';
 import { MatSlideToggleElementsModule } from './mat-slide-toggle/mat-slide-toggle-elements.module';
 import { MatProgressSpinnerElementComponent } from './mat-spinner/mat-progress-spinner-element.component';
@@ -80,6 +83,7 @@ import { MatSpinnerElementsModule } from './mat-spinner/mat-spinner-elements.mod
     BrandingElementsModule,
     MatSpinnerElementsModule,
     MatSlideToggleElementsModule,
+    MatRadioButtonElementsModule,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
@@ -94,6 +98,7 @@ export class WebComponentsModule implements DoBootstrap {
     this.addComp(MatProgressSpinnerElementComponent, 'c-mat-progress-spinner');
     this.addComp(MatSlideToggleElementComponent, 'c-mat-slide-toggle');
     this.addBrandingComponents();
+    this.addMatRadioButtonComponents();
   }
 
   private addBrandingComponents() {
@@ -150,6 +155,11 @@ export class WebComponentsModule implements DoBootstrap {
     this.addComp(MatRaisedButtonComponent, 'c-mat-raised-button');
     this.addComp(MatStrokedButtonLinkComponent, 'c-mat-stroked-button-link');
     this.addComp(MatStrokedButtonComponent, 'c-mat-stroked-button');
+  }
+
+  private addMatRadioButtonComponents() {
+    this.addComp(MatRadioButtonItemComponent, 'c-radio-button-item');
+    this.addComp(MatRadioButtonWrapperComponent, 'c-radio-button-wrapper');
   }
 
   private addComp(component: any, name: string): void {
