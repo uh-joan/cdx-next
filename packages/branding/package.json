@@ -6,6 +6,14 @@
     "type": "git",
     "url": "ssh://git@git.clarivate.io/cdxn/cdx-next.git"
   },
+  "exports": {
+    "./footer/theme": {
+      "sass": "./src/lib/footer/_footer-theme.scss"
+    },
+    "./header/theme": {
+      "sass": "./src/lib/header/_header-theme.scss"
+    }
+  },
   "dependencies": {
     "tslib": "^2.3.0"
   },

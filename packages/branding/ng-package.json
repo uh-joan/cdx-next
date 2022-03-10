@@ -1,5 +1,6 @@
 {
   "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
+  "assets": ["**/_*.scss"],
   "dest": "../../dist/packages/branding",
   "lib": {
     "entryFile": "src/index.ts"
