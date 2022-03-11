@@ -4,7 +4,7 @@ import { MatBadgeModule } from '@angular/material/badge';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { MatBadgeIconComponent } from './badge';
+import { MatBadgeIconComponent, MatBadgeSpanComponent } from './badge';
 
 @NgModule({
   imports: [
@@ -13,6 +13,6 @@ import { MatBadgeIconComponent } from './badge';
     BrowserAnimationsModule,
     MatBadgeModule,
   ],
-  declarations: [MatBadgeIconComponent, MatBadgeIconComponent],
+  declarations: [MatBadgeSpanComponent, MatBadgeIconComponent],
 })
 export class MatBadgeElementsModule {}
