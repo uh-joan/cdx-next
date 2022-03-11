@@ -23,6 +23,11 @@ import {
   FooterGroupTitleWrapperComponent,
   FooterLinkDirectiveWrapperComponent,
 } from './branding/footer';
+import {
+  MatBadgeIconComponent,
+  MatBadgeSpanComponent,
+} from './mat-badge/badge';
+import { MatBadgeElementsModule } from './mat-badge/badge.module';
 import { MatButtonComponent } from './mat-buttons/mat-button.component';
 import { MatButtonLinkComponent } from './mat-buttons/mat-button-link.component';
 import { MatButtonsElementsModule } from './mat-buttons/mat-buttons-elements.module';
@@ -90,6 +95,7 @@ import { MatSpinnerElementsModule } from './mat-spinner/mat-spinner-elements.mod
     MatRadioButtonElementsModule,
     MatCheckboxElementsModule,
     MatFormsElementsModule,
+    MatBadgeElementsModule,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
@@ -106,6 +112,7 @@ export class WebComponentsModule implements DoBootstrap {
     this.addComp(MatCheckboxElementComponent, 'c-mat-checkbox');
     this.addBrandingComponents();
     this.addMatRadioButtonComponents();
+    this.addMatBadgeComponents();
   }
 
   private addBrandingComponents() {
@@ -147,6 +154,11 @@ export class WebComponentsModule implements DoBootstrap {
     this.addComp(MatChipWrapperComponent, 'c-mat-chip');
     this.addComp(MatChipListWrapperComponent, 'c-mat-chip-list');
     this.addComp(MatChipRemoveWrapperComponent, 'c-mat-chip-remove');
+  }
+
+  private addMatBadgeComponents() {
+    this.addComp(MatBadgeIconComponent, 'c-mat-badge-icon');
+    this.addComp(MatBadgeSpanComponent, 'c-mat-badge-span');
   }
 
   private addMatButtonsComponents() {
