@@ -14,9 +14,9 @@ import { ThemePalette } from '@angular/material/core';
       [matBadgeSize]="size"
       [matBadgeColor]="color"
       [matBadgeDescription]="description"
-      [matBadgeDisabled]="disabled"
-      [matBadgeHidden]="hidden"
-      [matBadgeOverlap]="overlap"
+      [matBadgeDisabled]="stringToBooleanConvertor(disabled)"
+      [matBadgeHidden]="stringToBooleanConvertor(hidden)"
+      [matBadgeOverlap]="stringToBooleanConvertor(overlap)"
       [matBadgePosition]="position"
       ><ng-content></ng-content
     ></span>
@@ -27,12 +27,16 @@ import { ThemePalette } from '@angular/material/core';
 export class MatBadgeSpanComponent {
   @Input() color?: ThemePalette;
   @Input() content: string | number | undefined | null;
-  @Input() description?: string;
-  @Input() disabled?: boolean;
-  @Input() hidden?: boolean;
-  @Input() overlap?: boolean;
-  @Input() position?: MatBadgePosition;
-  @Input() size?: MatBadgeSize;
+  @Input() description = '';
+  @Input() disabled = 'false';
+  @Input() hidden = 'false';
+  @Input() overlap = 'true';
+  @Input() position: MatBadgePosition = 'above after';
+  @Input() size: MatBadgeSize = 'medium';
+
+  stringToBooleanConvertor(str: string): boolean {
+    return str === 'true';
+  }
 }
 
 //TODO Missing MatBadgeButtonComponent
@@ -44,9 +48,9 @@ export class MatBadgeSpanComponent {
       [matBadgeSize]="size"
       [matBadgeColor]="color"
       [matBadgeDescription]="description"
-      [matBadgeDisabled]="disabled"
-      [matBadgeHidden]="hidden"
-      [matBadgeOverlap]="overlap"
+      [matBadgeDisabled]="stringToBooleanConvertor(disabled)"
+      [matBadgeHidden]="stringToBooleanConvertor(hidden)"
+      [matBadgeOverlap]="stringToBooleanConvertor(overlap)"
       [matBadgePosition]="position"
       ><ng-content></ng-content
     ></mat-icon>
@@ -57,10 +61,15 @@ export class MatBadgeSpanComponent {
 export class MatBadgeIconComponent {
   @Input() color?: ThemePalette;
   @Input() content: string | number | undefined | null;
-  @Input() description?: string;
-  @Input() disabled?: boolean;
-  @Input() hidden?: boolean;
-  @Input() overlap?: boolean;
-  @Input() position?: MatBadgePosition;
-  @Input() size?: MatBadgeSize;
+  @Input() description = '';
+  @Input() disabled = 'false';
+  @Input() hidden = 'false';
+  @Input() overlap = 'true';
+  @Input() position: MatBadgePosition = 'above after';
+  @Input() size: MatBadgeSize = 'medium';
+
+  //TODO Move this converters to shared utils library
+  stringToBooleanConvertor(str: string): boolean {
+    return str === 'true';
+  }
 }
