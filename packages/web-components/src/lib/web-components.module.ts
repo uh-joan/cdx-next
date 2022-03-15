@@ -133,30 +133,18 @@ export class WebComponentsModule implements DoBootstrap {
     this.addMatBadgeComponents();
     this.addListComponents();
   }
-  
+
   private addListComponents() {
     this.addComp(MatListWrapperComponent, 'c-mat-list');
     this.addComp(MatListDenseWrapperComponent, 'c-mat-list-dense');
     this.addComp(MatListItemWrapperComponent, 'c-mat-list-item');
-    this.addComp(
-      MatListItemLinkWrapperComponent,
-      'c-mat-list-item-link',
-    );
-    this.addComp(
-      MatListSubheaderWrapperComponent,
-      'c-mat-list-subheader',
-    );
+    this.addComp(MatListItemLinkWrapperComponent, 'c-mat-list-item-link');
+    this.addComp(MatListSubheaderWrapperComponent, 'c-mat-list-subheader');
     //TODO: Mat line not propagating clicks down
     this.addComp(MatLineWrapperComponent, 'c-mat-line');
     this.addComp(MatListIconWrapperComponent, 'c-mat-list-icon');
-    this.addComp(
-      MatListAvatarWrapperComponent,
-      'c-mat-list-avatar',
-    );
-    this.addComp(
-      MatListOptionWrapperComponent,
-      'c-mat-list-option',
-    );
+    this.addComp(MatListAvatarWrapperComponent, 'c-mat-list-avatar');
+    this.addComp(MatListOptionWrapperComponent, 'c-mat-list-option');
     this.addComp(MatDivider, 'c-mat-divider');
     this.addComp(MatNavListWrapperComponent, 'c-mat-nav-list');
   }
