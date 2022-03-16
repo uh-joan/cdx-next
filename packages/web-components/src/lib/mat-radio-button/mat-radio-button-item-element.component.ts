@@ -1,5 +1,6 @@
 import {
   ChangeDetectionStrategy,
+  ChangeDetectorRef,
   Component,
   Input,
   OnDestroy,
@@ -9,6 +10,7 @@ import {
 import { MatRadioChange } from '@angular/material/radio';
 import { Subscription } from 'rxjs';
 
+import { LabelPosition } from '../utils/web-components.interface';
 import { MatRadioButtonService } from './mat-radio-button.service';
 
 @Component({
@@ -16,6 +18,7 @@ import { MatRadioButtonService } from './mat-radio-button.service';
     <mat-radio-button
       [value]="value"
       [checked]="checked"
+      [labelPosition]="labelPosition"
       (change)="emitValue($event)"
       ><ng-content></ng-content>
     </mat-radio-button>
@@ -26,12 +29,16 @@ import { MatRadioButtonService } from './mat-radio-button.service';
 export class MatRadioButtonItemComponent implements OnInit, OnDestroy {
   @Input() value = '';
   @Input() selected = '';
+  @Input() labelPosition: LabelPosition = 'after';
 
   checked = false;
 
   radioButtonInputValueSubscription?: Subscription;
 
-  constructor(private matRadioButtonService: MatRadioButtonService) {}
+  constructor(
+    private matRadioButtonService: MatRadioButtonService,
+    private changeDetectorRef: ChangeDetectorRef,
+  ) {}
 
   emitValue(event: MatRadioChange) {
     this.matRadioButtonService.emitRadioButtonNewSelectedValue(event.value);
@@ -43,6 +50,7 @@ export class MatRadioButtonItemComponent implements OnInit, OnDestroy {
         (value) => {
           if (value === this.value) {
             this.checked = true;
+            this.changeDetectorRef.markForCheck();
           }
         },
       );

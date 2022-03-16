@@ -14,10 +14,7 @@ import { FormControl } from '@angular/forms';
 import { ThemePalette } from '@angular/material/core';
 import { Subscription } from 'rxjs/internal/Subscription';
 
-import {
-  LabelPosition,
-  StringBoolean,
-} from '../utils/web-components.interface';
+import { StringBoolean } from '../utils/web-components.interface';
 import { MatRadioButtonService } from './mat-radio-button.service';
 
 @Component({
@@ -25,7 +22,6 @@ import { MatRadioButtonService } from './mat-radio-button.service';
     <mat-radio-group
       [formControl]="form"
       [color]="color"
-      [labelPosition]="labelPosition"
       [name]="name"
       [required]="required === 'true'"
       [value]="value"
@@ -40,7 +36,6 @@ export class MatRadioButtonWrapperComponent
 {
   @Input() color?: ThemePalette;
   @Input() disabled: StringBoolean = 'false';
-  @Input() labelPosition: LabelPosition = 'after';
   @Input() name = '';
   @Input() required: StringBoolean = 'false';
   @Input() value = '';
