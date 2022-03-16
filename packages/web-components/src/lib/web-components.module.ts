@@ -95,6 +95,7 @@ import { MatProgressSpinnerElementComponent } from './mat-spinner/mat-progress-s
 import { MatSpinnerElementsModule } from './mat-spinner/mat-spinner-elements.module';
 import { MatSelectWrapperComponent } from './material/select';
 import { MatSelectElementsModule } from './material/select.module';
+import { MatPaginatorWrapperComponent } from './table/paginator';
 
 @NgModule({
   imports: [
@@ -132,6 +133,7 @@ export class WebComponentsModule implements DoBootstrap {
     this.addMatRadioButtonComponents();
     this.addMatBadgeComponents();
     this.addListComponents();
+    this.addMatTableComponents();
   }
 
   private addListComponents() {
@@ -219,6 +221,10 @@ export class WebComponentsModule implements DoBootstrap {
 
   private addMatSelectComponents() {
     this.addComp(MatSelectWrapperComponent, 'c-mat-select');
+  }
+
+  private addMatTableComponents() {
+    this.addComp(MatPaginatorWrapperComponent, 'c-mat-paginator');
   }
 
   private addComp(component: any, name: string): void {

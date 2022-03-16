@@ -7,6 +7,8 @@ import {
 import { MatBadgePosition, MatBadgeSize } from '@angular/material/badge';
 import { ThemePalette } from '@angular/material/core';
 
+import { stringToBooleanConvertor } from '../utils/stringParsers';
+
 @Component({
   template: `
     <span
@@ -34,9 +36,7 @@ export class MatBadgeSpanComponent {
   @Input() position: MatBadgePosition = 'above after';
   @Input() size: MatBadgeSize = 'medium';
 
-  stringToBooleanConvertor(str: string): boolean {
-    return str === 'true';
-  }
+  stringToBooleanConvertor = stringToBooleanConvertor;
 }
 
 //TODO Missing MatBadgeButtonComponent
@@ -67,9 +67,5 @@ export class MatBadgeIconComponent {
   @Input() overlap = 'true';
   @Input() position: MatBadgePosition = 'above after';
   @Input() size: MatBadgeSize = 'medium';
-
-  //TODO Move this converters to shared utils library
-  stringToBooleanConvertor(str: string): boolean {
-    return str === 'true';
-  }
+  stringToBooleanConvertor = stringToBooleanConvertor;
 }
