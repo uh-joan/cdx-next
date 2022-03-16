@@ -5,6 +5,7 @@ import { PageEvent } from '@angular/material/paginator';
 import {
   stringToBooleanConvertor,
   stringToIntConvertor,
+  stringToNumberArrayConvertor,
 } from '../utils/stringParsers';
 
 @Component({
@@ -15,9 +16,8 @@ import {
     [length]="stringToIntConvertor(length)"
     [pageIndex]="stringToIntConvertor(pageIndex)"
     [pageSize]="stringToIntConvertor(pageSize)"
-    [pageSizeOptions]="pageSizeOptions"
+    [pageSizeOptions]="stringToNumberArrayConvertor(pageSizeOptions)"
     [showFirstLastButtons]="stringToBooleanConvertor(showFirstLastButtons)"
-    (page)="(page)"
   >
   </mat-paginator>`,
 })
@@ -25,21 +25,20 @@ export class MatPaginatorWrapperComponent {
   @Input()
   color: ThemePalette;
   @Input()
-  disabled?: string;
+  disabled = 'false';
   @Input()
-  hidePageSize?: string;
+  hidePageSize = 'false';
   @Input()
-  length?: string;
+  length = '0';
   @Input()
-  pageIndex?: string;
+  pageIndex = '0';
   @Input()
-  pageSize?: string;
+  pageSize = '10';
   @Input()
-  pageSizeOptions?: number[];
+  pageSizeOptions = '[]';
   @Input()
-  showFirstLastButtons?: string;
-  @Output()
-  page?: EventEmitter<PageEvent>;
+  showFirstLastButtons = 'false';
   stringToBooleanConvertor = stringToBooleanConvertor;
   stringToIntConvertor = stringToIntConvertor;
+  stringToNumberArrayConvertor = stringToNumberArrayConvertor;
 }

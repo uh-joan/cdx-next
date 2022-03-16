@@ -10,4 +10,4 @@ import { MatPaginatorWrapperComponent } from './paginator';
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   declarations: [MatPaginatorWrapperComponent],
 })
-export class MatChipsElementsModule {}
+export class MatTableElementsModule {}

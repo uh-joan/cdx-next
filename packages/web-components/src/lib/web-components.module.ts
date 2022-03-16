@@ -96,6 +96,7 @@ import { MatSpinnerElementsModule } from './mat-spinner/mat-spinner-elements.mod
 import { MatSelectWrapperComponent } from './material/select';
 import { MatSelectElementsModule } from './material/select.module';
 import { MatPaginatorWrapperComponent } from './table/paginator';
+import { MatTableElementsModule } from './table/table.module';
 
 @NgModule({
   imports: [
@@ -115,6 +116,7 @@ import { MatPaginatorWrapperComponent } from './table/paginator';
     MatBadgeElementsModule,
     MatSelectElementsModule,
     MatListElementsModule,
+    MatTableElementsModule,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
