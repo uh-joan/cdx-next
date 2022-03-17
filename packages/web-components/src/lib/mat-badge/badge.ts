@@ -1,3 +1,4 @@
+import { coerceBooleanProperty } from '@angular/cdk/coercion';
 import {
   ChangeDetectionStrategy,
   Component,
@@ -7,8 +8,6 @@ import {
 import { MatBadgePosition, MatBadgeSize } from '@angular/material/badge';
 import { ThemePalette } from '@angular/material/core';
 
-import { stringToBooleanConvertor } from '../utils/stringParsers';
-
 @Component({
   template: `
     <span
@@ -16,9 +15,9 @@ import { stringToBooleanConvertor } from '../utils/stringParsers';
       [matBadgeSize]="size"
       [matBadgeColor]="color"
       [matBadgeDescription]="description"
-      [matBadgeDisabled]="stringToBooleanConvertor(disabled)"
-      [matBadgeHidden]="stringToBooleanConvertor(hidden)"
-      [matBadgeOverlap]="stringToBooleanConvertor(overlap)"
+      [matBadgeDisabled]="coerceBooleanProperty(disabled)"
+      [matBadgeHidden]="coerceBooleanProperty(hidden)"
+      [matBadgeOverlap]="coerceBooleanProperty(overlap)"
       [matBadgePosition]="position"
       ><ng-content></ng-content
     ></span>
@@ -36,7 +35,7 @@ export class MatBadgeSpanComponent {
   @Input() position: MatBadgePosition = 'above after';
   @Input() size: MatBadgeSize = 'medium';
 
-  stringToBooleanConvertor = stringToBooleanConvertor;
+  coerceBooleanProperty = coerceBooleanProperty;
 }
 
 //TODO Missing MatBadgeButtonComponent
@@ -48,9 +47,9 @@ export class MatBadgeSpanComponent {
       [matBadgeSize]="size"
       [matBadgeColor]="color"
       [matBadgeDescription]="description"
-      [matBadgeDisabled]="stringToBooleanConvertor(disabled)"
-      [matBadgeHidden]="stringToBooleanConvertor(hidden)"
-      [matBadgeOverlap]="stringToBooleanConvertor(overlap)"
+      [matBadgeDisabled]="coerceBooleanProperty(disabled)"
+      [matBadgeHidden]="coerceBooleanProperty(hidden)"
+      [matBadgeOverlap]="coerceBooleanProperty(overlap)"
       [matBadgePosition]="position"
       ><ng-content></ng-content
     ></mat-icon>
@@ -67,5 +66,5 @@ export class MatBadgeIconComponent {
   @Input() overlap = 'true';
   @Input() position: MatBadgePosition = 'above after';
   @Input() size: MatBadgeSize = 'medium';
-  stringToBooleanConvertor = stringToBooleanConvertor;
+  coerceBooleanProperty = coerceBooleanProperty;
 }

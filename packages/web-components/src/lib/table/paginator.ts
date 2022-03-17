@@ -1,23 +1,22 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { ThemePalette } from '@angular/material/core';
-import { PageEvent } from '@angular/material/paginator';
-
 import {
-  stringToBooleanConvertor,
-  stringToIntConvertor,
-  stringToNumberArrayConvertor,
-} from '../utils/stringParsers';
+  coerceBooleanProperty,
+  coerceNumberProperty,
+} from '@angular/cdk/coercion';
+import { Component, Input } from '@angular/core';
+import { ThemePalette } from '@angular/material/core';
+
+import { stringToNumberArrayConvertor } from '../utils/stringParsers';
 
 @Component({
   template: ` <mat-paginator
     [color]="color"
-    [disabled]="stringToBooleanConvertor(disabled)"
-    [hidePageSize]="stringToBooleanConvertor(hidePageSize)"
-    [length]="stringToIntConvertor(length)"
-    [pageIndex]="stringToIntConvertor(pageIndex)"
-    [pageSize]="stringToIntConvertor(pageSize)"
+    [disabled]="coerceBooleanProperty(disabled)"
+    [hidePageSize]="coerceBooleanProperty(hidePageSize)"
+    [length]="coerceNumberProperty(length)"
+    [pageIndex]="coerceNumberProperty(pageIndex)"
+    [pageSize]="coerceNumberProperty(pageSize)"
     [pageSizeOptions]="stringToNumberArrayConvertor(pageSizeOptions)"
-    [showFirstLastButtons]="stringToBooleanConvertor(showFirstLastButtons)"
+    [showFirstLastButtons]="coerceBooleanProperty(showFirstLastButtons)"
   >
   </mat-paginator>`,
 })
@@ -38,7 +37,7 @@ export class MatPaginatorWrapperComponent {
   pageSizeOptions = '[]';
   @Input()
   showFirstLastButtons = 'false';
-  stringToBooleanConvertor = stringToBooleanConvertor;
-  stringToIntConvertor = stringToIntConvertor;
+  coerceBooleanProperty = coerceBooleanProperty;
+  coerceNumberProperty = coerceNumberProperty;
   stringToNumberArrayConvertor = stringToNumberArrayConvertor;
 }
