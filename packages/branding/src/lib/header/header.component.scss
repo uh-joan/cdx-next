@@ -1,11 +1,12 @@
 @use '@angular/material' as mat;
 
 $header-spacing: 2rem;
+$header-bar-base-height: 2.5rem;
 
 .cdx-header {
   &__global-bar {
     display: flex;
-    height: 44px;
+    height: $header-bar-base-height;
     align-items: center;
     justify-content: space-between;
     padding: 0 $header-spacing;
@@ -23,8 +24,8 @@ $header-spacing: 2rem;
     @include mat.elevation(5);
 
     display: flex;
-    min-height: 3rem;
-    max-height: 8rem;
+    min-height: $header-bar-base-height;
+    max-height: calc(2 * $header-bar-base-height);
     align-items: center;
     justify-content: space-between;
     padding: 0 $header-spacing;
