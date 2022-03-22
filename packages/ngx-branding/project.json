@@ -1,0 +1,88 @@
+{
+  "prefix": "cdx",
+  "projectType": "library",
+  "root": "packages/ngx-branding",
+  "sourceRoot": "packages/ngx-branding/src",
+  "tags": [],
+  "targets": {
+    "build": {
+      "configurations": {
+        "development": {
+          "tsConfig": "packages/ngx-branding/tsconfig.lib.json"
+        },
+        "production": {
+          "tsConfig": "packages/ngx-branding/tsconfig.lib.prod.json"
+        }
+      },
+      "defaultConfiguration": "production",
+      "executor": "@nrwl/angular:package",
+      "options": {
+        "project": "packages/ngx-branding/ng-package.json"
+      },
+      "outputs": ["dist/packages/ngx-branding"]
+    },
+    "build-storybook": {
+      "configurations": {
+        "ci": {
+          "quiet": true
+        }
+      },
+      "executor": "@nrwl/storybook:build",
+      "options": {
+        "config": {
+          "configFolder": "packages/ngx-branding/.storybook"
+        },
+        "outputPath": "dist/storybook/ngx-branding",
+        "projectBuildConfig": "ngx-branding:build-storybook",
+        "uiFramework": "@storybook/angular"
+      },
+      "outputs": ["{options.outputPath}"]
+    },
+    "deploy": {
+      "executor": "ngx-deploy-npm:deploy"
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "packages/ngx-branding/src/**/*.ts",
+          "packages/ngx-branding/src/**/*.html"
+        ]
+      }
+    },
+    "storybook": {
+      "configurations": {
+        "ci": {
+          "quiet": true
+        }
+      },
+      "executor": "@nrwl/storybook:storybook",
+      "options": {
+        "config": {
+          "configFolder": "packages/ngx-branding/.storybook"
+        },
+        "port": 4400,
+        "projectBuildConfig": "ngx-branding:build-storybook",
+        "uiFramework": "@storybook/angular"
+      }
+    },
+    "stylelint": {
+      "executor": "nx-stylelint:lint",
+      "options": {
+        "lintFilePatterns": [
+          "packages/ngx-branding/**/*.css",
+          "packages/ngx-branding/**/*.scss"
+        ]
+      },
+      "outputs": ["{options.outputFile}"]
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "options": {
+        "jestConfig": "packages/ngx-branding/jest.config.js",
+        "passWithNoTests": true
+      },
+      "outputs": ["coverage/packages/ngx-branding"]
+    }
+  }
+}

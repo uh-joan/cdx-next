@@ -1,0 +1,52 @@
+{
+  "prefix": "cdx",
+  "projectType": "library",
+  "root": "packages/theme-angular-material",
+  "sourceRoot": "packages/theme-angular-material/src",
+  "tags": [],
+  "targets": {
+    "build": {
+      "configurations": {
+        "development": {
+          "tsConfig": "packages/theme-angular-material/tsconfig.lib.json"
+        },
+        "production": {
+          "tsConfig": "packages/theme-angular-material/tsconfig.lib.prod.json"
+        }
+      },
+      "defaultConfiguration": "production",
+      "executor": "@nrwl/angular:package",
+      "options": {
+        "project": "packages/theme-angular-material/ng-package.json"
+      },
+      "outputs": ["dist/packages/theme-angular-material"]
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "packages/theme-angular-material/src/**/*.ts",
+          "packages/theme-angular-material/src/**/*.html"
+        ]
+      }
+    },
+    "stylelint": {
+      "executor": "nx-stylelint:lint",
+      "options": {
+        "lintFilePatterns": [
+          "packages/theme-angular-material/**/*.css",
+          "packages/theme-angular-material/**/*.scss"
+        ]
+      },
+      "outputs": ["{options.outputFile}"]
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "options": {
+        "jestConfig": "packages/theme-angular-material/jest.config.js",
+        "passWithNoTests": true
+      },
+      "outputs": ["coverage/packages/theme-angular-material"]
+    }
+  }
+}

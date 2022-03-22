@@ -1,8 +1,0 @@
-@use '../../theme/material/styles' as cdx-material;
-
-@use '../src/lib/footer/footer-theme' as footer-theme;
-@use '../src/lib/header/header-theme' as header-theme;
-
-@include cdx-material.default;
-@include footer-theme.theme(cdx-material.$cdx-theme);
-@include header-theme.theme(cdx-material.$cdx-theme);

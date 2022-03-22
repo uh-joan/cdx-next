@@ -1,10 +1,8 @@
 {
   "projects": {
-    "branding": "packages/branding",
-    "cookies": "packages/cookies",
     "demo": "packages/demo",
-    "theme": "packages/theme",
-    "web-components": "packages/web-components",
+    "ngx-branding": "packages/ngx-branding",
+    "theme-angular-material": "packages/theme-angular-material",
     "workspace": {
       "root": ".",
       "targets": {

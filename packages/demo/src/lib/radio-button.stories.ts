@@ -1,5 +1,5 @@
 import { MatRadioModule } from '@angular/material/radio';
-import { ThemeModule } from '@cdx/theme/material';
+import { ThemeModule } from '@cdx-theme/angular-material';
 import { Meta, moduleMetadata, Story } from '@storybook/angular';
 import { html } from 'common-tags';
 
