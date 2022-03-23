@@ -190,7 +190,7 @@ pipeline {
             }
         }
 
-        stage('Deploy Storybooks to pre-prod') {
+        stage('Deploy Storybooks Demo to pre-prod') {
             when {
                 allOf {
                     branch 'main'
@@ -207,9 +207,9 @@ pipeline {
                     useNode: true
                 ) {
                     sh '''
-                        npm run deploy:storybooks -- \
-                            --bucket cdx-sparkdsg-feedback.dev.sp.aws.clarivate.net \
-                            --distribution E1HMQIDJUJTPGG
+                        npm run deploy:storybooks:demo -- \
+                            --bucket cdx-stories.dev.sp.aws.clarivate.net \
+                            --distribution E3GW94L15KJF3T
                     '''
                 }
             }
