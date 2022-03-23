@@ -5,116 +5,59 @@ import { MatChipsModule } from '@angular/material/chips';
 import { MatIconModule } from '@angular/material/icon';
 import { ThemeModule } from '@cdx/theme-angular-material';
 
-<Meta title="Sprint 2/Components/Chips" />
+<Meta title="Chips" />
 
 <Canvas>
   <Story
-    name="From Material"
+    name="Chips"
     decorators={[
       moduleMetadata({
-        imports: [MatChipsModule, MatIconModule, ThemeModule],
+        imports: [MatChipsModule, MatIconModule],
       }),
     ]}
   >
     {{
-      template: html`
-        <div class="mat-typography">
-          <h2>Basic</h2>
-          <mat-chip-list aria-label="Basic chips">
-            <mat-chip selected>selected</mat-chip>
-            <mat-chip>not selected</mat-chip>
-            <mat-chip color="primary" selected>Primary color</mat-chip>
-            <mat-chip color="accent" selected>Accent color</mat-chip>
-            <mat-chip color="warn" selected>Warn color</mat-chip>
-            <mat-chip>
-              with an action
-              <button matChipRemove>
-                <mat-icon>cancel</mat-icon>
-              </button>
-            </mat-chip>
-          </mat-chip-list>
-          <h2>Stacked</h2>
-          <div style="width: 200px">
-            <mat-chip-list
-              class="mat-chip-list-stacked"
-              aria-label="Color selection"
-            >
-              <mat-chip selected>selected</mat-chip>
-              <mat-chip>not selected</mat-chip>
-              <mat-chip color="primary" selected>Primary color</mat-chip>
-              <mat-chip color="accent" selected>Accent color</mat-chip>
-              <mat-chip color="warn" selected>Warn color</mat-chip>
-            </mat-chip-list>
-          </div>
-        </div>
-      `,
-    }}
-  </Story>
-  <Story
-    name="Alternate layouts"
-    decorators={[
-      moduleMetadata({
-        imports: [MatChipsModule, MatIconModule, ThemeModule],
-      }),
-    ]}
-  >
-    {{
-      template: html`
-        <div class="mat-typography">
-          <h2>built-in affordances</h2>
-          <mat-chip-list aria-label="Basic chips">
-            <mat-chip>
-              with a trailing icon
-              <mat-icon>star</mat-icon>
-            </mat-chip>
-            <mat-chip>
-              <img
-                src="https://material.angular.io/assets/img/examples/shiba2.jpg"
-                matChipAvatar
-              />
-              with an avatar image
-            </mat-chip>
-            <mat-chip>
-              <mat-chip-avatar>M</mat-chip-avatar>
-              with avatar text
-            </mat-chip>
-            <mat-chip>
-              removable
-              <button matChipRemove>
-                <mat-icon>cancel</mat-icon>
-              </button>
-            </mat-chip>
-            <mat-chip>
-              <img
-                src="https://material.angular.io/assets/img/examples/shiba2.jpg"
-                matChipAvatar
-              />
-              everything
-              <mat-icon>bathtub</mat-icon>
-              <button matChipRemove>
-                <mat-icon>check</mat-icon>
-              </button>
-            </mat-chip>
-          </mat-chip-list>
-          <h2>requires customization</h2>
+      template: `
+      <h3>Chips</h3>
+      <div class="story story--sections">
+          <div class="story__section">
+              <h4>Basic Chips</h4>
           <mat-chip-list>
-            <mat-chip style="height: auto;">
-              <img
-                src="https://material.angular.io/assets/img/examples/shiba2.jpg"
-                matChipAvatar
-              />
-              <div style="display: block; margin: 0.25rem">
-                <div class="mat-caption">Caption</div>
-                <div>Other stuff that is cool</div>
-              </div>
-              <mat-icon>check</mat-icon>
-              <button matChipRemove>
-                <mat-icon>cancel</mat-icon>
-              </button>
-            </mat-chip>
-          </mat-chip-list>
-        </div>
-      `,
+        <mat-chip>John</mat-chip>
+        <mat-chip>Paul</mat-chip>
+        <mat-chip>George</mat-chip>
+        <mat-chip>Ringo</mat-chip>
+      </mat-chip-list>
+      </div>
+      <div class="story__section">
+              <h4>Chips With Icons</h4>
+          <mat-chip-list>
+        <mat-chip>
+          <mat-icon matChipAvatar>directions_walk</mat-icon>Walk<mat-icon matChipRemove>cancel</mat-icon>
+        </mat-chip>
+        <mat-chip>
+          <mat-icon matChipAvatar> directions_bike</mat-icon>Cycle<mat-icon matChipRemove>cancel</mat-icon>
+        </mat-chip>
+        <mat-chip>
+          <mat-icon matChipAvatar> directions_bus</mat-icon>Bus<mat-icon matChipRemove>cancel</mat-icon>
+        </mat-chip>
+        <mat-chip>
+          <mat-icon matChipAvatar> directions_car</mat-icon>Drive<mat-icon matChipRemove>cancel</mat-icon>
+        </mat-chip>
+      </mat-chip-list>
+      </div>
+      <div class="story__section">
+              <h4>Chip Colors</h4>
+          <mat-chip-list>
+       <mat-chip>Basic</mat-chip>
+        <mat-chip color="primary" selected>primary</mat-chip>
+        <mat-chip color="accent" selected>accent</mat-chip>
+        <mat-chip color="warn" selected>warning</mat-chip>
+        <mat-chip disabled>disabled</mat-chip>
+      </mat-chip-list>
+      </div>
+  </div>
+    `,
     }}
   </Story>
 </Canvas>

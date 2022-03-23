@@ -3,11 +3,11 @@ import { moduleMetadata } from '@storybook/angular';
 import { html } from 'common-tags';
 import { DemoModule } from './demo.module';
 
-<Meta title="Sprint 3/Components/Table" />
+<Meta title="Table" />
 
 <Canvas>
   <Story
-    name="From Material"
+    name="Table"
     decorators={[
       moduleMetadata({
         imports: [DemoModule],
@@ -15,17 +15,9 @@ import { DemoModule } from './demo.module';
     ]}
   >
     {{
-      template: html` <div class="mat-typography basic-table">
-          <h2>Basic Table</h2>
+      template: html` <h3>Basic Table</h3>
+        <div class="story mat-typography basic-table">
           <demo-table-basic></demo-table-basic>
-        </div>
-        <div class="mat-typography table-expandable-rows">
-          <h2>Table with expandable rows</h2>
-          <demo-table-expandable-rows></demo-table-expandable-rows>
-        </div>
-        <div class="mat-typography table-with-filter">
-          <h2>Table with filter, pagination and sorting</h2>
-          <demo-table-filter-sort-pagination></demo-table-filter-sort-pagination>
         </div>`,
     }}
   </Story>

@@ -1,0 +1,79 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import { moduleMetadata } from '@storybook/angular';
+import { MatButtonModule } from '@angular/material/button';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatSliderModule } from '@angular/material/slider';
+import { html } from 'common-tags';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { FormsModule } from '@angular/forms';
+import { MatSelectModule } from '@angular/material/select';
+import { ThemeModule } from '@cdx/theme-angular-material';
+
+<Meta title="Sidenav" />
+
+<Canvas>
+  <Story
+    name="Sidenav"
+    decorators={[
+      moduleMetadata({
+        imports: [
+          MatSidenavModule,
+          BrowserAnimationsModule,
+          MatFormFieldModule,
+          MatInputModule,
+          FormsModule,
+          MatSelectModule,
+          MatButtonModule,
+          ThemeModule,
+        ],
+      }),
+    ]}
+  >
+    {{
+      template: html` <h3>Sidenav with explicit backdrop setting</h3>
+        <div class="story mat-typography sidenav-with-backdrop">
+          <mat-drawer-container
+            class="example-container"
+            [hasBackdrop]="hasBackdrop.value"
+            style="height: 500px;"
+          >
+            <mat-drawer #drawer2 [mode]="mode.value">
+              <h3>Sidenav</h3>
+            </mat-drawer>
+            <mat-drawer-content>
+              <div style="display: flex; column-gap: 1rem; margin: 1rem;">
+                <mat-form-field appearance="fill">
+                  <mat-label>Sidenav mode</mat-label>
+                  <mat-select #mode value="side">
+                    <mat-option value="side">Side</mat-option>
+                    <mat-option value="over">Over</mat-option>
+                    <mat-option value="push">Push</mat-option>
+                  </mat-select>
+                </mat-form-field>
+                <mat-form-field appearance="fill">
+                  <mat-label>Has backdrop</mat-label>
+                  <mat-select #hasBackdrop>
+                    <mat-option>Unset</mat-option>
+                    <mat-option [value]="true">True</mat-option>
+                    <mat-option [value]="false">False</mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+              <div style="text-align: center;">
+                <button
+                  mat-raised-button
+                  color="primary"
+                  (click)="drawer2.toggle()"
+                >
+                  Toggle sidenav
+                </button>
+              </div>
+            </mat-drawer-content>
+          </mat-drawer-container>
+        </div>`,
+    }}
+  </Story>
+</Canvas>

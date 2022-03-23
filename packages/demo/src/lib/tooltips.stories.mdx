@@ -1,0 +1,34 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import { moduleMetadata } from '@storybook/angular';
+import { MatTooltipModule, MatTooltip } from '@angular/material/tooltip';
+import { MatButtonModule } from '@angular/material/button';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatIconModule } from '@angular/material/icon';
+
+<Meta title="Tooltips" component={MatTooltip} />
+
+<Canvas>
+  <Story
+    name="Tooltips"
+    decorators={[
+      moduleMetadata({
+        imports: [
+          MatTooltipModule,
+          MatButtonModule,
+          BrowserAnimationsModule,
+          MatIconModule,
+        ],
+      }),
+    ]}
+  >
+    {{
+      template: `
+      <h3>Tooltip</h3>
+      <div class="story story--sections">
+          <button mat-flat-button color="primary" matTooltip="Info about the action" aria-label="Button that displays a tooltip when focused or hovered over">Action</button>
+          <mat-icon matTooltip="More information here">help_outline</mat-icon>
+      </div>
+    `,
+    }}
+  </Story>
+</Canvas>

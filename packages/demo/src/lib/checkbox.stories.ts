@@ -4,7 +4,7 @@ import { Meta, moduleMetadata, Story } from '@storybook/angular';
 import { html } from 'common-tags';
 
 export default {
-  title: 'Sprint 1/Components/Checkbox',
+  title: 'Checkbox',
   decorators: [
     moduleMetadata({
       imports: [MatCheckboxModule, ThemeModule],
@@ -12,18 +12,19 @@ export default {
   ],
 } as Meta;
 
-const FromMaterialTemplate: Story = () => ({
+const CheckboxTemplate: Story = () => ({
   template: html`
-    <div class="mat-typography checkbox-story">
-      <section class="example-section">
-        <mat-checkbox class="example-margin" [checked]="'true'"
-          >Checked</mat-checkbox
-        >
-        <mat-checkbox class="example-margin">Unchecked</mat-checkbox>
-        <mat-checkbox class="example-margin" disabled>Disabled</mat-checkbox>
-      </section>
+    <h3>Checkbox States</h3>
+    <div class="story">
+      <mat-checkbox [checked]="true">Checked</mat-checkbox>
+      <mat-checkbox [checked]="true" [disabled]="true"
+        >Checked + Disabled</mat-checkbox
+      >
+      <mat-checkbox [indeterminate]="true">Indeterminate</mat-checkbox>
+      <mat-checkbox>Unchecked</mat-checkbox>
+      <mat-checkbox [disabled]="true">Unchecked + Disabled</mat-checkbox>
     </div>
   `,
 });
 
-export const FromMaterial = FromMaterialTemplate.bind({});
+export const checkbox = CheckboxTemplate.bind({});

@@ -4,11 +4,11 @@ import { html } from 'common-tags';
 import { DemoModule } from './demo.module';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 
-<Meta title="Sprint 3/Components/Snackbar" />
+<Meta title="Snackbar" />
 
 <Canvas>
   <Story
-    name="From Material"
+    name="Snackbar"
     decorators={[
       moduleMetadata({
         imports: [DemoModule, MatSnackBarModule],
@@ -16,18 +16,12 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     ]}
   >
     {{
-      template: html` <div class="mat-typography snackbar-basic">
-          <h2>Basic snack-bar</h2>
+      template: html`
+        <h3>Snackbar</h3>
+        <div class="story mat-typography">
           <demo-snack-bar></demo-snack-bar>
         </div>
-        <div class="mat-typography snackbar-custom">
-          <h2>Custom snack-bar</h2>
-          <demo-snack-bar-custom></demo-snack-bar-custom>
-        </div>
-        <div class="mat-typography snackbar-positionable">
-          <h2>Snack-bar configurable position</h2>
-          <demo-snack-bar-position></demo-snack-bar-position>
-        </div>`,
+      `,
     }}
   </Story>
 </Canvas>

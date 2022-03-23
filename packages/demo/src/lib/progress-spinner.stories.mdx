@@ -5,29 +5,26 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { CommonModule } from '@angular/common';
 import { ThemeModule } from '@cdx/theme-angular-material';
 
-<Meta title="Sprint 2/Components/Progress Spinner" />
+<Meta title="Progress Spinner" />
 
 <Canvas>
   <Story
-    name="From Material"
+    name="Progress Spinner"
     decorators={[
       moduleMetadata({
-        imports: [MatProgressSpinnerModule, CommonModule, ThemeModule],
+        imports: [MatProgressSpinnerModule],
       }),
     ]}
   >
     {{
-      template: html`
-        <div class="mat-typography progress-spinner-story">
-          <div *ngFor="let mode of ['determinate', 'indeterminate']">
-            <h2>{{ mode }}</h2>
-            <mat-progress-spinner
-              [mode]="mode"
-              value="36"
-            ></mat-progress-spinner>
-          </div>
-        </div>
-      `,
+      template: `
+<h3>Progress Spinner</h3>
+<div class="story">
+    <mat-progress-spinner mode="indeterminate" color="primary"></mat-progress-spinner>
+    <mat-progress-spinner mode="indeterminate" color="accent"></mat-progress-spinner>
+    <mat-progress-spinner mode="indeterminate" color="warn"></mat-progress-spinner>
+</div>
+    `,
     }}
   </Story>
 </Canvas>

@@ -1,33 +1,86 @@
 import { Meta, Story, Canvas } from '@storybook/addon-docs';
 import { moduleMetadata } from '@storybook/angular';
-import { MatSliderModule } from '@angular/material/slider';
+import { MatSliderModule, MatSlider } from '@angular/material/slider';
 import { html } from 'common-tags';
 import { DemoModule } from './demo.module';
+import { ThemeModule } from '@cdx/theme-angular-material';
 
-<Meta title="Sprint 3/Components/Slider" />
+<Meta title="Slider" component={MatSlider} />
 
 <Canvas>
   <Story
-    name="From Material"
+    name="Basic Slider"
     decorators={[
       moduleMetadata({
-        imports: [MatSliderModule, DemoModule],
+        imports: [MatSliderModule, ThemeModule],
       }),
     ]}
   >
     {{
-      template: html` <div class="mat-typography slider-basic">
-          <h2>Basic slider</h2>
-          <mat-slider aria-label="unit(s)"> </mat-slider>
-        </div>
-        <div class="mat-typography slider-custom-thumb">
-          <h2>Slider-custom-thumb</h2>
-          <demo-slider-custom-thumb> </demo-slider-custom-thumb>
-        </div>
-        <div class="mat-typography slider-configurable">
-          <h2>Configurable slider</h2>
-          <demo-slider-configurable> </demo-slider-configurable>
-        </div>`,
+      template: `
+      <h3>Basic Slider</h3>
+      <div class="story mat-typography">
+          <mat-slider color="primary">
+        </mat-slider>
+  </div>
+    `,
+    }}
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story
+    name="Disabled Slider"
+    decorators={[
+      moduleMetadata({
+        imports: [MatSliderModule, ThemeModule],
+      }),
+    ]}
+  >
+    {{
+      template: `
+      <h3>Disabled Slider</h3>
+      <div class="story">
+           <mat-slider
+        color="primary"
+        disabled="true"
+        thumbLabel
+        title="slider with volume options"
+        min="0"
+        max="100"
+        step="1"
+      >
+       </mat-slider>
+  </div>
+    `,
+    }}
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story
+    name="Slider With Number Label"
+    decorators={[
+      moduleMetadata({
+        imports: [MatSliderModule, ThemeModule],
+      }),
+    ]}
+  >
+    {{
+      template: `
+      <h3>Slider With Number Label</h3>
+      <div class="story">
+           <mat-slider
+        color="primary"
+        thumbLabel
+        title="slider with volume options"
+        min="0"
+        max="100"
+        step="1"
+      >
+       </mat-slider>
+  </div>
+    `,
     }}
   </Story>
 </Canvas>

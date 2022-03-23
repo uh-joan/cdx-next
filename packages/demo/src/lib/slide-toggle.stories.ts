@@ -4,7 +4,7 @@ import { Meta, moduleMetadata, Story } from '@storybook/angular';
 import { html } from 'common-tags';
 
 export default {
-  title: 'Sprint 2/Components/Slide Toggle',
+  title: 'Slide Toggle',
   decorators: [
     moduleMetadata({
       imports: [MatSlideToggleModule, ThemeModule],
@@ -12,14 +12,24 @@ export default {
   ],
 } as Meta;
 
-const FromMaterialTemplate: Story = () => ({
+const SlideToggleTemplate: Story = () => ({
   template: html`
-    <div class="mat-typography">
-      <mat-slide-toggle [checked]="'true'"> Checked </mat-slide-toggle>
-      <mat-slide-toggle [checked]="'false'"> Unchecked </mat-slide-toggle>
-      <mat-slide-toggle [disabled]="'true'"> Disabled </mat-slide-toggle>
+    <h3>Slide Toggle</h3>
+    <div class="story">
+      <mat-slide-toggle role="button" color="primary"
+        >Enabled, Unchecked</mat-slide-toggle
+      >
+      <mat-slide-toggle role="button" color="primary" [checked]="true"
+        >Enabled, Checked</mat-slide-toggle
+      >
+      <mat-slide-toggle disabled role="button"
+        >Disabled, Unchecked</mat-slide-toggle
+      >
+      <mat-slide-toggle disabled role="button" color="primary" [checked]="true"
+        >Disabled, Checked</mat-slide-toggle
+      >
     </div>
   `,
 });
 
-export const FromMaterial = FromMaterialTemplate.bind({});
+export const slideToggle = SlideToggleTemplate.bind({});

@@ -1,89 +1,49 @@
-@use 'sass:map';
-@use './palettes';
 @use '../../../theme-angular-material/styles' as cdx-theme;
-
-@import 'styles/components-main';
 
 @include cdx-theme.default;
 
-@each $palette,
-  $palette-values
-    in (
-      primary: palettes.$primary-palette,
-      accent: palettes.$accent-palette,
-      warn: palettes.$warn-palette
-    )
-{
-  .#{$palette}-palette {
-    display: flex;
-    justify-content: space-evenly;
+// all template html goes in a div with this class
+.story {
+  display: flex;
+  min-height: 150px;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+  column-gap: 4rem;
+  row-gap: 1rem;
 
-    @each $color, $value in $palette-values {
-      @if $color != 'contrast' {
-        .bg-#{$color} {
-          width: 75px;
-          height: 75px;
-          padding-top: 1rem;
-          background-color: #{$value};
-          color: map.get(map.get($palette-values, 'contrast'), $color);
-          text-align: center;
-        }
-      }
+  // add this class to the top level div if your story has multiple subsections
+  &--sections {
+    justify-content: space-evenly;
+  }
+
+  // class for story subsections, including labels
+  &__section {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+
+    // actual content of story subsections
+    &__content {
+      display: flex;
+      column-gap: 2rem;
     }
   }
 }
 
-.button-story {
-  section {
-    display: table;
-  }
-
-  .example-label {
-    display: table-cell;
-    min-width: 120px;
-    margin-left: 8px;
-    font-size: 14px;
-  }
-
-  .example-button-row {
-    display: table-cell;
-  }
-
-  .example-button-row .mat-button-base {
-    margin: 8px 8px 8px 0;
-  }
-
-  .example-flex-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
-
-  .example-button-container {
-    display: flex;
-    width: 120px;
-    justify-content: center;
-  }
+.wide {
+  width: 80%;
 }
 
-.radio-button-story {
-  .mat-radio-button ~ .mat-radio-button {
-    margin-left: 16px;
-  }
+.columns {
+  display: inline-flex;
+  flex-direction: column;
+  row-gap: 0.25rem;
 }
 
-.checkbox-story {
-  mat-checkbox ~ mat-checkbox {
-    margin-left: 16px;
-  }
-}
-
-.mat-slide-toggle {
-  margin-right: 1rem;
-}
-
-.mat-chip-list-wrapper {
-  margin-bottom: 1rem;
+.mat-drawer {
+  padding: 1rem;
 }
 
 .example-card {
@@ -93,38 +53,4 @@
 .example-header-image {
   background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
   background-size: cover;
-}
-
-.mat-card {
-  margin-bottom: 1rem;
-}
-
-.progress-bar-story {
-  h2 {
-    text-transform: capitalize;
-  }
-
-  .mat-progress-bar {
-    margin-bottom: 3rem;
-  }
-}
-
-.progress-spinner-story {
-  h2 {
-    text-transform: capitalize;
-  }
-
-  .mat-progress-spinner {
-    margin-bottom: 3rem;
-  }
-}
-
-.mat-menu-trigger {
-  margin-bottom: 1rem;
-}
-
-.select-story {
-  h2 {
-    text-transform: capitalize;
-  }
 }

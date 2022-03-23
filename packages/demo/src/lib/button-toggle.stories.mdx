@@ -1,0 +1,90 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import { moduleMetadata } from '@storybook/angular';
+import { MatIconModule } from '@angular/material/icon';
+import {
+  MatButtonToggleModule,
+  MatButtonToggle,
+} from '@angular/material/button-toggle';
+import { ThemeModule } from '@cdx/theme-angular-material';
+
+<Meta title="Button Toggle" component={MatButtonToggle} />
+
+<Canvas>
+  <Story
+    name="default"
+    decorators={[
+      moduleMetadata({
+        imports: [MatButtonToggleModule, ThemeModule],
+      }),
+    ]}
+  >
+    {{
+      template: `
+            <h3>Default Button Toggle</h3>
+            <div class="story">
+                <mat-button-toggle-group name="switcher" aria-label="Switcher">
+                    <mat-button-toggle value="fielded" checked role="button">Fielded</mat-button-toggle>
+                    <mat-button-toggle value="expert" role="button">Expert</mat-button-toggle>
+                </mat-button-toggle-group>
+            </div>
+        `,
+    }}
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story
+    name="multi"
+    decorators={[
+      moduleMetadata({
+        imports: [MatButtonToggleModule],
+      }),
+    ]}
+  >
+    {{
+      template: `
+            <h3>Button Toggle With More Than Two Components</h3>
+            <div class="story">
+                <mat-button-toggle-group name="switcher" aria-label="Switcher">
+                    <mat-button-toggle value="left" checked role="button">Left</mat-button-toggle>
+                    <mat-button-toggle value="middle" role="button">Middle</mat-button-toggle>
+                    <mat-button-toggle value="right" role="button">Right</mat-button-toggle>
+                </mat-button-toggle-group>
+            </div>
+        `,
+    }}
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story
+    name="icons"
+    decorators={[
+      moduleMetadata({
+        imports: [MatButtonToggleModule, MatIconModule],
+      }),
+    ]}
+  >
+    {{
+      template: `
+            <h3>Button Toggle With Icons</h3>
+            <div class="story">
+                <mat-button-toggle-group>
+                    <mat-button-toggle checked value="left">
+                    <mat-icon>format_align_left</mat-icon>
+                    </mat-button-toggle>
+                    <mat-button-toggle value="center">
+                    <mat-icon>format_align_center</mat-icon>
+                    </mat-button-toggle>
+                    <mat-button-toggle value="right">
+                    <mat-icon>format_align_right</mat-icon>
+                    </mat-button-toggle>
+                    <mat-button-toggle value="justify" disabled>
+                    <mat-icon>format_align_justify</mat-icon>
+                    </mat-button-toggle>
+                </mat-button-toggle-group>
+            </div>
+        `,
+    }}
+  </Story>
+</Canvas>

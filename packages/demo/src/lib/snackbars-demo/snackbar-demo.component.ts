@@ -11,7 +11,9 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 export class SnackBarDemoComponent {
   constructor(private _snackBar: MatSnackBar) {}
 
-  openSnackBar(message: string, action: string) {
-    this._snackBar.open(message, action);
+  openSnackBar() {
+    this._snackBar.open('Add your snackbar message here', 'Action Text', {
+      duration: 5000, //Can be any number, but must be in milliseconds
+    });
   }
 }

@@ -10,11 +10,11 @@ import { DialogDemoComponent } from './dialog-demo/dialog-demo.component';
 import { MatButtonModule } from '@angular/material/button';
 import { ThemeModule } from '@cdx/theme-angular-material';
 
-<Meta title="Sprint 3/Components/Dialog" component={DialogDemoComponent} />
+<Meta title="Dialog" component={DialogDemoComponent} />
 
 <Canvas>
   <Story
-    name="From Material"
+    name="Dialog"
     decorators={[
       moduleMetadata({
         imports: [
@@ -30,8 +30,8 @@ import { ThemeModule } from '@cdx/theme-angular-material';
   >
     {{
       template: html`
-        <div class="mat-typography">
-          <h2>Basic dialog</h2>
+        <h3>Basic dialog</h3>
+        <div class="mat-typography story">
           <demo-dialog></demo-dialog>
         </div>
       `,

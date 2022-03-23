@@ -5,32 +5,26 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { CommonModule } from '@angular/common';
 import { ThemeModule } from '@cdx/theme-angular-material';
 
-<Meta title="Sprint 2/Components/Progress Bar" />
+<Meta title="Progress Bar" />
 
 <Canvas>
   <Story
-    name="From Material"
+    name="Progress Bar"
     decorators={[
       moduleMetadata({
-        imports: [MatProgressBarModule, CommonModule, ThemeModule],
+        imports: [MatProgressBarModule],
       }),
     ]}
   >
     {{
-      template: html`
-        <div class="mat-typography progress-bar-story">
-          <div
-            *ngFor="let mode of ['determinate', 'indeterminate', 'buffer', 'query']"
-          >
-            <h2>{{ mode }}</h2>
-            <mat-progress-bar
-              [mode]="mode"
-              value="36"
-              bufferValue="73"
-            ></mat-progress-bar>
-          </div>
-        </div>
-      `,
+      template: `
+<h3>Progress Bar</h3>
+<div class="story">
+    <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+    <mat-progress-bar mode="indeterminate" color="accent"></mat-progress-bar>
+    <mat-progress-bar mode="indeterminate" color="warn"></mat-progress-bar>
+</div>
+    `,
     }}
   </Story>
 </Canvas>
