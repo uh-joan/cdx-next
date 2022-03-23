@@ -1,5 +1,5 @@
 {
-  "name": "@cdx-theme/angular-material",
+  "name": "@cdx/theme-angular-material",
   "version": "0.0.1",
   "exports": {
     ".": {
