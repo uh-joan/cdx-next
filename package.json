@@ -17,7 +17,7 @@
     "commit": "cz",
     "deploy:storybooks:demo": "deploy-aws-s3-cloudfront --debug --non-interactive --source ./dist/storybook/demo --delete --invalidation-path '/*'",
     "lint": "run-s lint:*",
-    "lint:commit": "commitlint --from 503c1e1",
+    "lint:commit": "commitlint --from a575076",
     "lint:jenkins": "npm-groovy-lint --failon warning --noserver --no-insight --ignorepattern **/node_modules/** --files **/Jenkinsfile",
     "lint:json": "jsonsort --ci --nodemodules=false '**.json'",
     "lint:nx": "run-s lint:nx:*",
