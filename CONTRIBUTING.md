@@ -11,6 +11,19 @@ Before proposing a change, please:
 - Review the
   [Architecture Decision Records](https://git.clarivate.io/projects/CDXN/repos/cdx-next/browse/adr/README.md)
 
+## Contribution Criteria at a Glance
+
+The CDX team will strive to review all PRs within 2 business days. Substantive
+changes (e.g.implementing features, significant refactors) will require
+discussion with product management; raised at the trusted committers discretion
+
+- WCAG Compliant
+- i18n for any in-lined strings
+- Unit test coverage >= 80%
+- Works in spec'ed browsers
+- Documentation follows pattern/conventions
+- No breaking changes, must be backwards compatible as possible
+
 ## Pull Requests
 
 Please use the following template for submitting proposed changes:
