@@ -1,0 +1,71 @@
+@use '@material/typography' with (
+  $font-family: unquote("'Source Sans Pro', sans-serif"),
+  $font-weight-values: (
+    thin: 200,
+    light: 300,
+    regular: 400,
+    medium: 600,
+    bold: 700,
+    black: 900,
+  ),
+  $styles-headline1: (
+    font-size: 96px,
+    line-height: 116px,
+    font-weight: 700,
+  ),
+  $styles-headline2: (
+    font-size: 56px,
+    line-height: 64px,
+    font-weight: 700,
+  ),
+  $styles-headline3: (
+    font-size: 48px,
+    line-height: 56px,
+    font-weight: 700,
+  ),
+  $styles-headline4: (
+    font-size: 32px,
+    line-height: 40px,
+    font-weight: 700,
+  ),
+  $styles-headline5: (
+    font-size: 26px,
+    line-height: 1.3,
+    font-weight: 700,
+  ),
+  $styles-headline6: (
+    font-size: 20px,
+    line-height: 1.3,
+    font-weight: 600,
+  ),
+  $styles-subtitle1: (
+    font-size: 18px,
+    line-height: 1.3,
+    font-weight: 400,
+  ),
+  $styles-subtitle2: (
+    font-size: 17px,
+    line-height: 1.3,
+    font-weight: 600,
+  ),
+  $styles-body1: (
+    font-size: 16px,
+    line-height: 1.3,
+    font-weight: 600,
+  ),
+  $styles-body2: (
+    font-size: 16px,
+    line-height: 1.3,
+    font-weight: 400,
+  ),
+  $styles-caption: (
+    font-size: 12px,
+    line-height: 1.3,
+    font-weight: 400,
+  ),
+  $styles-button: (
+    font-size: inherit,
+    font-weight: 600,
+  )
+  // TODO add overline?
+);

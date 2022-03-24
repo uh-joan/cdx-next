@@ -1,0 +1,15 @@
+{
+  "root": "packages/theme-material-components-web",
+  "targets": {
+    "stylelint": {
+      "executor": "nx-stylelint:lint",
+      "options": {
+        "lintFilePatterns": [
+          "packages/theme-material-components-web/**/*.css",
+          "packages/theme-material-components-web/**/*.scss"
+        ]
+      },
+      "outputs": ["{options.outputFile}"]
+    }
+  }
+}

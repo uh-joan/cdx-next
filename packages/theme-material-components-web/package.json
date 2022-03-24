@@ -1,0 +1,19 @@
+{
+  "name": "@cdx/theme-material-components-web",
+  "version": "0.0.0",
+  "repository": {
+    "directory": "packages/theme-material-components-web",
+    "type": "git",
+    "url": "ssh://git@git.clarivate.io/cdxn/cdx-next.git"
+  },
+  "files": [
+    "dist",
+    "*.scss"
+  ],
+  "scripts": {
+    "build": "webpack"
+  },
+  "dependencies": {
+    "material-components-web": "13.0.0"
+  }
+}
