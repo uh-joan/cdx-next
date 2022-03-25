@@ -7,6 +7,7 @@
   &::after {
     position: absolute;
     top: -11px;
+    right: -11px;
     min-width: 11px;
     padding: 0 5px;
     background: theme-color.prop-value(primary);

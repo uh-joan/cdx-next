@@ -8,7 +8,7 @@ module.exports = {
   mode: 'production',
   name: 'theme-badge-css-combined',
   entry: {
-    'theme-badge': './theme-badge.scss',
+    'theme-badge': './badge.scss',
   },
   devtool: 'source-map',
   output: {
