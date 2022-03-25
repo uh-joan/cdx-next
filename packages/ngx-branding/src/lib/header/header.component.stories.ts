@@ -14,9 +14,6 @@ import { HeaderGlobalUtilitiesModule } from './header-global-utilities/header-gl
 export default {
   title: 'Header',
   component: HeaderComponent,
-  parameters: {
-    docs: { iframeHeight: 160 },
-  },
   decorators: [
     moduleMetadata({
       imports: [
@@ -39,9 +36,9 @@ const BasicTemplate: Story<HeaderComponent> = () => ({
 
 const WithGlobalUtilitiesTemplate: Story<HeaderComponent> = () => ({
   template: html`
-    <!-- 
-    PLEASE NOTE: All inline styles are included as examples of how content 
-    can be positioned and are intended for demonstration purposes only. 
+    <!--
+    PLEASE NOTE: All inline styles are included as examples of how content
+    can be positioned and are intended for demonstration purposes only.
     -->
     <header cdx-header>
       <cdx-header-global>
@@ -65,9 +62,9 @@ const WithGlobalUtilitiesTemplate: Story<HeaderComponent> = () => ({
 
 const WithProductNameTemplate: Story<HeaderComponent> = () => ({
   template: html`
-    <!-- 
-    PLEASE NOTE: All inline styles are included as examples of how content 
-    can be positioned and are intended for demonstration purposes only. 
+    <!--
+    PLEASE NOTE: All inline styles are included as examples of how content
+    can be positioned and are intended for demonstration purposes only.
     -->
     <header cdx-header>
       <cdx-header-global>
@@ -96,9 +93,9 @@ const WithProductNameTemplate: Story<HeaderComponent> = () => ({
 
 const WithProductLogoTemplate: Story<HeaderComponent> = () => ({
   template: html`
-    <!-- 
-    PLEASE NOTE: All inline styles are included as examples of how content 
-    can be positioned and are intended for demonstration purposes only. 
+    <!--
+    PLEASE NOTE: All inline styles are included as examples of how content
+    can be positioned and are intended for demonstration purposes only.
     -->
     <header cdx-header>
       <cdx-header-global>
@@ -130,9 +127,9 @@ const WithProductLogoTemplate: Story<HeaderComponent> = () => ({
 
 const WithProductSearchTemplate: Story<HeaderComponent> = () => ({
   template: html`
-    <!-- 
-    PLEASE NOTE: All inline styles are included as examples of how content 
-    can be positioned and are intended for demonstration purposes only. 
+    <!--
+    PLEASE NOTE: All inline styles are included as examples of how content
+    can be positioned and are intended for demonstration purposes only.
     -->
     <header cdx-header>
       <cdx-header-global>
@@ -177,9 +174,9 @@ const AtSmallestSizeTemplate: Story<HeaderComponent> = () => ({
 
 const AtLargestSizeTemplate: Story<HeaderComponent> = () => ({
   template: html`
-    <!-- 
-    PLEASE NOTE: All inline styles are included as examples of how content 
-    can be positioned and are intended for demonstration purposes only. 
+    <!--
+    PLEASE NOTE: All inline styles are included as examples of how content
+    can be positioned and are intended for demonstration purposes only.
     -->
     <header cdx-header>
       <cdx-header-product-name>
@@ -191,9 +188,9 @@ const AtLargestSizeTemplate: Story<HeaderComponent> = () => ({
 
 const WithPrimaryNavTemplate: Story<HeaderComponent> = () => ({
   template: html`
-    <!-- 
-    PLEASE NOTE: All inline styles are included as examples of how content 
-    can be positioned and are intended for demonstration purposes only. 
+    <!--
+    PLEASE NOTE: All inline styles are included as examples of how content
+    can be positioned and are intended for demonstration purposes only.
     -->
     <header cdx-header>
       <cdx-header-global>

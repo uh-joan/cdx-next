@@ -15,9 +15,6 @@ import { html } from 'common-tags';
 export default {
   title: 'Header',
   component: HeaderComponent,
-  parameters: {
-    docs: { iframeHeight: 160 },
-  },
   decorators: [
     moduleMetadata({
       imports: [

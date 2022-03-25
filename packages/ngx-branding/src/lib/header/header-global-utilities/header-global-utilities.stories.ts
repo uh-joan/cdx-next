@@ -9,9 +9,6 @@ import { HeaderGlobalUtilitiesModule } from './header-global-utilities.module';
 
 export default {
   title: 'Header/Global Utilities',
-  parameters: {
-    docs: { iframeHeight: 100 },
-  },
   decorators: [
     moduleMetadata({
       imports: [

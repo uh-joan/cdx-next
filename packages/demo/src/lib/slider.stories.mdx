@@ -17,13 +17,12 @@ import { ThemeModule } from '@cdx/theme-angular-material';
     ]}
   >
     {{
-      template: `
-      <h3>Basic Slider</h3>
-      <div class="story mat-typography">
-          <mat-slider color="primary">
-        </mat-slider>
-  </div>
-    `,
+      template: html`
+        <h3>Basic Slider</h3>
+        <div class="story mat-typography">
+          <mat-slider color="primary"> </mat-slider>
+        </div>
+      `,
     }}
   </Story>
 </Canvas>
@@ -38,21 +37,21 @@ import { ThemeModule } from '@cdx/theme-angular-material';
     ]}
   >
     {{
-      template: `
-      <h3>Disabled Slider</h3>
-      <div class="story">
-           <mat-slider
-        color="primary"
-        disabled="true"
-        thumbLabel
-        title="slider with volume options"
-        min="0"
-        max="100"
-        step="1"
-      >
-       </mat-slider>
-  </div>
-    `,
+      template: html`
+        <h3>Disabled Slider</h3>
+        <div class="story">
+          <mat-slider
+            color="primary"
+            disabled="true"
+            thumbLabel
+            title="slider with volume options"
+            min="0"
+            max="100"
+            step="1"
+          >
+          </mat-slider>
+        </div>
+      `,
     }}
   </Story>
 </Canvas>
@@ -67,20 +66,20 @@ import { ThemeModule } from '@cdx/theme-angular-material';
     ]}
   >
     {{
-      template: `
-      <h3>Slider With Number Label</h3>
-      <div class="story">
-           <mat-slider
-        color="primary"
-        thumbLabel
-        title="slider with volume options"
-        min="0"
-        max="100"
-        step="1"
-      >
-       </mat-slider>
-  </div>
-    `,
+      template: html`
+        <h3>Slider With Number Label</h3>
+        <div class="story">
+          <mat-slider
+            color="primary"
+            thumbLabel
+            title="slider with volume options"
+            min="0"
+            max="100"
+            step="1"
+          >
+          </mat-slider>
+        </div>
+      `,
     }}
   </Story>
 </Canvas>

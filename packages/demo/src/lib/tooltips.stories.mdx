@@ -4,6 +4,7 @@ import { MatTooltipModule, MatTooltip } from '@angular/material/tooltip';
 import { MatButtonModule } from '@angular/material/button';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatIconModule } from '@angular/material/icon';
+import { html } from 'common-tags';
 
 <Meta title="Tooltips" component={MatTooltip} />
 
@@ -22,13 +23,20 @@ import { MatIconModule } from '@angular/material/icon';
     ]}
   >
     {{
-      template: `
-      <h3>Tooltip</h3>
-      <div class="story story--sections">
-          <button mat-flat-button color="primary" matTooltip="Info about the action" aria-label="Button that displays a tooltip when focused or hovered over">Action</button>
+      template: html`
+        <h3>Tooltip</h3>
+        <div class="story story--sections">
+          <button
+            mat-flat-button
+            color="primary"
+            matTooltip="Info about the action"
+            aria-label="Button that displays a tooltip when focused or hovered over"
+          >
+            Action
+          </button>
           <mat-icon matTooltip="More information here">help_outline</mat-icon>
-      </div>
-    `,
+        </div>
+      `,
     }}
   </Story>
 </Canvas>

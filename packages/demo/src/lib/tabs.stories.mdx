@@ -1,6 +1,7 @@
 import { Meta, Story, Canvas } from '@storybook/addon-docs';
 import { moduleMetadata } from '@storybook/angular';
 import { MatTabsModule, MatTab } from '@angular/material/tabs';
+import { html } from 'common-tags';
 
 <Meta title="Tabs" component={MatTab} />
 
@@ -14,15 +15,15 @@ import { MatTabsModule, MatTab } from '@angular/material/tabs';
     ]}
   >
     {{
-      template: `
-<h3>Tabs</h3>
-<div class="story">
-    <mat-tab-group>
-        <mat-tab label="First">Code</mat-tab>
-        <mat-tab label="Second">More code</mat-tab>
-    </mat-tab-group>
-</div>
-    `,
+      template: html`
+        <h3>Tabs</h3>
+        <div class="story">
+          <mat-tab-group>
+            <mat-tab label="First">Code</mat-tab>
+            <mat-tab label="Second">More code</mat-tab>
+          </mat-tab-group>
+        </div>
+      `,
     }}
   </Story>
 </Canvas>

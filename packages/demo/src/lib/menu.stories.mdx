@@ -19,17 +19,21 @@ import { ThemeModule } from '@cdx/theme-angular-material';
     ]}
   >
     {{
-      template: `
-<h3>Basic Menu</h3>
-<div class="story">
-    <button mat-flat-button [matMenuTriggerFor]="menu" color="primary">Menu</button>
-    <mat-menu #menu="matMenu" role="menu">
-        <button mat-menu-item role="menuitem">Item 1</button>
-        <button mat-menu-item role="menuitem" disabled>Item 2 (Disabled option)</button>
-        <button mat-menu-item role="menuitem">Item 3</button>
-    </mat-menu>
-</div>
-    `,
+      template: html`
+        <h3>Basic Menu</h3>
+        <div class="story">
+          <button mat-flat-button [matMenuTriggerFor]="menu" color="primary">
+            Menu
+          </button>
+          <mat-menu #menu="matMenu" role="menu">
+            <button mat-menu-item role="menuitem">Item 1</button>
+            <button mat-menu-item role="menuitem" disabled>
+              Item 2 (Disabled option)
+            </button>
+            <button mat-menu-item role="menuitem">Item 3</button>
+          </mat-menu>
+        </div>
+      `,
     }}
   </Story>
 </Canvas>
@@ -49,24 +53,24 @@ import { ThemeModule } from '@cdx/theme-angular-material';
     ]}
   >
     {{
-      template: `
-<h3>Menu With Icons</h3>
-<div class="story">
-    <button mat-button [matMenuTriggerFor]="menu2">
-        <mat-icon>settings</mat-icon>
-    </button>
-    <mat-menu #menu2="matMenu" role="menu">
-        <button mat-menu-item role="menuitem but-inline">
-            <mat-icon>invert_colors</mat-icon>
-            <span>Item 1</span>
-        </button>
-        <button mat-menu-item role="menuitem but-inline">
-            <mat-icon>invert_colors</mat-icon>
-            <span>Item 2</span>
-        </button>
-    </mat-menu>
-</div>
-    `,
+      template: html`
+        <h3>Menu With Icons</h3>
+        <div class="story">
+          <button mat-button [matMenuTriggerFor]="menu2">
+            <mat-icon>settings</mat-icon>
+          </button>
+          <mat-menu #menu2="matMenu" role="menu">
+            <button mat-menu-item role="menuitem but-inline">
+              <mat-icon>invert_colors</mat-icon>
+              <span>Item 1</span>
+            </button>
+            <button mat-menu-item role="menuitem but-inline">
+              <mat-icon>invert_colors</mat-icon>
+              <span>Item 2</span>
+            </button>
+          </mat-menu>
+        </div>
+      `,
     }}
   </Story>
 </Canvas>

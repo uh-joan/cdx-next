@@ -17,14 +17,23 @@ import { ThemeModule } from '@cdx/theme-angular-material';
     ]}
   >
     {{
-      template: `
-<h3>Progress Spinner</h3>
-<div class="story">
-    <mat-progress-spinner mode="indeterminate" color="primary"></mat-progress-spinner>
-    <mat-progress-spinner mode="indeterminate" color="accent"></mat-progress-spinner>
-    <mat-progress-spinner mode="indeterminate" color="warn"></mat-progress-spinner>
-</div>
-    `,
+      template: html`
+        <h3>Progress Spinner</h3>
+        <div class="story">
+          <mat-progress-spinner
+            mode="indeterminate"
+            color="primary"
+          ></mat-progress-spinner>
+          <mat-progress-spinner
+            mode="indeterminate"
+            color="accent"
+          ></mat-progress-spinner>
+          <mat-progress-spinner
+            mode="indeterminate"
+            color="warn"
+          ></mat-progress-spinner>
+        </div>
+      `,
     }}
   </Story>
 </Canvas>

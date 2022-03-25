@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { MatSortModule, Sort } from '@angular/material/sort';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { Meta } from '@storybook/angular';
+import { html } from 'common-tags';
 
 const sortHeaderTemplate = `<table matSort (matSortChange)="sortData($event)">
   <tr>
@@ -94,9 +95,8 @@ export const SortHeader = () => ({
     imports: [MatSortModule, BrowserAnimationsModule],
     declarations: [SortHeaderComponent],
   },
-  template: `
-  <h3>Sort Header</h3>
-  <div class="story"><demo-sort-header></demo-sort-header></div>`,
+  template: html` <h3>Sort Header</h3>
+    <div class="story"><demo-sort-header></demo-sort-header></div>`,
 });
 
 SortHeader.parameters = {

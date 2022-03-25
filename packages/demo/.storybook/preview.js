@@ -12,6 +12,6 @@ document.body.classList.add('mat-typography');
 
 export const parameters = {
   docs: {
-    iframeHeight: 300,
+    inlineStories: true,
   },
 };

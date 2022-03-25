@@ -24,35 +24,50 @@ import { FormsModule } from '@angular/forms';
     ]}
   >
     {{
-      template: `
-            <h3>Basic Select</h3>
-            <div class="story">
-              <mat-form-field appearance="fill">
-                    <mat-label>Fill</mat-label>
-                    <mat-select placeholder="Choose an option" panelClass="common-panel">
-                        <mat-option value="option1">Option 1</mat-option>
-                        <mat-option value="option2" disabled>Option 2 (disabled)</mat-option>
-                        <mat-option value="option3">Option 3</mat-option>
-                    </mat-select>
-                </mat-form-field>
-                <mat-form-field appearance="outline">
-                    <mat-label>Outline</mat-label>
-                    <mat-select placeholder="Choose an option" panelClass="common-panel">
-                        <mat-option value="option1">Option 1</mat-option>
-                        <mat-option value="option2" disabled>Option 2 (disabled)</mat-option>
-                        <mat-option value="option3">Option 3</mat-option>
-                    </mat-select>
-                </mat-form-field>
-                <mat-form-field appearance="standard">
-                    <mat-label>Standard</mat-label>
-                    <mat-select placeholder="Choose an option" panelClass="common-panel">
-                        <mat-option value="option1">Option 1</mat-option>
-                        <mat-option value="option2" disabled>Option 2 (disabled)</mat-option>
-                        <mat-option value="option3">Option 3</mat-option>
-                    </mat-select>
-                </mat-form-field>
-            </div>
-        `,
+      template: html`
+        <h3>Basic Select</h3>
+        <div class="story">
+          <mat-form-field appearance="fill">
+            <mat-label>Fill</mat-label>
+            <mat-select
+              placeholder="Choose an option"
+              panelClass="common-panel"
+            >
+              <mat-option value="option1">Option 1</mat-option>
+              <mat-option value="option2" disabled
+                >Option 2 (disabled)</mat-option
+              >
+              <mat-option value="option3">Option 3</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>Outline</mat-label>
+            <mat-select
+              placeholder="Choose an option"
+              panelClass="common-panel"
+            >
+              <mat-option value="option1">Option 1</mat-option>
+              <mat-option value="option2" disabled
+                >Option 2 (disabled)</mat-option
+              >
+              <mat-option value="option3">Option 3</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field appearance="standard">
+            <mat-label>Standard</mat-label>
+            <mat-select
+              placeholder="Choose an option"
+              panelClass="common-panel"
+            >
+              <mat-option value="option1">Option 1</mat-option>
+              <mat-option value="option2" disabled
+                >Option 2 (disabled)</mat-option
+              >
+              <mat-option value="option3">Option 3</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      `,
     }}
   </Story>
 </Canvas>

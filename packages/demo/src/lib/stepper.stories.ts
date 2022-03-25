@@ -15,6 +15,7 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatStepperModule } from '@angular/material/stepper';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { Meta } from '@storybook/angular';
+import { html } from 'common-tags';
 
 const horizontalStepperTemplate = `<mat-horizontal-stepper [linear]="isLinear" #stepper>
 <ng-template matStepperIcon="edit">
@@ -171,7 +172,7 @@ export const HorizontalStepper = () => ({
     ],
     declarations: [HorizontalStepperComponent],
   },
-  template: `<div style="height: 200px">
+  template: html`<div style="height: 200px">
     <demo-horizontal-stepper></demo-horizontal-stepper>
   </div>`,
 });
@@ -199,7 +200,7 @@ export const VerticalStepper = () => ({
     ],
     declarations: [VerticalStepperComponent],
   },
-  template: `<demo-vertical-stepper></demo-vertical-stepper>`,
+  template: html`<demo-vertical-stepper></demo-vertical-stepper>`,
 });
 
 VerticalStepper.parameters = {

@@ -8,6 +8,7 @@ import {
   MatTreeModule,
 } from '@angular/material/tree';
 import { Meta } from '@storybook/angular';
+import { html } from 'common-tags';
 
 const treeTemplate = `<mat-tree [dataSource]="dataSource" [treeControl]="treeControl">
 <mat-tree-node role="treeitem" *matTreeNodeDef="let node" matTreeNodePadding matTreeNodePaddingIndent="16">
@@ -90,7 +91,7 @@ export const Tree = () => ({
     imports: [MatTreeModule, MatIconModule, MatButtonModule],
     declarations: [TreeComponent],
   },
-  template: `<demo-basic-tree></demo-basic-tree>`,
+  template: html`<demo-basic-tree></demo-basic-tree>`,
 });
 
 Tree.parameters = {
