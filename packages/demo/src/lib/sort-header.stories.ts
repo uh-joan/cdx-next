@@ -87,9 +87,6 @@ function compare(a: number | string, b: number | string, isAsc: boolean) {
 
 export default {
   title: 'Sort Header',
-  parameters: {
-    layout: 'centered',
-  },
 } as Meta;
 
 export const SortHeader = () => ({

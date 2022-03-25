@@ -9,3 +9,9 @@ storiesStyle.innerHTML = stories;
 document.body.appendChild(storiesStyle);
 
 document.body.classList.add('mat-typography');
+
+export const parameters = {
+  docs: {
+    iframeHeight: 300,
+  },
+};
