@@ -3,6 +3,7 @@
     "demo": "packages/demo",
     "ngx-branding": "packages/ngx-branding",
     "theme-angular-material": "packages/theme-angular-material",
+    "theme-badge": "packages/theme-badge",
     "theme-material-components-web": "packages/theme-material-components-web",
     "workspace": {
       "root": ".",

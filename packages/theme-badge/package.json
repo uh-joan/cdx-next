@@ -1,0 +1,24 @@
+{
+  "name": "@cdx/theme-badge",
+  "version": "0.0.0",
+  "repository": {
+    "directory": "packages/theme-badge",
+    "type": "git",
+    "url": "ssh://git@git.clarivate.io/cdxn/cdx-next.git"
+  },
+  "files": [
+    "dist",
+    "*.scss",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "webpack",
+    "deploy": "npm publish"
+  },
+  "dependencies": {
+    "@material/theme": "13.0.0"
+  },
+  "peerDependencies": {
+    "@cdx/theme-material-components-web": "*"
+  }
+}

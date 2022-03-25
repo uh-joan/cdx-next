@@ -1,0 +1,15 @@
+{
+  "root": "packages/theme-badge",
+  "targets": {
+    "stylelint": {
+      "executor": "nx-stylelint:lint",
+      "options": {
+        "lintFilePatterns": [
+          "packages/theme-badge/**/*.css",
+          "packages/theme-badge/**/*.scss"
+        ]
+      },
+      "outputs": ["{options.outputFile}"]
+    }
+  }
+}

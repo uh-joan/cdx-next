@@ -139,6 +139,7 @@ pipeline {
                         --config-path=.
                 """
                 sh 'cp ./.npmrc packages/theme-material-components-web'
+                sh 'cp ./.npmrc packages/theme-badge'
                 sh 'npm run publish:prerelease'
             }
         }

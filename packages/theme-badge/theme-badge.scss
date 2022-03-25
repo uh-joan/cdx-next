@@ -1,0 +1,44 @@
+@use '../theme-material-components-web';
+@use '@material/theme/theme-color';
+
+[cdx-badge] {
+  position: relative;
+
+  &::after {
+    position: absolute;
+    top: -11px;
+    min-width: 11px;
+    padding: 0 5px;
+    background: theme-color.prop-value(primary);
+    border-radius: 11px;
+    color: theme-color.prop-value(on-primary);
+    content: attr(cdx-badge);
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 22px;
+    white-space: nowrap;
+  }
+
+  &[cdx-badge-color='primary'] {
+    &::after {
+      background: theme-color.prop-value(primary);
+      color: theme-color.prop-value(on-primary);
+    }
+  }
+
+  &[cdx-badge-color='accent'],
+  &[cdx-badge-color='secondary'] {
+    &::after {
+      background: theme-color.prop-value(secondary);
+      color: theme-color.prop-value(on-secondary);
+    }
+  }
+
+  &[cdx-badge-color='warn'],
+  &[cdx-badge-color='error'] {
+    &::after {
+      background: theme-color.prop-value(error);
+      color: theme-color.prop-value(on-error);
+    }
+  }
+}
