@@ -1,5 +1,6 @@
 {
   "projects": {
+    "branding": "packages/branding",
     "demo": "packages/demo",
     "ngx-branding": "packages/ngx-branding",
     "theme-angular-material": "packages/theme-angular-material",

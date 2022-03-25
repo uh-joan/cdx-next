@@ -4,8 +4,8 @@
     "esbenp.prettier-vscode",
     "nicolasvuillamy.vscode-groovy-lint",
     "nrwl.angular-console",
-    "Orta.vscode-jest",
+    "orta.vscode-jest",
     "stylelint.vscode-stylelint",
-    "firsttris.vscode-jest-runner"
+    "bierner.lit-html"
   ]
 }

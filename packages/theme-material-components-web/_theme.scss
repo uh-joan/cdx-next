@@ -1,4 +1,4 @@
-@use '@material/theme' with (
+@forward '@material/theme' with (
   $primary: #5e33bf,
   $secondary: #17ab03
 );

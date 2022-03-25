@@ -57,6 +57,10 @@ module.exports = {
   },
   optimization: {
     minimizer: [`...`, new CssMinimizerPlugin()],
+    minimize: true,
   },
-  plugins: [new MiniCssExtractPlugin(), new RemoveEmptyScriptsPlugin()],
+  plugins: [
+    new MiniCssExtractPlugin({ filename: '[name].min.css' }),
+    new RemoveEmptyScriptsPlugin(),
+  ],
 };

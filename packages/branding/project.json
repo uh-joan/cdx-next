@@ -1,0 +1,72 @@
+{
+  "projectType": "library",
+  "root": "packages/branding",
+  "sourceRoot": "packages/branding/src",
+  "tags": [],
+  "targets": {
+    "build": {
+      "configurations": {
+        "production": {
+          "commonChunk": false,
+          "extractLicenses": true,
+          "namedChunks": true,
+          "optimization": true,
+          "outputHashing": "none",
+          "runtimeChunk": false,
+          "sourceMap": true,
+          "vendorChunk": false
+        }
+      },
+      "defaultConfiguration": "production",
+      "executor": "@nrwl/web:webpack",
+      "options": {
+        "assets": [],
+        "baseHref": "/",
+        "compiler": "babel",
+        "index": "packages/branding/src/index.html",
+        "main": "packages/branding/src/branding.ts",
+        "outputPath": "packages/branding/dist",
+        "scripts": [],
+        "tsConfig": "packages/branding/tsconfig.app.json",
+        "webpackConfig": "packages/branding/webpack.config.js"
+      },
+      "outputs": ["{options.outputPath}"]
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": ["packages/branding/**/*.ts"]
+      },
+      "outputs": ["{options.outputFile}"]
+    },
+    "serve": {
+      "configurations": {
+        "production": {
+          "buildTarget": "branding:build:production"
+        }
+      },
+      "executor": "@nrwl/web:dev-server",
+      "options": {
+        "buildTarget": "branding:build"
+      }
+    },
+    "stylelint": {
+      "executor": "nx-stylelint:lint",
+      "options": {
+        "lintFilePatterns": [
+          "packages/branding/**/*.css",
+          "packages/branding/**/*.scss"
+        ]
+      },
+      "outputs": ["{options.outputFile}"]
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "options": {
+        "jestConfig": "packages/branding/jest.config.js",
+        "passWithNoTests": true
+      },
+      "outputs": ["coverage/packages/branding"]
+    }
+  }
+}
