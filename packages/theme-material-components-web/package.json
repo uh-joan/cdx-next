@@ -11,7 +11,8 @@
     "*.scss"
   ],
   "scripts": {
-    "build": "webpack"
+    "build": "webpack",
+    "deploy": "npm publish"
   },
   "dependencies": {
     "material-components-web": "13.0.0"
