@@ -138,6 +138,7 @@ pipeline {
                         -s @cdx \
                         --config-path=.
                 """
+                sh 'cp ./.npmrc packages/theme-material-components-web'
                 sh 'npm run publish:prerelease'
             }
         }
