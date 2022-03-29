@@ -10,7 +10,8 @@
     "dist/*.{js,map,txt}"
   ],
   "scripts": {
-    "deploy": "npm publish"
+    "deploy": "npm publish",
+    "deploy:cdn": "deploy-aws-s3-cloudfront --bucket cdx-cdn.digital-experience.clarivate.io --distribution EF022SLU13YUI --source dist --destination @cdx/branding/${VERSION:-latest}"
   },
   "peerDependencies": {
     "@cdx/theme-material-components-web": "*"

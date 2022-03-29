@@ -138,9 +138,17 @@ pipeline {
                         -s @cdx \
                         --config-path=.
                 """
-                sh 'cp ./.npmrc packages/theme-material-components-web'
+                sh 'cp ./.npmrc packages/branding'
                 sh 'cp ./.npmrc packages/theme-badge'
+                sh 'cp ./.npmrc packages/theme-material-components-web'
                 sh 'npm run publish:prerelease'
+                withAWS(
+                    role: 'arn:aws:iam::809146824789:role/cl/app/cdx/jenkins-cdx-prod_role',
+                    roleSessionName: 'jenkins',
+                    useNode: true
+                ) {
+                    sh 'VERSION=$(git tag --points-at HEAD) npm run deploy:cdn'
+                }
             }
         }
 
@@ -188,7 +196,17 @@ pipeline {
                         -s @cdx \
                         --config-path=.
                 """
+                sh 'cp ./.npmrc packages/branding'
+                sh 'cp ./.npmrc packages/theme-badge'
+                sh 'cp ./.npmrc packages/theme-material-components-web'
                 sh 'npm run publish:release'
+                withAWS(
+                    role: 'arn:aws:iam::809146824789:role/cl/app/cdx/jenkins-cdx-prod_role',
+                    roleSessionName: 'jenkins',
+                    useNode: true
+                ) {
+                    sh 'VERSION=$(git tag --points-at HEAD) npm run deploy:cdn'
+                }
             }
         }
 

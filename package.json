@@ -15,6 +15,7 @@
     "build": "nx run-many --all --exclude=workspace --target=build",
     "build:storybooks": "nx run-many --all --exclude=workspace --target=build-storybook",
     "commit": "cz",
+    "deploy:cdn": "nx run-many --all --exclude=workspace --target=deploy:cdn --parallel=1",
     "deploy:storybooks:demo": "deploy-aws-s3-cloudfront --debug --non-interactive --source ./dist/storybook/demo --delete --invalidation-path '/*'",
     "lint": "run-s lint:*",
     "lint:commit": "commitlint --from a575076",
