@@ -8,7 +8,7 @@ module.exports = {
   mode: 'production',
   name: 'theme-badge-css-combined',
   entry: {
-    'theme-badge': './badge.scss',
+    badge: './badge.scss',
   },
   devtool: 'source-map',
   output: {
@@ -58,5 +58,8 @@ module.exports = {
   optimization: {
     minimizer: [`...`, new CssMinimizerPlugin()],
   },
-  plugins: [new MiniCssExtractPlugin(), new RemoveEmptyScriptsPlugin()],
+  plugins: [
+    new MiniCssExtractPlugin({ filename: '[name].min.css' }),
+    new RemoveEmptyScriptsPlugin(),
+  ],
 };
