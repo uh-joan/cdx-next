@@ -1,4 +1,15 @@
 {
-  "projectType": "library",
-  "root": "packages/clarivate-font"
+  "root": "packages/clarivate-font",
+  "targets": {
+    "stylelint": {
+      "executor": "nx-stylelint:lint",
+      "options": {
+        "lintFilePatterns": [
+          "packages/clarivate-font/**/*.css",
+          "packages/clarivate-font/**/*.scss"
+        ]
+      },
+      "outputs": ["{options.outputFile}"]
+    }
+  }
 }
