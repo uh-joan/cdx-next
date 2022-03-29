@@ -1,6 +1,6 @@
 {
   "*.json": ["jsonsort --nodemodules=false", "prettier --write"],
-  "*.{html,js,ts,jsx,tsx}": ["eslint --fix"],
+  "*.{js,ts,jsx,tsx}": ["eslint --fix"],
   "*.{md,mdx,html,js,ts,jsx,tsx,scss,css,yml,yaml}": ["prettier --write"],
   "*.{scss,css}": ["stylelint --fix"],
   "Jenkinsfile": [
