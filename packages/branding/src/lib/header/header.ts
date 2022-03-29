@@ -14,14 +14,16 @@ export class Header extends LitElement {
       <header class="cdx-header">
         <div class="cdx-header__global-bar">
           <div class="cdx-header__logo--clarivate"></div>
-          <slot name="cdx-header-global"></slot>
+          <slot name="cdx-header-global" class="cdx-header__global"></slot>
         </div>
         <div class="cdx-header__product-bar">
-          <slot name="cdx-header-product-logo"></slot>
-          <slot
-            name="cdx-header-product-name"
-            class="cdx-header__product-name"
-          ></slot>
+          <div class="cdx-header__product-identification">
+            <slot name="cdx-header-product-logo"></slot>
+            <slot
+              name="cdx-header-product-name"
+              class="cdx-header__product-name"
+            ></slot>
+          </div>
           <slot></slot>
         </div>
       </header>

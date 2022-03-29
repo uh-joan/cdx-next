@@ -26,6 +26,7 @@
         "index": "packages/branding/src/index.html",
         "main": "packages/branding/src/branding.ts",
         "outputPath": "packages/branding/dist",
+        "polyfills": "packages/branding/src/polyfills.ts",
         "scripts": [],
         "tsConfig": "packages/branding/tsconfig.app.json",
         "webpackConfig": "packages/branding/webpack.config.js"

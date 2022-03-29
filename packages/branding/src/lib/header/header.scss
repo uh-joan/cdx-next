@@ -1,11 +1,12 @@
 @use '@material/elevation';
 
-@use '../../../theme-material-components-web/typography';
+@use '../../../../theme-material-components-web/typography';
+@use '../shared/clarivate-typography';
+
+$header-spacing: 2rem;
+$header-bar-base-height: 2.5rem;
 
 .cdx-header {
-  $header-spacing: 2rem;
-  $header-bar-base-height: 2.5rem;
-
   &__global-bar {
     display: flex;
     height: $header-bar-base-height;
@@ -14,6 +15,12 @@
     padding: 0 $header-spacing;
     background: black;
     color: white;
+  }
+
+  &__global {
+    display: inherit;
+    align-items: inherit;
+    column-gap: 0.25rem;
   }
 
   &__logo--clarivate {
@@ -41,7 +48,16 @@
     }
   }
 
-  &__product-name {
-    @include typography.typography(headline5);
+  &__product-identification {
+    display: inherit;
+    align-items: inherit;
+    column-gap: 1rem;
+  }
+
+  &__product-name::slotted(*) {
+    @include clarivate-typography.clarivate-bold(26px);
+
+    margin: 1rem 0;
+    white-space: nowrap;
   }
 }

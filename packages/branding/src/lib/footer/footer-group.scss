@@ -1,0 +1,33 @@
+@use '../shared/clarivate-typography';
+
+$cdx-footer-group-gap: 0.5rem;
+
+.cdx-footer {
+  &__group-title {
+    @include clarivate-typography.clarivate-bold(16px);
+  }
+
+  &__group {
+    display: flex;
+    flex-direction: column;
+    gap: $cdx-footer-group-gap;
+
+    > *,
+    ::slotted(*) {
+      align-self: start;
+      justify-self: start;
+    }
+
+    a,
+    ::slotted(a) {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    a:hover,
+    ::slotted(a:hover) {
+      cursor: pointer;
+      text-decoration: underline;
+    }
+  }
+}

@@ -14,15 +14,258 @@
       href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap"
       rel="stylesheet"
     />
-    <!-- TODO replace this with our built version (including theme) -->
     <link
-      href="https://unpkg.com/material-components-web@13.0.0/dist/material-components-web.css"
+      href="https://cdn.digital-experience.clarivate.io/@cdx/clarivate-font/latest/clarivate-font.css"
       rel="stylesheet"
     />
+
+    <!-- TODO this doesn't update automatically -->
+    <link
+      href="https://cdn.digital-experience.clarivate.io/@cdx/theme-material-components-web/v2.0.0-alpha.35/material-components-web.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- OneTrust stuff -->
+    <script
+      type="text/javascript"
+      src="https://cdn.cookielaw.org/consent/8b536ee6-9547-4577-843e-314ef3fff451/OtAutoBlock.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js"
+      data-domain-script="8b536ee6-9547-4577-843e-314ef3fff451-test"
+    ></script>
+    <script type="text/javascript">
+      function OptanonWrapper() {}
+    </script>
+
+    <!-- mwc -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/@material/mwc-icon@0.25.3/+esm"
+      type="module"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@material/mwc-button@0.25.3/+esm"
+      type="module"
+    ></script>
   </head>
   <body style="margin: 0; padding: 0" class="mdc-typography">
     <cdx-header>
-      <div slot="cdx-header-product-name">Clarivate Digital Experience</div>
+      <div
+        slot="cdx-header-global"
+        style="display: inherit; align-items: inherit; margin-right: 1rem"
+      >
+        English <mwc-icon>expand_more</mwc-icon>
+      </div>
+      <div
+        slot="cdx-header-global"
+        style="display: inherit; align-items: inherit; margin-right: 1rem"
+      >
+        <mwc-icon>apps</mwc-icon> Products
+      </div>
+
+      <mwc-icon slot="cdx-header-global">account_circle</mwc-icon>
+
+      <h1 slot="cdx-header-product-name">My Product Name</h1>
+      <!-- <img
+        slot="cdx-header-product-logo"
+        src="https://clarivate.com/code/wp-content/themes/clarivate/src/img/logo.svg?v=2.4.70"
+      /> -->
+
+      <div>
+        <mwc-button outlined label="Sign up"></mwc-button>
+        <mwc-button unelevated label="Log in"></mwc-button>
+      </div>
     </cdx-header>
+
+    <div
+      style="
+        flex: 1;
+        padding: 2rem;
+        width: clamp(45ch, 50%, 75ch);
+        margin: 0 auto;
+      "
+    >
+      <mwc-button label="FOO"></mwc-button>
+      <h2>First</h2>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla aliquet
+        <a href="https://www.clarivate.com"
+          >foo bar buz bazz really long link</a
+        >
+        ornare odio at convallis. In hac habitasse platea dictumst. Duis
+        accumsan lobortis tortor nec fringilla. Nullam bibendum eros et
+        vulputate hendrerit. Curabitur egestas porttitor nisl vestibulum
+        hendrerit. Quisque scelerisque libero eget enim pulvinar, at feugiat dui
+        luctus. Sed metus turpis, laoreet sit amet ligula ut, commodo semper
+        leo. Nulla cursus dapibus ultricies.
+      </p>
+      <p>
+        Proin pulvinar metus a felis facilisis vestibulum. Pellentesque suscipit
+        lorem vitae erat porttitor molestie. Pellentesque finibus felis arcu, at
+        suscipit tortor maximus nec. Praesent rhoncus justo elit, eget interdum
+        lacus luctus non. Vivamus orci mi, condimentum id gravida et, maximus in
+        dolor. Proin ultricies eget ex ultricies tristique. Mauris id mauris ut
+        massa blandit tristique. Quisque tempor risus nibh, non commodo dolor
+        feugiat id. Nam orci est, semper at tristique eget, sollicitudin ac
+        purus. Donec ac ullamcorper tellus, vel sollicitudin leo.
+      </p>
+      <p>
+        Mauris ac metus eget risus tempus feugiat sit amet et magna. Vestibulum
+        a urna ultrices odio tincidunt rutrum sed eget sapien. Donec sed
+        dignissim mauris. Cras suscipit, mauris ac ornare finibus, mauris nibh
+        vehicula turpis, eget malesuada justo lacus a dui. Suspendisse sit amet
+        iaculis odio. Integer leo neque, vehicula ut felis et, consequat iaculis
+        orci. Donec ornare nunc vel tempus pellentesque. Phasellus sapien
+        ligula, ultricies quis erat non, ultricies dictum nisi. Pellentesque id
+        volutpat mauris.
+      </p>
+      <h2>Second</h2>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
+        consectetur tellus lectus, et faucibus leo porta lobortis. Mauris elit
+        lacus, porttitor a mauris eu, tristique dapibus turpis. Lorem ipsum
+        dolor sit amet, consectetur adipiscing elit. Integer eu ligula sed enim
+        ullamcorper viverra eu quis dui. Cras ut tempus arcu, sed cursus metus.
+        Phasellus urna elit, cursus quis viverra vel, hendrerit in nisl. Donec
+        feugiat volutpat ante a ultrices. Pellentesque et neque vestibulum velit
+        mattis pellentesque a quis enim. Donec at mauris consequat urna interdum
+        pharetra nec at nisl. Proin ac nisi nec metus efficitur venenatis.
+        Aenean porttitor condimentum rutrum. Nunc aliquam sem et dui laoreet
+        elementum. Praesent pellentesque nisi ex, rhoncus feugiat lorem
+        elementum in. Nullam quis leo cursus, hendrerit tellus quis, molestie
+        diam.
+      </p>
+      <p>
+        Etiam nisi dolor, posuere sed lacus ac, facilisis blandit tortor. Nulla
+        non vulputate nunc. In efficitur tristique felis in eleifend. Phasellus
+        feugiat sapien aliquam libero faucibus, vitae cursus tortor lobortis.
+        Vestibulum facilisis in neque sit amet aliquet. Sed egestas scelerisque
+        felis ut mollis. Vestibulum accumsan lorem eu ante congue, non consequat
+        tellus porta. Nam rhoncus semper scelerisque. Mauris rhoncus nulla in
+        sem dapibus porta. Sed nec lectus at leo luctus vulputate a eget erat.
+        Vestibulum in arcu nulla. Morbi mollis non dolor nec elementum. Quisque
+        quis ipsum at urna volutpat commodo. Curabitur odio lectus, dictum eu
+        porttitor et, aliquam eu tellus. In hac habitasse platea dictumst. In
+        justo neque, pharetra vitae ante nec, facilisis sagittis magna.
+      </p>
+      <h2>Third</h2>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla aliquet
+        ornare odio at convallis. In hac habitasse platea dictumst. Duis
+        accumsan lobortis tortor nec fringilla. Nullam bibendum eros et
+        vulputate hendrerit. Curabitur egestas porttitor nisl vestibulum
+        hendrerit. Quisque scelerisque libero eget enim pulvinar, at feugiat dui
+        luctus. Sed metus turpis, laoreet sit amet ligula ut, commodo semper
+        leo. Nulla cursus dapibus ultricies.
+      </p>
+      <p>
+        Proin pulvinar metus a felis facilisis vestibulum. Pellentesque suscipit
+        lorem vitae erat porttitor molestie. Pellentesque finibus felis arcu, at
+        suscipit tortor maximus nec. Praesent rhoncus justo elit, eget interdum
+        lacus luctus non. Vivamus orci mi, condimentum id gravida et, maximus in
+        dolor. Proin ultricies eget ex ultricies tristique. Mauris id mauris ut
+        massa blandit tristique. Quisque tempor risus nibh, non commodo dolor
+        feugiat id. Nam orci est, semper at tristique eget, sollicitudin ac
+        purus. Donec ac ullamcorper tellus, vel sollicitudin leo.
+      </p>
+      <p>
+        Mauris ac metus eget risus tempus feugiat sit amet et magna. Vestibulum
+        a urna ultrices odio tincidunt rutrum sed eget sapien. Donec sed
+        dignissim mauris. Cras suscipit, mauris ac ornare finibus, mauris nibh
+        vehicula turpis, eget malesuada justo lacus a dui. Suspendisse sit amet
+        iaculis odio. Integer leo neque, vehicula ut felis et, consequat iaculis
+        orci. Donec ornare nunc vel tempus pellentesque. Phasellus sapien
+        ligula, ultricies quis erat non, ultricies dictum nisi. Pellentesque id
+        volutpat mauris.
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
+        consectetur tellus lectus, et faucibus leo porta lobortis. Mauris elit
+        lacus, porttitor a mauris eu, tristique dapibus turpis. Lorem ipsum
+        dolor sit amet, consectetur adipiscing elit. Integer eu ligula sed enim
+        ullamcorper viverra eu quis dui. Cras ut tempus arcu, sed cursus metus.
+        Phasellus urna elit, cursus quis viverra vel, hendrerit in nisl. Donec
+        feugiat volutpat ante a ultrices. Pellentesque et neque vestibulum velit
+        mattis pellentesque a quis enim. Donec at mauris consequat urna interdum
+        pharetra nec at nisl. Proin ac nisi nec metus efficitur venenatis.
+        Aenean porttitor condimentum rutrum. Nunc aliquam sem et dui laoreet
+        elementum. Praesent pellentesque nisi ex, rhoncus feugiat lorem
+        elementum in. Nullam quis leo cursus, hendrerit tellus quis, molestie
+        diam.
+      </p>
+      <p>
+        Etiam nisi dolor, posuere sed lacus ac, facilisis blandit tortor. Nulla
+        non vulputate nunc. In efficitur tristique felis in eleifend. Phasellus
+        feugiat sapien aliquam libero faucibus, vitae cursus tortor lobortis.
+        Vestibulum facilisis in neque sit amet aliquet. Sed egestas scelerisque
+        felis ut mollis. Vestibulum accumsan lorem eu ante congue, non consequat
+        tellus porta. Nam rhoncus semper scelerisque. Mauris rhoncus nulla in
+        sem dapibus porta. Sed nec lectus at leo luctus vulputate a eget erat.
+        Vestibulum in arcu nulla. Morbi mollis non dolor nec elementum. Quisque
+        quis ipsum at urna volutpat commodo. Curabitur odio lectus, dictum eu
+        porttitor et, aliquam eu tellus. In hac habitasse platea dictumst. In
+        justo neque, pharetra vitae ante nec, facilisis sagittis magna.
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla aliquet
+        ornare odio at convallis. In hac habitasse platea dictumst. Duis
+        accumsan lobortis tortor nec fringilla. Nullam bibendum eros et
+        vulputate hendrerit. Curabitur egestas porttitor nisl vestibulum
+        hendrerit. Quisque scelerisque libero eget enim pulvinar, at feugiat dui
+        luctus. Sed metus turpis, laoreet sit amet ligula ut, commodo semper
+        leo. Nulla cursus dapibus ultricies.
+      </p>
+      <p>
+        Proin pulvinar metus a felis facilisis vestibulum. Pellentesque suscipit
+        lorem vitae erat porttitor molestie. Pellentesque finibus felis arcu, at
+        suscipit tortor maximus nec. Praesent rhoncus justo elit, eget interdum
+        lacus luctus non. Vivamus orci mi, condimentum id gravida et, maximus in
+        dolor. Proin ultricies eget ex ultricies tristique. Mauris id mauris ut
+        massa blandit tristique. Quisque tempor risus nibh, non commodo dolor
+        feugiat id. Nam orci est, semper at tristique eget, sollicitudin ac
+        purus. Donec ac ullamcorper tellus, vel sollicitudin leo.
+      </p>
+      <p>
+        Mauris ac metus eget risus tempus feugiat sit amet et magna. Vestibulum
+        a urna ultrices odio tincidunt rutrum sed eget sapien. Donec sed
+        dignissim mauris. Cras suscipit, mauris ac ornare finibus, mauris nibh
+        vehicula turpis, eget malesuada justo lacus a dui. Suspendisse sit amet
+        iaculis odio. Integer leo neque, vehicula ut felis et, consequat iaculis
+        orci. Donec ornare nunc vel tempus pellentesque. Phasellus sapien
+        ligula, ultricies quis erat non, ultricies dictum nisi. Pellentesque id
+        volutpat mauris.
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
+        consectetur tellus lectus, et faucibus leo porta lobortis. Mauris elit
+        lacus, porttitor a mauris eu, tristique dapibus turpis. Lorem ipsum
+        dolor sit amet, consectetur adipiscing elit. Integer eu ligula sed enim
+        ullamcorper viverra eu quis dui. Cras ut tempus arcu, sed cursus metus.
+        Phasellus urna elit, cursus quis viverra vel, hendrerit in nisl. Donec
+        feugiat volutpat ante a ultrices. Pellentesque et neque vestibulum velit
+        mattis pellentesque a quis enim. Donec at mauris consequat urna interdum
+        pharetra nec at nisl. Proin ac nisi nec metus efficitur venenatis.
+        Aenean porttitor condimentum rutrum. Nunc aliquam sem et dui laoreet
+        elementum. Praesent pellentesque nisi ex, rhoncus feugiat lorem
+        elementum in. Nullam quis leo cursus, hendrerit tellus quis, molestie
+        diam.
+      </p>
+      <p>
+        Etiam nisi dolor, posuere sed lacus ac, facilisis blandit tortor. Nulla
+        non vulputate nunc. In efficitur tristique felis in eleifend. Phasellus
+        feugiat sapien aliquam libero faucibus, vitae cursus tortor lobortis.
+        Vestibulum facilisis in neque sit amet aliquet. Sed egestas scelerisque
+        felis ut mollis. Vestibulum accumsan lorem eu ante congue, non consequat
+        tellus porta. Nam rhoncus semper scelerisque. Mauris rhoncus nulla in
+        sem dapibus porta. Sed nec lectus at leo luctus vulputate a eget erat.
+        Vestibulum in arcu nulla. Morbi mollis non dolor nec elementum. Quisque
+        quis ipsum at urna volutpat commodo. Curabitur odio lectus, dictum eu
+        porttitor et, aliquam eu tellus. In hac habitasse platea dictumst. In
+        justo neque, pharetra vitae ante nec, facilisis sagittis magna.
+      </p>
+    </div>
+
+    <cdx-footer cookieManagementEnabled></cdx-footer>
   </body>
 </html>

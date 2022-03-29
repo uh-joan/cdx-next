@@ -33,7 +33,7 @@ module.exports = (config) => {
       runtimeChunk: false,
     },
     output: {
-      filename: 'branding.esm.js',
+      filename: 'branding.[name].esm.js',
     },
   });
 };
