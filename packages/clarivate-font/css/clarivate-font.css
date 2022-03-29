@@ -1,0 +1,19 @@
+@font-face {
+  font-family: 'Clarivate Regular';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://clarivate.com/wp-content/themes/clarivate/src/fonts/RegularClarivate-RegularWEB.woff)
+      format('woff'),
+    url(https://clarivate.com/wp-content/themes/clarivate/src/fonts/RegularClarivate-RegularWEB.woff2)
+      format('woff2');
+}
+
+@font-face {
+  font-family: 'Clarivate Bold';
+  font-style: normal;
+  font-weight: 700;
+  src: url(https://clarivate.com/wp-content/themes/clarivate/src/fonts/RegularClarivate-BoldWEB.woff)
+      format('woff'),
+    url(https://clarivate.com/wp-content/themes/clarivate/src/fonts/RegularClarivate-BoldWEB.woff2)
+      format('woff2');
+}
