@@ -1,0 +1,15 @@
+{
+  "root": "packages/theme-expansion-panel",
+  "targets": {
+    "stylelint": {
+      "executor": "nx-stylelint:lint",
+      "options": {
+        "lintFilePatterns": [
+          "packages/theme-expansion-panel/**/*.css",
+          "packages/theme-expansion-panel/**/*.scss"
+        ]
+      },
+      "outputs": ["{options.outputFile}"]
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "name": "@cdx/theme-expansion-panel",
+  "version": "2.0.0-alpha.37",
+  "repository": {
+    "directory": "packages/theme-expansion-panel",
+    "type": "git",
+    "url": "ssh://git@git.clarivate.io/cdxn/cdx-next.git"
+  },
+  "files": [
+    "dist",
+    "*.scss",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "webpack",
+    "deploy": "npm publish",
+    "deploy:cdn": "deploy-aws-s3-cloudfront --bucket cdx-cdn.digital-experience.clarivate.io --distribution EF022SLU13YUI --source dist --destination @cdx/theme-expansion-panel/${VERSION:-latest} --non-interactive"
+  },
+  "dependencies": {
+    "@material/theme": "13.0.0"
+  },
+  "peerDependencies": {
+    "@cdx/theme-material-components-web": "*"
+  }
+}
