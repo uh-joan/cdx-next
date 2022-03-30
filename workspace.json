@@ -6,6 +6,7 @@
     "ngx-branding": "packages/ngx-branding",
     "theme-angular-material": "packages/theme-angular-material",
     "theme-badge": "packages/theme-badge",
+    "theme-button-toggle": "packages/theme-button-toggle",
     "theme-material-components-web": "packages/theme-material-components-web",
     "workspace": {
       "root": ".",

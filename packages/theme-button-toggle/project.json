@@ -1,0 +1,15 @@
+{
+  "root": "packages/theme-button-toggle",
+  "targets": {
+    "stylelint": {
+      "executor": "nx-stylelint:lint",
+      "options": {
+        "lintFilePatterns": [
+          "packages/theme-button-toggle/**/*.css",
+          "packages/theme-button-toggle/**/*.scss"
+        ]
+      },
+      "outputs": ["{options.outputFile}"]
+    }
+  }
+}
