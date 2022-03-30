@@ -8,6 +8,7 @@
     "theme-badge": "packages/theme-badge",
     "theme-button-toggle": "packages/theme-button-toggle",
     "theme-material-components-web": "packages/theme-material-components-web",
+    "theme-popperjs": "packages/theme-popperjs",
     "workspace": {
       "root": ".",
       "targets": {

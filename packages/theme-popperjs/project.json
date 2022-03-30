@@ -1,0 +1,15 @@
+{
+  "root": "packages/theme-popperjs",
+  "targets": {
+    "stylelint": {
+      "executor": "nx-stylelint:lint",
+      "options": {
+        "lintFilePatterns": [
+          "packages/theme-popperjs/**/*.css",
+          "packages/theme-popperjs/**/*.scss"
+        ]
+      },
+      "outputs": ["{options.outputFile}"]
+    }
+  }
+}
