@@ -1,6 +1,6 @@
 {
   "name": "@cdx/branding",
-  "version": "2.0.0-alpha.37",
+  "version": "2.0.0-alpha.38",
   "repository": {
     "directory": "packages/branding",
     "type": "git",
