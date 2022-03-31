@@ -210,7 +210,7 @@ pipeline {
             }
         }
 
-        stage('Deploy Storybooks Demo to pre-prod') {
+        stage('Deploy Stories to pre-prod') {
             when {
                 allOf {
                     branch 'main'
@@ -230,6 +230,31 @@ pipeline {
                         npm run deploy:storybooks:demo -- \
                             --bucket cdx-stories.dev.sp.aws.clarivate.net \
                             --distribution E3GW94L15KJF3T
+                    '''
+                }
+            }
+        }
+
+        stage('Deploy Stories to prod') {
+            when {
+                allOf {
+                    branch 'main'
+                    expression {
+                        params.GraduatePrereleaseVersion == true
+                    }
+                }
+            }
+
+            steps {
+                withAWS(
+                    role: 'arn:aws:iam::809146824789:role/cl/app/cdx/jenkins-cdx-prod_role',
+                    roleSessionName: 'jenkins',
+                    useNode: true
+                ) {
+                    sh '''
+                        npm run deploy:storybooks:demo -- \
+                            --bucket cdx-stories.prod.sp.aws.clarivate.net \
+                            --distribution E2D5B9JW4EDZO5
                     '''
                 }
             }
