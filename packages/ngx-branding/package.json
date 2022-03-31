@@ -1,6 +1,6 @@
 {
   "name": "@cdx/ngx-branding",
-  "version": "1.0.2",
+  "version": "2.0.0-alpha.44",
   "repository": {
     "directory": "packages/ngx-branding",
     "type": "git",
