@@ -1,6 +1,6 @@
 {
   "name": "@cdx/theme-material-components-web",
-  "version": "1.0.1",
+  "version": "2.0.0-alpha.43",
   "repository": {
     "directory": "packages/theme-material-components-web",
     "type": "git",
