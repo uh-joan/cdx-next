@@ -27,8 +27,9 @@
     "lint:nx:stylelint": "nx run-many --all --exclude=workspace --target=stylelint",
     "postinstall": "ngcc --properties es2015 browser module main",
     "prepare": "husky install",
-    "publish:prerelease": "npm run publish:release -- --tag=alpha",
-    "publish:release": "nx run-many --all --exclude=workspace --target=deploy --parallel=1",
+    "publish:prerelease": "npm run publish:release:common -- --tag=alpha",
+    "publish:release": "npm run publish:release:common -- --tag=latest",
+    "publish:release:common": "nx run-many --all --exclude=workspace --target=deploy --parallel=1",
     "test": "nx run-many --all --exclude=workspace --target=test",
     "version:prerelease": "nx run workspace:version --releaseAs=prerelease --preid=alpha",
     "version:release": "nx run workspace:version"
