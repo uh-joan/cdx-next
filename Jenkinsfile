@@ -10,6 +10,11 @@ pipeline {
 
     parameters {
         booleanParam(
+            name: 'Publish',
+            defaultValue: false,
+            description: 'If true, publish'
+        )
+        booleanParam(
             name: 'GraduatePrereleaseVersion',
             defaultValue: false,
             description: 'If true, graduate a previous prerelease (alpha) and deploy'
@@ -107,7 +112,7 @@ pipeline {
                 allOf {
                     branch 'main'
                     expression {
-                        params.GraduatePrereleaseVersion == false
+                        params.Publish == true && params.GraduatePrereleaseVersion == false
                     }
                 }
             }
@@ -165,7 +170,7 @@ pipeline {
                 allOf {
                     branch 'main'
                     expression {
-                        params.GraduatePrereleaseVersion == true
+                        params.Publish == true && params.GraduatePrereleaseVersion == true
                     }
                 }
             }
@@ -223,7 +228,7 @@ pipeline {
                 allOf {
                     branch 'main'
                     expression {
-                        params.GraduatePrereleaseVersion == false
+                        params.Publish == true && params.GraduatePrereleaseVersion == false
                     }
                 }
             }
@@ -248,7 +253,7 @@ pipeline {
                 allOf {
                     branch 'main'
                     expression {
-                        params.GraduatePrereleaseVersion == true
+                        params.Publish == true && params.GraduatePrereleaseVersion == true
                     }
                 }
             }
