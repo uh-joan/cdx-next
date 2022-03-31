@@ -21,6 +21,9 @@
       },
       "outputs": ["dist/packages/theme-angular-material"]
     },
+    "deploy": {
+      "executor": "ngx-deploy-npm:deploy"
+    },
     "lint": {
       "executor": "@nrwl/linter:eslint",
       "options": {
