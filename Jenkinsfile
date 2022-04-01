@@ -103,7 +103,7 @@ pipeline {
 
         stage('Build Storybooks') {
             steps {
-                sh 'npm run build:storybooks'
+                sh 'npm run build:storybooks -- --configuration=ci'
             }
         }
 

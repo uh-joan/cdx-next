@@ -8,6 +8,7 @@
     "build-storybook": {
       "configurations": {
         "ci": {
+          "docsMode": true,
           "quiet": true
         }
       },
@@ -34,6 +35,7 @@
     "storybook": {
       "configurations": {
         "ci": {
+          "docsMode": true,
           "quiet": true
         }
       },
