@@ -91,6 +91,37 @@ const WithProductNameTemplate: Story<HeaderComponent> = () => ({
   `,
 });
 
+const WithProductNameAsLinkTemplate: Story<HeaderComponent> = () => ({
+  template: html`
+    <!--
+    PLEASE NOTE: All inline styles are included as examples of how content
+    can be positioned and are intended for demonstration purposes only.
+    -->
+    <header cdx-header>
+      <cdx-header-global>
+        <div
+          style="display: inherit; align-items: inherit; margin-right: 1rem;"
+        >
+          English <mat-icon>expand_more</mat-icon>
+        </div>
+        <div
+          style="display: inherit; align-items: inherit; margin-right: 1rem;"
+        >
+          <mat-icon>apps</mat-icon> Products
+        </div>
+        <cdx-header-global-user-profile
+          userDisplayName="Garcia, Nina"
+        ></cdx-header-global-user-profile>
+      </cdx-header-global>
+      <a href="#" cdx-header-product-name>My Product Name</a>
+      <div style="display: inherit; justify-content: end">
+        <button mat-button style="margin-right: 1rem">Sign up</button>
+        <button mat-flat-button color="primary">Login</button>
+      </div>
+    </header>
+  `,
+});
+
 const WithProductLogoTemplate: Story<HeaderComponent> = () => ({
   template: html`
     <!--
@@ -229,6 +260,7 @@ const WithPrimaryNavTemplate: Story<HeaderComponent> = () => ({
 export const Basic = BasicTemplate.bind({});
 export const WithGlobalUtilities = WithGlobalUtilitiesTemplate.bind({});
 export const WithProductName = WithProductNameTemplate.bind({});
+export const WithProductNameAsLink = WithProductNameAsLinkTemplate.bind({});
 export const WithProductLogo = WithProductLogoTemplate.bind({});
 export const WithProductSearch = WithProductSearchTemplate.bind({});
 export const AtSmallestSize = AtSmallestSizeTemplate.bind({});
