@@ -1,0 +1,15 @@
+{
+  "root": "packages/theme-ag-grid",
+  "targets": {
+    "stylelint": {
+      "executor": "nx-stylelint:lint",
+      "options": {
+        "lintFilePatterns": [
+          "packages/theme-ag-grid/**/*.css",
+          "packages/theme-ag-grid/**/*.scss"
+        ]
+      },
+      "outputs": ["{options.outputFile}"]
+    }
+  }
+}

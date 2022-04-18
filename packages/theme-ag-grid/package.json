@@ -1,0 +1,20 @@
+{
+  "name": "@cdx/theme-ag-grid",
+  "repository": {
+    "directory": "packages/theme-ag-grid",
+    "type": "git",
+    "url": "ssh://git@git.clarivate.io/cdxn/cdx-next.git"
+  },
+  "files": [
+    "dist",
+    "*.scss"
+  ],
+  "scripts": {
+    "build": "webpack",
+    "deploy": "npm publish",
+    "deploy:cdn": "deploy-aws-s3-cloudfront --bucket cdx-cdn.digital-experience.clarivate.io --distribution EF022SLU13YUI --source dist --destination @cdx/theme-ag-grid/${VERSION:-latest} --non-interactive"
+  },
+  "dependencies": {
+    "ag-grid-community": "27.1.0"
+  }
+}

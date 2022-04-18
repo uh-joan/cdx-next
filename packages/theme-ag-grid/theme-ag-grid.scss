@@ -1,0 +1,27 @@
+@use 'ag-grid-community/src/styles/ag-theme-material/sass/ag-theme-material-mixin'
+  as theme;
+@use 'ag-grid-community/src/styles/mixins/ag-theme-params' as params;
+
+.ag-theme-cdx {
+  @include theme.ag-theme-material(
+    (
+      material-primary-color: #5e33bf,
+      material-accent-color: #17ab03,
+      row-hover-color: params.ag-derived(material-primary-color, $opacity: 0.05),
+      selected-row-background-color:
+        params.ag-derived(material-primary-color, $opacity: 0.1),
+      range-selection-background-color:
+        params.ag-derived(material-primary-color, $opacity: 0.1),
+      value-change-delta-up-color: #128902,
+      value-change-delta-down-color: #f89324,
+      header-background-color: #fafafa,
+      header-foreground-color: #212121,
+      subheader-background-color: #f5f5f5,
+      font-family: unquote("'Source Sans Pro', sans-serif"),
+    )
+  );
+
+  .ag-checkbox-input-wrapper.ag-checked::after {
+    color: #5e33bf;
+  }
+}
