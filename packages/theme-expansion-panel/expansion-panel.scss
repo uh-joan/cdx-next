@@ -1,15 +1,16 @@
 @use '../theme-material-components-web';
-@use '@material/theme/theme-color';
+@use '@angular/material' as mat;
 
 $border-radius: 4px;
 
 .cdx-expansion-panel {
-  font: 400 1rem 'Source Sans Pro', sans-serif;
+  @include mat.typography-level($typography-config, body-1);
 
   details {
+    @include mat.elevation(2);
+
     position: relative;
     background-color: white;
-    box-shadow: 0 3px 1px -2px #0003, 0 2px 2px #00000024, 0 1px 5px #0000001f;
     transition: all 225ms cubic-bezier(0.4, 0, 0.2, 1);
 
     &:first-of-type {
@@ -28,6 +29,8 @@ $border-radius: 4px;
     }
 
     summary {
+      @include mat.typography-level($typography-config, body-2);
+
       display: flex;
       height: 48px;
       align-items: center;
@@ -36,7 +39,6 @@ $border-radius: 4px;
       border-bottom: 1px solid #f5f5f5;
       background-color: transparent;
       cursor: pointer;
-      font-weight: 600;
       list-style: none;
 
       &:hover {
