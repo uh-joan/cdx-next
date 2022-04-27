@@ -1,5 +1,6 @@
 {
   "name": "@cdx/theme-ag-grid",
+  "version": "2.1.1-alpha.1",
   "repository": {
     "directory": "packages/theme-ag-grid",
     "type": "git",
