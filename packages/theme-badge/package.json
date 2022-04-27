@@ -1,6 +1,6 @@
 {
   "name": "@cdx/theme-badge",
-  "version": "2.1.1-alpha.1",
+  "version": "2.1.1-alpha.2",
   "repository": {
     "directory": "packages/theme-badge",
     "type": "git",

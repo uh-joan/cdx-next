@@ -1,6 +1,6 @@
 {
   "name": "@cdx/clarivate-font",
-  "version": "2.1.1-alpha.1",
+  "version": "2.1.1-alpha.2",
   "repository": {
     "directory": "packages/clarivate-font",
     "type": "git",
