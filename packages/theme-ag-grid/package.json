@@ -5,6 +5,11 @@
     "type": "git",
     "url": "ssh://git@git.clarivate.io/cdxn/cdx-next.git"
   },
+  "exports": {
+    ".": {
+      "sass": "./theme-ag-grid.scss"
+    }
+  },
   "files": [
     "dist",
     "*.scss"
