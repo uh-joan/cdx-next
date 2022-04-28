@@ -1,9 +1,7 @@
 <ag-grid-angular
   class="ag-theme-cdx grid-demo"
-  [gridOptions]="gridConfig"
-  [rowData]="rowData$ | async"
+  [rowData]="rowData"
   [columnDefs]="columnDefs"
-  [paginationAutoPageSize]="true"
-  [pagination]="true"
+  [defaultColDef]="defaultColDef"
 >
 </ag-grid-angular>

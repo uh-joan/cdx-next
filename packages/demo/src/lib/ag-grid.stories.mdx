@@ -5,21 +5,18 @@ import { html } from 'common-tags';
 
 <Meta title="AgGrid" />
 
-<Canvas>
-  <Story
-    name="Basic"
-    height="600px"
-    decorators={[
-      moduleMetadata({
-        imports: [AgGridDemoModule],
-      }),
-    ]}
-    parameters={{
-      layout: 'fullscreen',
-    }}
-  >
-    {{
-      template: html` <demo-ag-grid class="grid-demo-wrapper"></demo-ag-grid> `,
-    }}
-  </Story>
-</Canvas>
+<Story
+  name="Basic"
+  decorators={[
+    moduleMetadata({
+      imports: [AgGridDemoModule],
+    }),
+  ]}
+  parameters={{
+    layout: 'centered',
+  }}
+>
+  {{
+    template: html` <demo-ag-grid></demo-ag-grid> `,
+  }}
+</Story>
