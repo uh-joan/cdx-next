@@ -1,6 +1,8 @@
 @use '../../../theme-angular-material/styles' as cdx;
 @use '../../../ngx-branding/src/lib/header/header-theme' as header;
 @use '../../../ngx-branding/src/lib/footer/footer-theme' as footer;
+/* stylelint-disable-next-line scss/at-import-partial-extension */
+@import '../../../theme-expansion-panel/expansion-panel.scss';
 
 @include cdx.default;
 @include header.theme(cdx.$cdx-theme);

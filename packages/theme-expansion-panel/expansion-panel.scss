@@ -1,10 +1,11 @@
 @use '../theme-material-components-web';
 @use '@angular/material' as mat;
 
+// $typography-config: mat.get-typography-config($theme);
 $border-radius: 4px;
 
 .cdx-expansion-panel {
-  @include mat.typography-level($typography-config, body-1);
+  // @include mat.typography-level($typography-config, body-1);
 
   details {
     @include mat.elevation(2);
@@ -29,7 +30,7 @@ $border-radius: 4px;
     }
 
     summary {
-      @include mat.typography-level($typography-config, body-2);
+      // @include mat.typography-level($typography-config, body-2);
 
       display: flex;
       height: 48px;
