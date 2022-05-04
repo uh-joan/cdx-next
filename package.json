@@ -32,7 +32,7 @@
     "publish:release:common": "nx run-many --all --exclude=workspace --target=deploy --parallel=1",
     "test": "nx run-many --all --exclude=workspace --target=test",
     "version:prerelease": "nx run workspace:version --releaseAs=prerelease --preid=alpha",
-    "version:release": "nx run workspace:version --skipRootChangelog=false"
+    "version:release": "nx run workspace:version"
   },
   "dependencies": {
     "@angular/animations": "^13.2.5",
