@@ -1,0 +1,28 @@
+{
+  "name": "@cdx/theme-highcharts",
+  "version": "2.1.1",
+  "repository": {
+    "directory": "packages/theme-highcharts",
+    "type": "git",
+    "url": "ssh://git@git.clarivate.io/cdxn/cdx-next.git"
+  },
+  "exports": {
+    ".": {
+      "sass": "./theme-highcharts.scss",
+      "ts": "./highcharts-theme.ts"
+    }
+  },
+  "files": [
+    "dist",
+    "*.scss",
+    "*.ts"
+  ],
+  "scripts": {
+    "build": "webpack",
+    "deploy": "npm publish",
+    "deploy:cdn": "deploy-aws-s3-cloudfront --bucket cdx-cdn.digital-experience.clarivate.io --distribution EF022SLU13YUI --source dist --destination @cdx/theme-highcharts/${VERSION:-latest} --non-interactive"
+  },
+  "dependencies": {
+    "highcharts": "^10.1.0"
+  }
+}

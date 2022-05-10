@@ -1,0 +1,15 @@
+{
+  "root": "packages/theme-highcharts",
+  "targets": {
+    "stylelint": {
+      "executor": "nx-stylelint:lint",
+      "options": {
+        "lintFilePatterns": [
+          "packages/theme-highcharts/**/*.css",
+          "packages/theme-highcharts/**/*.scss"
+        ]
+      },
+      "outputs": ["{options.outputFile}"]
+    }
+  }
+}

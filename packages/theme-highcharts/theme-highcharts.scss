@@ -1,0 +1,27 @@
+/* stylelint-disable color-hex-length */
+
+$cdx-brand-primary-colors: #5e33bf, #16ab03, #cf005b, #5693f5, #ff4e3e, #9c27b0,
+  #cddc39, #00bcd4, #304ffe, #8bc34a;
+
+$cdx-brand-secondary-colors: #ff9800, #00c853, #0090a8, #e91e63, #ffc107,
+  #6200ea, #001750, #0091ea, #ff5722, #880e4f;
+
+$cdx-brand-tertiary-colors: #00bfa5, #607d8b, #3f51b5, #03a9f4, #aeea00, #ffab00,
+  #aa00ff, #ff6d00, #dd2c00, #ffd600;
+
+@mixin cdx-highcharts-styled-mode-theme(
+  $color-palette: $cdx-brand-primary-colors
+) {
+  $cdx-font-family: 'Source Sans Pro', sans-serif;
+
+  .highcharts-container {
+    font-family: $cdx-font-family;
+  }
+
+  @for $i from 1 through length($color-palette) {
+    $color: nth($color-palette, $i);
+    .highcharts-color-#{$i - 1} {
+      fill: $color;
+    }
+  }
+}

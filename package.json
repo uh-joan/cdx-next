@@ -49,6 +49,8 @@
     "ag-grid-angular": "^27.1.1",
     "ag-grid-community": "^27.1.0",
     "core-js": "^3.21.1",
+    "highcharts": "^10.1.0",
+    "highcharts-angular": "^3.0.0",
     "lit": "^2.2.1",
     "material-components-web": "13.0.0",
     "regenerator-runtime": "^0.13.9",

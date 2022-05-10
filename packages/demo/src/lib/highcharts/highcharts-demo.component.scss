@@ -1,0 +1,9 @@
+@use '../../../../theme-highcharts/theme-highcharts';
+
+.highcharts-title,
+.highcharts-subtitle,
+.highcharts-axis-title {
+  fill: black;
+  font-weight: normal;
+  text-transform: uppercase;
+}
