@@ -9,19 +9,20 @@ $cdx-brand-secondary-colors: #ff9800, #00c853, #0090a8, #e91e63, #ffc107,
 $cdx-brand-tertiary-colors: #00bfa5, #607d8b, #3f51b5, #03a9f4, #aeea00, #ffab00,
   #aa00ff, #ff6d00, #dd2c00, #ffd600;
 
+$cdx-font-family: 'Source Sans Pro', sans-serif;
+
+.highcharts-container {
+  font-family: $cdx-font-family;
+}
+
 @mixin cdx-highcharts-styled-mode-theme(
   $color-palette: $cdx-brand-primary-colors
 ) {
-  $cdx-font-family: 'Source Sans Pro', sans-serif;
-
-  .highcharts-container {
-    font-family: $cdx-font-family;
-  }
-
   @for $i from 1 through length($color-palette) {
     $color: nth($color-palette, $i);
     .highcharts-color-#{$i - 1} {
       fill: $color;
+      stroke: $color;
     }
   }
 }

@@ -1,6 +1,7 @@
 import { Meta, Story, Canvas } from '@storybook/addon-docs';
 import { moduleMetadata } from '@storybook/angular';
-import { HighchartsDemoModule } from './highcharts/highcharts-demo.module';
+import { HighchartsThemedModule } from './highcharts/highcharts-themed.module';
+import { HighchartsStyledModule } from './highcharts/highcharts-styled.module';
 import { html } from 'common-tags';
 
 <Meta title="Highcharts" />
@@ -9,7 +10,7 @@ import { html } from 'common-tags';
   name="Global Theme"
   decorators={[
     moduleMetadata({
-      imports: [HighchartsDemoModule],
+      imports: [HighchartsThemedModule],
     }),
   ]}
   parameters={{
@@ -17,6 +18,22 @@ import { html } from 'common-tags';
   }}
 >
   {{
-    template: html` <demo-highcharts></demo-highcharts> `,
+    template: html` <demo-highcharts-themed></demo-highcharts-themed> `,
+  }}
+</Story>
+
+<Story
+  name="Styled Mode"
+  decorators={[
+    moduleMetadata({
+      imports: [HighchartsStyledModule],
+    }),
+  ]}
+  parameters={{
+    layout: 'centered',
+  }}
+>
+  {{
+    template: html` <demo-highcharts-styled></demo-highcharts-styled> `,
   }}
 </Story>

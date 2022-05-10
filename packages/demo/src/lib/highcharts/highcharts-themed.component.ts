@@ -2,14 +2,13 @@ import { Component, ViewEncapsulation } from '@angular/core';
 import * as Highcharts from 'highcharts';
 
 @Component({
-  selector: 'demo-highcharts',
-  templateUrl: './highcharts-demo.component.html',
-  styleUrls: ['./highcharts-demo.component.scss'],
+  selector: 'demo-highcharts-themed',
+  templateUrl: './highcharts-themed.component.html',
   encapsulation: ViewEncapsulation.None,
 })
-export class HighchartsDemoComponent {
+export class HighchartsThemedComponent {
   Highcharts: typeof Highcharts = Highcharts;
-  chartOptions: Highcharts.Options = {
+  chartOptionsThemed: Highcharts.Options = {
     title: {
       text: 'Solar Employment Growth by Sector, 2010-2016',
     },

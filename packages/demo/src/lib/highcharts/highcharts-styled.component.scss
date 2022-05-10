@@ -1,0 +1,6 @@
+@import '../../../../theme-highcharts/theme-highcharts';
+@import 'https://code.highcharts.com/css/highcharts.css';
+
+.highcharts-styled-container {
+  @include cdx-highcharts-styled-mode-theme;
+}
