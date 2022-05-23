@@ -6,34 +6,44 @@ import { html } from 'common-tags';
 
 <Meta title="Highcharts" />
 
-<Story
-  name="Global Theme"
-  decorators={[
-    moduleMetadata({
-      imports: [HighchartsThemedModule],
-    }),
-  ]}
-  parameters={{
-    layout: 'centered',
-  }}
->
-  {{
-    template: html` <demo-highcharts-themed></demo-highcharts-themed> `,
-  }}
-</Story>
+<Canvas>
+  <Story
+    name="Global Theme"
+    decorators={[
+      moduleMetadata({
+        imports: [HighchartsThemedModule],
+      }),
+    ]}
+    parameters={{
+      layout: 'centered',
+    }}
+  >
+    {{
+      template: html`
+        <h3>Global Theme Example</h3>
+        <demo-highcharts-themed></demo-highcharts-themed>
+      `,
+    }}
+  </Story>
+</Canvas>
 
-<Story
-  name="Styled Mode"
-  decorators={[
-    moduleMetadata({
-      imports: [HighchartsStyledModule],
-    }),
-  ]}
-  parameters={{
-    layout: 'centered',
-  }}
->
-  {{
-    template: html` <demo-highcharts-styled></demo-highcharts-styled> `,
-  }}
-</Story>
+<Canvas>
+  <Story
+    name="Styled Mode"
+    decorators={[
+      moduleMetadata({
+        imports: [HighchartsStyledModule],
+      }),
+    ]}
+    parameters={{
+      layout: 'centered',
+    }}
+  >
+    {{
+      template: html`
+        <h3>Styled Mode Example</h3>
+        <demo-highcharts-styled></demo-highcharts-styled>
+      `,
+    }}
+  </Story>
+</Canvas>
