@@ -94,39 +94,12 @@ const BasicWithOneTrustTemplate: Story<FooterComponent> = () => ({
   template: '<footer cdx-footer></footer>',
 });
 
-const WithLinkGroupsAndOneTrustTemplate: Story<FooterComponent> = () => ({
-  template: html`
-    <footer cdx-footer groupCompanyLinks>
-      <cdx-footer-group>
-        <cdx-footer-group-title>Two Links</cdx-footer-group-title>
-        <a cdx-footer-link href="https://www.vim.org/">vim</a>
-        <a cdx-footer-link href="https://www.gnu.org/software/emacs/">emacs</a>
-      </cdx-footer-group>
-    </footer>
-  `,
-});
-
 export const Basic = BasicTemplate.bind({});
 export const BasicWithOneTrust = BasicWithOneTrustTemplate.bind({});
 export const WithApplicationLinks = WithApplicationLinksTemplate.bind({});
 export const WithLinkGroups = WithLinkGroupsTemplate.bind({});
-export const WithLinkGroupsAndOneTrust = WithLinkGroupsAndOneTrustTemplate.bind(
-  {},
-);
 
 BasicWithOneTrust.decorators = [
-  moduleMetadata({
-    imports: [
-      FooterModule,
-      OneTrustModule.forRoot({
-        domainId: '8b536ee6-9547-4577-843e-314ef3fff451',
-      }),
-      ThemeModule,
-    ],
-  }),
-];
-
-WithLinkGroupsAndOneTrust.decorators = [
   moduleMetadata({
     imports: [
       FooterModule,
