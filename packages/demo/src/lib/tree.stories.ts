@@ -11,10 +11,11 @@ import { Meta } from '@storybook/angular';
 import { html } from 'common-tags';
 
 const treeTemplate = `<mat-tree [dataSource]="dataSource" [treeControl]="treeControl">
-<mat-tree-node role="treeitem" *matTreeNodeDef="let node" matTreeNodePadding matTreeNodePaddingIndent="16">
+<mat-tree-node role="treeitem" *matTreeNodeDef="let node" matTreeNodePadding>
+<button mat-icon-button disabled></button>
   {{ node.name }}
 </mat-tree-node>
-<mat-tree-node role="treeitem" *matTreeNodeDef="let node; when: hasChild" matTreeNodePadding matTreeNodePaddingIndent="16">
+<mat-tree-node role="treeitem" *matTreeNodeDef="let node; when: hasChild">
   <button mat-icon-button matTreeNodeToggle [attr.aria-label]="'toggle ' + node.name">
     <mat-icon>
       {{ treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right' }}
