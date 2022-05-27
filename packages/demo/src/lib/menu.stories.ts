@@ -12,6 +12,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatMenuModule } from '@angular/material/menu';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ThemeModule } from '@cdx/theme-angular-material';
 import { Meta } from '@storybook/angular';
 import { html } from 'common-tags';
 
@@ -21,7 +22,12 @@ export default {
 
 export const BasicMenu = () => ({
   moduleMetadata: {
-    imports: [MatMenuModule, MatButtonModule, BrowserAnimationsModule],
+    imports: [
+      MatMenuModule,
+      MatButtonModule,
+      BrowserAnimationsModule,
+      ThemeModule,
+    ],
   },
   template: html`
     <h3>Basic Menu</h3>
@@ -47,6 +53,7 @@ export const MenuWithIcons = () => ({
       MatButtonModule,
       BrowserAnimationsModule,
       MatIconModule,
+      ThemeModule,
     ],
   },
   template: html`
@@ -80,16 +87,12 @@ const customMenuTemplate = html`
   </button>
   <mat-menu #menu="matMenu" class="my-menu-panel">
     <div
+      (click)="$event.stopPropagation()"
       style="display: flex; flex-direction: column; justify-content: center; padding: 20px"
     >
       <mat-form-field appearance="fill">
         <mat-label>Search</mat-label>
-        <input
-          matInput
-          type="text"
-          [(ngModel)]="textInput"
-          (click)="$event.stopPropagation()"
-        />
+        <input matInput type="text" [(ngModel)]="textInput" />
         <button
           *ngIf="textInput"
           matSuffix
@@ -104,25 +107,15 @@ const customMenuTemplate = html`
       <section class="example-section" [formGroup]="toppings">
         <h2>Select your toppings:</h2>
         <p>
-          <mat-checkbox
-            (click)="$event.stopPropagation()"
-            formControlName="pepperoni"
-            >Pepperoni</mat-checkbox
-          >
+          <mat-checkbox formControlName="pepperoni">Pepperoni</mat-checkbox>
         </p>
         <p>
-          <mat-checkbox
-            (click)="$event.stopPropagation()"
-            formControlName="extracheese"
+          <mat-checkbox formControlName="extracheese"
             >Extra Cheese</mat-checkbox
           >
         </p>
         <p>
-          <mat-checkbox
-            (click)="$event.stopPropagation()"
-            formControlName="mushroom"
-            >Mushroom</mat-checkbox
-          >
+          <mat-checkbox formControlName="mushroom">Mushroom</mat-checkbox>
         </p>
       </section>
 
@@ -162,6 +155,7 @@ export const MenuWithComplexContent = () => ({
       MatInputModule,
       BrowserAnimationsModule,
       MatButtonModule,
+      ThemeModule,
     ],
     declarations: [CustomMenuComponent],
   },
