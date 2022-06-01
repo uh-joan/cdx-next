@@ -157,6 +157,8 @@ pipeline {
                 sh 'cp ./.npmrc packages/theme-button-toggle'
                 sh 'cp ./.npmrc packages/theme-material-components-web'
                 sh 'cp ./.npmrc packages/theme-popperjs'
+                sh 'cp ./.npmrc packages/theme-expansion-panel'
+                sh 'cp ./.npmrc packages/theme-highcharts'
                 sh 'npm run publish:prerelease'
                 withAWS(
                     role: 'arn:aws:iam::809146824789:role/cl/app/cdx/jenkins-cdx-prod_role',
@@ -218,6 +220,8 @@ pipeline {
                 sh 'cp ./.npmrc packages/theme-button-toggle'
                 sh 'cp ./.npmrc packages/theme-material-components-web'
                 sh 'cp ./.npmrc packages/theme-popperjs'
+                sh 'cp ./.npmrc packages/theme-expansion-panel'
+                sh 'cp ./.npmrc packages/theme-highcharts'
                 sh 'npm run publish:release'
                 withAWS(
                     role: 'arn:aws:iam::809146824789:role/cl/app/cdx/jenkins-cdx-prod_role',
