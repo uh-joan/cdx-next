@@ -60,3 +60,12 @@
   background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
   background-size: cover;
 }
+
+// breadcrumb demo styles
+.breadcrumb-demo__nav {
+  padding: 1rem 0;
+
+  button {
+    margin-right: 1rem;
+  }
+}

@@ -1,0 +1,10 @@
+<xng-breadcrumb [separator]="separatorIcon" class="cdx-xng-breadcrumb-theme">
+  <ng-container *xngBreadcrumbItem="let breadcrumb; let info = info">
+    <mat-icon *ngIf="info" inline>{{ info }}</mat-icon>
+    <ng-container *ngIf="!info">{{ breadcrumb }}</ng-container>
+  </ng-container>
+</xng-breadcrumb>
+
+<ng-template #separatorIcon>
+  <mat-icon inline>chevron_right</mat-icon>
+</ng-template>

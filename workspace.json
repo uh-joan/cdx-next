@@ -12,6 +12,7 @@
     "theme-highcharts": "packages/theme-highcharts",
     "theme-material-components-web": "packages/theme-material-components-web",
     "theme-popperjs": "packages/theme-popperjs",
+    "theme-xng-breadcrumb": "packages/theme-xng-breadcrumb",
     "workspace": {
       "root": ".",
       "targets": {

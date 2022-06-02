@@ -1,0 +1,52 @@
+{
+  "prefix": "cdx",
+  "projectType": "library",
+  "root": "packages/theme-xng-breadcrumb",
+  "sourceRoot": "packages/theme-xng-breadcrumb/src",
+  "tags": [],
+  "targets": {
+    "build": {
+      "configurations": {
+        "development": {
+          "tsConfig": "packages/theme-xng-breadcrumb/tsconfig.lib.json"
+        },
+        "production": {
+          "tsConfig": "packages/theme-xng-breadcrumb/tsconfig.lib.prod.json"
+        }
+      },
+      "defaultConfiguration": "production",
+      "executor": "@nrwl/angular:package",
+      "options": {
+        "project": "packages/theme-xng-breadcrumb/ng-package.json"
+      },
+      "outputs": ["dist/packages/theme-xng-breadcrumb"]
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "packages/theme-xng-breadcrumb/src/**/*.ts",
+          "packages/theme-xng-breadcrumb/src/**/*.html"
+        ]
+      }
+    },
+    "stylelint": {
+      "executor": "nx-stylelint:lint",
+      "options": {
+        "lintFilePatterns": [
+          "packages/theme-xng-breadcrumb/**/*.css",
+          "packages/theme-xng-breadcrumb/**/*.scss"
+        ]
+      },
+      "outputs": ["{options.outputFile}"]
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "options": {
+        "jestConfig": "packages/theme-xng-breadcrumb/jest.config.js",
+        "passWithNoTests": true
+      },
+      "outputs": ["coverage/packages/theme-xng-breadcrumb"]
+    }
+  }
+}

@@ -1,0 +1,25 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import { moduleMetadata } from '@storybook/angular';
+import { BreadcrumbDemoModule } from './xng-breadcrumb-demo/xng-breadcrumb-themed.module';
+import { html } from 'common-tags';
+
+<Meta title="XNG Breadcrumb" />
+
+<Canvas>
+  <Story
+    name="Basic"
+    decorators={[
+      moduleMetadata({
+        imports: [BreadcrumbDemoModule],
+      }),
+    ]}
+    parameters={{
+      layout: 'centered',
+    }}
+  >
+    {{
+      template: html`<h3>XNG Breadcrumb Demo</h3>
+        <demo-xng-breadcrumb></demo-xng-breadcrumb>`,
+    }}
+  </Story>
+</Canvas>

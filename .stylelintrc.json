@@ -12,7 +12,7 @@
       "rules": {
         "plugin/stylelint-bem-namics": {
           "helperPrefixes": [],
-          "namespaces": ["cdx-", "mat-", "cdk-", "mdc-"],
+          "namespaces": ["cdx-", "mat-", "cdk-", "mdc-", "xng-"],
           "patternPrefixes": []
         },
         "selector-class-pattern": null
@@ -29,7 +29,7 @@
       "rules": {
         "plugin/stylelint-bem-namics": {
           "helperPrefixes": [],
-          "namespaces": ["cdx-", "mat-", "cdk-", "mdc-"],
+          "namespaces": ["cdx-", "mat-", "cdk-", "mdc-", "xng-"],
           "patternPrefixes": []
         },
         "selector-class-pattern": null
