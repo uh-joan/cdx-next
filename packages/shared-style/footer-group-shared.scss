@@ -1,0 +1,15 @@
+$cdx-footer-group-gap: 0.5rem;
+
+.cdx-footer {
+  &__group {
+    display: flex;
+    flex-direction: column;
+    gap: $cdx-footer-group-gap;
+
+    > *,
+    ::slotted(*) {
+      align-self: start;
+      justify-self: start;
+    }
+  }
+}

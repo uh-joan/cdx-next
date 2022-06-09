@@ -1,0 +1,25 @@
+{
+  "name": "@cdx/shared-style",
+  "version": "2.1.3",
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@git.clarivate.io/cdxn/cdx-next.git",
+    "directory": "packages/shared-style"
+  },
+  "files": [
+    "dist",
+    "*.scss",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "webpack",
+    "deploy": "npm publish",
+    "deploy:cdn": "deploy-aws-s3-cloudfront --bucket cdx-cdn.digital-experience.clarivate.io --distribution EF022SLU13YUI --source dist --destination @cdx/shared-style/${VERSION:-latest} --non-interactive"
+  },
+  "dependencies": {
+    "@material/theme": "13.0.0"
+  },
+  "peerDependencies": {
+    "@cdx/theme-material-components-web": "*"
+  }
+}

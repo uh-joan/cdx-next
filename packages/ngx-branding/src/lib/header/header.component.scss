@@ -1,40 +1,14 @@
 @use '@angular/material' as mat;
 
-$header-spacing: 2rem;
-$header-bar-base-height: 2.5rem;
+@import '../../../../shared-style/header-shared';
 
 .cdx-header {
-  &__global-bar {
-    display: flex;
-    height: $header-bar-base-height;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 $header-spacing;
-    background: black;
-    color: white;
-  }
-
   &__logo--clarivate {
-    width: 110px;
-    height: 20px;
     background-image: url('../../assets/images/clarivate-logo.svg');
   }
 
   &__product-bar {
     @include mat.elevation(5);
-
-    display: flex;
-    min-height: $header-bar-base-height;
-    max-height: calc(2 * $header-bar-base-height);
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 $header-spacing;
-    background: white;
-    column-gap: $header-spacing;
-
-    &:empty {
-      display: none;
-    }
   }
 
   &__product-identification {

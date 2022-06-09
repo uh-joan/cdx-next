@@ -1,51 +1,10 @@
+@use '../../../../shared-style/footer-shared';
 @use '../shared/clarivate-typography';
-
-$cdx-footer-padding: 2rem;
-$cdx-footer-column-width: clamp(
-  7.5rem,
-  calc(7.5rem + (12 - 7.5) * ((100vw - 48rem) / (85 - 48))),
-  12rem
-); // from https://websemantics.uk/tools/responsive-font-calculator/
-$cdx-footer-grid-gap: 1.5rem;
 
 .cdx-footer {
   @include clarivate-typography.clarivate-regular(14px);
 
-  display: flex;
-  flex-wrap: wrap;
-  padding: $cdx-footer-padding;
-  background-color: black;
-  color: white;
-  gap: $cdx-footer-grid-gap;
-
   &__copyright {
     @include clarivate-typography.clarivate-bold(16px);
-
-    width: $cdx-footer-column-width;
-  }
-
-  &__content {
-    display: grid;
-    flex: 1;
-    gap: inherit;
-    grid-template-columns: repeat(auto-fit, $cdx-footer-column-width);
-
-    > *,
-    ::slotted(*) {
-      align-self: start;
-      justify-self: start;
-    }
-
-    a,
-    ::slotted(a) {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    a:hover,
-    ::slotted(a:hover) {
-      cursor: pointer;
-      text-decoration: underline;
-    }
   }
 }

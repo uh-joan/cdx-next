@@ -1,6 +1,6 @@
-@use '../shared/clarivate-typography';
+@use '../../../../shared-style/footer-group-shared';
 
-$cdx-footer-group-gap: 0.5rem;
+@use '../shared/clarivate-typography';
 
 .cdx-footer {
   &__group-title {
@@ -8,16 +8,6 @@ $cdx-footer-group-gap: 0.5rem;
   }
 
   &__group {
-    display: flex;
-    flex-direction: column;
-    gap: $cdx-footer-group-gap;
-
-    > *,
-    ::slotted(*) {
-      align-self: start;
-      justify-self: start;
-    }
-
     a,
     ::slotted(a) {
       color: inherit;
