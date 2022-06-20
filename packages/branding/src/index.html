@@ -21,7 +21,7 @@
 
     <!-- TODO this doesn't update automatically -->
     <link
-      href="https://cdn.digital-experience.clarivate.io/@cdx/theme-material-components-web/v2.0.0-alpha.35/material-components-web.min.css"
+      href="https://cdn.digital-experience.clarivate.io/@cdx/theme-material-components-web/v2.1.2/material-components-web.min.css"
       rel="stylesheet"
     />
 
@@ -41,46 +41,47 @@
 
     <!-- mwc -->
     <script
-      src="https://cdn.jsdelivr.net/npm/@material/mwc-icon@0.25.3/+esm"
-      type="module"
-    ></script>
-    <script
       src="https://cdn.jsdelivr.net/npm/@material/mwc-button@0.25.3/+esm"
       type="module"
     ></script>
   </head>
+
   <body style="margin: 0; padding: 0" class="mdc-typography">
+    <cdx-header></cdx-header>
+
+    <!-- <cdx-header>
+      <p>FAR LEFT</p>
+    </cdx-header>
+
     <cdx-header>
-      <div
-        slot="cdx-header-global"
-        style="display: inherit; align-items: inherit; margin-right: 1rem"
-      >
-        English <mwc-icon>expand_more</mwc-icon>
-      </div>
-      <div
-        slot="cdx-header-global"
-        style="display: inherit; align-items: inherit; margin-right: 1rem"
-      >
-        <mwc-icon>apps</mwc-icon> Products
-      </div>
+      <p>FAR LEFT</p>
+      <p>ACTUAL CENTER</p>
+      <p>FAR RIGHT</p>
+    </cdx-header>
 
-      <mwc-icon slot="cdx-header-global">account_circle</mwc-icon>
-
+    <cdx-header>
       <a href="#" slot="cdx-header-product-name">My Product Name</a>
-      <a href="#" slot="cdx-header-product-name"
-        ><img
+      <a href="#" slot="cdx-header-product-logo">
+        <img
           src="https://clarivate.com/code/wp-content/themes/clarivate/src/img/logo.svg?v=2.4.70"
-      /></a>
-      <!-- <img
-        slot="cdx-header-product-logo"
-        src="https://clarivate.com/code/wp-content/themes/clarivate/src/img/logo.svg?v=2.4.70"
-      /> -->
+        />
+      </a>
 
-      <div>
-        <mwc-button outlined label="Sign up"></mwc-button>
-        <mwc-button unelevated label="Log in"></mwc-button>
+      <div style="display: flex; justify-content: space-between; flex: 1">
+        <p>LEFTISH</p>
+        <p>CENTERISH</p>
+        <p>FAR RIGHT</p>
       </div>
     </cdx-header>
+
+    <cdx-header>
+      <a href="#" slot="cdx-header-product-name">My Product Name</a>
+      <a href="#" slot="cdx-header-product-logo">
+        <img
+          src="https://clarivate.com/code/wp-content/themes/clarivate/src/img/logo.svg?v=2.4.70"
+        />
+      </a>
+    </cdx-header> -->
 
     <div
       style="
@@ -90,7 +91,6 @@
         margin: 0 auto;
       "
     >
-      <mwc-button label="FOO"></mwc-button>
       <h2>First</h2>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla aliquet
