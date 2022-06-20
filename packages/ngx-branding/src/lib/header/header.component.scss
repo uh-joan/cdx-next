@@ -37,6 +37,12 @@ $header-bar-base-height: 2.5rem;
     }
   }
 
+  &__product-identification {
+    display: inherit;
+    align-items: inherit;
+    column-gap: calc($header-spacing / 2);
+  }
+
   .mat-tab-nav-bar {
     align-self: end;
     border: none;

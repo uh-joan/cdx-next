@@ -5,9 +5,14 @@
 </div>
 
 <div class="cdx-header__product-bar">
-  <ng-content
-    select="cdx-header-product-name, a[cdx-header-product-name], a[cdx-header-product-logo], img[cdx-header-product-logo]"
-  ></ng-content>
+  <div #productIdentification class="cdx-header__product-identification">
+    <ng-content
+      select="a[cdx-header-product-logo], img[cdx-header-product-logo]"
+    ></ng-content>
+    <ng-content
+      select="cdx-header-product-name, a[cdx-header-product-name]"
+    ></ng-content>
+  </div>
 
   <ng-content></ng-content>
 </div>

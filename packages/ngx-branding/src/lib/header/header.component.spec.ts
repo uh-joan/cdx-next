@@ -47,15 +47,27 @@ describe('HeaderComponent', () => {
           <header cdx-header>
             <div id="somewhere">in product area</div>
             <cdx-header-product-name>Foo</cdx-header-product-name>
+            <img
+              cdx-header-product-logo
+              src="https://clarivate.com/code/wp-content/themes/clarivate/src/img/logo.svg?v=2.4.32"
+            />
           </header>
         `,
       );
     });
 
-    it('should project product name first into .cdx-header__product-bar', () => {
+    it('should project product logo first into .cdx-header__product-bar', () => {
       expect(
         host.query(
-          '.cdx-header__product-bar > cdx-header-product-name:first-child',
+          '.cdx-header__product-bar > .cdx-header__product-identification > img:first-child',
+        ),
+      ).toExist();
+    });
+
+    it('should project product name second into .cdx-header__product-bar', () => {
+      expect(
+        host.query(
+          '.cdx-header__product-bar > .cdx-header__product-identification > cdx-header-product-name:nth-child(2)',
         ),
       ).toExist();
     });
