@@ -12,6 +12,7 @@
     "moduleResolution": "node",
     "paths": {
       "@cdx/demo": ["packages/demo/src/index.ts"],
+      "@cdx/ngx-analytics": ["packages/ngx-analytics/src/index.ts"],
       "@cdx/ngx-authentication": ["packages/ngx-authentication/src/index.ts"],
       "@cdx/ngx-branding": ["packages/ngx-branding/src/index.ts"],
       "@cdx/ngx-notification": ["packages/ngx-notification/src/index.ts"],

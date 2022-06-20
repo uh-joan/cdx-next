@@ -5,6 +5,7 @@
     "clarivate-font": "packages/clarivate-font",
     "colors": "packages/colors",
     "demo": "packages/demo",
+    "ngx-analytics": "packages/ngx-analytics",
     "ngx-authentication": "packages/ngx-authentication",
     "ngx-branding": "packages/ngx-branding",
     "ngx-notification": "packages/ngx-notification",

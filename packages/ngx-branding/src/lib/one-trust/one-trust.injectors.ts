@@ -57,9 +57,11 @@ export function oneTrustInitializer(
     }, document);
 
     createAndAppendScript((script) => {
+      if (document.getElementById('analytics-opt-anon-wrapper')) return;
       script.id = 'one-trust-opt-anon-wrapper';
       script.appendChild(
-        document.createTextNode('function OptanonWrapper() { }'),
+        document.createTextNode(`
+          function OptanonWrapper() { }`),
       );
     }, document);
   };
@@ -84,7 +86,6 @@ function createAndAppendScript(
   const script = document.createElement('script');
   script.type = 'text/javascript';
   prepare(script);
-
   document.head.appendChild(script);
 
   return script;

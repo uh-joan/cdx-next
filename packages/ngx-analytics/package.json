@@ -1,0 +1,17 @@
+{
+  "name": "@cdx/ngx-analytics",
+  "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@git.clarivate.io/cdxn/cdx-next.git",
+    "directory": "packages/ngx-analytics"
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  },
+  "peerDependencies": {
+    "@angular/common": "^13.2.0",
+    "@angular/core": "^13.2.0",
+    "@snowplow/browser-tracker": "^3.7.0"
+  }
+}

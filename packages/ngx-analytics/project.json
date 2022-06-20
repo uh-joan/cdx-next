@@ -1,0 +1,42 @@
+{
+  "prefix": "cdx",
+  "projectType": "library",
+  "root": "packages/ngx-analytics",
+  "sourceRoot": "packages/ngx-analytics/src",
+  "tags": [],
+  "targets": {
+    "build": {
+      "configurations": {
+        "development": {
+          "tsConfig": "packages/ngx-analytics/tsconfig.lib.json"
+        },
+        "production": {
+          "tsConfig": "packages/ngx-analytics/tsconfig.lib.prod.json"
+        }
+      },
+      "defaultConfiguration": "production",
+      "executor": "@nrwl/angular:package",
+      "options": {
+        "project": "packages/ngx-analytics/ng-package.json"
+      },
+      "outputs": ["dist/packages/ngx-analytics"]
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "packages/ngx-analytics/src/**/*.ts",
+          "packages/ngx-analytics/src/**/*.html"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "options": {
+        "jestConfig": "packages/ngx-analytics/jest.config.js",
+        "passWithNoTests": true
+      },
+      "outputs": ["coverage/packages/ngx-analytics"]
+    }
+  }
+}
