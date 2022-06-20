@@ -1,0 +1,75 @@
+{
+  "prefix": "cdx",
+  "projectType": "library",
+  "root": "packages/ngx-notification",
+  "sourceRoot": "packages/ngx-notification/src",
+  "tags": [],
+  "targets": {
+    "build": {
+      "configurations": {
+        "development": {
+          "tsConfig": "packages/ngx-notification/tsconfig.lib.json"
+        },
+        "production": {
+          "tsConfig": "packages/ngx-notification/tsconfig.lib.prod.json"
+        }
+      },
+      "defaultConfiguration": "production",
+      "executor": "@nrwl/angular:package",
+      "options": {
+        "project": "packages/ngx-notification/ng-package.json"
+      },
+      "outputs": ["dist/packages/ngx-notification"]
+    },
+    "build-storybook": {
+      "configurations": {
+        "ci": {
+          "quiet": true
+        }
+      },
+      "executor": "@nrwl/storybook:build",
+      "options": {
+        "config": {
+          "configFolder": "packages/ngx-notification/.storybook"
+        },
+        "outputPath": "dist/storybook/ngx-notification",
+        "projectBuildConfig": "ngx-notification:build-storybook",
+        "uiFramework": "@storybook/angular"
+      },
+      "outputs": ["{options.outputPath}"]
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "packages/ngx-notification/src/**/*.ts",
+          "packages/ngx-notification/src/**/*.html"
+        ]
+      }
+    },
+    "storybook": {
+      "configurations": {
+        "ci": {
+          "quiet": true
+        }
+      },
+      "executor": "@nrwl/storybook:storybook",
+      "options": {
+        "config": {
+          "configFolder": "packages/ngx-notification/.storybook"
+        },
+        "port": 4400,
+        "projectBuildConfig": "ngx-notification:build-storybook",
+        "uiFramework": "@storybook/angular"
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "options": {
+        "jestConfig": "packages/ngx-notification/jest.config.js",
+        "passWithNoTests": true
+      },
+      "outputs": ["coverage/packages/ngx-notification"]
+    }
+  }
+}

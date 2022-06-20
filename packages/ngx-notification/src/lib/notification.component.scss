@@ -1,0 +1,76 @@
+@use '@material/elevation';
+
+@use '../../../colors' as colors;
+
+.cdx-notification {
+  @include elevation.elevation(1);
+
+  display: flex;
+  justify-content: space-between;
+  padding: 16px 24px;
+  background-color: colors.$primary-50;
+  gap: 0 20px;
+  user-select: none;
+
+  &__icon,
+  &__close {
+    align-self: flex-start;
+    color: colors.$primary-500;
+  }
+
+  &__content {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-self: center;
+  }
+
+  &__title {
+    padding-bottom: 8px;
+  }
+
+  &__actions {
+    color: colors.$primary-500;
+  }
+}
+
+.cdx-notification--inline {
+  border-left: 8px solid colors.$primary-500;
+  border-radius: 6px;
+
+  .cdx-notification__actions {
+    color: colors.$primary-500;
+  }
+}
+
+.cdx-notification--banner {
+  .cdx-notification__actions {
+    align-self: center;
+  }
+}
+
+.cdx-notification--success {
+  border-left-color: colors.$accent-800;
+  background-color: colors.$accent-50;
+
+  .cdx-notification__icon,
+  .cdx-notification__actions,
+  .cdx-notification__close {
+    color: colors.$accent-800;
+  }
+}
+
+.cdx-notification--warn {
+  border-left-color: colors.$warn-800;
+  background-color: colors.$warn-50;
+
+  .cdx-notification__icon,
+  .cdx-notification__actions,
+  .cdx-notification__close {
+    color: colors.$warn-800;
+  }
+}
+
+.dismissed {
+  display: none;
+}

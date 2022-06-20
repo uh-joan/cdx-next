@@ -1,9 +1,8 @@
 @use '@material/elevation';
-@use 'packages/colors' as colors;
-@use '../shared/clarivate-typography';
+@use '../../../../colors' as colors;
+@use '../../../../theme-material-components-web/typography';
 
 :host {
-  @include clarivate-typography.clarivate-body-1(16px);
   @include elevation.elevation(1);
 
   display: flex;
@@ -13,7 +12,7 @@
   gap: 0 20px;
   user-select: none;
 
-  .cdx-wc-notification {
+  .cdx-notification {
     &__icon {
       align-self: flex-start;
       color: colors.$primary-500;
@@ -27,7 +26,7 @@
     }
 
     &__title {
-      @include clarivate-typography.clarivate-title(20px);
+      @include typography.typography(headline6);
 
       padding-bottom: 8px;
     }
@@ -45,11 +44,11 @@
   display: none;
 }
 
-:host-context(.cdx-wc-notification--inline) {
+:host-context(.cdx-notification--inline) {
   border-left: 8px solid colors.$primary-500;
   border-radius: 6px;
 
-  .cdx-wc-notification__actions {
+  .cdx-notification__actions {
     > mwc-button,
     ::slotted(*) {
       margin-top: 8px;
@@ -57,18 +56,18 @@
   }
 }
 
-:host-context(.cdx-wc-notification--banner) {
-  .cdx-wc-notification__actions {
+:host-context(.cdx-notification--banner) {
+  .cdx-notification__actions {
     align-self: center;
   }
 }
 
-:host-context(.cdx-wc-notification--success) {
+:host-context(.cdx-notification--success) {
   border-left-color: colors.$accent-800;
   background-color: colors.$accent-50;
 
-  .cdx-wc-notification__icon,
-  .cdx-wc-notification__actions {
+  .cdx-notification__icon,
+  .cdx-notification__actions {
     color: colors.$accent-800;
 
     mwc-button,
@@ -79,12 +78,12 @@
   }
 }
 
-:host-context(.cdx-wc-notification--warn) {
+:host-context(.cdx-notification--warn) {
   border-left-color: colors.$warn-800;
   background-color: colors.$warn-50;
 
-  .cdx-wc-notification__icon,
-  .cdx-wc-notification__actions {
+  .cdx-notification__icon,
+  .cdx-notification__actions {
     color: colors.$warn-800;
 
     mwc-button,

@@ -9,8 +9,8 @@ export const NOTIFICATION_ICON = {
   success: 'check_circle',
 };
 
-@customElement('cdx-wc-notification')
-export class NotificationWComponent extends LitElement {
+@customElement('cdx-notification')
+export class NotificationComponent extends LitElement {
   static get styles() {
     return [style];
   }
@@ -36,20 +36,20 @@ export class NotificationWComponent extends LitElement {
 
   protected render(): TemplateResult {
     this.classList.add(
-      'cdx-wc-notification--' + this.presentation,
-      'cdx-wc-notification--' + this.severity,
+      'cdx-notification--' + this.presentation,
+      'cdx-notification--' + this.severity,
     );
 
     return html`
-      <div class="cdx-wc-notification__icon">
+      <div class="cdx-notification__icon">
         <slot name="icon">
           <mwc-icon>${NOTIFICATION_ICON[this.severity]}</mwc-icon>
         </slot>
       </div>
-      <div class="cdx-wc-notification__content">
+      <div class="cdx-notification__content">
         ${
           this.title
-            ? html`<div class="cdx-wc-notification__title">${this.title}</div>`
+            ? html`<div class="cdx-notification__title">${this.title}</div>`
             : html``
         }
         <slot> </slot>
@@ -57,7 +57,7 @@ export class NotificationWComponent extends LitElement {
         ${
           this.presentation === 'inline'
             ? html`
-                ${html` <div class="cdx-wc-notification__actions">
+                ${html` <div class="cdx-notification__actions">
                   ${this.action
                     ? html`
                         <mwc-button @click="${this.onAction}"
@@ -74,7 +74,7 @@ export class NotificationWComponent extends LitElement {
 
       ${
         this.presentation === 'banner'
-          ? html`<div class="cdx-wc-notification__actions">
+          ? html`<div class="cdx-notification__actions">
               ${this.dismissable
                 ? html` <mwc-button @click="${this.onDismiss}"
                     >Dismiss</mwc-button
@@ -94,7 +94,7 @@ export class NotificationWComponent extends LitElement {
       
         ${
           this.dismissable && this.presentation === 'inline'
-            ? html`<div class="cdx-wc-notification__icon">
+            ? html`<div class="cdx-notification__icon">
                 <mwc-button @click="${this.onDismiss}">
                   <mwc-icon>close</mwc-icon>
                 </mwc-button>
