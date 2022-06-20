@@ -1,0 +1,73 @@
+{
+  "projectType": "library",
+  "root": "packages/notification",
+  "sourceRoot": "packages/notification/src",
+  "tags": [],
+  "targets": {
+    "build": {
+      "configurations": {
+        "production": {
+          "commonChunk": false,
+          "extractLicenses": true,
+          "namedChunks": true,
+          "optimization": true,
+          "outputHashing": "none",
+          "runtimeChunk": false,
+          "sourceMap": true,
+          "vendorChunk": false
+        }
+      },
+      "defaultConfiguration": "production",
+      "executor": "@nrwl/web:webpack",
+      "options": {
+        "assets": [],
+        "baseHref": "/",
+        "compiler": "babel",
+        "index": "packages/notification/src/index.html",
+        "main": "packages/notification/src/index.ts",
+        "outputPath": "packages/notification/dist",
+        "polyfills": "packages/notification/src/polyfills.ts",
+        "scripts": [],
+        "tsConfig": "packages/notification/tsconfig.app.json",
+        "webpackConfig": "packages/notification/webpack.config.js"
+      },
+      "outputs": ["{options.outputPath}"]
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": ["packages/notification/**/*.ts"]
+      },
+      "outputs": ["{options.outputFile}"]
+    },
+    "serve": {
+      "configurations": {
+        "production": {
+          "buildTarget": "notification:build:production"
+        }
+      },
+      "executor": "@nrwl/web:dev-server",
+      "options": {
+        "buildTarget": "notification:build"
+      }
+    },
+    "stylelint": {
+      "executor": "nx-stylelint:lint",
+      "options": {
+        "lintFilePatterns": [
+          "packages/notification/**/*.css",
+          "packages/notification/**/*.scss"
+        ]
+      },
+      "outputs": ["{options.outputFile}"]
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "options": {
+        "jestConfig": "packages/notification/jest.config.js",
+        "passWithNoTests": true
+      },
+      "outputs": ["coverage/packages/notification"]
+    }
+  }
+}

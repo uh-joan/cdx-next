@@ -6,6 +6,8 @@
     "demo": "packages/demo",
     "ngx-authentication": "packages/ngx-authentication",
     "ngx-branding": "packages/ngx-branding",
+    "ngx-notification": "packages/ngx-notification",
+    "notification": "packages/notification",
     "shared-branding": "packages/shared-branding",
     "theme-ag-grid": "packages/theme-ag-grid",
     "theme-angular-material": "packages/theme-angular-material",
