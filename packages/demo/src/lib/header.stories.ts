@@ -148,6 +148,7 @@ const WithProductLogoTemplate: Story<HeaderComponent> = () => ({
       <img
         cdx-header-product-logo
         src="https://clarivate.com/code/wp-content/themes/clarivate/src/img/logo.svg?v=2.4.32"
+        alt="Clarivate"
       />
       <div style="display: inherit; justify-content: end">
         <button mat-button style="margin-right: 1rem">Sign up</button>
@@ -182,6 +183,7 @@ const WithProductSearchTemplate: Story<HeaderComponent> = () => ({
       <img
         cdx-header-product-logo
         src="https://clarivate.com/code/wp-content/themes/clarivate/src/img/logo.svg?v=2.4.32"
+        alt="Clarivate"
         style="max-width: 140px"
       />
       <mat-form-field style="flex: 0.75; top: 0.25rem">
