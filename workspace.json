@@ -2,6 +2,7 @@
   "projects": {
     "branding": "packages/branding",
     "clarivate-font": "packages/clarivate-font",
+    "colors": "packages/colors",
     "demo": "packages/demo",
     "ngx-branding": "packages/ngx-branding",
     "theme-ag-grid": "packages/theme-ag-grid",

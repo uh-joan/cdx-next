@@ -1,0 +1,15 @@
+{
+  "root": "packages/colors",
+  "targets": {
+    "stylelint": {
+      "executor": "nx-stylelint:lint",
+      "options": {
+        "lintFilePatterns": [
+          "packages/colors/**/*.css",
+          "packages/colors/**/*.scss"
+        ]
+      },
+      "outputs": ["{options.outputFile}"]
+    }
+  }
+}

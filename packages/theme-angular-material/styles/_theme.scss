@@ -1,4 +1,6 @@
 @use '@angular/material' as mat;
+
+@use '../../colors' as colors;
 @use './overrides';
 
 $preferred-line-height: 1.3;
@@ -8,16 +10,16 @@ $cdx-theme: mat.define-light-theme(
       primary:
         mat.define-palette(
           (
-            50: #eee7f8,
-            100: #d2c4ed,
-            200: #b49de2,
-            300: #9675d7,
-            400: #7f56ce,
-            500: #5d33bf,
-            600: #4f2bb6,
-            700: #4125af,
-            800: #2818a2,
-            900: #23018e,
+            50: colors.$primary-50,
+            100: colors.$primary-100,
+            200: colors.$primary-200,
+            300: colors.$primary-300,
+            400: colors.$primary-400,
+            500: colors.$primary-500,
+            600: colors.$primary-600,
+            700: colors.$primary-700,
+            800: colors.$primary-800,
+            900: colors.$primary-900,
             contrast: (
               50: #000,
               100: #000,
@@ -35,16 +37,16 @@ $cdx-theme: mat.define-light-theme(
       accent:
         mat.define-palette(
           (
-            50: #e5f5e4,
-            100: #c2e5bc,
-            200: #9ad490,
-            300: #6ec462,
-            400: #49b83d,
-            500: #16ab03,
-            600: #019c00,
-            700: #008b00,
-            800: #007a00,
-            900: #005b00,
+            50: colors.$accent-50,
+            100: colors.$accent-100,
+            200: colors.$accent-200,
+            300: colors.$accent-300,
+            400: colors.$accent-400,
+            500: colors.$accent-500,
+            600: colors.$accent-600,
+            700: colors.$accent-700,
+            800: colors.$accent-800,
+            900: colors.$accent-900,
             contrast: (
               50: #000,
               100: #000,
@@ -62,16 +64,16 @@ $cdx-theme: mat.define-light-theme(
       warn:
         mat.define-palette(
           (
-            50: #fcece8,
-            100: #f6c5b9,
-            200: #f09f8b,
-            300: #e9795d,
-            400: #e3522e,
-            500: #dd2c00,
-            600: #c92800,
-            700: #b52400,
-            800: #a12000,
-            900: #8d1c00,
+            50: colors.$warn-50,
+            100: colors.$warn-100,
+            200: colors.$warn-200,
+            300: colors.$warn-300,
+            400: colors.$warn-400,
+            500: colors.$warn-500,
+            600: colors.$warn-600,
+            700: colors.$warn-700,
+            800: colors.$warn-800,
+            900: colors.$warn-900,
             contrast: (
               50: #000,
               100: #000,

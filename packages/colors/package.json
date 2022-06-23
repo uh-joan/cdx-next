@@ -1,0 +1,15 @@
+{
+  "name": "@cdx/colors",
+  "version": "2.1.2",
+  "repository": {
+    "directory": "packages/colors",
+    "type": "git",
+    "url": "ssh://git@git.clarivate.io/cdxn/cdx-next.git"
+  },
+  "files": [
+    "*.scss"
+  ],
+  "scripts": {
+    "deploy": "npm publish"
+  }
+}

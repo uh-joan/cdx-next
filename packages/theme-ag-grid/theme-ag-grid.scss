@@ -2,11 +2,13 @@
   as theme;
 @use 'ag-grid-community/src/styles/mixins/ag-theme-params' as params;
 
+@use '../colors';
+
 .ag-theme-cdx {
   @include theme.ag-theme-material(
     (
-      material-primary-color: #5e33bf,
-      material-accent-color: #17ab03,
+      material-primary-color: colors.$primary-500,
+      material-accent-color: colors.$accent-500,
       row-hover-color: params.ag-derived(material-primary-color, $opacity: 0.05),
       selected-row-background-color:
         params.ag-derived(material-primary-color, $opacity: 0.1),
@@ -22,6 +24,6 @@
   );
 
   .ag-checkbox-input-wrapper.ag-checked::after {
-    color: #5e33bf;
+    color: colors.$primary-500;
   }
 }

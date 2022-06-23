@@ -15,7 +15,8 @@
     "deploy": "npm publish",
     "deploy:cdn": "deploy-aws-s3-cloudfront --bucket cdx-cdn.digital-experience.clarivate.io --distribution EF022SLU13YUI --source dist --destination @cdx/theme-material-components-web/${VERSION:-latest} --non-interactive"
   },
-  "dependencies": {
+  "peerDependencies": {
+    "@cdx/colors": "*",
     "material-components-web": "13.0.0"
   }
 }

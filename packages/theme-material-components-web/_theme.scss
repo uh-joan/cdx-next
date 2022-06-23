@@ -1,4 +1,6 @@
+@use '../colors';
+
 @forward '@material/theme' with (
-  $primary: #5e33bf,
-  $secondary: #17ab03
+  $primary: colors.$primary-500,
+  $secondary: colors.$accent-500
 );
