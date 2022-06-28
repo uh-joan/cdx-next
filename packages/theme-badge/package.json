@@ -2,9 +2,9 @@
   "name": "@cdx/theme-badge",
   "version": "2.1.2",
   "repository": {
-    "directory": "packages/theme-badge",
     "type": "git",
-    "url": "ssh://git@git.clarivate.io/cdxn/cdx-next.git"
+    "url": "ssh://git@git.clarivate.io/cdxn/cdx-next.git",
+    "directory": "packages/theme-badge"
   },
   "files": [
     "dist",

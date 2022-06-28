@@ -2,9 +2,9 @@
   "name": "@cdx/clarivate-font",
   "version": "2.1.2",
   "repository": {
-    "directory": "packages/clarivate-font",
     "type": "git",
-    "url": "ssh://git@git.clarivate.io/cdxn/cdx-next.git"
+    "url": "ssh://git@git.clarivate.io/cdxn/cdx-next.git",
+    "directory": "packages/clarivate-font"
   },
   "scripts": {
     "deploy:cdn": "deploy-aws-s3-cloudfront --bucket cdx-cdn.digital-experience.clarivate.io --distribution EF022SLU13YUI --source css --destination @cdx/clarivate-font/latest --non-interactive"

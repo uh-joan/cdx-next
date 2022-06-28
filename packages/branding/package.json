@@ -2,9 +2,9 @@
   "name": "@cdx/branding",
   "version": "2.1.2",
   "repository": {
-    "directory": "packages/branding",
     "type": "git",
-    "url": "ssh://git@git.clarivate.io/cdxn/cdx-next.git"
+    "url": "ssh://git@git.clarivate.io/cdxn/cdx-next.git",
+    "directory": "packages/branding"
   },
   "files": [
     "dist/*.{js,map,txt}"

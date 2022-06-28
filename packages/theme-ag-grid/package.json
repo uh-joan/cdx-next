@@ -2,9 +2,9 @@
   "name": "@cdx/theme-ag-grid",
   "version": "2.1.2",
   "repository": {
-    "directory": "packages/theme-ag-grid",
     "type": "git",
-    "url": "ssh://git@git.clarivate.io/cdxn/cdx-next.git"
+    "url": "ssh://git@git.clarivate.io/cdxn/cdx-next.git",
+    "directory": "packages/theme-ag-grid"
   },
   "exports": {
     ".": {
