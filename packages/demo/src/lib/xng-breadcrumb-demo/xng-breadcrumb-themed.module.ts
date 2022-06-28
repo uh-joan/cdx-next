@@ -1,7 +1,7 @@
 import { APP_BASE_HREF } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { BreadcrumbModule, BreadcrumbService } from 'xng-breadcrumb';
+import { BreadcrumbModule } from 'xng-breadcrumb';
 
 import { XngBreadcrumbThemedComponent } from './xng-breadcrumb-themed.component';
 import { BreadcrumbRoutingModule } from './xng-breadcrumb-themed-routing.module';
@@ -9,7 +9,7 @@ import { BreadcrumbRoutingModule } from './xng-breadcrumb-themed-routing.module'
 @NgModule({
   declarations: [XngBreadcrumbThemedComponent],
   imports: [BrowserModule, BreadcrumbRoutingModule, BreadcrumbModule],
-  providers: [BreadcrumbService, { provide: APP_BASE_HREF, useValue: '' }],
+  providers: [{ provide: APP_BASE_HREF, useValue: '' }],
   exports: [XngBreadcrumbThemedComponent],
 })
 export class BreadcrumbDemoModule {}

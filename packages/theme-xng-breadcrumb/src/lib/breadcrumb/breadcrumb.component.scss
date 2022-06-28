@@ -1,17 +1,15 @@
-@use '@material/theme/theme-color';
-
 .cdx-xng-breadcrumb-theme {
   .xng-breadcrumb {
     &-list {
       gap: 0.5rem;
     }
 
-    &-link:hover {
-      color: theme-color.prop-value(primary);
-    }
-
     &-separator {
       margin: 0; // flex gap handles this
+    }
+
+    &-trail {
+      font-weight: bolder;
     }
   }
 }

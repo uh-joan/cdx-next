@@ -1,12 +1,15 @@
 @use '../../../theme-angular-material/styles' as cdx;
 @use '../../../ngx-branding/src/lib/header/header-theme' as header;
 @use '../../../ngx-branding/src/lib/footer/footer-theme' as footer;
+@use '../../../theme-xng-breadcrumb/src/lib/breadcrumb/breadcrumb-theme' as
+  breadcrumb;
 /* stylelint-disable-next-line scss/at-import-partial-extension */
 @import '../../../theme-expansion-panel/expansion-panel.scss';
 
 @include cdx.default;
 @include header.theme(cdx.$cdx-theme);
 @include footer.theme(cdx.$cdx-theme);
+@include breadcrumb.theme(cdx.$cdx-theme);
 
 // all template html goes in a div with this class
 .story {

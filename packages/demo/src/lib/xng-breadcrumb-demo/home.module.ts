@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { RouterModule } from '@angular/router';
 import { CdxBreadcrumbModule } from '@cdx/theme-xng-breadcrumb';
-import { BreadcrumbModule } from 'xng-breadcrumb';
 
 import { HomeComponent } from './home.component';
 import { HomeRoutingModule } from './home-routing.module';
@@ -16,7 +15,6 @@ import { Page3Component } from './page-3.component';
   imports: [
     CommonModule,
     HomeRoutingModule,
-    BreadcrumbModule,
     CdxBreadcrumbModule,
     RouterModule,
     MatButtonModule,

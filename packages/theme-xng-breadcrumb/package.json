@@ -1,7 +1,17 @@
 {
   "name": "@cdx/theme-xng-breadcrumb",
   "version": "0.0.1",
+  "exports": {
+    ".": {
+      "sass": "./src/lib/breadcrumb/_breadcrumb-theme.scss"
+    }
+  },
   "dependencies": {
     "tslib": "^2.3.0"
+  },
+  "peerDependencies": {
+    "@angular/common": "^13.2.5",
+    "@angular/core": "^13.2.5",
+    "@cdx/theme-angular-material": "*"
   }
 }
