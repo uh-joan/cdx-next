@@ -1,5 +1,34 @@
 # Changelog
 
+## [2.1.3](https://git.clarivate.io/projects/CDXN/repos/cdx-next/compare/commits?targetBranch=da7e2240860a3f51eede49de3cb190419234b0cf&sourceBranch=ad59ac13457001429bd5517b1aa5cf85af809155&targetRepoId=17352)
+
+### Bug Fixes
+
+- **branding:** removed product bar min-height so it hides when no content
+  ([ac804a2a165](https://git.clarivate.io/projects/CDXN/repos/cdx-next/commits/ac804a2a1654cec189adf7a175dcd2223fad6468))
+- **ngx-branding:** ensure feature parity for angular and web components header
+  ([9fc2279d5d9](https://git.clarivate.io/projects/CDXN/repos/cdx-next/commits/9fc2279d5d959fd62564e4a5111024225444edd3))
+
+### Features
+
+- **theme-xng-breadcrumb:** clarivate themed breadcrumb component
+  ([008eba853fd](https://git.clarivate.io/projects/CDXN/repos/cdx-next/commits/008eba853fd35b0fc5a62e5695b29da5a84a6917))
+- **colors:** add colors scss package and consume from theme
+  ([85f79d38764](https://git.clarivate.io/projects/CDXN/repos/cdx-next/commits/85f79d38764c1eb30acc2942cc195c34e82cc95c))
+
+### Refactor
+
+- **theme-xng-breadcrumb:** use AM theme support to set colors
+  ([a3dbb886fad](https://git.clarivate.io/projects/CDXN/repos/cdx-next/commits/a3dbb886fad4db3f2111bdfe8340e09fbd55ac4e))
+- **branding:** add image alt attributes to improve adherence to wcag/remove
+  clarivate logo alt values per peer review
+  ([ad59ac13457](https://git.clarivate.io/projects/CDXN/repos/cdx-next/commits/ad59ac13457001429bd5517b1aa5cf85af809155))
+
+### Style
+
+- sort json with prettier
+  ([1e5ca275fbf](https://git.clarivate.io/projects/CDXN/repos/cdx-next/commits/1e5ca275fbf5725c89ccb12e21953203743e5539))
+
 ## [2.1.2](https://git.clarivate.io/projects/CDXN/repos/cdx-next/compare/commits?targetBranch=refs%2Ftags%2Fv2.1.1&sourceBranch=9d1d0e35550d3fbebde319e54e56ff891744ad7c&targetRepoId=17352)
 
 ### Bug Fixes
