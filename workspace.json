@@ -1,5 +1,6 @@
 {
   "projects": {
+    "authentication": "packages/authentication",
     "branding": "packages/branding",
     "clarivate-font": "packages/clarivate-font",
     "colors": "packages/colors",

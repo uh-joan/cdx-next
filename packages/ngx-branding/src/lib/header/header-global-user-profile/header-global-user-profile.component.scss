@@ -1,0 +1,12 @@
+@use '../../shared/clarivate-typography';
+
+.cdx-header-details {
+  &__container {
+    .mat-button-wrapper {
+      display: flex;
+      align-items: center;
+      font-weight: normal;
+      gap: 0.5rem;
+    }
+  }
+}

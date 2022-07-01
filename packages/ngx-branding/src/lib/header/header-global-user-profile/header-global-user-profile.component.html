@@ -1,0 +1,15 @@
+<ng-container
+  *ngIf="authenticationService.isAuthenticated() | async; else notAuthenticated"
+>
+</ng-container>
+
+<ng-template #notAuthenticated>
+  <button
+    mat-button
+    class="cdx-header-details__container"
+    (click)="authenticationService.login()"
+  >
+    <mat-icon>login</mat-icon>
+    <span>Sign in</span>
+  </button>
+</ng-template>

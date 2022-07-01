@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "declaration": true,
+    "outDir": "../../dist/out-tsc",
+    "types": []
+  },
+  "exclude": ["**/*.spec.ts"],
+  "extends": "./tsconfig.json",
+  "include": ["**/*.ts"]
+}

@@ -3,13 +3,13 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatTabsModule } from '@angular/material/tabs';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AuthenticationModule } from '@cdx/authentication';
 import { ThemeModule } from '@cdx/theme-angular-material';
 import { Meta, moduleMetadata, Story } from '@storybook/angular';
 import { html } from 'common-tags';
 
 import { HeaderComponent } from './header.component';
 import { HeaderModule } from './header.module';
-import { HeaderGlobalUtilitiesModule } from './header-global-utilities/header-global-utilities.module';
 
 export default {
   title: 'Header',
@@ -18,13 +18,16 @@ export default {
     moduleMetadata({
       imports: [
         HeaderModule,
-        HeaderGlobalUtilitiesModule,
         MatIconModule,
         MatInputModule,
         MatButtonModule,
         BrowserAnimationsModule,
         MatTabsModule,
         ThemeModule,
+        AuthenticationModule.forRoot({
+          appId: 'cdx',
+          environment: 'dev-stable',
+        }),
       ],
     }),
   ],
@@ -34,14 +37,16 @@ const BasicTemplate: Story<HeaderComponent> = () => ({
   template: html`<header cdx-header></header>`,
 });
 
-const WithGlobalUtilitiesTemplate: Story<HeaderComponent> = () => ({
+const WithGlobalUserProfileUnauthenticatedTemplate: Story<
+  HeaderComponent
+> = () => ({
   template: html`
     <!--
     PLEASE NOTE: All inline styles are included as examples of how content
     can be positioned and are intended for demonstration purposes only.
     -->
     <header cdx-header>
-      <cdx-header-global>
+      <cdx-header-global [withAuthentication]="true">
         <div
           style="display: inherit; align-items: inherit; margin-right: 1rem;"
         >
@@ -52,9 +57,6 @@ const WithGlobalUtilitiesTemplate: Story<HeaderComponent> = () => ({
         >
           <mat-icon>apps</mat-icon> Products
         </div>
-        <cdx-header-global-user-profile
-          userDisplayName="Garcia, Nina"
-        ></cdx-header-global-user-profile>
       </cdx-header-global>
     </header>
   `,
@@ -78,9 +80,6 @@ const WithProductNameTemplate: Story<HeaderComponent> = () => ({
         >
           <mat-icon>apps</mat-icon> Products
         </div>
-        <cdx-header-global-user-profile
-          userDisplayName="Garcia, Nina"
-        ></cdx-header-global-user-profile>
       </cdx-header-global>
       <cdx-header-product-name>My Product Name</cdx-header-product-name>
       <div style="display: inherit; justify-content: end">
@@ -109,9 +108,6 @@ const WithProductNameAsLinkTemplate: Story<HeaderComponent> = () => ({
         >
           <mat-icon>apps</mat-icon> Products
         </div>
-        <cdx-header-global-user-profile
-          userDisplayName="Garcia, Nina"
-        ></cdx-header-global-user-profile>
       </cdx-header-global>
       <a href="#" cdx-header-product-name>My Product Name</a>
       <div style="display: inherit; justify-content: end">
@@ -140,9 +136,6 @@ const WithProductLogoTemplate: Story<HeaderComponent> = () => ({
         >
           <mat-icon>apps</mat-icon> Products
         </div>
-        <cdx-header-global-user-profile
-          userDisplayName="Garcia, Nina"
-        ></cdx-header-global-user-profile>
       </cdx-header-global>
       <img
         cdx-header-product-logo
@@ -174,9 +167,6 @@ const WithProductLogoAndProductNameTemplate: Story<HeaderComponent> = () => ({
         >
           <mat-icon>apps</mat-icon> Products
         </div>
-        <cdx-header-global-user-profile
-          userDisplayName="Garcia, Nina"
-        ></cdx-header-global-user-profile>
       </cdx-header-global>
       <a href="#" cdx-header-product-name>My Product Name</a>
       <img
@@ -205,9 +195,6 @@ const WithProductSearchTemplate: Story<HeaderComponent> = () => ({
         >
           <mat-icon>apps</mat-icon> Products
         </div>
-        <cdx-header-global-user-profile
-          userDisplayName="Garcia, Nina"
-        ></cdx-header-global-user-profile>
       </cdx-header-global>
       <img
         cdx-header-product-logo
@@ -266,9 +253,6 @@ const WithPrimaryNavTemplate: Story<HeaderComponent> = () => ({
         >
           <mat-icon>apps</mat-icon> Products
         </div>
-        <cdx-header-global-user-profile
-          userDisplayName="Garcia, Nina"
-        ></cdx-header-global-user-profile>
       </cdx-header-global>
       <cdx-header-product-name>My Product</cdx-header-product-name>
       <nav mat-tab-nav-bar cdx-size-compact style="flex: 4">
@@ -289,7 +273,8 @@ const WithPrimaryNavTemplate: Story<HeaderComponent> = () => ({
 });
 
 export const Basic = BasicTemplate.bind({});
-export const WithGlobalUtilities = WithGlobalUtilitiesTemplate.bind({});
+export const WithGlobalUserProfileUnauthenticated =
+  WithGlobalUserProfileUnauthenticatedTemplate.bind({});
 export const WithProductName = WithProductNameTemplate.bind({});
 export const WithProductNameAsLink = WithProductNameAsLinkTemplate.bind({});
 export const WithProductLogo = WithProductLogoTemplate.bind({});

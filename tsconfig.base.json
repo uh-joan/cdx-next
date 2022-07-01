@@ -10,6 +10,7 @@
     "module": "esnext",
     "moduleResolution": "node",
     "paths": {
+      "@cdx/authentication": ["packages/authentication/src/index.ts"],
       "@cdx/demo": ["packages/demo/src/index.ts"],
       "@cdx/ngx-branding": ["packages/ngx-branding/src/index.ts"],
       "@cdx/theme-angular-material": [

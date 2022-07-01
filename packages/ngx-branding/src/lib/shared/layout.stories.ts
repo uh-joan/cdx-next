@@ -9,7 +9,6 @@ import { html } from 'common-tags';
 
 import { FooterModule } from '../footer/footer.module';
 import { HeaderModule } from '../header/header.module';
-import { HeaderGlobalUtilitiesModule } from '../header/header-global-utilities/header-global-utilities.module';
 import { OneTrustModule } from '../one-trust/one-trust.module';
 
 export default {
@@ -20,7 +19,6 @@ export default {
         BrowserAnimationsModule,
         FooterModule,
         HeaderModule,
-        HeaderGlobalUtilitiesModule,
         MatButtonModule,
         MatIconModule,
         MatInputModule,
@@ -49,9 +47,6 @@ const HeaderAndFooterTemplate: Story = () => ({
           <div style="display: inherit; align-items: inherit;">
             <mat-icon>apps</mat-icon> Products
           </div>
-          <cdx-header-global-user-profile
-            userDisplayName="Garcia, Nina"
-          ></cdx-header-global-user-profile>
         </cdx-header-global>
         <cdx-header-product-name>My Product</cdx-header-product-name>
         <nav mat-tab-nav-bar style="flex: 1">
