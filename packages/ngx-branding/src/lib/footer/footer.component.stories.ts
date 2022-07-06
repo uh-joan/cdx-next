@@ -31,6 +31,17 @@ const WithApplicationLinksTemplate: Story<FooterComponent> = () => ({
   `,
 });
 
+const WithApplicationLinksSlimTemplate: Story<FooterComponent> = () => ({
+  template: html`
+    <footer cdx-footer showSlimFooter>
+      <a cdx-footer-link href="https://stackoverflow.com/">Stack Overflow</a>
+      <a cdx-footer-link href="https://www.powerlanguage.co.uk/wordle/">
+        Wordle
+      </a>
+    </footer>
+  `,
+});
+
 const WithLinkGroupsTemplate: Story<FooterComponent> = () => ({
   template: html`
     <footer cdx-footer groupCompanyLinks>
@@ -97,6 +108,10 @@ const BasicWithOneTrustTemplate: Story<FooterComponent> = () => ({
 export const Basic = BasicTemplate.bind({});
 export const BasicWithOneTrust = BasicWithOneTrustTemplate.bind({});
 export const WithApplicationLinks = WithApplicationLinksTemplate.bind({});
+export const WithApplicationLinksSlim = WithApplicationLinksSlimTemplate.bind(
+  {},
+);
+
 export const WithLinkGroups = WithLinkGroupsTemplate.bind({});
 
 BasicWithOneTrust.decorators = [

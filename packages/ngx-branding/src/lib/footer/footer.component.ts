@@ -29,6 +29,16 @@ export class FooterComponent {
   }
   private _groupCompanyLinks = false;
 
+  @Input()
+  @HostBinding('class.cdx-footer__slim')
+  get showSlimFooter() {
+    return this._showSlimFooter;
+  }
+  set showSlimFooter(value: BooleanInput) {
+    this._showSlimFooter = coerceBooleanProperty(value);
+  }
+  private _showSlimFooter = false;
+
   constructor(@Optional() private oneTrustService: OneTrustService) {}
 
   isCookieManagementEnabled(): boolean {
