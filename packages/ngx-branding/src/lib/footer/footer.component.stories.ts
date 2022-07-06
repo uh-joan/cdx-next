@@ -33,7 +33,7 @@ const WithApplicationLinksTemplate: Story<FooterComponent> = () => ({
 
 const WithApplicationLinksSlimTemplate: Story<FooterComponent> = () => ({
   template: html`
-    <footer cdx-footer showSlimFooter>
+    <footer cdx-footer slim>
       <a cdx-footer-link href="https://stackoverflow.com/">Stack Overflow</a>
       <a cdx-footer-link href="https://www.powerlanguage.co.uk/wordle/">
         Wordle

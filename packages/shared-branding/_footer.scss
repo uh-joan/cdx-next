@@ -14,6 +14,10 @@ $cdx-footer-grid-gap: 1.5rem;
   color: white;
   gap: $cdx-footer-grid-gap;
 
+  &--slim {
+    padding: calc($cdx-footer-padding / 4);
+  }
+
   &__copyright {
     width: $cdx-footer-column-width;
   }

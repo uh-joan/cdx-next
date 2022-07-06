@@ -30,14 +30,14 @@ export class FooterComponent {
   private _groupCompanyLinks = false;
 
   @Input()
-  @HostBinding('class.cdx-footer__slim')
-  get showSlimFooter() {
-    return this._showSlimFooter;
+  @HostBinding('class.cdx-footer--slim')
+  get slim() {
+    return this._slim;
   }
-  set showSlimFooter(value: BooleanInput) {
-    this._showSlimFooter = coerceBooleanProperty(value);
+  set slim(value: BooleanInput) {
+    this._slim = coerceBooleanProperty(value);
   }
-  private _showSlimFooter = false;
+  private _slim = false;
 
   constructor(@Optional() private oneTrustService: OneTrustService) {}
 

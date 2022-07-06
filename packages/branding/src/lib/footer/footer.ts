@@ -1,5 +1,6 @@
 import { html, LitElement } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
+import { classMap } from 'lit/directives/class-map.js';
 
 import style from './footer.scss';
 
@@ -14,6 +15,9 @@ export class FooterComponent extends LitElement {
 
   @property({ type: Boolean })
   cookieManagementEnabled: false;
+
+  @property({ type: Boolean })
+  slim: false;
 
   override firstUpdated() {
     [...this._anchors, ...this._slottedAnchors].forEach(
@@ -74,7 +78,7 @@ export class FooterComponent extends LitElement {
     `;
 
     return html`
-      <footer class="cdx-footer">
+      <footer class="cdx-footer ${classMap({ 'cdx-footer--slim': this.slim })}">
         <div class="cdx-footer__copyright">© 2022 Clarivate</div>
         <div class="cdx-footer__content">
           ${this.groupCompanyLinks
