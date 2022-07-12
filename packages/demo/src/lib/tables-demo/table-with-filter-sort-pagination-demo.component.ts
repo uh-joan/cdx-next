@@ -50,7 +50,9 @@ const NAMES: string[] = [
   selector: 'demo-table-filter-sort-pagination',
   templateUrl: 'table-with-filter-sort-pagination-demo.component.html',
 })
-export class TableWithFilterSortingPaginationDemoComponent {
+export class TableWithFilterSortingPaginationDemoComponent
+  implements AfterViewInit
+{
   displayedColumns: string[] = ['id', 'name', 'progress', 'fruit'];
   dataSource: MatTableDataSource<UserData>;
 

@@ -4,11 +4,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatTabsModule } from '@angular/material/tabs';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AuthenticationModule } from '@cdx/authentication';
-import {
-  HeaderComponent,
-  HeaderGlobalUserProfileModule,
-  HeaderModule,
-} from '@cdx/ngx-branding';
+import { HeaderComponent, HeaderModule } from '@cdx/ngx-branding';
 import { ThemeModule } from '@cdx/theme-angular-material';
 import { Meta, moduleMetadata, Story } from '@storybook/angular';
 import { html } from 'common-tags';
@@ -26,7 +22,6 @@ export default {
         BrowserAnimationsModule,
         MatTabsModule,
         ThemeModule,
-        HeaderGlobalUserProfileModule,
         AuthenticationModule.forRoot({
           appId: 'cdx',
           environment: 'dev-stable',
