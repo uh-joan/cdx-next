@@ -1,8 +1,8 @@
 import { By } from '@angular/platform-browser';
 import { AuthenticationModule } from '@cdx/authentication';
 import { createHostFactory, SpectatorHost } from '@ngneat/spectator/jest';
-import { HeaderModule } from '../header.module';
 
+import { HeaderModule } from '../header.module';
 import { HeaderGlobalUserProfileComponent } from './header-global-user-profile.component';
 
 describe('HeaderGlobalUserProfileComponent', () => {

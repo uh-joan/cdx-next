@@ -1,7 +1,1 @@
-.cdx-header {
-  &__global {
-    display: inherit;
-    align-items: inherit;
-    column-gap: 0.25rem;
-  }
-}
+@use '../../../../shared-branding/header-global.scss';

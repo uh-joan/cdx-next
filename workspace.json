@@ -6,7 +6,7 @@
     "colors": "packages/colors",
     "demo": "packages/demo",
     "ngx-branding": "packages/ngx-branding",
-    "shared-style": "packages/shared-style",
+    "shared-branding": "packages/shared-branding",
     "theme-ag-grid": "packages/theme-ag-grid",
     "theme-angular-material": "packages/theme-angular-material",
     "theme-badge": "packages/theme-badge",

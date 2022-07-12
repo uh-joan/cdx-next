@@ -3,10 +3,6 @@
   "ignoreFiles": ["!**/*"],
   "overrides": [
     {
-      "files": ["**/*.css"],
-      "rules": {}
-    },
-    {
       "files": ["**/*.scss"],
       "rules": {}
     }

@@ -14,6 +14,7 @@
     "deploy:cdn": "deploy-aws-s3-cloudfront --bucket cdx-cdn.digital-experience.clarivate.io --distribution EF022SLU13YUI --source dist --destination @cdx/branding/${VERSION:-latest} --non-interactive"
   },
   "peerDependencies": {
+    "@cdx/shared-branding": "*",
     "@cdx/theme-material-components-web": "*"
   }
 }

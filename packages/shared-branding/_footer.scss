@@ -24,6 +24,7 @@ $cdx-footer-grid-gap: 1.5rem;
     gap: inherit;
     grid-template-columns: repeat(auto-fit, $cdx-footer-column-width);
 
+    // slotted will be targeted only in the web components
     > *,
     ::slotted(*) {
       align-self: start;

@@ -19,6 +19,7 @@
   },
   "peerDependencies": {
     "@angular/common": "^13.2.5",
-    "@angular/core": "^13.2.5"
+    "@angular/core": "^13.2.5",
+    "@cdx/shared-branding": "*"
   }
 }

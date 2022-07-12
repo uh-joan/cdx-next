@@ -1,0 +1,12 @@
+{
+  "root": "packages/shared-branding",
+  "targets": {
+    "stylelint": {
+      "executor": "nx-stylelint:lint",
+      "options": {
+        "lintFilePatterns": ["packages/shared-branding/**/*.scss"]
+      },
+      "outputs": ["{options.outputFile}"]
+    }
+  }
+}

@@ -1,0 +1,10 @@
+$header-spacing: 2rem;
+
+.cdx-header {
+  &__global,
+  slot[name='cdx-header-global'] {
+    display: inherit;
+    align-items: inherit;
+    column-gap: calc($header-spacing / 8);
+  }
+}

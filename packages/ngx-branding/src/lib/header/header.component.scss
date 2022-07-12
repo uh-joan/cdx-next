@@ -1,20 +1,10 @@
 @use '@angular/material' as mat;
 
-@import '../../../../shared-style/header-shared';
+@use '../../../../shared-branding/header';
 
 .cdx-header {
-  &__logo--clarivate {
-    background-image: url('../../assets/images/clarivate-logo.svg');
-  }
-
   &__product-bar {
     @include mat.elevation(5);
-  }
-
-  &__product-identification {
-    display: inherit;
-    align-items: inherit;
-    column-gap: calc($header-spacing / 2);
   }
 
   .mat-tab-nav-bar {
