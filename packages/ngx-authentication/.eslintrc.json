@@ -13,14 +13,16 @@
           "error",
           {
             "prefix": "cdx",
-            "style": "kebab-case"
+            "style": "kebab-case",
+            "type": "element"
           }
         ],
         "@angular-eslint/directive-selector": [
           "error",
           {
             "prefix": "cdx",
-            "style": "kebab-case"
+            "style": "camelCase",
+            "type": "attribute"
           }
         ]
       }

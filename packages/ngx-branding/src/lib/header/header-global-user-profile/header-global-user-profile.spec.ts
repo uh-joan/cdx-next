@@ -1,6 +1,7 @@
 import { By } from '@angular/platform-browser';
-import { AuthenticationModule } from '@cdx/authentication';
+import { AuthenticationModule } from '@cdx/ngx-authentication';
 import { createHostFactory, SpectatorHost } from '@ngneat/spectator/jest';
+import { location } from 'jest-globals';
 
 import { HeaderModule } from '../header.module';
 import { HeaderGlobalUserProfileComponent } from './header-global-user-profile.component';
@@ -32,7 +33,6 @@ describe('HeaderGlobalUserProfileComponent', () => {
 
   describe('when user is not authenticated and login button is clicked', () => {
     beforeEach(() => {
-      window.open = jest.fn();
       host = createHost(
         '<cdx-header-global-user-profile></cdx-header-global-user-profile>',
       );
@@ -42,8 +42,10 @@ describe('HeaderGlobalUserProfileComponent', () => {
       loginButtonElement.triggerEventHandler('click', null);
     });
 
-    it('should open login page in another window', () => {
-      expect(window.open).toHaveBeenCalledTimes(1);
+    it('should assign browswer location to production federated login ui', () => {
+      expect(location.assign).toHaveBeenCalledWith(
+        'https://access.clarivate.com/login?app=foo',
+      );
     });
   });
 });

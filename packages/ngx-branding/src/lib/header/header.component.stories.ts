@@ -3,7 +3,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatTabsModule } from '@angular/material/tabs';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { AuthenticationModule } from '@cdx/authentication';
+import { AuthenticationModule } from '@cdx/ngx-authentication';
 import { ThemeModule } from '@cdx/theme-angular-material';
 import { Meta, moduleMetadata, Story } from '@storybook/angular';
 import { html } from 'common-tags';

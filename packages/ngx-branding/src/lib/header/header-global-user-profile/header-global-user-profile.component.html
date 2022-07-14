@@ -1,14 +1,29 @@
-<ng-container
-  *ngIf="authenticationService.isAuthenticated() | async; else notAuthenticated"
->
+<ng-container *ngIf="authenticated; else notAuthenticated">
+  <button mat-button [matMenuTriggerFor]="menu">
+    <mat-icon>account_circle</mat-icon>
+    {{ tokenPayload['1p:fnm'] }}
+  </button>
 </ng-container>
 
+<mat-menu #menu="matMenu" class="cdx-header-global-user-profile__menu">
+  <div>
+    <div class="cdx-header-global-user-profile__user-name">
+      {{ tokenPayload['1p:fnm'] }} {{ tokenPayload['1p:lnm'] }}
+    </div>
+    <div class="cdx-header-global-user-profile__user-email">
+      {{ tokenPayload['1p:eml'] }}
+    </div>
+  </div>
+
+  <ng-content></ng-content>
+
+  <button color="primary" mat-button (click)="authenticationService.logout()">
+    Sign out
+  </button>
+</mat-menu>
+
 <ng-template #notAuthenticated>
-  <button
-    mat-button
-    class="cdx-header-details__container"
-    (click)="authenticationService.login()"
-  >
+  <button mat-button (click)="authenticationService.login()">
     <mat-icon>login</mat-icon>
     <span>Sign in</span>
   </button>
