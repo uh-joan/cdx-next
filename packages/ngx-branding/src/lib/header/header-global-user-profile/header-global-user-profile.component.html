@@ -1,17 +1,18 @@
 <ng-container *ngIf="authenticated; else notAuthenticated">
   <button mat-button [matMenuTriggerFor]="menu">
     <mat-icon>account_circle</mat-icon>
-    {{ tokenPayload['1p:fnm'] }}
+    {{ tokenPayload ? tokenPayload['1p:fnm'] : 'First Name' }}
   </button>
 </ng-container>
 
 <mat-menu #menu="matMenu" class="cdx-header-global-user-profile__menu">
   <div>
     <div class="cdx-header-global-user-profile__user-name">
-      {{ tokenPayload['1p:fnm'] }} {{ tokenPayload['1p:lnm'] }}
+      {{ tokenPayload ? tokenPayload['1p:fnm'] : 'First' }}
+      {{ tokenPayload ? tokenPayload['1p:lnm'] : 'Last' }}
     </div>
     <div class="cdx-header-global-user-profile__user-email">
-      {{ tokenPayload['1p:eml'] }}
+      {{ tokenPayload ? tokenPayload['1p:eml'] : 'Email' }}
     </div>
   </div>
 

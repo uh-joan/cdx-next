@@ -37,14 +37,14 @@ describe('HeaderGlobalUserProfileComponent', () => {
         '<cdx-header-global-user-profile></cdx-header-global-user-profile>',
       );
       const loginButtonElement = host.fixture.debugElement.query(
-        By.css('.cdx-header-details__container'),
+        By.css('button'),
       );
       loginButtonElement.triggerEventHandler('click', null);
     });
 
     it('should assign browswer location to production federated login ui', () => {
       expect(location.assign).toHaveBeenCalledWith(
-        'https://access.clarivate.com/login?app=foo',
+        'https://access.dev-stable.clarivate.com/login?app=cdx',
       );
     });
   });

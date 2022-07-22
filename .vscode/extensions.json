@@ -6,7 +6,6 @@
     "nrwl.angular-console",
     "orta.vscode-jest",
     "stylelint.vscode-stylelint",
-    "bierner.lit-html",
-    "andys8.jest-snippets"
+    "bierner.lit-html"
   ]
 }

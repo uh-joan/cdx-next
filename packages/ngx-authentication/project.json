@@ -1,0 +1,33 @@
+{
+  "projectType": "library",
+  "root": "packages/ngx-authentication",
+  "sourceRoot": "packages/ngx-authentication/src",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nrwl/js:tsc",
+      "options": {
+        "assets": ["packages/ngx-authentication/*.md"],
+        "main": "packages/ngx-authentication/src/index.ts",
+        "outputPath": "dist/packages/ngx-authentication",
+        "tsConfig": "packages/ngx-authentication/tsconfig.lib.json"
+      },
+      "outputs": ["{options.outputPath}"]
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": ["packages/ngx-authentication/**/*.ts"]
+      },
+      "outputs": ["{options.outputFile}"]
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "options": {
+        "jestConfig": "packages/ngx-authentication/jest.config.js",
+        "passWithNoTests": true
+      },
+      "outputs": ["coverage/packages/ngx-authentication"]
+    }
+  }
+}
