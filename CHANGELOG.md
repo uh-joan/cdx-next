@@ -1,5 +1,25 @@
 # Changelog
 
+## [2.1.4](https://git.clarivate.io/projects/CDXN/repos/cdx-next/compare/diff?targetBranch=refs%2Ftags%2Fv2.1.3&sourceBranch=refs%2Ftags%2Fv2.1.4&targetRepoId=17352)
+
+### Bug Fixes
+
+- **theme-xng-breadcrumb:** added missing deployment scripts
+  ([7569ee8c6f8](https://git.clarivate.io/projects/CDXN/repos/cdx-next/commits/7569ee8c6f8))
+
+### Features
+
+- **ngx-branding:** add input to toggle slim version of angular footer
+  ([c640c1fafe3](https://git.clarivate.io/projects/CDXN/repos/cdx-next/commits/c640c1fafe3))
+- **branding:** web component support for slim footer
+  ([33f3d6f177a](https://git.clarivate.io/projects/CDXN/repos/cdx-next/commits/33f3d6f177a))
+
+### Refactor
+
+- **shared-branding:** sharing same styles for angular and web components
+  branding
+  ([e1647efd657](https://git.clarivate.io/projects/CDXN/repos/cdx-next/commits/https://git.clarivate.io/projects/CDXN/repos/cdx-next/commits/e1647efd6570a077fe13954ddae837be51fed7fb))
+
 ## [2.1.3](https://git.clarivate.io/projects/CDXN/repos/cdx-next/compare/commits?targetBranch=da7e2240860a3f51eede49de3cb190419234b0cf&sourceBranch=ad59ac13457001429bd5517b1aa5cf85af809155&targetRepoId=17352)
 
 ### Bug Fixes
