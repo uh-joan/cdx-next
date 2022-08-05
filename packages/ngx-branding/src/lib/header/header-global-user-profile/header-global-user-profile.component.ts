@@ -2,6 +2,7 @@ import {
   ChangeDetectionStrategy,
   Component,
   OnInit,
+  Optional,
   ViewEncapsulation,
 } from '@angular/core';
 import { AuthenticationService } from '@cdx/ngx-authentication';
@@ -17,10 +18,12 @@ export class HeaderGlobalUserProfileComponent implements OnInit {
   authenticated = false;
   tokenPayload: any = {};
 
-  constructor(public authenticationService: AuthenticationService) {}
+  constructor(
+    @Optional() public authenticationService: AuthenticationService,
+  ) {}
 
   ngOnInit(): void {
-    this.authenticated = this.authenticationService.isAuthenticated();
-    this.tokenPayload = this.authenticationService.getTokenPayload();
+    this.authenticated = this.authenticationService?.isAuthenticated();
+    this.tokenPayload = this.authenticationService?.getTokenPayload();
   }
 }
