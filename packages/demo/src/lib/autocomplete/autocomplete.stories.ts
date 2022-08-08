@@ -12,6 +12,7 @@ import {
 
 export default {
   title: 'Autocomplete',
+  component: MatAutocompleteModule,
   parameters: {
     layout: 'centered',
   },

@@ -152,6 +152,7 @@ class VerticalStepperComponent implements OnInit {
 
 export default {
   title: 'Stepper',
+  component: MatStepperModule,
   parameters: {
     layout: 'centered',
   },

@@ -5,6 +5,7 @@ import { html } from 'common-tags';
 
 export default {
   title: 'Radio Button',
+  component: MatRadioModule,
   decorators: [
     moduleMetadata({
       imports: [MatRadioModule, ThemeModule],

@@ -6,6 +6,7 @@ import { basicTableTemplate } from './tables-demo/table-basic-demo.component';
 
 export default {
   title: 'Table',
+  component: DemoModule,
 } as Meta;
 
 export const Table = () => ({

@@ -88,6 +88,7 @@ function compare(a: number | string, b: number | string, isAsc: boolean) {
 
 export default {
   title: 'Sort Header',
+  component: MatSortModule,
 } as Meta;
 
 export const SortHeader = () => ({

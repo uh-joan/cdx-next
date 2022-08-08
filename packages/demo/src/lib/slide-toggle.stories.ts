@@ -5,6 +5,7 @@ import { html } from 'common-tags';
 
 export default {
   title: 'Slide Toggle',
+  component: MatSlideToggleModule,
   decorators: [
     moduleMetadata({
       imports: [MatSlideToggleModule, ThemeModule],

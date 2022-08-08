@@ -18,6 +18,7 @@ import { html } from 'common-tags';
 
 export default {
   title: 'Menu',
+  component: MatMenuModule,
 } as Meta;
 
 export const BasicMenu = () => ({

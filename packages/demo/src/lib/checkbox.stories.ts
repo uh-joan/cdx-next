@@ -5,6 +5,7 @@ import { html } from 'common-tags';
 
 export default {
   title: 'Checkbox',
+  component: MatCheckboxModule,
   decorators: [
     moduleMetadata({
       imports: [MatCheckboxModule, ThemeModule],
