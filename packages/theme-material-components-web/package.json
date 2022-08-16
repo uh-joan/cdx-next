@@ -1,6 +1,6 @@
 {
   "name": "@cdx/theme-material-components-web",
-  "version": "2.1.5-alpha.2",
+  "version": "2.1.5",
   "repository": {
     "type": "git",
     "url": "ssh://git@git.clarivate.io/cdxn/cdx-next.git",
