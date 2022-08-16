@@ -7,10 +7,10 @@
     }
   },
   "dependencies": {
+    "@cdx/colors": "*",
     "tslib": "^2.3.0"
   },
   "peerDependencies": {
-    "@angular/material": "13.2.5",
-    "@cdx/colors": "*"
+    "@angular/material": "13.2.5"
   }
 }
