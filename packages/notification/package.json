@@ -1,4 +1,16 @@
 {
   "name": "@cdx/notification",
-  "version": "2.1.6-alpha.0"
+  "version": "2.1.6-alpha.0",
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@git.clarivate.io/cdxn/cdx-next.git",
+    "directory": "packages/notification"
+  },
+  "files": [
+    "dist/*.{js,map,txt}"
+  ],
+  "scripts": {
+    "deploy": "npm publish",
+    "deploy:cdn": "deploy-aws-s3-cloudfront --bucket cdx-cdn.digital-experience.clarivate.io --distribution EF022SLU13YUI --source dist --destination @cdx/notification/${VERSION:-latest} --non-interactive"
+  }
 }
