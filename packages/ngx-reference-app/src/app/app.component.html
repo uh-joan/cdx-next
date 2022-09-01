@@ -1,0 +1,41 @@
+<div class="cdx-with-header">
+  <header cdx-header>
+    <cdx-header-global [withAuthentication]="true">
+      <cdx-header-product-name
+        ><button
+          class="cdx-router-link"
+          mat-stroked-button
+          title="Home"
+          role="link"
+          [routerLink]="'/home'"
+          [routerLinkActive]="'cdx-is-active'"
+        >
+          Home
+        </button>
+        <button
+          class="cdx-router-link"
+          mat-stroked-button
+          title="Sandwich"
+          [routerLink]="'/sandwich'"
+          [routerLinkActive]="'cdx-is-active'"
+        >
+          Sanwich
+        </button></cdx-header-product-name
+      >
+    </cdx-header-global>
+    <img
+      cdx-header-product-logo
+      src="https://clarivate.com/code/wp-content/themes/clarivate/src/img/logo.svg?v=2.4.32"
+      style="max-width: 140px"
+    />
+    <div style="display: inherit; justify-content: end">
+      <button mat-button style="margin-right: 1rem">Sign up</button>
+      <button mat-flat-button color="primary">Login</button>
+    </div>
+  </header>
+</div>
+<router-outlet></router-outlet>
+<footer cdx-footer>
+  <a cdx-footer-link href="https://stackoverflow.com/">Stack Overflow</a>
+  <a cdx-footer-link href="https://www.powerlanguage.co.uk/wordle/"> Wordle </a>
+</footer>

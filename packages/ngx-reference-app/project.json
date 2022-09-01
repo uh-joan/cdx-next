@@ -1,0 +1,72 @@
+{
+  "prefix": "cdx",
+  "projectType": "application",
+  "root": "packages/ngx-reference-app",
+  "sourceRoot": "packages/ngx-reference-app/src",
+  "tags": [],
+  "targets": {
+    "build": {
+      "configurations": {
+        "development": {
+          "buildOptimizer": false,
+          "extractLicenses": false,
+          "namedChunks": true,
+          "optimization": false,
+          "sourceMap": true,
+          "vendorChunk": true
+        }
+      },
+      "executor": "@angular-devkit/build-angular:browser",
+      "options": {
+        "assets": [
+          "packages/ngx-reference-app/src/favicon.ico",
+          "packages/ngx-reference-app/src/assets"
+        ],
+        "index": "packages/ngx-reference-app/src/index.html",
+        "inlineStyleLanguage": "scss",
+        "main": "packages/ngx-reference-app/src/main.ts",
+        "outputPath": "dist/packages/ngx-reference-app",
+        "polyfills": "packages/ngx-reference-app/src/polyfills.ts",
+        "scripts": [],
+        "styles": ["packages/ngx-reference-app/src/styles.scss"],
+        "tsConfig": "packages/ngx-reference-app/tsconfig.app.json"
+      },
+      "outputs": ["{options.outputPath}"]
+    },
+    "deploy": {
+      "executor": "ngx-deploy-npm:deploy"
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "browserTarget": "ngx-reference-app:build"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "packages/ngx-reference-app/src/**/*.ts",
+          "packages/ngx-reference-app/src/**/*.html"
+        ]
+      }
+    },
+    "serve": {
+      "configurations": {
+        "development": {
+          "browserTarget": "ngx-reference-app:build:development"
+        }
+      },
+      "defaultConfiguration": "development",
+      "executor": "@angular-devkit/build-angular:dev-server"
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "options": {
+        "jestConfig": "packages/ngx-reference-app/jest.config.js",
+        "passWithNoTests": true
+      },
+      "outputs": ["coverage/packages/ngx-reference-app"]
+    }
+  }
+}
