@@ -37,7 +37,7 @@ const PrimaryTemplate: Story<NotificationComponent> = (
     severity="${args.severity}" 
     action="${args.action}"
     presentation="${args.presentation}"
-    dismissable="${args.dismissable}"
+    [dismissable]="${args.dismissable}"
     title="${args.title}"
     > Notification message </cdx-notification>`,
 });
@@ -59,7 +59,7 @@ const InlineWithProjectionsTemplate: Story<NotificationComponent> = (
     severity="${args.severity}" 
     action="${args.action}"
     presentation="${args.presentation}"
-    dismissable="${args.dismissable}"
+    [dismissable]="${args.dismissable}"
     title="${args.title}">
       Notification message
       <mat-icon icon>auto_fix_high</mat-icon>
@@ -90,7 +90,7 @@ const InlineDismissableMessageTemplate: Story<NotificationComponent> = (
     severity="${args.severity}" 
     action="${args.action}"
     presentation="${args.presentation}"
-    dismissable="${args.dismissable}"
+    [dismissable]="${args.dismissable}"
     (dismissEvent)="onDismiss($event)"
     (actionEvent)="onAction($event)"
     >
@@ -125,7 +125,7 @@ const InlineSuccessTemplate: Story<NotificationComponent> = (
     title="${args.title}"
     severity="${args.severity}" 
     action="${args.action}"
-    dismissable="${args.dismissable}"
+    [dismissable]="${args.dismissable}"
     presentation="${args.presentation}">
       Success message
     </cdx-notification>`,
@@ -148,7 +148,7 @@ const InlineWarningTemplate: Story<NotificationComponent> = (
     title="${args.title}"
     severity="${args.severity}" 
     action="${args.action}"
-    dismissable="${args.dismissable}"
+    [dismissable]="${args.dismissable}"
     presentation="${args.presentation}">
       Warning message
     </cdx-notification>`,
@@ -171,7 +171,7 @@ const BannerPrimaryTemplate: Story<NotificationComponent> = (
     severity="${args.severity}" 
     action="${args.action}"
     presentation="${args.presentation}"
-    dismissable="${args.dismissable}"
+    [dismissable]="${args.dismissable}"
     title="${args.title}"> Notification message </cdx-notification>`,
 });
 
@@ -192,7 +192,7 @@ const BannerWithProjectionsTemplate: Story<NotificationComponent> = (
     severity="${args.severity}" 
     action="${args.action}"
     presentation="${args.presentation}"
-    dismissable="${args.dismissable}"
+    [dismissable]="${args.dismissable}"
     title="${args.title}">
       Notification message
       <mat-icon icon>auto_fix_high</mat-icon>
@@ -218,9 +218,9 @@ const BannerDismissableMessageTemplate: Story<NotificationComponent> = (
     severity="${args.severity}" 
     action="${args.action}"
     presentation="${args.presentation}"
-    dismissable="${args.dismissable}">
-      Notification message
-      <span icon></span>
+    [dismissable]="${args.dismissable}">
+    Notification message
+    <span icon></span>
     </cdx-notification>`,
 });
 
@@ -242,7 +242,7 @@ const BannerSuccessTemplate: Story<NotificationComponent> = (
     title="${args.title}"
     severity="${args.severity}" 
     action="${args.action}"
-    dismissable="${args.dismissable}"
+    [dismissable]="${args.dismissable}"
     presentation="${args.presentation}">
       Success message
     </cdx-notification>`,
@@ -265,7 +265,7 @@ const BannerWarningTemplate: Story<NotificationComponent> = (
     title="${args.title}"
     severity="${args.severity}" 
     action="${args.action}"
-    dismissable="${args.dismissable}"
+    [dismissable]="${args.dismissable}"
     presentation="${args.presentation}">
       Warning message
     </cdx-notification>`,
