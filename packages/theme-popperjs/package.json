@@ -1,6 +1,6 @@
 {
   "name": "@cdx/theme-popperjs",
-  "version": "2.1.7-alpha.0",
+  "version": "2.1.7",
   "files": [
     "dist",
     "*.scss",
