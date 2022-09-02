@@ -227,6 +227,7 @@ pipeline {
                 sh 'cp ./.npmrc packages/theme-highcharts'
                 sh 'cp ./.npmrc packages/colors'
                 sh 'cp ./.npmrc packages/shared-branding'
+                sh 'cp ./.npmrc packages/notification'
                 sh 'npm run publish:release'
                 withAWS(
                     role: 'arn:aws:iam::809146824789:role/cl/app/cdx/jenkins-cdx-prod_role',
