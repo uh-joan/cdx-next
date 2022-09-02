@@ -1,5 +1,14 @@
 # Changelog
 
+## [2.1.6](https://git.clarivate.io/projects/CDXN/repos/cdx-next/compare/diff?targetBranch=refs%2Ftags%2Fv2.1.5&sourceBranch=refs%2Ftags%2Fv2.1.6&targetRepoId=17352)
+
+### Features
+
+- **ngx-notification:** angular support for notification component
+  ([25b30ec81301](https://git.clarivate.io/projects/CDXN/repos/cdx-next/commits/25b30ec81301))
+- **notification:** web component support for notification component
+  ([b7e3e9691d2d](https://git.clarivate.io/projects/CDXN/repos/cdx-next/commits/b7e3e9691d2dca5))
+
 ## [2.1.4](https://git.clarivate.io/projects/CDXN/repos/cdx-next/compare/diff?targetBranch=refs%2Ftags%2Fv2.1.3&sourceBranch=refs%2Ftags%2Fv2.1.4&targetRepoId=17352)
 
 ### Bug Fixes
