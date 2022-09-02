@@ -1,6 +1,6 @@
 {
   "name": "@cdx/theme-angular-material",
-  "version": "2.1.6-alpha.2",
+  "version": "2.1.6-alpha.3",
   "exports": {
     ".": {
       "sass": "./styles/_index.scss"
