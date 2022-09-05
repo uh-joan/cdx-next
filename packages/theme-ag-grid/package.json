@@ -8,7 +8,8 @@
   },
   "exports": {
     ".": {
-      "sass": "./theme-ag-grid.scss"
+      "sass": "./theme-ag-grid.scss",
+      "/dist/theme-ag-grid.min.css": "./dist/theme-ag-grid.min.css"
     }
   },
   "files": [
