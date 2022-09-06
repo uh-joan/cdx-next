@@ -1,7 +1,8 @@
 {
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "prefix": "cdx",
   "projectType": "library",
-  "root": "packages/ngx-notification",
+  "root": "packages/notification",
   "sourceRoot": "packages/ngx-notification/src",
   "tags": [],
   "targets": {
@@ -27,14 +28,13 @@
           "quiet": true
         }
       },
-      "executor": "@nrwl/storybook:build",
+      "executor": "@storybook/angular:build-storybook",
       "options": {
-        "config": {
-          "configFolder": "packages/ngx-notification/.storybook"
-        },
-        "outputPath": "dist/storybook/ngx-notification",
-        "projectBuildConfig": "ngx-notification:build-storybook",
-        "uiFramework": "@storybook/angular"
+        "browserTarget": "ngx-notification:build-storybook",
+        "compodoc": false,
+        "configDir": "packages/ngx-notification/.storybook",
+        "outputDir": "dist/storybook/ngx-notification",
+        "styles": [".storybook/theme-setup.scss"]
       },
       "outputs": ["{options.outputPath}"]
     },
@@ -56,20 +56,19 @@
           "quiet": true
         }
       },
-      "executor": "@nrwl/storybook:storybook",
+      "executor": "@storybook/angular:start-storybook",
       "options": {
-        "config": {
-          "configFolder": "packages/ngx-notification/.storybook"
-        },
+        "browserTarget": "ngx-notification:build-storybook",
+        "compodoc": false,
+        "configDir": "packages/ngx-notification/.storybook",
         "port": 4400,
-        "projectBuildConfig": "ngx-notification:build-storybook",
-        "uiFramework": "@storybook/angular"
+        "styles": [".storybook/theme-setup.scss"]
       }
     },
     "test": {
       "executor": "@nrwl/jest:jest",
       "options": {
-        "jestConfig": "packages/ngx-notification/jest.config.js",
+        "jestConfig": "packages/ngx-notification/jest.config.ts",
         "passWithNoTests": true
       },
       "outputs": ["coverage/packages/ngx-notification"]

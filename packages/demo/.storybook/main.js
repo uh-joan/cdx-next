@@ -1,4 +1,5 @@
 const rootMain = require('../../../.storybook/main');
+const path = require('path');
 
 module.exports = {
   ...rootMain,
@@ -11,6 +12,28 @@ module.exports = {
     '../src/lib/**/*.stories.@(js|jsx|ts|tsx)',
   ],
   addons: [...rootMain.addons],
+  module: {
+    rules: [
+      {
+        test: /\.scss$/,
+        use: [
+          {
+            loader: 'style-loader',
+          },
+          {
+            loader: 'css-loader',
+          },
+          {
+            loader: 'sass-loader',
+            options: {
+              javascriptEnabled: true,
+            },
+          },
+        ],
+        include: path.resolve(__dirname, '../src/lib'),
+      },
+    ],
+  },
   webpackFinal: async (config, { configType }) => {
     // apply any global webpack configs that might have been specified in .storybook/main.js
     if (rootMain.webpackFinal) {

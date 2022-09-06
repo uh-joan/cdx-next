@@ -11,6 +11,6 @@
     "tslib": "^2.3.0"
   },
   "peerDependencies": {
-    "@angular/material": "13.2.5"
+    "@angular/material": "^14.2.0"
   }
 }

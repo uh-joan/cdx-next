@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   displayName: 'notification',
   preset: '../../jest.preset.js',
   globals: {

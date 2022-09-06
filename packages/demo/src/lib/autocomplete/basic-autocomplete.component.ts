@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { map, startWith } from 'rxjs/operators';
@@ -30,6 +30,7 @@ export const basicTemplate = `<form>
 
 @Component({
   selector: 'demo-autocomplete-basic',
+  encapsulation: ViewEncapsulation.None,
   template: basicTemplate,
 })
 // eslint-disable-next-line @angular-eslint/component-class-suffix

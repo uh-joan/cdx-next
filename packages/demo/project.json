@@ -1,4 +1,5 @@
 {
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "prefix": "cdx",
   "projectType": "library",
   "root": "packages/demo",
@@ -12,14 +13,16 @@
           "quiet": true
         }
       },
-      "executor": "@nrwl/storybook:build",
+      "executor": "@storybook/angular:build-storybook",
       "options": {
-        "config": {
-          "configFolder": "packages/demo/.storybook"
-        },
-        "outputPath": "dist/storybook/demo",
-        "projectBuildConfig": "demo:build-storybook",
-        "uiFramework": "@storybook/angular"
+        "browserTarget": "demo:build-storybook",
+        "compodoc": false,
+        "configDir": "packages/demo/.storybook",
+        "outputDir": "dist/storybook/demo",
+        "styles": [
+          ".storybook/theme-setup.scss",
+          "packages/demo/src/lib/stories.scss"
+        ]
       },
       "outputs": ["{options.outputPath}"]
     },
@@ -39,14 +42,16 @@
           "quiet": true
         }
       },
-      "executor": "@nrwl/storybook:storybook",
+      "executor": "@storybook/angular:start-storybook",
       "options": {
-        "config": {
-          "configFolder": "packages/demo/.storybook"
-        },
+        "browserTarget": "demo:build-storybook",
+        "compodoc": false,
+        "configDir": "packages/demo/.storybook",
         "port": 4400,
-        "projectBuildConfig": "demo:build-storybook",
-        "uiFramework": "@storybook/angular"
+        "styles": [
+          ".storybook/theme-setup.scss",
+          "packages/demo/src/lib/stories.scss"
+        ]
       }
     },
     "stylelint": {

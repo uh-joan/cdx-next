@@ -1,4 +1,5 @@
 {
+  "$schema": "./node_modules/nx/schemas/workspace-schema.json",
   "projects": {
     "branding": "packages/branding",
     "clarivate-font": "packages/clarivate-font",

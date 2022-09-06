@@ -1,4 +1,5 @@
 {
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "prefix": "cdx",
   "projectType": "library",
   "root": "packages/theme-xng-breadcrumb",
@@ -46,7 +47,7 @@
     "test": {
       "executor": "@nrwl/jest:jest",
       "options": {
-        "jestConfig": "packages/theme-xng-breadcrumb/jest.config.js",
+        "jestConfig": "packages/theme-xng-breadcrumb/jest.config.ts",
         "passWithNoTests": true
       },
       "outputs": ["coverage/packages/theme-xng-breadcrumb"]

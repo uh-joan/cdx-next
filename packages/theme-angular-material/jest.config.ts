@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   displayName: 'theme-angular-material',
   preset: '../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],

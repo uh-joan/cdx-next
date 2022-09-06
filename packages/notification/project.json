@@ -1,6 +1,7 @@
 {
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "library",
-  "root": "packages/notification",
+  "root": "packages/ngx-reference-app",
   "sourceRoot": "packages/notification/src",
   "tags": [],
   "targets": {
@@ -64,7 +65,7 @@
     "test": {
       "executor": "@nrwl/jest:jest",
       "options": {
-        "jestConfig": "packages/notification/jest.config.js",
+        "jestConfig": "packages/notification/jest.config.ts",
         "passWithNoTests": true
       },
       "outputs": ["coverage/packages/notification"]

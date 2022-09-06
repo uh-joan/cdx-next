@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   displayName: 'branding',
   preset: '../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
