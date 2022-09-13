@@ -27,8 +27,6 @@
 
     &__title {
       @include typography.typography(headline6);
-
-      padding-bottom: 8px;
     }
 
     &__actions {
