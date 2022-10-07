@@ -15,5 +15,9 @@
     margin: -5px;
     padding: 5px;
   }
+
+  .mat-menu-panel {
+    max-width: none !important;
+  }
   /* stylelint-enable order/properties-order */
 }

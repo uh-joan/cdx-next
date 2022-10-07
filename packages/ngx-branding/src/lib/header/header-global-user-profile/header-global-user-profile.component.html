@@ -1,30 +1,39 @@
 <ng-container *ngIf="authenticated; else notAuthenticated">
   <button mat-button [matMenuTriggerFor]="menu">
-    <mat-icon>account_circle</mat-icon>
-    {{ tokenPayload ? tokenPayload['1p:fnm'] : 'First Name' }}
+    <div #menuTriggerCustom>
+      <ng-content select="[cdx-menu-triggerer-custom]"></ng-content>
+    </div>
+    <ng-container *ngIf="!menuTriggerCustom?.children?.length">
+      <mat-icon>account_circle</mat-icon>
+      {{ tokenPayload ? tokenPayload['1p:fnm'] : '' }}
+      {{ tokenPayload ? tokenPayload['1p:lnm'] : '' }}
+    </ng-container>
   </button>
 </ng-container>
 
 <mat-menu #menu="matMenu" class="cdx-header-global-user-profile__menu">
-  <div>
-    <div class="cdx-header-global-user-profile__user-name">
-      {{ tokenPayload ? tokenPayload['1p:fnm'] : 'First' }}
-      {{ tokenPayload ? tokenPayload['1p:lnm'] : 'Last' }}
-    </div>
-    <div class="cdx-header-global-user-profile__user-email">
-      {{ tokenPayload ? tokenPayload['1p:eml'] : 'Email' }}
-    </div>
+  <div #menuContentCustom>
+    <ng-content select="[cdx-menu-content-custom]"></ng-content>
   </div>
-
-  <ng-content></ng-content>
-
-  <button color="primary" mat-button (click)="authenticationService.logout()">
-    Sign out
-  </button>
+  <ng-container *ngIf="!menuContentCustom?.children?.length">
+    <div>
+      <div class="cdx-header-global-user-profile__user-name">
+        {{ tokenPayload ? tokenPayload['1p:fnm'] : 'First' }}
+        {{ tokenPayload ? tokenPayload['1p:lnm'] : 'Last' }}
+      </div>
+      <div class="cdx-header-global-user-profile__user-email">
+        {{ tokenPayload ? tokenPayload['1p:eml'] : 'Email' }}
+      </div>
+    </div>
+    <ng-content></ng-content>
+    <button color="primary" mat-button (click)="logoutWithRouteSnapshot()">
+      Sign out
+    </button>
+  </ng-container>
 </mat-menu>
 
 <ng-template #notAuthenticated>
-  <button mat-button (click)="authenticationService.login()">
+  <button mat-button (click)="loginWithRouteSnapshot()">
     <mat-icon>login</mat-icon>
     <span>Sign in</span>
   </button>

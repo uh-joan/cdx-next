@@ -8,16 +8,11 @@ import {
 
 @Component({
   selector: 'cdx-header-global',
-  template: `<ng-content></ng-content>
-    <ng-container *ngIf="withAuthentication">
-      <cdx-header-global-user-profile></cdx-header-global-user-profile>
-    </ng-container>`,
+  template: `<ng-content></ng-content>`,
   styleUrls: ['./header-global.component.scss'],
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HeaderGlobalComponent {
   @HostBinding('class') classes = 'cdx-header__global';
-
-  @Input() withAuthentication?: boolean;
 }

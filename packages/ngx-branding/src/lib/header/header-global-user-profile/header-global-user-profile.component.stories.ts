@@ -1,6 +1,8 @@
 import { MatButtonModule } from '@angular/material/button';
 import { MatDividerModule } from '@angular/material/divider';
+import { MatIconModule } from '@angular/material/icon';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RouterModule } from '@angular/router';
 import { AuthenticationModule } from '@cdx/ngx-authentication';
 import { ThemeModule } from '@cdx/theme-angular-material';
 import { Meta, moduleMetadata, Story } from '@storybook/angular';
@@ -17,6 +19,7 @@ export default {
       imports: [
         BrowserAnimationsModule,
         ThemeModule,
+        MatIconModule,
         HeaderModule,
         MatButtonModule,
         MatDividerModule,
@@ -24,6 +27,7 @@ export default {
           appId: 'cdx',
           environment: 'dev-stable',
         }),
+        RouterModule.forRoot([], { useHash: true }),
       ],
     }),
   ],
@@ -38,6 +42,7 @@ const Template: Story<HeaderGlobalUserProfileComponent> = (args) => ({
   props: args,
   template: html`<cdx-header-global-user-profile></cdx-header-global-user-profile>`,
 });
+
 const TemplateWithContent: Story<HeaderGlobalUserProfileComponent> = (
   args,
 ) => ({
@@ -60,6 +65,47 @@ const TemplateWithContent: Story<HeaderGlobalUserProfileComponent> = (
   `,
 });
 
+const TemplateWithCustomMenu: Story<HeaderGlobalUserProfileComponent> = (
+  args,
+) => ({
+  props: args,
+  template: html`
+    <cdx-header-global-user-profile>
+      <div cdx-menu-triggerer-custom style="display: flex; gap: .5rem">
+        <span>John Abruzzi</span
+        ><mat-icon style="display: flex;align-self: center">info</mat-icon>
+      </div>
+      <div
+        cdx-menu-content-custom
+        style="display: flex; flex-direction: column; flex-wrap: wrap; gap: .25rem"
+      >
+        <span style="align-self: center; font-size: 24px"
+          >Username: <strong>John86A</strong>
+        </span>
+        <a mat-button color="warn" style="width: 12rem; align-self: center"
+          >Change password</a
+        >
+
+        <div
+          style="display: flex; flex-direction: column; flex-wrap: wrap; border: 1px solid; padding: .5rem"
+        >
+          <span>User Type: admin</span>
+          <span>Registration date: 22/02/2022</span>
+          <span>Last activity date: 22/07/2022</span>
+          <span>Phone number: +44 - 53253252</span>
+        </div>
+
+        <div
+          style="padding-top: .5rem; display: flex; justify-content: space-between"
+        >
+          <button mat-button color="warn">Disable account</button>
+          <button mat-button color="warn">Sign out</button>
+        </div>
+      </div>
+    </cdx-header-global-user-profile>
+  `,
+});
+
 export const GlobalUserProfile = Template.bind({});
 GlobalUserProfile.args = {
   authenticated: false,
@@ -68,4 +114,9 @@ GlobalUserProfile.args = {
 export const GlobalUserProfileWithContent = TemplateWithContent.bind({});
 GlobalUserProfileWithContent.args = {
   authenticated: false,
+};
+
+export const GlobalUserProfileWithCustomMenu = TemplateWithCustomMenu.bind({});
+GlobalUserProfileWithCustomMenu.args = {
+  authenticated: true,
 };

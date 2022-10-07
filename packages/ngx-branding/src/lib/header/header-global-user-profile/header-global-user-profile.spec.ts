@@ -1,4 +1,5 @@
 import { By } from '@angular/platform-browser';
+import { Router } from '@angular/router';
 import { AuthenticationModule } from '@cdx/ngx-authentication';
 import { createHostFactory, SpectatorHost } from '@ngneat/spectator/jest';
 import { location } from 'jest-globals';
@@ -16,6 +17,12 @@ describe('HeaderGlobalUserProfileComponent', () => {
         appId: 'cdx',
         environment: 'dev-stable',
       }),
+    ],
+    providers: [
+      {
+        provide: Router,
+        useValue: { url: 'home' },
+      },
     ],
   });
 
@@ -44,7 +51,7 @@ describe('HeaderGlobalUserProfileComponent', () => {
 
     it('should assign browswer location to production federated login ui', () => {
       expect(location.assign).toHaveBeenCalledWith(
-        'https://access.dev-stable.clarivate.com/login?app=cdx',
+        'https://access.dev-stable.clarivate.com/login?app=cdx&referrer=home',
       );
     });
   });

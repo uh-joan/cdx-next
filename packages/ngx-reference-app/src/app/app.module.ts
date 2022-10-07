@@ -10,7 +10,6 @@ import { AppRoutesModule } from './app.routes';
 @NgModule({
   declarations: [AppComponent],
   imports: [
-    AppRoutesModule,
     HeaderModule,
     FooterModule,
     BrowserAnimationsModule,
@@ -19,6 +18,7 @@ import { AppRoutesModule } from './app.routes';
       appId: 'cdx',
       environment: 'dev-stable',
     }),
+    AppRoutesModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

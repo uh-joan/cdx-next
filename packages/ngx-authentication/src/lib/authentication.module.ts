@@ -1,30 +1,42 @@
+import { APP_BASE_HREF } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 import {
   ModuleWithProviders,
   NgModule,
   Optional,
   SkipSelf,
 } from '@angular/core';
-import { JwtModule } from '@auth0/angular-jwt';
+import { provideRoutes, RouterModule } from '@angular/router';
+import { JWT_OPTIONS, JwtModule } from '@auth0/angular-jwt';
 
 import { AUTHENTICATION_SETTINGS } from './authentication.injectors';
 import { AutenticationsSettings } from './authentication.types';
+import { BrokerComponent } from './broker.component';
+import { TokenService } from './token.service';
 
-export function tokenGetter() {
-  const token = localStorage.getItem('ls.token');
-  if (token) {
-    const tokenAsObject = JSON.parse(token);
-    return tokenAsObject.token;
-  }
+export function jwtOptionsFactory(tokenService: TokenService) {
+  return {
+    tokenGetter: () => {
+      return tokenService.getToken();
+    },
+    skipWhenExpired: true,
+  };
 }
 
 @NgModule({
   imports: [
+    HttpClientModule,
+    RouterModule.forRoot([]),
     JwtModule.forRoot({
-      config: {
-        tokenGetter,
+      jwtOptionsProvider: {
+        provide: JWT_OPTIONS,
+        useFactory: jwtOptionsFactory,
+        deps: [TokenService],
       },
     }),
   ],
+  declarations: [BrokerComponent],
+  exports: [RouterModule],
 })
 export class AuthenticationModule {
   constructor(@Optional() @SkipSelf() parentModule?: AuthenticationModule) {
@@ -45,6 +57,14 @@ export class AuthenticationModule {
           provide: AUTHENTICATION_SETTINGS,
           useValue: settings,
         },
+        { provide: APP_BASE_HREF, useValue: '' },
+        provideRoutes([
+          {
+            path: settings.brokerRoute || 'broker/:authCode',
+            pathMatch: 'full',
+            component: BrokerComponent,
+          },
+        ]),
       ],
     };
   }

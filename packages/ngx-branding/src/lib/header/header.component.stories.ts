@@ -3,6 +3,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatTabsModule } from '@angular/material/tabs';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RouterModule } from '@angular/router';
 import { AuthenticationModule } from '@cdx/ngx-authentication';
 import { ThemeModule } from '@cdx/theme-angular-material';
 import { Meta, moduleMetadata, Story } from '@storybook/angular';
@@ -28,6 +29,7 @@ export default {
           appId: 'cdx',
           environment: 'dev-stable',
         }),
+        RouterModule.forRoot([], { useHash: true }),
       ],
     }),
   ],
@@ -46,7 +48,7 @@ const WithGlobalUserProfileUnauthenticatedTemplate: Story<
     can be positioned and are intended for demonstration purposes only.
     -->
     <header cdx-header>
-      <cdx-header-global [withAuthentication]="true">
+      <cdx-header-global>
         <div
           style="display: inherit; align-items: inherit; margin-right: 1rem;"
         >
@@ -57,6 +59,7 @@ const WithGlobalUserProfileUnauthenticatedTemplate: Story<
         >
           <mat-icon>apps</mat-icon> Products
         </div>
+        <cdx-header-global-user-profile></cdx-header-global-user-profile>
       </cdx-header-global>
     </header>
   `,

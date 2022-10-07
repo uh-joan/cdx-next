@@ -5,14 +5,20 @@
   "tags": [],
   "targets": {
     "build": {
-      "executor": "@nrwl/js:tsc",
-      "options": {
-        "assets": ["packages/ngx-authentication/*.md"],
-        "main": "packages/ngx-authentication/src/index.ts",
-        "outputPath": "dist/packages/ngx-authentication",
-        "tsConfig": "packages/ngx-authentication/tsconfig.lib.json"
+      "configurations": {
+        "development": {
+          "tsConfig": "packages/ngx-authentication/tsconfig.lib.json"
+        },
+        "production": {
+          "tsConfig": "packages/ngx-authentication/tsconfig.lib.prod.json"
+        }
       },
-      "outputs": ["{options.outputPath}"]
+      "defaultConfiguration": "production",
+      "executor": "@nrwl/angular:package",
+      "options": {
+        "project": "packages/ngx-authentication/ng-package.json"
+      },
+      "outputs": ["dist/packages/ngx-authentication"]
     },
     "deploy": {
       "executor": "ngx-deploy-npm:deploy",

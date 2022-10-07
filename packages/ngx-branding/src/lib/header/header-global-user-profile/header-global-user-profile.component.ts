@@ -1,11 +1,12 @@
 import {
   ChangeDetectionStrategy,
   Component,
+  ContentChild,
+  ElementRef,
   OnInit,
-  Optional,
   ViewEncapsulation,
 } from '@angular/core';
-import { AuthenticationService } from '@cdx/ngx-authentication';
+import { AuthenticationService, JwtToken } from '@cdx/ngx-authentication';
 
 @Component({
   selector: 'cdx-header-global-user-profile',
@@ -15,15 +16,24 @@ import { AuthenticationService } from '@cdx/ngx-authentication';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HeaderGlobalUserProfileComponent implements OnInit {
-  authenticated = false;
-  tokenPayload: any = {};
+  @ContentChild('menuTriggerCustom') menuTriggerCustom!: ElementRef;
+  @ContentChild('menuContentCustom') menuContentCustom!: ElementRef;
 
-  constructor(
-    @Optional() public authenticationService: AuthenticationService,
-  ) {}
+  authenticated = false;
+  tokenPayload: JwtToken | null = null;
+
+  constructor(private authenticationService: AuthenticationService) {}
 
   ngOnInit(): void {
-    this.authenticated = this.authenticationService?.isAuthenticated();
-    this.tokenPayload = this.authenticationService?.getTokenPayload();
+    this.authenticated = this.authenticationService.isAuthenticated();
+    this.tokenPayload = this.authenticationService.getTokenPayload();
+  }
+
+  loginWithRouteSnapshot() {
+    this.authenticationService.login();
+  }
+
+  logoutWithRouteSnapshot() {
+    this.authenticationService.logout();
   }
 }

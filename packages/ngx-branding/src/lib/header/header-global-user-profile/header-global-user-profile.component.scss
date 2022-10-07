@@ -1,3 +1,5 @@
+@use '../../shared/clarivate-typography' as clv;
+
 .cdx-header-global-user-profile {
   &__menu {
     min-width: 22rem !important;
@@ -12,5 +14,15 @@
     button {
       align-self: flex-end;
     }
+  }
+
+  &__user-name {
+    @include clv.clarivate-bold(24px);
+  }
+
+  &__email {
+    @include clv.clarivate-bold(16px);
+
+    opacity: 0.5;
   }
 }
