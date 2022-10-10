@@ -12,6 +12,7 @@ module.exports = {
         'always',
         [...packages, ...customScopes],
       ]),
+    'header-max-length': [2, 'always', 130],
   },
 };
 
