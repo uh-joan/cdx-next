@@ -2,18 +2,16 @@
 
 .cdx-header-global-user-profile {
   &__menu {
-    min-width: 22rem !important;
-
-    .mat-menu-content {
+    .mat-menu-content:not(:empty) {
       display: flex;
       flex-direction: column;
-      padding: 1rem !important;
+      padding: 1rem;
       gap: 1rem;
     }
+  }
 
-    button {
-      align-self: flex-end;
-    }
+  &__default-content {
+    min-width: 22rem;
   }
 
   &__user-name {
@@ -24,5 +22,10 @@
     @include clv.clarivate-bold(16px);
 
     opacity: 0.5;
+  }
+
+  &__actions {
+    display: flex;
+    justify-content: space-between;
   }
 }

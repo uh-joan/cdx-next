@@ -61,6 +61,9 @@ const TemplateWithContent: Story<HeaderGlobalUserProfileComponent> = (
           <button mat-button color="accent">Modify Informations</button>
         </div>
       </div>
+      <button cdx-menu-content-action color="primary" mat-button>
+        Disable Account
+      </button>
     </cdx-header-global-user-profile>
   `,
 });
