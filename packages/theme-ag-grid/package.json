@@ -1,6 +1,6 @@
 {
   "name": "@cdx/theme-ag-grid",
-  "version": "2.1.8-alpha.0",
+  "version": "2.1.8",
   "repository": {
     "type": "git",
     "url": "ssh://git@git.clarivate.io/cdxn/cdx-next.git",
