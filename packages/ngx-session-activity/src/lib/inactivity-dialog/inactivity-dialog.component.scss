@@ -1,0 +1,10 @@
+@use '../shared/clarivate-typography';
+
+.cdx-dialog__top {
+  [mat-dialog-title] {
+    @include clarivate-typography.clarivate-bold(22px);
+  }
+  mat-dialog-content {
+    @include clarivate-typography.clarivate-regular(14px);
+  }
+}

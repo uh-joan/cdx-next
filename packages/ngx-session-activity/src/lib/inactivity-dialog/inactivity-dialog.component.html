@@ -1,0 +1,31 @@
+<div class="cdx-dialog__top">
+  <h2 mat-dialog-title>Session expire warning</h2>
+  <mat-dialog-content role="dialog">
+    <p>Your session is about to expire</p>
+    <p>You'll be redirected in {{ countdown }} seconds</p>
+  </mat-dialog-content>
+</div>
+<div class="cdx-dialog__bottom">
+  <mat-dialog-actions>
+    <button
+      aria-label="cancel button"
+      title="cancel action button"
+      mat-button
+      [mat-dialog-close]="DIALOG_RESULTS.LOGOUT"
+      role="button"
+      class="mat-stroked-button mat-primary"
+    >
+      Logout
+    </button>
+    <button
+      mat-button
+      [mat-dialog-close]="DIALOG_RESULTS.EXTEND"
+      role="button"
+      aria-label="action button"
+      title="primary apply button"
+      class="mat-flat-button mat-primary"
+    >
+      Continue session
+    </button>
+  </mat-dialog-actions>
+</div>

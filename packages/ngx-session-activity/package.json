@@ -1,0 +1,17 @@
+{
+  "name": "@cdx/ngx-session-activity",
+  "version": "2.1.8",
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@git.clarivate.io/cdxn/cdx-next.git",
+    "directory": "packages/ngx-session-activity"
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  },
+  "peerDependencies": {
+    "@angular/common": "^13.2.5",
+    "@ng-idle/core": "^11.1.0",
+    "@ng-idle/keepalive": "^11.0.3"
+  }
+}

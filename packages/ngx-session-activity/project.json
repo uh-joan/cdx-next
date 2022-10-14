@@ -1,0 +1,45 @@
+{
+  "projectType": "library",
+  "root": "packages/ngx-session-activity",
+  "sourceRoot": "packages/ngx-session-activity/src",
+  "tags": [],
+  "targets": {
+    "build": {
+      "configurations": {
+        "development": {
+          "tsConfig": "packages/ngx-session-activity/tsconfig.lib.json"
+        },
+        "production": {
+          "tsConfig": "packages/ngx-session-activity/tsconfig.lib.prod.json"
+        }
+      },
+      "defaultConfiguration": "production",
+      "executor": "@nrwl/angular:package",
+      "options": {
+        "project": "packages/ngx-session-activity/ng-package.json"
+      },
+      "outputs": ["{workspaceRoot}/dist/packages/ngx-session-activity"]
+    },
+    "deploy": {
+      "executor": "ngx-deploy-npm:deploy",
+      "options": {
+        "access": "public"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": ["packages/ngx-session-activity/**/*.ts"]
+      },
+      "outputs": ["{options.outputFile}"]
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "options": {
+        "jestConfig": "packages/ngx-session-activity/jest.config.ts",
+        "passWithNoTests": true
+      },
+      "outputs": ["{workspaceRoot}/coverage/packages/ngx-session-activity"]
+    }
+  }
+}

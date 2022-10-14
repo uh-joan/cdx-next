@@ -13,7 +13,7 @@ export const appRoutes: Routes = [
       import('./pages/sandwich/sandwich.module').then((m) => m.SandwichModule),
   },
   {
-    path: '**',
+    path: '',
     redirectTo: 'home',
     pathMatch: 'full',
   },

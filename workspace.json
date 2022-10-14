@@ -9,6 +9,7 @@
     "ngx-branding": "packages/ngx-branding",
     "ngx-notification": "packages/ngx-notification",
     "ngx-reference-app": "packages/ngx-reference-app",
+    "ngx-session-activity": "packages/ngx-session-activity",
     "notification": "packages/notification",
     "shared-branding": "packages/shared-branding",
     "theme-ag-grid": "packages/theme-ag-grid",

@@ -1,6 +1,7 @@
 import { TestBed } from '@angular/core/testing';
 import { AuthenticationModule } from '@cdx/ngx-authentication';
 import { HeaderModule } from '@cdx/ngx-branding';
+import { SessionActivityModule } from '@cdx/ngx-session-activity';
 
 import { AppComponent } from './app.component';
 
@@ -13,6 +14,7 @@ describe('AppComponent', () => {
         AuthenticationModule.forRoot({
           appId: 'cdx',
         }),
+        SessionActivityModule.forRoot(),
       ],
     }).compileComponents();
   });

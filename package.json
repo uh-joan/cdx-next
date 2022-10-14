@@ -48,6 +48,8 @@
     "@auth0/angular-jwt": "^5.0.2",
     "@cdx/theme-angular-material": "^2.1.9",
     "@mui/material": "^5.10.10",
+    "@ng-idle/core": "^11.1.0",
+    "@ng-idle/keepalive": "^11.0.3",
     "@storybook/core-server": "6.5.11",
     "ag-grid-angular": "^27.1.1",
     "ag-grid-community": "^27.1.0",
