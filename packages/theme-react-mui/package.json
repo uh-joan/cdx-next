@@ -1,0 +1,8 @@
+{
+  "name": "@cdx/theme-react-mui",
+  "version": "0.0.1",
+  "scripts": {
+    "deploy": "npm publish",
+    "deploy:cdn": "deploy-aws-s3-cloudfront --bucket cdx-cdn.digital-experience.clarivate.io --distribution EF022SLU13YUI --source dist --destination @cdx/theme-react-mui/${VERSION:-latest} --non-interactive"
+  }
+}

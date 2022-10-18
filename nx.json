@@ -18,6 +18,11 @@
       "linter": "eslint",
       "unitTestRunner": "jest"
     },
+    "@nrwl/react": {
+      "application": {
+        "babel": true
+      }
+    },
     "@nrwl/web:application": {
       "e2eTestRunner": "none",
       "linter": "eslint",
