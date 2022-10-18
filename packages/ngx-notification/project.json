@@ -2,7 +2,6 @@
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "prefix": "cdx",
   "projectType": "library",
-  "root": "packages/notification",
   "sourceRoot": "packages/ngx-notification/src",
   "tags": [],
   "targets": {
@@ -20,7 +19,7 @@
       "options": {
         "project": "packages/ngx-notification/ng-package.json"
       },
-      "outputs": ["dist/packages/ngx-notification"]
+      "outputs": ["{workspaceRoot}/dist/packages/ngx-notification"]
     },
     "build-storybook": {
       "configurations": {
@@ -71,7 +70,7 @@
         "jestConfig": "packages/ngx-notification/jest.config.ts",
         "passWithNoTests": true
       },
-      "outputs": ["coverage/packages/ngx-notification"]
+      "outputs": ["{workspaceRoot}/coverage/packages/ngx-notification"]
     }
   }
 }

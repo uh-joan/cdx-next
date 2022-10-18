@@ -38,6 +38,22 @@
       "devDependencies": "*"
     }
   },
+  "namedInputs": {
+    "default": ["{projectRoot}/**/*", "sharedGlobals"],
+    "production": [
+      "default",
+      "!{projectRoot}/**/?(*.)+(spec|test).[jt]s?(x)?(.snap)",
+      "!{projectRoot}/tsconfig.spec.json",
+      "!{projectRoot}/jest.config.[jt]s",
+      "!{projectRoot}/.eslintrc.json",
+      "!{projectRoot}/.storybook/**/*",
+      "!{projectRoot}/**/*.stories.@(js|jsx|ts|tsx|mdx)"
+    ],
+    "sharedGlobals": [
+      "{workspaceRoot}/.stylelintrc.json",
+      "{workspaceRoot}/babel.config.json"
+    ]
+  },
   "npmScope": "cdx",
   "pluginsConfig": {
     "@nrwl/js": {
@@ -46,7 +62,17 @@
   },
   "targetDefaults": {
     "build": {
-      "dependsOn": ["^build"]
+      "dependsOn": ["^build"],
+      "inputs": ["production", "^production"]
+    },
+    "build-storybook": {
+      "inputs": ["default", "^production", "{workspaceRoot}/.storybook/**/*"]
+    },
+    "lint": {
+      "inputs": ["default", "{workspaceRoot}/.eslintrc.json"]
+    },
+    "test": {
+      "inputs": ["default", "^production", "{workspaceRoot}/jest.preset.js"]
     }
   },
   "tasksRunnerOptions": {

@@ -1,7 +1,6 @@
 {
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "library",
-  "root": "packages/ngx-authentication",
   "sourceRoot": "packages/ngx-authentication/src",
   "tags": [],
   "targets": {
@@ -19,7 +18,7 @@
       "options": {
         "project": "packages/ngx-authentication/ng-package.json"
       },
-      "outputs": ["dist/packages/ngx-authentication"]
+      "outputs": ["{workspaceRoot}/dist/packages/ngx-authentication"]
     },
     "deploy": {
       "executor": "ngx-deploy-npm:deploy",
@@ -40,7 +39,7 @@
         "jestConfig": "packages/ngx-authentication/jest.config.ts",
         "passWithNoTests": true
       },
-      "outputs": ["coverage/packages/ngx-authentication"]
+      "outputs": ["{workspaceRoot}/coverage/packages/ngx-authentication"]
     }
   }
 }

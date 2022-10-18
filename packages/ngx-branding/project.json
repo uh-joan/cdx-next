@@ -2,7 +2,6 @@
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "prefix": "cdx",
   "projectType": "library",
-  "root": "packages/ngx-branding",
   "sourceRoot": "packages/ngx-branding/src",
   "tags": [],
   "targets": {
@@ -20,7 +19,7 @@
       "options": {
         "project": "packages/ngx-branding/ng-package.json"
       },
-      "outputs": ["dist/packages/ngx-branding"]
+      "outputs": ["{workspaceRoot}/dist/packages/ngx-branding"]
     },
     "build-storybook": {
       "configurations": {
@@ -81,7 +80,7 @@
         "jestConfig": "packages/ngx-branding/jest.config.ts",
         "passWithNoTests": true
       },
-      "outputs": ["coverage/packages/ngx-branding"]
+      "outputs": ["{workspaceRoot}/coverage/packages/ngx-branding"]
     }
   }
 }

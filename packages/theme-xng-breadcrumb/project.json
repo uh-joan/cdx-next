@@ -2,7 +2,6 @@
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "prefix": "cdx",
   "projectType": "library",
-  "root": "packages/theme-xng-breadcrumb",
   "sourceRoot": "packages/theme-xng-breadcrumb/src",
   "tags": [],
   "targets": {
@@ -20,7 +19,7 @@
       "options": {
         "project": "packages/theme-xng-breadcrumb/ng-package.json"
       },
-      "outputs": ["dist/packages/theme-xng-breadcrumb"]
+      "outputs": ["{workspaceRoot}/dist/packages/theme-xng-breadcrumb"]
     },
     "deploy": {
       "executor": "ngx-deploy-npm:deploy"
@@ -50,7 +49,7 @@
         "jestConfig": "packages/theme-xng-breadcrumb/jest.config.ts",
         "passWithNoTests": true
       },
-      "outputs": ["coverage/packages/theme-xng-breadcrumb"]
+      "outputs": ["{workspaceRoot}/coverage/packages/theme-xng-breadcrumb"]
     }
   }
 }

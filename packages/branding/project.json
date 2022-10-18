@@ -1,7 +1,6 @@
 {
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "library",
-  "root": "packages/branding",
   "sourceRoot": "packages/branding/src",
   "tags": [],
   "targets": {
@@ -19,7 +18,7 @@
         }
       },
       "defaultConfiguration": "production",
-      "executor": "@nrwl/web:webpack",
+      "executor": "@nrwl/webpack:webpack",
       "options": {
         "assets": [],
         "baseHref": "/",
@@ -47,7 +46,7 @@
           "buildTarget": "branding:build:production"
         }
       },
-      "executor": "@nrwl/web:dev-server",
+      "executor": "@nrwl/webpack:dev-server",
       "options": {
         "buildTarget": "branding:build"
       }
@@ -68,7 +67,7 @@
         "jestConfig": "packages/branding/jest.config.ts",
         "passWithNoTests": true
       },
-      "outputs": ["coverage/packages/branding"]
+      "outputs": ["{workspaceRoot}/coverage/packages/branding"]
     }
   }
 }

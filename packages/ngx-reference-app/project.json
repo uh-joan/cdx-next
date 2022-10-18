@@ -2,7 +2,6 @@
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "prefix": "cdx",
   "projectType": "application",
-  "root": "packages/ngx-reference-app",
   "sourceRoot": "packages/ngx-reference-app/src",
   "tags": [],
   "targets": {
@@ -64,7 +63,7 @@
         "jestConfig": "packages/ngx-reference-app/jest.config.ts",
         "passWithNoTests": true
       },
-      "outputs": ["coverage/packages/ngx-reference-app"]
+      "outputs": ["{workspaceRoot}/coverage/packages/ngx-reference-app"]
     }
   }
 }

@@ -2,7 +2,6 @@
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "prefix": "cdx",
   "projectType": "library",
-  "root": "packages/theme-angular-material",
   "sourceRoot": "packages/theme-angular-material/src",
   "tags": [],
   "targets": {
@@ -20,7 +19,7 @@
       "options": {
         "project": "packages/theme-angular-material/ng-package.json"
       },
-      "outputs": ["dist/packages/theme-angular-material"]
+      "outputs": ["{workspaceRoot}/dist/packages/theme-angular-material"]
     },
     "deploy": {
       "executor": "ngx-deploy-npm:deploy"
@@ -50,7 +49,7 @@
         "jestConfig": "packages/theme-angular-material/jest.config.ts",
         "passWithNoTests": true
       },
-      "outputs": ["coverage/packages/theme-angular-material"]
+      "outputs": ["{workspaceRoot}/coverage/packages/theme-angular-material"]
     }
   }
 }
