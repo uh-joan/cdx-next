@@ -163,6 +163,7 @@ pipeline {
                 sh 'cp ./.npmrc packages/shared-branding'
                 sh 'cp ./.npmrc packages/notification'
                 sh 'cp ./.npmrc packages/theme-react-mui'
+                sh 'cp ./.npmrc packages/theme-snackbar'
                 sh 'npm run publish:prerelease'
                 withAWS(
                     role: 'arn:aws:iam::809146824789:role/cl/app/cdx/jenkins-cdx-prod_role',
@@ -230,6 +231,7 @@ pipeline {
                 sh 'cp ./.npmrc packages/shared-branding'
                 sh 'cp ./.npmrc packages/notification'
                 sh 'cp ./.npmrc packages/theme-react-mui'
+                sh 'cp ./.npmrc packages/theme-snackbar'
                 sh 'npm run publish:release'
                 withAWS(
                     role: 'arn:aws:iam::809146824789:role/cl/app/cdx/jenkins-cdx-prod_role',

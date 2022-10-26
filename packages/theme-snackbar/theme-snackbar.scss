@@ -1,0 +1,105 @@
+/* stylelint-disable plugin/stylelint-bem-namics */
+@use 'sass:map';
+@use '@angular/material' as mat;
+@use 'theme-angular-material/styles' as cdx;
+
+@use 'colors' as colors;
+
+@include cdx.default;
+
+$color-config: mat.get-color-config(cdx.$cdx-theme);
+$primary-palette: map.get($color-config, 'primary');
+$accent-palette: map.get($color-config, 'accent');
+$warn-palette: map.get($color-config, 'warn');
+
+.mat-snack-bar-container {
+  padding: 0 !important;
+}
+
+.cdx-snackbar-toast-error,
+.cdx-snackbar-toast-info,
+.cdx-snackbar-toast-success,
+.cdx-snackbar-toast-warning {
+  display: flex;
+  border-radius: 0.25rem;
+
+  .cdx-snackbar-toast-icon {
+    display: flex;
+    align-items: center;
+
+    .cdx-snackbar-toast-icon_style {
+      padding: 0.5rem;
+
+      .cdx-snackbar-toast-icon_color {
+        color: white;
+      }
+    }
+  }
+
+  .cdx-snackbar-toast-message {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    padding: 6px 8px 6px 16px;
+  }
+
+  .cdx-snackbar-toast-button {
+    display: flex;
+    align-items: center;
+    padding: 6px;
+  }
+}
+
+$cdx-color-info-light: colors.$primary-50;
+$cdx-color-info-base: colors.$primary-500;
+$cdx-color-info-dark: colors.$primary-800;
+
+.cdx-snackbar-toast-info {
+  border: 1px solid $cdx-color-info-base;
+  background-color: $cdx-color-info-light;
+  color: $cdx-color-info-dark;
+
+  .cdx-snackbar-toast-icon {
+    background-color: $cdx-color-info-base;
+  }
+
+  .mat-button-wrapper {
+    color: $cdx-color-info-dark;
+  }
+}
+
+$cdx-color-error-light: colors.$warn-50;
+$cdx-color-error-base: colors.$warn-500;
+$cdx-color-error-dark: colors.$warn-800;
+
+.cdx-snackbar-toast-error {
+  border: 1px solid $cdx-color-error-base;
+  background-color: $cdx-color-error-light;
+  color: $cdx-color-error-dark;
+
+  .cdx-snackbar-toast-icon {
+    background-color: $cdx-color-error-base;
+  }
+
+  .mat-button-wrapper {
+    color: $cdx-color-error-dark;
+  }
+}
+
+$cdx-color-success-light: colors.$accent-50;
+$cdx-color-success-base: colors.$accent-500;
+$cdx-color-success-dark: colors.$accent-800;
+
+.cdx-snackbar-toast-success {
+  border: 1px solid $cdx-color-success-base;
+  background-color: $cdx-color-success-light;
+  color: $cdx-color-success-dark;
+
+  .cdx-snackbar-toast-icon {
+    background-color: $cdx-color-success-base;
+  }
+
+  .mat-button-wrapper {
+    color: $cdx-color-success-dark;
+  }
+}

@@ -46,6 +46,7 @@
     "@angular/platform-browser-dynamic": "14.2.6",
     "@angular/router": "14.2.6",
     "@auth0/angular-jwt": "^5.0.2",
+    "@cdx/theme-angular-material": "^2.1.9",
     "@mui/material": "^5.10.10",
     "@storybook/core-server": "6.5.11",
     "ag-grid-angular": "^27.1.1",

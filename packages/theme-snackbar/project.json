@@ -1,0 +1,16 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "implicitDependencies": ["theme-angular-material", "colors"],
+  "targets": {
+    "stylelint": {
+      "executor": "nx-stylelint:lint",
+      "options": {
+        "lintFilePatterns": [
+          "packages/theme-snackbar/*.css",
+          "packages/theme-snackbar/*.scss"
+        ]
+      },
+      "outputs": ["{options.outputFile}"]
+    }
+  }
+}
