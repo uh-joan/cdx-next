@@ -1,4 +1,5 @@
 {
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "library",
   "root": "packages/theme-react-mui",
   "sourceRoot": "packages/theme-react-mui/src",
@@ -17,7 +18,8 @@
         "compiler": "babel",
         "entryFile": "packages/theme-react-mui/src/index.ts",
         "external": ["react/jsx-runtime"],
-        "outputPath": "dist/packages/theme-react-mui",
+        "main": "packages/theme-react-mui/src/index.ts",
+        "outputPath": "packages/theme-react-mui/dist",
         "project": "packages/theme-react-mui/package.json",
         "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
         "tsConfig": "packages/theme-react-mui/tsconfig.lib.json"
