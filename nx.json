@@ -94,5 +94,9 @@
       },
       "runner": "nx/tasks-runners/default"
     }
+  },
+  "workspaceLayout": {
+    "appsDir": "packages",
+    "libsDir": "packages"
   }
 }
