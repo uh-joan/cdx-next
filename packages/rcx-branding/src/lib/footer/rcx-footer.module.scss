@@ -1,0 +1,12 @@
+@use '../shared/clarivate-typography';
+@use '../../../../shared-branding/footer';
+@use '../../../../shared-branding/footer-group';
+
+.cdx-footer {
+  @include clarivate-typography.clarivate-regular(14px);
+
+  &__copyright,
+  &__group-title {
+    @include clarivate-typography.clarivate-bold(16px);
+  }
+}
