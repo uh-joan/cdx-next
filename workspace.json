@@ -12,6 +12,7 @@
     "ngx-reference-app": "packages/ngx-reference-app",
     "ngx-session-activity": "packages/ngx-session-activity",
     "notification": "packages/notification",
+    "rcx-demo": "packages/rcx-demo",
     "shared-branding": "packages/shared-branding",
     "theme-ag-grid": "packages/theme-ag-grid",
     "theme-angular-material": "packages/theme-angular-material",
