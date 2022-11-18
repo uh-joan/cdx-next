@@ -1,6 +1,6 @@
 {
   "name": "@cdx/theme-button-toggle",
-  "version": "2.1.10",
+  "version": "2.1.8-alpha.5",
   "files": [
     "dist",
     "*.scss",

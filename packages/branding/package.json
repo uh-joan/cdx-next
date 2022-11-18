@@ -1,6 +1,6 @@
 {
   "name": "@cdx/branding",
-  "version": "2.1.10",
+  "version": "2.1.8-alpha.5",
   "repository": {
     "type": "git",
     "url": "ssh://git@git.clarivate.io/cdxn/cdx-next.git",
