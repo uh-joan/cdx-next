@@ -47,6 +47,17 @@ export function CdxFooterLinkGroup(props: GroupLinkProps): JSX.Element {
 }
 
 export function CdxFooter(props: FooterProps): JSX.Element {
+  const isCookieManagementEnabled = () => {
+    return true;
+    // return this.oneTrustService?.isReady();
+  };
+
+  const manageCookieModal = () => {
+    // this.oneTrustService?.manageCookieModal();
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    (window as any).OneTrust.ToggleInfoDisplay();
+  };
+
   return (
     <footer
       className={`cdx-footer ${props.slim ? 'cdx-footer--slim' : ''}`}
@@ -61,6 +72,12 @@ export function CdxFooter(props: FooterProps): JSX.Element {
 
       <div className="cdx-footer__content">
         {props.groupCompanyLinks ? <CdxCompanyGroupLinks /> : <CdxLinks />}
+        {isCookieManagementEnabled() && (
+          <a href="''" onClick={manageCookieModal}>
+            Cookie management
+          </a>
+        )}
+
         {props.children}
       </div>
     </footer>

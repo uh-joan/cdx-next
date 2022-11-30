@@ -49,7 +49,8 @@ const ANALYTICS_CONTEXT: AnalyticsContextSchema = {
       {
         appId: 'reference-app',
         options: {
-          snowplowUrl: 'snowplow.apps.dev-stable.clarivate.com',
+          snowplowUrl:
+            'https://snowplow-collector.staging.userintel.dev.sp.aws.clarivate.net',
         },
       },
       ANALYTICS_CONTEXT,
