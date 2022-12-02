@@ -1,0 +1,84 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "name": "rcx-reference-app",
+  "projectType": "application",
+  "sourceRoot": "packages/rcx-reference-app/src",
+  "tags": [],
+  "targets": {
+    "build": {
+      "configurations": {
+        "development": {
+          "extractLicenses": false,
+          "optimization": false,
+          "sourceMap": true,
+          "vendorChunk": true
+        },
+        "production": {
+          "extractLicenses": true,
+          "fileReplacements": [
+            {
+              "replace": "packages/rcx-reference-app/src/environments/environment.ts",
+              "with": "packages/rcx-reference-app/src/environments/environment.prod.ts"
+            }
+          ],
+          "namedChunks": false,
+          "optimization": true,
+          "outputHashing": "all",
+          "sourceMap": false,
+          "vendorChunk": false
+        }
+      },
+      "defaultConfiguration": "production",
+      "executor": "@nrwl/webpack:webpack",
+      "options": {
+        "assets": [
+          "packages/rcx-reference-app/src/favicon.ico",
+          "packages/rcx-reference-app/src/assets"
+        ],
+        "baseHref": "/",
+        "compiler": "babel",
+        "index": "packages/rcx-reference-app/src/index.html",
+        "main": "packages/rcx-reference-app/src/main.tsx",
+        "outputPath": "dist/packages/rcx-reference-app",
+        "polyfills": "packages/rcx-reference-app/src/polyfills.ts",
+        "scripts": [],
+        "styles": ["packages/rcx-reference-app/src/styles.scss"],
+        "tsConfig": "packages/rcx-reference-app/tsconfig.app.json",
+        "webpackConfig": "@nrwl/react/plugins/webpack"
+      },
+      "outputs": ["{options.outputPath}"]
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": ["packages/rcx-reference-app/**/*.{ts,tsx,js,jsx}"]
+      },
+      "outputs": ["{options.outputFile}"]
+    },
+    "serve": {
+      "configurations": {
+        "development": {
+          "buildTarget": "rcx-reference-app:build:development"
+        },
+        "production": {
+          "buildTarget": "rcx-reference-app:build:production",
+          "hmr": false
+        }
+      },
+      "defaultConfiguration": "development",
+      "executor": "@nrwl/webpack:dev-server",
+      "options": {
+        "buildTarget": "rcx-reference-app:build",
+        "hmr": true
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "options": {
+        "jestConfig": "packages/rcx-reference-app/jest.config.ts",
+        "passWithNoTests": true
+      },
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"]
+    }
+  }
+}

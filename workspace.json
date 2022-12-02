@@ -14,6 +14,7 @@
     "notification": "packages/notification",
     "rcx-branding": "packages/rcx-branding",
     "rcx-demo": "packages/rcx-demo",
+    "rcx-reference-app": "packages/rcx-reference-app",
     "shared-branding": "packages/shared-branding",
     "theme-ag-grid": "packages/theme-ag-grid",
     "theme-angular-material": "packages/theme-angular-material",
