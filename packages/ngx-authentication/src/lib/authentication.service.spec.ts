@@ -1,9 +1,11 @@
 import { APP_BASE_HREF } from '@angular/common';
 import {
+  ActivatedRoute,
   ActivatedRouteSnapshot,
   convertToParamMap,
   Router,
 } from '@angular/router';
+import { RouterTestingModule } from '@angular/router/testing';
 import { createServiceFactory, SpectatorService } from '@ngneat/spectator/jest';
 import { localStorage, location } from 'jest-globals';
 import { sign } from 'jsonwebtoken';
@@ -17,7 +19,7 @@ describe('AuthenticationService', () => {
   let spectator: SpectatorService<AuthenticationService>;
   const createService = createServiceFactory({
     service: AuthenticationService,
-    imports: [AuthenticationModule],
+    imports: [AuthenticationModule, RouterTestingModule],
     mocks: [Router],
     providers: [{ provide: APP_BASE_HREF, useValue: '/' }],
   });
@@ -39,6 +41,10 @@ describe('AuthenticationService', () => {
                 appId: 'foo',
                 environment: 'bar',
               },
+            },
+            {
+              provide: ActivatedRoute,
+              useValue: '',
             },
           ],
         });
@@ -67,6 +73,10 @@ describe('AuthenticationService', () => {
                 appId: 'foo',
               },
             },
+            {
+              provide: ActivatedRoute,
+              useValue: '',
+            },
           ],
         });
         spectator.service.router = router;
@@ -76,6 +86,69 @@ describe('AuthenticationService', () => {
       it('should assign browswer location to production federated login ui', () => {
         expect(location.assign).toHaveBeenCalledWith(
           'https://access.clarivate.com/login?app=foo&referrer=dummyurl',
+        );
+      });
+    });
+
+    describe('when environment is set getting it from the url', () => {
+      beforeEach(() => {
+        spectator = createService({
+          providers: [
+            {
+              provide: AUTHENTICATION_SETTINGS,
+              useValue: {
+                appId: 'foo',
+              },
+            },
+            {
+              provide: ActivatedRoute,
+              useValue: {
+                snapshot: {
+                  paramMap: convertToParamMap({ 'x-clv-environment': 'prod' }),
+                },
+              },
+            },
+          ],
+        });
+        spectator.service.router = router;
+        spectator.service.login();
+      });
+
+      it('should assign browswer location to the environment set from url', () => {
+        expect(location.assign).toHaveBeenCalledWith(
+          'https://access.prod.clarivate.com/login?app=foo&referrer=dummyurl',
+        );
+      });
+    });
+
+    describe('when environment is set getting it from the url and from the settings', () => {
+      beforeEach(() => {
+        spectator = createService({
+          providers: [
+            {
+              provide: AUTHENTICATION_SETTINGS,
+              useValue: {
+                appId: 'foo',
+                environment: 'bar',
+              },
+            },
+            {
+              provide: ActivatedRoute,
+              useValue: {
+                snapshot: {
+                  paramMap: convertToParamMap({ 'x-clv-environment': 'prod' }),
+                },
+              },
+            },
+          ],
+        });
+        spectator.service.router = router;
+        spectator.service.login();
+      });
+
+      it('should assign browswer location to the environment set from url', () => {
+        expect(location.assign).toHaveBeenCalledWith(
+          'https://access.prod.clarivate.com/login?app=foo&referrer=dummyurl',
         );
       });
     });
@@ -92,6 +165,10 @@ describe('AuthenticationService', () => {
                 appId: 'foo',
                 environment: 'bar',
               },
+            },
+            {
+              provide: ActivatedRoute,
+              useValue: '',
             },
           ],
         });
@@ -117,6 +194,10 @@ describe('AuthenticationService', () => {
               appId: 'foo',
               environment: 'bar',
             },
+          },
+          {
+            provide: ActivatedRoute,
+            useValue: '',
           },
         ],
       });
@@ -195,6 +276,10 @@ describe('AuthenticationService', () => {
             provide: AUTHENTICATION_SETTINGS,
             useValue: {},
           },
+          {
+            provide: ActivatedRoute,
+            useValue: '',
+          },
         ],
       });
 
@@ -229,6 +314,10 @@ describe('AuthenticationService', () => {
                 appId: 'foo',
               },
             },
+            {
+              provide: ActivatedRoute,
+              useValue: '',
+            },
           ],
         });
         spectator.service.router = router;
@@ -254,6 +343,10 @@ describe('AuthenticationService', () => {
                 appId: 'foo',
                 environment: 'bar',
               },
+            },
+            {
+              provide: ActivatedRoute,
+              useValue: '',
             },
           ],
         });

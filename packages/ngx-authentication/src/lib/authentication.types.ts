@@ -1,4 +1,5 @@
 export const LS_TOKEN = 'token';
+export const URL_ENVIRONMENT = 'x-clv-environment';
 
 export interface AutenticationsSettings {
   appId: string;

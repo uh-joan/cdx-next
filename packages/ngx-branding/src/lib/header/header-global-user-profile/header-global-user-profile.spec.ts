@@ -1,5 +1,5 @@
 import { By } from '@angular/platform-browser';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AuthenticationModule } from '@cdx/ngx-authentication';
 import { createHostFactory, SpectatorHost } from '@ngneat/spectator/jest';
 import { location } from 'jest-globals';
@@ -22,6 +22,10 @@ describe('HeaderGlobalUserProfileComponent', () => {
       {
         provide: Router,
         useValue: { url: 'home' },
+      },
+      {
+        provide: ActivatedRoute,
+        useValue: '',
       },
     ],
   });
