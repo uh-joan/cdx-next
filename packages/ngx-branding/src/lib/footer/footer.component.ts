@@ -37,6 +37,9 @@ export class FooterComponent {
   set slim(value: BooleanInput) {
     this._slim = coerceBooleanProperty(value);
   }
+
+  currentYear = new Date().getFullYear();
+
   private _slim = false;
 
   constructor(@Optional() private oneTrustService: OneTrustService) {}

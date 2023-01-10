@@ -25,7 +25,9 @@ describe('RcxFooter', () => {
     const { container } = render(
       <CdxFooter groupCompanyLinks={false} slim={false} />,
     );
-    expect(container).toHaveTextContent('© 2022 Clarivate');
+    expect(container).toHaveTextContent(
+      `© ${new Date().getFullYear()} Clarivate`,
+    );
   });
 
   test('should project child content in content container', () => {

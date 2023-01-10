@@ -79,7 +79,9 @@ export class FooterComponent extends LitElement {
 
     return html`
       <footer class="cdx-footer ${classMap({ 'cdx-footer--slim': this.slim })}">
-        <div class="cdx-footer__copyright">© 2022 Clarivate</div>
+        <div class="cdx-footer__copyright">
+          © ${new Date().getFullYear()} Clarivate
+        </div>
         <div class="cdx-footer__content">
           ${this.groupCompanyLinks
             ? html`

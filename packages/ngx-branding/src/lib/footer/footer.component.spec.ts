@@ -28,7 +28,7 @@ describe('FooterComponent', () => {
 
   it('should include copyright statement', () => {
     expect(host.query('.cdx-footer__copyright')).toContainText(
-      '© 2022 Clarivate',
+      `© ${new Date().getFullYear()} Clarivate`,
     );
   });
 
