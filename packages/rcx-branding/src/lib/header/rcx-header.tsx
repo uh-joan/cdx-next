@@ -1,4 +1,4 @@
-import './rcx-header.module.scss';
+import './rcx-header.scss';
 
 import Paper from '@mui/material/Paper';
 import * as React from 'react';

@@ -1,4 +1,4 @@
-import './rcx-footer.module.scss';
+import './rcx-footer.scss';
 
 import * as React from 'react';
 
