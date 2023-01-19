@@ -10,8 +10,8 @@
     "tslib": "^2.3.0"
   },
   "peerDependencies": {
-    "@angular/common": "^14.2.10",
-    "@angular/core": "^14.2.10",
+    "@angular/common": "^13.2.5",
+    "@angular/core": "^13.2.5",
     "@snowplow/browser-tracker": "^3.7.0"
   }
 }
