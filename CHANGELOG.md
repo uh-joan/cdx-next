@@ -1,5 +1,50 @@
 # Changelog
 
+## [NEXT](https://git.clarivate.io/projects/CDXN/repos/cdx-next/compare/diff?sourceBranch=refs%2Fheads%2Fmain&targetRepoId=17352&targetBranch=refs%2Ftags%2Fv2.1.10)
+
+### Bug Fixes
+
+- **footer** Fix outdated copyright year
+  ([aabe064669c](https://git.clarivate.io/projects/CDXN/repos/cdx-next/commits/aabe064669c9e5e9d1d989d9bcd474c207a38902))
+
+### Features
+
+- **rcx-react-demo** demo app using MUI React components
+  ([0623db0c972](https://git.clarivate.io/projects/CDXN/repos/cdx-next/commits/0623db0c97257f1185b0816ae6b093c173133761))
+- **rcx-ract-demo** React support for Header and Footer
+  ([228d49f742b](https://git.clarivate.io/projects/CDXN/repos/cdx-next/commits/228d49f742b167f6458a2a89f760cae348baaad2))
+  ([950ef93d18c](https://git.clarivate.io/projects/CDXN/repos/cdx-next/commits/950ef93d18c4f9163d4967875b52ff0992b131ec))
+
+## [2.1.10](https://git.clarivate.io/projects/CDXN/repos/cdx-next/compare/diff?sourceBranch=refs%2Ftags%2Fv2.1.10&targetRepoId=17352&targetBranch=refs%2Ftags%2Fv2.1.9)
+
+### Features
+
+- **ngx-analytics:** Angular support for analytics service
+  ([a8566326ae9](https://git.clarivate.io/projects/CDXN/repos/cdx-next/commits/a8566326ae92a315472c87d567fb01b83ba46491))
+
+- **ngx-session-activity:** Angular support for session activity service
+  ([5fd93c86fde](https://git.clarivate.io/projects/CDXN/repos/cdx-next/commits/5fd93c86fdee9cf8cbac8b163f5a72a1890cf262))
+
+## [2.1.9](https://git.clarivate.io/projects/CDXN/repos/cdx-next/compare/diff?sourceBranch=refs%2Ftags%2Fv2.1.9&targetRepoId=17352&targetBranch=refs%2Ftags%2Fv2.1.8)
+
+### Features
+
+- Angular 14 update
+  ([f2bb513e104](https://git.clarivate.io/projects/CDXN/repos/cdx-next/commits/aaa63f765b91741d1d889f8af84269f1b6ee7e6d))
+- NX and material-components-web update
+  ([b7fdbf8ebc9](https://git.clarivate.io/projects/CDXN/repos/cdx-next/commits/b7fdbf8ebc9372a9b937bf480d1090cc83ab8198))
+- **theme-snackbar** Angular snackbar material theme
+  ([[6f3a3a8ede6]](https://git.clarivate.io/projects/CDXN/repos/cdx-next/commits/6f3a3a8ede6e0a835bfa96a335e53a835ab756e0))
+- **theme-react-mui** React theme for MUI components
+  ([bd203e3841d](https://git.clarivate.io/projects/CDXN/repos/cdx-next/commits/bd203e3841dc70315d18816f5f4a8e82b4d05438))
+
+## [2.1.8](https://git.clarivate.io/projects/CDXN/repos/cdx-next/compare/diff?sourceBranch=refs%2Ftags%2Fv2.1.8&targetRepoId=17352&targetBranch=refs%2Ftags%2Fv2.1.7)
+
+### Features
+
+- **ngx-authentication:** Angular support for authentication service
+  ([380b901ad52](https://git.clarivate.io/projects/CDXN/repos/cdx-next/commits/380b901ad52f412c47601b92db8e70412abd02ba))
+
 ## [2.1.6](https://git.clarivate.io/projects/CDXN/repos/cdx-next/compare/diff?targetBranch=refs%2Ftags%2Fv2.1.5&sourceBranch=refs%2Ftags%2Fv2.1.6&targetRepoId=17352)
 
 ### Features
