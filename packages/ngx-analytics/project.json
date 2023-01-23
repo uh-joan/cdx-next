@@ -21,6 +21,9 @@
       },
       "outputs": ["dist/packages/ngx-analytics"]
     },
+    "deploy": {
+      "executor": "ngx-deploy-npm:deploy"
+    },
     "lint": {
       "executor": "@nrwl/linter:eslint",
       "options": {
