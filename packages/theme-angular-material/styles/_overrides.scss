@@ -19,5 +19,12 @@
   .mat-menu-panel {
     max-width: none !important;
   }
+
+  .mat-tab-labels {
+    .mat-tab-label-active {
+      opacity: 1;
+    }
+  }
+
   /* stylelint-enable order/properties-order */
 }
