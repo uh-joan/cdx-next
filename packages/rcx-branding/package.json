@@ -1,6 +1,6 @@
 {
   "name": "@cdx/rcx-branding",
-  "version": "2.1.8-alpha.9",
+  "version": "2.1.11",
   "scripts": {
     "deploy": "npm publish",
     "deploy:cdn": "deploy-aws-s3-cloudfront --bucket cdx-cdn.digital-experience.clarivate.io --distribution EF022SLU13YUI --source dist --destination @cdx/rcx-branding/${VERSION:-latest} --non-interactive"
