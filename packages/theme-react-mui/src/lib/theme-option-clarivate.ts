@@ -1,6 +1,17 @@
 import { ThemeOptions } from '@mui/material';
 
-export const clarivateThemeOptions: ThemeOptions = {
+export const brandingThemeOptions = {
+  header: {
+    background: 'black',
+    color: 'white',
+  },
+  footer: {
+    background: 'black',
+    color: 'white',
+  },
+};
+
+export const themeOptions: ThemeOptions = {
   palette: {
     mode: 'light',
     primary: {

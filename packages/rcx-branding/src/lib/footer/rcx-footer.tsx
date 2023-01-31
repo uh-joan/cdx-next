@@ -1,11 +1,13 @@
 import './rcx-footer.scss';
 
+import { ThemeOptionsWithBranding } from '@cdx/theme-react-mui';
 import * as React from 'react';
 
 export interface FooterProps {
   children?: React.ReactNode;
   groupCompanyLinks?: boolean;
   slim?: boolean;
+  theme?: Partial<ThemeOptionsWithBranding>;
 }
 
 export interface GroupLinkProps {
@@ -46,7 +48,13 @@ export function CdxFooterLinkGroup(props: GroupLinkProps): JSX.Element {
 
 export function CdxFooter(props: FooterProps): JSX.Element {
   return (
-    <footer className={`cdx-footer ${props.slim ? 'cdx-footer--slim' : ''}`}>
+    <footer
+      className={`cdx-footer ${props.slim ? 'cdx-footer--slim' : ''}`}
+      style={{
+        background: props?.theme?.footer?.background,
+        color: props?.theme?.footer?.color,
+      }}
+    >
       <div className="cdx-footer__copyright">
         © {new Date().getFullYear()} Clarivate
       </div>

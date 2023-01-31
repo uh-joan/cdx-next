@@ -4,6 +4,7 @@ import {
   darkThemeSample,
   IpmsTheme,
   jungleThemeSample,
+  ThemeOptionsWithBranding,
 } from '@cdx/theme-react-mui';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
@@ -80,7 +81,8 @@ export default function ThemeSwitchApp() {
     IpmsTheme,
   ];
   const [currentThemeIndex, setCurrentThemeIndex] = useState(0);
-  const currentTheme = themes[currentThemeIndex];
+  const currentTheme: Partial<ThemeOptionsWithBranding> =
+    themes[currentThemeIndex];
 
   function handleThemeChange(event: SelectChangeEvent<number>) {
     setCurrentThemeIndex(event.target.value as number);
@@ -401,6 +403,7 @@ export default function ThemeSwitchApp() {
               </IconButton>
             </>
           }
+          theme={currentTheme}
           productLogo={
             <img
               src="https://clarivate.com/code/wp-content/themes/clarivate/src/img/logo.svg?v=2.4.32"
@@ -847,7 +850,7 @@ export default function ThemeSwitchApp() {
             </Stack>
           </div>
         </div>
-        <CdxFooter groupCompanyLinks={true} slim={false}>
+        <CdxFooter groupCompanyLinks={true} slim={false} theme={currentTheme}>
           <CdxFooterLinkGroup title="Developer Resources">
             <a href="https://stackoverflow.com/">Stack Overflow</a>
             <a href="https://www.powerlanguage.co.uk/wordle/">Wordle</a>

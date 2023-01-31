@@ -1,5 +1,16 @@
 import { ThemeOptions } from '@mui/material';
 
+export const brandingJungleThemeOptions = {
+  header: {
+    background: '#172b0c',
+    color: '#00C851',
+  },
+  footer: {
+    background: '#172b0c',
+    color: '#00C851',
+  },
+};
+
 export const jungleThemeOptions: ThemeOptions = {
   palette: {
     mode: 'light',
