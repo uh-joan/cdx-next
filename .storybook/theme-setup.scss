@@ -2,7 +2,7 @@
 
 @use '../packages/ngx-branding/src/lib/footer/footer-theme' as footer-theme;
 @use '../packages/ngx-branding/src/lib/header/header-theme' as header-theme;
-@use '../packages/ngx-branding/src/lib/header/header-global-user-profile/header-global-user-profile-theme'
+@use '../packages/ngx-authentication/src/lib/header-global-user-profile/header-global-user-profile-theme'
   as profile-theme;
 
 @include cdx-material.default;

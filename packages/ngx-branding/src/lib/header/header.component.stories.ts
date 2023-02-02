@@ -4,7 +4,6 @@ import { MatInputModule } from '@angular/material/input';
 import { MatTabsModule } from '@angular/material/tabs';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
-import { AuthenticationModule } from '@cdx/ngx-authentication';
 import { ThemeModule } from '@cdx/theme-angular-material';
 import { Meta, moduleMetadata, Story } from '@storybook/angular';
 import { html } from 'common-tags';
@@ -25,10 +24,6 @@ export default {
         BrowserAnimationsModule,
         MatTabsModule,
         ThemeModule,
-        AuthenticationModule.forRoot({
-          appId: 'cdx',
-          environment: 'dev-stable',
-        }),
         RouterModule.forRoot([], { useHash: true }),
       ],
     }),
@@ -37,32 +32,6 @@ export default {
 
 const BasicTemplate: Story<HeaderComponent> = () => ({
   template: html`<header cdx-header></header>`,
-});
-
-const WithGlobalUserProfileUnauthenticatedTemplate: Story<
-  HeaderComponent
-> = () => ({
-  template: html`
-    <!--
-    PLEASE NOTE: All inline styles are included as examples of how content
-    can be positioned and are intended for demonstration purposes only.
-    -->
-    <header cdx-header>
-      <cdx-header-global>
-        <div
-          style="display: inherit; align-items: inherit; margin-right: 1rem;"
-        >
-          English <mat-icon>expand_more</mat-icon>
-        </div>
-        <div
-          style="display: inherit; align-items: inherit; margin-right: 1rem;"
-        >
-          <mat-icon>apps</mat-icon> Products
-        </div>
-        <cdx-header-global-user-profile></cdx-header-global-user-profile>
-      </cdx-header-global>
-    </header>
-  `,
 });
 
 const WithProductNameTemplate: Story<HeaderComponent> = () => ({
@@ -276,8 +245,6 @@ const WithPrimaryNavTemplate: Story<HeaderComponent> = () => ({
 });
 
 export const Basic = BasicTemplate.bind({});
-export const WithGlobalUserProfileUnauthenticated =
-  WithGlobalUserProfileUnauthenticatedTemplate.bind({});
 export const WithProductName = WithProductNameTemplate.bind({});
 export const WithProductNameAsLink = WithProductNameAsLinkTemplate.bind({});
 export const WithProductLogo = WithProductLogoTemplate.bind({});

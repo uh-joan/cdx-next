@@ -6,7 +6,9 @@ import {
   OnInit,
   ViewEncapsulation,
 } from '@angular/core';
-import { AuthenticationService, JwtToken } from '@cdx/ngx-authentication';
+
+import { AuthenticationService } from '../authentication.service';
+import { JwtToken } from '../authentication.types';
 
 @Component({
   selector: 'cdx-header-global-user-profile',

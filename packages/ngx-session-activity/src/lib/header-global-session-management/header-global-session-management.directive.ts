@@ -1,9 +1,12 @@
 import { Directive, OnDestroy } from '@angular/core';
 import { AuthenticationService } from '@cdx/ngx-authentication';
-import { LOGOUT_TYPE, SessionActivityService } from '@cdx/ngx-session-activity';
 import { Subscription } from 'rxjs';
 
+import { LOGOUT_TYPE } from '../session-activity.model';
+import { SessionActivityService } from '../session-activity.service';
+
 @Directive({
+  // eslint-disable-next-line @angular-eslint/directive-selector
   selector: '[withSessionManagement]',
 })
 export class HeaderGlobalSessionManagementDirective implements OnDestroy {

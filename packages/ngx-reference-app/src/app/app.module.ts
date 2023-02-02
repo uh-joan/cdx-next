@@ -6,14 +6,20 @@ import {
   AnalyticsModule,
   CLARIVATE_IGLU_SCHEMA,
 } from '@cdx/ngx-analytics';
-import { AuthenticationModule } from '@cdx/ngx-authentication';
+import {
+  AuthenticationModule,
+  HeaderGlobalUserProfileModule,
+} from '@cdx/ngx-authentication';
 import {
   FooterModule,
   HeaderModule,
   OneTrustModule,
   OneTrustSettings,
 } from '@cdx/ngx-branding';
-import { SessionActivityModule } from '@cdx/ngx-session-activity';
+import {
+  HeaderGlobalSessionManagementModule,
+  SessionActivityModule,
+} from '@cdx/ngx-session-activity';
 
 import { AppComponent } from './app.component';
 import { AppRoutesModule } from './app.routes';
@@ -37,6 +43,8 @@ const ANALYTICS_CONTEXT: AnalyticsContextSchema = {
     OneTrustModule.forRoot(ONE_TRUST_SETTINGS),
     BrowserAnimationsModule,
     MatButtonModule,
+    HeaderGlobalUserProfileModule,
+    HeaderGlobalSessionManagementModule,
     AnalyticsModule.forRoot(
       {
         appId: 'reference-app',

@@ -20,6 +20,22 @@
       },
       "outputs": ["{workspaceRoot}/dist/packages/ngx-authentication"]
     },
+    "build-storybook": {
+      "configurations": {
+        "ci": {
+          "quiet": true
+        }
+      },
+      "executor": "@storybook/angular:build-storybook",
+      "options": {
+        "browserTarget": "ngx-authentication:build-storybook",
+        "compodoc": false,
+        "configDir": "packages/ngx-branding/.storybook",
+        "outputDir": "dist/storybook/ngx-authentication",
+        "styles": [".storybook/theme-setup.scss"]
+      },
+      "outputs": ["{options.outputPath}"]
+    },
     "deploy": {
       "executor": "ngx-deploy-npm:deploy",
       "options": {
@@ -32,6 +48,21 @@
         "lintFilePatterns": ["packages/ngx-authentication/**/*.ts"]
       },
       "outputs": ["{options.outputFile}"]
+    },
+    "storybook": {
+      "configurations": {
+        "ci": {
+          "quiet": true
+        }
+      },
+      "executor": "@storybook/angular:start-storybook",
+      "options": {
+        "browserTarget": "ngx-branding:build-storybook",
+        "compodoc": false,
+        "configDir": "packages/ngx-authentication/.storybook",
+        "port": 4400,
+        "styles": [".storybook/theme-setup.scss"]
+      }
     },
     "test": {
       "executor": "@nrwl/jest:jest",

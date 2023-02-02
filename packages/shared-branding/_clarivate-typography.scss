@@ -1,0 +1,37 @@
+@mixin clarivate-regular($font-size) {
+  font-family: 'Clarivate Regular', sans-serif;
+  font-size: $font-size;
+  font-weight: normal;
+  letter-spacing: normal;
+  line-height: 1.3;
+}
+
+@mixin clarivate-bold($font-size) {
+  font-family: 'Clarivate Bold', sans-serif;
+  font-size: $font-size;
+  font-weight: bold;
+  letter-spacing: normal;
+  line-height: 1.3;
+}
+
+@mixin clarivate-font-faces() {
+  @font-face {
+    font-family: 'Clarivate Regular';
+    font-style: normal;
+    font-weight: 400;
+    src: url('https://clarivate.com/wp-content/themes/clarivate/src/fonts/RegularClarivate-RegularWEB.woff')
+        format('woff'),
+      url('https://clarivate.com/wp-content/themes/clarivate/src/fonts/RegularClarivate-RegularWEB.woff2')
+        format('woff2');
+  }
+
+  @font-face {
+    font-family: 'Clarivate Bold';
+    font-style: normal;
+    font-weight: 700;
+    src: url('https://clarivate.com/wp-content/themes/clarivate/src/fonts/RegularClarivate-BoldWEB.woff')
+        format('woff'),
+      url('https://clarivate.com/wp-content/themes/clarivate/src/fonts/RegularClarivate-BoldWEB.woff2')
+        format('woff2');
+  }
+}

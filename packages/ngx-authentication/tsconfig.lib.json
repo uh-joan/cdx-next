@@ -10,6 +10,7 @@
     "src/test-setup.ts",
     "**/*.spec.ts",
     "**/*.test.ts",
+    "**/*.stories.ts",
     "jest.config.ts"
   ],
   "extends": "./tsconfig.json",

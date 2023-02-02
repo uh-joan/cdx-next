@@ -3,16 +3,16 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatIconModule } from '@angular/material/icon';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
-import { AuthenticationModule } from '@cdx/ngx-authentication';
 import { ThemeModule } from '@cdx/theme-angular-material';
 import { Meta, moduleMetadata, Story } from '@storybook/angular';
 import { html } from 'common-tags';
 
-import { HeaderModule } from '../header.module';
+import { AuthenticationModule } from '../authentication.module';
 import { HeaderGlobalUserProfileComponent } from './header-global-user-profile.component';
+import { HeaderGlobalUserProfileModule } from './header-global-user-profile.module';
 
 export default {
-  title: 'Header',
+  title: 'Header/HeaderGlobalUserProfile',
   component: HeaderGlobalUserProfileComponent,
   decorators: [
     moduleMetadata({
@@ -20,7 +20,7 @@ export default {
         BrowserAnimationsModule,
         ThemeModule,
         MatIconModule,
-        HeaderModule,
+        HeaderGlobalUserProfileModule,
         MatButtonModule,
         MatDividerModule,
         AuthenticationModule.forRoot({
@@ -116,7 +116,7 @@ GlobalUserProfile.args = {
 
 export const GlobalUserProfileWithContent = TemplateWithContent.bind({});
 GlobalUserProfileWithContent.args = {
-  authenticated: false,
+  authenticated: true,
 };
 
 export const GlobalUserProfileWithCustomMenu = TemplateWithCustomMenu.bind({});

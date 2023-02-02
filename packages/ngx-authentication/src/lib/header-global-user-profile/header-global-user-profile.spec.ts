@@ -4,15 +4,15 @@ import { AuthenticationModule } from '@cdx/ngx-authentication';
 import { createHostFactory, SpectatorHost } from '@ngneat/spectator/jest';
 import { location } from 'jest-globals';
 
-import { HeaderModule } from '../header.module';
 import { HeaderGlobalUserProfileComponent } from './header-global-user-profile.component';
+import { HeaderGlobalUserProfileModule } from './header-global-user-profile.module';
 
 describe('HeaderGlobalUserProfileComponent', () => {
   let host: SpectatorHost<HeaderGlobalUserProfileComponent>;
   const createHost = createHostFactory({
     component: HeaderGlobalUserProfileComponent,
     imports: [
-      HeaderModule,
+      HeaderGlobalUserProfileModule,
       AuthenticationModule.forRoot({
         appId: 'cdx',
         environment: 'dev-stable',
