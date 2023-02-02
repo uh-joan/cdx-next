@@ -1,33 +1,30 @@
 import { HttpClient } from '@angular/common/http';
 import { Inject, Injectable } from '@angular/core';
-import {
-  ActivatedRoute,
-  ActivatedRouteSnapshot,
-  ParamMap,
-  Router,
-} from '@angular/router';
+import { ActivatedRouteSnapshot, ParamMap, Router } from '@angular/router';
 import { JwtHelperService } from '@auth0/angular-jwt';
 
 import { AUTHENTICATION_SETTINGS } from './authentication.injectors';
-import {
-  AutenticationsSettings,
-  JwtToken,
-  URL_ENVIRONMENT,
-} from './authentication.types';
+import { AutenticationsSettings, JwtToken } from './authentication.types';
 import { TokenService } from './token.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthenticationService {
+  environment?: string;
   constructor(
     @Inject(AUTHENTICATION_SETTINGS) private settings: AutenticationsSettings,
     private jwtHelper: JwtHelperService,
     private tokenService: TokenService,
     public router: Router,
     private http: HttpClient,
-    private activatedRoute: ActivatedRoute,
-  ) {}
+  ) {
+    this.environment = this.settings.environment;
+  }
+
+  setEnvironment(environment: string): void {
+    this.environment = environment;
+  }
 
   enterApplicationAfterAuthentication(
     routeSnapshot: ActivatedRouteSnapshot,
@@ -91,12 +88,8 @@ export class AuthenticationService {
     action: string,
     referrerUrl?: string,
   ): string {
-    const environment =
-      this.activatedRoute?.snapshot?.paramMap?.get(URL_ENVIRONMENT) ||
-      this.settings.environment;
-
     const url = `https://access.${
-      environment ? environment + '.' : ''
+      this.environment ? this.environment + '.' : ''
     }clarivate.com/${action}?app=${this.settings.appId}`;
 
     const appAction = new URL(url);
