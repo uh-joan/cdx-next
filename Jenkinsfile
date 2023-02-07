@@ -141,7 +141,7 @@ pipeline {
         stage('Publish release') {
             when {
                 allOf {
-                    expression { BRANCH_NAME ==~ /(^main)|(^release\/.*)/ }
+                    expression { BRANCH_NAME ==~ /(^main)|(^version\/.*)/ }
                     expression { params.Publish && params.Level != 'alpha' }
                 }
             }
@@ -206,7 +206,7 @@ pipeline {
         stage('Deploy Stories to pre-prod') {
             when {
                 allOf {
-                    expression { BRANCH_NAME ==~ /(^main)|(^release\/.*)/ }
+                    expression { BRANCH_NAME ==~ /(^main)|(^version\/.*)/ }
                     expression {
                         params.Storybooks == 'pre'
                     }
@@ -236,7 +236,7 @@ pipeline {
         stage('Deploy Stories to prod') {
             when {
                 allOf {
-                    expression { BRANCH_NAME ==~ /(^main)|(^release\/.*)/ }
+                    expression { BRANCH_NAME ==~ /(^main)|(^version\/.*)/ }
                     expression {
                         params.Storybooks == 'prod'
                     }
