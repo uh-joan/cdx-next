@@ -7,60 +7,34 @@ pipeline {
             image 'platform-docker.repo.clarivate.io/jenkins-base-node:14'
         }
     }
-
-    parameters {
-        booleanParam(
-            name: 'Publish',
-            defaultValue: false,
-            description: 'If true, publish'
-        )
-        booleanParam(
-            name: 'GraduatePrereleaseVersion',
-            defaultValue: false,
-            description: 'If true, graduate a previous prerelease (alpha) and deploy'
-        )
-    }
-
     environment {
         NX_HEAD = "${GIT_COMMIT}"
         // use the very first commit as base - this is inefficient, but no better option at the moment
         NX_BASE = '21dab90'
     }
-
+    parameters {
+        booleanParam(
+            name: 'Publish',
+            defaultValue: false,
+            description: 'Publish packages to Artifactory'
+        )
+        choice(
+            name: 'Level',
+            choices: ['alpha', 'patch', 'minor', 'major' ],
+            description: 'If Publish is true, the level of the release'
+           )
+        choice(
+            name: 'Storybooks',
+            choices: ['nowhere', 'pre', 'prod'],
+            description: 'Environment where Storybooks should be deployed'
+           )
+    }
     stages {
-        stage('Checkout') {
-            steps {
-                script {
-                    checkout([
-                        $class: 'GitSCM',
-                        branches: [
-                            [name: '*/main'],
-                            [name: 'PR-*']
-                        ],
-                        extensions: [
-                            [
-                                $class: 'CleanCheckout'
-                            ],
-                            [
-                                $class: 'CloneOption',
-                                shallow: false,
-                                noTags: false
-                            ],
-                            [
-                                $class: 'LocalBranch',
-                                localBranch: '**'
-                            ]
-                        ],
-                    ])
-                }
-            }
-        }
-
         stage('Run CI?') {
             when {
                 allOf {
                     expression {
-                        params.GraduatePrereleaseVersion == false
+                        params.Publish == false
                     }
                 }
             }
@@ -76,13 +50,11 @@ pipeline {
                 }
             }
         }
-
         stage('Install dependencies') {
             steps {
                 sh 'npm ci'
             }
         }
-
         stage('Check code style') {
             steps {
                 sh 'npm run lint'
@@ -106,17 +78,10 @@ pipeline {
                 sh 'npm run build:storybooks -- --configuration=ci'
             }
         }
-
-        stage('Create and publish pre-release versions') {
+        stage('Publish Prerelease') {
             when {
-                allOf {
-                    branch 'main'
-                    expression {
-                        params.Publish == true && params.GraduatePrereleaseVersion == false
-                    }
-                }
+                expression { params.Publish && params.Level == 'alpha' }
             }
-
             environment {
                 ARTIFACTORY = credentials('repo-clarivate-io')
                 GIT_SSH_COMMAND = 'ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no'
@@ -125,9 +90,9 @@ pipeline {
                 GIT_COMMITTER_EMAIL = "${GIT_AUTHOR_EMAIL}"
                 GIT_COMMITTER_NAME = "${GIT_AUTHOR_NAME}"
             }
-
             steps {
                 sshagent(credentials: ['jenkins-git-clarivate-io']) {
+                    sh "git checkout ${BRANCH_NAME}"
                     sh 'npm run version:prerelease'
                     sh '''
                         OLD_TAG=$(git tag --points-at HEAD)
@@ -136,10 +101,8 @@ pipeline {
                         git commit --amend --no-edit
                         git tag -f $OLD_TAG
                     '''
-                    sh '''
-                        git push --follow-tags origin main
-                        git push --tags
-                    '''
+                    sh "git push --follow-tags origin ${BRANCH_NAME}"
+                    sh  'git push --tags'
                 }
                 sh 'npm run build'
                 sh """
@@ -175,17 +138,13 @@ pipeline {
                 }
             }
         }
-
-        stage('Graduate pre-release versions') {
+        stage('Publish release') {
             when {
                 allOf {
-                    branch 'main'
-                    expression {
-                        params.Publish == true && params.GraduatePrereleaseVersion == true
-                    }
+                    expression { BRANCH_NAME ==~ /(^main)|(^release\/.*)/ }
+                    expression { params.Publish && params.Level != 'alpha' }
                 }
             }
-
             environment {
                 ARTIFACTORY = credentials('repo-clarivate-io')
                 GIT_SSH_COMMAND = 'ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no'
@@ -197,7 +156,8 @@ pipeline {
 
             steps {
                 sshagent(credentials: ['jenkins-git-clarivate-io']) {
-                    sh 'npm run version:release'
+                    sh "git checkout ${BRANCH_NAME}"
+                    sh "npx nx run workspace:version --releaseAs=${params.Level}"
                     sh '''
                         OLD_TAG=$(git tag --points-at HEAD)
                         npm install
@@ -205,10 +165,8 @@ pipeline {
                         git commit --amend --no-edit
                         git tag -f $OLD_TAG
                     '''
-                    sh '''
-                        git push --follow-tags origin main
-                        git push --tags
-                    '''
+                    sh "git push --follow-tags origin ${BRANCH_NAME}"
+                    sh  'git push --tags'
                 }
                 sh 'npm run build'
                 sh """
@@ -248,9 +206,9 @@ pipeline {
         stage('Deploy Stories to pre-prod') {
             when {
                 allOf {
-                    branch 'main'
+                    expression { BRANCH_NAME ==~ /(^main)|(^release\/.*)/ }
                     expression {
-                        params.Publish == true && params.GraduatePrereleaseVersion == false
+                        params.Storybooks == 'pre'
                     }
                 }
             }
@@ -278,9 +236,9 @@ pipeline {
         stage('Deploy Stories to prod') {
             when {
                 allOf {
-                    branch 'main'
+                    expression { BRANCH_NAME ==~ /(^main)|(^release\/.*)/ }
                     expression {
-                        params.Publish == true && params.GraduatePrereleaseVersion == true
+                        params.Storybooks == 'prod'
                     }
                 }
             }
