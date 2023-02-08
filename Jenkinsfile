@@ -18,9 +18,14 @@ pipeline {
             defaultValue: false,
             description: 'Publish packages to Artifactory'
         )
+        booleanParam(
+            name: 'ReleaseAsAlpha',
+            defaultValue: true,
+            description: 'If publish is true, wether to do an alpha or final release'
+        )
         choice(
             name: 'Level',
-            choices: ['alpha', 'patch', 'minor', 'major' ],
+            choices: ['patch', 'minor' ],
             description: 'If Publish is true, the level of the release'
            )
         choice(
@@ -80,7 +85,7 @@ pipeline {
         }
         stage('Publish Prerelease') {
             when {
-                expression { params.Publish && params.Level == 'alpha' }
+                expression { params.Publish  && params.ReleaseAsAlpha }
             }
             environment {
                 ARTIFACTORY = credentials('repo-clarivate-io')
@@ -93,7 +98,7 @@ pipeline {
             steps {
                 sshagent(credentials: ['jenkins-git-clarivate-io']) {
                     sh "git checkout ${BRANCH_NAME}"
-                    sh 'npm run version:prerelease'
+                    sh "npx nx run workspace:version --releaseAs=pre${params.Level} --preid=alpha"
                     sh '''
                         OLD_TAG=$(git tag --points-at HEAD)
                         npm install
@@ -142,7 +147,7 @@ pipeline {
             when {
                 allOf {
                     expression { BRANCH_NAME ==~ /(^main)|(^version\/.*)/ }
-                    expression { params.Publish && params.Level != 'alpha' }
+                    expression { params.Publish && !params.ReleaseAsAlpha }
                 }
             }
             environment {

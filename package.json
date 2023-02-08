@@ -30,9 +30,7 @@
     "publish:prerelease": "npm run publish:release:common -- --tag=alpha",
     "publish:release": "npm run publish:release:common -- --tag=latest",
     "publish:release:common": "nx run-many --all --exclude=workspace --target=deploy --parallel=1",
-    "test": "nx run-many --all --exclude=workspace --target=test",
-    "version:prerelease": "nx run workspace:version --releaseAs=prerelease --preid=alpha",
-    "version:release": "nx run workspace:version"
+    "test": "nx run-many --all --exclude=workspace --target=test"
   },
   "dependencies": {
     "@angular/animations": "^13.2.5",
