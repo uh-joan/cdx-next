@@ -79,6 +79,9 @@ pipeline {
         }
 
         stage('Build Storybooks') {
+            when {
+                expression { params.Storybooks != 'nowhere' }
+            }
             steps {
                 sh 'npm run build:storybooks -- --configuration=ci'
             }
