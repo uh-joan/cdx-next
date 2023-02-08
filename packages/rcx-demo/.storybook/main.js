@@ -21,4 +21,6 @@ module.exports = {
 
     return config;
   },
+
+  staticDirs: ['../../rcx-demo-app/src'],
 };

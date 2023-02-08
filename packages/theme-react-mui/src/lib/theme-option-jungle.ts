@@ -15,14 +15,14 @@ export const jungleThemeOptions: ThemeOptions = {
   palette: {
     mode: 'light',
     primary: {
-      main: '#FF641C',
+      main: '#800020',
     },
     secondary: {
-      main: '#00C851',
+      main: '#D35400',
     },
     background: {
       default: '#F5FFF2',
-      paper: '#6DD06A',
+      paper: '#8DDC93',
     },
     error: {
       main: '#FF0000',

@@ -1,8 +1,7 @@
+import { clarivateTheme } from '@cdx/theme-react-mui';
 import { CssBaseline, ThemeProvider } from '@mui/material';
 import { DecoratorFn } from '@storybook/react';
 import React from 'react';
-
-import { clarivateTheme } from '../../theme-react-mui/dist';
 
 const withTheme: DecoratorFn = (StoryFn) => {
   return (

@@ -1,0 +1,92 @@
+@use '../shared/clarivate-typography';
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
+.App {
+  text-align: center;
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+
+  .cdx-header {
+    &__global-bar {
+      display: none;
+    }
+
+    &__product-logo {
+      > img {
+        padding-top: 4px;
+      }
+    }
+
+    .central-title {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      &__top {
+        @include clarivate-typography.clarivate-regular(14px);
+      }
+
+      &__bottom {
+        @include clarivate-typography.clarivate-bold(20px);
+      }
+    }
+
+    .right-user {
+      border-radius: 0.5rem;
+      margin: 0.5rem;
+      padding: 0.5rem;
+      width: 13rem;
+      height: 3rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+
+  .cdx-content {
+    display: flex;
+    flex-direction: row;
+
+    &__navbar {
+      margin-top: 64px;
+      position: sticky;
+      top: 0;
+      width: 14%;
+      flex: 0 0 auto;
+      align-self: flex-start;
+      padding-left: 1rem;
+
+      .theme-switcher {
+        height: 9rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .MuiFormLabel-root {
+          top: -10px;
+        }
+
+        .MuiSelect-select {
+          min-width: 6rem;
+          border-left: 4px solid;
+        }
+      }
+    }
+
+    &__page {
+      flex: 1 1 auto;
+      align-self: flex-start;
+      min-width: 1200px;
+    }
+  }
+
+  a {
+    text-decoration: none;
+  }
+}
