@@ -2,6 +2,7 @@ import { CdxFooter, CdxFooterLinkGroup, CdxHeader } from '@cdx/rcx-branding';
 import {
   clarivateTheme,
   darkThemeSample,
+  IpmsTheme,
   jungleThemeSample,
 } from '@cdx/theme-react-mui';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
@@ -72,7 +73,12 @@ import React, { useState } from 'react';
 import styles from './app.module.scss';
 
 export default function ThemeSwitchApp() {
-  const themes = [clarivateTheme, darkThemeSample, jungleThemeSample];
+  const themes = [
+    clarivateTheme,
+    darkThemeSample,
+    jungleThemeSample,
+    IpmsTheme,
+  ];
   const [currentThemeIndex, setCurrentThemeIndex] = useState(0);
   const currentTheme = themes[currentThemeIndex];
 
@@ -457,6 +463,7 @@ export default function ThemeSwitchApp() {
                 <MenuItem value={0}>Clarivate</MenuItem>
                 <MenuItem value={1}>Dark</MenuItem>
                 <MenuItem value={2}>Jungle</MenuItem>
+                <MenuItem value={3}>IPMS</MenuItem>
               </Select>
             </FormControl>
             <Card sx={{ maxWidth: 345 }}>
