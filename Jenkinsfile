@@ -264,7 +264,7 @@ pipeline {
                     '''
                     sh '''
                         npm run deploy:storybooks:rcx-demo -- \
-                            --bucket cdx-rcx-stories.prod.sp.aws.clarivate.net \
+                            --bucket cdx-rcx-stories-prod.prod.sp.aws.clarivate.net \
                             --distribution E3GW94L15KJF3T
                     '''
                 }
