@@ -19,9 +19,9 @@ export class TokenService {
     localStorage.setItem(this.tokenLabel, jwt);
   }
 
-  public getToken(): string | undefined {
+  public getToken(): string | null {
     const token = localStorage.getItem(this.tokenLabel);
-    return token ? token : undefined;
+    return token ? token : null;
   }
 
   public deleteToken(): void {
