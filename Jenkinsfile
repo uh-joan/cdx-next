@@ -4,7 +4,7 @@ pipeline {
     agent {
         docker {
             label 'docker-slave'
-            image 'platform-docker.repo.clarivate.io/jenkins-base-node:14'
+            image 'platform-docker.repo.clarivate.io/jenkins-base-node:16'
         }
     }
     environment {
@@ -57,6 +57,7 @@ pipeline {
         }
         stage('Install dependencies') {
             steps {
+                sh 'node --version'
                 sh 'npm ci'
             }
         }
