@@ -1,6 +1,6 @@
 {
   "name": "@cdx/theme-badge",
-  "version": "2.1.11-alpha.1",
+  "version": "2.1.12-alpha.1",
   "repository": {
     "type": "git",
     "url": "ssh://git@git.clarivate.io/cdxn/cdx-next.git",
