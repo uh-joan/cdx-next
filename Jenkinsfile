@@ -102,7 +102,7 @@ pipeline {
             steps {
                 sshagent(credentials: ['jenkins-git-clarivate-io']) {
                     sh "git checkout ${BRANCH_NAME}"
-                    sh "npx nx run workspace:version --releaseAs=pre${params.Level} --preid=alpha"
+                    sh 'npx nx run workspace:version --releaseAs=prerelease --preid=alpha'
                     sh '''
                         OLD_TAG=$(git tag --points-at HEAD)
                         npm install
