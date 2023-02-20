@@ -1,6 +1,6 @@
 {
   "name": "@cdx/rcx-branding",
-  "version": "2.1.12-alpha.2",
+  "version": "2.1.12-alpha.3",
   "peerDependencies": {
     "@cdx/theme-react-mui": "*"
   }
