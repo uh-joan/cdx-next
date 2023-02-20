@@ -42,6 +42,9 @@
       },
       "outputs": ["{options.outputPath}"]
     },
+    "deploy": {
+      "executor": "ngx-deploy-npm:deploy"
+    },
     "lint": {
       "executor": "@nrwl/linter:eslint",
       "options": {
