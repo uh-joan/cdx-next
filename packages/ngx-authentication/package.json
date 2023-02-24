@@ -11,6 +11,12 @@
   },
   "peerDependencies": {
     "@angular/common": "^13.2.5",
-    "@auth0/angular-jwt": "^5.0.2"
+    "@angular/core": "^13.2.5",
+    "@angular/material": "^13.2.5",
+    "@angular/platform-browser": "^13.2.5",
+    "@angular/router": "^13.2.5",
+    "@auth0/angular-jwt": "^5.0.2",
+    "@cdx/theme-angular-material": "*",
+    "@storybook/addons": "^6.5.11"
   }
 }

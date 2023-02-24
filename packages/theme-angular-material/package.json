@@ -11,6 +11,9 @@
     "tslib": "^2.3.0"
   },
   "peerDependencies": {
+    "@angular/cdk": "^13.2.5",
+    "@angular/common": "^13.2.5",
+    "@angular/core": "^13.2.5",
     "@angular/material": "^13.2.5"
   }
 }

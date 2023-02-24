@@ -1,6 +1,6 @@
 import { addons } from '@storybook/addons';
 
-/* stylelint-disable-next-line scss/at-import-partial-extension */
+// eslint-disable-next-line @nrwl/nx/enforce-module-boundaries
 import clarivateTheme from '../../../.storybook/ClarivateTheme';
 
 addons.setConfig({

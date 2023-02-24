@@ -12,6 +12,7 @@
   "peerDependencies": {
     "@angular/common": "^13.2.5",
     "@angular/core": "^13.2.5",
-    "@cdx/theme-angular-material": "*"
+    "@cdx/theme-angular-material": "*",
+    "xng-breadcrumb": "^7.2.0"
   }
 }
