@@ -13,7 +13,7 @@
     "adr:new": "log4brains adr new",
     "adr:preview": "log4brains preview",
     "build": "nx run-many --all --exclude=workspace --target=build",
-    "build:storybooks": "nx run-many --all --exclude=workspace --target=build-storybook",
+    "build:storybooks": "nx run-many --all --exclude=workspace --target=build-storybook --parallel=false",
     "commit": "cz",
     "deploy:cdn": "nx run-many --all --exclude=workspace --target=deploy:cdn --parallel=1",
     "deploy:storybooks:demo": "deploy-aws-s3-cloudfront --debug --non-interactive --source ./dist/storybook/demo --delete --invalidation-path '/*'",
