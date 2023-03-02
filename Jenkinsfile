@@ -215,7 +215,6 @@ pipeline {
         stage('Deploy Stories to pre-prod') {
             when {
                 allOf {
-                    expression { BRANCH_NAME ==~ /(^main)|(^version\/.*)/ }
                     expression {
                         params.Storybooks == 'pre'
                     }
@@ -245,7 +244,7 @@ pipeline {
         stage('Deploy Stories to prod') {
             when {
                 allOf {
-                    expression { BRANCH_NAME ==~ /(^main)|(^version\/.*)/ }
+                    expression { BRANCH_NAME ==~ /(^main)/ }
                     expression {
                         params.Storybooks == 'prod'
                     }
