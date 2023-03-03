@@ -9,7 +9,7 @@ import { TotalCustomers } from '../../components/dashboard/total-customers';
 import { TotalProfit } from '../../components/dashboard/total-profit';
 import { TrafficByDevice } from '../../components/dashboard/traffic-by-device';
 
-const Home = () => (
+const Dashboard = () => (
   <Box
     component="main"
     sx={{
@@ -48,4 +48,4 @@ const Home = () => (
   </Box>
 );
 
-export default Home;
+export default Dashboard;

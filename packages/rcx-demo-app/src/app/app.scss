@@ -12,28 +12,31 @@ body {
   grid-template-rows: auto 1fr auto;
 
   .cdx-header {
-    &__global-bar {
-      display: none;
-    }
-
     &__product-logo {
-      > img {
+      > svg {
         padding-top: 4px;
+        transform: scale(1.2);
       }
     }
 
-    .central-title {
+    &__middle {
       display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
+      flex-direction: row;
+      justify-content: start;
 
-      &__top {
-        @include clarivate-typography.clarivate-regular(14px);
+      > a {
+        > button {
+          border-radius: 0;
+        }
       }
 
-      &__bottom {
-        @include clarivate-typography.clarivate-bold(20px);
+      .nav-container__button {
+        cursor: pointer;
+      }
+
+      .current-page {
+        border-bottom: 2px solid;
+        cursor: default;
       }
     }
 
@@ -54,19 +57,23 @@ body {
     flex-direction: row;
 
     &__navbar {
-      margin-top: 64px;
+      margin-top: 2rem;
       position: sticky;
       top: 0;
-      width: 14%;
+      width: 18%;
       flex: 0 0 auto;
       align-self: flex-start;
       padding-left: 1rem;
 
       .theme-switcher {
-        height: 9rem;
         display: flex;
         align-items: center;
         justify-content: center;
+        flex-direction: column;
+
+        > nav {
+          padding-bottom: 0;
+        }
 
         .MuiFormLabel-root {
           top: -10px;
@@ -83,6 +90,10 @@ body {
       flex: 1 1 auto;
       align-self: flex-start;
       min-width: 1200px;
+
+      > main {
+        padding-top: 2rem;
+      }
     }
   }
 

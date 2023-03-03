@@ -40,7 +40,7 @@ const NotFound = () => (
             }}
           />
         </Box>
-        <NavLink to="/">
+        <NavLink to="/dashboard">
           <Button
             startIcon={<ArrowBackIcon fontSize="small" />}
             sx={{ mt: 3 }}

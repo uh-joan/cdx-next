@@ -1,5 +1,6 @@
 .nav-container {
   .current-page {
+    border-radius: 0;
     border-left: 4px solid;
     cursor: default;
   }
@@ -11,7 +12,7 @@
   &__button {
     justify-content: flex-start;
     text-align: left;
-    border-radius: 1;
+    border-radius: 0;
     text-transform: none;
     width: 100%;
     cursor: pointer;

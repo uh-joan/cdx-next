@@ -5,7 +5,7 @@ import { NavLink } from 'react-router-dom';
 
 import { RegisterBox } from '../../components/register-box';
 
-const Register = () => {
+const Home = () => {
   return (
     <div className="register-page">
       <div className="top-block">
@@ -247,4 +247,4 @@ const Register = () => {
   );
 };
 
-export default Register;
+export default Home;
