@@ -25,13 +25,16 @@ import {
   DEFAULT_SETTINGS,
 } from './ngx-analytics.model';
 
+const COLLECTOR_URL =
+  'snowplow-collector.staging.userintel.dev.sp.aws.clarivate.net';
+
 @Injectable()
 export class AnalyticsService {
   private trackerId = 'cdxNgTracker';
 
   tracker: BrowserTracker = newTracker(
     this.trackerId,
-    this.settings.options?.snowplowUrl || 'localhost:5000',
+    this.settings.options?.snowplowUrl || COLLECTOR_URL,
     {
       appId: this.settings.appId,
       anonymousTracking: true,
@@ -51,7 +54,6 @@ export class AnalyticsService {
         '';
       this.tracker.setUserId(user);
       this.tracker.clearUserData();
-      this.tracker.clearUserData();
       this.tracker.disableAnonymousTracking();
       this.cookiesAccepted = true;
     }),
@@ -70,6 +72,18 @@ export class AnalyticsService {
     if (this.context) this.tracker?.core?.addGlobalContexts([this.context]);
 
     this.cookiesAccepted$.subscribe();
+  }
+
+  setUserId(userId: string): void {
+    this.tracker.setUserId(userId);
+
+    localStorage.setItem(
+      'analytics',
+      JSON.stringify({
+        visitor: userId,
+      }),
+    );
+    this.tracker.disableAnonymousTracking();
   }
 
   trackPageView(pageViewEvent: PageViewEvent & CommonEventProperties): void {

@@ -3,6 +3,7 @@ import {
   APP_INITIALIZER,
   InjectionToken,
   isDevMode,
+  Optional,
   Provider,
 } from '@angular/core';
 import { OneTrustModule } from '@cdx/ngx-branding';
@@ -24,7 +25,7 @@ export const ANALYTICS_INITIALIZER: Provider = {
   provide: APP_INITIALIZER,
   multi: true,
   useFactory: analyticsInitializer,
-  deps: [ANALYTICS_SETTINGS, DOCUMENT, OneTrustModule],
+  deps: [ANALYTICS_SETTINGS, DOCUMENT, [new Optional(), OneTrustModule]],
 };
 
 export const ANALYTICS_CONTEXT_DATA = new InjectionToken<AnalyticsContextData>(

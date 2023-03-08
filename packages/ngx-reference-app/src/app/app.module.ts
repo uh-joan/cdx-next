@@ -48,6 +48,9 @@ const ANALYTICS_CONTEXT: AnalyticsContextSchema = {
     AnalyticsModule.forRoot(
       {
         appId: 'reference-app',
+        options: {
+          snowplowUrl: 'snowplow.apps.dev-stable.clarivate.com',
+        },
       },
       ANALYTICS_CONTEXT,
     ),
