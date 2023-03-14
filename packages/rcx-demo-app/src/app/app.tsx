@@ -17,6 +17,7 @@ import { useState } from 'react';
 import { NavLink, Route, Routes, useLocation } from 'react-router-dom';
 
 import { ChartBar as ChartBarIcon } from '../icons/chart-bar';
+import { Search as SearchIcon } from '../icons/search';
 import { ShoppingBag as ShoppingBagIcon } from '../icons/shopping-bag';
 import { UserAdd as UserAddIcon } from '../icons/user-add';
 import Account from './pages/account';
@@ -26,6 +27,7 @@ import Home from './pages/home';
 import Login from './pages/login';
 import NotFound from './pages/not-found';
 import Products from './pages/products';
+import Results from './pages/results';
 import Settings from './pages/settings';
 import NavBar from './sidebar/navbar';
 import NestedList, { themeOptions } from './theme-switcher/theme-switcher';
@@ -90,7 +92,7 @@ const ThemeSwitchApp = () => {
                 className={`nav-container__button ${isCurrentPage(
                   '/products',
                 )}`}
-                startIcon={<ShoppingBagIcon />}
+                startIcon={<SearchIcon />}
                 disableRipple
                 sx={{
                   justifyContent: 'flex-start',
@@ -100,6 +102,19 @@ const ThemeSwitchApp = () => {
                 Search
               </Button>
             </NavLink>
+            <Button
+              className={`nav-container__button disabled ${isCurrentPage(
+                '/results',
+              )}`}
+              startIcon={<ShoppingBagIcon />}
+              disableRipple
+              sx={{
+                justifyContent: 'flex-start',
+                px: 3,
+              }}
+            >
+              Results
+            </Button>
             <NavLink className="nav-container__link" to="/dashboard">
               <Button
                 className={`top-container__button ${isCurrentPage(
@@ -146,6 +161,7 @@ const ThemeSwitchApp = () => {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/products" element={<Products />} />
+              <Route path="/results" element={<Results />} />
               <Route path="/customers" element={<Customers />} />
               <Route path="/account" element={<Account />} />
               <Route path="/settings" element={<Settings />} />

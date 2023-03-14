@@ -37,6 +37,13 @@ body {
       .current-page {
         border-bottom: 2px solid;
         cursor: default;
+        border-radius: 0;
+        opacity: 1;
+      }
+
+      .disabled:not(.current-page) {
+        opacity: 0.5;
+        cursor: default;
       }
     }
 

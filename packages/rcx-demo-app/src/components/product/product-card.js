@@ -1,43 +1,150 @@
 import {
-  Avatar,
   Box,
   Card,
-  CardContent,
+  Checkbox,
   Divider,
   Grid,
+  Link,
   Typography,
 } from '@mui/material';
-import PropTypes from 'prop-types';
+import { NavLink } from 'react-router-dom';
 
 import { Clock as ClockIcon } from '../../icons/clock';
 import { Download as DownloadIcon } from '../../icons/download';
 
-export const ProductCard = ({ product, ...rest }) => (
+export const ProductCard = ({ article }) => (
   <Card
     sx={{
       display: 'flex',
       flexDirection: 'column',
       height: '100%',
     }}
-    {...rest}
   >
-    <CardContent>
+    <Card sx={{ display: 'flex', flexDirection: 'row', p: 2 }}>
       <Box
         sx={{
+          width: '6%',
           display: 'flex',
-          justifyContent: 'center',
-          pb: 3,
+          alignItems: 'center',
         }}
       >
-        <Avatar alt="Product" src={product.media} variant="square" />
+        <Checkbox />
+        <Typography>{article.id}</Typography>
       </Box>
-      <Typography align="center" color="textPrimary" gutterBottom variant="h5">
-        {product.title}
-      </Typography>
-      <Typography align="center" color="textPrimary" variant="body1">
-        {product.description}
-      </Typography>
-    </CardContent>
+
+      <Box
+        sx={{
+          padding: '.5rem',
+          flexGrow: 1,
+          width: '80%',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'start',
+        }}
+      >
+        <NavLink className="nav-container__link" to="/results">
+          <Typography color="primary" variant="h6">
+            {article.title}
+          </Typography>
+        </NavLink>
+
+        <Typography sx={{ paddingTop: '1rem', paddingBottom: '.5rem' }}>
+          <Link color="primary" variant="subtitle3">
+            {article.author}
+          </Link>
+        </Typography>
+        <Typography>
+          {article.releaseDate} | <Link>{article.argument}</Link> 23 (1),
+          pp.11-+
+        </Typography>
+        <Typography
+          variant="body1"
+          sx={{
+            paddingTop: '1rem',
+            textAlign: 'left',
+          }}
+        >
+          {article.description}
+          <NavLink
+            to={`/results/`}
+            sx={{
+              color: 'primary.main',
+              fontWeight: 'bold',
+              marginLeft: '0.5rem',
+            }}
+          >
+            &nbsp;...show more
+          </NavLink>
+        </Typography>
+      </Box>
+
+      <Box
+        sx={{
+          width: '14%',
+          flexDirection: 'column',
+          display: 'flex',
+          paddingLeft: '.5rem',
+          height: '100%',
+          justifyContent: 'space-between',
+        }}
+      >
+        <Box
+          sx={{
+            width: '100%',
+            flexDirection: 'column',
+            alignItems: 'start',
+            display: 'flex',
+          }}
+        >
+          <Typography color="primary" variant="subtitle1" sx={{ mb: 1 }}>
+            {article.citations}
+          </Typography>
+          <Typography color="primary" variant="subtitle1" sx={{ mb: 1 }}>
+            Citations
+          </Typography>
+          <Divider
+            color="primary"
+            sx={{
+              width: '100%',
+              backgroundColor: 'white',
+            }}
+          />
+
+          <Typography
+            sx={{ paddingTop: '1rem' }}
+            color="primary"
+            variant="subtitle1"
+          >
+            {article.references}
+          </Typography>
+
+          <Typography color="primary" variant="subtitle1">
+            References
+          </Typography>
+        </Box>
+
+        <Box
+          sx={{
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'start',
+            width: '100%',
+          }}
+        >
+          <Divider
+            color="primary"
+            sx={{
+              width: '100%',
+              backgroundColor: 'white',
+            }}
+          />
+          <Typography color="primary" variant="subtitle1">
+            Related Records
+          </Typography>
+        </Box>
+      </Box>
+    </Card>
+
     <Box sx={{ flexGrow: 1 }} />
     <Divider />
     <Box sx={{ p: 2 }}>
@@ -56,7 +163,7 @@ export const ProductCard = ({ product, ...rest }) => (
             sx={{ pl: 1 }}
             variant="body2"
           >
-            Updated 2hr ago
+            Updated {article.updated} ago
           </Typography>
         </Grid>
         <Grid
@@ -73,14 +180,10 @@ export const ProductCard = ({ product, ...rest }) => (
             sx={{ pl: 1 }}
             variant="body2"
           >
-            {product.totalDownloads} Inscriptions
+            {article.totalDownloads} Downloads
           </Typography>
         </Grid>
       </Grid>
     </Box>
   </Card>
 );
-
-ProductCard.propTypes = {
-  product: PropTypes.object.isRequired,
-};
