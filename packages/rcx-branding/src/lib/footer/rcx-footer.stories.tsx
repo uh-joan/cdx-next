@@ -5,7 +5,7 @@ import { CdxFooter, CdxFooterLinkGroup } from './rcx-footer';
 
 const Story: ComponentMeta<typeof CdxFooter> = {
   component: CdxFooter,
-  title: 'CdxFooter',
+  title: 'footer',
 };
 export default Story;
 

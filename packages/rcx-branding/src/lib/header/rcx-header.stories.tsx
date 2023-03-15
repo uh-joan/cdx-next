@@ -11,7 +11,7 @@ import { CdxHeader } from './rcx-header';
 
 const Story: ComponentMeta<typeof CdxHeader> = {
   component: CdxHeader,
-  title: 'CdxHeader',
+  title: 'header',
 };
 export default Story;
 
