@@ -1,7 +1,7 @@
 import './rcx-header.scss';
 
 import { ThemeOptionsWithBranding } from '@cdx/theme-react-mui';
-import Paper from '@mui/material/Paper';
+import { Paper } from '@mui/material';
 import * as React from 'react';
 
 export interface HeaderProps {
