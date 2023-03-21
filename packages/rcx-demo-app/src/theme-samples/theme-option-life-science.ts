@@ -15,20 +15,19 @@ export const lifeScienceThemeOptions: ThemeOptions = {
   palette: {
     mode: 'dark',
     primary: {
-      main: '#0B72B9',
+      main: '#FF5722',
     },
     secondary: {
-      main: '#F50057',
+      main: '#00BCD4',
     },
     background: {
-      default: '#121212',
-      paper: '#333333',
+      default: '#333',
     },
     error: {
-      main: '#CF6679',
+      main: '#F44336',
     },
     warning: {
-      main: '#F9A825',
+      main: '#FFC107',
     },
     info: {
       main: '#2196F3',
@@ -38,72 +37,68 @@ export const lifeScienceThemeOptions: ThemeOptions = {
     },
   },
   typography: {
-    fontFamily: '"Montserrat", sans-serif',
+    fontFamily: '"Roboto", sans-serif',
     fontSize: 14,
     fontWeightMedium: 500,
     h1: {
       fontSize: 72,
-      fontWeight: 700,
+      fontWeight: 600,
       lineHeight: 1.2,
     },
     h2: {
       fontSize: 48,
-      fontWeight: 700,
+      fontWeight: 600,
       lineHeight: 1.2,
     },
     h3: {
       fontSize: 36,
-      fontWeight: 700,
+      fontWeight: 600,
       lineHeight: 1.2,
     },
     h4: {
       fontSize: 28,
-      fontWeight: 700,
+      fontWeight: 600,
       lineHeight: 1.2,
     },
     h5: {
       fontSize: 22,
-      fontWeight: 700,
+      fontWeight: 600,
       lineHeight: 1.2,
     },
     h6: {
       fontSize: 18,
-      fontWeight: 700,
+      fontWeight: 600,
       lineHeight: 1.2,
     },
     subtitle1: {
       fontSize: 16,
-      fontWeight: 500,
       lineHeight: 1.2,
     },
     subtitle2: {
       fontSize: 14,
-      fontWeight: 500,
+      fontWeight: 400,
       lineHeight: 1.2,
     },
     body1: {
-      fontSize: 16,
-      fontWeight: 400,
-      lineHeight: 1.5,
+      fontSize: 14,
+      lineHeight: 1.2,
     },
     body2: {
       fontSize: 14,
-      fontWeight: 400,
-      lineHeight: 1.5,
+      lineHeight: 1.2,
+      fontWeight: 500,
     },
     caption: {
       fontSize: 12,
-      fontWeight: 400,
     },
     button: {
-      fontWeight: 700,
+      lineHeight: 2,
       textTransform: 'uppercase',
     },
     overline: {
       fontSize: 12,
-      fontWeight: 700,
-      lineHeight: 1.5,
-      letterSpacing: 2,
+      fontWeight: 600,
+      lineHeight: 1.2,
     },
   },
 };
@@ -243,19 +238,20 @@ export const WorkingGroupTHemeOptions: ThemeOptions = {
   palette: {
     mode: 'dark',
     primary: {
-      main: '#FF5722',
+      main: '#0B72B9',
     },
     secondary: {
-      main: '#00BCD4',
+      main: '#F50057',
     },
     background: {
-      default: '#333',
+      default: '#121212',
+      paper: '#333333',
     },
     error: {
-      main: '#F44336',
+      main: '#CF6679',
     },
     warning: {
-      main: '#FFC107',
+      main: '#F9A825',
     },
     info: {
       main: '#2196F3',
@@ -265,68 +261,72 @@ export const WorkingGroupTHemeOptions: ThemeOptions = {
     },
   },
   typography: {
-    fontFamily: '"Roboto", sans-serif',
+    fontFamily: '"Montserrat", sans-serif',
     fontSize: 14,
     fontWeightMedium: 500,
     h1: {
       fontSize: 72,
-      fontWeight: 600,
+      fontWeight: 700,
       lineHeight: 1.2,
     },
     h2: {
       fontSize: 48,
-      fontWeight: 600,
+      fontWeight: 700,
       lineHeight: 1.2,
     },
     h3: {
       fontSize: 36,
-      fontWeight: 600,
+      fontWeight: 700,
       lineHeight: 1.2,
     },
     h4: {
       fontSize: 28,
-      fontWeight: 600,
+      fontWeight: 700,
       lineHeight: 1.2,
     },
     h5: {
       fontSize: 22,
-      fontWeight: 600,
+      fontWeight: 700,
       lineHeight: 1.2,
     },
     h6: {
       fontSize: 18,
-      fontWeight: 600,
+      fontWeight: 700,
       lineHeight: 1.2,
     },
     subtitle1: {
       fontSize: 16,
+      fontWeight: 500,
       lineHeight: 1.2,
     },
     subtitle2: {
       fontSize: 14,
-      fontWeight: 400,
+      fontWeight: 500,
       lineHeight: 1.2,
     },
     body1: {
-      fontSize: 14,
-      lineHeight: 1.2,
+      fontSize: 16,
+      fontWeight: 400,
+      lineHeight: 1.5,
     },
     body2: {
       fontSize: 14,
-      lineHeight: 1.2,
-      fontWeight: 500,
+      fontWeight: 400,
+      lineHeight: 1.5,
     },
     caption: {
       fontSize: 12,
+      fontWeight: 400,
     },
     button: {
-      lineHeight: 2,
+      fontWeight: 700,
       textTransform: 'uppercase',
     },
     overline: {
       fontSize: 12,
-      fontWeight: 600,
-      lineHeight: 1.2,
+      fontWeight: 700,
+      lineHeight: 1.5,
+      letterSpacing: 2,
     },
   },
 };

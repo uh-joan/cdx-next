@@ -145,7 +145,6 @@ export const ProductCard = ({ article }) => (
       </Box>
     </Card>
 
-    <Box sx={{ flexGrow: 1 }} />
     <Divider />
     <Box sx={{ p: 2 }}>
       <Grid container spacing={2} sx={{ justifyContent: 'space-between' }}>
@@ -163,7 +162,7 @@ export const ProductCard = ({ article }) => (
             sx={{ pl: 1 }}
             variant="body2"
           >
-            Updated {article.updated} ago
+            Updated on {new Date(article.updated).toLocaleDateString()}
           </Typography>
         </Grid>
         <Grid

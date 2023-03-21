@@ -178,7 +178,7 @@ export const businessUnit1FThemeOptions: ThemeOptions = {
       lineHeight: 1.2,
     },
     h6: {
-      fontSize: 16,
+      fontSize: 18,
       fontWeight: 500,
       lineHeight: 1.2,
     },
@@ -284,7 +284,7 @@ export const businessUnit2FThemeOptions: ThemeOptions = {
       lineHeight: 1.2,
     },
     h6: {
-      fontSize: 16,
+      fontSize: 18,
       fontWeight: 600,
       lineHeight: 1.2,
     },

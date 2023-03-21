@@ -2,11 +2,14 @@ import { Box, Container, Grid, Pagination } from '@mui/material';
 import * as React from 'react';
 
 import articles from '../../__mocks__/articles';
-import { products } from '../../__mocks__/products';
 import { ProductCard } from '../../components/product/product-card';
 import { ProductListToolbar } from '../../components/product/product-list-toolbar';
 
 const Products = () => {
+  const defaultEndDate = new Date();
+  const defaultStartDate = new Date();
+  defaultStartDate.setFullYear(defaultEndDate.getFullYear() - 10);
+
   const [showProducts, setShowProducts] = React.useState(false);
 
   const handleSearch = () => {
@@ -15,6 +18,55 @@ const Products = () => {
 
   const handleClear = () => {
     setShowProducts(false);
+  };
+
+  const [startDate, setStartDate] = React.useState(defaultStartDate);
+  const [endDate, setEndDate] = React.useState(defaultEndDate);
+
+  const handleDateChange = (start: Date, end: Date) => {
+    setStartDate(start);
+    setEndDate(end);
+  };
+
+  const handleFilterChange = (filters: string[]) => {
+    setSelectedFilters(filters);
+  };
+
+  const handleFilterPropertyChange = (filters: any) => {
+    setSelectedFiltersByProperties(filters);
+  };
+
+  const [selectedFilters, setSelectedFilters] = React.useState([
+    'Clinics in liver disease',
+    'Alzheimer disease',
+    'Androgenetic Alopecia',
+    'Weight Management',
+  ]);
+
+  const [selectedFiltersByProperties, setSelectedFiltersByProperties] =
+    React.useState({
+      peerReviewd: false,
+      fullArticle: false,
+      metaAnalysis: false,
+    });
+
+  const filterArticlesByDate = () => {
+    return articles.filter((article: any) => {
+      const articleDate = new Date(article.updated);
+      return articleDate >= startDate && articleDate <= endDate;
+    });
+  };
+
+  const filterArticlesByFilters = (articles: any) => {
+    return articles.filter((article: any) => {
+      return selectedFilters.some(
+        (selectedFilters) =>
+          article.argument.includes(selectedFilters) &&
+          (!selectedFiltersByProperties.peerReviewd || article.peerReviewd) &&
+          (!selectedFiltersByProperties.metaAnalysis || article.metaAnalysis) &&
+          (!selectedFiltersByProperties.fullArticle || article.fullArticle),
+      );
+    });
   };
 
   return (
@@ -26,17 +78,25 @@ const Products = () => {
       }}
     >
       <Container maxWidth={false}>
-        <ProductListToolbar onSearch={handleSearch} onClear={handleClear} />
+        <ProductListToolbar
+          onSearch={handleSearch}
+          onClear={handleClear}
+          onDateChange={handleDateChange}
+          onFilterChange={handleFilterChange}
+          onFilterPropertyChange={handleFilterPropertyChange}
+        />
 
         {showProducts && (
           <div>
             <Box sx={{ pt: 3 }}>
               <Grid container spacing={3}>
-                {articles.map((article) => (
-                  <Grid item key={article.id} lg={12} md={12} xs={12}>
-                    <ProductCard article={article} />
-                  </Grid>
-                ))}
+                {filterArticlesByFilters(filterArticlesByDate()).map(
+                  (article: any) => (
+                    <Grid item key={article.id} lg={12} md={12} xs={12}>
+                      <ProductCard article={article} />
+                    </Grid>
+                  ),
+                )}
               </Grid>
             </Box>
             <Box
@@ -46,7 +106,9 @@ const Products = () => {
                 pt: 3,
               }}
             >
-              <Pagination color="primary" count={3} size="small" />
+              {!!filterArticlesByFilters(filterArticlesByDate()).length && (
+                <Pagination color="primary" count={3} size="small" />
+              )}
             </Box>
           </div>
         )}
