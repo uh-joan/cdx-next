@@ -126,7 +126,7 @@ const WithProductSearchTemplate: ComponentStory<typeof CdxHeader> = () => (
     }
   >
     <TextField
-      style={{ width: '30rem' }}
+      style={{ width: '30rem', flex: 0.75 }}
       id="standard-basic"
       variant="standard"
       InputProps={{
