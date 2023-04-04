@@ -77,10 +77,13 @@ export class AuthenticationService {
     );
   }
 
-  logout(): void {
+  logout(referrerUrl?: string): void {
     this.tokenService.deleteToken();
     window.location.assign(
-      this.accessAppActionWithReferrer('logout', this.router.url),
+      this.accessAppActionWithReferrer(
+        'logout',
+        referrerUrl || this.router.url,
+      ),
     );
   }
 
