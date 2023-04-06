@@ -11,7 +11,6 @@
   },
   "peerDependencies": {
     "@angular/common": "14",
-    "@angular/core": "14",
-    "@snowplow/browser-tracker": "^3.7.0"
+    "@angular/core": "14"
   }
 }

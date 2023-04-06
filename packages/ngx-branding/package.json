@@ -21,6 +21,7 @@
     "@angular/common": "14",
     "@angular/core": "14",
     "@angular/platform-browser": "14",
-    "@cdx/shared-branding": "*"
+    "@cdx/shared-branding": "*",
+    "@cdx/theme-angular-material": "*"
   }
 }
