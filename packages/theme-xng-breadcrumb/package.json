@@ -10,9 +10,8 @@
     "tslib": "^2.3.0"
   },
   "peerDependencies": {
-    "@angular/common": "^13.2.5",
-    "@angular/core": "^13.2.5",
-    "@cdx/theme-angular-material": "*",
-    "xng-breadcrumb": "^7.2.0"
+    "@angular/common": "13",
+    "@angular/core": "13",
+    "@cdx/theme-angular-material": "*"
   }
 }

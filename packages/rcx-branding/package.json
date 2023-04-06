@@ -1,7 +1,9 @@
 {
   "name": "@cdx/rcx-branding",
   "version": "2.1.13-alpha.0",
-  "peerDependencies": {
-    "@cdx/theme-react-mui": "*"
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@git.clarivate.io/cdxn/cdx-next.git",
+    "directory": "packages/rcx-branding"
   }
 }
