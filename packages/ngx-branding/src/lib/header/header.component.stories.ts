@@ -4,6 +4,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatTabsModule } from '@angular/material/tabs';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ThemeModule } from '@cdx/theme-angular-material';
+import { clarivateTheme, ThemeOptionsWithBranding } from '@cdx/theme-react-mui';
 import { Meta, moduleMetadata, Story } from '@storybook/angular';
 import { html } from 'common-tags';
 
@@ -38,7 +39,7 @@ const WithProductNameTemplate: Story<HeaderComponent> = () => ({
     PLEASE NOTE: All inline styles are included as examples of how content
     can be positioned and are intended for demonstration purposes only.
     -->
-    <header cdx-header>
+    <header cdx-header [theme]="clarivateTheme">
       <cdx-header-global>
         <div
           style="display: inherit; align-items: inherit; margin-right: 1rem;"
@@ -58,6 +59,9 @@ const WithProductNameTemplate: Story<HeaderComponent> = () => ({
       </div>
     </header>
   `,
+  props: {
+    clarivateTheme: clarivateTheme as ThemeOptionsWithBranding,
+  },
 });
 
 const WithProductNameAsLinkTemplate: Story<HeaderComponent> = () => ({
@@ -66,7 +70,7 @@ const WithProductNameAsLinkTemplate: Story<HeaderComponent> = () => ({
     PLEASE NOTE: All inline styles are included as examples of how content
     can be positioned and are intended for demonstration purposes only.
     -->
-    <header cdx-header>
+    <header cdx-header [theme]="clarivateTheme">
       <cdx-header-global>
         <div
           style="display: inherit; align-items: inherit; margin-right: 1rem;"
@@ -86,6 +90,9 @@ const WithProductNameAsLinkTemplate: Story<HeaderComponent> = () => ({
       </div>
     </header>
   `,
+  props: {
+    clarivateTheme: clarivateTheme as ThemeOptionsWithBranding,
+  },
 });
 
 const WithProductLogoTemplate: Story<HeaderComponent> = () => ({
@@ -94,7 +101,7 @@ const WithProductLogoTemplate: Story<HeaderComponent> = () => ({
     PLEASE NOTE: All inline styles are included as examples of how content
     can be positioned and are intended for demonstration purposes only.
     -->
-    <header cdx-header>
+    <header cdx-header [theme]="clarivateTheme">
       <cdx-header-global>
         <div
           style="display: inherit; align-items: inherit; margin-right: 1rem;"
@@ -117,6 +124,9 @@ const WithProductLogoTemplate: Story<HeaderComponent> = () => ({
       </div>
     </header>
   `,
+  props: {
+    clarivateTheme: clarivateTheme as ThemeOptionsWithBranding,
+  },
 });
 
 const WithProductLogoAndProductNameTemplate: Story<HeaderComponent> = () => ({
@@ -125,7 +135,7 @@ const WithProductLogoAndProductNameTemplate: Story<HeaderComponent> = () => ({
     PLEASE NOTE: All inline styles are included as examples of how content
     can be positioned and are intended for demonstration purposes only.
     -->
-    <header cdx-header>
+    <header cdx-header [theme]="clarivateTheme">
       <cdx-header-global>
         <div
           style="display: inherit; align-items: inherit; margin-right: 1rem;"
@@ -145,6 +155,9 @@ const WithProductLogoAndProductNameTemplate: Story<HeaderComponent> = () => ({
       />
     </header>
   `,
+  props: {
+    clarivateTheme: clarivateTheme as ThemeOptionsWithBranding,
+  },
 });
 
 const WithProductSearchTemplate: Story<HeaderComponent> = () => ({
@@ -153,7 +166,7 @@ const WithProductSearchTemplate: Story<HeaderComponent> = () => ({
     PLEASE NOTE: All inline styles are included as examples of how content
     can be positioned and are intended for demonstration purposes only.
     -->
-    <header cdx-header>
+    <header cdx-header [theme]="clarivateTheme">
       <cdx-header-global>
         <div
           style="display: inherit; align-items: inherit; margin-right: 1rem;"
@@ -181,14 +194,20 @@ const WithProductSearchTemplate: Story<HeaderComponent> = () => ({
       </div>
     </header>
   `,
+  props: {
+    clarivateTheme: clarivateTheme as ThemeOptionsWithBranding,
+  },
 });
 
 const AtSmallestSizeTemplate: Story<HeaderComponent> = () => ({
   template: html`
-    <header cdx-header>
+    <header cdx-header [theme]="clarivateTheme">
       <cdx-header-product-name></cdx-header-product-name>
     </header>
   `,
+  props: {
+    clarivateTheme: clarivateTheme as ThemeOptionsWithBranding,
+  },
 });
 
 const AtLargestSizeTemplate: Story<HeaderComponent> = () => ({
@@ -197,12 +216,15 @@ const AtLargestSizeTemplate: Story<HeaderComponent> = () => ({
     PLEASE NOTE: All inline styles are included as examples of how content
     can be positioned and are intended for demonstration purposes only.
     -->
-    <header cdx-header>
+    <header cdx-header [theme]="clarivateTheme">
       <cdx-header-product-name>
         <div style="height: 500px"></div>
       </cdx-header-product-name>
     </header>
   `,
+  props: {
+    clarivateTheme: clarivateTheme as ThemeOptionsWithBranding,
+  },
 });
 
 const WithPrimaryNavTemplate: Story<HeaderComponent> = () => ({
@@ -211,7 +233,7 @@ const WithPrimaryNavTemplate: Story<HeaderComponent> = () => ({
     PLEASE NOTE: All inline styles are included as examples of how content
     can be positioned and are intended for demonstration purposes only.
     -->
-    <header cdx-header>
+    <header cdx-header [theme]="clarivateTheme">
       <cdx-header-global>
         <div
           style="display: inherit; align-items: inherit; margin-right: 1rem;"
@@ -240,6 +262,9 @@ const WithPrimaryNavTemplate: Story<HeaderComponent> = () => ({
       </div>
     </header>
   `,
+  props: {
+    clarivateTheme: clarivateTheme as ThemeOptionsWithBranding,
+  },
 });
 
 export const Basic = BasicTemplate.bind({});
