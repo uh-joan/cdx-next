@@ -1,5 +1,6 @@
 {
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "name": "ngx-reference-app",
   "prefix": "cdx",
   "projectType": "application",
   "sourceRoot": "packages/ngx-reference-app/src",

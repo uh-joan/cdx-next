@@ -1,0 +1,16 @@
+{
+  "$schema": "node_modules/nx/schemas/project-schema.json",
+  "name": "workspace",
+  "targets": {
+    "version": {
+      "executor": "@jscutlery/semver:version",
+      "options": {
+        "commitMessageFormat": "chore(${projectName}): release version ${version} [skip ci]",
+        "push": false,
+        "skipProjectChangelog": true,
+        "skipRootChangelog": true,
+        "syncVersions": true
+      }
+    }
+  }
+}

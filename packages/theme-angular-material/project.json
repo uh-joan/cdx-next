@@ -1,5 +1,6 @@
 {
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "name": "theme-angular-material",
   "prefix": "cdx",
   "projectType": "library",
   "sourceRoot": "packages/theme-angular-material/src",

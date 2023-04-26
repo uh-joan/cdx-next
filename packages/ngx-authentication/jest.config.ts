@@ -2,16 +2,17 @@ export default {
   displayName: 'ngx-authentication',
   preset: '../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
-  globals: {
-    'ts-jest': {
-      tsconfig: '<rootDir>/tsconfig.spec.json',
-      stringifyContentPathRegex: '\\.(html|svg)$',
-      useESM: true,
-    },
-  },
+  globals: {},
   coverageDirectory: '../../coverage/packages/ngx-authentication',
   transform: {
-    '^.+\\.(ts|mjs|js|html)$': 'jest-preset-angular',
+    '^.+\\.(ts|mjs|js|html)$': [
+      'jest-preset-angular',
+      {
+        tsconfig: '<rootDir>/tsconfig.spec.json',
+        stringifyContentPathRegex: '\\.(html|svg)$',
+        useESM: true,
+      },
+    ],
   },
   transformIgnorePatterns: ['node_modules/(?!.*\\.mjs$|jest-globals)'],
   snapshotSerializers: [

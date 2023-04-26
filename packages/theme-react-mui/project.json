@@ -1,12 +1,12 @@
 {
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "name": "theme-react-mui",
   "projectType": "library",
-  "root": "packages/theme-react-mui",
   "sourceRoot": "packages/theme-react-mui/src",
   "tags": [],
   "targets": {
     "build": {
-      "executor": "@nrwl/web:rollup",
+      "executor": "@nrwl/rollup:rollup",
       "options": {
         "assets": [
           {

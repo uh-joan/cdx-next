@@ -1,4 +1,4 @@
-import { useAutocomplete } from '@mui/base/AutocompleteUnstyled';
+import { useAutocomplete } from '@mui/base';
 import Autocomplete, { createFilterOptions } from '@mui/material/Autocomplete';
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';

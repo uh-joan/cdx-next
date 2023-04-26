@@ -7,7 +7,7 @@
   "tags": [],
   "targets": {
     "build": {
-      "executor": "@nrwl/web:rollup",
+      "executor": "@nrwl/rollup:rollup",
       "options": {
         "assets": [
           {
@@ -34,13 +34,11 @@
       },
       "executor": "@nrwl/storybook:build",
       "options": {
-        "config": {
-          "configFolder": "packages/rcx-branding/.storybook"
-        },
-        "outputPath": "dist/storybook/rcx-branding",
+        "configDir": "packages/rcx-branding/.storybook",
+        "outputDir": "dist/storybook/rcx-branding",
         "uiFramework": "@storybook/react"
       },
-      "outputs": ["{options.outputPath}"]
+      "outputs": ["{options.outputDir}"]
     },
     "deploy": {
       "executor": "ngx-deploy-npm:deploy"
@@ -60,9 +58,7 @@
       },
       "executor": "@nrwl/storybook:storybook",
       "options": {
-        "config": {
-          "configFolder": "packages/rcx-branding/.storybook"
-        },
+        "configDir": "packages/rcx-branding/.storybook",
         "port": 4400,
         "uiFramework": "@storybook/react"
       }

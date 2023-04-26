@@ -1,6 +1,7 @@
 {
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "name": "rcx-demo",
   "projectType": "library",
-  "root": "packages/rcx-demo",
   "sourceRoot": "packages/rcx-demo/src",
   "tags": [],
   "targets": {
@@ -12,13 +13,11 @@
       },
       "executor": "@nrwl/storybook:build",
       "options": {
-        "config": {
-          "configFolder": "packages/rcx-demo/.storybook"
-        },
-        "outputPath": "dist/storybook/rcx-demo",
+        "configDir": "packages/rcx-demo/.storybook",
+        "outputDir": "dist/storybook/rcx-demo",
         "uiFramework": "@storybook/react"
       },
-      "outputs": ["{options.outputPath}"]
+      "outputs": ["{options.outputDir}"]
     },
     "lint": {
       "executor": "@nrwl/linter:eslint",
@@ -35,9 +34,7 @@
       },
       "executor": "@nrwl/storybook:storybook",
       "options": {
-        "config": {
-          "configFolder": "packages/rcx-demo/.storybook"
-        },
+        "configDir": "packages/rcx-demo/.storybook",
         "port": 4400,
         "uiFramework": "@storybook/react"
       }

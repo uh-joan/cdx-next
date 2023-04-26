@@ -1,6 +1,7 @@
 {
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "name": "ngx-session-activity",
   "projectType": "library",
-  "root": "packages/ngx-session-activity",
   "sourceRoot": "packages/ngx-session-activity/src",
   "tags": [],
   "targets": {

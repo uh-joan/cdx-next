@@ -1,5 +1,6 @@
 {
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "name": "ngx-branding",
   "prefix": "cdx",
   "projectType": "library",
   "sourceRoot": "packages/ngx-branding/src",

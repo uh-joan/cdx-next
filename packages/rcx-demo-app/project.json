@@ -38,13 +38,14 @@
         "baseHref": "/",
         "compiler": "babel",
         "index": "packages/rcx-demo-app/src/index.html",
+        "isolatedConfig": true,
         "main": "packages/rcx-demo-app/src/main.tsx",
         "outputPath": "dist/packages/rcx-demo-app",
         "polyfills": "packages/rcx-demo-app/src/polyfills.ts",
         "scripts": [],
         "styles": ["packages/rcx-demo-app/src/styles.scss"],
         "tsConfig": "packages/rcx-demo-app/tsconfig.app.json",
-        "webpackConfig": "@nrwl/react/plugins/webpack"
+        "webpackConfig": "packages/rcx-demo-app/webpack.config.js"
       },
       "outputs": ["{options.outputPath}"]
     },

@@ -1,5 +1,6 @@
 {
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "name": "theme-popperjs",
   "targets": {
     "stylelint": {
       "executor": "nx-stylelint:lint",
