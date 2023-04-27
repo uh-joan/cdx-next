@@ -3,6 +3,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatTabsModule } from '@angular/material/tabs';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RouterModule } from '@angular/router';
 import {
   AuthenticationModule,
   HeaderGlobalUserProfileModule,
@@ -30,6 +31,7 @@ export default {
           appId: 'cdx',
           environment: 'dev-stable',
         }),
+        RouterModule.forRoot([], { useHash: true }),
       ],
     }),
   ],

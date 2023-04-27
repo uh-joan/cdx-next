@@ -4,5 +4,10 @@
   },
   "exclude": ["../**/*.spec.ts"],
   "extends": "../tsconfig.json",
-  "include": ["../src/**/*", "../../ngx-notification/src/**/*", "*.js"]
+  "include": [
+    "../src/**/*",
+    "../../ngx-notification/src/**/*",
+    "../../ngx-authentication/src/**/*",
+    "*.js"
+  ]
 }
