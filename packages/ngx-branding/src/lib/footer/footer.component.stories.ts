@@ -1,5 +1,4 @@
 import { ThemeModule } from '@cdx/theme-angular-material';
-import { clarivateTheme, ThemeOptionsWithBranding } from '@cdx/theme-react-mui';
 import { Meta, moduleMetadata, Story } from '@storybook/angular';
 import { html } from 'common-tags';
 
@@ -18,10 +17,7 @@ export default {
 } as Meta<FooterComponent>;
 
 const BasicTemplate: Story<FooterComponent> = () => ({
-  template: html`<footer cdx-footer></footer> `,
-  props: {
-    clarivateTheme: clarivateTheme as ThemeOptionsWithBranding,
-  },
+  template: '<footer cdx-footer></footer>',
 });
 
 const WithApplicationLinksTemplate: Story<FooterComponent> = () => ({
@@ -37,21 +33,18 @@ const WithApplicationLinksTemplate: Story<FooterComponent> = () => ({
 
 const WithApplicationLinksSlimTemplate: Story<FooterComponent> = () => ({
   template: html`
-    <footer cdx-footer slim [theme]="clarivateTheme">
+    <footer cdx-footer slim>
       <a cdx-footer-link href="https://stackoverflow.com/">Stack Overflow</a>
       <a cdx-footer-link href="https://www.powerlanguage.co.uk/wordle/">
         Wordle
       </a>
     </footer>
   `,
-  props: {
-    clarivateTheme: clarivateTheme as ThemeOptionsWithBranding,
-  },
 });
 
 const WithLinkGroupsTemplate: Story<FooterComponent> = () => ({
   template: html`
-    <footer cdx-footer groupCompanyLinks [theme]="clarivateTheme">
+    <footer cdx-footer groupCompanyLinks>
       <cdx-footer-group>
         <cdx-footer-group-title>Developer Resources</cdx-footer-group-title>
         <a cdx-footer-link href="https://stackoverflow.com/">Stack Overflow</a>
@@ -106,13 +99,10 @@ const WithLinkGroupsTemplate: Story<FooterComponent> = () => ({
       </cdx-footer-group>
     </footer>
   `,
-  props: {
-    clarivateTheme: clarivateTheme as ThemeOptionsWithBranding,
-  },
 });
 
 const BasicWithOneTrustTemplate: Story<FooterComponent> = () => ({
-  template: html`<footer cdx-footer></footer>`,
+  template: '<footer cdx-footer></footer>',
 });
 
 export const Basic = BasicTemplate.bind({});

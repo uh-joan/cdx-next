@@ -23,7 +23,7 @@ describe('FooterComponent', () => {
   });
 
   it('should set footer class', () => {
-    expect(host.query('div.cdx-footer')).toBeTruthy();
+    expect(host.element).toHaveClass('cdx-footer');
   });
 
   it('should include copyright statement', () => {
