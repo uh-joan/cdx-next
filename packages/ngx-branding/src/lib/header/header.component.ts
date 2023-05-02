@@ -4,9 +4,11 @@ import {
   Component,
   ElementRef,
   HostBinding,
+  Input,
   ViewChild,
   ViewEncapsulation,
 } from '@angular/core';
+import { ThemeOptionsBranding } from '@cdx/theme-angular-material';
 
 @Component({
   selector: 'header[cdx-header]',
@@ -20,6 +22,8 @@ export class HeaderComponent implements AfterViewInit {
 
   @ViewChild('productIdentification')
   productIdentification?: ElementRef;
+
+  @Input() theme?: ThemeOptionsBranding;
 
   ngAfterViewInit(): void {
     if (!this.productIdentification?.nativeElement.children.length) {

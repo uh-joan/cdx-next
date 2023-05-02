@@ -2,11 +2,11 @@ import { BooleanInput, coerceBooleanProperty } from '@angular/cdk/coercion';
 import {
   ChangeDetectionStrategy,
   Component,
-  HostBinding,
   Input,
   Optional,
   ViewEncapsulation,
 } from '@angular/core';
+import { ThemeOptionsBranding } from '@cdx/theme-angular-material';
 
 import { OneTrustService } from '../one-trust/one-trust.service';
 
@@ -18,8 +18,6 @@ import { OneTrustService } from '../one-trust/one-trust.service';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FooterComponent {
-  @HostBinding('class') private classes = 'cdx-footer';
-
   @Input()
   get groupCompanyLinks() {
     return this._groupCompanyLinks;
@@ -30,13 +28,14 @@ export class FooterComponent {
   private _groupCompanyLinks = false;
 
   @Input()
-  @HostBinding('class.cdx-footer--slim')
   get slim() {
     return this._slim;
   }
   set slim(value: BooleanInput) {
     this._slim = coerceBooleanProperty(value);
   }
+
+  @Input() theme?: ThemeOptionsBranding;
 
   currentYear = new Date().getFullYear();
 

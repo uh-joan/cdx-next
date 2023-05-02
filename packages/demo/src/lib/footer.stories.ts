@@ -18,7 +18,19 @@ export default {
 } as Meta<FooterComponent>;
 
 const BasicTemplate: Story<FooterComponent> = () => ({
-  template: '<footer cdx-footer></footer>',
+  template: html`<footer cdx-footer></footer>`,
+});
+
+const BasicWithCustomThemeTemplate: Story<FooterComponent> = () => ({
+  template: html`<footer cdx-footer [theme]="brandingTheme"></footer>`,
+  props: {
+    brandingTheme: {
+      footer: {
+        background: '#E0E0E0',
+        color: '#0D47A1',
+      },
+    },
+  },
 });
 
 const WithApplicationLinksTemplate: Story<FooterComponent> = () => ({
@@ -92,13 +104,14 @@ const WithLinkGroupsTemplate: Story<FooterComponent> = () => ({
 });
 
 const BasicWithOneTrustTemplate: Story<FooterComponent> = () => ({
-  template: '<footer cdx-footer></footer>',
+  template: html`<footer cdx-footer></footer>`,
 });
 
 export const Basic = BasicTemplate.bind({});
 export const BasicWithOneTrust = BasicWithOneTrustTemplate.bind({});
 export const WithApplicationLinks = WithApplicationLinksTemplate.bind({});
 export const WithLinkGroups = WithLinkGroupsTemplate.bind({});
+export const BasicWithCustomTheme = BasicWithCustomThemeTemplate.bind({});
 
 BasicWithOneTrust.decorators = [
   moduleMetadata({

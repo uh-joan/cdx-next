@@ -251,6 +251,18 @@ const WithPrimaryNavTemplate: Story<HeaderComponent> = () => ({
   `,
 });
 
+const BasicWithCustomThemeTemplate: Story<HeaderComponent> = () => ({
+  template: html`<header cdx-header [theme]="brandingTheme"></header>`,
+  props: {
+    brandingTheme: {
+      header: {
+        background: '#1A237E',
+        color: '#FFA000',
+      },
+    },
+  },
+});
+
 export const Basic = BasicTemplate.bind({});
 export const WithGlobalUserProfileUnauthenticated =
   WithGlobalUserProfileUnauthenticatedTemplate.bind({});
@@ -261,3 +273,4 @@ export const WithProductSearch = WithProductSearchTemplate.bind({});
 export const AtSmallestSize = AtSmallestSizeTemplate.bind({});
 export const AtLargestSize = AtLargestSizeTemplate.bind({});
 export const WithPrimaryNav = WithPrimaryNavTemplate.bind({});
+export const BasicWithCustomTheme = BasicWithCustomThemeTemplate.bind({});

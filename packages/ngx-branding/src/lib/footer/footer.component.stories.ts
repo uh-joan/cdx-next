@@ -17,7 +17,7 @@ export default {
 } as Meta<FooterComponent>;
 
 const BasicTemplate: Story<FooterComponent> = () => ({
-  template: '<footer cdx-footer></footer>',
+  template: html`<footer cdx-footer></footer> `,
 });
 
 const WithApplicationLinksTemplate: Story<FooterComponent> = () => ({
@@ -102,7 +102,7 @@ const WithLinkGroupsTemplate: Story<FooterComponent> = () => ({
 });
 
 const BasicWithOneTrustTemplate: Story<FooterComponent> = () => ({
-  template: '<footer cdx-footer></footer>',
+  template: html`<footer cdx-footer></footer>`,
 });
 
 export const Basic = BasicTemplate.bind({});
