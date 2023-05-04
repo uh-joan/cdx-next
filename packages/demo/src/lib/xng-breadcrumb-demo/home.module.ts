@@ -4,14 +4,19 @@ import { MatButtonModule } from '@angular/material/button';
 import { RouterModule } from '@angular/router';
 import { CdxBreadcrumbModule } from '@cdx/theme-xng-breadcrumb';
 
+import { CategoryComponent } from './category.component';
+import { ElementComponent } from './element.component';
 import { HomeComponent } from './home.component';
 import { HomeRoutingModule } from './home-routing.module';
-import { Page1Component } from './page-1.component';
-import { Page2Component } from './page-2.component';
-import { Page3Component } from './page-3.component';
+import { SubcategoryComponent } from './subcategory.component';
 
 @NgModule({
-  declarations: [HomeComponent, Page1Component, Page2Component, Page3Component],
+  declarations: [
+    HomeComponent,
+    CategoryComponent,
+    SubcategoryComponent,
+    ElementComponent,
+  ],
   imports: [
     CommonModule,
     HomeRoutingModule,

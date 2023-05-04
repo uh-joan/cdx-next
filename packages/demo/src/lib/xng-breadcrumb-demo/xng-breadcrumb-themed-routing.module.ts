@@ -2,9 +2,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-  { path: '', pathMatch: 'full', redirectTo: 'xng-breadcrumb-demo' },
   {
-    path: 'xng-breadcrumb-demo',
+    path: '',
     loadChildren: () => import('./home.module').then((m) => m.HomeModule),
     data: {
       breadcrumb: {

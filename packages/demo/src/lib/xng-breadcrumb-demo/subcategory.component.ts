@@ -2,13 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { BreadcrumbService } from 'xng-breadcrumb';
 
 @Component({
-  selector: 'demo-app-page-2',
-  templateUrl: './page-2.component.html',
+  selector: 'demo-app-subcategory',
+  templateUrl: './subcategory.component.html',
 })
-export class Page2Component implements OnInit {
+export class SubcategoryComponent implements OnInit {
   constructor(private breadcrumbService: BreadcrumbService) {}
 
   ngOnInit(): void {
-    this.breadcrumbService.set('@Page2', 'Page 2');
+    this.breadcrumbService.set('@Subcategory', 'Subcategory');
   }
 }

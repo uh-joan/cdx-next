@@ -3,20 +3,20 @@ import { Router } from '@angular/router';
 import { BreadcrumbService } from 'xng-breadcrumb';
 
 @Component({
-  selector: 'demo-app-page-3',
+  selector: 'demo-app-element',
   template: '',
 })
-export class Page3Component implements OnInit {
+export class ElementComponent implements OnInit {
   constructor(
     private breadcrumbService: BreadcrumbService,
     private router: Router,
   ) {}
 
   ngOnInit(): void {
-    this.breadcrumbService.set('@Page3', 'Page 3');
+    this.breadcrumbService.set('@Element', 'Element');
   }
 
   checkRouteUrl() {
-    return this.router.url == '/platform/page-1/page-2/page-3';
+    return this.router.url == '/platform/category/subcategory/element';
   }
 }

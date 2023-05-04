@@ -15,10 +15,7 @@ export default {
 } as Meta;
 
 const BreadcrumbTemplate: Story = () => ({
-  template: html`
-    <h3>XNG Breadcrumb Demo</h3>
-    <demo-xng-breadcrumb></demo-xng-breadcrumb>
-  `,
+  template: html`<demo-xng-breadcrumb></demo-xng-breadcrumb>`,
 });
 
 export const breadcrumb = BreadcrumbTemplate.bind({});

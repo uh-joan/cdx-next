@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
+import { CategoryComponent } from './category.component';
+import { ElementComponent } from './element.component';
 import { HomeComponent } from './home.component';
-import { Page1Component } from './page-1.component';
-import { Page2Component } from './page-2.component';
-import { Page3Component } from './page-3.component';
+import { SubcategoryComponent } from './subcategory.component';
 
 const HomeRoutes: Routes = [
   {
@@ -12,19 +12,19 @@ const HomeRoutes: Routes = [
     component: HomeComponent,
     children: [
       {
-        path: 'page-1',
-        component: Page1Component,
-        data: { breadcrumb: { alias: 'Page1' } },
+        path: 'category',
+        component: CategoryComponent,
+        data: { breadcrumb: { alias: 'Category' } },
         children: [
           {
-            path: 'page-2',
-            component: Page2Component,
-            data: { breadcrumb: { alias: 'Page2' } },
+            path: 'subcategory',
+            component: SubcategoryComponent,
+            data: { breadcrumb: { alias: 'Subcategory' } },
             children: [
               {
-                path: 'page-3',
-                component: Page3Component,
-                data: { breadcrumb: { alias: 'Page3' } },
+                path: 'element',
+                component: ElementComponent,
+                data: { breadcrumb: { alias: 'Element' } },
               },
             ],
           },

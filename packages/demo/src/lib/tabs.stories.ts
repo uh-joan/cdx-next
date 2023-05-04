@@ -1,4 +1,5 @@
 import { MatTabsModule } from '@angular/material/tabs';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ThemeModule } from '@cdx/theme-angular-material';
 import { Meta, moduleMetadata, Story } from '@storybook/angular';
 import { html } from 'common-tags';
@@ -8,14 +9,13 @@ export default {
   component: MatTabsModule,
   decorators: [
     moduleMetadata({
-      imports: [MatTabsModule, ThemeModule],
+      imports: [BrowserAnimationsModule, MatTabsModule, ThemeModule],
     }),
   ],
 } as Meta;
 
 const TabsTemplate: Story = () => ({
   template: html`
-    <h3>Tabs</h3>
     <div class="story">
       <mat-tab-group>
         <mat-tab label="First">Code</mat-tab>
