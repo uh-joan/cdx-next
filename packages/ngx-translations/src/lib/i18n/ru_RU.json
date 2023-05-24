@@ -1,0 +1,14 @@
+{
+  "FOOTER": {
+    "COMPANY": "Компания",
+    "COOKIE_POLICY": "политика использования файлов cookie",
+    "LEGAL_CENTER": "юридический центр",
+    "MANAGE_COOKIE_PREFERENCES": "Управление настройками файлов cookie",
+    "PRIVACY_NOTICE": "Уведомление о конфиденциальности"
+  },
+  "HEADER": {
+    "SIGN_IN": "Войти",
+    "SIGN_OUT": "выход"
+  },
+  "lang": "ru_RU"
+}

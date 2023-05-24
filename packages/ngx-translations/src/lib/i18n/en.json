@@ -1,0 +1,14 @@
+{
+  "FOOTER": {
+    "COMPANY": "Company",
+    "COOKIE_POLICY": "Cookie policy",
+    "LEGAL_CENTER": "Legal center",
+    "MANAGE_COOKIE_PREFERENCES": "Manage cookie preferences",
+    "PRIVACY_NOTICE": "privacy notice"
+  },
+  "HEADER": {
+    "SIGN_IN": "Sign in",
+    "SIGN_OUT": "Sign out"
+  },
+  "lang": "en"
+}

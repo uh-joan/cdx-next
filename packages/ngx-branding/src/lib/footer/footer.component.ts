@@ -18,6 +18,7 @@ import { OneTrustService } from '../one-trust/one-trust.service';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FooterComponent {
+  @Input() shouldShowTranslations = false;
   @Input()
   get groupCompanyLinks() {
     return this._groupCompanyLinks;

@@ -1,10 +1,10 @@
 {
-  "name": "@cdx/ngx-authentication",
+  "name": "@cdx/ngx-translations",
   "version": "2.2.1",
   "repository": {
     "type": "git",
     "url": "ssh://git@git.clarivate.io/cdxn/cdx-next.git",
-    "directory": "packages/ngx-authentication"
+    "directory": "packages/ngx-translations"
   },
   "dependencies": {
     "tslib": "^2.3.0"
@@ -12,10 +12,6 @@
   "peerDependencies": {
     "@angular/common": "14",
     "@angular/core": "14",
-    "@angular/material": "14",
-    "@angular/platform-browser": "14",
-    "@angular/router": "14",
-    "@cdx/theme-angular-material": "*",
     "@ngx-translate/core": "^14.0.0"
   }
 }

@@ -1,0 +1,14 @@
+{
+  "APP": {
+    "HOME": "Inicio",
+    "LOGIN": "Iniciar sesión",
+    "SANDWICH": "Emparedado",
+    "SELECT_LANGUAGE": "Seleccione el idioma",
+    "SIGN_UP": "Inscribirse"
+  },
+  "HOME_PAGE": {
+    "HOME": "Inicio",
+    "WELCOME": "Bienvenido a la página de inicio!"
+  },
+  "lang": "es_ES"
+}

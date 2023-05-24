@@ -1,0 +1,14 @@
+{
+  "FOOTER": {
+    "COMPANY": "Empresa",
+    "COOKIE_POLICY": "Política de cookies",
+    "LEGAL_CENTER": "Centro legal",
+    "MANAGE_COOKIE_PREFERENCES": "Administrar preferencias de cookies",
+    "PRIVACY_NOTICE": "Aviso de privacidad"
+  },
+  "HEADER": {
+    "SIGN_IN": "Registrarse",
+    "SIGN_OUT": "Desconectar"
+  },
+  "lang": "es_ES"
+}

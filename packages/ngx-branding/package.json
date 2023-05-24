@@ -22,6 +22,7 @@
     "@angular/core": "14",
     "@angular/platform-browser": "14",
     "@cdx/shared-branding": "*",
-    "@cdx/theme-angular-material": "*"
+    "@cdx/theme-angular-material": "*",
+    "@ngx-translate/core": "^14.0.0"
   }
 }

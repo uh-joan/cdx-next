@@ -1,0 +1,13 @@
+{
+  "APP": {
+    "HOME": "Home",
+    "LOGIN": "Login",
+    "SANDWICH": "Sandwich",
+    "SELECT_LANGUAGE": "Select language",
+    "SIGN_UP": "Sign up"
+  },
+  "HOME_PAGE": {
+    "WELCOME": "Welcome to the Home Page!"
+  },
+  "lang": "en"
+}

@@ -1,0 +1,13 @@
+{
+  "APP": {
+    "HOME": "집",
+    "LOGIN": "로그인",
+    "SANDWICH": "샌드위치",
+    "SELECT_LANGUAGE": "언어 선택",
+    "SIGN_UP": "가입하기"
+  },
+  "HOME_PAGE": {
+    "WELCOME": "홈 페이지에 오신 것을 환영합니다!"
+  },
+  "lang": "ko_KR"
+}

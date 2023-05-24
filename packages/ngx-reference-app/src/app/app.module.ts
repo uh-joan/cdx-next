@@ -1,5 +1,8 @@
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSelectModule } from '@angular/material/select';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {
   AnalyticsContextSchema,
@@ -20,6 +23,8 @@ import {
   HeaderGlobalSessionManagementModule,
   SessionActivityModule,
 } from '@cdx/ngx-session-activity';
+import { NgxTranslationsModule } from '@cdx/ngx-translations';
+import { TranslateModule } from '@ngx-translate/core';
 
 import { AppComponent } from './app.component';
 import { AppRoutesModule } from './app.routes';
@@ -65,6 +70,13 @@ const ANALYTICS_CONTEXT: AnalyticsContextSchema = {
       pingIntervalMinutes: 20,
     }),
     AppRoutesModule,
+    TranslateModule.forRoot({
+      defaultLanguage: 'en',
+    }),
+    NgxTranslationsModule,
+    MatSelectModule,
+    MatFormFieldModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

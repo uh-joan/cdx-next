@@ -31,7 +31,9 @@
         <ng-content select="[cdx-menu-content-action]"></ng-content>
       </div>
       <button color="primary" mat-button (click)="logoutWithRouteSnapshot()">
-        Sign out
+        {{
+          shouldShowTranslations ? ('HEADER.SIGN_OUT' | translate) : 'Sign out'
+        }}
       </button>
     </div>
   </ng-container>
@@ -40,6 +42,8 @@
 <ng-template #notAuthenticated>
   <button mat-button (click)="loginWithRouteSnapshot()">
     <mat-icon>login</mat-icon>
-    <span>Sign in</span>
+    <span>
+      {{ shouldShowTranslations ? ('HEADER.SIGN_IN' | translate) : 'Sign in' }}
+    </span>
   </button>
 </ng-template>

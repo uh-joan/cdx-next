@@ -4,6 +4,7 @@ import { AnalyticsModule, AnalyticsService } from '@cdx/ngx-analytics';
 import { AuthenticationModule } from '@cdx/ngx-authentication';
 import { HeaderModule, OneTrustModule } from '@cdx/ngx-branding';
 import { SessionActivityModule } from '@cdx/ngx-session-activity';
+import { TranslateModule } from '@ngx-translate/core';
 
 import { AppComponent } from './app.component';
 
@@ -25,6 +26,9 @@ describe('AppComponent', () => {
           appId: 'reference-app',
         }),
         RouterTestingModule,
+        TranslateModule.forRoot({
+          defaultLanguage: 'en',
+        }),
       ],
       providers: [AnalyticsService],
     }).compileComponents();

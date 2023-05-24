@@ -1,43 +1,56 @@
-<div class="cdx-with-header">
-  <header cdx-header>
-    <cdx-header-global>
-      <cdx-header-product-name
-        ><button
-          class="cdx-router-link"
-          mat-stroked-button
-          title="Home"
-          role="link"
-          [routerLink]="'/home'"
-          [routerLinkActive]="'cdx-is-active'"
-        >
-          Home
-        </button>
-        <button
-          class="cdx-router-link"
-          mat-stroked-button
-          title="Sandwich"
-          [routerLink]="'/sandwich'"
-          [routerLinkActive]="'cdx-is-active'"
-        >
-          Sandwich
-        </button></cdx-header-product-name
+<header cdx-header>
+  <cdx-header-global>
+    <cdx-header-product-name>
+      <button
+        class="cdx-router-link"
+        mat-stroked-button
+        title="Home"
+        role="link"
+        [routerLink]="'/home'"
+        [routerLinkActive]="'cdx-is-active'"
       >
-      <cdx-header-global-user-profile withSessionManagement>
-      </cdx-header-global-user-profile>
-    </cdx-header-global>
-    <img
-      cdx-header-product-logo
-      src="https://clarivate.com/code/wp-content/themes/clarivate/src/img/logo.svg?v=2.4.32"
-      style="max-width: 140px"
-    />
-    <div style="display: inherit; justify-content: end">
-      <button mat-button style="margin-right: 1rem">Sign up</button>
-      <button mat-flat-button color="primary">Login</button>
-    </div>
-  </header>
-</div>
+        {{ 'APP.HOME' | translate }}
+      </button>
+      <button
+        class="cdx-router-link"
+        mat-stroked-button
+        title="Sandwich"
+        [routerLink]="'/sandwich'"
+        [routerLinkActive]="'cdx-is-active'"
+      >
+        {{ 'APP.SANDWICH' | translate }}
+      </button>
+    </cdx-header-product-name>
+    <cdx-header-global-user-profile
+      withSessionManagement
+      [shouldShowTranslations]="true"
+    >
+    </cdx-header-global-user-profile>
+  </cdx-header-global>
+  <img
+    cdx-header-product-logo
+    src="https://clarivate.com/code/wp-content/themes/clarivate/src/img/logo.svg?v=2.4.32"
+    style="max-width: 140px"
+  />
+  <form [formGroup]="formLanguage">
+    <mat-form-field appearance="outline">
+      <mat-label>{{ 'APP.SELECT_LANGUAGE' | translate }}</mat-label>
+      <mat-select
+        placeholder="Choose an option"
+        panelClass="common-panel"
+        formControlName="language"
+      >
+        <ng-container *ngFor="let language of MAP_LANGUAGES">
+          <mat-option [value]="language.value">{{ language.name }}</mat-option>
+        </ng-container>
+      </mat-select>
+    </mat-form-field>
+  </form>
+</header>
+
 <router-outlet></router-outlet>
-<footer cdx-footer>
+
+<footer cdx-footer [shouldShowTranslations]="true">
   <a cdx-footer-link href="https://stackoverflow.com/">Stack Overflow</a>
   <a cdx-footer-link href="https://www.powerlanguage.co.uk/wordle/"> Wordle </a>
 </footer>

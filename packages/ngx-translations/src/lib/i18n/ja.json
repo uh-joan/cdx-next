@@ -1,0 +1,14 @@
+{
+  "FOOTER": {
+    "COMPANY": "会社",
+    "COOKIE_POLICY": "クッキーポリシー",
+    "LEGAL_CENTER": "法務センター",
+    "MANAGE_COOKIE_PREFERENCES": "クッキーの設定を管理する",
+    "PRIVACY_NOTICE": "プライバシー通知"
+  },
+  "HEADER": {
+    "SIGN_IN": "ログイン",
+    "SIGN_OUT": "サインアウト"
+  },
+  "lang": "ja"
+}

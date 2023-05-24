@@ -1,0 +1,14 @@
+{
+  "FOOTER": {
+    "COMPANY": "شركة",
+    "COOKIE_POLICY": "سياسة ملفات الارتباط",
+    "LEGAL_CENTER": "المركز القانوني",
+    "MANAGE_COOKIE_PREFERENCES": "إدارة تفضيلات ملفات تعريف الارتباط",
+    "PRIVACY_NOTICE": "إشعار الخصوصية"
+  },
+  "HEADER": {
+    "SIGN_IN": "تسجيل الدخول",
+    "SIGN_OUT": "خروج"
+  },
+  "lang": "ar_SA"
+}

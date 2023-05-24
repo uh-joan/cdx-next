@@ -1,0 +1,13 @@
+{
+  "APP": {
+    "HOME": "Pagina inicial",
+    "LOGIN": "Conecte-se",
+    "SANDWICH": "Sanduíche",
+    "SELECT_LANGUAGE": "Selecione o idioma",
+    "SIGN_UP": "Inscrever-se"
+  },
+  "HOME_PAGE": {
+    "WELCOME": "Bem-vindo à página inicial!"
+  },
+  "lang": "pt_BR"
+}

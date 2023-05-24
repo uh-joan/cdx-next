@@ -1,0 +1,14 @@
+{
+  "FOOTER": {
+    "COMPANY": "公司",
+    "COOKIE_POLICY": "餅乾政策",
+    "LEGAL_CENTER": "法律中心",
+    "MANAGE_COOKIE_PREFERENCES": "管理 cookie 首選項",
+    "PRIVACY_NOTICE": "隱私聲明"
+  },
+  "HEADER": {
+    "SIGN_IN": "登入",
+    "SIGN_OUT": "登出"
+  },
+  "lang": "zh_TW"
+}

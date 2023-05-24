@@ -1,0 +1,13 @@
+{
+  "APP": {
+    "HOME": "家",
+    "LOGIN": "登錄",
+    "SANDWICH": "三明治",
+    "SELECT_LANGUAGE": "選擇語言",
+    "SIGN_UP": "註冊"
+  },
+  "HOME_PAGE": {
+    "WELCOME": "歡迎來到主頁！"
+  },
+  "lang": "zh_TW"
+}

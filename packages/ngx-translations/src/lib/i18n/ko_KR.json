@@ -1,0 +1,14 @@
+{
+  "FOOTER": {
+    "COMPANY": "회사",
+    "COOKIE_POLICY": "쿠키 정책",
+    "LEGAL_CENTER": "법률 센터",
+    "MANAGE_COOKIE_PREFERENCES": "쿠키 기본 설정 관리",
+    "PRIVACY_NOTICE": "개인정보 보호정책"
+  },
+  "HEADER": {
+    "SIGN_IN": "로그인",
+    "SIGN_OUT": "로그아웃"
+  },
+  "lang": "ko_KR"
+}

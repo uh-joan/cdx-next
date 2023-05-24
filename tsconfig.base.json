@@ -19,6 +19,7 @@
       "@cdx/ngx-session-activity": [
         "packages/ngx-session-activity/src/index.ts"
       ],
+      "@cdx/ngx-translations": ["packages/ngx-translations/src/index.ts"],
       "@cdx/notification": ["packages/notification/src/index.ts"],
       "@cdx/rcx-analytics": ["packages/rcx-analytics/src/index.ts"],
       "@cdx/rcx-branding": ["packages/rcx-branding/src/index.ts"],
@@ -31,6 +32,7 @@
         "packages/theme-xng-breadcrumb/src/index.ts"
       ]
     },
+    "resolveJsonModule": true,
     "rootDir": ".",
     "skipDefaultLibCheck": true,
     "skipLibCheck": true,

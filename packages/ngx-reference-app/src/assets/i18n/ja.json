@@ -1,0 +1,13 @@
+{
+  "APP": {
+    "HOME": "家",
+    "LOGIN": "ログイン",
+    "SANDWICH": "サンドイッチ",
+    "SELECT_LANGUAGE": "言語を選択する",
+    "SIGN_UP": "サインアップ"
+  },
+  "HOME_PAGE": {
+    "WELCOME": "ホームページへようこそ！"
+  },
+  "lang": "ja"
+}

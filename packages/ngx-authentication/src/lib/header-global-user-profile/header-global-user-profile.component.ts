@@ -3,6 +3,7 @@ import {
   Component,
   ContentChild,
   ElementRef,
+  Input,
   OnInit,
   ViewEncapsulation,
 } from '@angular/core';
@@ -20,6 +21,7 @@ import { JwtToken } from '../authentication.types';
 export class HeaderGlobalUserProfileComponent implements OnInit {
   @ContentChild('menuTriggerCustom') menuTriggerCustom!: ElementRef;
   @ContentChild('menuContentCustom') menuContentCustom!: ElementRef;
+  @Input() shouldShowTranslations = false;
 
   authenticated = false;
   tokenPayload: JwtToken | null = null;

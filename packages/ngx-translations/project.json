@@ -1,0 +1,42 @@
+{
+  "prefix": "cdx",
+  "projectType": "library",
+  "root": "packages/ngx-translations",
+  "sourceRoot": "packages/ngx-translations/src",
+  "tags": [],
+  "targets": {
+    "build": {
+      "configurations": {
+        "development": {
+          "tsConfig": "packages/ngx-translations/tsconfig.lib.json"
+        },
+        "production": {
+          "tsConfig": "packages/ngx-translations/tsconfig.lib.prod.json"
+        }
+      },
+      "defaultConfiguration": "production",
+      "executor": "@nrwl/angular:package",
+      "options": {
+        "project": "packages/ngx-translations/ng-package.json"
+      },
+      "outputs": ["{workspaceRoot}/dist/packages/ngx-translations"]
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "packages/ngx-translations/src/**/*.ts",
+          "packages/ngx-translations/src/**/*.html"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "options": {
+        "jestConfig": "packages/ngx-translations/jest.config.ts",
+        "passWithNoTests": true
+      },
+      "outputs": ["{workspaceRoot}/coverage/packages/ngx-translations"]
+    }
+  }
+}

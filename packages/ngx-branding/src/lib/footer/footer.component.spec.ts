@@ -7,6 +7,7 @@ import {
 
 import { OneTrustService } from '../one-trust/one-trust.service';
 import { FooterComponent } from './footer.component';
+import { FooterModule } from './footer.module';
 
 describe('FooterComponent', () => {
   let host: SpectatorHost<FooterComponent>;
@@ -14,6 +15,7 @@ describe('FooterComponent', () => {
   const createHost = createHostFactory({
     component: FooterComponent,
     mocks: [OneTrustService],
+    imports: [FooterModule],
     shallow: true,
   });
 
