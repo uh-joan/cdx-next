@@ -57,7 +57,6 @@ export function oneTrustInitializer(
     }, document);
 
     createAndAppendScript((script) => {
-      if (document.getElementById('analytics-opt-anon-wrapper')) return;
       script.id = 'one-trust-opt-anon-wrapper';
       script.appendChild(
         document.createTextNode(`
