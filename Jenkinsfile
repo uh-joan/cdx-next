@@ -100,7 +100,7 @@ pipeline {
                 GIT_COMMITTER_NAME = "${GIT_AUTHOR_NAME}"
             }
             steps {
-                sshagent(credentials: ['jenkins-git-clarivate-io']) {
+                sshagent(credentials: ['clvci-github-com']) {
                     sh "git checkout ${BRANCH_NAME}"
                     sh 'npx nx run workspace:version --releaseAs=prerelease --preid=alpha'
                     sh '''
@@ -164,7 +164,7 @@ pipeline {
             }
 
             steps {
-                sshagent(credentials: ['jenkins-git-clarivate-io']) {
+                sshagent(credentials: ['clvci-github-com']) {
                     sh "git checkout ${BRANCH_NAME}"
                     sh "npx nx run workspace:version --releaseAs=${params.Level}"
                     sh '''
