@@ -21,6 +21,12 @@
       },
       "outputs": ["{workspaceRoot}/dist/packages/ngx-translations"]
     },
+    "deploy": {
+      "executor": "ngx-deploy-npm:deploy",
+      "options": {
+        "access": "public"
+      }
+    },
     "lint": {
       "executor": "@nrwl/linter:eslint",
       "options": {
