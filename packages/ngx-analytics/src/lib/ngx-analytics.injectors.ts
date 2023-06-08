@@ -72,8 +72,6 @@ export function analyticsInitializer(
               let user = (JSON.parse(localStorage.getItem("analytics")) || {}).visitor || {};
               const visitorId = user.id ? user.id : GUEST_OBJ_MOCK.visitor.id
 
-              console.log({dataLayer, GroupsArr, user});
-
               const hasAccepted = (list) => list['OnetrustActiveGroups'].split(',').indexOf('C0003') !== -1;
 
               if (GroupsArr.length > 1) { 

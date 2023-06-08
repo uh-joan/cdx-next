@@ -87,7 +87,11 @@ export class AnalyticsService {
   }
 
   trackPageView(pageViewEvent: PageViewEvent & CommonEventProperties): void {
-    if (this.isOneTrustEnabled() && !this.cookiesAccepted) return;
+    if (this.isOneTrustEnabled()) {
+      if (!this.cookiesAccepted) {
+        return;
+      }
+    }
     trackPageView(pageViewEvent);
   }
 

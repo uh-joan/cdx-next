@@ -33,7 +33,7 @@ export class OneTrustService {
   private isScriptsInserted(): boolean {
     return (
       this.document.head.querySelectorAll(
-        'script#one-trust-auto-block, script#one-trust-sdk-stub, script#one-trust-opt-anon-wrapper',
+        'script#one-trust-auto-block, script#one-trust-sdk-stub, script#one-trust-opt-anon-wrapper, script#analytics-opt-anon-wrapper',
       ).length == 3
     );
   }
