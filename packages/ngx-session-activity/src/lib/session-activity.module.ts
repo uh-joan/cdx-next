@@ -1,6 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
-import { ModuleWithProviders, NgModule } from '@angular/core';
+import {
+  ModuleWithProviders,
+  NgModule,
+  Renderer2,
+  RendererFactory2,
+} from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
 import { NgIdleKeepaliveModule } from '@ng-idle/keepalive';
@@ -30,7 +35,16 @@ export class SessionActivityModule {
           provide: SESSION_ACTIVITY_SETTINGS,
           useValue: settings,
         },
+        {
+          provide: Renderer2,
+          useFactory: rendererFactory,
+          deps: [RendererFactory2],
+        },
       ],
     };
   }
+}
+
+export function rendererFactory(rendererFactory: RendererFactory2): Renderer2 {
+  return rendererFactory.createRenderer(null, null);
 }

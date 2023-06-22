@@ -11,6 +11,15 @@ export const LOGOUT_TYPE = {
   SESSION_EXPIRED: 'security-token-expired',
 };
 
+export const BROWSER_VISIBILITY = {
+  DOCUMENT: 'document',
+  VISIBILITY_CHANGE: 'visibilitychange',
+  VISIBLE: 'visible',
+  HIDDEN: 'hidden',
+};
+
+export const OUT_OF_PAGE_TIME = 'out-of-page-time';
+
 export const LAST_HYDRATE = 'lastHydrateTime';
 
 export interface SessionActivitySettings {

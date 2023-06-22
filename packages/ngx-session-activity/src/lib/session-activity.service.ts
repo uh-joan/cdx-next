@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Inject, Injectable, OnDestroy } from '@angular/core';
+import { Inject, Injectable, OnDestroy, Renderer2 } from '@angular/core';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { DEFAULT_INTERRUPTSOURCES, Idle, LocalStorage } from '@ng-idle/core';
 import { Subject } from 'rxjs';
@@ -9,10 +9,12 @@ import { InactivityDialogComponent } from './inactivity-dialog/inactivity-dialog
 import { IDLE_CONFIG } from './session-activity.config';
 import { SESSION_ACTIVITY_SETTINGS } from './session-activity.injectors';
 import {
+  BROWSER_VISIBILITY,
   DIALOG_RESULTS,
   DialogResultsType,
   LAST_HYDRATE,
   LOGOUT_TYPE,
+  OUT_OF_PAGE_TIME,
   SessionActivitySettings,
 } from './session-activity.model';
 
@@ -35,7 +37,16 @@ export class SessionActivityService implements OnDestroy {
     private http: HttpClient,
     private dialog: MatDialog,
     private localStorage: LocalStorage,
+    private renderer: Renderer2,
   ) {
+    this.renderer.listen(
+      BROWSER_VISIBILITY.DOCUMENT,
+      BROWSER_VISIBILITY.VISIBILITY_CHANGE,
+      (event: Event) => {
+        this.onVisibilityChange(event.target as Document);
+      },
+    );
+
     idle.onIdleStart
       .pipe(takeWhile(() => this.isThisComponentAlive))
       .subscribe(() => {
@@ -53,9 +64,7 @@ export class SessionActivityService implements OnDestroy {
     idle.onTimeout
       .pipe(takeWhile(() => this.isThisComponentAlive))
       .subscribe(() => {
-        this.dialog.closeAll();
-        this.localStorage.removeItem(LAST_HYDRATE);
-        this.sessionActivitySubject.next(LOGOUT_TYPE.SESSION_EXPIRED);
+        this.expireSession();
       });
 
     idle.onTimeoutWarning
@@ -72,6 +81,25 @@ export class SessionActivityService implements OnDestroy {
           this.rehydrate();
         }
       });
+  }
+
+  onVisibilityChange(doc: Document) {
+    if (doc.visibilityState === BROWSER_VISIBILITY.VISIBLE) {
+      const outOfPageTime = Number(localStorage.getItem(OUT_OF_PAGE_TIME));
+      const expirationTime =
+        (this.idle.getIdle() + this.idle.getTimeout()) * 1000;
+      if (outOfPageTime && Date.now() - outOfPageTime > expirationTime) {
+        this.expireSession();
+      }
+    } else if (doc.visibilityState === BROWSER_VISIBILITY.HIDDEN) {
+      localStorage.setItem(OUT_OF_PAGE_TIME, new Date().getTime().toString());
+    }
+  }
+
+  expireSession() {
+    this.dialog.closeAll();
+    this.localStorage.removeItem(LAST_HYDRATE);
+    this.sessionActivitySubject.next(LOGOUT_TYPE.SESSION_EXPIRED);
   }
 
   rehydrate() {
@@ -132,7 +160,7 @@ export class SessionActivityService implements OnDestroy {
           this.localStorage.removeItem(LAST_HYDRATE);
           this.sessionActivitySubject.next(LOGOUT_TYPE.LOGOUT_SELECTED);
         } else if (result === DIALOG_RESULTS.EXTEND) {
-          this.idle.interrupt();
+          this.resetIdle();
           this.rehydrate();
         }
       });
