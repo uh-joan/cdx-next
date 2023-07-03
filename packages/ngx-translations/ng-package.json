@@ -1,5 +1,12 @@
 {
   "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
+  "assets": [
+    {
+      "glob": "*.json",
+      "input": "./src/lib/i18n",
+      "output": "lib/i18n"
+    }
+  ],
   "dest": "../../dist/packages/ngx-translations",
   "lib": {
     "entryFile": "src/index.ts"
