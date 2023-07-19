@@ -10,5 +10,12 @@
     "SIGN_IN": "登入",
     "SIGN_OUT": "登出"
   },
+  "INACTIVITY_DIALOG": {
+    "CONTINUE_SESSION": "繼續會話",
+    "LOGOUT": "登出",
+    "REDIRECTION_MESSAGE": "您將被重定向至 {{ countdown }} 秒",
+    "SESSION_EXPIRE_WARNING": "會話過期警告",
+    "SESSION_EXPIRING": "您的會話即將到期"
+  },
   "lang": "zh_TW"
 }

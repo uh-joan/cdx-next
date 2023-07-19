@@ -10,5 +10,12 @@
     "SIGN_IN": "تسجيل الدخول",
     "SIGN_OUT": "خروج"
   },
+  "INACTIVITY_DIALOG": {
+    "CONTINUE_SESSION": "تواصل الجلسة",
+    "LOGOUT": "تسجيل خروج",
+    "REDIRECTION_MESSAGE": "ستتم إعادة توجيهك إلى {{ countdown }} ثواني",
+    "SESSION_EXPIRE_WARNING": "تحذير انتهاء الجلسة",
+    "SESSION_EXPIRING": "جلستك على وشك الانتهاء"
+  },
   "lang": "ar_SA"
 }

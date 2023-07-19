@@ -10,5 +10,12 @@
     "SIGN_IN": "Sign in",
     "SIGN_OUT": "Sign out"
   },
+  "INACTIVITY_DIALOG": {
+    "CONTINUE_SESSION": "Continue session",
+    "LOGOUT": "Logout",
+    "REDIRECTION_MESSAGE": "You'll be redirected in {{ countdown }} seconds",
+    "SESSION_EXPIRE_WARNING": "Session expire warning",
+    "SESSION_EXPIRING": "Your session is about to expire"
+  },
   "lang": "en"
 }

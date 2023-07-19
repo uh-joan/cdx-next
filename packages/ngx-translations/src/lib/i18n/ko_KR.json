@@ -10,5 +10,12 @@
     "SIGN_IN": "로그인",
     "SIGN_OUT": "로그아웃"
   },
+  "INACTIVITY_DIALOG": {
+    "CONTINUE_SESSION": "세션 계속하기",
+    "LOGOUT": "로그 아웃",
+    "REDIRECTION_MESSAGE": "다음 위치로 리디렉션됩니다. {{ countdown }} 초",
+    "SESSION_EXPIRE_WARNING": "세션 만료 경고",
+    "SESSION_EXPIRING": "세션이 곧 만료됩니다"
+  },
   "lang": "ko_KR"
 }

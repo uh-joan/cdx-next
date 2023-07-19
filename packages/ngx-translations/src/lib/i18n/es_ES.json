@@ -10,5 +10,12 @@
     "SIGN_IN": "Registrarse",
     "SIGN_OUT": "Desconectar"
   },
+  "INACTIVITY_DIALOG": {
+    "CONTINUE_SESSION": "Continuar sesión",
+    "LOGOUT": "Cerrar sesión",
+    "REDIRECTION_MESSAGE": "Serás redirigido en {{ countdown }} segundos",
+    "SESSION_EXPIRE_WARNING": "Aviso de expiración de sesión",
+    "SESSION_EXPIRING": "Su sesión está a punto de caducar"
+  },
   "lang": "es_ES"
 }

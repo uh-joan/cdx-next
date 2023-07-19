@@ -10,5 +10,12 @@
     "SIGN_IN": "Войти",
     "SIGN_OUT": "выход"
   },
+  "INACTIVITY_DIALOG": {
+    "CONTINUE_SESSION": "Продолжить сеанс",
+    "LOGOUT": "Выйти",
+    "REDIRECTION_MESSAGE": "Вы будете перенаправлены в {{ countdown }} секунды",
+    "SESSION_EXPIRE_WARNING": "Предупреждение об окончании сеанса",
+    "SESSION_EXPIRING": "Ваша сессия истекает"
+  },
   "lang": "ru_RU"
 }

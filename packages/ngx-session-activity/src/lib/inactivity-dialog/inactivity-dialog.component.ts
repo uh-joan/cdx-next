@@ -1,4 +1,5 @@
-import { Component, OnDestroy } from '@angular/core';
+import { Component, Inject, OnDestroy } from '@angular/core';
+import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Idle } from '@ng-idle/core';
 import { Subscription } from 'rxjs';
 
@@ -15,7 +16,10 @@ export class InactivityDialogComponent implements OnDestroy {
   countdown?: number;
   timeoutSubscription: Subscription;
 
-  constructor(private idle: Idle) {
+  constructor(
+    @Inject(MAT_DIALOG_DATA) public data: { shouldShowTranslations?: boolean },
+    private idle: Idle,
+  ) {
     this.timeoutSubscription = this.idle.onTimeoutWarning.subscribe(
       (seconds: number) => {
         this.countdown = seconds;

@@ -68,6 +68,7 @@ const ANALYTICS_CONTEXT: AnalyticsContextSchema = {
       expireDurationMinutes: 2,
       expireWarningMinutes: 1,
       pingIntervalMinutes: 20,
+      shouldShowTranslations: true,
     }),
     AppRoutesModule,
     TranslateModule.forRoot({

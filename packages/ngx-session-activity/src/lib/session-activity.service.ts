@@ -148,6 +148,9 @@ export class SessionActivityService implements OnDestroy {
   openInactivityDialog(): void {
     this.dialogRef = this.dialog.open(InactivityDialogComponent, {
       disableClose: true,
+      data: {
+        shouldShowTranslations: this.settings?.shouldShowTranslations ?? false,
+      },
     });
 
     this.dialogRef

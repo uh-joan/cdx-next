@@ -10,5 +10,12 @@
     "SIGN_IN": "ログイン",
     "SIGN_OUT": "サインアウト"
   },
+  "INACTIVITY_DIALOG": {
+    "CONTINUE_SESSION": "セッションを継続する",
+    "LOGOUT": "ログアウト",
+    "REDIRECTION_MESSAGE": "リダイレクトされます {{ countdown }} 秒",
+    "SESSION_EXPIRE_WARNING": "セッション期限切れの警告",
+    "SESSION_EXPIRING": "セッションの有効期限が近づいています"
+  },
   "lang": "ja"
 }

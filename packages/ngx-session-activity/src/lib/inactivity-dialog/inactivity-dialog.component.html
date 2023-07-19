@@ -1,8 +1,27 @@
 <div class="cdx-dialog__top">
-  <h2 mat-dialog-title>Session expire warning</h2>
+  <h2 mat-dialog-title>
+    {{
+      data.shouldShowTranslations
+        ? ('INACTIVITY_DIALOG.SESSION_EXPIRE_WARNING' | translate)
+        : 'Session expire warning'
+    }}
+  </h2>
   <mat-dialog-content role="dialog">
-    <p>Your session is about to expire</p>
-    <p>You'll be redirected in {{ countdown }} seconds</p>
+    <p>
+      {{
+        data.shouldShowTranslations
+          ? ('INACTIVITY_DIALOG.SESSION_EXPIRING' | translate)
+          : 'Your session is about to expire'
+      }}
+    </p>
+    <p>
+      {{
+        data.shouldShowTranslations
+          ? ('INACTIVITY_DIALOG.REDIRECTION_MESSAGE'
+            | translate: { countdown: countdown })
+          : "You'll be redirected in " + countdown + ' seconds'
+      }}
+    </p>
   </mat-dialog-content>
 </div>
 <div class="cdx-dialog__bottom">
@@ -15,7 +34,11 @@
       role="button"
       class="mat-stroked-button mat-primary"
     >
-      Logout
+      {{
+        data.shouldShowTranslations
+          ? ('INACTIVITY_DIALOG.LOGOUT' | translate)
+          : 'Logout'
+      }}
     </button>
     <button
       mat-button
@@ -25,7 +48,11 @@
       title="primary apply button"
       class="mat-flat-button mat-primary"
     >
-      Continue session
+      {{
+        data.shouldShowTranslations
+          ? ('INACTIVITY_DIALOG.CONTINUE_SESSION' | translate)
+          : 'Continue Session'
+      }}
     </button>
   </mat-dialog-actions>
 </div>

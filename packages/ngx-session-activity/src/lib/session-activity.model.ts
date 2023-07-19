@@ -27,4 +27,5 @@ export interface SessionActivitySettings {
   expireWarningMinutes: number;
   pingIntervalMinutes: number;
   shouldNotRehydrate?: boolean;
+  shouldShowTranslations?: boolean;
 }
