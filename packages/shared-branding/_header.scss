@@ -15,6 +15,7 @@ $header-bar-base-height: 2.5rem;
   &__logo--clarivate {
     width: 110px;
     height: 20px;
+    cursor: pointer;
 
     > svg {
       > path {

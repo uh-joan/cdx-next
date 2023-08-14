@@ -30,4 +30,8 @@ export class HeaderComponent implements AfterViewInit {
       this.productIdentification?.nativeElement.remove();
     }
   }
+
+  goToMainPage(): void {
+    window.open('http://www.clarivate.com', '_self');
+  }
 }

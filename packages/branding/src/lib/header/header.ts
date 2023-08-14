@@ -47,6 +47,13 @@ export class Header extends LitElement {
     if (!productIdentification.children.length) {
       this.toRemove(productIdentification);
     }
+
+    const logoElement = this.shadowRoot.querySelector(
+      '.cdx-header__logo--clarivate',
+    );
+    logoElement.addEventListener('click', () => {
+      window.location.href = 'http://www.clarivate.com';
+    });
   }
 
   private toRemove(element: Element) {

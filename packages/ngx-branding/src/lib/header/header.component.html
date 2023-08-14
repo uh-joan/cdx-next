@@ -2,7 +2,7 @@
   class="cdx-header__global-bar"
   [style.background-color]="theme?.header?.background"
 >
-  <div class="cdx-header__logo--clarivate">
+  <div class="cdx-header__logo--clarivate" (click)="goToMainPage()">
     <svg width="110" height="20" xmlns="http://www.w3.org/2000/svg">
       <path
         [style.fill]="theme?.header?.color"
