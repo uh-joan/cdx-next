@@ -3,6 +3,8 @@ import {
   SessionActivityService,
 } from '@cdx/ngx-session-activity';
 import { createServiceFactory, SpectatorService } from '@ngneat/spectator/jest';
+import { TranslateService } from '@ngx-translate/core';
+import { of } from 'rxjs';
 
 import { IDLE_CONFIG } from './session-activity.config';
 import { SESSION_ACTIVITY_SETTINGS } from './session-activity.injectors';
@@ -13,6 +15,14 @@ describe('SessionActivityService', () => {
   const createService = createServiceFactory({
     service: SessionActivityService,
     imports: [SessionActivityModule.forRoot()],
+    providers: [
+      {
+        provide: TranslateService,
+        useValue: {
+          get: (key: any) => of(key),
+        },
+      },
+    ],
   });
 
   describe('when Initialize method is called without parameters and without providing configuration in the module', () => {

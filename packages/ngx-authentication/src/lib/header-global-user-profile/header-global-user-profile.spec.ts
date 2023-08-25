@@ -2,7 +2,9 @@ import { By } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { AuthenticationModule } from '@cdx/ngx-authentication';
 import { createHostFactory, SpectatorHost } from '@ngneat/spectator/jest';
+import { TranslateService } from '@ngx-translate/core';
 import { location } from 'jest-globals';
+import { of } from 'rxjs';
 
 import { HeaderGlobalUserProfileComponent } from './header-global-user-profile.component';
 import { HeaderGlobalUserProfileModule } from './header-global-user-profile.module';
@@ -22,6 +24,12 @@ describe('HeaderGlobalUserProfileComponent', () => {
       {
         provide: Router,
         useValue: { url: 'home' },
+      },
+      {
+        provide: TranslateService,
+        useValue: {
+          get: (key: any) => of(key),
+        },
       },
     ],
   });

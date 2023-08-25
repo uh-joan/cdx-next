@@ -4,6 +4,8 @@ import {
   SpectatorHost,
   SpyObject,
 } from '@ngneat/spectator/jest';
+import { TranslateService } from '@ngx-translate/core';
+import { of } from 'rxjs';
 
 import { OneTrustService } from '../one-trust/one-trust.service';
 import { FooterComponent } from './footer.component';
@@ -16,6 +18,14 @@ describe('FooterComponent', () => {
     component: FooterComponent,
     mocks: [OneTrustService],
     imports: [FooterModule],
+    providers: [
+      {
+        provide: TranslateService,
+        useValue: {
+          get: (key: any) => of(key),
+        },
+      },
+    ],
     shallow: true,
   });
 

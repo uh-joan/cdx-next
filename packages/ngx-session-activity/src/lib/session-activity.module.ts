@@ -23,7 +23,7 @@ import { SessionActivitySettings } from './session-activity.model';
     MatButtonModule,
     NgIdleKeepaliveModule.forRoot(),
     HttpClientModule,
-    TranslateModule.forRoot(),
+    TranslateModule.forChild(),
   ],
 })
 export class SessionActivityModule {

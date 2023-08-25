@@ -13,7 +13,7 @@ import { HeaderGlobalUserProfileComponent } from './header-global-user-profile.c
     MatButtonModule,
     MatIconModule,
     MatMenuModule,
-    TranslateModule.forRoot(),
+    TranslateModule.forChild(),
   ],
   declarations: [HeaderGlobalUserProfileComponent],
   exports: [HeaderGlobalUserProfileComponent],

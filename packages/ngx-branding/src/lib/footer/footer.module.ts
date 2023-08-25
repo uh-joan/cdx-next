@@ -9,7 +9,11 @@ import { FooterGroupTitleDirective } from './footer-group-title.directive';
 import { FooterLinkDirective } from './footer-link.directive';
 
 @NgModule({
-  imports: [CommonModule, OneTrustModule.forChild(), TranslateModule.forRoot()],
+  imports: [
+    CommonModule,
+    OneTrustModule.forChild(),
+    TranslateModule.forChild(),
+  ],
   declarations: [
     FooterComponent,
     FooterLinkDirective,
