@@ -4,8 +4,10 @@ import { MatIconModule } from '@angular/material/icon';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 import { ThemeModule } from '@cdx/theme-angular-material';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { Meta, moduleMetadata, Story } from '@storybook/angular';
 import { html } from 'common-tags';
+import { of } from 'rxjs';
 
 import { AuthenticationModule } from '../authentication.module';
 import { HeaderGlobalUserProfileComponent } from './header-global-user-profile.component';
@@ -27,7 +29,16 @@ export default {
           appId: 'cdx',
           environment: 'dev-stable',
         }),
+        TranslateModule.forChild(),
         RouterModule.forRoot([], { useHash: true }),
+      ],
+      providers: [
+        {
+          provide: TranslateService,
+          useValue: {
+            get: (key: any) => of(key),
+          },
+        },
       ],
     }),
   ],
