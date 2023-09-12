@@ -25,6 +25,8 @@ export class HeaderComponent implements AfterViewInit {
 
   @Input() theme?: ThemeOptionsBranding;
 
+  @Input() openExternalLink = false;
+
   ngAfterViewInit(): void {
     if (!this.productIdentification?.nativeElement.children.length) {
       this.productIdentification?.nativeElement.remove();
@@ -32,6 +34,9 @@ export class HeaderComponent implements AfterViewInit {
   }
 
   goToMainPage(): void {
-    window.open('http://www.clarivate.com', '_self');
+    window.open(
+      'http://www.clarivate.com',
+      this.openExternalLink ? '_blank' : '_self',
+    );
   }
 }

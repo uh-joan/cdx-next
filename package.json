@@ -20,7 +20,6 @@
     "deploy:storybooks:rcx-demo": "deploy-aws-s3-cloudfront --debug --non-interactive --source ./dist/storybook/rcx-demo --delete --invalidation-path '/*'",
     "lint": "run-s lint:*",
     "lint:commit": "commitlint --from a575076",
-    "lint:jenkins": "npm-groovy-lint --failon warning --noserver --no-insight --ignorepattern **/node_modules/** --files **/Jenkinsfile",
     "lint:nx": "run-s lint:nx:*",
     "lint:nx:format": "nx format:check",
     "lint:nx:lint": "nx run-many --all --exclude=workspace --target=lint",

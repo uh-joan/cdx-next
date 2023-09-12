@@ -1,5 +1,5 @@
 import { html, LitElement } from 'lit';
-import { customElement } from 'lit/decorators.js';
+import { customElement, property } from 'lit/decorators.js';
 
 import style from './header.scss';
 
@@ -8,6 +8,8 @@ export class Header extends LitElement {
   static get styles() {
     return style;
   }
+
+  @property() openExternalLink = false;
 
   protected render() {
     return html`
@@ -52,7 +54,10 @@ export class Header extends LitElement {
       '.cdx-header__logo--clarivate',
     );
     logoElement.addEventListener('click', () => {
-      window.location.href = 'http://www.clarivate.com';
+      window.open(
+        'http://www.clarivate.com',
+        this.openExternalLink ? '_blank' : '_self',
+      );
     });
   }
 
