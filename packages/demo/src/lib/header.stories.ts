@@ -67,6 +67,10 @@ const WithGlobalUserProfileUnauthenticatedTemplate: Story<
   `,
 });
 
+const WithExternalLogoLinkTemplate: Story<HeaderComponent> = () => ({
+  template: html`<header cdx-header [openExternalLink]="true"></header>`,
+});
+
 const WithProductNameTemplate: Story<HeaderComponent> = () => ({
   template: html`
     <!--
@@ -266,6 +270,7 @@ const BasicWithCustomThemeTemplate: Story<HeaderComponent> = () => ({
 export const Basic = BasicTemplate.bind({});
 export const WithGlobalUserProfileUnauthenticated =
   WithGlobalUserProfileUnauthenticatedTemplate.bind({});
+export const WithExternalLogoLink = WithExternalLogoLinkTemplate.bind({});
 export const WithProductName = WithProductNameTemplate.bind({});
 export const WithProductNameAsLink = WithProductNameAsLinkTemplate.bind({});
 export const WithProductLogo = WithProductLogoTemplate.bind({});
