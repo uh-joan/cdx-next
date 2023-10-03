@@ -1,6 +1,6 @@
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { ThemeModule } from '@cdx/theme-angular-material';
-import { Meta, moduleMetadata, Story } from '@storybook/angular';
+import { Meta, moduleMetadata, StoryFn } from '@storybook/angular';
 import { html } from 'common-tags';
 
 export default {
@@ -13,7 +13,7 @@ export default {
   ],
 } as Meta;
 
-const CheckboxTemplate: Story = () => ({
+const CheckboxTemplate: StoryFn = () => ({
   template: html`
     <h3>Checkbox States</h3>
     <div class="story">

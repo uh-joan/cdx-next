@@ -9,7 +9,12 @@ import ListItem from '@mui/material/ListItem';
 import ListItemAvatar from '@mui/material/ListItemAvatar';
 import ListItemText from '@mui/material/ListItemText';
 import { styled } from '@mui/material/styles';
-import * as React from 'react';
+
+const Story = {
+  component: Divider,
+  title: 'Divider',
+};
+export default Story;
 
 const style = {
   width: '100%',
@@ -110,5 +115,3 @@ export function DividerText() {
     </Root>
   );
 }
-
-export default ListDividers;

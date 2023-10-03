@@ -1,11 +1,16 @@
+import { importProvidersFrom } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatIconModule } from '@angular/material/icon';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { RouterModule } from '@angular/router';
 import { ThemeModule } from '@cdx/theme-angular-material';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
-import { Meta, moduleMetadata, Story } from '@storybook/angular';
+import {
+  applicationConfig,
+  Meta,
+  moduleMetadata,
+  StoryFn,
+} from '@storybook/angular';
 import { html } from 'common-tags';
 import { of } from 'rxjs';
 
@@ -25,12 +30,7 @@ export default {
         HeaderGlobalUserProfileModule,
         MatButtonModule,
         MatDividerModule,
-        AuthenticationModule.forRoot({
-          appId: 'cdx',
-          environment: 'dev-stable',
-        }),
         TranslateModule.forChild(),
-        RouterModule.forRoot([], { useHash: true }),
       ],
       providers: [
         {
@@ -41,6 +41,16 @@ export default {
         },
       ],
     }),
+    applicationConfig({
+      providers: [
+        importProvidersFrom(BrowserAnimationsModule),
+        importProvidersFrom(
+          AuthenticationModule.forRoot({
+            appId: 'cdx',
+          }),
+        ),
+      ],
+    }),
   ],
   argTypes: {
     authenticated: {
@@ -49,12 +59,12 @@ export default {
   },
 } as Meta<HeaderGlobalUserProfileComponent>;
 
-const Template: Story<HeaderGlobalUserProfileComponent> = (args) => ({
+const Template: StoryFn<HeaderGlobalUserProfileComponent> = (args) => ({
   props: args,
   template: html`<cdx-header-global-user-profile></cdx-header-global-user-profile>`,
 });
 
-const TemplateWithContent: Story<HeaderGlobalUserProfileComponent> = (
+const TemplateWithContent: StoryFn<HeaderGlobalUserProfileComponent> = (
   args,
 ) => ({
   props: args,
@@ -79,7 +89,7 @@ const TemplateWithContent: Story<HeaderGlobalUserProfileComponent> = (
   `,
 });
 
-const TemplateWithCustomMenu: Story<HeaderGlobalUserProfileComponent> = (
+const TemplateWithCustomMenu: StoryFn<HeaderGlobalUserProfileComponent> = (
   args,
 ) => ({
   props: args,

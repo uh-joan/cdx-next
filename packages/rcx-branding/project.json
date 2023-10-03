@@ -35,8 +35,7 @@
       "executor": "@nrwl/storybook:build",
       "options": {
         "configDir": "packages/rcx-branding/.storybook",
-        "outputDir": "dist/storybook/rcx-branding",
-        "uiFramework": "@storybook/react"
+        "outputDir": "dist/storybook/rcx-branding"
       },
       "outputs": ["{options.outputDir}"]
     },
@@ -59,8 +58,7 @@
       "executor": "@nrwl/storybook:storybook",
       "options": {
         "configDir": "packages/rcx-branding/.storybook",
-        "port": 4400,
-        "uiFramework": "@storybook/react"
+        "port": 4400
       }
     },
     "test": {

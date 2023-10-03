@@ -6,6 +6,12 @@ import Snackbar, { SnackbarOrigin } from '@mui/material/Snackbar';
 import Stack from '@mui/material/Stack';
 import * as React from 'react';
 
+const Story = {
+  component: Snackbar,
+  title: 'Snackbar',
+};
+export default Story;
+
 export function SimpleSnackbar() {
   const [open, setOpen] = React.useState(false);
 
@@ -183,5 +189,3 @@ export function PositionedSnackbar() {
     </div>
   );
 }
-
-export default SimpleSnackbar;

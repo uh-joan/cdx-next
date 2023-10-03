@@ -13,6 +13,12 @@ import FormLabel from '@mui/material/FormLabel';
 import { styled } from '@mui/material/styles';
 import * as React from 'react';
 
+const Story = {
+  component: Checkbox,
+  title: 'Checkbox',
+};
+export default Story;
+
 const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
 
 export function BasicCheckboxes() {
@@ -341,5 +347,3 @@ export function CustomizedCheckbox() {
     </div>
   );
 }
-
-export default BasicCheckboxes;

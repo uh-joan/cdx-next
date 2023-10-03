@@ -1,7 +1,7 @@
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { ThemeModule } from '@cdx/theme-angular-material';
-import { Meta, moduleMetadata, Story } from '@storybook/angular';
+import { Meta, moduleMetadata, StoryFn } from '@storybook/angular';
 import { html } from 'common-tags';
 
 export default {
@@ -14,13 +14,15 @@ export default {
   ],
 } as Meta;
 
-const basicCardTemplate: Story = () => ({
+const basicCardTemplate: StoryFn = () => ({
   template: html`
     <h3>Basic Card</h3>
     <div class="story">
       <mat-card>
-        <mat-card-title>Card title</mat-card-title>
-        <mat-card-subtitle>Card subtitle</mat-card-subtitle>
+        <mat-card-header>
+          <mat-card-title>Card title</mat-card-title>
+          <mat-card-subtitle>Card subtitle</mat-card-subtitle>
+        </mat-card-header>
         <mat-card-content>
           <p>Card content goes here.</p>
         </mat-card-content>
@@ -37,7 +39,7 @@ const basicCardTemplate: Story = () => ({
   `,
 });
 
-const fullyFeaturedCardTemplate: Story = () => ({
+const fullyFeaturedCardTemplate: StoryFn = () => ({
   template: html`
     <h3>Fully Featured Card</h3>
     <div class="story">

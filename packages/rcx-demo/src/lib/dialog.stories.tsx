@@ -15,6 +15,12 @@ import ListItemText from '@mui/material/ListItemText';
 import Typography from '@mui/material/Typography';
 import * as React from 'react';
 
+const Story = {
+  component: Dialog,
+  title: 'Dialog',
+};
+export default Story;
+
 const emails = ['username@gmail.com', 'user02@gmail.com'];
 
 export interface SimpleDialogProps {
@@ -141,5 +147,3 @@ export function AlertDialog() {
     </div>
   );
 }
-
-export default SimpleDialogDemo;

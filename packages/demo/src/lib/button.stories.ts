@@ -1,7 +1,7 @@
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { ThemeModule } from '@cdx/theme-angular-material';
-import { Meta, moduleMetadata, Story } from '@storybook/angular';
+import { Meta, moduleMetadata, StoryFn } from '@storybook/angular';
 import { html } from 'common-tags';
 
 export default {
@@ -14,7 +14,7 @@ export default {
   ],
 } as Meta;
 
-const RaisedButtonTemplate: Story = () => ({
+const RaisedButtonTemplate: StoryFn = () => ({
   template: html`
     <h3>Raised Button</h3>
     <div class="story">
@@ -27,7 +27,7 @@ const RaisedButtonTemplate: Story = () => ({
   `,
 });
 
-const StrokedButtonTemplate: Story = () => ({
+const StrokedButtonTemplate: StoryFn = () => ({
   template: html`
     <h3>Stroked Button</h3>
     <div class="story">
@@ -40,7 +40,7 @@ const StrokedButtonTemplate: Story = () => ({
   `,
 });
 
-const FlatButtonTemplate: Story = () => ({
+const FlatButtonTemplate: StoryFn = () => ({
   template: html`
     <h3>Flat Button</h3>
     <div class="story">
@@ -53,7 +53,7 @@ const FlatButtonTemplate: Story = () => ({
   `,
 });
 
-const basicButtonTemplate: Story = () => ({
+const basicButtonTemplate: StoryFn = () => ({
   template: html`
     <h3>Basic Button</h3>
     <div class="story">
@@ -66,7 +66,7 @@ const basicButtonTemplate: Story = () => ({
   `,
 });
 
-const iconButtonTemplate: Story = () => ({
+const iconButtonTemplate: StoryFn = () => ({
   template: html`
     <h3>Icon Button</h3>
     <div class="story">
@@ -108,7 +108,7 @@ const iconButtonTemplate: Story = () => ({
   `,
 });
 
-const floatingActionButtonTemplate: Story = () => ({
+const floatingActionButtonTemplate: StoryFn = () => ({
   template: html`
     <h3>Floating Action Button</h3>
     <div class="story">
@@ -144,7 +144,7 @@ const floatingActionButtonTemplate: Story = () => ({
   `,
 });
 
-const miniFloatingActionButtonTemplate: Story = () => ({
+const miniFloatingActionButtonTemplate: StoryFn = () => ({
   template: html`
     <h3>Mini Floating Action Button</h3>
     <div class="story">
@@ -180,7 +180,7 @@ const miniFloatingActionButtonTemplate: Story = () => ({
   `,
 });
 
-const iconLeadingButtonTemplate: Story = () => ({
+const iconLeadingButtonTemplate: StoryFn = () => ({
   template: html`
     <h3>Button Icon - Leading</h3>
     <div class="story">
@@ -197,18 +197,18 @@ const iconLeadingButtonTemplate: Story = () => ({
   `,
 });
 
-const iconTrailingButtonTemplate: Story = () => ({
+const iconTrailingButtonTemplate: StoryFn = () => ({
   template: html`
     <h3>Button Icon - Trailing</h3>
     <div class="story">
       <button mat-flat-button color="primary">
-        Icon Trailing<mat-icon>invert_colors</mat-icon>
+        Icon Trailing<mat-icon iconPositionEnd>invert_colors</mat-icon>
       </button>
       <button mat-stroked-button color="primary">
-        Icon Trailing<mat-icon>invert_colors</mat-icon>
+        Icon Trailing<mat-icon iconPositionEnd>invert_colors</mat-icon>
       </button>
       <button mat-button color="primary">
-        Icon Trailing<mat-icon>invert_colors</mat-icon>
+        Icon Trailing<mat-icon iconPositionEnd>invert_colors</mat-icon>
       </button>
     </div>
   `,

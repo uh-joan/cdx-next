@@ -2,7 +2,7 @@
 
 .cdx-header-global-user-profile {
   &__menu {
-    .mat-menu-content:not(:empty) {
+    .mat-mdc-menu-content:not(:empty) {
       display: flex;
       flex-direction: column;
       padding: 1rem;
@@ -27,5 +27,13 @@
   &__actions {
     display: flex;
     justify-content: space-between;
+  }
+}
+
+.mat-mdc-menu-trigger {
+  .mdc-button__label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
   }
 }

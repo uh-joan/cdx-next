@@ -9,6 +9,12 @@ import { TimePicker } from '@mui/x-date-pickers/TimePicker';
 import dayjs, { Dayjs } from 'dayjs';
 import * as React from 'react';
 
+const Story = {
+  component: DateTimePicker,
+  title: 'DateTimePicker',
+};
+export default Story;
+
 export function MaterialUIPickers() {
   const [value, setValue] = React.useState<Dayjs | null>(
     dayjs('2014-08-18T21:11:54'),
@@ -51,5 +57,3 @@ export function MaterialUIPickers() {
     </LocalizationProvider>
   );
 }
-
-export default MaterialUIPickers;

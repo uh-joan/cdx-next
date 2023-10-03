@@ -2,7 +2,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ThemeModule } from '@cdx/theme-angular-material';
-import { Meta, moduleMetadata, Story } from '@storybook/angular';
+import { Meta, moduleMetadata, StoryFn } from '@storybook/angular';
 import { html } from 'common-tags';
 
 export default {
@@ -20,7 +20,7 @@ export default {
   ],
 } as Meta;
 
-const TextAreaTemplate: Story = () => ({
+const TextAreaTemplate: StoryFn = () => ({
   template: html`
     <h3>Text Area</h3>
     <div class="story">
@@ -41,18 +41,6 @@ const TextAreaTemplate: Story = () => ({
           maxlength="256"
         ></textarea>
         <mat-label>Outlined text area</mat-label>
-      </mat-form-field>
-      <mat-form-field
-        appearance="standard"
-        class="mat-form-field-textarea wide"
-      >
-        <textarea
-          matInput
-          placeholder="Textarea"
-          #message
-          maxlength="256"
-        ></textarea>
-        <mat-label>Standard text area</mat-label>
       </mat-form-field>
     </div>
   `,

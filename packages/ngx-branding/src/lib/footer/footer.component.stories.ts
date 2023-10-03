@@ -1,5 +1,5 @@
 import { ThemeModule } from '@cdx/theme-angular-material';
-import { Meta, moduleMetadata, Story } from '@storybook/angular';
+import { Meta, moduleMetadata, StoryFn } from '@storybook/angular';
 import { html } from 'common-tags';
 
 import { OneTrustModule } from '../one-trust/one-trust.module';
@@ -16,11 +16,11 @@ export default {
   ],
 } as Meta<FooterComponent>;
 
-const BasicTemplate: Story<FooterComponent> = () => ({
+const BasicTemplate: StoryFn<FooterComponent> = () => ({
   template: html`<footer cdx-footer></footer> `,
 });
 
-const WithApplicationLinksTemplate: Story<FooterComponent> = () => ({
+const WithApplicationLinksTemplate: StoryFn<FooterComponent> = () => ({
   template: html`
     <footer cdx-footer>
       <a cdx-footer-link href="https://stackoverflow.com/">Stack Overflow</a>
@@ -31,7 +31,7 @@ const WithApplicationLinksTemplate: Story<FooterComponent> = () => ({
   `,
 });
 
-const WithApplicationLinksSlimTemplate: Story<FooterComponent> = () => ({
+const WithApplicationLinksSlimTemplate: StoryFn<FooterComponent> = () => ({
   template: html`
     <footer cdx-footer slim>
       <a cdx-footer-link href="https://stackoverflow.com/">Stack Overflow</a>
@@ -42,7 +42,7 @@ const WithApplicationLinksSlimTemplate: Story<FooterComponent> = () => ({
   `,
 });
 
-const WithLinkGroupsTemplate: Story<FooterComponent> = () => ({
+const WithLinkGroupsTemplate: StoryFn<FooterComponent> = () => ({
   template: html`
     <footer cdx-footer groupCompanyLinks>
       <cdx-footer-group>
@@ -101,7 +101,7 @@ const WithLinkGroupsTemplate: Story<FooterComponent> = () => ({
   `,
 });
 
-const BasicWithOneTrustTemplate: Story<FooterComponent> = () => ({
+const BasicWithOneTrustTemplate: StoryFn<FooterComponent> = () => ({
   template: html`<footer cdx-footer></footer>`,
 });
 

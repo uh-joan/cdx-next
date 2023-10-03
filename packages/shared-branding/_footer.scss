@@ -12,6 +12,7 @@ $cdx-footer-grid-gap: 1.5rem;
   padding: $cdx-footer-padding;
   background-color: black;
   color: white;
+  font-family: 'Clarivate Regular', sans-serif;
   gap: $cdx-footer-grid-gap;
 
   &--slim {
@@ -20,6 +21,7 @@ $cdx-footer-grid-gap: 1.5rem;
 
   &__copyright {
     width: $cdx-footer-column-width;
+    font-family: 'Clarivate Bold', sans-serif;
   }
 
   &__content {

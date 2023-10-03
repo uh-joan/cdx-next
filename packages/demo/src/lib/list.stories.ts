@@ -3,7 +3,7 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { ThemeModule } from '@cdx/theme-angular-material';
-import { Meta, moduleMetadata, Story } from '@storybook/angular';
+import { Meta, moduleMetadata, StoryFn } from '@storybook/angular';
 import { html } from 'common-tags';
 
 export default {
@@ -22,13 +22,13 @@ export default {
   ],
 } as Meta;
 
-const BasicListTemplate: Story = () => ({
+const BasicListTemplate: StoryFn = () => ({
   template: html`
     <ng-container>
       <h3>Basic List</h3>
       <div class="story">
         <mat-list role="list">
-          <span mat-subheader>Groceries</span>
+          <span matSubheader>Groceries</span>
           <mat-list-item role="listitem">Eggs</mat-list-item>
           <mat-list-item role="listitem">Potatoes</mat-list-item>
           <mat-list-item role="listitem">Bacon</mat-list-item>
@@ -39,27 +39,27 @@ const BasicListTemplate: Story = () => ({
   `,
 });
 
-const LeftIconTemplate: Story = () => ({
+const LeftIconTemplate: StoryFn = () => ({
   template: html`
     <ng-container>
       <h3>Left Icon</h3>
       <div class="story">
         <mat-list role="list">
-          <span mat-subheader>Basic component</span>
+          <span matSubheader>Basic component</span>
           <mat-list-item role="listitem">
-            <mat-icon mat-list-icon>account_circle</mat-icon>
+            <mat-icon matListItemIcon>account_circle</mat-icon>
             Item 1
           </mat-list-item>
           <mat-list-item role="listitem">
-            <mat-icon mat-list-icon>account_circle</mat-icon>
+            <mat-icon matListItemIcon>account_circle</mat-icon>
             Item 2
           </mat-list-item>
           <mat-list-item role="listitem">
-            <mat-icon mat-list-icon>account_circle</mat-icon>
+            <mat-icon matListItemIcon>account_circle</mat-icon>
             Item 3
           </mat-list-item>
           <mat-list-item role="listitem">
-            <mat-icon matListIcon>account_circle</mat-icon>
+            <mat-icon matListItemIcon>account_circle</mat-icon>
             Item 4
           </mat-list-item>
         </mat-list>
@@ -68,28 +68,36 @@ const LeftIconTemplate: Story = () => ({
   `,
 });
 
-const RightIconTemplate: Story = () => ({
+const RightIconTemplate: StoryFn = () => ({
   template: html`
     <ng-container>
       <h3>Right Icon</h3>
       <div class="story">
         <mat-list role="list">
           <span mat-subheader>Basic component</span>
-          <mat-list-item role="listitem"
-            >Item 1
-            <mat-icon>chevron_right</mat-icon>
+          <mat-list-item role="listitem">
+            <div style="display: flex">
+              Item 1
+              <mat-icon>chevron_right</mat-icon>
+            </div>
           </mat-list-item>
-          <mat-list-item role="listitem"
-            >Item 2
-            <mat-icon>chevron_right</mat-icon>
+          <mat-list-item role="listitem">
+            <div style="display: flex">
+              Item 2
+              <mat-icon>chevron_right</mat-icon>
+            </div>
           </mat-list-item>
-          <mat-list-item role="listitem"
-            >Item 3
-            <mat-icon>chevron_right</mat-icon>
+          <mat-list-item role="listitem">
+            <div style="display: flex">
+              Item 3
+              <mat-icon>chevron_right</mat-icon>
+            </div>
           </mat-list-item>
-          <mat-list-item role="listitem"
-            >Item 4
-            <mat-icon>chevron_right</mat-icon>
+          <mat-list-item role="listitem">
+            <div style="display: flex">
+              Item 4
+              <mat-icon>chevron_right</mat-icon>
+            </div>
           </mat-list-item>
         </mat-list>
       </div>
@@ -97,32 +105,40 @@ const RightIconTemplate: Story = () => ({
   `,
 });
 
-const LeftAndRightIconTemplate: Story = () => ({
+const LeftAndRightIconTemplate: StoryFn = () => ({
   template: html`
     <ng-container>
       <h3>Left and Right Icon</h3>
       <div class="story">
         <mat-list role="list" style="width: 300px;">
-          <span mat-subheader>Basic component</span>
+          <span matSubheader>Basic component</span>
           <mat-list-item role="listitem">
-            <mat-icon mat-list-icon>account_circle</mat-icon>
-            Item 1
-            <mat-icon>chevron_right</mat-icon>
+            <mat-icon matListItemIcon>account_circle</mat-icon>
+            <div style="display: flex">
+              Item 1
+              <mat-icon>chevron_right</mat-icon>
+            </div>
           </mat-list-item>
           <mat-list-item role="listitem">
-            <mat-icon mat-list-icon>account_circle</mat-icon>
-            Item 2
-            <mat-icon>chevron_right</mat-icon>
+            <mat-icon matListItemIcon>account_circle</mat-icon>
+            <div style="display: flex">
+              Item 2
+              <mat-icon>chevron_right</mat-icon>
+            </div>
           </mat-list-item>
           <mat-list-item role="listitem">
-            <mat-icon mat-list-icon>account_circle</mat-icon>
-            Item 3
-            <mat-icon>chevron_right</mat-icon>
+            <mat-icon matListItemIcon>account_circle</mat-icon>
+            <div style="display: flex">
+              Item 3
+              <mat-icon>chevron_right</mat-icon>
+            </div>
           </mat-list-item>
           <mat-list-item role="listitem">
-            <mat-icon mat-list-icon>account_circle</mat-icon>
-            Item 4
-            <mat-icon>chevron_right</mat-icon>
+            <mat-icon matListItemIcon>account_circle</mat-icon>
+            <div style="display: flex">
+              Item 4
+              <mat-icon>chevron_right</mat-icon>
+            </div>
           </mat-list-item>
         </mat-list>
       </div>
@@ -130,13 +146,13 @@ const LeftAndRightIconTemplate: Story = () => ({
   `,
 });
 
-const CheckboxItemsTemplate: Story = () => ({
+const CheckboxItemsTemplate: StoryFn = () => ({
   template: html`
     <ng-container>
       <h3>List with Selection</h3>
       <div class="story">
         <mat-selection-list role="list">
-          <span mat-subheader>List with selection</span>
+          <span matSubheader>List with selection</span>
           <mat-list-option color="primary" role="listitem"
             >Books</mat-list-option
           >

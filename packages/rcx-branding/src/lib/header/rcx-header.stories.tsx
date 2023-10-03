@@ -91,7 +91,7 @@ const WithProductNameAsLinkTemplate: ComponentStory<typeof CdxHeader> = () => (
         </IconButton>
       </>
     }
-    productName={<a href="#">My Product Name</a>}
+    productName={<a href="#top">My Product Name</a>}
   >
     <div style={{ padding: '0.5rem' }}>
       <Button>Sign up</Button>

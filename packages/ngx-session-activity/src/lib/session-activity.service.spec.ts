@@ -1,7 +1,3 @@
-import {
-  SessionActivityModule,
-  SessionActivityService,
-} from '@cdx/ngx-session-activity';
 import { createServiceFactory, SpectatorService } from '@ngneat/spectator/jest';
 import { TranslateService } from '@ngx-translate/core';
 import { of } from 'rxjs';
@@ -9,6 +5,8 @@ import { of } from 'rxjs';
 import { IDLE_CONFIG } from './session-activity.config';
 import { SESSION_ACTIVITY_SETTINGS } from './session-activity.injectors';
 import { LOGOUT_TYPE, SessionActivitySettings } from './session-activity.model';
+import { SessionActivityModule } from './session-activity.module';
+import { SessionActivityService } from './session-activity.service';
 
 describe('SessionActivityService', () => {
   let spectator: SpectatorService<SessionActivityService>;
@@ -19,7 +17,7 @@ describe('SessionActivityService', () => {
       {
         provide: TranslateService,
         useValue: {
-          get: (key: any) => of(key),
+          get: (key: unknown) => of(key),
         },
       },
     ],

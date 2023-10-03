@@ -1,58 +1,55 @@
-<div class="cdx-dialog__top">
-  <h2 mat-dialog-title>
+<h2 mat-dialog-title>
+  {{
+    data.shouldShowTranslations
+      ? ('INACTIVITY_DIALOG.SESSION_EXPIRE_WARNING' | translate)
+      : 'Session expire warning'
+  }}
+</h2>
+<div mat-dialog-content role="dialog">
+  <p>
     {{
       data.shouldShowTranslations
-        ? ('INACTIVITY_DIALOG.SESSION_EXPIRE_WARNING' | translate)
-        : 'Session expire warning'
+        ? ('INACTIVITY_DIALOG.SESSION_EXPIRING' | translate)
+        : 'Your session is about to expire'
     }}
-  </h2>
-  <mat-dialog-content role="dialog">
-    <p>
-      {{
-        data.shouldShowTranslations
-          ? ('INACTIVITY_DIALOG.SESSION_EXPIRING' | translate)
-          : 'Your session is about to expire'
-      }}
-    </p>
-    <p>
-      {{
-        data.shouldShowTranslations
-          ? ('INACTIVITY_DIALOG.REDIRECTION_MESSAGE'
-            | translate: { countdown: countdown })
-          : "You'll be redirected in " + countdown + ' seconds'
-      }}
-    </p>
-  </mat-dialog-content>
+  </p>
+  <p>
+    {{
+      data.shouldShowTranslations
+        ? ('INACTIVITY_DIALOG.REDIRECTION_MESSAGE'
+          | translate: { countdown: countdown })
+        : "You'll be redirected in " + countdown + ' seconds'
+    }}
+  </p>
 </div>
-<div class="cdx-dialog__bottom">
-  <mat-dialog-actions>
-    <button
-      aria-label="cancel button"
-      title="cancel action button"
-      mat-button
-      [mat-dialog-close]="DIALOG_RESULTS.LOGOUT"
-      role="button"
-      class="mat-stroked-button mat-primary"
-    >
-      {{
-        data.shouldShowTranslations
-          ? ('INACTIVITY_DIALOG.LOGOUT' | translate)
-          : 'Logout'
-      }}
-    </button>
-    <button
-      mat-button
-      [mat-dialog-close]="DIALOG_RESULTS.EXTEND"
-      role="button"
-      aria-label="action button"
-      title="primary apply button"
-      class="mat-flat-button mat-primary"
-    >
-      {{
-        data.shouldShowTranslations
-          ? ('INACTIVITY_DIALOG.CONTINUE_SESSION' | translate)
-          : 'Continue Session'
-      }}
-    </button>
-  </mat-dialog-actions>
+<div mat-dialog-actions>
+  <button
+    aria-label="cancel button"
+    title="cancel action button"
+    mat-stroked-button
+    [mat-dialog-close]="DIALOG_RESULTS.LOGOUT"
+    role="button"
+    color="primary"
+  >
+    {{
+      data.shouldShowTranslations
+        ? ('INACTIVITY_DIALOG.LOGOUT' | translate)
+        : 'Logout'
+    }}
+  </button>
+  <button
+    mat-button
+    mat-flat-button
+    [mat-dialog-close]="DIALOG_RESULTS.EXTEND"
+    role="button"
+    aria-label="action button"
+    title="primary apply button"
+    class="mat-primary"
+  >
+    {{
+      data.shouldShowTranslations
+        ? ('INACTIVITY_DIALOG.CONTINUE_SESSION' | translate)
+        : 'Continue Session'
+    }}
+  </button>
 </div>

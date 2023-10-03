@@ -2,7 +2,7 @@ import { MatBadgeModule } from '@angular/material/badge';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { ThemeModule } from '@cdx/theme-angular-material';
-import { Meta, moduleMetadata, Story } from '@storybook/angular';
+import { Meta, moduleMetadata, StoryFn } from '@storybook/angular';
 import { html } from 'common-tags';
 
 export default {
@@ -15,7 +15,7 @@ export default {
   ],
 } as Meta;
 
-const sizesBadgeTemplate: Story = () => ({
+const sizesBadgeTemplate: StoryFn = () => ({
   template: html`
     <h3>Sizes</h3>
     <div class="story story--sections">
@@ -71,7 +71,7 @@ const sizesBadgeTemplate: Story = () => ({
   `,
 });
 
-const colorsBadgeTemplate: Story = () => ({
+const colorsBadgeTemplate: StoryFn = () => ({
   template: html`
     <h3>Colors</h3>
     <div class="story story--sections">

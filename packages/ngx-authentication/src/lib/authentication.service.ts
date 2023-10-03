@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Inject, Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, ParamMap, Router } from '@angular/router';
 import { JwtHelperService } from '@auth0/angular-jwt';
+import { firstValueFrom } from 'rxjs';
 
 import { AUTHENTICATION_SETTINGS } from './authentication.injectors';
 import { AutenticationsSettings, JwtToken } from './authentication.types';
@@ -60,9 +61,11 @@ export class AuthenticationService {
 
   async createSession(code: string): Promise<boolean> {
     const url = this.accessAppActionWithReferrer(`api/session/user/${code}`);
-    let authResponse: any;
+    let authResponse;
     try {
-      authResponse = await this.http.get(url).toPromise();
+      authResponse = (await firstValueFrom(this.http.get(url))) as {
+        token: string;
+      };
       this.tokenService.setToken(authResponse.token);
       return true;
     } catch (error) {
@@ -108,11 +111,12 @@ export class AuthenticationService {
     return null;
   }
 
-  getTokenField(key: string): any {
+  getTokenField(key: string): string | undefined {
     const token = this.getTokenPayload();
     if (token) {
-      return token[key];
+      return token[key] as string | undefined;
     }
+    return undefined;
   }
 
   getUserId(): string | undefined {

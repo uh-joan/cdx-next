@@ -4,7 +4,7 @@ import {
 } from '@angular/material/button-toggle';
 import { MatIconModule } from '@angular/material/icon';
 import { ThemeModule } from '@cdx/theme-angular-material';
-import { Meta, moduleMetadata, Story } from '@storybook/angular';
+import { Meta, moduleMetadata, StoryFn } from '@storybook/angular';
 import { html } from 'common-tags';
 
 export default {
@@ -17,7 +17,7 @@ export default {
   ],
 } as Meta;
 
-const DefaultTemplate: Story = () => ({
+const DefaultTemplate: StoryFn = () => ({
   template: html`
     <h3>Default Button Toggle</h3>
     <div class="story">
@@ -33,7 +33,7 @@ const DefaultTemplate: Story = () => ({
   `,
 });
 
-const MultipleTemplate: Story = () => ({
+const MultipleTemplate: StoryFn = () => ({
   template: html`
     <h3>Button Toggle With More Than Two Components</h3>
     <div class="story">
@@ -52,7 +52,7 @@ const MultipleTemplate: Story = () => ({
   `,
 });
 
-const IconsTemplate: Story = () => ({
+const IconsTemplate: StoryFn = () => ({
   template: html`
     <h3>Button Toggle With Icons</h3>
     <div class="story">

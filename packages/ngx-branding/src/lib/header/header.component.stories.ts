@@ -4,7 +4,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatTabsModule } from '@angular/material/tabs';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ThemeModule } from '@cdx/theme-angular-material';
-import { Meta, moduleMetadata, Story } from '@storybook/angular';
+import { Meta, moduleMetadata, StoryFn } from '@storybook/angular';
 import { html } from 'common-tags';
 
 import { HeaderComponent } from './header.component';
@@ -28,11 +28,11 @@ export default {
   ],
 } as Meta<HeaderComponent>;
 
-const BasicTemplate: Story<HeaderComponent> = () => ({
+const BasicTemplate: StoryFn<HeaderComponent> = () => ({
   template: html`<header cdx-header></header>`,
 });
 
-const WithProductNameTemplate: Story<HeaderComponent> = () => ({
+const WithProductNameTemplate: StoryFn<HeaderComponent> = () => ({
   template: html`
     <!--
     PLEASE NOTE: All inline styles are included as examples of how content
@@ -60,7 +60,7 @@ const WithProductNameTemplate: Story<HeaderComponent> = () => ({
   `,
 });
 
-const WithProductNameAsLinkTemplate: Story<HeaderComponent> = () => ({
+const WithProductNameAsLinkTemplate: StoryFn<HeaderComponent> = () => ({
   template: html`
     <!--
     PLEASE NOTE: All inline styles are included as examples of how content
@@ -88,7 +88,7 @@ const WithProductNameAsLinkTemplate: Story<HeaderComponent> = () => ({
   `,
 });
 
-const WithProductLogoTemplate: Story<HeaderComponent> = () => ({
+const WithProductLogoTemplate: StoryFn<HeaderComponent> = () => ({
   template: html`
     <!--
     PLEASE NOTE: All inline styles are included as examples of how content
@@ -119,7 +119,7 @@ const WithProductLogoTemplate: Story<HeaderComponent> = () => ({
   `,
 });
 
-const WithProductLogoAndProductNameTemplate: Story<HeaderComponent> = () => ({
+const WithProductLogoAndProductNameTemplate: StoryFn<HeaderComponent> = () => ({
   template: html`
     <!--
     PLEASE NOTE: All inline styles are included as examples of how content
@@ -147,7 +147,7 @@ const WithProductLogoAndProductNameTemplate: Story<HeaderComponent> = () => ({
   `,
 });
 
-const WithProductSearchTemplate: Story<HeaderComponent> = () => ({
+const WithProductSearchTemplate: StoryFn<HeaderComponent> = () => ({
   template: html`
     <!--
     PLEASE NOTE: All inline styles are included as examples of how content
@@ -183,7 +183,7 @@ const WithProductSearchTemplate: Story<HeaderComponent> = () => ({
   `,
 });
 
-const AtSmallestSizeTemplate: Story<HeaderComponent> = () => ({
+const AtSmallestSizeTemplate: StoryFn<HeaderComponent> = () => ({
   template: html`
     <header cdx-header>
       <cdx-header-product-name></cdx-header-product-name>
@@ -191,7 +191,7 @@ const AtSmallestSizeTemplate: Story<HeaderComponent> = () => ({
   `,
 });
 
-const AtLargestSizeTemplate: Story<HeaderComponent> = () => ({
+const AtLargestSizeTemplate: StoryFn<HeaderComponent> = () => ({
   template: html`
     <!--
     PLEASE NOTE: All inline styles are included as examples of how content
@@ -205,7 +205,7 @@ const AtLargestSizeTemplate: Story<HeaderComponent> = () => ({
   `,
 });
 
-const WithPrimaryNavTemplate: Story<HeaderComponent> = () => ({
+const WithPrimaryNavTemplate: StoryFn<HeaderComponent> = () => ({
   template: html`
     <!--
     PLEASE NOTE: All inline styles are included as examples of how content

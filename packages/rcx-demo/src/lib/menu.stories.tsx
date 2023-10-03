@@ -38,6 +38,12 @@ import Tooltip from '@mui/material/Tooltip';
 import Typography from '@mui/material/Typography';
 import * as React from 'react';
 
+const Story = {
+  component: Menu,
+  title: 'Menu',
+};
+export default Story;
+
 export function BasicMenu() {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
@@ -697,5 +703,3 @@ export function FadeMenu() {
     </div>
   );
 }
-
-export default BasicMenu;

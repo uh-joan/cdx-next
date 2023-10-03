@@ -4,7 +4,7 @@ import {
   OneTrustModule,
 } from '@cdx/ngx-branding';
 import { ThemeModule } from '@cdx/theme-angular-material';
-import { Meta, moduleMetadata, Story } from '@storybook/angular';
+import { Meta, moduleMetadata, StoryFn } from '@storybook/angular';
 import { html } from 'common-tags';
 
 export default {
@@ -17,11 +17,11 @@ export default {
   ],
 } as Meta<FooterComponent>;
 
-const BasicTemplate: Story<FooterComponent> = () => ({
+const BasicTemplate: StoryFn<FooterComponent> = () => ({
   template: html`<footer cdx-footer></footer>`,
 });
 
-const BasicWithCustomThemeTemplate: Story<FooterComponent> = () => ({
+const BasicWithCustomThemeTemplate: StoryFn<FooterComponent> = () => ({
   template: html`<footer cdx-footer [theme]="brandingTheme"></footer>`,
   props: {
     brandingTheme: {
@@ -33,7 +33,7 @@ const BasicWithCustomThemeTemplate: Story<FooterComponent> = () => ({
   },
 });
 
-const WithApplicationLinksTemplate: Story<FooterComponent> = () => ({
+const WithApplicationLinksTemplate: StoryFn<FooterComponent> = () => ({
   template: html`
     <footer cdx-footer>
       <a cdx-footer-link href="https://stackoverflow.com/">Stack Overflow</a>
@@ -44,7 +44,7 @@ const WithApplicationLinksTemplate: Story<FooterComponent> = () => ({
   `,
 });
 
-const WithLinkGroupsTemplate: Story<FooterComponent> = () => ({
+const WithLinkGroupsTemplate: StoryFn<FooterComponent> = () => ({
   template: html`
     <footer cdx-footer groupCompanyLinks>
       <cdx-footer-group>
@@ -103,7 +103,7 @@ const WithLinkGroupsTemplate: Story<FooterComponent> = () => ({
   `,
 });
 
-const BasicWithOneTrustTemplate: Story<FooterComponent> = () => ({
+const BasicWithOneTrustTemplate: StoryFn<FooterComponent> = () => ({
   template: html`<footer cdx-footer></footer>`,
 });
 

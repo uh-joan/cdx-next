@@ -9,6 +9,12 @@ import Stack from '@mui/material/Stack';
 import { styled } from '@mui/material/styles';
 import * as React from 'react';
 
+const Story = {
+  component: Chip,
+  title: 'Chip',
+};
+export default Story;
+
 export function BasicChips() {
   return (
     <Stack direction="row" spacing={1}>
@@ -215,5 +221,3 @@ export function ChipsArray() {
     </Paper>
   );
 }
-
-export default BasicChips;

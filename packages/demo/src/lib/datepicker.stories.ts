@@ -8,10 +8,10 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ThemeModule } from '@cdx/theme-angular-material';
-import { Meta, moduleMetadata, Story } from '@storybook/angular';
+import { Meta, moduleMetadata, StoryFn } from '@storybook/angular';
 import { html } from 'common-tags';
 
-export default {
+const datepickerMeta: Meta<MatDatepicker<string>> = {
   title: 'Date Picker',
   component: MatDatepicker,
   decorators: [
@@ -27,9 +27,16 @@ export default {
       ],
     }),
   ],
-} as Meta;
+  render: (args: MatDatepicker<string>) => ({
+    props: {
+      ...args,
+    },
+  }),
+};
 
-const DatepickerTemplate: Story = () => ({
+export default datepickerMeta;
+
+const DatepickerTemplate: StoryFn = () => ({
   template: html`
     <h3>Date Picker</h3>
     <div class="story">
@@ -52,7 +59,7 @@ const DatepickerTemplate: Story = () => ({
   `,
 });
 
-const RangeDatepickerTemplate: Story = () => ({
+const RangeDatepickerTemplate: StoryFn = () => ({
   template: html` <h3>Date Picker With Range</h3>
     <div class="story">
       <mat-form-field appearance="outline">

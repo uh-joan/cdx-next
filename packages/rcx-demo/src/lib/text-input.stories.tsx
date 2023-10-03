@@ -1,6 +1,11 @@
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
-import * as React from 'react';
+
+const Story = {
+  component: TextField,
+  title: 'TextField',
+};
+export default Story;
 
 export function BasicTextFields() {
   return (
@@ -81,5 +86,3 @@ export function ValidationTextFields() {
     </Box>
   );
 }
-
-export default BasicTextFields;

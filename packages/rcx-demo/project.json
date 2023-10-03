@@ -14,8 +14,7 @@
       "executor": "@nrwl/storybook:build",
       "options": {
         "configDir": "packages/rcx-demo/.storybook",
-        "outputDir": "dist/storybook/rcx-demo",
-        "uiFramework": "@storybook/react"
+        "outputDir": "dist/storybook/rcx-demo"
       },
       "outputs": ["{options.outputDir}"]
     },
@@ -35,8 +34,7 @@
       "executor": "@nrwl/storybook:storybook",
       "options": {
         "configDir": "packages/rcx-demo/.storybook",
-        "port": 4400,
-        "uiFramework": "@storybook/react"
+        "port": 4400
       }
     },
     "test": {

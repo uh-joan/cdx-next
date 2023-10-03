@@ -1,6 +1,6 @@
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { ThemeModule } from '@cdx/theme-angular-material';
-import { Meta, moduleMetadata, Story } from '@storybook/angular';
+import { Meta, moduleMetadata, StoryFn } from '@storybook/angular';
 import { html } from 'common-tags';
 
 export default {
@@ -13,7 +13,7 @@ export default {
   ],
 } as Meta;
 
-const SlideToggleTemplate: Story = () => ({
+const SlideToggleTemplate: StoryFn = () => ({
   template: html`
     <h3>Slide Toggle</h3>
     <div class="story">

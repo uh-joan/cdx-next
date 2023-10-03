@@ -1,18 +1,27 @@
-const rootMain = require('../../../.storybook/main');
+const rootMain = require('../../../.storybook/main-react');
 
 module.exports = {
   ...rootMain,
 
-  core: { ...rootMain.core, builder: 'webpack5' },
+  core: { builder: 'webpack5' },
 
   stories: [
-    '../src/lib/**/*.stories.mdx',
-    '../src/lib/**/*.stories.@(js|jsx|ts|tsx)',
-    '../../rcx-branding/src/lib/**/*.stories.@(js|jsx|ts|tsx)',
+    {
+      directory: '../src/lib/',
+      files: '**/*.stories.@(js|jsx|ts|tsx)',
+    },
+    {
+      directory: '../../rcx-branding/src/lib/',
+      files: '**/*.stories.@(js|jsx|ts|tsx)',
+    },
   ],
   addons: [
-    '@storybook/addon-essentials',
-    ...rootMain.addons,
+    {
+      name: '@storybook/addon-essentials',
+      options: {
+        actions: false,
+      },
+    },
     '@nrwl/react/plugins/storybook',
   ],
   webpackFinal: async (config, { configType }) => {

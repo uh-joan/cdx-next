@@ -3,7 +3,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ThemeModule } from '@cdx/theme-angular-material';
-import { Meta, moduleMetadata, Story } from '@storybook/angular';
+import { Meta, moduleMetadata, StoryFn } from '@storybook/angular';
 import { html } from 'common-tags';
 
 export default {
@@ -22,7 +22,7 @@ export default {
   ],
 } as Meta;
 
-const TooltipsTemplate: Story = () => ({
+const TooltipsTemplate: StoryFn = () => ({
   template: html`
     <ng-container>
       <h3>Tooltip</h3>

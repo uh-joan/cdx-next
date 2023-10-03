@@ -1,10 +1,14 @@
 @use '../shared/clarivate-typography';
 
-.cdx-dialog__top {
+:host {
   [mat-dialog-title] {
     @include clarivate-typography.clarivate-bold(22px);
   }
-  mat-dialog-content {
+  [mat-dialog-content] {
     @include clarivate-typography.clarivate-regular(14px);
+  }
+
+  [mat-dialog-actions] {
+    justify-content: center;
   }
 }

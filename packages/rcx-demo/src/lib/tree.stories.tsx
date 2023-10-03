@@ -6,6 +6,12 @@ import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import * as React from 'react';
 
+const Story = {
+  component: TreeView,
+  title: 'TreeView',
+};
+export default Story;
+
 export function FileSystemNavigator() {
   return (
     <TreeView
@@ -90,5 +96,3 @@ export function ControlledTreeView() {
     </Box>
   );
 }
-
-export default FileSystemNavigator;

@@ -27,6 +27,12 @@ import { visuallyHidden } from '@mui/utils';
 import { DataGrid, GridColDef, GridValueGetterParams } from '@mui/x-data-grid';
 import * as React from 'react';
 
+const Story = {
+  component: Table,
+  title: 'Table',
+};
+export default Story;
+
 function createData(
   name: string,
   calories: number,
@@ -1188,5 +1194,3 @@ export function SpanningTable() {
     </TableContainer>
   );
 }
-
-export default BasicTable();

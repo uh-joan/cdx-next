@@ -4,7 +4,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatTabsModule } from '@angular/material/tabs';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ThemeModule } from '@cdx/theme-angular-material';
-import { Meta, moduleMetadata, Story } from '@storybook/angular';
+import { Meta, moduleMetadata, StoryFn } from '@storybook/angular';
 import { html } from 'common-tags';
 
 import { FooterModule } from '../footer/footer.module';
@@ -32,7 +32,7 @@ export default {
   ],
 } as Meta;
 
-const HeaderAndFooterTemplate: Story = () => ({
+const HeaderAndFooterTemplate: StoryFn = () => ({
   template: html`
     <div
       style="padding: 0; display: flex; flex-direction: column; margin: -16px;"

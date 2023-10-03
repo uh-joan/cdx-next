@@ -1,6 +1,6 @@
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { ThemeModule } from '@cdx/theme-angular-material';
-import { Meta, moduleMetadata, Story } from '@storybook/angular';
+import { Meta, moduleMetadata, StoryFn } from '@storybook/angular';
 import { html } from 'common-tags';
 
 export default {
@@ -13,7 +13,7 @@ export default {
   ],
 } as Meta;
 
-const ProgressTemplate: Story = () => ({
+const ProgressTemplate: StoryFn = () => ({
   template: html`
     <h3>Progress Bar</h3>
     <div class="story">

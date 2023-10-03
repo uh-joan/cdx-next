@@ -26,7 +26,12 @@
       context: { action: this.action, $implicit: actionsTemplate }
     "
   ></ng-container>
-  <button mat-button (click)="onDismiss()" *ngIf="!!dismissable">
+  <button
+    mat-button
+    [color]="severity"
+    (click)="onDismiss()"
+    *ngIf="!!dismissable"
+  >
     Dismiss
   </button>
 </div>
@@ -34,13 +39,13 @@
   class="cdx-notification__close"
   *ngIf="presentation === 'inline' && !!dismissable"
 >
-  <button mat-button (click)="onDismiss()">
+  <button mat-button [color]="severity" (click)="onDismiss()">
     <mat-icon>close</mat-icon>
   </button>
 </div>
 
 <ng-template #actionsTemplate>
-  <button mat-button (click)="onAction()" *ngIf="action">
+  <button mat-button [color]="severity" (click)="onAction()" *ngIf="action">
     {{ action }}
   </button>
   <ng-content select="[actions]"></ng-content>

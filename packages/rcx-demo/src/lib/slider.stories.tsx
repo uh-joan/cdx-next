@@ -13,6 +13,12 @@ import Tooltip from '@mui/material/Tooltip';
 import Typography from '@mui/material/Typography';
 import * as React from 'react';
 
+const Story = {
+  component: Slider,
+  title: 'Slider',
+};
+export default Story;
+
 export function ContinuousSlider() {
   const [value, setValue] = React.useState<number>(30);
 
@@ -172,9 +178,9 @@ export function InputSlider() {
   };
 
   const handleBlur = () => {
-    if (value < 0) {
+    if (Number(value) < 0) {
       setValue(0);
-    } else if (value > 100) {
+    } else if (Number(value) > 100) {
       setValue(100);
     }
   };
@@ -400,5 +406,3 @@ export function CustomizedSlider() {
     </Box>
   );
 }
-
-export default ContinuousSlider;

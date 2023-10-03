@@ -2,7 +2,7 @@ import { FormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { Meta, moduleMetadata, Story } from '@storybook/angular';
+import { Meta, moduleMetadata, StoryFn } from '@storybook/angular';
 import { html } from 'common-tags';
 
 export default {
@@ -21,7 +21,7 @@ export default {
   ],
 } as Meta;
 
-const SelectTemplate: Story = () => ({
+const SelectTemplate: StoryFn = () => ({
   template: html`
     <ng-container>
       <h3>Basic Select</h3>
@@ -38,16 +38,6 @@ const SelectTemplate: Story = () => ({
         </mat-form-field>
         <mat-form-field appearance="outline">
           <mat-label>Outline</mat-label>
-          <mat-select placeholder="Choose an option" panelClass="common-panel">
-            <mat-option value="option1">Option 1</mat-option>
-            <mat-option value="option2" disabled
-              >Option 2 (disabled)</mat-option
-            >
-            <mat-option value="option3">Option 3</mat-option>
-          </mat-select>
-        </mat-form-field>
-        <mat-form-field appearance="standard">
-          <mat-label>Standard</mat-label>
           <mat-select placeholder="Choose an option" panelClass="common-panel">
             <mat-option value="option1">Option 1</mat-option>
             <mat-option value="option2" disabled
@@ -75,20 +65,6 @@ const SelectTemplate: Story = () => ({
         </mat-form-field>
         <mat-form-field appearance="outline">
           <mat-label>Outline</mat-label>
-          <mat-select
-            disabled
-            placeholder="Choose an option"
-            panelClass="common-panel"
-          >
-            <mat-option value="option1">Option 1</mat-option>
-            <mat-option value="option2" disabled
-              >Option 2 (disabled)</mat-option
-            >
-            <mat-option value="option3">Option 3</mat-option>
-          </mat-select>
-        </mat-form-field>
-        <mat-form-field appearance="standard">
-          <mat-label>Standard</mat-label>
           <mat-select
             disabled
             placeholder="Choose an option"

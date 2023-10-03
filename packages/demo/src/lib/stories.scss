@@ -4,7 +4,7 @@
 /* stylelint-disable-next-line scss/at-import-partial-extension */
 @import '../../../theme-expansion-panel/expansion-panel.scss';
 
-@include breadcrumb.theme(cdx.$cdx-theme);
+// @include breadcrumb.theme(cdx.$cdx-theme);
 
 // all template html goes in a div with this class
 .story {

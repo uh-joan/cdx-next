@@ -22,6 +22,12 @@ import ToggleButton from '@mui/material/ToggleButton';
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
 import * as React from 'react';
 
+const Story = {
+  component: ToggleButton,
+  title: 'ToggleButton',
+};
+export default Story;
+
 export function ToggleButtons() {
   const [alignment, setAlignment] = React.useState<string | null>('left');
 
@@ -346,5 +352,3 @@ export function CustomizedDividers() {
     </div>
   );
 }
-
-export default ToggleButtons;

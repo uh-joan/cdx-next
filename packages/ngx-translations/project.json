@@ -1,7 +1,8 @@
 {
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "name": "ngx-translations",
   "prefix": "cdx",
   "projectType": "library",
-  "root": "packages/ngx-translations",
   "sourceRoot": "packages/ngx-translations/src",
   "tags": [],
   "targets": {

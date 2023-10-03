@@ -1,6 +1,6 @@
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { ThemeModule } from '@cdx/theme-angular-material';
-import { Meta, moduleMetadata, Story } from '@storybook/angular';
+import { Meta, moduleMetadata, StoryFn } from '@storybook/angular';
 import { html } from 'common-tags';
 
 export default {
@@ -13,7 +13,7 @@ export default {
   ],
 } as Meta;
 
-const ProgressSpinnerTemplate: Story = () => ({
+const ProgressSpinnerTemplate: StoryFn = () => ({
   template: html`
     <h3>Progress Spinner</h3>
     <div class="story">

@@ -24,9 +24,9 @@ export default {
 export const BasicMenu = () => ({
   moduleMetadata: {
     imports: [
+      BrowserAnimationsModule,
       MatMenuModule,
       MatButtonModule,
-      BrowserAnimationsModule,
       ThemeModule,
     ],
   },
@@ -49,13 +49,7 @@ export const BasicMenu = () => ({
 
 export const MenuWithIcons = () => ({
   moduleMetadata: {
-    imports: [
-      MatMenuModule,
-      MatButtonModule,
-      BrowserAnimationsModule,
-      MatIconModule,
-      ThemeModule,
-    ],
+    imports: [MatMenuModule, MatButtonModule, MatIconModule, ThemeModule],
   },
   template: html`
     <h3>Menu With Icons</h3>
@@ -149,13 +143,13 @@ export const MenuWithComplexContent = () => ({
     imports: [
       MatMenuModule,
       MatInputModule,
+      MatIconModule,
       MatCheckboxModule,
       FormsModule,
       ReactiveFormsModule,
       MatFormFieldModule,
-      MatInputModule,
-      BrowserAnimationsModule,
       MatButtonModule,
+      BrowserAnimationsModule,
       ThemeModule,
     ],
     declarations: [CustomMenuComponent],

@@ -7,6 +7,12 @@ import TablePagination from '@mui/material/TablePagination';
 import Typography from '@mui/material/Typography';
 import * as React from 'react';
 
+const Story = {
+  component: Pagination,
+  title: 'Pagination',
+};
+export default Story;
+
 export function BasicPagination() {
   return (
     <Stack spacing={2}>
@@ -132,5 +138,3 @@ export function TablePaginationDemo() {
     />
   );
 }
-
-export default BasicPagination;

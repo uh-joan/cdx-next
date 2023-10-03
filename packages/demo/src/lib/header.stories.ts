@@ -1,17 +1,24 @@
+import { importProvidersFrom } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatTabsModule } from '@angular/material/tabs';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { RouterModule } from '@angular/router';
 import {
   AuthenticationModule,
   HeaderGlobalUserProfileModule,
 } from '@cdx/ngx-authentication';
 import { HeaderComponent, HeaderModule } from '@cdx/ngx-branding';
 import { ThemeModule } from '@cdx/theme-angular-material';
-import { Meta, moduleMetadata, Story } from '@storybook/angular';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import {
+  applicationConfig,
+  Meta,
+  moduleMetadata,
+  StoryFn,
+} from '@storybook/angular';
 import { html } from 'common-tags';
+import { of } from 'rxjs';
 
 export default {
   title: 'Header',
@@ -24,24 +31,37 @@ export default {
         MatIconModule,
         MatInputModule,
         MatButtonModule,
-        BrowserAnimationsModule,
         MatTabsModule,
         ThemeModule,
-        AuthenticationModule.forRoot({
-          appId: 'cdx',
-          environment: 'dev-stable',
-        }),
-        RouterModule.forRoot([], { useHash: true }),
+        TranslateModule.forChild(),
+      ],
+      providers: [
+        {
+          provide: TranslateService,
+          useValue: {
+            get: (key: any) => of(key),
+          },
+        },
+      ],
+    }),
+    applicationConfig({
+      providers: [
+        importProvidersFrom(BrowserAnimationsModule),
+        importProvidersFrom(
+          AuthenticationModule.forRoot({
+            appId: 'cdx',
+          }),
+        ),
       ],
     }),
   ],
 } as Meta<HeaderComponent>;
 
-const BasicTemplate: Story<HeaderComponent> = () => ({
+const BasicTemplate: StoryFn<HeaderComponent> = () => ({
   template: html`<header cdx-header></header>`,
 });
 
-const WithGlobalUserProfileUnauthenticatedTemplate: Story<
+const WithGlobalUserProfileUnauthenticatedTemplate: StoryFn<
   HeaderComponent
 > = () => ({
   template: html`
@@ -67,11 +87,11 @@ const WithGlobalUserProfileUnauthenticatedTemplate: Story<
   `,
 });
 
-const WithExternalLogoLinkTemplate: Story<HeaderComponent> = () => ({
+const WithExternalLogoLinkTemplate: StoryFn<HeaderComponent> = () => ({
   template: html`<header cdx-header [openExternalLink]="true"></header>`,
 });
 
-const WithProductNameTemplate: Story<HeaderComponent> = () => ({
+const WithProductNameTemplate: StoryFn<HeaderComponent> = () => ({
   template: html`
     <!--
     PLEASE NOTE: All inline styles are included as examples of how content
@@ -99,7 +119,7 @@ const WithProductNameTemplate: Story<HeaderComponent> = () => ({
   `,
 });
 
-const WithProductNameAsLinkTemplate: Story<HeaderComponent> = () => ({
+const WithProductNameAsLinkTemplate: StoryFn<HeaderComponent> = () => ({
   template: html`
     <!--
     PLEASE NOTE: All inline styles are included as examples of how content
@@ -127,7 +147,7 @@ const WithProductNameAsLinkTemplate: Story<HeaderComponent> = () => ({
   `,
 });
 
-const WithProductLogoTemplate: Story<HeaderComponent> = () => ({
+const WithProductLogoTemplate: StoryFn<HeaderComponent> = () => ({
   template: html`
     <!--
     PLEASE NOTE: All inline styles are included as examples of how content
@@ -159,7 +179,7 @@ const WithProductLogoTemplate: Story<HeaderComponent> = () => ({
   `,
 });
 
-const WithProductSearchTemplate: Story<HeaderComponent> = () => ({
+const WithProductSearchTemplate: StoryFn<HeaderComponent> = () => ({
   template: html`
     <!--
     PLEASE NOTE: All inline styles are included as examples of how content
@@ -196,7 +216,7 @@ const WithProductSearchTemplate: Story<HeaderComponent> = () => ({
   `,
 });
 
-const AtSmallestSizeTemplate: Story<HeaderComponent> = () => ({
+const AtSmallestSizeTemplate: StoryFn<HeaderComponent> = () => ({
   template: html`
     <header cdx-header>
       <cdx-header-product-name></cdx-header-product-name>
@@ -204,7 +224,7 @@ const AtSmallestSizeTemplate: Story<HeaderComponent> = () => ({
   `,
 });
 
-const AtLargestSizeTemplate: Story<HeaderComponent> = () => ({
+const AtLargestSizeTemplate: StoryFn<HeaderComponent> = () => ({
   template: html`
     <!--
     PLEASE NOTE: All inline styles are included as examples of how content
@@ -218,7 +238,7 @@ const AtLargestSizeTemplate: Story<HeaderComponent> = () => ({
   `,
 });
 
-const WithPrimaryNavTemplate: Story<HeaderComponent> = () => ({
+const WithPrimaryNavTemplate: StoryFn<HeaderComponent> = () => ({
   template: html`
     <!--
     PLEASE NOTE: All inline styles are included as examples of how content
@@ -238,7 +258,12 @@ const WithPrimaryNavTemplate: Story<HeaderComponent> = () => ({
         </div>
       </cdx-header-global>
       <cdx-header-product-name>My Product</cdx-header-product-name>
-      <nav mat-tab-nav-bar cdx-size-compact style="flex: 4">
+      <nav
+        mat-tab-nav-bar
+        cdx-size-compact
+        style="flex: 4"
+        [tabPanel]="tabPanel"
+      >
         <a mat-tab-link>Foo Bar</a>
         <a mat-tab-link active>Bar</a>
         <a mat-tab-link>Bar Baz Buzz</a>
@@ -247,15 +272,16 @@ const WithPrimaryNavTemplate: Story<HeaderComponent> = () => ({
           Disabled Link
         </a>
       </nav>
-      <div style="display: inherit; justify-content: end; flex: 1">
-        <button mat-button style="margin-right: 1rem">Sign up</button>
+      <mat-tab-nav-panel #tabPanel> </mat-tab-nav-panel>
+      <div style="display: inherit; justify-content: space-between; flex: 1">
+        <button mat-button color="primary">Sign up</button>
         <button mat-flat-button color="primary">Login</button>
       </div>
     </header>
   `,
 });
 
-const BasicWithCustomThemeTemplate: Story<HeaderComponent> = () => ({
+const BasicWithCustomThemeTemplate: StoryFn<HeaderComponent> = () => ({
   template: html`<header cdx-header [theme]="brandingTheme"></header>`,
   props: {
     brandingTheme: {

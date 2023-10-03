@@ -1,7 +1,7 @@
 import { MatTabsModule } from '@angular/material/tabs';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ThemeModule } from '@cdx/theme-angular-material';
-import { Meta, moduleMetadata, Story } from '@storybook/angular';
+import { Meta, moduleMetadata, StoryFn } from '@storybook/angular';
 import { html } from 'common-tags';
 
 export default {
@@ -14,7 +14,7 @@ export default {
   ],
 } as Meta;
 
-const TabsTemplate: Story = () => ({
+const TabsTemplate: StoryFn = () => ({
   template: html`
     <div class="story">
       <mat-tab-group>

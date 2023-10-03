@@ -1,7 +1,7 @@
 import { MatChipsModule } from '@angular/material/chips';
 import { MatIconModule } from '@angular/material/icon';
 import { ThemeModule } from '@cdx/theme-angular-material';
-import { Meta, moduleMetadata, Story } from '@storybook/angular';
+import { Meta, moduleMetadata, StoryFn } from '@storybook/angular';
 import { html } from 'common-tags';
 
 export default {
@@ -14,7 +14,7 @@ export default {
   ],
 } as Meta;
 
-const ChipsTemplate: Story = () => ({
+const ChipsTemplate: StoryFn = () => ({
   template: html`
     <h3>Chips</h3>
     <div class="story story--sections">
@@ -58,13 +58,13 @@ const ChipsTemplate: Story = () => ({
       </div>
       <div class="story__section">
         <h4>Chip Colors</h4>
-        <mat-chip-list>
-          <mat-chip>Basic</mat-chip>
-          <mat-chip color="primary" selected>primary</mat-chip>
-          <mat-chip color="accent" selected>accent</mat-chip>
-          <mat-chip color="warn" selected>warning</mat-chip>
-          <mat-chip disabled>disabled</mat-chip>
-        </mat-chip-list>
+        <mat-chip-listbox>
+          <mat-chip-option>Basic</mat-chip-option>
+          <mat-chip-option color="primary" selected>primary</mat-chip-option>
+          <mat-chip-option color="accent" selected>accent</mat-chip-option>
+          <mat-chip-option color="warn" selected>warning</mat-chip-option>
+          <mat-chip-option disabled>disabled</mat-chip-option>
+        </mat-chip-listbox>
       </div>
     </div>
   `,

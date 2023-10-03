@@ -29,6 +29,12 @@ import { styled } from '@mui/material/styles';
 import Typography from '@mui/material/Typography';
 import * as React from 'react';
 
+const Story = {
+  component: List,
+  title: 'List',
+};
+export default Story;
+
 export function BasicList() {
   return (
     <Box sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
@@ -285,5 +291,3 @@ export function InteractiveList() {
     </Box>
   );
 }
-
-export default BasicList;

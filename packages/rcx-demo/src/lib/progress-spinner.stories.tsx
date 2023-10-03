@@ -11,6 +11,12 @@ import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import * as React from 'react';
 
+const Story = {
+  component: CircularProgress,
+  title: 'CircularProgress',
+};
+export default Story;
+
 export function CircularIndeterminate() {
   return (
     <Box sx={{ display: 'flex' }}>
@@ -181,5 +187,3 @@ export function CircularStatic() {
 
   return <CircularProgressWithLabel value={progress} />;
 }
-
-export default CircularIndeterminate;

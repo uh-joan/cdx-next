@@ -6,6 +6,12 @@ import TextField from '@mui/material/TextField';
 import { styled } from '@mui/system';
 import * as React from 'react';
 
+const Story = {
+  component: Autocomplete,
+  title: 'Autocomplete',
+};
+export default Story;
+
 interface FilmOptionType {
   inputValue?: string;
   title: string;
@@ -1123,5 +1129,3 @@ export function UseAutocomplete() {
     </div>
   );
 }
-
-export default ComboBox();

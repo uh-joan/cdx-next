@@ -1,15 +1,19 @@
-const rootMain = require('../../../.storybook/main');
+const rootMain = require('../../../.storybook/main-angular');
 
 module.exports = {
   ...rootMain,
 
-  core: { ...rootMain.core, builder: 'webpack5' },
+  core: { builder: 'webpack5' },
 
-  stories: [
-    '../src/lib/**/*.stories.mdx',
-    '../src/lib/**/*.stories.@(js|jsx|ts|tsx)',
+  stories: ['../src/lib/**/*.stories.@(js|jsx|ts|tsx)'],
+  addons: [
+    {
+      name: '@storybook/addon-essentials',
+      options: {
+        actions: false,
+      },
+    },
   ],
-  addons: ['@storybook/addon-essentials', ...rootMain.addons],
   webpackFinal: async (config, { configType }) => {
     // apply any global webpack configs that might have been specified in .storybook/main.js
     if (rootMain.webpackFinal) {

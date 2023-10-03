@@ -1,5 +1,10 @@
 import TextareaAutosize from '@mui/material/TextareaAutosize';
-import * as React from 'react';
+
+const Story = {
+  component: TextareaAutosize,
+  title: 'TextareaAutosize',
+};
+export default Story;
 
 export function EmptyTextarea() {
   return (
@@ -34,5 +39,3 @@ export function MaxHeightTextarea() {
     />
   );
 }
-
-export default EmptyTextarea;

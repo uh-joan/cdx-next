@@ -1,12 +1,13 @@
 import { ThemeModule } from '@cdx/theme-angular-material';
-import { Meta, moduleMetadata, Story } from '@storybook/angular';
+import { Meta, moduleMetadata, StoryFn } from '@storybook/angular';
 import { html } from 'common-tags';
 
+import { XngBreadcrumbThemedComponent } from './xng-breadcrumb-demo/xng-breadcrumb-themed.component';
 import { BreadcrumbDemoModule } from './xng-breadcrumb-demo/xng-breadcrumb-themed.module';
 
 export default {
   title: 'XNG Breadcrumb',
-  component: BreadcrumbDemoModule,
+  component: XngBreadcrumbThemedComponent,
   decorators: [
     moduleMetadata({
       imports: [BreadcrumbDemoModule, ThemeModule],
@@ -14,7 +15,7 @@ export default {
   ],
 } as Meta;
 
-const BreadcrumbTemplate: Story = () => ({
+const BreadcrumbTemplate: StoryFn = () => ({
   template: html`<demo-xng-breadcrumb></demo-xng-breadcrumb>`,
 });
 

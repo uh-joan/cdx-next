@@ -4,6 +4,12 @@ import Tabs from '@mui/material/Tabs';
 import Typography from '@mui/material/Typography';
 import * as React from 'react';
 
+const Story = {
+  component: Tabs,
+  title: 'Tabs',
+};
+export default Story;
+
 interface TabPanelProps {
   children?: React.ReactNode;
   index: number;
@@ -69,5 +75,3 @@ export function BasicTabs() {
     </Box>
   );
 }
-
-export default BasicTabs;

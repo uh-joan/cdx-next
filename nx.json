@@ -3,9 +3,6 @@
   "affected": {
     "defaultBase": "main"
   },
-  "cli": {
-    "defaultCollection": "@nrwl/angular"
-  },
   "defaultProject": "demo",
   "extends": "nx/presets/core.json",
   "generators": {
@@ -44,14 +41,6 @@
       "unitTestRunner": "jest"
     }
   },
-  "implicitDependencies": {
-    ".eslintrc.json": "*",
-    ".stylelintrc.json": "*",
-    "package.json": {
-      "dependencies": "*",
-      "devDependencies": "*"
-    }
-  },
   "namedInputs": {
     "default": ["{projectRoot}/**/*", "sharedGlobals"],
     "production": [
@@ -65,7 +54,8 @@
     ],
     "sharedGlobals": [
       "{workspaceRoot}/.stylelintrc.json",
-      "{workspaceRoot}/babel.config.json"
+      "{workspaceRoot}/babel.config.json",
+      "{workspaceRoot}/.stylelintrc.json"
     ]
   },
   "npmScope": "cdx",
@@ -92,6 +82,7 @@
   "tasksRunnerOptions": {
     "default": {
       "options": {
+        "accessToken": "N2NkM2VlNTgtZmEzYS00ZmZjLWI1MjYtMDQ5MDVhMDg2ZDE3fHJlYWQtd3JpdGU=",
         "cacheableOperations": [
           "build",
           "lint",

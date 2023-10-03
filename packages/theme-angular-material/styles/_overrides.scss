@@ -20,9 +20,20 @@
     max-width: none !important;
   }
 
+  .mat-mdc-menu-panel.mat-mdc-menu-panel {
+    max-width: none !important;
+  }
+
   .mat-tab-labels {
     .mat-tab-label-active {
       opacity: 1;
+    }
+  }
+
+  .mat-typography.mat-legacy-spacing {
+    p {
+      margin-block-start: 1em;
+      margin-block-end: 1em;
     }
   }
 

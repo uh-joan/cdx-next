@@ -16,7 +16,11 @@ import { pink } from '@mui/material/colors';
 import Grid from '@mui/material/Grid';
 import SvgIcon, { SvgIconProps } from '@mui/material/SvgIcon';
 import Typography from '@mui/material/Typography';
-import * as React from 'react';
+
+const Story = {
+  title: 'Icon',
+};
+export default Story;
 
 export function SvgMaterialIcons() {
   return (
@@ -112,5 +116,3 @@ export function SvgIconsSize() {
     </Box>
   );
 }
-
-export default SvgMaterialIcons;

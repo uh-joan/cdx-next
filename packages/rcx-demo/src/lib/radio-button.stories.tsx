@@ -7,6 +7,12 @@ import Radio from '@mui/material/Radio';
 import RadioGroup from '@mui/material/RadioGroup';
 import * as React from 'react';
 
+const Story = {
+  component: Radio,
+  title: 'Radio',
+};
+export default Story;
+
 export function RadioButtonsGroup() {
   return (
     <FormControl>
@@ -102,5 +108,3 @@ export function ErrorRadios() {
     </form>
   );
 }
-
-export default RadioButtonsGroup;

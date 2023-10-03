@@ -8,7 +8,7 @@ export interface AutenticationsSettings {
 }
 
 export interface JwtToken {
-  [key: string]: any;
+  [key: string]: unknown;
   '1p:app'?: string;
   '1p:eml': string;
   '1p:fnm': string;

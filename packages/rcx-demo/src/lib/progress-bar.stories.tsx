@@ -6,6 +6,12 @@ import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import * as React from 'react';
 
+const Story = {
+  component: LinearProgress,
+  title: 'LinearProgress',
+};
+export default Story;
+
 export function LinearIndeterminate() {
   return (
     <Box sx={{ width: '100%' }}>
@@ -124,5 +130,3 @@ export function LinearWithValueLabel() {
     </Box>
   );
 }
-
-export default LinearIndeterminate;

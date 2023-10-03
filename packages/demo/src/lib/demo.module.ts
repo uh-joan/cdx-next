@@ -1,4 +1,3 @@
-import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatBadgeModule } from '@angular/material/badge';
@@ -14,7 +13,6 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatSortModule } from '@angular/material/sort';
 import { MatTableModule } from '@angular/material/table';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ThemeModule } from '@cdx/theme-angular-material';
 
 import { DialogDemoComponent } from './dialog-demo/dialog-demo.component';
@@ -26,8 +24,6 @@ import { TableWithFilterSortingPaginationDemoComponent } from './tables-demo/tab
 
 @NgModule({
   imports: [
-    CommonModule,
-    BrowserAnimationsModule,
     MatInputModule,
     FormsModule,
     ReactiveFormsModule,

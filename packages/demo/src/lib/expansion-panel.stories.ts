@@ -3,7 +3,7 @@ import {
   MatExpansionPanel,
 } from '@angular/material/expansion';
 import { ThemeModule } from '@cdx/theme-angular-material';
-import { Meta, moduleMetadata, Story } from '@storybook/angular';
+import { Meta, moduleMetadata, StoryFn } from '@storybook/angular';
 import { html } from 'common-tags';
 
 export default {
@@ -16,7 +16,7 @@ export default {
   ],
 } as Meta;
 
-const ExpansionTemplate: Story = () => ({
+const ExpansionTemplate: StoryFn = () => ({
   template: html`
     <h3>Expansion Panel</h3>
     <div class="mat-typography cdx-expansion-panel">

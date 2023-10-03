@@ -4,7 +4,12 @@ import Stack from '@mui/material/Stack';
 import { styled } from '@mui/material/styles';
 import Switch, { SwitchProps } from '@mui/material/Switch';
 import Typography from '@mui/material/Typography';
-import * as React from 'react';
+
+const Story = {
+  component: Switch,
+  title: 'Switch',
+};
+export default Story;
 
 const label = { inputProps: { 'aria-label': 'Switch demo' } };
 
@@ -217,5 +222,3 @@ export function CustomizedSwitches() {
     </FormGroup>
   );
 }
-
-export default BasicSwitches;

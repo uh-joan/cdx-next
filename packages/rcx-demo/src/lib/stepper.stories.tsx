@@ -8,6 +8,12 @@ import Stepper from '@mui/material/Stepper';
 import Typography from '@mui/material/Typography';
 import * as React from 'react';
 
+const Story = {
+  component: Stepper,
+  title: 'Stepper',
+};
+export default Story;
+
 const steps = [
   'Select campaign settings',
   'Create an ad group',
@@ -206,5 +212,3 @@ export function VerticalLinearStepper() {
     </Box>
   );
 }
-
-export default HorizontalLinearStepper;

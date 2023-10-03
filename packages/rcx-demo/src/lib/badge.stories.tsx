@@ -13,6 +13,12 @@ import { styled } from '@mui/material/styles';
 import Switch from '@mui/material/Switch';
 import * as React from 'react';
 
+const Story = {
+  component: Badge,
+  title: 'Badge',
+};
+export default Story;
+
 export function SimpleBadge() {
   return (
     <Badge badgeContent={4} color="primary">
@@ -203,5 +209,3 @@ export function AccessibleBadges() {
     </IconButton>
   );
 }
-
-export default SimpleBadge();

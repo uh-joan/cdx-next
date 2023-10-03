@@ -1,11 +1,12 @@
 {
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "name": "rcx-analytics",
   "projectType": "library",
-  "root": "packages/rcx-analytics",
   "sourceRoot": "packages/rcx-analytics/src",
   "tags": [],
   "targets": {
     "build": {
-      "executor": "@nrwl/web:rollup",
+      "executor": "@nrwl/rollup:rollup",
       "options": {
         "assets": [
           {

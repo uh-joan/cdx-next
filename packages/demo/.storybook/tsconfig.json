@@ -8,6 +8,6 @@
     "../src/**/*",
     "../../ngx-notification/src/**/*",
     "../../ngx-authentication/src/**/*",
-    "*.js"
+    "*.ts"
   ]
 }

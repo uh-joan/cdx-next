@@ -1,6 +1,6 @@
 import { MatDividerModule } from '@angular/material/divider';
 import { ThemeModule } from '@cdx/theme-angular-material';
-import { Meta, moduleMetadata, Story } from '@storybook/angular';
+import { Meta, moduleMetadata, StoryFn } from '@storybook/angular';
 import { html } from 'common-tags';
 
 export default {
@@ -13,7 +13,7 @@ export default {
   ],
 } as Meta;
 
-const DividerTemplate: Story = () => ({
+const DividerTemplate: StoryFn = () => ({
   template: html`
     <h3>Divider</h3>
     <div class="story">

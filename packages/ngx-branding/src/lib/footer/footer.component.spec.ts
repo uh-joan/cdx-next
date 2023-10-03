@@ -22,7 +22,7 @@ describe('FooterComponent', () => {
       {
         provide: TranslateService,
         useValue: {
-          get: (key: any) => of(key),
+          get: (key: string) => of(key),
         },
       },
     ],

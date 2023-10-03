@@ -65,10 +65,9 @@ const ANALYTICS_CONTEXT: AnalyticsContextSchema = {
       environment: 'dev-stable',
     }),
     SessionActivityModule.forRoot({
-      expireDurationMinutes: 2,
-      expireWarningMinutes: 1,
+      expireDurationMinutes: 8.1,
+      expireWarningMinutes: 8,
       pingIntervalMinutes: 20,
-      shouldShowTranslations: true,
     }),
     AppRoutesModule,
     TranslateModule.forRoot({

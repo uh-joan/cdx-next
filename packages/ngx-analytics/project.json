@@ -20,7 +20,7 @@
       "options": {
         "project": "packages/ngx-analytics/ng-package.json"
       },
-      "outputs": ["dist/packages/ngx-analytics"]
+      "outputs": ["{workspaceRoot}/dist/packages/ngx-analytics"]
     },
     "deploy": {
       "executor": "ngx-deploy-npm:deploy"
@@ -40,7 +40,7 @@
         "jestConfig": "packages/ngx-analytics/jest.config.js",
         "passWithNoTests": true
       },
-      "outputs": ["coverage/packages/ngx-analytics"]
+      "outputs": ["{workspaceRoot}/coverage/packages/ngx-analytics"]
     }
   }
 }

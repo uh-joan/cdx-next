@@ -18,6 +18,12 @@ import IconButton from '@mui/material/IconButton';
 import Stack from '@mui/material/Stack';
 import { styled } from '@mui/material/styles';
 
+const Story = {
+  component: Button,
+  title: 'Button',
+};
+export default Story;
+
 export function BasicButtons() {
   return (
     <Stack spacing={2} direction="row">
@@ -331,5 +337,3 @@ export function FloatingActionButtonExtendedSize() {
     </Box>
   );
 }
-
-export default BasicButtons();

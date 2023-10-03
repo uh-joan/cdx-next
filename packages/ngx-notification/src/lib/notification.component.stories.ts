@@ -1,6 +1,6 @@
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
-import { Meta, moduleMetadata, Story } from '@storybook/angular';
+import { Meta, moduleMetadata, StoryFn } from '@storybook/angular';
 
 import { NotificationComponent } from './notification.component';
 
@@ -29,7 +29,7 @@ export default {
   ],
 } as Meta<NotificationComponent>;
 
-const PrimaryTemplate: Story<NotificationComponent> = (
+const PrimaryTemplate: StoryFn<NotificationComponent> = (
   args: NotificationComponent,
 ) => ({
   template: `
@@ -51,7 +51,7 @@ InlinePrimary.args = {
   severity: 'info',
 };
 
-const InlineWithProjectionsTemplate: Story<NotificationComponent> = (
+const InlineWithProjectionsTemplate: StoryFn<NotificationComponent> = (
   args: NotificationComponent,
 ) => ({
   template: `
@@ -63,8 +63,8 @@ const InlineWithProjectionsTemplate: Story<NotificationComponent> = (
     title="${args.title}">
       Notification message
       <mat-icon icon>auto_fix_high</mat-icon>
-      <button mat-button actions>Action 1</button>
-      <button mat-button actions>Action 2</button>
+      <button mat-button color="primary" actions>Action 1</button>
+      <button mat-button color="primary" actions>Action 2</button>
     </cdx-notification>`,
   props: {
     onAction: (event: Event) => {
@@ -82,7 +82,7 @@ InlineWithProjections.args = {
   severity: 'info',
 };
 
-const InlineDismissableMessageTemplate: Story<NotificationComponent> = (
+const InlineDismissableMessageTemplate: StoryFn<NotificationComponent> = (
   args: NotificationComponent,
 ) => ({
   template: `
@@ -117,7 +117,7 @@ InlineDismissableMessage.args = {
   severity: 'info',
 };
 
-const InlineSuccessTemplate: Story<NotificationComponent> = (
+const InlineSuccessTemplate: StoryFn<NotificationComponent> = (
   args: NotificationComponent,
 ) => ({
   template: `
@@ -140,7 +140,7 @@ InlineSuccess.args = {
   severity: 'success',
 };
 
-const InlineWarningTemplate: Story<NotificationComponent> = (
+const InlineWarningTemplate: StoryFn<NotificationComponent> = (
   args: NotificationComponent,
 ) => ({
   template: `
@@ -163,7 +163,7 @@ InlineWarning.args = {
   severity: 'warn',
 };
 
-const BannerPrimaryTemplate: Story<NotificationComponent> = (
+const BannerPrimaryTemplate: StoryFn<NotificationComponent> = (
   args: NotificationComponent,
 ) => ({
   template: `
@@ -184,7 +184,7 @@ BannerPrimary.args = {
   severity: 'info',
 };
 
-const BannerWithProjectionsTemplate: Story<NotificationComponent> = (
+const BannerWithProjectionsTemplate: StoryFn<NotificationComponent> = (
   args: NotificationComponent,
 ) => ({
   template: `
@@ -196,8 +196,8 @@ const BannerWithProjectionsTemplate: Story<NotificationComponent> = (
     title="${args.title}">
       Notification message
       <mat-icon icon>auto_fix_high</mat-icon>
-      <button mat-button actions>Action 1</button>
-      <button mat-button actions>Action 2</button>
+      <button mat-button color="primary" actions>Action 1</button>
+      <button mat-button color="primary" actions>Action 2</button>
     </cdx-notification>`,
 });
 
@@ -210,7 +210,7 @@ BannerWithProjections.args = {
   severity: 'info',
 };
 
-const BannerDismissableMessageTemplate: Story<NotificationComponent> = (
+const BannerDismissableMessageTemplate: StoryFn<NotificationComponent> = (
   args: NotificationComponent,
 ) => ({
   template: `
@@ -234,7 +234,7 @@ BannerDismissableMessage.args = {
   severity: 'info',
 };
 
-const BannerSuccessTemplate: Story<NotificationComponent> = (
+const BannerSuccessTemplate: StoryFn<NotificationComponent> = (
   args: NotificationComponent,
 ) => ({
   template: `
@@ -257,7 +257,7 @@ BannerSuccess.args = {
   severity: 'success',
 };
 
-const BannerWarningTemplate: Story<NotificationComponent> = (
+const BannerWarningTemplate: StoryFn<NotificationComponent> = (
   args: NotificationComponent,
 ) => ({
   template: `

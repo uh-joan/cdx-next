@@ -6,7 +6,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ThemeModule } from '@cdx/theme-angular-material';
-import { Meta, moduleMetadata, Story } from '@storybook/angular';
+import { Meta, moduleMetadata, StoryFn } from '@storybook/angular';
 import { html } from 'common-tags';
 
 export default {
@@ -29,7 +29,7 @@ export default {
   ],
 } as Meta;
 
-const SidenavTemplate: Story = () => ({
+const SidenavTemplate: StoryFn = () => ({
   template: html`
     <ng-container>
       <h3>Sidenav with explicit backdrop setting</h3>

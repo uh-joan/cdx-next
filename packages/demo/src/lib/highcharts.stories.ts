@@ -1,6 +1,6 @@
 import { MatTabsModule } from '@angular/material/tabs';
 import { ThemeModule } from '@cdx/theme-angular-material';
-import { Meta, moduleMetadata, Story } from '@storybook/angular';
+import { Meta, moduleMetadata, StoryFn } from '@storybook/angular';
 import { html } from 'common-tags';
 
 import { HighchartsStyledModule } from './highcharts/highcharts-styled.module';
@@ -16,14 +16,14 @@ export default {
   ],
 } as Meta;
 
-const GlobalThemeTemplate: Story = () => ({
+const GlobalThemeTemplate: StoryFn = () => ({
   template: html`
     <h3>Global Theme Example</h3>
     <demo-highcharts-themed></demo-highcharts-themed>
   `,
 });
 
-const StyledModeTemplate: Story = () => ({
+const StyledModeTemplate: StoryFn = () => ({
   template: html`
     <h3>Styled Mode Example</h3>
     <demo-highcharts-styled></demo-highcharts-styled>

@@ -54,7 +54,7 @@ describe('RcxHeader', () => {
 
   test('should show product name and product bar', () => {
     const { container } = render(
-      <CdxHeader productName={<a href="#">My Product Name</a>}></CdxHeader>,
+      <CdxHeader productName={<a href="#top">My Product Name</a>}></CdxHeader>,
     );
     expect(container).toHaveTextContent('My Product Name');
     expect(

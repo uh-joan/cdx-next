@@ -26,7 +26,7 @@ export function jwtOptionsFactory(tokenService: TokenService) {
 @NgModule({
   imports: [
     HttpClientModule,
-    RouterModule.forRoot([]),
+    RouterModule.forChild([]),
     JwtModule.forRoot({
       jwtOptionsProvider: {
         provide: JWT_OPTIONS,

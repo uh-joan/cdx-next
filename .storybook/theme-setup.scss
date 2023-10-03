@@ -6,6 +6,7 @@
   as profile-theme;
 
 @include cdx-material.default;
+
 @include footer-theme.theme(cdx-material.$cdx-theme);
 @include header-theme.theme(cdx-material.$cdx-theme);
 @include profile-theme.theme(cdx-material.$cdx-theme);

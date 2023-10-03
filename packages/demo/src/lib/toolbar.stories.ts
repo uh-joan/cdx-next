@@ -1,7 +1,7 @@
 import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { ThemeModule } from '@cdx/theme-angular-material';
-import { Meta, moduleMetadata, Story } from '@storybook/angular';
+import { Meta, moduleMetadata, StoryFn } from '@storybook/angular';
 import { html } from 'common-tags';
 
 export default {
@@ -14,7 +14,7 @@ export default {
   ],
 } as Meta;
 
-const ToolbarTemplate: Story = () => ({
+const ToolbarTemplate: StoryFn = () => ({
   template: html`
     <ng-container>
       <h3>Default Toolbar</h3>
@@ -31,7 +31,7 @@ const ToolbarTemplate: Story = () => ({
   `,
 });
 
-const ToolbarWithMenuIconTemplate: Story = () => ({
+const ToolbarWithMenuIconTemplate: StoryFn = () => ({
   template: html`
     <ng-container>
       <h3>Toolbar with menu icon</h3>

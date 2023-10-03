@@ -9,6 +9,12 @@ import Tooltip, { tooltipClasses, TooltipProps } from '@mui/material/Tooltip';
 import Typography from '@mui/material/Typography';
 import * as React from 'react';
 
+const Story = {
+  component: Tooltip,
+  title: 'Tooltip',
+};
+export default Story;
+
 export function BasicTooltip() {
   return (
     <Tooltip title="Delete">
@@ -204,5 +210,3 @@ export function FollowCursorTooltips() {
     </Tooltip>
   );
 }
-
-export default BasicTooltip;

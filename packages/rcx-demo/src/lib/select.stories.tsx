@@ -6,6 +6,12 @@ import MenuItem from '@mui/material/MenuItem';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
 import * as React from 'react';
 
+const Story = {
+  component: Select,
+  title: 'Select',
+};
+export default Story;
+
 export function BasicSelect() {
   const [age, setAge] = React.useState('');
 
@@ -212,5 +218,3 @@ export function SelectOtherProps() {
     </div>
   );
 }
-
-export default BasicSelect;

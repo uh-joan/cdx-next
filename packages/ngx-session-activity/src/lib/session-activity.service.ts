@@ -106,9 +106,9 @@ export class SessionActivityService implements OnDestroy {
     if (!this.shouldNotRehydrate) {
       this.localStorage.setItem(LAST_HYDRATE, Date.now().toString());
       this.http
-        .put('api/session/user/rehydrate', null)
+        .put<{ session: string }>('api/session/user/rehydrate', null)
         .pipe(take(1))
-        .subscribe((data: any) => {
+        .subscribe((data) => {
           if (data?.session) {
             this.resetIdle();
           }
