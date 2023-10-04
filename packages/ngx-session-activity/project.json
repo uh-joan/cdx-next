@@ -15,7 +15,7 @@
         }
       },
       "defaultConfiguration": "production",
-      "executor": "@nrwl/angular:package",
+      "executor": "@nx/angular:package",
       "options": {
         "project": "packages/ngx-session-activity/ng-package.json"
       },

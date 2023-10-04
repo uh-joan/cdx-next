@@ -16,7 +16,7 @@
         }
       },
       "defaultConfiguration": "production",
-      "executor": "@nrwl/angular:package",
+      "executor": "@nx/angular:package",
       "options": {
         "project": "packages/theme-xng-breadcrumb/ng-package.json"
       },

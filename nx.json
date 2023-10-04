@@ -6,15 +6,6 @@
   "defaultProject": "demo",
   "extends": "nx/presets/core.json",
   "generators": {
-    "@nrwl/angular:application": {
-      "linter": "eslint",
-      "unitTestRunner": "jest"
-    },
-    "@nrwl/angular:component": {},
-    "@nrwl/angular:library": {
-      "linter": "eslint",
-      "unitTestRunner": "jest"
-    },
     "@nrwl/react": {
       "application": {
         "babel": true,
@@ -38,6 +29,15 @@
     "@nrwl/web:library": {
       "linter": "eslint",
       "style": "scss",
+      "unitTestRunner": "jest"
+    },
+    "@nx/angular:application": {
+      "linter": "eslint",
+      "unitTestRunner": "jest"
+    },
+    "@nx/angular:component": {},
+    "@nx/angular:library": {
+      "linter": "eslint",
       "unitTestRunner": "jest"
     }
   },
