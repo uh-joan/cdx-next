@@ -108,6 +108,7 @@
     "@nrwl/webpack": "16.1.4",
     "@nrwl/workspace": "16.1.4",
     "@nx/angular": "16.1.4",
+    "@nx/rollup": "16.1.4",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.7",
     "@schematics/angular": "16.0.1",
     "@storybook/addon-essentials": "7.0.12",
