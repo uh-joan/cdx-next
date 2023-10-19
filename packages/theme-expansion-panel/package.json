@@ -1,6 +1,6 @@
 {
   "name": "@cdx/theme-expansion-panel",
-  "version": "2.2.5-alpha.2",
+  "version": "2.3.0",
   "repository": {
     "type": "git",
     "url": "ssh://git@git.clarivate.io/cdxn/cdx-next.git",
