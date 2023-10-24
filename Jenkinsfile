@@ -38,9 +38,8 @@ pipeline {
         stage('Run CI?') {
             when {
                 allOf {
-                    expression {
-                        params.Publish == false
-                    }
+                    expression { params.Publish == false }
+                    expression { params.Storybooks == 'nowhere' }
                 }
             }
 
@@ -102,7 +101,11 @@ pipeline {
             steps {
                 sshagent(credentials: ['jenkins-git-clarivate-io']) {
                     sh "git checkout ${BRANCH_NAME}"
-                    sh 'npx nx run workspace:version --releaseAs=prerelease --preid=alpha'
+                    if (params.Level != 'patch') {
+                        sh 'npx nx run workspace:version --releaseAs=pre${params.Level} --preid=alpha'
+                    } else {
+                        sh 'npx nx run workspace:version --releaseAs=prerelease --preid=alpha'
+                    }
                     sh '''
                         OLD_TAG=$(git tag --points-at HEAD)
                         npm install
