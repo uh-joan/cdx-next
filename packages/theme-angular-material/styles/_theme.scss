@@ -99,6 +99,38 @@ $cdx-typography: mat.define-typography-config(
   $caption: mat.define-typography-level(12px, $preferred-line-height, 400),
   $button: mat.define-typography-level(inherit, $font-weight: 600),
 );
+$dark-mode-palette: (
+  50: #e8f5e9,
+  100: #c8e6c9,
+  200: #a5d6a7,
+  300: #ba84ff,
+  400: #81c784,
+  500: #63daff,
+  600: #43a047,
+  700: #388e3c,
+  800: #2e7d32,
+  900: #1b5e20,
+  A100: #b9f6ca,
+  A200: #69f0ae,
+  A400: #00e676,
+  A700: #00c853,
+  contrast: (
+    50: #000,
+    100: #000,
+    200: #000,
+    300: #000,
+    400: #fff,
+    500: #fff,
+    600: #fff,
+    700: #fff,
+    800: #fff,
+    900: #fff,
+    A100: #fff,
+    A200: #fff,
+    A400: #fff,
+    A700: #fff,
+  ),
+);
 $cdx-theme: mat.define-light-theme(
   (
     color: (
@@ -110,6 +142,16 @@ $cdx-theme: mat.define-light-theme(
     typography: $cdx-typography,
   )
 );
+$cdx-dark-theme: mat.define-dark-theme(
+  (
+    color: (
+      primary: mat.define-palette($dark-mode-palette, 500, 'A100', 'A400'),
+      accent: mat.define-palette($dark-mode-palette, 50, 600, 800),
+    ),
+    typography: $cdx-typography,
+  )
+);
+
 @mixin default() {
   @include mat.core;
   @include mat.core-theme($cdx-theme);
@@ -125,5 +167,50 @@ $cdx-theme: mat.define-light-theme(
   // change the color of the user-agent keyboard focus state for anchors
   a:focus-visible:not(.mat-button-base) {
     outline-color: #00c2f2;
+  }
+
+  :root {
+    --cdx-light-text: rgba(#000, 0.87);
+    --cdx-light-background: #fff;
+    --cdx-dark-text: white;
+    --cdx-dark-background: #181d1f;
+  }
+
+  body.cdx-light-mode {
+    @include mat.core-color($cdx-theme);
+
+    @include mat.all-component-themes($cdx-theme);
+
+    background-color: var(--cdx-light-background, #fff);
+    color: var(--cdx-light-text, #181d1f);
+  }
+
+  body.cdx-dark-mode {
+    @include mat.core-color($cdx-dark-theme);
+
+    @include mat.all-component-themes($cdx-dark-theme);
+
+    background-color: var(--cdx-dark-background, #181d1f);
+    color: var(--cdx-dark-text, #fff);
+  }
+
+  body.cdx-auto-mode {
+    @media (prefers-color-scheme: light) {
+      @include mat.core-color($cdx-theme);
+
+      @include mat.all-component-themes($cdx-theme);
+
+      background-color: var(--cdx-light-background, #fff);
+      color: var(--cdx-light-text, #181d1f);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      @include mat.core-color($cdx-dark-theme);
+
+      @include mat.all-component-themes($cdx-dark-theme);
+
+      background-color: var(--cdx-dark-background, #181d1f);
+      color: var(--cdx-dark-text, #fff);
+    }
   }
 }
