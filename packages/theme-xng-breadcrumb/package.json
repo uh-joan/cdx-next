@@ -10,8 +10,8 @@
     "tslib": "^2.3.0"
   },
   "peerDependencies": {
-    "@angular/common": "15",
-    "@angular/core": "15",
+    "@angular/common": "16",
+    "@angular/core": "16",
     "@cdx/theme-angular-material": "*"
   }
 }
