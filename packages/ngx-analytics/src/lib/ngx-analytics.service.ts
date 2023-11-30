@@ -32,14 +32,30 @@ const COLLECTOR_URL =
 export class AnalyticsService {
   private trackerId = 'cdxNgTracker';
 
-  tracker: BrowserTracker = newTracker(
-    this.trackerId,
-    this.settings.options?.snowplowUrl || COLLECTOR_URL,
-    {
-      appId: this.settings.appId,
-      anonymousTracking: true,
-    },
-  );
+  tracker: BrowserTracker;
+
+  constructor(
+    @Inject(ANALYTICS_SETTINGS)
+    readonly settings: AnalyticsSettings,
+    @Inject(ANALYTICS_CONTEXT_DATA) context: AnalyticsContextSchema,
+    @Optional() private oneTrustService: OneTrustService,
+  ) {
+    this.context = context;
+    this.settings = settings || DEFAULT_SETTINGS;
+
+    this.cookiesAccepted$.subscribe();
+
+    this.tracker = newTracker(
+      this.trackerId,
+      this.settings.options?.snowplowUrl || COLLECTOR_URL,
+      {
+        appId: this.settings.appId,
+        anonymousTracking: true,
+      },
+    );
+
+    if (this.context) this.tracker?.core?.addGlobalContexts([this.context]);
+  }
 
   context?: AnalyticsContextSchema;
 
@@ -59,20 +75,6 @@ export class AnalyticsService {
     }),
   );
   private cookiesAccepted = false;
-
-  constructor(
-    @Inject(ANALYTICS_SETTINGS)
-    readonly settings: AnalyticsSettings,
-    @Inject(ANALYTICS_CONTEXT_DATA) context: AnalyticsContextSchema,
-    @Optional() private oneTrustService: OneTrustService,
-  ) {
-    this.context = context;
-    this.settings = settings || DEFAULT_SETTINGS;
-
-    if (this.context) this.tracker?.core?.addGlobalContexts([this.context]);
-
-    this.cookiesAccepted$.subscribe();
-  }
 
   setUserId(userId: string): void {
     this.tracker.setUserId(userId);

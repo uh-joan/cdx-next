@@ -3,8 +3,6 @@
 @use '../../../../shared-branding/header';
 @use '../shared/clarivate-typography' as clv;
 
-@import '@angular/material/theming';
-
 $preferred-line-height: 1.3;
 $header-typography: mat.define-typography-config(
   $font-family: '"Clarivate Regular", sans-serif',

@@ -3,8 +3,6 @@
 @use '../../colors' as colors;
 @use './overrides';
 
-@import '@angular/material/theming';
-
 $preferred-line-height: 1.3;
 $primary-palette: mat.define-palette(
   (
@@ -156,7 +154,7 @@ $cdx-dark-theme: mat.define-dark-theme(
   @include mat.core;
   @include mat.core-theme($cdx-theme);
   @include mat.all-component-themes($cdx-theme);
-  @include angular-material-typography($cdx-typography);
+  @include mat.typography-hierarchy($cdx-typography);
   @include overrides.material-overrides;
 
   .cdk-keyboard-focused {
