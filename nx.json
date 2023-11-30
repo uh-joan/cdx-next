@@ -60,7 +60,6 @@
       "{workspaceRoot}/.stylelintrc.json"
     ]
   },
-  "npmScope": "cdx",
   "pluginsConfig": {
     "@nrwl/js": {
       "analyzeSourceFiles": true
@@ -68,10 +67,12 @@
   },
   "targetDefaults": {
     "build": {
+      "cache": true,
       "dependsOn": ["^build"],
       "inputs": ["production", "^production"]
     },
     "build-storybook": {
+      "cache": true,
       "inputs": [
         "default",
         "^production",
@@ -80,27 +81,26 @@
         "{projectRoot}/tsconfig.storybook.json"
       ]
     },
+    "e2e": {
+      "cache": true
+    },
     "lint": {
+      "cache": true,
       "inputs": ["default", "{workspaceRoot}/.eslintrc.json"]
     },
+    "stylelint": {
+      "cache": true
+    },
     "test": {
+      "cache": true,
       "inputs": ["default", "^production", "{workspaceRoot}/jest.preset.js"]
     }
   },
   "tasksRunnerOptions": {
     "default": {
       "options": {
-        "accessToken": "N2NkM2VlNTgtZmEzYS00ZmZjLWI1MjYtMDQ5MDVhMDg2ZDE3fHJlYWQtd3JpdGU=",
-        "cacheableOperations": [
-          "build",
-          "lint",
-          "test",
-          "e2e",
-          "build-storybook",
-          "stylelint"
-        ]
-      },
-      "runner": "nx/tasks-runners/default"
+        "accessToken": "N2NkM2VlNTgtZmEzYS00ZmZjLWI1MjYtMDQ5MDVhMDg2ZDE3fHJlYWQtd3JpdGU="
+      }
     }
   },
   "workspaceLayout": {

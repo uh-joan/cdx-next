@@ -22,8 +22,7 @@
         "outputPath": "dist/packages/rcx-branding",
         "project": "packages/rcx-branding/package.json",
         "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
-        "tsConfig": "packages/rcx-branding/tsconfig.lib.json",
-        "updateBuildableProjectDepsInPackageJson": true
+        "tsConfig": "packages/rcx-branding/tsconfig.lib.json"
       },
       "outputs": ["{options.outputPath}"]
     },

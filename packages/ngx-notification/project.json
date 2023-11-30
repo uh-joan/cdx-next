@@ -18,8 +18,7 @@
       "defaultConfiguration": "production",
       "executor": "@nx/angular:package",
       "options": {
-        "project": "packages/ngx-notification/ng-package.json",
-        "updateBuildableProjectDepsInPackageJson": true
+        "project": "packages/ngx-notification/ng-package.json"
       },
       "outputs": ["{workspaceRoot}/dist/packages/ngx-notification"]
     },

@@ -10,7 +10,7 @@
     "tslib": "^2.3.0"
   },
   "peerDependencies": {
-    "@angular/common": "16",
+    "@angular/common": "17",
     "@ng-idle/core": "^13.0.0",
     "@ng-idle/keepalive": "^13.0.0",
     "@ngx-translate/core": "^15.0.0"

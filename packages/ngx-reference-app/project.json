@@ -37,7 +37,7 @@
     "extract-i18n": {
       "executor": "@angular-devkit/build-angular:extract-i18n",
       "options": {
-        "browserTarget": "ngx-reference-app:build"
+        "buildTarget": "ngx-reference-app:build"
       }
     },
     "lint": {
@@ -52,7 +52,7 @@
     "serve": {
       "configurations": {
         "development": {
-          "browserTarget": "ngx-reference-app:build:development"
+          "buildTarget": "ngx-reference-app:build:development"
         }
       },
       "defaultConfiguration": "development",

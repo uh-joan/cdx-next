@@ -17,8 +17,7 @@
       "defaultConfiguration": "production",
       "executor": "@nx/angular:package",
       "options": {
-        "project": "packages/ngx-authentication/ng-package.json",
-        "updateBuildableProjectDepsInPackageJson": true
+        "project": "packages/ngx-authentication/ng-package.json"
       },
       "outputs": ["{workspaceRoot}/dist/packages/ngx-authentication"]
     },
