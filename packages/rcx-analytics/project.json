@@ -21,7 +21,8 @@
         "outputPath": "dist/packages/rcx-analytics",
         "project": "packages/rcx-analytics/package.json",
         "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
-        "tsConfig": "packages/rcx-analytics/tsconfig.lib.json"
+        "tsConfig": "packages/rcx-analytics/tsconfig.lib.json",
+        "updateBuildableProjectDepsInPackageJson": true
       },
       "outputs": ["{options.outputPath}"]
     },

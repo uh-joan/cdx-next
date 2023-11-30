@@ -22,7 +22,8 @@
         "outputPath": "dist/packages/theme-react-mui",
         "project": "packages/theme-react-mui/package.json",
         "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
-        "tsConfig": "packages/theme-react-mui/tsconfig.lib.json"
+        "tsConfig": "packages/theme-react-mui/tsconfig.lib.json",
+        "updateBuildableProjectDepsInPackageJson": true
       },
       "outputs": ["{options.outputPath}"]
     },

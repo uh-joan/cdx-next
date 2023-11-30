@@ -17,7 +17,8 @@
       "defaultConfiguration": "production",
       "executor": "@nx/angular:package",
       "options": {
-        "project": "packages/ngx-session-activity/ng-package.json"
+        "project": "packages/ngx-session-activity/ng-package.json",
+        "updateBuildableProjectDepsInPackageJson": true
       },
       "outputs": ["{workspaceRoot}/dist/packages/ngx-session-activity"]
     },

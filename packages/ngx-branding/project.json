@@ -18,7 +18,8 @@
       "defaultConfiguration": "production",
       "executor": "@nx/angular:package",
       "options": {
-        "project": "packages/ngx-branding/ng-package.json"
+        "project": "packages/ngx-branding/ng-package.json",
+        "updateBuildableProjectDepsInPackageJson": true
       },
       "outputs": ["{workspaceRoot}/dist/packages/ngx-branding"]
     },

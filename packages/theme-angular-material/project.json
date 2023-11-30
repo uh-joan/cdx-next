@@ -18,7 +18,8 @@
       "defaultConfiguration": "production",
       "executor": "@nx/angular:package",
       "options": {
-        "project": "packages/theme-angular-material/ng-package.json"
+        "project": "packages/theme-angular-material/ng-package.json",
+        "updateBuildableProjectDepsInPackageJson": true
       },
       "outputs": ["{workspaceRoot}/dist/packages/theme-angular-material"]
     },
