@@ -12,10 +12,15 @@ export class BrokerComponent {
     private route: ActivatedRoute,
     private authenticationService: AuthenticationService,
   ) {
-    authenticationService.enterApplicationAfterAuthentication(route.snapshot);
     const authCode = this.route.snapshot.paramMap.get('authCode');
     if (authCode) {
-      this.authenticationService.createSession(authCode);
+      this.authenticationService
+        .createSession(authCode)
+        .then(() =>
+          authenticationService.enterApplicationAfterAuthentication(
+            route.snapshot,
+          ),
+        );
     } else {
       this.authenticationService.logout();
     }
