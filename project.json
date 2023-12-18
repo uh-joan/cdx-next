@@ -5,7 +5,7 @@
     "version": {
       "executor": "@jscutlery/semver:version",
       "options": {
-        "commitMessageFormat": "chore(${projectName}): release version ${version} [skip ci]",
+        "commitMessageFormat": "chore({projectName}): release version ${version} [skip ci]",
         "push": false,
         "skipProjectChangelog": true,
         "skipRootChangelog": true,
