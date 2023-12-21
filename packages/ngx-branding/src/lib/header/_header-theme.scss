@@ -5,8 +5,7 @@
   @include clv.clarivate-font-faces; // this should go someplace global (like a CDN)
 
   .cdx-header {
-    // @include mat.legacy-typography-level($typography-config, body-1);
-    @include angular-material-typography($cdx-typography);
+    @include mat.typography-level($typography-config, body-1);
 
     &__product-name-or-logo {
       @include clv.clarivate-bold(26px); // aligns with "headline"

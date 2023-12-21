@@ -107,6 +107,7 @@ $cdx-theme: mat.define-light-theme(
       warn: $warn-palette,
     ),
     density: 0,
+    typography: $cdx-typography,
   )
 );
 @mixin default() {
