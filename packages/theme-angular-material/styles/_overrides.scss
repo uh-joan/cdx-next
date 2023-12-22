@@ -30,6 +30,16 @@
     }
   }
 
+  .mat-form-field--transparent {
+    .mdc-text-field--filled:not(.mdc-text-field--disabled) {
+      background-color: transparent;
+
+      .mat-mdc-form-field-focus-overlay {
+        background-color: transparent;
+      }
+    }
+  }
+
   .mat-typography.mat-legacy-spacing {
     p {
       margin-block-start: 1em;

@@ -204,7 +204,10 @@ const WithProductSearchTemplate: StoryFn<HeaderComponent> = () => ({
         alt="Clarivate"
         style="max-width: 140px"
       />
-      <mat-form-field style="flex: 0.75; top: 0.25rem">
+      <mat-form-field
+        class="mat-form-field--transparent"
+        style="flex: 0.75; top: 0.25rem"
+      >
         <input matInput />
         <mat-icon matSuffix>search</mat-icon>
       </mat-form-field>
