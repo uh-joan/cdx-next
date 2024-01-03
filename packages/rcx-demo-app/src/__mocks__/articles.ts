@@ -1,4 +1,20 @@
-export const articles = [
+export type Article = {
+  id: number;
+  title: string;
+  author: string;
+  releaseDate: string;
+  argument: string;
+  description: string;
+  updated: Date;
+  citations: number;
+  references: number;
+  totalDownloads: string;
+  peerReviewed: boolean;
+  fullArticle: boolean;
+  metaAnalysis: boolean;
+};
+
+export const articles: Article[] = [
   {
     id: 1,
     title: 'Hispatology of Alchool-Related Liver Diseases',
@@ -11,7 +27,7 @@ export const articles = [
     citations: 9,
     references: 50,
     totalDownloads: '594',
-    peerReviewd: false,
+    peerReviewed: false,
     fullArticle: false,
     metaAnalysis: false,
   },
@@ -27,13 +43,12 @@ export const articles = [
     citations: 88,
     references: 23,
     totalDownloads: '124',
-    peerReviewd: true,
+    peerReviewed: true,
     fullArticle: true,
     metaAnalysis: false,
   },
   {
     id: 3,
-    number: 3,
     title: 'Hepatic Outcomes of Nonalcoholic Fatty Liver Disease',
     author: 'Saleh A. Alqahtani',
     releaseDate: 'FEB 2022',
@@ -44,7 +59,7 @@ export const articles = [
     citations: 3,
     references: 67,
     totalDownloads: '364',
-    peerReviewd: false,
+    peerReviewed: false,
     fullArticle: true,
     metaAnalysis: false,
   },
@@ -60,7 +75,7 @@ export const articles = [
     citations: 6,
     references: 27,
     totalDownloads: '334',
-    peerReviewd: true,
+    peerReviewed: true,
     fullArticle: false,
     metaAnalysis: true,
   },
@@ -76,7 +91,7 @@ export const articles = [
     citations: 7,
     references: 12,
     totalDownloads: '724',
-    peerReviewd: false,
+    peerReviewed: false,
     fullArticle: true,
     metaAnalysis: false,
   },
@@ -92,7 +107,7 @@ export const articles = [
     citations: 8,
     references: 33,
     totalDownloads: '724',
-    peerReviewd: true,
+    peerReviewed: true,
     fullArticle: true,
     metaAnalysis: false,
   },
@@ -108,7 +123,7 @@ export const articles = [
     citations: 8,
     references: 33,
     totalDownloads: '724',
-    peerReviewd: true,
+    peerReviewed: true,
     fullArticle: true,
     metaAnalysis: true,
   },
@@ -125,7 +140,7 @@ export const articles = [
     citations: 8,
     references: 33,
     totalDownloads: '724',
-    peerReviewd: false,
+    peerReviewed: false,
     fullArticle: true,
     metaAnalysis: false,
   },

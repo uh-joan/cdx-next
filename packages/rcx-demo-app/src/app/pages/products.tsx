@@ -1,9 +1,15 @@
 import { Box, Container, Grid, Pagination } from '@mui/material';
 import * as React from 'react';
 
-import articles from '../../__mocks__/articles';
+import { Article, articles } from '../../__mocks__/articles';
 import { ProductCard } from '../../components/product/product-card';
 import { ProductListToolbar } from '../../components/product/product-list-toolbar';
+
+type Filter = {
+  peerReviewed: boolean;
+  fullArticle: boolean;
+  metaAnalysis: boolean;
+};
 
 const Products = () => {
   const defaultEndDate = new Date();
@@ -32,7 +38,9 @@ const Products = () => {
     setSelectedFilters(filters);
   };
 
-  const handleFilterPropertyChange = (filters: any) => {
+  const handleFilterPropertyChange = (
+    filters: React.SetStateAction<Filter>,
+  ) => {
     setSelectedFiltersByProperties(filters);
   };
 
@@ -45,24 +53,24 @@ const Products = () => {
 
   const [selectedFiltersByProperties, setSelectedFiltersByProperties] =
     React.useState({
-      peerReviewd: false,
+      peerReviewed: false,
       fullArticle: false,
       metaAnalysis: false,
     });
 
   const filterArticlesByDate = () => {
-    return articles.filter((article: any) => {
+    return articles.filter((article: Article) => {
       const articleDate = new Date(article.updated);
       return articleDate >= startDate && articleDate <= endDate;
     });
   };
 
-  const filterArticlesByFilters = (articles: any) => {
-    return articles.filter((article: any) => {
+  const filterArticlesByFilters = (articles: Article[]) => {
+    return articles.filter((article: Article) => {
       return selectedFilters.some(
         (selectedFilters) =>
           article.argument.includes(selectedFilters) &&
-          (!selectedFiltersByProperties.peerReviewd || article.peerReviewd) &&
+          (!selectedFiltersByProperties.peerReviewed || article.peerReviewed) &&
           (!selectedFiltersByProperties.metaAnalysis || article.metaAnalysis) &&
           (!selectedFiltersByProperties.fullArticle || article.fullArticle),
       );
@@ -91,7 +99,7 @@ const Products = () => {
             <Box sx={{ pt: 3 }}>
               <Grid container spacing={3}>
                 {filterArticlesByFilters(filterArticlesByDate()).map(
-                  (article: any) => (
+                  (article: Article) => (
                     <Grid item key={article.id} lg={12} md={12} xs={12}>
                       <ProductCard article={article} />
                     </Grid>

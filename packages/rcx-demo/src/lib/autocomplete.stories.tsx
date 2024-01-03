@@ -351,7 +351,7 @@ export function Playground() {
         {...defaultProps}
         id="controlled-demo"
         value={value}
-        onChange={(event: any, newValue: FilmOptionType | null) => {
+        onChange={(event: object, newValue: FilmOptionType | null) => {
           setValue(newValue);
         }}
         renderInput={(params) => (

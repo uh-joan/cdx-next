@@ -11,7 +11,8 @@ import * as ru_RU from './i18n/ru_RU.json';
 import * as zh_CN from './i18n/zh_CN.json';
 import * as zh_TW from './i18n/zh_TW.json';
 
-const CDX_TRANSLATIONS: any = {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const CDX_TRANSLATIONS: { [key: string]: any } = {
   ar_SA,
   en,
   es_ES,
