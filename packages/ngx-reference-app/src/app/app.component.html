@@ -1,51 +1,19 @@
 <header cdx-header>
   <cdx-header-global>
-    <cdx-header-product-name>
-      <button
-        class="cdx-router-link"
-        mat-stroked-button
-        title="Home"
-        role="link"
-        [routerLink]="'/home'"
-        [routerLinkActive]="'cdx-is-active'"
-      >
-        {{ 'APP.HOME' | translate }}
-      </button>
-      <button
-        class="cdx-router-link"
-        mat-stroked-button
-        title="Sandwich"
-        [routerLink]="'/sandwich'"
-        [routerLinkActive]="'cdx-is-active'"
-      >
-        {{ 'APP.SANDWICH' | translate }}
-      </button>
-    </cdx-header-product-name>
     <cdx-header-global-user-profile
       withSessionManagement
       [shouldShowTranslations]="true"
     >
     </cdx-header-global-user-profile>
   </cdx-header-global>
-  <img
-    cdx-header-product-logo
-    src="https://clarivate.com/code/wp-content/themes/clarivate/src/img/logo.svg?v=2.4.32"
-    style="max-width: 140px"
-  />
-  <form [formGroup]="formLanguage">
-    <mat-form-field appearance="outline">
-      <mat-label>{{ 'APP.SELECT_LANGUAGE' | translate }}</mat-label>
-      <mat-select
-        placeholder="Choose an option"
-        panelClass="common-panel"
-        formControlName="language"
-      >
-        <ng-container *ngFor="let language of MAP_LANGUAGES">
-          <mat-option [value]="language.value">{{ language.name }}</mat-option>
-        </ng-container>
-      </mat-select>
-    </mat-form-field>
-  </form>
+  <cdx-header-product-name
+    >Clarivate Digital Experience
+  </cdx-header-product-name>
+  <div class="cdx-selectors">
+    <language-selector></language-selector>
+    <theme-selector></theme-selector>
+    <mode-selector></mode-selector>
+  </div>
 </header>
 
 <router-outlet></router-outlet>

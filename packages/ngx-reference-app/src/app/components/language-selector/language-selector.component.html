@@ -1,0 +1,31 @@
+<form [formGroup]="formLanguage">
+  <mat-form-field appearance="outline">
+    <mat-label>{{ 'APP.SELECT_LANGUAGE' | translate }}</mat-label>
+    <mat-select
+      placeholder="Choose an option"
+      panelClass="common-panel"
+      formControlName="language"
+    >
+      <ng-container *ngFor="let language of MAP_LANGUAGE_NAME | keyvalue">
+        <mat-option [value]="language.key">
+          {{ getLanguageFlag(language.key) }} {{ language.value }}
+        </mat-option>
+      </ng-container>
+    </mat-select>
+  </mat-form-field>
+
+  <button
+    mat-icon-button
+    [matMenuTriggerFor]="menu"
+    aria-label="Example icon-button with a menu"
+  >
+    {{ getLanguageFlag(this.formLanguage.get('language')?.value || 'en') }}
+  </button>
+  <mat-menu #menu="matMenu">
+    <ng-container *ngFor="let language of MAP_LANGUAGE_NAME | keyvalue">
+      <button mat-menu-item (click)="selectLanguage(language.key)">
+        {{ getLanguageFlag(language.key) }} {{ language.value }}
+      </button>
+    </ng-container>
+  </mat-menu>
+</form>

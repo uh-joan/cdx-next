@@ -1,3 +1,111 @@
-<div class="cdx-page">
-  <h2>{{ 'HOME_PAGE.WELCOME' | translate }}</h2>
-</div>
+<section class="cdx-section">
+  <div class="mat-headline-2 cdx-section--title">
+    <mat-label>{{ 'HOME_PAGE.TITLE' | translate }}</mat-label>
+  </div>
+  <div class="mat-headline-5">
+    {{ 'HOME_PAGE.DESCRIPTION' | translate }}
+  </div>
+  <div class="cdx-section__hero-buttons">
+    <button
+      mat-raised-button
+      color="primary"
+      (click)="
+        goToUrl(
+          'https://digital-experience.clarivate.io/development/getting-started/quick-start-angular/index.html'
+        )
+      "
+    >
+      {{ 'HOME_PAGE.GET_STARTED' | translate }}</button
+    ><button
+      mat-stroked-button
+      (click)="goToUrl('https://digital-experience.clarivate.io/')"
+    >
+      {{ 'HOME_PAGE.LEARN_MORE' | translate }}
+    </button>
+  </div>
+</section>
+<section class="cdx-section">
+  <div class="mat-headline-3">{{ 'HOME_PAGE.FEATURES.TITLE' | translate }}</div>
+  <div class="mat-body-1">
+    {{ 'HOME_PAGE.FEATURES.DESCRIPTION' | translate }}
+  </div>
+  <div class="cdx-section__features">
+    <div class="mat-headline-5">
+      <div><mat-icon>code</mat-icon></div>
+      <div>{{ 'HOME_PAGE.FEATURES.VERSATILE.TITLE' | translate }}</div>
+      <div class="mat-body-1">
+        <div>{{ 'HOME_PAGE.FEATURES.VERSATILE.DESCRIPTION' | translate }}</div>
+      </div>
+    </div>
+    <div class="mat-headline-5">
+      <div><mat-icon>extension</mat-icon></div>
+      <div>
+        <div>{{ 'HOME_PAGE.FEATURES.MODULAR.TITLE' | translate }}</div>
+      </div>
+      <div class="mat-body-1">
+        {{ 'HOME_PAGE.FEATURES.MODULAR.DESCRIPTION' | translate }}
+      </div>
+    </div>
+    <div class="mat-headline-5">
+      <div><mat-icon>network_check</mat-icon></div>
+      <div>{{ 'HOME_PAGE.FEATURES.FAST.TITLE' | translate }}</div>
+      <div class="mat-body-1">
+        {{ 'HOME_PAGE.FEATURES.FAST.DESCRIPTION' | translate }}
+      </div>
+    </div>
+  </div>
+</section>
+<section class="cdx-section cdx-section--search">
+  <div class="mat-headline-3">
+    {{ 'HOME_PAGE.SEARCH.TITLE' | translate }}
+  </div>
+  <div class="mat-body-1">
+    {{ 'HOME_PAGE.SEARCH.DESCRIPTION' | translate }}
+  </div>
+  <form>
+    <mat-form-field class="example-full-width" appearance="outline">
+      <mat-label> {{ 'HOME_PAGE.SEARCH.PLACEHOLDER' | translate }} </mat-label>
+      <input
+        type="text"
+        placeholder="Search"
+        aria-label="Search"
+        matInput
+        [formControl]="searchControl"
+        [matAutocomplete]="auto"
+      />
+      <mat-icon matSuffix class="my-icon">search</mat-icon>
+      <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+        @for (option of filteredOptions | async; track option) {
+        <mat-option [value]="option">{{ option }}</mat-option>
+        }
+      </mat-autocomplete>
+    </mat-form-field>
+  </form>
+  <button
+    mat-raised-button
+    color="primary"
+    (click)="
+      goToUrl(
+        'https://digital-experience.clarivate.io/components/overview.html'
+      )
+    "
+  >
+    {{ 'HOME_PAGE.SEARCH.BUTTON' | translate }}
+  </button>
+</section>
+<section class="cdx-section">
+  <div class="mat-headline-3">
+    {{ 'HOME_PAGE.PLAYGROUND.TITLE' | translate }}
+  </div>
+  <div class="mat-body-1">
+    {{ 'HOME_PAGE.PLAYGROUND.DESCRIPTION' | translate }}
+  </div>
+
+  <button
+    mat-raised-button
+    color="primary"
+    (click)="goToUrl('https://cdx-stories.prod.sp.aws.clarivate.net/')"
+  >
+    {{ 'HOME_PAGE.PLAYGROUND.BUTTON' | translate }}
+  </button>
+</section>

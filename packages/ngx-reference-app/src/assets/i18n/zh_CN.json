@@ -1,13 +1,45 @@
 {
   "APP": {
-    "HOME": "家",
+    "DARK": "暗色",
+    "HOME": "首页",
+    "LIGHT": "亮色",
     "LOGIN": "登录",
-    "SANDWICH": "三明治",
     "SELECT_LANGUAGE": "选择语言",
-    "SIGN_UP": "注册"
+    "SIGN_UP": "注册",
+    "THEME": "主题"
   },
   "HOME_PAGE": {
-    "WELCOME": "欢迎来到主页！"
+    "DESCRIPTION": "为Angular、React和Web提供的多功能组件库",
+    "FEATURES": {
+      "DESCRIPTION": "CDX是一个工具包，提供强大的解决方案，与无缝集成，提供可靠高效的开发体验",
+      "FAST": {
+        "DESCRIPTION": "针对性能和速度进行优化",
+        "TITLE": "快速"
+      },
+      "MODULAR": {
+        "DESCRIPTION": "只在需要时使用所需功能",
+        "TITLE": "模块化"
+      },
+      "TITLE": "特点",
+      "VERSATILE": {
+        "DESCRIPTION": "设计用于与Angular、React和Web组件一起使用",
+        "TITLE": "多功能"
+      }
+    },
+    "GET_STARTED": "开始使用",
+    "LEARN_MORE": "了解更多",
+    "PLAYGROUND": {
+      "BUTTON": "进入游乐场",
+      "DESCRIPTION": "在游乐场中探索和测试我们的组件",
+      "TITLE": "游乐场"
+    },
+    "SEARCH": {
+      "BUTTON": "进入组件",
+      "DESCRIPTION": "探索我们丰富的组件库。使用下面的搜索栏找到你需要的内容",
+      "PLACEHOLDER": "组件",
+      "TITLE": "搜索组件"
+    },
+    "TITLE": "欢迎来到CDX"
   },
   "lang": "zh_CN"
 }

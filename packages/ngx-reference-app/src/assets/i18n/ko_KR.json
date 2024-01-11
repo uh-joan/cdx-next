@@ -1,13 +1,45 @@
 {
   "APP": {
-    "HOME": "집",
+    "DARK": "다크",
+    "HOME": "홈",
+    "LIGHT": "라이트",
     "LOGIN": "로그인",
-    "SANDWICH": "샌드위치",
     "SELECT_LANGUAGE": "언어 선택",
-    "SIGN_UP": "가입하기"
+    "SIGN_UP": "가입하기",
+    "THEME": "테마"
   },
   "HOME_PAGE": {
-    "WELCOME": "홈 페이지에 오신 것을 환영합니다!"
+    "DESCRIPTION": "Angular, React 및 웹을 위한 다목적 컴포넌트 라이브러리",
+    "FEATURES": {
+      "DESCRIPTION": "CDX는 원활한 통합을 제공하며 신뢰할 수 있고 효율적인 개발 경험을 제공하는 강력한 솔루션을 제공하는 툴킷입니다",
+      "FAST": {
+        "DESCRIPTION": "성능 및 속도를 최적화한",
+        "TITLE": "빠른"
+      },
+      "MODULAR": {
+        "DESCRIPTION": "필요할 때 필요한 것만 사용",
+        "TITLE": "모듈식"
+      },
+      "TITLE": "특징",
+      "VERSATILE": {
+        "DESCRIPTION": "Angular, React 및 웹 컴포넌트와 함께 작동하도록 설계",
+        "TITLE": "다양한"
+      }
+    },
+    "GET_STARTED": "시작하기",
+    "LEARN_MORE": "더 알아보기",
+    "PLAYGROUND": {
+      "BUTTON": "플레이그라운드로 이동",
+      "DESCRIPTION": "플레이그라운드에서 컴포넌트를 탐험하고 테스트합니다",
+      "TITLE": "플레이그라운드"
+    },
+    "SEARCH": {
+      "BUTTON": "컴포넌트로 이동",
+      "DESCRIPTION": "다양한 컴포넌트 라이브러리를 탐색합니다. 필요한 것을 찾기 위해 아래의 검색 바를 사용하세요",
+      "PLACEHOLDER": "컴포넌트",
+      "TITLE": "컴포넌트 검색"
+    },
+    "TITLE": "CDX에 오신 것을 환영합니다"
   },
   "lang": "ko_KR"
 }

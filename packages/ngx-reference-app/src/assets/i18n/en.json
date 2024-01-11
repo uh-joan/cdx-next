@@ -1,13 +1,45 @@
 {
   "APP": {
+    "DARK": "Dark",
     "HOME": "Home",
+    "LIGHT": "Light",
     "LOGIN": "Login",
-    "SANDWICH": "Sandwich",
     "SELECT_LANGUAGE": "Select language",
-    "SIGN_UP": "Sign up"
+    "SIGN_UP": "Sign up",
+    "THEME": "Theme"
   },
   "HOME_PAGE": {
-    "WELCOME": "Welcome to the Home Page!"
+    "DESCRIPTION": "A versatile library set of components for Angular, React and the Web",
+    "FEATURES": {
+      "DESCRIPTION": "CDX is a toolkit offering a robust solution with seamless integration providing a reliable and efficient development experience",
+      "FAST": {
+        "DESCRIPTION": "Optimized for performance and speed",
+        "TITLE": "Fast"
+      },
+      "MODULAR": {
+        "DESCRIPTION": "Use only what you need, when you need it",
+        "TITLE": "Modular"
+      },
+      "TITLE": "Features",
+      "VERSATILE": {
+        "DESCRIPTION": "Designed to work with Angular, React and web components",
+        "TITLE": "Versatile"
+      }
+    },
+    "GET_STARTED": "Get Started",
+    "LEARN_MORE": "Learn More",
+    "PLAYGROUND": {
+      "BUTTON": "Go To Playground",
+      "DESCRIPTION": "Explore and test our components in the playground",
+      "TITLE": "Playground"
+    },
+    "SEARCH": {
+      "BUTTON": "Go To Components",
+      "DESCRIPTION": "Explore our vast library of components. Use the sarch bar below to find what you need",
+      "PLACEHOLDER": "Components",
+      "TITLE": "Search Components"
+    },
+    "TITLE": "Welcome to CDX"
   },
   "lang": "en"
 }

@@ -82,6 +82,110 @@ $warn-palette: mat.define-palette(
     ),
   )
 );
+$blue-palette: mat.define-palette(
+  (
+    50: colors.$blue-50,
+    100: colors.$blue-100,
+    200: colors.$blue-200,
+    300: colors.$blue-300,
+    400: colors.$blue-400,
+    500: colors.$blue-500,
+    600: colors.$blue-600,
+    700: colors.$blue-700,
+    800: colors.$blue-800,
+    900: colors.$blue-900,
+    contrast: (
+      50: #000,
+      100: #000,
+      200: #000,
+      300: #000,
+      400: #fff,
+      500: #fff,
+      600: #fff,
+      700: #fff,
+      800: #fff,
+      900: #fff,
+    ),
+  )
+);
+$blue-dark-palette: mat.define-palette(
+  (
+    50: colors.$blue-dark-50,
+    100: colors.$blue-dark-100,
+    200: colors.$blue-dark-200,
+    300: colors.$blue-dark-300,
+    400: colors.$blue-dark-400,
+    500: colors.$blue-dark-500,
+    600: colors.$blue-dark-600,
+    700: colors.$blue-dark-700,
+    800: colors.$blue-dark-800,
+    900: colors.$blue-dark-900,
+    contrast: (
+      50: #000,
+      100: #000,
+      200: #000,
+      300: #000,
+      400: #fff,
+      500: #fff,
+      600: #fff,
+      700: #fff,
+      800: #fff,
+      900: #fff,
+    ),
+  )
+);
+$teal-palette: mat.define-palette(
+  (
+    50: colors.$teal-50,
+    100: colors.$teal-100,
+    200: colors.$teal-200,
+    300: colors.$teal-300,
+    400: colors.$teal-400,
+    500: colors.$teal-500,
+    600: colors.$teal-600,
+    700: colors.$teal-700,
+    800: colors.$teal-800,
+    900: colors.$teal-900,
+    contrast: (
+      50: #000,
+      100: #000,
+      200: #000,
+      300: #000,
+      400: #fff,
+      500: #fff,
+      600: #fff,
+      700: #fff,
+      800: #fff,
+      900: #fff,
+    ),
+  )
+);
+$teal-dark-palette: mat.define-palette(
+  (
+    50: colors.$teal-dark-50,
+    100: colors.$teal-dark-100,
+    200: colors.$teal-dark-200,
+    300: colors.$teal-dark-300,
+    400: colors.$teal-dark-400,
+    500: colors.$teal-dark-500,
+    600: colors.$teal-dark-600,
+    700: colors.$teal-dark-700,
+    800: colors.$teal-dark-800,
+    900: colors.$teal-dark-900,
+    contrast: (
+      50: #000,
+      100: #000,
+      200: #000,
+      300: #000,
+      400: #fff,
+      500: #fff,
+      600: #fff,
+      700: #fff,
+      800: #fff,
+      900: #fff,
+    ),
+  )
+);
 $cdx-typography: mat.define-typography-config(
   $font-family: '"Source Sans Pro", sans-serif',
   $headline-1: mat.define-typography-level(96px, 116px, 700),
@@ -98,20 +202,16 @@ $cdx-typography: mat.define-typography-config(
   $button: mat.define-typography-level(inherit, $font-weight: 600),
 );
 $dark-mode-palette: (
-  50: #e8f5e9,
-  100: #c8e6c9,
-  200: #a5d6a7,
-  300: #ba84ff,
-  400: #81c784,
-  500: #63daff,
-  600: #43a047,
-  700: #388e3c,
-  800: #2e7d32,
-  900: #1b5e20,
-  A100: #b9f6ca,
-  A200: #69f0ae,
-  A400: #00e676,
-  A700: #00c853,
+  50: colors.$primary-dark-50,
+  100: colors.$primary-dark-100,
+  200: colors.$primary-dark-200,
+  300: colors.$primary-dark-300,
+  400: colors.$primary-dark-400,
+  500: colors.$primary-dark-500,
+  600: colors.$primary-dark-600,
+  700: colors.$primary-dark-700,
+  800: colors.$primary-dark-800,
+  900: colors.$primary-dark-900,
   contrast: (
     50: #000,
     100: #000,
@@ -123,10 +223,6 @@ $dark-mode-palette: (
     700: #fff,
     800: #fff,
     900: #fff,
-    A100: #fff,
-    A200: #fff,
-    A400: #fff,
-    A700: #fff,
   ),
 );
 $cdx-theme: mat.define-light-theme(
@@ -143,9 +239,53 @@ $cdx-theme: mat.define-light-theme(
 $cdx-dark-theme: mat.define-dark-theme(
   (
     color: (
-      primary: mat.define-palette($dark-mode-palette, 500, 'A100', 'A400'),
+      primary: mat.define-palette($dark-mode-palette, 500, 600, 800),
       accent: mat.define-palette($dark-mode-palette, 50, 600, 800),
     ),
+    typography: $cdx-typography,
+  )
+);
+$cdx-blue-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $blue-palette,
+      accent: $accent-palette,
+      warn: $warn-palette,
+    ),
+    density: 0,
+    typography: $cdx-typography,
+  )
+);
+$cdx-blue-dark-theme: mat.define-dark-theme(
+  (
+    color: (
+      primary: $blue-dark-palette,
+      accent: $accent-palette,
+      warn: $warn-palette,
+    ),
+    density: 0,
+    typography: $cdx-typography,
+  )
+);
+$cdx-teal-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $teal-palette,
+      accent: $accent-palette,
+      warn: $warn-palette,
+    ),
+    density: 0,
+    typography: $cdx-typography,
+  )
+);
+$cdx-teal-dark-theme: mat.define-dark-theme(
+  (
+    color: (
+      primary: $teal-dark-palette,
+      accent: $accent-palette,
+      warn: $warn-palette,
+    ),
+    density: 0,
     typography: $cdx-typography,
   )
 );
@@ -174,6 +314,18 @@ $cdx-dark-theme: mat.define-dark-theme(
     --cdx-dark-background: #181d1f;
   }
 
+  body.cdx-theme-teal {
+    @include mat.core-color($cdx-teal-theme);
+
+    @include mat.all-component-themes($cdx-teal-theme);
+  }
+
+  body.cdx-theme-blue {
+    @include mat.core-color($cdx-blue-theme);
+
+    @include mat.all-component-themes($cdx-blue-theme);
+  }
+
   body.cdx-light-mode {
     @include mat.core-color($cdx-theme);
 
@@ -181,6 +333,18 @@ $cdx-dark-theme: mat.define-dark-theme(
 
     background-color: var(--cdx-light-background, #fff);
     color: var(--cdx-light-text, #181d1f);
+
+    &.cdx-theme-teal {
+      @include mat.core-color($cdx-teal-theme);
+
+      @include mat.all-component-themes($cdx-teal-theme);
+    }
+
+    &.cdx-theme-blue {
+      @include mat.core-color($cdx-blue-theme);
+
+      @include mat.all-component-themes($cdx-blue-theme);
+    }
   }
 
   body.cdx-dark-mode {
@@ -190,6 +354,18 @@ $cdx-dark-theme: mat.define-dark-theme(
 
     background-color: var(--cdx-dark-background, #181d1f);
     color: var(--cdx-dark-text, #fff);
+
+    &.cdx-theme-teal {
+      @include mat.core-color($cdx-teal-dark-theme);
+
+      @include mat.all-component-themes($cdx-teal-dark-theme);
+    }
+
+    &.cdx-theme-blue {
+      @include mat.core-color($cdx-blue-dark-theme);
+
+      @include mat.all-component-themes($cdx-blue-dark-theme);
+    }
   }
 
   body.cdx-auto-mode {
@@ -200,6 +376,18 @@ $cdx-dark-theme: mat.define-dark-theme(
 
       background-color: var(--cdx-light-background, #fff);
       color: var(--cdx-light-text, #181d1f);
+
+      &.cdx-theme-teal {
+        @include mat.core-color($cdx-teal-theme);
+
+        @include mat.all-component-themes($cdx-teal-theme);
+      }
+
+      &.cdx-theme-blue {
+        @include mat.core-color($cdx-blue-theme);
+
+        @include mat.all-component-themes($cdx-blue-theme);
+      }
     }
 
     @media (prefers-color-scheme: dark) {
@@ -209,6 +397,18 @@ $cdx-dark-theme: mat.define-dark-theme(
 
       background-color: var(--cdx-dark-background, #181d1f);
       color: var(--cdx-dark-text, #fff);
+
+      &.cdx-theme-teal {
+        @include mat.core-color($cdx-teal-dark-theme);
+
+        @include mat.all-component-themes($cdx-teal-dark-theme);
+      }
+
+      &.cdx-theme-blue {
+        @include mat.core-color($cdx-blue-dark-theme);
+
+        @include mat.all-component-themes($cdx-blue-dark-theme);
+      }
     }
   }
 }

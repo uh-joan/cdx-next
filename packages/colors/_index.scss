@@ -1,3 +1,6 @@
+@forward 'theme/blue';
+@forward 'theme/teal';
+
 // Primary
 $primary-50: #eee7f8;
 $primary-100: #d2c4ed;
@@ -9,6 +12,18 @@ $primary-600: #4f2bb6;
 $primary-700: #4125af;
 $primary-800: #2818a2;
 $primary-900: #23018e;
+
+// Primary Dark
+$primary-dark-50: #f7f0ff;
+$primary-dark-100: #eadaff;
+$primary-dark-200: #ddc2ff;
+$primary-dark-300: #cfa9ff;
+$primary-dark-400: #c496ff;
+$primary-dark-500: #ba84ff;
+$primary-dark-600: #b37cff;
+$primary-dark-700: #ab71ff;
+$primary-dark-800: #a367ff;
+$primary-dark-900: #9454ff;
 
 // Neutral Palette
 $neutral-50: #fafafa;

@@ -1,13 +1,45 @@
 {
   "APP": {
-    "HOME": "家",
-    "LOGIN": "登錄",
-    "SANDWICH": "三明治",
+    "DARK": "深色",
+    "HOME": "首頁",
+    "LIGHT": "淺色",
+    "LOGIN": "登入",
     "SELECT_LANGUAGE": "選擇語言",
-    "SIGN_UP": "註冊"
+    "SIGN_UP": "註冊",
+    "THEME": "主題"
   },
   "HOME_PAGE": {
-    "WELCOME": "歡迎來到主頁！"
+    "DESCRIPTION": "一個適用於 Angular、React 和 Web 的多功能組件庫",
+    "FEATURES": {
+      "DESCRIPTION": "CDX 是一個工具包，提供強大的解決方案，與無縫集成，提供可靠且高效的開發體驗",
+      "FAST": {
+        "DESCRIPTION": "針對性能和速度進行優化",
+        "TITLE": "快速"
+      },
+      "MODULAR": {
+        "DESCRIPTION": "僅在需要時使用所需功能",
+        "TITLE": "模組化"
+      },
+      "TITLE": "特點",
+      "VERSATILE": {
+        "DESCRIPTION": "設計用於與 Angular、React 和 Web 組件一起使用",
+        "TITLE": "多功能"
+      }
+    },
+    "GET_STARTED": "開始使用",
+    "LEARN_MORE": "了解更多",
+    "PLAYGROUND": {
+      "BUTTON": "進入遊樂場",
+      "DESCRIPTION": "在遊樂場中探索並測試我們的組件",
+      "TITLE": "遊樂場"
+    },
+    "SEARCH": {
+      "BUTTON": "進入組件",
+      "DESCRIPTION": "探索我們豐富的組件庫。使用下面的搜索欄找到你需要的內容",
+      "PLACEHOLDER": "組件",
+      "TITLE": "搜索組件"
+    },
+    "TITLE": "歡迎來到 CDX"
   },
   "lang": "zh_TW"
 }

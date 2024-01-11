@@ -1,13 +1,45 @@
 {
   "APP": {
-    "HOME": "Pagina inicial",
-    "LOGIN": "Conecte-se",
-    "SANDWICH": "Sanduíche",
-    "SELECT_LANGUAGE": "Selecione o idioma",
-    "SIGN_UP": "Inscrever-se"
+    "DARK": "Escuro",
+    "HOME": "Início",
+    "LIGHT": "Claro",
+    "LOGIN": "Entrar",
+    "SELECT_LANGUAGE": "Selecionar idioma",
+    "SIGN_UP": "Cadastrar",
+    "THEME": "Tema"
   },
   "HOME_PAGE": {
-    "WELCOME": "Bem-vindo à página inicial!"
+    "DESCRIPTION": "Uma biblioteca versátil de componentes para Angular, React e a Web",
+    "FEATURES": {
+      "DESCRIPTION": "O CDX é um conjunto de ferramentas que oferece uma solução robusta com integração perfeita, proporcionando uma experiência de desenvolvimento confiável e eficiente",
+      "FAST": {
+        "DESCRIPTION": "Otimizado para desempenho e velocidade",
+        "TITLE": "Rápido"
+      },
+      "MODULAR": {
+        "DESCRIPTION": "Use apenas o que você precisa, quando precisar",
+        "TITLE": "Modular"
+      },
+      "TITLE": "Recursos",
+      "VERSATILE": {
+        "DESCRIPTION": "Projetado para funcionar com Angular, React e componentes da web",
+        "TITLE": "Versátil"
+      }
+    },
+    "GET_STARTED": "Começar",
+    "LEARN_MORE": "Saiba Mais",
+    "PLAYGROUND": {
+      "BUTTON": "Ir para o Playground",
+      "DESCRIPTION": "Explore e teste nossos componentes no playground",
+      "TITLE": "Playground"
+    },
+    "SEARCH": {
+      "BUTTON": "Ir para Componentes",
+      "DESCRIPTION": "Explore nossa vasta biblioteca de componentes. Use a barra de pesquisa abaixo para encontrar o que precisa",
+      "PLACEHOLDER": "Componentes",
+      "TITLE": "Buscar Componentes"
+    },
+    "TITLE": "Bem-vindo ao CDX"
   },
   "lang": "pt_BR"
 }

@@ -25,6 +25,8 @@ $header-typography: mat.define-typography-config(
 
   &__product-bar {
     @include mat.elevation(5);
+
+    background-color: inherit;
   }
 
   .mat-tab-nav-bar {

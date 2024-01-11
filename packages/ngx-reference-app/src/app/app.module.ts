@@ -1,8 +1,4 @@
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms';
-import { MatButtonModule } from '@angular/material/button';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatSelectModule } from '@angular/material/select';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {
   AnalyticsContextSchema,
@@ -28,6 +24,9 @@ import { TranslateModule } from '@ngx-translate/core';
 
 import { AppComponent } from './app.component';
 import { AppRoutesModule } from './app.routes';
+import { LanguageSelectorComponent } from './components/language-selector/language-selector.component';
+import { ModeSelectorComponent } from './components/mode-selector/mode-selector.component';
+import { ThemeSelectorComponent } from './components/theme-selector/theme-selector.component';
 
 const ONE_TRUST_SETTINGS: OneTrustSettings = {
   domainId: '1c592d3f-d63c-42d7-9871-1b022f316498',
@@ -47,7 +46,6 @@ const ANALYTICS_CONTEXT: AnalyticsContextSchema = {
     FooterModule,
     OneTrustModule.forRoot(ONE_TRUST_SETTINGS),
     BrowserAnimationsModule,
-    MatButtonModule,
     HeaderGlobalUserProfileModule,
     HeaderGlobalSessionManagementModule,
     AnalyticsModule.forRoot(
@@ -74,9 +72,9 @@ const ANALYTICS_CONTEXT: AnalyticsContextSchema = {
       defaultLanguage: 'en',
     }),
     NgxTranslationsModule,
-    MatSelectModule,
-    MatFormFieldModule,
-    ReactiveFormsModule,
+    ModeSelectorComponent,
+    ThemeSelectorComponent,
+    LanguageSelectorComponent,
   ],
   providers: [],
   bootstrap: [AppComponent],

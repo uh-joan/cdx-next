@@ -22,9 +22,13 @@ body {
       opacity: 1;
     }
 
-    .mat-mdc-form-field {
-      padding: 0.5rem;
-      margin-top: 1rem;
+    .cdx-selectors {
+      display: flex;
+      height: 80px;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
     }
 
     footer {

@@ -1,13 +1,45 @@
 {
   "APP": {
-    "HOME": "家",
+    "DARK": "ダーク",
+    "HOME": "ホーム",
+    "LIGHT": "ライト",
     "LOGIN": "ログイン",
-    "SANDWICH": "サンドイッチ",
-    "SELECT_LANGUAGE": "言語を選択する",
-    "SIGN_UP": "サインアップ"
+    "SELECT_LANGUAGE": "言語を選択",
+    "SIGN_UP": "サインアップ",
+    "THEME": "テーマ"
   },
   "HOME_PAGE": {
-    "WELCOME": "ホームページへようこそ！"
+    "DESCRIPTION": "Angular、React、およびWeb向けの多目的コンポーネントライブラリ",
+    "FEATURES": {
+      "DESCRIPTION": "CDXは、シームレスな統合を提供する堅牢なソリューションを提供するツールキットで、信頼性のある効率的な開発体験を提供します",
+      "FAST": {
+        "DESCRIPTION": "パフォーマンスと速度に最適化されています",
+        "TITLE": "高速"
+      },
+      "MODULAR": {
+        "DESCRIPTION": "必要なときに必要なものだけを使用",
+        "TITLE": "モジュラー"
+      },
+      "TITLE": "特徴",
+      "VERSATILE": {
+        "DESCRIPTION": "Angular、React、およびWebコンポーネントと連携するように設計されています",
+        "TITLE": "多様性"
+      }
+    },
+    "GET_STARTED": "はじめに",
+    "LEARN_MORE": "詳細を見る",
+    "PLAYGROUND": {
+      "BUTTON": "プレイグラウンドに移動",
+      "DESCRIPTION": "プレイグラウンドでコンポーネントを探索してテストします",
+      "TITLE": "プレイグラウンド"
+    },
+    "SEARCH": {
+      "BUTTON": "コンポーネントに移動",
+      "DESCRIPTION": "広範なコンポーネントライブラリを探索します。必要なものを見つけるために下の検索バーを使用します",
+      "PLACEHOLDER": "コンポーネント",
+      "TITLE": "コンポーネント検索"
+    },
+    "TITLE": "CDXへようこそ"
   },
   "lang": "ja"
 }
