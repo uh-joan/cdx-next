@@ -6,7 +6,10 @@ import {
   HeaderGlobalUserProfileModule,
 } from '@cdx/ngx-authentication';
 import { HeaderModule, OneTrustModule } from '@cdx/ngx-branding';
-import { SessionActivityModule } from '@cdx/ngx-session-activity';
+import {
+  HeaderGlobalSessionManagementModule,
+  SessionActivityModule,
+} from '@cdx/ngx-session-activity';
 import { TranslateModule } from '@ngx-translate/core';
 
 import { AppComponent } from './app.component';
@@ -36,6 +39,7 @@ describe('AppComponent', () => {
           defaultLanguage: 'en',
         }),
         HeaderGlobalUserProfileModule,
+        HeaderGlobalSessionManagementModule,
         ModeSelectorComponent,
         ThemeSelectorComponent,
         LanguageSelectorComponent,
