@@ -10,6 +10,6 @@
     "tslib": "^2.3.0"
   },
   "peerDependencies": {
-    "@cdx/theme-angular-material": ">=2.3.0"
+    "@angular/material": "15 || 16 || 17"
   }
 }
