@@ -12,7 +12,7 @@
   "scripts": {
     "adr:new": "log4brains adr new",
     "adr:preview": "log4brains preview",
-    "build": "nx run-many --all --exclude=workspace --target=build",
+    "build": "nx run-many --all --exclude=workspace --target=build --no-cloud",
     "build:storybooks": "nx run-many --all --exclude=workspace --target=build-storybook --parallel=false",
     "commit": "cz",
     "deploy:cdn": "nx run-many --all --exclude=workspace --target=deploy:cdn --parallel=1",
