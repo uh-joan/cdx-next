@@ -1,12 +1,18 @@
 import { TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AnalyticsModule, AnalyticsService } from '@cdx/ngx-analytics';
-import { AuthenticationModule } from '@cdx/ngx-authentication';
+import {
+  AuthenticationModule,
+  HeaderGlobalUserProfileModule,
+} from '@cdx/ngx-authentication';
 import { HeaderModule, OneTrustModule } from '@cdx/ngx-branding';
 import { SessionActivityModule } from '@cdx/ngx-session-activity';
 import { TranslateModule } from '@ngx-translate/core';
 
 import { AppComponent } from './app.component';
+import { LanguageSelectorComponent } from './components/language-selector/language-selector.component';
+import { ModeSelectorComponent } from './components/mode-selector/mode-selector.component';
+import { ThemeSelectorComponent } from './components/theme-selector/theme-selector.component';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
@@ -29,6 +35,10 @@ describe('AppComponent', () => {
         TranslateModule.forRoot({
           defaultLanguage: 'en',
         }),
+        HeaderGlobalUserProfileModule,
+        ModeSelectorComponent,
+        ThemeSelectorComponent,
+        LanguageSelectorComponent,
       ],
       providers: [AnalyticsService],
     }).compileComponents();
