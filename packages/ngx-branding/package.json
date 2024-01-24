@@ -18,11 +18,8 @@
     "tslib": "^2.3.0"
   },
   "peerDependencies": {
-    "@angular/common": "17",
-    "@angular/core": "17",
-    "@angular/platform-browser": "17",
-    "@cdx/shared-branding": "*",
-    "@cdx/theme-angular-material": "*",
-    "@ngx-translate/core": "^15.0.0"
+    "@cdx/shared-branding": ">=2.3.0",
+    "@cdx/theme-angular-material": ">=2.3.0",
+    "@ngx-translate/core": "15 || 16 || 17"
   }
 }

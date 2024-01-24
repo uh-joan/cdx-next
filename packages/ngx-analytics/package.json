@@ -10,7 +10,7 @@
     "tslib": "^2.3.0"
   },
   "peerDependencies": {
-    "@angular/common": "17",
-    "@angular/core": "17"
+    "@cdx/ngx-branding": ">=2.3.0",
+    "@snowplow/browser-tracker": "^3.7.0"
   }
 }
