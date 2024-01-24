@@ -74,7 +74,11 @@
         [matAutocomplete]="auto"
       />
       <mat-icon matSuffix class="my-icon">search</mat-icon>
-      <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+      <mat-autocomplete
+        autoActiveFirstOption
+        #auto="matAutocomplete"
+        (optionSelected)="goToComponent($event)"
+      >
         @for (option of filteredOptions | async; track option) {
         <mat-option [value]="option">{{ option }}</mat-option>
         }
