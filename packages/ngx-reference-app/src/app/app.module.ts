@@ -62,11 +62,7 @@ const ANALYTICS_CONTEXT: AnalyticsContextSchema = {
       appId: 'cdx',
       environment: 'dev-stable',
     }),
-    SessionActivityModule.forRoot({
-      expireDurationMinutes: 8.1,
-      expireWarningMinutes: 8,
-      pingIntervalMinutes: 20,
-    }),
+    SessionActivityModule.forRoot(),
     AppRoutesModule,
     TranslateModule.forRoot({
       defaultLanguage: 'en',
