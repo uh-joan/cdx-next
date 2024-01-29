@@ -40,7 +40,10 @@
       "outputs": ["{options.outputDir}"]
     },
     "deploy": {
-      "executor": "ngx-deploy-npm:deploy"
+      "executor": "ngx-deploy-npm:deploy",
+      "options": {
+        "distFolderPath": "{workspaceRoot}/dist/packages/rcx-branding"
+      }
     },
     "lint": {
       "executor": "@nrwl/linter:eslint",

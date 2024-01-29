@@ -23,7 +23,10 @@
       "outputs": ["{workspaceRoot}/dist/packages/ngx-notification"]
     },
     "deploy": {
-      "executor": "ngx-deploy-npm:deploy"
+      "executor": "ngx-deploy-npm:deploy",
+      "options": {
+        "distFolderPath": "{workspaceRoot}/dist/packages/ngx-notification"
+      }
     },
     "lint": {
       "executor": "@nrwl/linter:eslint",

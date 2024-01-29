@@ -23,7 +23,10 @@
       "outputs": ["{workspaceRoot}/dist/packages/theme-angular-material"]
     },
     "deploy": {
-      "executor": "ngx-deploy-npm:deploy"
+      "executor": "ngx-deploy-npm:deploy",
+      "options": {
+        "distFolderPath": "{workspaceRoot}/dist/packages/theme-angular-material"
+      }
     },
     "lint": {
       "executor": "@nrwl/linter:eslint",

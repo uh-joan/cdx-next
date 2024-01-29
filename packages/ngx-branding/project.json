@@ -39,7 +39,10 @@
       "outputs": ["{options.outputPath}"]
     },
     "deploy": {
-      "executor": "ngx-deploy-npm:deploy"
+      "executor": "ngx-deploy-npm:deploy",
+      "options": {
+        "distFolderPath": "{workspaceRoot}/dist/packages/ngx-branding"
+      }
     },
     "lint": {
       "executor": "@nrwl/linter:eslint",

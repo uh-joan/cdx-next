@@ -23,7 +23,10 @@
       "outputs": ["{workspaceRoot}/dist/packages/ngx-analytics"]
     },
     "deploy": {
-      "executor": "ngx-deploy-npm:deploy"
+      "executor": "ngx-deploy-npm:deploy",
+      "options": {
+        "distFolderPath": "{workspaceRoot}/dist/packages/ngx-analytics"
+      }
     },
     "lint": {
       "executor": "@nrwl/linter:eslint",

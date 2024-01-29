@@ -23,7 +23,10 @@
       "outputs": ["{workspaceRoot}/dist/packages/theme-xng-breadcrumb"]
     },
     "deploy": {
-      "executor": "ngx-deploy-npm:deploy"
+      "executor": "ngx-deploy-npm:deploy",
+      "options": {
+        "distFolderPath": "{workspaceRoot}/dist/packages/theme-xng-breadcrumb"
+      }
     },
     "lint": {
       "executor": "@nrwl/linter:eslint",

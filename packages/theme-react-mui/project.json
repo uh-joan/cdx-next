@@ -27,7 +27,10 @@
       "outputs": ["{options.outputPath}"]
     },
     "deploy": {
-      "executor": "ngx-deploy-npm:deploy"
+      "executor": "ngx-deploy-npm:deploy",
+      "options": {
+        "distFolderPath": "dist/packages/theme-react-mui"
+      }
     },
     "lint": {
       "executor": "@nrwl/linter:eslint",
