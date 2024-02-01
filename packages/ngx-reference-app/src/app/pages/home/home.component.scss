@@ -1,17 +1,13 @@
-:root {
-  --tw-bg-opacity: 0.3;
-}
+@use '@angular/material' as mat;
+@use '@cdx/theme-angular-material' as cdx;
 
 .cdx-section {
   padding: 6rem 0;
-  background-color: rgb(229 231 235 / var(--tw-bg-opacity));
+  background-color: rgb(229 231 235 / 30%);
   text-align: center;
 
-  > .mat-headline-2,
-  > .mat-headline-3,
-  > .mat-headline-5,
-  > .mat-body-1 {
-    margin-bottom: 2rem;
+  > * {
+    margin-top: 2rem;
   }
 
   &:nth-child(even) {

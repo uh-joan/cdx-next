@@ -129,7 +129,7 @@ $cdx-blue-theme: mat.define-light-theme(
       accent: $accent-palette,
       warn: $warn-palette,
     ),
-    density: -2,
+    density: 0,
     typography: $cdx-blue-typography,
   )
 );

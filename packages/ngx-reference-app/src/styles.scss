@@ -1,7 +1,9 @@
-/* You can add global styles to this file, and also import other style files */
-@use '../../theme-angular-material/styles' as cdx;
+@use '@angular/material' as mat;
+
+@use '@cdx/theme-angular-material' as cdx;
 @use '@cdx/ngx-branding/header/theme' as header;
 @use '@cdx/ngx-branding/footer/theme' as footer;
+@import 'custom-theme';
 
 @include cdx.default;
 @include header.theme(cdx.$cdx-theme);
@@ -14,9 +16,13 @@
   --dark-background: #181d1f;
 }
 
+html,
 body {
   padding: 0;
   margin: 0;
+}
+
+body {
   background-color: var(--light-background);
   color: var(--light-text);
 
@@ -42,4 +48,22 @@ body {
       @include cdx.theme(cdx.$cdx-blue-dark-theme);
     }
   }
+
+  &.cdx-theme-custom {
+    @include cdx.theme($custom-theme);
+
+    &.cdx-dark-mode {
+      @include cdx.theme($custom-dark-theme);
+    }
+  }
 }
+
+/*
+ * Example apply dark theme based on system settings
+@media (prefers-color-scheme: dark) {
+  body {
+    color: var(--dark-text);
+    background-color: var(--dark-background);
+    @include cdx.theme(cdx.$cdx-dark-theme);
+  }
+} */

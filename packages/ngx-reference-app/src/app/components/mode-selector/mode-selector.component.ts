@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
-import { ThemeService } from '@cdx/theme-angular-material';
 import { TranslateModule } from '@ngx-translate/core';
+
+import { ThemeService } from '../../services/theme.service';
 
 @Component({
   selector: 'mode-selector',

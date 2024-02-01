@@ -4,8 +4,9 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatSelectModule } from '@angular/material/select';
-import { ThemeService } from '@cdx/theme-angular-material';
 import { TranslateModule } from '@ngx-translate/core';
+
+import { ThemeService } from '../../services/theme.service';
 
 @Component({
   selector: 'theme-selector',
@@ -22,7 +23,7 @@ import { TranslateModule } from '@ngx-translate/core';
   ],
 })
 export class ThemeSelectorComponent implements OnInit {
-  THEMES = ['purple', 'teal', 'blue'];
+  THEMES = ['purple', 'teal', 'blue', 'custom'];
 
   currentTheme = 'purple';
 
@@ -41,9 +42,11 @@ export class ThemeSelectorComponent implements OnInit {
     this.currentTheme = theme;
     localStorage.setItem('themeColor', theme);
 
-    document.body.classList.remove('cdx-theme-blue');
-    document.body.classList.remove('cdx-theme-teal');
-    document.body.classList.remove('cdx-theme-purple');
+    document.body.classList.forEach((className) => {
+      if (className.startsWith('cdx-theme-')) {
+        document.body.classList.remove(className);
+      }
+    });
     document.body.classList.add(`cdx-theme-${this.currentTheme}`);
   }
 }
