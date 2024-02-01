@@ -1,1 +1,5 @@
-@forward 'theme' show $cdx-theme, default;
+@forward 'theme' show default, theme;
+
+@forward 'theme/default.scss' show $cdx-theme, $cdx-dark-theme;
+@forward 'theme/blue.scss' show $cdx-blue-theme, $cdx-blue-dark-theme;
+@forward 'theme/teal.scss' show $cdx-teal-theme, $cdx-teal-dark-theme;

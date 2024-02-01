@@ -6,3 +6,40 @@
 @include cdx.default;
 @include header.theme(cdx.$cdx-theme);
 @include footer.theme(cdx.$cdx-theme);
+
+:root {
+  --light-text: rgba(#000, 0.87);
+  --light-background: #fff;
+  --dark-text: white;
+  --dark-background: #181d1f;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  background-color: var(--light-background);
+  color: var(--light-text);
+
+  &.cdx-dark-mode {
+    background-color: var(--dark-background);
+    color: var(--dark-text);
+
+    @include cdx.theme(cdx.$cdx-dark-theme);
+  }
+
+  &.cdx-theme-teal {
+    @include cdx.theme(cdx.$cdx-teal-theme);
+
+    &.cdx-dark-mode {
+      @include cdx.theme(cdx.$cdx-teal-dark-theme);
+    }
+  }
+
+  &.cdx-theme-blue {
+    @include cdx.theme(cdx.$cdx-blue-theme);
+
+    &.cdx-dark-mode {
+      @include cdx.theme(cdx.$cdx-blue-dark-theme);
+    }
+  }
+}

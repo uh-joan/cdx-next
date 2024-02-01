@@ -1,0 +1,143 @@
+@use '@angular/material' as mat;
+
+@use '@cdx/colors' as colors;
+
+$preferred-line-height: 1.3;
+$primary-palette: mat.define-palette(
+  (
+    50: colors.$primary-50,
+    100: colors.$primary-100,
+    200: colors.$primary-200,
+    300: colors.$primary-300,
+    400: colors.$primary-400,
+    500: colors.$primary-500,
+    600: colors.$primary-600,
+    700: colors.$primary-700,
+    800: colors.$primary-800,
+    900: colors.$primary-900,
+    contrast: (
+      50: #000,
+      100: #000,
+      200: #000,
+      300: #000,
+      400: #fff,
+      500: #fff,
+      600: #fff,
+      700: #fff,
+      800: #fff,
+      900: #fff,
+    ),
+  )
+);
+$accent-palette: mat.define-palette(
+  (
+    50: colors.$accent-50,
+    100: colors.$accent-100,
+    200: colors.$accent-200,
+    300: colors.$accent-300,
+    400: colors.$accent-400,
+    500: colors.$accent-500,
+    600: colors.$accent-600,
+    700: colors.$accent-700,
+    800: colors.$accent-800,
+    900: colors.$accent-900,
+    contrast: (
+      50: #000,
+      100: #000,
+      200: #000,
+      300: #000,
+      400: #000,
+      500: #000,
+      600: #000,
+      700: #000,
+      800: #fff,
+      900: #fff,
+    ),
+  )
+);
+$warn-palette: mat.define-palette(
+  (
+    50: colors.$warn-50,
+    100: colors.$warn-100,
+    200: colors.$warn-200,
+    300: colors.$warn-300,
+    400: colors.$warn-400,
+    500: colors.$warn-500,
+    600: colors.$warn-600,
+    700: colors.$warn-700,
+    800: colors.$warn-800,
+    900: colors.$warn-900,
+    contrast: (
+      50: #000,
+      100: #000,
+      200: #000,
+      300: #000,
+      400: #000,
+      500: #fff,
+      600: #fff,
+      700: #fff,
+      800: #fff,
+      900: #fff,
+    ),
+  )
+);
+$dark-mode-palette: (
+  50: colors.$primary-dark-50,
+  100: colors.$primary-dark-100,
+  200: colors.$primary-dark-200,
+  300: colors.$primary-dark-300,
+  400: colors.$primary-dark-400,
+  500: colors.$primary-dark-500,
+  600: colors.$primary-dark-600,
+  700: colors.$primary-dark-700,
+  800: colors.$primary-dark-800,
+  900: colors.$primary-dark-900,
+  contrast: (
+    50: #000,
+    100: #000,
+    200: #000,
+    300: #000,
+    400: #fff,
+    500: #fff,
+    600: #fff,
+    700: #fff,
+    800: #fff,
+    900: #fff,
+  ),
+);
+$preferred-line-height: 1.3;
+$cdx-typography: mat.define-typography-config(
+  $font-family: '"Source Sans Pro", sans-serif',
+  $headline-1: mat.define-typography-level(96px, 116px, 700),
+  $headline-2: mat.define-typography-level(56px, 64px, 700),
+  $headline-3: mat.define-typography-level(48px, 56px, 700),
+  $headline-4: mat.define-typography-level(32px, 40px, 700),
+  $headline-5: mat.define-typography-level(26px, 26px, 600),
+  $headline-6: mat.define-typography-level(20px, $preferred-line-height, 600),
+  $subtitle-1: mat.define-typography-level(18px, $preferred-line-height, 400),
+  $subtitle-2: mat.define-typography-level(16px, $preferred-line-height, 400),
+  $body-1: mat.define-typography-level(18px, $preferred-line-height, 400),
+  $body-2: mat.define-typography-level(16px, $preferred-line-height, 400),
+  $caption: mat.define-typography-level(12px, $preferred-line-height, 400),
+  $button: mat.define-typography-level(inherit, $font-weight: 600),
+);
+$cdx-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $primary-palette,
+      accent: $accent-palette,
+      warn: $warn-palette,
+    ),
+    density: 0,
+    typography: $cdx-typography,
+  )
+);
+$cdx-dark-theme: mat.define-dark-theme(
+  (
+    color: (
+      primary: mat.define-palette($dark-mode-palette, 500, 600, 800),
+      accent: mat.define-palette($dark-mode-palette, 50, 600, 800),
+    ),
+    typography: $cdx-typography,
+  )
+);
