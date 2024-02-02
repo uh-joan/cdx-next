@@ -10,6 +10,6 @@
     "tslib": "^2.3.0"
   },
   "peerDependencies": {
-    "@ngx-translate/core": ">=15.0.0"
+    "@ngx-translate/core": ">=14.0.0"
   }
 }
