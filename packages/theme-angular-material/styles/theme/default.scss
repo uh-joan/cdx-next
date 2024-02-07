@@ -116,7 +116,7 @@ $cdx-typography: mat.define-typography-config(
   $headline-6: mat.define-typography-level(20px, $preferred-line-height, 600),
   $subtitle-1: mat.define-typography-level(18px, $preferred-line-height, 400),
   $subtitle-2: mat.define-typography-level(16px, $preferred-line-height, 400),
-  $body-1: mat.define-typography-level(18px, $preferred-line-height, 400),
+  $body-1: mat.define-typography-level(16px, $preferred-line-height, 400),
   $body-2: mat.define-typography-level(16px, $preferred-line-height, 400),
   $caption: mat.define-typography-level(12px, $preferred-line-height, 400),
   $button: mat.define-typography-level(inherit, $font-weight: 600),
