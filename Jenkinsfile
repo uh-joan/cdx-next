@@ -103,10 +103,12 @@ pipeline {
                 sshagent(credentials: ['jenkins-git-clarivate-io']) {
                     sh "git checkout ${BRANCH_NAME}"
                     sh 'npx nx run workspace:version --releaseAs=preminor --preid=alpha'
+                    sh 'npx nx run workspace:bumpDependencies'
                     sh '''
                         OLD_TAG=$(git tag --points-at HEAD)
                         npm install
                         git add ./package-lock.json
+                        git add packages/**/package.json
                         git commit --amend --no-edit
                         git tag -f $OLD_TAG
                     '''
@@ -164,10 +166,12 @@ pipeline {
                 sshagent(credentials: ['jenkins-git-clarivate-io']) {
                     sh "git checkout ${BRANCH_NAME}"
                     sh 'npx nx run workspace:version --releaseAs=prerelease --preid=alpha'
+                    sh 'npx nx run workspace:bumpDependencies'
                     sh '''
                         OLD_TAG=$(git tag --points-at HEAD)
                         npm install
                         git add ./package-lock.json
+                        git add packages/**/package.json
                         git commit --amend --no-edit
                         git tag -f $OLD_TAG
                     '''
@@ -228,10 +232,12 @@ pipeline {
                 sshagent(credentials: ['jenkins-git-clarivate-io']) {
                     sh "git checkout ${BRANCH_NAME}"
                     sh "npx nx run workspace:version --releaseAs=${params.Level}"
+                    sh 'npx nx run workspace:bumpDependencies'
                     sh '''
                         OLD_TAG=$(git tag --points-at HEAD)
                         npm install
                         git add ./package-lock.json
+                        git add packages/**/package.json
                         git commit --amend --no-edit
                         git tag -f $OLD_TAG
                     '''

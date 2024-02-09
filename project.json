@@ -2,6 +2,12 @@
   "$schema": "node_modules/nx/schemas/project-schema.json",
   "name": "workspace",
   "targets": {
+    "bumpDependencies": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "node tools/scripts/peerUpdater.js"
+      }
+    },
     "version": {
       "executor": "@jscutlery/semver:version",
       "options": {
