@@ -9,7 +9,7 @@
   "exports": {
     ".": {
       "sass": "./theme-highcharts.scss",
-      "ts": "./highcharts-theme.ts",
+      "ts": "./theme-highcharts.ts",
       "/dist/theme-highcharts.min.css": "./dist/theme-highcharts.min.css"
     }
   },
