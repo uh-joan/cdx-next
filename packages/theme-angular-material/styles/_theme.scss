@@ -11,14 +11,15 @@
   @include mat.typography-hierarchy(default.$cdx-typography);
   @include overrides.material-overrides;
 
-  .cdk-keyboard-focused {
+  .cdk-keyboard-focused,
+  .cdx-focused {
     @include mat.strong-focus-indicators;
-    @include mat.strong-focus-indicators-theme(#00c2f2);
+    @include mat.strong-focus-indicators-theme(colors.$primary-500);
   }
 
   // change the color of the user-agent keyboard focus state for anchors
   a:focus-visible:not(.mat-button-base) {
-    outline-color: #00c2f2;
+    outline-color: colors.$primary-500;
   }
 }
 
