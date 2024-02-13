@@ -1,11 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { HIGHCHARTS_CDX_THEME } from '@cdx/theme-highcharts';
 import * as Highcharts from 'highcharts';
 import HighchartsAccessibilityModule from 'highcharts/modules/accessibility';
 import { HighchartsChartModule } from 'highcharts-angular';
 
 import { HighchartsThemedComponent } from './highcharts-themed.component';
-import { HIGHCHARTS_CDX_THEME } from './highcharts-themed.config';
 
 HighchartsAccessibilityModule(Highcharts);
 

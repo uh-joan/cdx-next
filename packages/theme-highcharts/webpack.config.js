@@ -8,7 +8,7 @@ module.exports = {
   mode: 'production',
   name: 'theme-highcharts-css-combined',
   entry: {
-    'theme-highcharts': './theme-highcharts.scss',
+    'theme-highcharts': ['./theme-highcharts.scss', './theme-highcharts.ts'],
   },
   devtool: 'source-map',
   output: {
@@ -53,6 +53,7 @@ module.exports = {
           },
         },
       },
+      { test: /\.ts?$/, loader: 'ts-loader' },
     ],
   },
   optimization: {
