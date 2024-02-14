@@ -1,6 +1,6 @@
 {
   "name": "@cdx/branding",
-  "version": "2.4.1-alpha.5",
+  "version": "2.4.1-alpha.6",
   "repository": {
     "type": "git",
     "url": "ssh://git@git.clarivate.io/cdxn/cdx-next.git",
@@ -14,7 +14,7 @@
     "deploy:cdn": "deploy-aws-s3-cloudfront --bucket cdx-cdn.digital-experience.clarivate.io --distribution EF022SLU13YUI --source dist --destination @cdx/branding/${VERSION:-latest} --non-interactive"
   },
   "peerDependencies": {
-    "@cdx/shared-branding": "2.4.1-alpha.5",
-    "@cdx/theme-material-components-web": "2.4.1-alpha.5"
+    "@cdx/shared-branding": "2.4.1-alpha.6",
+    "@cdx/theme-material-components-web": "2.4.1-alpha.6"
   }
 }
