@@ -10,17 +10,7 @@
   @include mat.all-component-themes(default.$cdx-theme);
   @include mat.typography-hierarchy(default.$cdx-typography);
   @include overrides.material-overrides;
-
-  .cdk-keyboard-focused,
-  .cdx-focused {
-    @include mat.strong-focus-indicators;
-    @include mat.strong-focus-indicators-theme(colors.$primary-500);
-  }
-
-  // change the color of the user-agent keyboard focus state for anchors
-  a:focus-visible:not(.mat-button-base) {
-    outline-color: colors.$primary-500;
-  }
+  @include focus-indicators-color(colors.$primary-500);
 }
 
 @mixin theme($theme) {
@@ -28,4 +18,17 @@
   @include mat.all-component-colors($theme);
   @include mat.all-component-typographies($theme);
   @include mat.all-component-densities($theme);
+}
+
+@mixin focus-indicators-color($color) {
+  .cdk-keyboard-focused,
+  .cdx-focused {
+    @include mat.strong-focus-indicators;
+    @include mat.strong-focus-indicators-theme($color);
+  }
+
+  // change the color of the user-agent keyboard focus state for anchors
+  a:focus-visible:not(.mat-button-base) {
+    outline-color: $color;
+  }
 }
