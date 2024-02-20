@@ -24,7 +24,7 @@
     "deploy:cdn": "deploy-aws-s3-cloudfront --bucket cdx-cdn.digital-experience.clarivate.io --distribution EF022SLU13YUI --source dist --destination @cdx/theme-highcharts/${VERSION:-latest} --non-interactive"
   },
   "dependencies": {
-    "highcharts": "^10.1.0"
+    "highcharts": "^11.3.0"
   },
   "baseUrl": "."
 }
