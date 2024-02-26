@@ -1,6 +1,6 @@
 {
   "name": "@cdx/ngx-authentication",
-  "version": "2.4.1-alpha.6",
+  "version": "2.4.1-alpha.7",
   "repository": {
     "type": "git",
     "url": "ssh://git@git.clarivate.io/cdxn/cdx-next.git",
@@ -12,6 +12,6 @@
   "peerDependencies": {
     "@angular/material": "15 || 16 || 17",
     "@angular/router": "15 || 16 || 17",
-    "@cdx/theme-angular-material": "2.4.1-alpha.6"
+    "@cdx/theme-angular-material": "2.4.1-alpha.7"
   }
 }

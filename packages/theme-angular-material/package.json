@@ -1,6 +1,6 @@
 {
   "name": "@cdx/theme-angular-material",
-  "version": "2.4.1-alpha.6",
+  "version": "2.4.1-alpha.7",
   "exports": {
     ".": {
       "sass": "./styles/_index.scss"
@@ -11,6 +11,6 @@
   },
   "peerDependencies": {
     "@angular/material": "15 || 16 || 17",
-    "@cdx/colors": "2.4.1-alpha.6"
+    "@cdx/colors": "2.4.1-alpha.7"
   }
 }
