@@ -37,6 +37,11 @@ $cdx-footer-grid-gap: 1.5rem;
       justify-self: start;
     }
 
+    a {
+      padding-top: 3px;
+      padding-bottom: 3px;
+    }
+
     a,
     ::slotted(a) {
       color: inherit;
