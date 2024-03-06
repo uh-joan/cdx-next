@@ -1,0 +1,96 @@
+<h1 class="mat-headline-4">
+  {{ 'ACCOUNT.TITLE' | translate }}
+</h1>
+<div class="content">
+  <mat-card class="content__left mat-elevation-z3">
+    <div class="top-box">
+      <img class="top-box__avatar" [src]="'../assets/avatars/avatar_6.png'" />
+      <div class="mat-headline-5">Ekaterina Tankova</div>
+      <div class="top-box__details">
+        <div clss="mat-caption">Los Angeles USA</div>
+        <div clss="mat-caption">GTM-7</div>
+      </div>
+    </div>
+    <mat-divider></mat-divider>
+
+    <div class="bottom-box">
+      <button mat-button color="primary">
+        {{ 'ACCOUNT.UPLOAD_PICTURE' | translate | titlecase }}
+      </button>
+    </div>
+  </mat-card>
+
+  <mat-card class="content__right mat-elevation-z3">
+    <div class="top-box">
+      <div class="mat-headline-5">
+        {{ 'ACCOUNT.PROFILE' | translate | titlecase }}
+      </div>
+      <div class="mat-subtitle-2">
+        {{ 'ACCOUNT.INFORMATION_EDITED' | translate | titlecase }}
+      </div>
+    </div>
+    <mat-divider></mat-divider>
+
+    <div class="middle-box">
+      <div class="middle-box__line">
+        <mat-form-field appearance="outline">
+          <mat-label>
+            {{ 'APP.FIRST_NAME' | translate }}
+          </mat-label>
+          <input matInput [value]="'Ekaterina'" />
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>
+            {{ 'APP.LAST_NAME' | translate }}
+          </mat-label>
+          <input matInput [value]="'Tankova'" />
+        </mat-form-field>
+      </div>
+      <div class="middle-box__line">
+        <mat-form-field appearance="outline">
+          <mat-label>
+            {{ 'APP.EMAIL_ADDRESS' | translate }}
+          </mat-label>
+          <input matInput [value]="'demo@devias.io'" />
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>
+            {{ 'APP.PHONE_NUMBER' | translate }}
+          </mat-label>
+          <input matInput type="number" [value]="'334827390'" />
+        </mat-form-field>
+      </div>
+      <div class="middle-box__line">
+        <mat-form-field appearance="outline">
+          <mat-label>
+            {{ 'ACCOUNT.COUNTRY' | translate }}
+          </mat-label>
+          <input matInput [value]="'USA'" />
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>
+            {{ 'ACCOUNT.SELECT_STATE' | translate }}
+          </mat-label>
+          <mat-select panelClass="common-panel" [(ngModel)]="selectedState">
+            <mat-option value="alabama">
+              {{ 'ACCOUNT.ALABAMA' | translate }}
+            </mat-option>
+            <mat-option value="new-york">
+              {{ 'ACCOUNT.NEW_YORK' | translate }}
+            </mat-option>
+            <mat-option value="california">
+              {{ 'ACCOUNT.CALIFORNIA' | translate }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </div>
+    <mat-divider></mat-divider>
+
+    <div class="bottom-box">
+      <button mat-raised-button color="primary">
+        {{ 'ACCOUNT.SAVE_DETAILS' | translate }}
+      </button>
+    </div>
+  </mat-card>
+</div>

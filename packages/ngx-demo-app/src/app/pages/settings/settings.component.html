@@ -1,0 +1,91 @@
+<h1 class="mat-headline-4">
+  {{ 'SETTINGS.TITLE' | translate }}
+</h1>
+
+<mat-card class="notifications mat-elevation-z3">
+  <div class="top-box">
+    <div class="mat-headline-5">
+      {{ 'ACCOUNT.PROFILE' | translate }}
+    </div>
+    <div class="mat-subtitle-2">
+      {{ 'SETTINGS.INFO_EDITED' | translate }}
+    </div>
+  </div>
+  <mat-divider></mat-divider>
+
+  <div class="middle-box">
+    <div class="middle-box__filters-container">
+      <div class="middle-box__filters-title mat-headline-6">
+        {{ 'APP.NOTIFICATIONS' | translate }}
+      </div>
+      <mat-checkbox [checked]="true" color="primary">
+        {{ 'APP.EMAIL' | translate }}
+      </mat-checkbox>
+      <mat-checkbox color="primary">
+        {{ 'SETTINGS.PUSH_NOTIFICATIONS' | translate }}
+      </mat-checkbox>
+      <mat-checkbox [checked]="true" color="primary">
+        {{ 'SETTINGS.TEXT_MESSAGES' | translate }}
+      </mat-checkbox>
+      <mat-checkbox color="primary">
+        {{ 'SETTINGS.PHONE_CALLS' | translate }}
+      </mat-checkbox>
+    </div>
+
+    <div class="middle-box__filters-container">
+      <div class="middle-box__filters-title mat-headline-6">
+        {{ 'SETTINGS.TEXT_MESSAGES' | translate }}
+      </div>
+      <mat-checkbox [checked]="true" color="primary">
+        {{ 'APP.EMAIL' | translate }}
+      </mat-checkbox>
+      <mat-checkbox color="primary">
+        {{ 'SETTINGS.PUSH_NOTIFICATIONS' | translate }}
+      </mat-checkbox>
+      <mat-checkbox color="primary">
+        {{ 'SETTINGS.PHONE_CALLS' | translate }}
+      </mat-checkbox>
+    </div>
+  </div>
+
+  <mat-divider></mat-divider>
+  <div class="bottom-box">
+    <button mat-raised-button color="primary">
+      {{ 'ACCOUNT.SAVE_DETAILS' | translate }}
+    </button>
+  </div>
+</mat-card>
+
+<mat-card class="password mat-elevation-z3">
+  <div class="top-box">
+    <div class="mat-headline-5">
+      {{ 'APP.PASSWORD' | translate }}
+    </div>
+    <div class="mat-subtitle-2">
+      {{ 'SETTINGS.UPDATE_PASSWORD' | translate }}
+    </div>
+  </div>
+  <mat-divider></mat-divider>
+
+  <div class="middle-box">
+    <mat-form-field appearance="outline">
+      <mat-label>
+        {{ 'APP.PASSWORD' | translate }}
+      </mat-label>
+      <input matInput />
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>
+        {{ 'SETTINGS.CONFIRM_PASSWORD' | translate }}
+      </mat-label>
+      <input matInput />
+    </mat-form-field>
+  </div>
+
+  <mat-divider></mat-divider>
+  <div class="bottom-box">
+    <button mat-raised-button color="primary">
+      {{ 'SETTINGS.UPDATE' | translate }}
+    </button>
+  </div>
+</mat-card>

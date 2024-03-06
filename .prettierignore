@@ -5,3 +5,4 @@
 **/.angular
 
 /.nx/cache
+.angular

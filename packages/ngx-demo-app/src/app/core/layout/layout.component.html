@@ -1,0 +1,34 @@
+<header cdx-header>
+  <cdx-header-global>
+    <div class="cdx-selectors">
+      <demo-language-selector></demo-language-selector>
+      <demo-theme-selector></demo-theme-selector>
+      <demo-mode-selector></demo-mode-selector>
+    </div>
+    <cdx-header-global-user-profile
+      withSessionManagement
+      [shouldShowTranslations]="true"
+    >
+    </cdx-header-global-user-profile>
+  </cdx-header-global>
+  <cdx-header-product-name [routerLink]="''">
+    Clarivate Digital Experience
+  </cdx-header-product-name>
+  <nav mat-tab-nav-bar cdx-size-compact style="flex: 4" [tabPanel]="tabPanel">
+    @for (link of links; track link) {
+    <a mat-tab-link [routerLink]="link.path" [active]="isActive(link.path)">
+      {{ link.name | translate | titlecase }}
+    </a>
+    }
+  </nav>
+</header>
+
+<mat-tab-nav-panel #tabPanel>
+  <demo-left-navigation></demo-left-navigation>
+  <router-outlet></router-outlet>
+</mat-tab-nav-panel>
+
+<footer cdx-footer [shouldShowTranslations]="true">
+  <a cdx-footer-link href="https://stackoverflow.com/">Stack Overflow</a>
+  <a cdx-footer-link href="https://www.powerlanguage.co.uk/wordle/"> Wordle </a>
+</footer>

@@ -1,0 +1,193 @@
+<div class="top-block">
+  <img
+    alt="Under development"
+    width="100%"
+    height="99%"
+    src="../../assets/home/robotization.svg"
+  />
+  <img
+    alt="Under development"
+    width="100%"
+    height="99%"
+    src="../../assets/home/robotization-background.svg"
+  />
+  <div class="top-block__title mat-headline-5">
+    {{ 'HOME_PAGE.EXPAND' | translate }}
+  </div>
+  <div class="top-block__sub-text mat-subtitle-2">
+    {{ 'HOME_PAGE.JOURNEY' | translate }}
+  </div>
+  <button
+    class="top-block__create-account"
+    mat-raised-button
+    color="primary"
+    (click)="scrollToBottom()"
+  >
+    {{ 'HOME_PAGE.CREATE_ACCOUNT_NOW' | translate }}
+  </button>
+  <div class="top-block__sign-in">
+    {{ 'HOME_PAGE.HAVE_ACCOUNT' | translate }}
+    <span [routerLink]="'/login'">
+      {{ 'APP.SIGN_IN' | translate }}
+    </span>
+  </div>
+</div>
+
+<div class="middle-top-block">
+  <div class="middle-top-block__title mat-headline-5">
+    {{ 'HOME_PAGE.WELCOME' | translate }}
+  </div>
+  <div class="middle-top-block__content">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>
+          {{ 'HOME_PAGE.FOR_RESEARCHERS' | translate }}
+        </mat-card-title>
+      </mat-card-header>
+      <img mat-card-image src="../../../assets/home/researchers.svg" />
+      <mat-card-content>
+        <p>
+          {{ 'HOME_PAGE.FOR_RESEARCHERS_TEXT' | translate }}
+        </p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button mat-stroked-button color="primary">
+          {{ 'APP.READ_MORE' | translate }}
+        </button>
+      </mat-card-actions>
+    </mat-card>
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title color="primary">
+          {{ 'HOME_PAGE.FOR_INSTITUTIONS' | translate }}
+        </mat-card-title>
+      </mat-card-header>
+      <img mat-card-image src="../../../assets/home/institutions.svg" />
+      <mat-card-content>
+        <p>
+          {{ 'HOME_PAGE.FOR_INSTITUTIONS_TEXT' | translate }}
+        </p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button mat-stroked-button color="primary">
+          {{ 'APP.READ_MORE' | translate }}
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>
+
+<div class="mid-bottom-block mat-elevation-z3 mat-mdc-card">
+  <div class="mid-bottom-block__title mat-headline-5">
+    {{ 'HOME_PAGE.SUBMISSION_PROCESS' | translate }}
+  </div>
+
+  <div class="mid-bottom-block__line">
+    <img class="left" src="../../../assets/home/submit.svg" />
+    <div>
+      <div class="mat-headline-6">1. {{ 'APP.SUBMIT' | translate }}</div>
+      <p>
+        {{ 'HOME_PAGE.SUBMIT_TEXT' | translate }}
+      </p>
+    </div>
+  </div>
+  <div class="mid-bottom-block__line">
+    <div>
+      <div class="mat-headline-6">2. {{ 'APP.REVIEW' | translate }}</div>
+      <p>
+        {{ 'HOME_PAGE.REVIEW_TEXT' | translate }}
+      </p>
+    </div>
+    <img class="right" src="../../../assets/home/review.svg" />
+  </div>
+
+  <div class="mid-bottom-block__line">
+    <img class="left" src="../../../assets/home/revise.svg" />
+    <div>
+      <div class="mat-headline-6">
+        3.
+        {{ 'HOME_PAGE.REVISE_APPROVE' | translate }}
+      </div>
+      <p>
+        {{ 'HOME_PAGE.REVISE_APPROVE_TEXT' | translate }}
+      </p>
+    </div>
+  </div>
+
+  <div class="mid-bottom-block__line">
+    <div>
+      <div class="mat-headline-6">4. {{ 'APP.DELIVER' | translate }}</div>
+      <p>
+        {{ 'HOME_PAGE.DELIVER_TEXT' | translate }}
+      </p>
+    </div>
+    <img class="right" src="../../../assets/home/deliver.svg" />
+  </div>
+
+  <div class="mid-bottom-block__line">
+    <img class="left" src="../../../assets/home/done.svg" />
+    <div>
+      <div class="mat-headline-6">
+        5. {{ 'HOME_PAGE.YOU_DONE' | translate }}
+      </div>
+      <p>
+        {{ 'HOME_PAGE.DONE_TEXT' | translate }}
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="bottom-block">
+  <div class="register-form mat-elevation-z3 mat-mdc-card">
+    <div class="register-form__header">
+      <div class="mat-headline-5">
+        {{ 'HOME_PAGE.CREATE_ACCOUNT' | translate }}
+      </div>
+      <div class="mat-subtitle-2">
+        {{ 'HOME_PAGE.USE_MAIL_CREATE' | translate }}
+      </div>
+    </div>
+    <div class="register-form__content">
+      <mat-form-field appearance="outline">
+        <mat-label>
+          {{ 'APP.FIRST_NAME' | translate }}
+        </mat-label>
+        <input matInput />
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>
+          {{ 'APP.LAST_NAME' | translate }}
+        </mat-label>
+        <input matInput />
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>
+          {{ 'APP.EMAIL_ADDRESS' | translate }}
+        </mat-label>
+        <input matInput />
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>
+          {{ 'APP.PASSWORD' | translate }}
+        </mat-label>
+        <input matInput />
+      </mat-form-field>
+      <div class="register-form__checkbox mat-body-2">
+        <mat-checkbox></mat-checkbox>
+        {{ 'APP.I_READ' | translate }}
+        <a>
+          {{ 'APP.TERMS_CONDITIONS' | translate }}
+        </a>
+      </div>
+      <button mat-raised-button color="primary">
+        {{ 'APP.SIGN_UP' | translate }}
+      </button>
+      <div class="register-form__sign-in mat-body-2">
+        {{ 'HOME_PAGE.HAVE_ACCOUNT' | translate }}
+        <a [routerLink]="'/login'">
+          {{ 'APP.SIGN_IN' | translate }}
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

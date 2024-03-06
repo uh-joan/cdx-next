@@ -1,0 +1,186 @@
+{
+  "ACCOUNT": {
+    "ALABAMA": "앨라배마 (Aellabama)",
+    "CALIFORNIA": "캘리포니아 (Kaellipornia)",
+    "COUNTRY": "국가 (Gukga)",
+    "INFORMATION_EDITED": "정보를 수정할 수 있습니다 (Jōngbo-reulsujeong hal su issseubnida)",
+    "NEW_YORK": "뉴욕 (Nyuyok)",
+    "PHONE_NUMBER": "전화 번호 (Jeonhwa beonho)",
+    "PROFILE": "프로필 (Peuropil)",
+    "SAVE_DETAILS": "세부 사항 저장 (Sebu sahang jeongjang)",
+    "SELECT_STATE": "주 선택 (Ju seontae)",
+    "TITLE": "계정 (Gyejeong)",
+    "UPLOAD_PICTURE": "사진 업로드 (Sasin eop-로드)"
+  },
+  "ALUMNS": {
+    "ADD_ALUMNS": "동문 추가 (Dongmun josa)",
+    "LOCATION": "위치 (Wichi)",
+    "NAME": "이름 (Ireum)",
+    "SEARCH_ALUMNS": "동문 검색 (Dongmun geumsak)",
+    "TITLE": "동문 (Dongmun)"
+  },
+  "APP": {
+    "ADDRESSES": "주소 (Juso)",
+    "DARK": "다크 (Dakeu)",
+    "DELIVER": "배달 (Baedal)",
+    "EMAIL": "이메일 (Imeil)",
+    "EMAIL_ADDRESS": "이메일 주소 (Imeil juso)",
+    "EXPORT": "내보내기 (Naebo내기)",
+    "FIRST_NAME": "성 (Seong)",
+    "HOME": "홈 (Hom)",
+    "IMPORT": "가져오기 ( Gajyeoogi)",
+    "I_READ": "읽었습니다 (Ilkkeottseumnida)",
+    "LAST_NAME": "이름 (Ireum)",
+    "LIGHT": "라이트 (Raiteu)",
+    "LOGIN": "로그인 (Login)",
+    "NOTIFICATIONS": "알림 (Allim)",
+    "OVERVIEW": "개요 (Gaeyo)",
+    "PASSWORD": "비밀번호 (Bimilbeonho)",
+    "PHONE": "전화 (Jeonhwa)",
+    "READ_MORE": "더 읽기 (Deo ilkki)",
+    "REVIEW": "리뷰 (Riruyu)",
+    "SELECT_LANGUAGE": "언어 선택 (Eoneo seontae)",
+    "SIGN_IN": "로그인 (Login)",
+    "SIGN_IN_NOW": "지금 로그인 (Jigeum login)",
+    "SIGN_UP": "회원가입 (Hoewon-gaip)",
+    "SUBMIT": "제출 (Jesul)",
+    "TERMS_CONDITIONS": "이용 약관 (Iyong yakgwan)",
+    "THEME": "테마 (Tema)"
+  },
+  "DASHBOARD": {
+    "DESKTOP": "데스크톱 (Deskeutopeu)",
+    "LATEST_INSCRIPTION": "최신 등록 (Choesin deungrok)",
+    "MOBILE": "모바일 (Mobail)",
+    "PRODUCTS_SOLD": "판매된 제품 (Panmaedoen jepum)",
+    "SATISFACTION_INDEX": "만족 지수 (Manjok jisu)",
+    "SINCE_LAST_MONTH": "지난 달부터 (Jinan dald부터)",
+    "TABLET": "태블릿 (Taebullelit)",
+    "TITLE": "대시보드 (Daeshibod)",
+    "TOTAL_PROFIT": "총 이익 (Chongeurieik)",
+    "TOTAL_VIEWS": "총 조회수 (Jong johoe수)",
+    "TRAFFIC_BY_DEVICE": "기기별 트래픽 (Gigye별 teureepik)"
+  },
+  "ERROR": {
+    "NAVIGATE": "잘못된 경로를 사용했거나 실수로 이 페이지에 왔습니다. 어떤 경우든 내비게이션을 사용해보십시오. (Jalmotdeon gyeongro-reul sayonghaetteoneun sirilo e peijey-e wassseubnida. Eotteon gaejungdeun naebigeisyeo-reul sayonghaebogiseyo.)",
+    "PAGE_NOT_FOUND": "404: 찾으시는 페이지가 없습니다 (404: Chath-eusimnneun peiji ga eopseurmnida)",
+    "TITLE": "오류 (Oryu)"
+  },
+  "HOME_PAGE": {
+    "CREATE_ACCOUNT": "새로운 계정 만들기 (Saeroeun gyejeong 만들기)",
+    "CREATE_ACCOUNT_NOW": "지금 계정 만들기 (Jigeum gyejeong 만들기)",
+    "DELIVER_TEXT": "제출물이 승인되면 관리자가 귀하의 기관 리포지터리와 ProQuest에 제출물을 전달합니다. ProQuest 플랫폼에서 사용 가능한 다른 콘텐츠와 마찬가지로 학위 논문 또는 학위 논문이 ProQuest에서 검색 가능하게 되기 전에 수행해야 할 작업이 있습니다. 이 작업을 완료하는 데 평균 4~6주가 소요됩니다. 작업이 완료되면 학위 논문 또는 학위 논문을 ProQuest에서 사용할 수 있도록 준비됩니다. 지정된 모든 금지 기간은 귀하의 작업이 ProQuest에 있을 때 시행됩니다.",
+    "DESCRIPTION": "Angular, React 및 웹을 위한 다양한 라이브러리 구성 요소 세트 (Angular, React reurigo webeu-ro wihan dayeohan raibeureri guseong yoso seuteu)",
+    "DONE_TEXT": "ProQuest 직원은 업로드 및 ProQuest에서 검색 가능하게 만들기 전에 귀하의 작업에 대한 형식 및 세부 사항이 정확한지 확인합니다. 금지된 경우 귀하의 학위 논문 또는 학위 논문은 지정된 금지 기간이 지나면 사용 가능하게 됩니다. 귀하의 작업이 ProQuest에서 사용 가능하고 검색 가능할 때 알려주고 축하드립니다. 제출 단계에서 인쇄본을 주문한 경우 ProQuest 지원 센터를 방문하여 작업을 ProQuest에 게시하고 인쇄 주문을 완료하는 프로세스에 대해 알아보십시오.",
+    "EXPAND": "석사 연구의 범위를 확대하십시오 (Seoksa yeonghu-ui beomwi-reul hwakdaehapsiyo)",
+    "FEATURES": {
+      "DESCRIPTION": "CDX는 완벽한 통합과 함께 신뢰할 수 있고 효율적인 개발 경험을 제공하는 견고한 솔루션을 제공하는 툴킷입니다 (CDX-neun wanbyeokhan tonghap-gwa hamkke sinrohaneul su itneun 효율적인 geolbyeolhan geonghyeom-eul jeonggonghaeneun gyeonnahan soleusyeon-eul jeonggonghaeneun tulkkiteuimnida)",
+      "FAST": {
+        "DESCRIPTION": "성능과 속도에 최적화됨 (Seongneung-gwa sokdo-e choejeokhwadoem)",
+        "TITLE": "빠른 (Ppareun)"
+      },
+      "MODULAR": {
+        "DESCRIPTION": "필요한 경우에만 필요한 것을 사용하십시오 (Pilyohan gyeじゅ에만 piryohabnneun geos-eul sayonghapsiyo)",
+        "TITLE": "모듈형 (Modulleunghyeong)"
+      },
+      "TITLE": "기능 (Geunyeong)",
+      "VERSATILE": {
+        "DESCRIPTION": "Angular, React 및 웹 구성 요소와 함께 작동하도록 설계되었습니다 (Angular, React reurigo webeu guseong yoso-wa hamkke jakdonghadoel도록 seolgyejeongdoeumnida)",
+        "TITLE": "다양한 (Dayeohan)"
+      }
+    },
+    "FOR_INSTITUTIONS": "기관 (Kigwan)",
+    "FOR_INSTITUTIONS_TEXT": "여기서는 단일하고 사용하기 쉬운 웹사이트에서 학생들의 학위 논문 또는 학위 논문 프레젠테이션을 디지털 방식으로 관리할 수 있습니다 (Yeo-giseoneun danil-godo sayonghagi swi-eun webeusaiteu-ese hak생deul-ui hakwi nonmun geos-eureo hakwi nonmun purezentasyeneul dijiteol bangssigeuro 관리할 수 있습니다)",
+    "FOR_RESEARCHERS": "연구원 (Yeon gu won)",
+    "FOR_RESEARCHERS_TEXT": "여기서는 간단한 웹사이트에서 귀하의 학위 논문 또는 학위 논문 프레젠테이션을 디지털 방식으로 관리할 수 있습니다 (Yeo-giseoneun gandanhan webeusaiteu-ese guihwa-ui hakwi nonmun geos-eureo hakwi nonmun purezentasyeneul dijiteol bangssigeuro 관리할 수 있습니다)",
+    "GET_STARTED": "시작 (Sijak)",
+    "HAVE_ACCOUNT": "계정이 있습니까? (Gyejeong-i issseubnikka?)",
+    "JOURNEY": "학위 논문 또는 학위 논문의 여정은 아직 끝나지 않았습니다. 세계에서 가장 종합적인 학위 논문 컬렉션의 일부로 출시하는 것은 여기서 시작됩니다. ETD Administrator를 통해 귀하와 귀하의 기관은 단일하고 사용하기 쉬운 웹사이트에서 학위 논문 제출을 디지털 방식으로 관리할 수 있습니다 (Hakwi nonmun geos-eureo hakwi nonmun-ui yejeong-eun ajik kkeutnajwatseubnida. Segye-eseo 가장 jonghap적인 hakwi nonmun koleksyeon-ui ilbu-ro chulssihaeneun 것은 yeogiseo simjakkwa gibnida. ETD Administrator-reul tteoseo guihawa guihwa-ui gigwan-eun danil-godo sayonghagi swi-eun webeusaiteu-ese hakwi nonmun jesil-eul dijiteol bangssigeuro 관리할 수 있습니다)",
+    "LEARN_MORE": "더 알아보기 (Deo arajwoki)",
+    "PLAYGROUND": {
+      "BUTTON": "플레이그라운드로 이동 (Peulleigraundeuro idong)",
+      "DESCRIPTION": "플레이그라운드에서 당사의 구성 요소를 탐색하고 테스트하십시오 (Peulleigraundeuseo dangsa-ui guseong yoso-reul tamseokhago tesuteuseuphaseyo)",
+      "TITLE": "플레이그라운드 (Peulleigraundeu)"
+    },
+    "REVIEW_TEXT": "귀하의 기관의 ETD 관리자가 귀하의 제출물을 검토합니다. 일반적으로 관리자는 귀하의 제출물에 귀하의 기관에서 요구하는 모든 정보가 포함되어 있는지 확인합니다. 기관은 종종 자체 스타일 및 서식 표준을 적용하므로 제출물이 해당 표준을 준수하는지 확인합니다 (Guia-ui ETD hangjongjaganeun guihwa-ui jesilmul-eul geomtohamnida. Ilbanjeongeuro hangjongjaganeun guihwa-ui jesilmule guihwa-eoseo yogu하는 모든 jeongbo-ga pohamdoeeo issneunji haemjeonghamnida. Gigwan-eun jongjong jache stile geurigo seoshik pyojun-eul jeongyonghamnida. Geomuneun jesilmul-i haedang pyojun-eul junsuhaneunji haemjeonghamnida)",
+    "REVISE_APPROVE": "검토 및 승인 (Geomto geumseungin)",
+    "REVISE_APPROVE_TEXT": "귀하의 기관의 관리자가 제출물을 검토한 후 필요한 수정 사항을 알려드립니다. 수정 사항을 완료하고 기존 제출물에 변경 사항을 업로드하십시오. 더 이상의 수정이 필요하지 않으면 관리자가 귀하의 제출물을 승인합니다. 다음 단계는 귀하의 기관의",
+    "SEARCH": {
+      "BUTTON": "구성 요소로 이동 (Guseong yoso-ro idong)",
+      "DESCRIPTION": "광범위한 구성 요소 라이브러리를 탐색하십시오. 아래 검색 창을 사용하여 필요한 것을 찾으십시오 (Gwangbeomwihan guseong yoso raibeurereuri-reul tamseokhago. Arae geupsaeng 창을 sayonghayeo piryohaeun geos-eul chataseyo)",
+      "PLACEHOLDER": "컴포넌트 (Keompeonenteu)",
+      "TITLE": "구성 요소 검색 (Guseong yoso geumsaek)"
+    },
+    "SUBMISSION_PROCESS": "제출 프로세스 (Jesil puroseseu)",
+    "SUBMIT_TEXT": "힘든 부분은 끝났습니다. 학위 논문 또는 학위 논문을 작성했으며 승인되었습니다. 이제 귀하의 연구를 미국 의회 도서관의 공식 오프사이트 저장소로 지정된 ProQuest에 제출함으로써 전 세계 연구 커뮤니티가 이용할 수 있게 만들 수 있습니다. 대부분의 저자는 30분 이내에 제출 단계를 완료합니다 (Himeun dibuneun kkeutnassseubnida. Hakwi nonmun geos-eureo hakwi nonmun-eul jakseosseo seungin doeotseubnida. Ije guihwa-ui yeongu-reul miguk uivehoe doseogwan-ui gongsikeu opeusaeiteu jangchoso-ro jigeungdoen ProQuest-e jesilham으로써 전 세계 yeon gu komuniti-ga 이용할 수 있게 만드 ...",
+    "TITLE": "Welcome to CDX",
+    "USE_MAIL_CREATE": "Use your email to create a new account",
+    "WELCOME": "Welcome to the new ETD Administrator",
+    "YOU_DONE": "You're Done"
+  },
+  "LOGIN": {
+    "NOT_HAVE_ACCOUNT": "계정이 없습니까? (Gyejeong-i eopssseubnikka?)",
+    "REGISTER": "등록 (Deungrok)",
+    "TITLE": "로그인 (Login)"
+  },
+  "PAPER": {
+    "ABSTRACT": "초록 (Chorok)",
+    "ABSTRACT_TEXT": "알코올 과다 섭취는 간 건강에 심각한 위험을 초래하며 다양한 조직 병리학적 변화를 유발합니다. 이러한 변화 중 가장 두드러지는 결과 중 하나는 지방간 질환이라고 알려진 지방 변성입니다. 이 상태는 간에 과도한 지방이 축적되어 염증과 간 기능 저하를 초래할 때 발생합니다. 더욱이 만성 알코올 남용은 심각성 스펙트럼에 걸친 간 염증 질환인 알코올성 간염의 발병을 촉진할 수 있습니다. 증상으로는 황달, 복통, 심한 경우 간 기능 부전 등이 있습니다. 알코올성 간염은 알코올 관련 간 질환 진행 과정에서 중요한 시점을 나타내며 종종 돌이킬 수 없는 손상 가능성을 나타냅니다 (Areukol gwadա seopchwi-neun gan geonghang-e 심각한 wiheom-eul choraehanda dayeohan jojik byeongrihakjeok byeonhwa-reul yuhalhamnida. Iraneun byeonhwa jung geuhanddeureojin gyeoldeutnateunineun haenggyeol jeongbyeong-idae 알려진 jibeong gan jilus-iinikkaeda. Ire getae-neun gane gwadodeohajiman jibeop chu積되어 yeomjeung gwa gan kungneom jeoha-reul choraehamnida. Deoreuk meok manseong areukol namyong-eun simjae seonggyeol spekteureum-e geolkkin gan yeomjeung jilus-in areukolseong ganyeo-meon-ui balbyeong-eul chojinhal 수 있습니다 (sujeungdeureoun hwangdal, boktung, simeonghan gyeong우 gan kungneom bujeon ddeung-i imnida. Areukolseong ganyeo-meon-eun areukol gwalbyeon gan jilhwan jeonjing gwacheng-ese jungyohan sijeom-eul natanaemyeo jongjong dollikijil 수 없는 sondeung gamnossong-eul natannapnida)",
+    "ADDRESSES_1": "1 Sandra Atlass bar Ctr Liver dis, Dept Med Northwell Hith 400, Community Dr, Mannhaset, NY 11030 USA",
+    "ADDRESSES_2": "2 Dept Vetetan Affairs New York Arbour Healthcare S, Depth Pathol, 800 Poly PL Brooklyn, NY 11209 USA",
+    "ADDRESSES_3": "3 188 East 93rd St, Apartment 3K, New Yor, NY 10128 USA",
+    "ADDRESSES_SAMPLE": "Roth, Nitzan C. (corresponding author) Sandra Atlass bar Ctr Liver dis, Dept Med Northwell Hith 400, Community Dr, Mannhaset, NY 11030 USA",
+    "AUTHOR_INFO": "저자 정보 (Jeoja jeongbo)",
+    "AUTH_KEYWORDS": "저자 키워드 (Jeoja kiweodeu)",
+    "BREAKDOWN_MENTIONED": "이 논문이 언급된 방식の内역 (I 논문-i eonyeokdoen bangsik naejeok)",
+    "CITATIONS": "인용 (Inyong)",
+    "CITATION_NETWORK": "인용 네트워크 (Inyong neteuweokeu)",
+    "CITED_CLASSIFICATION": "인용 논문 분류 (Inyong nonmun bunryu)",
+    "CITED_DATABASE": "모든 데이터베이스에서 인용 횟수 (Modeon deiteubeseu-eseo inyong hoesu)",
+    "CITED_REFERENCES": "인용 참조 (Inyong chamjo)",
+    "CORRESPONDING_ADDRESS": "연락처 주소 (Yeonlakche juso)",
+    "CREATE_CITATION_ALERT": "인용 경고 생성 (Inyong gyeonggo seongseon)"
+  },
+  "RESULTS": {
+    "ARTICLE": "논문 (Nonmun)",
+    "BY": "에 의해 (Eui eよって (yotte))",
+    "DOCUMENT_TYPE": "문서 유형 (Munseo yuhyeong)",
+    "INDEXED": "인덱싱됨 (Indeukseongdoem)",
+    "ISSUE": "호 (Ho)",
+    "PAGE": "페이지 (Peiji)",
+    "PUBLISHED": "발행 (Balhaeng)",
+    "TITLE": "결과 (Gyeoljwa)",
+    "VOLUME": "권 (Gwon)"
+  },
+  "SEARCH": {
+    "ADD_ARTICLE": "논문 추가 (Nonmun chuga)",
+    "ALZHEIMER": "알츠하이머병 (Alcheuhaimeobeong)",
+    "ANDROGENETIC_ALOPECIA": "남성형 탈모증 (Namseonghyeong talmojeung)",
+    "ARGUMENTS": "주장 (Ju jang)",
+    "ARTICLES": "논문 (Nonmun)",
+    "CLEAR": "초기화 (Chogihwa)",
+    "CLINICS_LIVER": "임상 간 질환 (Imsang gan jilhwan)",
+    "DATE_RANGE": "날짜 범위 (Nal짜 beomwi)",
+    "END_DATE": "종료 날짜 (Jeonglo nal짜)",
+    "FULL_ARTICLE": "전체 논문 (Jeonche nonmun)",
+    "HIDE_FILTERS": "필터 숨기기 (Pilteo sumgigigi)",
+    "META_ANALYSIS": "메타 분석 (Meta विश्लेषण)",
+    "PEER_REVIEWD": "査読 (Chadod)",
+    "PROPERTIES": "속성 (Soksung)",
+    "SEARCH_ARTICLE": "논문 검색 (Nonmun geumsak)",
+    "SHOW_FILTERS": "필터 보기 (Pilteo bogi)",
+    "START_DATE": "시작 날짜 (Sijak nal짜)",
+    "TITLE": "검색 (Geumsak)",
+    "WEIGHT": "체중 관리 (Chejung gwallli)"
+  },
+  "SETTINGS": {
+    "CONFIRM_PASSWORD": "비밀번호 확인 (Bimilbeonho hakjeon)",
+    "INFO_EDITED": "정보를 수정할 수 있습니다 (Jeongboho-reulsujeonghal su issseubnida)",
+    "PHONE_CALLS": "음성 통화 (Eumseong tonghwa)",
+    "PUSH_NOTIFICATIONS": "푸시 알림 (Push allim)",
+    "TEXT_MESSAGES": "문자 메시지 (Munja mesiji)",
+    "TITLE": "설정 (Seoljeong)",
+    "UPDATE": "업데이트 (Eopdeiteu)",
+    "UPDATE_PASSWORD": "비밀번호 업데이트 (Bimilbeonho eopdeiteu)"
+  },
+  "lang": "ko_KR"
+}

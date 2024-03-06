@@ -1,0 +1,55 @@
+<div class="top-box mat-mdc-card">
+  <mat-checkbox>{{ index }}</mat-checkbox>
+
+  <div class="top-box__content">
+    <span>
+      <a class="mat-headline-6" [routerLink]="'/results'">
+        {{ 'PAPER.TITLE' | translate }}
+      </a>
+    </span>
+
+    <div class="mat-subtitle-1">Roth NC</div>
+    <div class="mat-subtitle-1">
+      02 2019 |
+      {{ 'SEARCH.CLINICS_LIVER' | translate }}
+      23 (1), pp.11-+
+    </div>
+    <div class="mat-body-1">
+      {{ 'PAPER.ABSTRACT_TEXT' | translate }}
+    </div>
+  </div>
+
+  <div class="top-box__data">
+    <div class="top-box__references">
+      <div>9</div>
+      <div>
+        {{ 'PAPER.CITATIONS' | translate }}
+      </div>
+      <mat-divider></mat-divider>
+      <div>50</div>
+      <div>
+        {{ 'PAPER.REFERENCES' | translate }}
+      </div>
+    </div>
+    <div>
+      <mat-divider></mat-divider>
+      <div>
+        {{ 'PAPER.RELATED_RECORDS' | translate }}
+      </div>
+    </div>
+  </div>
+</div>
+
+<mat-divider></mat-divider>
+
+<div class="bottom-box mat-mdc-card">
+  <div>
+    <mat-icon>schedule</mat-icon>
+    {{ 'PAPER.UPDATED_ON' | translate }}
+    20/03/2023
+  </div>
+  <div>
+    <mat-icon>download</mat-icon>
+    594 {{ 'PAPER.DOWNLOADS' | translate }}
+  </div>
+</div>

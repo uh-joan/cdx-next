@@ -1,0 +1,48 @@
+:host {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+
+  .cdx-header__product-name-or-logo {
+    display: flex;
+    margin: 0;
+    column-gap: 1rem;
+  }
+
+  .cdx-router-link {
+    opacity: 0.5;
+  }
+
+  .cdx-is-active {
+    opacity: 1;
+  }
+
+  .mat-mdc-tab-nav-panel {
+    display: flex;
+    padding-top: 2rem;
+    padding-left: 1rem;
+    padding-right: 2rem;
+  }
+
+  footer {
+    margin-top: auto;
+  }
+}
+
+.cdx-header__product-name-or-logo {
+  cursor: pointer;
+}
+
+.mat-mdc-tab-nav-bar {
+  max-width: 40rem;
+}
+
+.cdx-selectors {
+  display: flex;
+  height: 2rem;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  margin-right: 2rem;
+}

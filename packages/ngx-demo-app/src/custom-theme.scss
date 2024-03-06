@@ -1,0 +1,127 @@
+@use '@angular/material' as mat;
+@use '@cdx/colors' as colors;
+
+$dark-primary-text: black;
+$light-primary-text: white;
+$preferred-line-height: 1.5;
+$custom-typography: mat.define-typography-config(
+  $font-family: '"Source Code Pro", sans-serif',
+  $headline-1: mat.define-typography-level(96px, 116px, 700),
+  $headline-2: mat.define-typography-level(56px, 64px, 700),
+  $headline-3: mat.define-typography-level(48px, 56px, 700),
+  $headline-4: mat.define-typography-level(32px, 40px, 700),
+  $headline-5: mat.define-typography-level(26px, 26px, 600),
+  $headline-6: mat.define-typography-level(20px, $preferred-line-height, 600),
+  $subtitle-1: mat.define-typography-level(18px, $preferred-line-height, 400),
+  $subtitle-2: mat.define-typography-level(16px, $preferred-line-height, 400),
+  $body-1: mat.define-typography-level(18px, $preferred-line-height, 400),
+  $body-2: mat.define-typography-level(16px, $preferred-line-height, 400),
+  $caption: mat.define-typography-level(12px, $preferred-line-height, 400),
+  $button: mat.define-typography-level(inherit, $font-weight: 600),
+);
+$custom-palette: mat.define-palette(
+  (
+    50: #e8f5e9,
+    100: #c8e6c9,
+    200: #a5d6a7,
+    300: #81c784,
+    400: #66bb6a,
+    500: #4caf50,
+    600: #43a047,
+    700: #388e3c,
+    800: #2e7d32,
+    900: #1b5e20,
+    A100: #b9f6ca,
+    A200: #69f0ae,
+    A400: #00e676,
+    A700: #00c853,
+    contrast: (
+      50: $dark-primary-text,
+      100: $dark-primary-text,
+      200: $dark-primary-text,
+      300: $dark-primary-text,
+      400: $dark-primary-text,
+      500: $dark-primary-text,
+      600: $light-primary-text,
+      700: $light-primary-text,
+      800: $light-primary-text,
+      900: $light-primary-text,
+      A100: $dark-primary-text,
+      A200: $dark-primary-text,
+      A400: $dark-primary-text,
+      A700: $dark-primary-text,
+    ),
+  )
+);
+$accent-palette: mat.define-palette(
+  (
+    50: colors.$accent-50,
+    100: colors.$accent-100,
+    200: colors.$accent-200,
+    300: colors.$accent-300,
+    400: colors.$accent-400,
+    500: colors.$accent-500,
+    600: colors.$accent-600,
+    700: colors.$accent-700,
+    800: colors.$accent-800,
+    900: colors.$accent-900,
+    contrast: (
+      50: #000,
+      100: #000,
+      200: #000,
+      300: #000,
+      400: #000,
+      500: #000,
+      600: #000,
+      700: #000,
+      800: #fff,
+      900: #fff,
+    ),
+  )
+);
+$warn-palette: mat.define-palette(
+  (
+    50: colors.$warn-50,
+    100: colors.$warn-100,
+    200: colors.$warn-200,
+    300: colors.$warn-300,
+    400: colors.$warn-400,
+    500: colors.$warn-500,
+    600: colors.$warn-600,
+    700: colors.$warn-700,
+    800: colors.$warn-800,
+    900: colors.$warn-900,
+    contrast: (
+      50: #000,
+      100: #000,
+      200: #000,
+      300: #000,
+      400: #000,
+      500: #fff,
+      600: #fff,
+      700: #fff,
+      800: #fff,
+      900: #fff,
+    ),
+  )
+);
+$custom-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $custom-palette,
+      accent: $accent-palette,
+      warn: $warn-palette,
+    ),
+    density: 0,
+  )
+);
+$custom-dark-theme: mat.define-dark-theme(
+  (
+    color: (
+      primary: $custom-palette,
+      accent: $accent-palette,
+      warn: $warn-palette,
+    ),
+    density: 0,
+  )
+);

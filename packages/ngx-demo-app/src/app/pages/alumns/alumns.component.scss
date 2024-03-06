@@ -1,0 +1,57 @@
+:host {
+  display: block;
+  padding-left: 2rem;
+  padding-bottom: 4rem;
+  width: 100%;
+
+  .heading {
+    display: flex;
+    justify-content: space-between;
+
+    &__title {
+      margin-bottom: 2rem;
+    }
+
+    &__actions {
+      display: flex;
+      gap: 1rem;
+    }
+  }
+
+  .search-bar {
+    > mat-card {
+      border-radius: 0;
+      &.mat-mdc-card {
+        align-items: flex-start;
+      }
+    }
+    .search-container {
+      padding: 1rem;
+
+      display: flex;
+      flex: 1;
+      justify-content: space-between;
+      align-items: center;
+
+      > mat-form-field {
+        width: 25rem;
+      }
+    }
+
+    .mat-mdc-table {
+      img {
+        border-radius: 50%;
+      }
+
+      .id {
+        margin-right: -4rem;
+      }
+
+      .name-avatar {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+      }
+    }
+  }
+}

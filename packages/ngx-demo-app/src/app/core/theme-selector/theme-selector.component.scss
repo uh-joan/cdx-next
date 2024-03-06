@@ -1,0 +1,50 @@
+.mat-mdc-form-field {
+  display: none;
+}
+
+.mat-mdc-menu-trigger {
+  margin-bottom: 0.25rem;
+}
+
+.cdx-circle {
+  display: inline-flex;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+
+  &--purple,
+  &--you {
+    background-color: #5e33bf;
+  }
+
+  &--teal {
+    background-color: #006c7b;
+  }
+
+  &--blue {
+    background-color: #035887;
+  }
+
+  &--custom {
+    background-color: #4caf50;
+  }
+}
+
+.cdx-circle-dark.cdx-circle {
+  &--purple,
+  &--you {
+    background-color: #ba84ff;
+  }
+
+  &--teal {
+    background-color: #a2ec8e;
+  }
+
+  &--blue {
+    background-color: #1ea5fc;
+  }
+
+  &--custom {
+    background-color: #4caf50;
+  }
+}

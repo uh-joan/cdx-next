@@ -1,0 +1,30 @@
+<mat-card class="register-form mat-elevation-z3 mat-mdc-card mat-mdc-table">
+  <div class="register-form__header">
+    <div class="mat-headline-5">
+      {{ 'APP.SIGN_IN' | translate }}
+    </div>
+  </div>
+  <div class="register-form__content">
+    <mat-form-field appearance="outline">
+      <mat-label>
+        {{ 'APP.EMAIL_ADDRESS' | translate }}
+      </mat-label>
+      <input matInput title="Please enter text" />
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>
+        {{ 'APP.PASSWORD' | translate }}
+      </mat-label>
+      <input matInput title="Please enter text" />
+    </mat-form-field>
+    <button mat-raised-button color="primary">
+      {{ 'APP.SIGN_IN_NOW' | translate }}
+    </button>
+    <div class="register-form__sign-in mat-body-2">
+      {{ 'LOGIN.NOT_HAVE_ACCOUNT' | translate }}
+      <a [routerLink]="'/home'">
+        {{ 'LOGIN.REGISTER' | translate }}
+      </a>
+    </div>
+  </div>
+</mat-card>

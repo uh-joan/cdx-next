@@ -1,0 +1,89 @@
+@use '@cdx/colors' as colors;
+
+:host {
+  display: block;
+  padding-left: 2rem;
+  padding-bottom: 2rem;
+  width: 100%;
+
+  .top-container {
+    display: flex;
+    justify-content: space-between;
+
+    demo-data-box {
+      &.first-box {
+        .block {
+          background-color: colors.$warn-500;
+          color: colors.$neutral-100;
+        }
+      }
+      &.second-box {
+        .block {
+          background-color: colors.$accent-500;
+          color: colors.$neutral-100;
+        }
+      }
+      &.third-box {
+        .block {
+          background-color: colors.$warn-500;
+          color: colors.$neutral-200;
+        }
+      }
+      &.fourth-box {
+        .block {
+          background-color: colors.$primary-500;
+          color: colors.$neutral-100;
+        }
+      }
+      .block {
+        border-radius: 50%;
+        height: 56px;
+        width: 56px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
+
+  .bottom-container {
+    padding-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+
+    .left-block {
+      padding: 1rem;
+
+      .high-chart {
+        > highcharts-chart {
+          width: 700px;
+          height: 300px;
+          display: block;
+        }
+      }
+    }
+
+    .right-block {
+      padding: 1rem;
+
+      .pie-chart {
+        > highcharts-chart {
+          width: 350px;
+          height: 200px;
+          display: block;
+        }
+      }
+
+      .device-details {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+
+        > div {
+          display: flex;
+          gap: 1rem;
+        }
+      }
+    }
+  }
+}

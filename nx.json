@@ -32,10 +32,14 @@
       "unitTestRunner": "jest"
     },
     "@nx/angular:application": {
+      "e2eTestRunner": "none",
       "linter": "eslint",
+      "style": "scss",
       "unitTestRunner": "jest"
     },
-    "@nx/angular:component": {},
+    "@nx/angular:component": {
+      "style": "scss"
+    },
     "@nx/angular:library": {
       "linter": "eslint",
       "unitTestRunner": "jest"

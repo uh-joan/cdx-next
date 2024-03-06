@@ -1,0 +1,141 @@
+<div class="heading">
+  <div class="heading__title mat-headline-4">
+    {{ 'SEARCH.ARTICLES' | translate }}
+  </div>
+  <div class="heading__actions">
+    <button mat-button color="primary">
+      <mat-icon color="primary">upgrade</mat-icon>
+      {{ 'APP.EXPORT' | translate }}
+    </button>
+    <button mat-button color="primary">
+      <mat-icon color="primary">download</mat-icon>
+      {{ 'APP.IMPORT' | translate }}
+    </button>
+    <button mat-raised-button color="primary">
+      {{ 'SEARCH.ADD_ARTICLE' | translate }}
+    </button>
+  </div>
+</div>
+
+<mat-card class="search-bar mat-elevation-z3 mat-mdc-card">
+  <div class="search-container">
+    <mat-form-field
+      class="mat-mdc-form-field--no-bottom-space"
+      appearance="outline"
+    >
+      <mat-icon matPrefix color="primary">search</mat-icon>
+      <mat-label>
+        {{ 'SEARCH.SEARCH_ARTICLE' | translate }}
+      </mat-label>
+      <input matInput title="Please enter text" />
+    </mat-form-field>
+    <div class="search-container__actions">
+      <button mat-raised-button color="primary" (click)="activateSearch()">
+        {{ 'SEARCH.TITLE' | translate }}
+      </button>
+      <button mat-button color="primary" (click)="openCloseFilters()">
+        <mat-icon color="primary">{{
+          isFiltersOpened ? 'expand_less' : 'expand_more'
+        }}</mat-icon>
+        {{
+          isFiltersOpened
+            ? ('SEARCH.HIDE_FILTERS' | translate)
+            : ('SEARCH.SHOW_FILTERS' | translate)
+        }}
+      </button>
+      <button
+        mat-button
+        color="primary"
+        (click)="clearSearch()"
+        [disabled]="!(isFiltersOpened || isSearchActivated)"
+      >
+        <mat-icon>close</mat-icon>
+        {{ 'SEARCH.CLEAR' | translate }}
+      </button>
+    </div>
+  </div>
+  <mat-divider></mat-divider>
+
+  @if (isFiltersOpened) {
+  <div class="filters-container mat-elevation-z3 mat-mdc-card">
+    <div class="filters-container__filter">
+      <div class="filters-container__type mat-headline-6">
+        {{ 'SEARCH.ARGUMENTS' | translate }}
+      </div>
+      <mat-checkbox color="primary">
+        {{ 'SEARCH.CLINICS_LIVER' | translate }}
+      </mat-checkbox>
+      <mat-checkbox color="primary">
+        {{ 'SEARCH.ALZHEIMER' | translate }}
+      </mat-checkbox>
+      <mat-checkbox color="primary">
+        {{ 'SEARCH.ANDROGENETIC_ALOPECIA' | translate }}
+      </mat-checkbox>
+      <mat-checkbox color="primary">
+        {{ 'SEARCH.WEIGHT' | translate }}
+      </mat-checkbox>
+    </div>
+    <div class="filters-container__filter">
+      <div class="filters-container__type mat-headline-6">
+        {{ 'SEARCH.PROPERTIES' | translate }}
+      </div>
+      <mat-slide-toggle role="button" color="primary">
+        {{ 'SEARCH.PEER_REVIEWD' | translate }}
+      </mat-slide-toggle>
+      <mat-slide-toggle role="button" color="primary">
+        {{ 'SEARCH.FULL_ARTICLE' | translate }}
+      </mat-slide-toggle>
+      <mat-slide-toggle role="button" color="primary">
+        {{ 'SEARCH.META_ANALYSIS' | translate }}
+      </mat-slide-toggle>
+    </div>
+    <div class="filters-container__filter">
+      <div class="filters-container__type mat-headline-6">
+        {{ 'SEARCH.DATE_RANGE' | translate }}
+      </div>
+      <mat-form-field appearance="outline">
+        <mat-label>
+          {{ 'SEARCH.START_DATE' | translate }}
+        </mat-label>
+        <input
+          matInput
+          [matDatepicker]="pickerStart"
+          title="Please choose a Date"
+          placeholder="Choose a date"
+        />
+        <mat-datepicker-toggle
+          matSuffix
+          [for]="pickerStart"
+          role="button"
+        ></mat-datepicker-toggle>
+        <mat-datepicker #pickerStart></mat-datepicker>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>
+          {{ 'SEARCH.END_DATE' | translate }}
+        </mat-label>
+        <input
+          matInput
+          [matDatepicker]="pickerEnd"
+          title="Please choose a Date"
+          placeholder="Choose a date"
+        />
+        <mat-datepicker-toggle
+          matSuffix
+          [for]="pickerEnd"
+          role="button"
+        ></mat-datepicker-toggle>
+        <mat-datepicker #pickerEnd></mat-datepicker>
+      </mat-form-field>
+    </div>
+  </div>
+  }
+</mat-card>
+
+@if (isSearchActivated) {
+<div class="results">
+  <ng-container *ngFor="let index of [1, 2, 3, 4]">
+    <demo-paper-search [index]="index"></demo-paper-search>
+  </ng-container>
+</div>
+}

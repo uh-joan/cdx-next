@@ -1,0 +1,84 @@
+<div class="heading">
+  <div class="heading__title mat-headline-4">
+    {{ 'ALUMNS.TITLE' | translate }}
+  </div>
+  <div class="heading__actions">
+    <button mat-button color="primary">
+      <mat-icon color="primary">upgrade</mat-icon>
+      {{ 'APP.EXPORT' | translate }}
+    </button>
+    <button mat-button color="primary">
+      <mat-icon color="primary">download</mat-icon>
+      {{ 'APP.IMPORT' | translate }}
+    </button>
+    <button mat-raised-button color="primary">
+      {{ 'ALUMNS.ADD_ALUMNS' | translate }}
+    </button>
+  </div>
+</div>
+
+<div class="search-bar mat-elevation-z3">
+  <mat-card class="search-container">
+    <mat-form-field
+      class="mat-mdc-form-field--no-bottom-space"
+      appearance="outline"
+    >
+      <mat-icon matPrefix color="primary">search</mat-icon>
+      <mat-label>
+        {{ 'ALUMNS.SEARCH_ALUMNS' | translate }}
+      </mat-label>
+      <input matInput title="Please enter text" />
+    </mat-form-field>
+  </mat-card>
+
+  <table mat-table [dataSource]="dataSource">
+    <ng-container matColumnDef="id">
+      <mat-header-cell *matHeaderCellDef> ID </mat-header-cell>
+      <mat-cell class="id" *matCellDef="let row">
+        <mat-checkbox color="primary">
+          {{ row.id }}
+        </mat-checkbox>
+      </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="name">
+      <mat-header-cell *matHeaderCellDef>
+        {{ 'ALUMNS.NAME' | translate }}
+      </mat-header-cell>
+      <mat-cell *matCellDef="let row">
+        <div class="name-avatar">
+          <img width="30" height="30" [src]="row.avatarUrl" />
+          <span>
+            {{ row.name }}
+          </span>
+        </div>
+      </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="email">
+      <mat-header-cell *matHeaderCellDef>
+        {{ 'APP.EMAIL' | translate }}
+      </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{ row.email }} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="phone">
+      <mat-header-cell *matHeaderCellDef>
+        {{ 'APP.PHONE' | translate }}
+      </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{ row.phone }} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="location">
+      <mat-header-cell *matHeaderCellDef>
+        {{ 'ALUMNS.LOCATION' | translate }}
+      </mat-header-cell>
+      <mat-cell *matCellDef="let row">
+        {{ row.address.city }}, {{ row.address.state }}
+      </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+  </table>
+</div>

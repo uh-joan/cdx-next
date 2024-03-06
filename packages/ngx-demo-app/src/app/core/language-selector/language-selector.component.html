@@ -1,0 +1,18 @@
+<form [formGroup]="formLanguage">
+  <button
+    mat-icon-button
+    [matMenuTriggerFor]="menu"
+    aria-label="Language Selector"
+    #tooltip="matTooltip"
+    matTooltip="Language"
+  >
+    {{ getLanguageFlag(this.formLanguage.get('language')?.value || 'en') }}
+  </button>
+  <mat-menu #menu="matMenu">
+    <ng-container *ngFor="let language of MAP_LANGUAGE_NAME | keyvalue">
+      <button mat-menu-item (click)="selectLanguage(language.key)">
+        {{ getLanguageFlag(language.key) }} {{ language.value }}
+      </button>
+    </ng-container>
+  </mat-menu>
+</form>

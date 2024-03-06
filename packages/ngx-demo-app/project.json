@@ -1,0 +1,79 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "name": "ngx-demo-app",
+  "prefix": "demo",
+  "projectType": "application",
+  "sourceRoot": "packages/ngx-demo-app/src",
+  "tags": [],
+  "targets": {
+    "build": {
+      "configurations": {
+        "development": {
+          "extractLicenses": false,
+          "optimization": false,
+          "sourceMap": true
+        },
+        "production": {
+          "budgets": [
+            {
+              "maximumError": "2mb",
+              "maximumWarning": "500kb",
+              "type": "initial"
+            },
+            {
+              "maximumError": "4kb",
+              "maximumWarning": "2kb",
+              "type": "anyComponentStyle"
+            }
+          ],
+          "outputHashing": "all"
+        }
+      },
+      "defaultConfiguration": "production",
+      "executor": "@angular-devkit/build-angular:browser",
+      "options": {
+        "assets": [
+          "packages/ngx-demo-app/src/favicon.ico",
+          "packages/ngx-demo-app/src/assets"
+        ],
+        "index": "packages/ngx-demo-app/src/index.html",
+        "inlineStyleLanguage": "scss",
+        "main": "packages/ngx-demo-app/src/main.ts",
+        "outputPath": "dist/packages/ngx-demo-app",
+        "polyfills": ["zone.js"],
+        "scripts": [],
+        "styles": ["packages/ngx-demo-app/src/styles.scss"],
+        "tsConfig": "packages/ngx-demo-app/tsconfig.app.json"
+      },
+      "outputs": ["{options.outputPath}"]
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "buildTarget": "ngx-demo-app:build"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "options": {
+        "lintFilePatterns": [
+          "packages/ngx-demo-app/**/*.ts",
+          "packages/ngx-demo-app/**/*.html"
+        ]
+      },
+      "outputs": ["{options.outputFile}"]
+    },
+    "serve": {
+      "configurations": {
+        "development": {
+          "buildTarget": "ngx-demo-app:build:development"
+        },
+        "production": {
+          "buildTarget": "ngx-demo-app:build:production"
+        }
+      },
+      "defaultConfiguration": "development",
+      "executor": "@angular-devkit/build-angular:dev-server"
+    }
+  }
+}

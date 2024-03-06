@@ -1,0 +1,60 @@
+:host {
+  display: block;
+  padding-left: 2rem;
+  padding-bottom: 2rem;
+  width: 100%;
+
+  .mat-headline-4 {
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+
+  .notifications {
+    .top-box {
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .middle-box {
+      padding: 1rem;
+      display: flex;
+      gap: 8rem;
+
+      &__filters-container {
+        display: flex;
+        flex-direction: column;
+      }
+
+      &__filters-title {
+        text-align: center;
+      }
+    }
+
+    .bottom-box {
+      padding: 1rem;
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+
+  .password {
+    margin-top: 2rem;
+
+    .top-box {
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .middle-box {
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .bottom-box {
+      padding: 1rem;
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+}

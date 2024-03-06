@@ -1,0 +1,111 @@
+<div class="top-container">
+  <demo-data-box class="first-box mat-mdc-card">
+    <ng-container ngProjectAs="[top-left]">
+      <div class="mat-subtitle-2">
+        {{ 'DASHBOARD.TOTAL_VIEWS' | translate | uppercase }}
+      </div>
+      <div class="mat-headline-5">240K</div>
+    </ng-container>
+    <ng-container ngProjectAs="[top-right]">
+      <div class="block">
+        <mat-icon>payments</mat-icon>
+      </div>
+    </ng-container>
+    <ng-container ngProjectAs="[bottom]">
+      <mat-icon color="warn">arrow_downward</mat-icon>
+      <div class="mat-caption">
+        <span>12%</span>
+        {{ 'DASHBOARD.SINCE_LAST_MONTH' | translate }}
+      </div>
+    </ng-container>
+  </demo-data-box>
+  <demo-data-box class="second-box mat-mdc-card">
+    <ng-container ngProjectAs="[top-left]">
+      <div class="mat-subtitle-2">
+        {{ 'DASHBOARD.PRODUCTS_SOLD' | translate | uppercase }}
+      </div>
+      <div class="mat-headline-5">2453</div>
+    </ng-container>
+    <ng-container ngProjectAs="[top-right]">
+      <div class="block">
+        <mat-icon>group</mat-icon>
+      </div>
+    </ng-container>
+    <ng-container ngProjectAs="[bottom]">
+      <mat-icon color="accent">arrow_upward</mat-icon>
+      <div class="mat-caption">
+        <span>16% </span>
+        {{ 'DASHBOARD.SINCE_LAST_MONTH' | translate }}
+      </div>
+    </ng-container>
+  </demo-data-box>
+  <demo-data-box class="third-box mat-mdc-card">
+    <ng-container ngProjectAs="[top-left]">
+      <div class="mat-subtitle-2">
+        {{ 'DASHBOARD.SATISFACTION_INDEX' | translate | uppercase }}
+      </div>
+      <div class="mat-headline-5">85.5%</div>
+    </ng-container>
+    <ng-container ngProjectAs="[top-right]">
+      <div class="block">
+        <mat-icon>bar_chart</mat-icon>
+      </div>
+    </ng-container>
+    <ng-container ngProjectAs="[bottom]">
+      <mat-progress-bar color="priamry" [value]="'85.5'"></mat-progress-bar>
+    </ng-container>
+  </demo-data-box>
+  <demo-data-box class="fourth-box mat-mdc-card">
+    <ng-container ngProjectAs="[top-left]">
+      <div class="mat-subtitle-2">
+        {{ 'DASHBOARD.TOTAL_PROFIT' | translate | uppercase }}
+      </div>
+      <div class="mat-headline-5">$23k</div>
+    </ng-container>
+    <ng-container ngProjectAs="[top-right]">
+      <div class="block">
+        <mat-icon>attach_money</mat-icon>
+      </div>
+    </ng-container>
+  </demo-data-box>
+</div>
+<div class="bottom-container">
+  <mat-card class="left-block mat-elevation-z3">
+    <h2>
+      {{ 'DASHBOARD.LATEST_INSCRIPTION' | translate }}
+    </h2>
+    <div class="high-chart">
+      <highcharts-chart
+        [Highcharts]="Highcharts"
+        [options]="enrollmentOptions"
+      ></highcharts-chart>
+    </div>
+    <button mat-button color="primary" size="small">
+      <mat-icon>arrow_forward</mat-icon>
+      {{ 'APP.OVERVIEW' | translate }}
+    </button>
+  </mat-card>
+
+  <mat-card class="right-block mat-elevation-z3">
+    <h2>
+      {{ 'DASHBOARD.TRAFFIC_BY_DEVICE' | translate | titlecase }}
+    </h2>
+    <div class="pie-chart">
+      <highcharts-chart
+        [Highcharts]="Highcharts"
+        [options]="options"
+      ></highcharts-chart>
+    </div>
+    <div class="device-details">
+      <ng-container *ngFor="let device of devices">
+        <div>
+          <mat-icon color="primary">{{ device.icon }}</mat-icon>
+          <span class="title">
+            {{ 'DASHBOARD.' + (device.title | uppercase) | translate }}
+          </span>
+          <span class="value">{{ device.value }}%</span>
+        </div>
+      </ng-container>
+    </div>
+  </mat-card>
+</div>

@@ -1,0 +1,63 @@
+@use '@cdx/theme-angular-material' as cdx;
+@use '@cdx/ngx-branding/header/theme' as header;
+@use '@cdx/ngx-branding/footer/theme' as footer;
+@import 'custom-theme';
+
+@include cdx.default;
+@include header.theme(cdx.$cdx-theme);
+@include footer.theme(cdx.$cdx-theme);
+
+:root {
+  --light-text: rgba(#000, 0.87);
+  --light-background: #f2f2f2;
+  --dark-text: white;
+  --dark-background: #181d1f;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: var(--light-background);
+  color: var(--light-text);
+
+  &.cdx-dark-mode {
+    background-color: var(--dark-background);
+    color: var(--dark-text);
+
+    @include cdx.theme(cdx.$cdx-dark-theme);
+  }
+
+  &.cdx-theme-teal {
+    @include cdx.theme(cdx.$cdx-teal-theme);
+
+    &.cdx-dark-mode {
+      @include cdx.theme(cdx.$cdx-teal-dark-theme);
+    }
+  }
+
+  &.cdx-theme-blue {
+    @include cdx.theme(cdx.$cdx-blue-theme);
+
+    &.cdx-dark-mode {
+      @include cdx.theme(cdx.$cdx-blue-dark-theme);
+    }
+  }
+
+  &.cdx-theme-custom {
+    @include cdx.theme($custom-theme);
+
+    &.cdx-dark-mode {
+      @include cdx.theme($custom-dark-theme);
+    }
+  }
+
+  .mat-mdc-form-field--no-bottom-space {
+    .mat-mdc-form-field-subscript-wrapper {
+      display: none;
+    }
+  }
+}

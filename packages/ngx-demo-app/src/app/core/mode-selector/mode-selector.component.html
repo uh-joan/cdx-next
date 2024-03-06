@@ -1,0 +1,11 @@
+<mat-slide-toggle
+  #darkModeSwitch
+  (toggleChange)="toggleMode()"
+  [(ngModel)]="isDarkMode"
+  color="primary"
+  hideIcon
+>
+  <mat-icon [style.color]="isDarkMode ? '#2d7bbe' : '#ffea00'">{{
+    isDarkMode ? 'mode_night' : 'sunny'
+  }}</mat-icon>
+</mat-slide-toggle>

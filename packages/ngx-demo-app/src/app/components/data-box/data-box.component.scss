@@ -1,0 +1,23 @@
+@use '@cdx/colors' as colors;
+
+:host {
+  display: block;
+  height: 100%;
+  width: 16rem;
+
+  .top-box {
+    padding: 1rem;
+    padding-bottom: 0;
+    height: 4rem;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .bottom-box {
+    padding: 1rem;
+    padding-top: 0;
+    height: 4rem;
+    display: flex;
+    align-items: center;
+  }
+}
