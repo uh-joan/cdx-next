@@ -8,13 +8,6 @@
 @include header.theme(cdx.$cdx-theme);
 @include footer.theme(cdx.$cdx-theme);
 
-:root {
-  --light-text: rgba(#000, 0.87);
-  --light-background: #f2f2f2;
-  --dark-text: white;
-  --dark-background: #181d1f;
-}
-
 html,
 body {
   padding: 0;
@@ -22,13 +15,7 @@ body {
 }
 
 body {
-  background-color: var(--light-background);
-  color: var(--light-text);
-
   &.cdx-dark-mode {
-    background-color: var(--dark-background);
-    color: var(--dark-text);
-
     @include cdx.theme(cdx.$cdx-dark-theme);
   }
 
