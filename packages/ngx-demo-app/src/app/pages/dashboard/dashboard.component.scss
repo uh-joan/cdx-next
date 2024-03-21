@@ -37,8 +37,8 @@
       }
       .block {
         border-radius: 50%;
-        height: 56px;
-        width: 56px;
+        height: 3.5rem;
+        width: 3.5rem;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -56,8 +56,8 @@
 
       .high-chart {
         > highcharts-chart {
-          width: 700px;
-          height: 300px;
+          width: 43.75rem;
+          height: 18.75rem;
           display: block;
         }
       }
@@ -68,8 +68,8 @@
 
       .pie-chart {
         > highcharts-chart {
-          width: 350px;
-          height: 200px;
+          width: 21.875rem;
+          height: 12.5rem;
           display: block;
         }
       }
