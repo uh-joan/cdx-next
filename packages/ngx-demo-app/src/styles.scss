@@ -1,7 +1,8 @@
 @use '@cdx/theme-angular-material' as cdx;
 @use '@cdx/ngx-branding/header/theme' as header;
 @use '@cdx/ngx-branding/footer/theme' as footer;
-@import 'custom-theme';
+@import './themes/custom-theme';
+@import './themes/helix.scss';
 
 @include cdx.default;
 @include header.theme(cdx.$cdx-theme);
@@ -44,6 +45,14 @@ body {
 
     &.cdx-dark-mode {
       @include cdx.theme(cdx.$cdx-blue-dark-theme);
+    }
+  }
+
+  &.cdx-theme-helix {
+    @include cdx.theme($helix-theme);
+
+    &.cdx-dark-mode {
+      @include cdx.theme($helix-dark-theme);
     }
   }
 

@@ -25,7 +25,7 @@ import { ThemeService } from '../../services/theme.service';
   ],
 })
 export class ThemeSelectorComponent implements OnInit {
-  THEMES = ['purple', 'teal', 'blue', 'custom'];
+  THEMES = ['purple', 'teal', 'blue', 'custom', 'helix'];
 
   XTHEMES = ['you'];
 
