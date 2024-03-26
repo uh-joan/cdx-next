@@ -12,7 +12,7 @@
   "scripts": {
     "adr:new": "log4brains adr new",
     "adr:preview": "log4brains preview",
-    "build": "nx run-many --all --exclude=workspace --target=build --no-cloud",
+    "build": "nx run-many --all --exclude=workspace --target=build --skip-nx-cache",
     "build:storybooks": "nx run-many --all --exclude=workspace --target=build-storybook --parallel=false",
     "commit": "cz",
     "deploy:cdn": "nx run-many --all --exclude=workspace --target=deploy:cdn --parallel=1",
@@ -22,13 +22,13 @@
     "lint:commit": "commitlint --from a575076",
     "lint:nx": "run-s lint:nx:*",
     "lint:nx:format": "nx format:check",
-    "lint:nx:lint": "nx run-many --all --exclude=workspace --target=lint",
-    "lint:nx:stylelint": "nx run-many --all --exclude=workspace --target=stylelint",
+    "lint:nx:lint": "nx run-many --all --exclude=workspace --target=lint --skip-nx-cache",
+    "lint:nx:stylelint": "nx run-many --all --exclude=workspace --target=stylelint --skip-nx-cache",
     "prepare": "husky install",
     "publish:prerelease": "npm run publish:release:common -- --tag=alpha",
     "publish:release": "npm run publish:release:common -- --tag=latest",
     "publish:release:common": "nx run-many --all --exclude=workspace --target=deploy --parallel=1",
-    "test": "nx run-many --all --exclude=workspace --target=test"
+    "test": "nx run-many --all --exclude=workspace --target=test  --skip-nx-cache"
   },
   "dependencies": {
     "@angular/animations": "17.2.2",

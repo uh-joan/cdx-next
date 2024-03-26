@@ -23,6 +23,11 @@ pipeline {
             defaultValue: true,
             description: 'If publish is true, wether to do an alpha or final release'
         )
+        booleanParam(
+            name: 'DisableSkipCI',
+            defaultValue: false,
+            description: 'Disable Skip CI Step'
+        )
         choice(
             name: 'Level',
             choices: ['patch', 'minor' ],
@@ -40,9 +45,9 @@ pipeline {
                 allOf {
                     expression { params.Publish == false }
                     expression { params.Storybooks == 'nowhere' }
+                    expression { params.DisableSkipCI == false }
                 }
             }
-
             steps {
                 script {
                     // ripped from https://gist.github.com/rufoa/2807ad19328f70dc81fec25c317661b8
