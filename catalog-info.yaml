@@ -1,0 +1,25 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: cdx-library
+  description: CDX Framework
+  annotations:
+    backstage.io/source-location: url:https://git.clarivate.io/projects/CDXN/repos/cdx-next
+  tags:
+    - angular
+    - react
+    - web-components
+    - typescript
+    - material-design
+  links:
+    - url: https://digital-experience.clarivate.io
+      title: CDX Documentation
+      icon: dashboard
+    - url: https://teams.microsoft.com/l/channel/19%3Ae2aea35479cb44718ed37f12ced9ecd4%40thread.skype/General?groupId=52efd52d-e593-429f-b58c-282a11d6659e&tenantId=127fa96e-00b4-429e-95f9-72c2828437a4
+      title: CDX Teams Channel
+      icon: msteams
+spec:
+  type: library
+  lifecycle: production
+  owner: cdx-team
+  system: cdx
