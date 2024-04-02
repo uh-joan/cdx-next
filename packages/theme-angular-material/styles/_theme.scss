@@ -20,11 +20,20 @@
   @include mat.all-component-densities($theme);
 }
 
-@mixin focus-indicators-color($color) {
+@mixin focus-indicators-color($color, $transparent-background: false) {
   .cdk-keyboard-focused,
   .cdx-focused {
     @include mat.strong-focus-indicators;
     @include mat.strong-focus-indicators-theme($color);
+
+    @if $transparent-background {
+      --mat-text-button-focus-state-layer-opacity: 0;
+      --mat-tab-header-active-ripple-color: transparent;
+
+      span.mat-mdc-button-persistent-ripple {
+        --mat-outlined-button-state-layer-color: transparent;
+      }
+    }
   }
 
   // change the color of the user-agent keyboard focus state for anchors
