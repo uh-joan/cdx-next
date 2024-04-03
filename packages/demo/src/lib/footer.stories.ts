@@ -1,10 +1,17 @@
+import { importProvidersFrom } from '@angular/core';
 import {
   FooterComponent,
   FooterModule,
   OneTrustModule,
 } from '@cdx/ngx-branding';
 import { ThemeModule } from '@cdx/theme-angular-material';
-import { Meta, moduleMetadata, StoryFn } from '@storybook/angular';
+import { TranslateModule } from '@ngx-translate/core';
+import {
+  applicationConfig,
+  Meta,
+  moduleMetadata,
+  StoryFn,
+} from '@storybook/angular';
 import { html } from 'common-tags';
 
 export default {
@@ -13,6 +20,9 @@ export default {
   decorators: [
     moduleMetadata({
       imports: [FooterModule, ThemeModule],
+    }),
+    applicationConfig({
+      providers: [importProvidersFrom(TranslateModule.forRoot())],
     }),
   ],
 } as Meta<FooterComponent>;
