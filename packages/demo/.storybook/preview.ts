@@ -2,9 +2,39 @@
 // we might also be able to use a decorator https://storybook.js.org/docs/react/writing-stories/decorators#global-decorators, but this approach had less moving parts
 // to avoid this for the "real" version, we simply need to make this an app type instead of a library
 
-const parameters = {
-  docs: {
-    inlineStories: true,
+// Replace your-framework with the framework you are using (e.g., react, vue3)
+import { componentWrapperDecorator, Preview } from '@storybook/angular';
+
+const parameters: Preview = {
+  globalTypes: {
+    theme: {
+      description: 'Global theme for components',
+      defaultValue: 'light',
+      toolbar: {
+        // The label to show for this toolbar item
+        title: 'Theme',
+        icon: 'circlehollow',
+        // Array of plain string values or MenuItem shape (see below)
+        items: [
+          { value: 'cdx-theme-clv', title: 'Clarivate' },
+          { value: 'cdx-theme-helix', title: 'Helix' },
+          { value: 'cdx-theme-teal', title: 'Teal' },
+          { value: 'cdx-theme-blue', title: 'Blue' },
+        ],
+        // Change title based on selected value
+        dynamicTitle: true,
+      },
+    },
   },
+
+  decorators: [
+    componentWrapperDecorator(
+      (story) => `<div [class]="myTheme">${story}</div>`,
+      ({ globals }) => {
+        return { myTheme: globals['theme'] };
+      },
+    ),
+  ],
 };
+
 export default parameters;
