@@ -36,6 +36,34 @@
   }
 }
 
+
+.btns-story {
+  display: flex;
+  min-height: 150px;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+  column-gap: 4rem;
+  row-gap: 1rem;
+
+  div.btn-row {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  div.row{
+    display: flex;
+    flex: 1;
+    margin-right: 30px;
+  }
+
+  button {
+    margin: 5px
+  }
+}
+
 .wide {
   width: 80%;
 }
