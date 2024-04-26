@@ -36,7 +36,6 @@
   }
 }
 
-
 .btns-story {
   display: flex;
   min-height: 150px;
@@ -48,19 +47,19 @@
   row-gap: 1rem;
 
   div.btn-row {
-    width: 100%;
     display: flex;
+    width: 100%;
     flex-direction: column;
   }
 
-  div.row{
+  div.row {
     display: flex;
     flex: 1;
     margin-right: 30px;
   }
 
   button {
-    margin: 5px
+    margin: 5px;
   }
 }
 
