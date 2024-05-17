@@ -12,7 +12,19 @@
       "rules": {
         "plugin/stylelint-bem-namics": {
           "helperPrefixes": [],
-          "namespaces": ["cdx-", "mat-", "cdk-", "mdc-", "xng-", "hlx-"],
+          "namespaces": [
+            "cdx-",
+            "mat-",
+            "cdk-",
+            "mdc-",
+            "xng-",
+            "hlx-",
+            "display-",
+            "headline-",
+            "title-",
+            "body-",
+            "label-"
+          ],
           "patternPrefixes": []
         },
         "selector-class-pattern": null
@@ -29,7 +41,19 @@
       "rules": {
         "plugin/stylelint-bem-namics": {
           "helperPrefixes": [],
-          "namespaces": ["cdx-", "mat-", "cdk-", "mdc-", "xng-", "hlx-"],
+          "namespaces": [
+            "cdx-",
+            "mat-",
+            "cdk-",
+            "mdc-",
+            "xng-",
+            "hlx-",
+            "display-",
+            "headline-",
+            "title-",
+            "body-",
+            "label-"
+          ],
           "patternPrefixes": []
         },
         "selector-class-pattern": null

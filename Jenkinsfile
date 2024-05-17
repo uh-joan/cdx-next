@@ -107,8 +107,8 @@ pipeline {
             steps {
                 sshagent(credentials: ['jenkins-git-clarivate-io']) {
                     sh "git checkout ${BRANCH_NAME}"
-                    sh 'npx nx run workspace:version --releaseAs=preminor --preid=alpha'
-                    sh 'npx nx run workspace:bumpDependencies'
+                    sh 'npx nx run workspace:version --releaseAs=preminor --preid=alpha --skip-nx-cache'
+                    sh 'npx nx run workspace:bumpDependencies --skip-nx-cache'
                     sh '''
                         OLD_TAG=$(git tag --points-at HEAD)
                         npm install
@@ -170,8 +170,8 @@ pipeline {
             steps {
                 sshagent(credentials: ['jenkins-git-clarivate-io']) {
                     sh "git checkout ${BRANCH_NAME}"
-                    sh 'npx nx run workspace:version --releaseAs=prerelease --preid=alpha'
-                    sh 'npx nx run workspace:bumpDependencies'
+                    sh 'npx nx run workspace:version --releaseAs=prerelease --preid=alpha --skip-nx-cache'
+                    sh 'npx nx run workspace:bumpDependencies --skip-nx-cache'
                     sh '''
                         OLD_TAG=$(git tag --points-at HEAD)
                         npm install
@@ -236,8 +236,8 @@ pipeline {
             steps {
                 sshagent(credentials: ['jenkins-git-clarivate-io']) {
                     sh "git checkout ${BRANCH_NAME}"
-                    sh "npx nx run workspace:version --releaseAs=${params.Level}"
-                    sh 'npx nx run workspace:bumpDependencies'
+                    sh "npx nx run workspace:version --releaseAs=${params.Level} --skip-nx-cache"
+                    sh 'npx nx run workspace:bumpDependencies --skip-nx-cache'
                     sh '''
                         OLD_TAG=$(git tag --points-at HEAD)
                         npm install

@@ -7,8 +7,6 @@
 @use '../packages/ngx-authentication/src/lib/header-global-user-profile/header-global-user-profile-theme'
   as profile-theme;
 
-@use './themes/helix.m3.scss' as helix-m3;
-
 @include cdx-material.default;
 
 @include footer-theme.theme(cdx-material.$cdx-theme);
@@ -25,112 +23,7 @@ div {
   }
 
   &.cdx-theme-helix {
-    @include mat.core-theme(helix-m3.$helix-light-theme);
-    @include cdx-material.theme(helix-m3.$helix-light-theme);
-    @include mat.all-component-themes(helix-m3.$helix-light-theme);
-    @include matx.color-variants-back-compat(helix-m3.$helix-light-theme);
-    @include mat.typography-hierarchy(
-      helix-m3.$helix-typography,
-      $back-compat: true
-    );
-    @include cdx-material.focus-indicators-color(#000000);
-
-    --mdc-protected-button-container-shape: 2px;
-    --mdc-outlined-button-container-shape: 2px;
-    --mdc-filled-button-container-shape: 2px;
-    --mdc-text-button-container-shape: 2px;
-    --mdc-filled-button-container-height: 44px;
-    --mdc-outlined-button-container-height: 44px;
-    --mdc-protected-button-container-height: 44px;
-    --mdc-text-button-container-height: 44px;
-    --mdc-tab-indicator-active-indicator-height: 2px;
-    --mdc-shape-small: 0;
-
-    .mdc-text-field {
-      border-radius: 0 !important;
-
-      --mdc-shape-small: 0;
-    }
-
-    .hlx-secondary-btn {
-      @include mat.button-color(
-        helix-m3.$helix-light-theme,
-        $color-variant: secondary
-      );
-
-      --mdc-outlined-button-outline-color: #5e33bf;
-    }
-
-    button.mdc-button {
-      &[mat-flat-button] {
-        &:hover {
-          background-color: #000;
-        }
-      }
-
-      &.hlx-secondary-btn {
-        &[mat-flat-button] {
-          &:hover {
-            background-color: #4125af;
-          }
-        }
-      }
-
-      &.hlx-warn-btn {
-        &[mat-flat-button] {
-          &:hover {
-            background: var(--surface-error, #f9e9ed);
-          }
-        }
-      }
-
-      &[mat-button] {
-        &:hover {
-          background-color: rgb(0 0 0 / 4%);
-        }
-      }
-    }
-
-    .hlx-btn-small {
-      button.mdc-button {
-        padding: 6px 16px;
-        font-size: 14px;
-      }
-    }
-
-    .hlx-warn-btn {
-      @include mat.button-color(
-        helix-m3.$helix-warn-theme,
-        $color-variant: primary
-      );
-
-      --mdc-outlined-button-outline-color: #c52a4f;
-      --mdc-filled-button-container-color: #f9e9ed;
-    }
-
-    .hlx-btn-x-small {
-      button.mdc-button {
-        padding: 4px 12px;
-        font-size: 12px;
-      }
-    }
-
-    .hlx-btn-large {
-      button.mdc-button {
-        height: auto;
-        padding: 18px 32px;
-        font-size: 16px;
-      }
-    }
-
-    &.cdx-dark-mode {
-      @include mat.core-theme(helix-m3.$helix-dark-theme);
-      @include cdx-material.theme(helix-m3.$helix-dark-theme);
-      @include mat.all-component-themes(helix-m3.$helix-dark-theme);
-
-      --mdc-protected-button-container-shape: 0;
-      --mdc-outlined-button-container-shape: 0;
-    }
+    @include cdx-material.theme-helix-overrides;
   }
 
   .mat-mdc-form-field--no-bottom-space {

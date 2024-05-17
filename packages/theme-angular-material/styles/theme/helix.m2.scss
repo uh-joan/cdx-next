@@ -1,0 +1,278 @@
+@use '@angular/material' as mat;
+@use '@cdx/colors' as colors;
+
+$primary-palette: mat.define-palette(
+  (
+    50: #e5e6e6,
+    100: #bfbfc0,
+    200: #959596,
+    300: #6a6b6c,
+    400: #4a4b4d,
+    500: #2a2b2d,
+    600: #252628,
+    700: #1f2022,
+    800: #191a1c,
+    900: #0f1011,
+    contrast: (
+      50: #000,
+      100: #000,
+      200: #000,
+      300: #000,
+      400: #fff,
+      500: #fff,
+      600: #fff,
+      700: #fff,
+      800: #fff,
+      900: #fff,
+    ),
+  )
+);
+$accent-palette: mat.define-palette(
+  (
+    50: #ece7f7,
+    100: #cec2ec,
+    200: #ae99df,
+    300: #8e70d2,
+    400: #7552c9,
+    500: #5d33bf,
+    600: #552eb9,
+    700: #4b27b1,
+    800: #4120a9,
+    900: #30149b,
+    contrast: (
+      50: #000,
+      100: #000,
+      200: #000,
+      300: #000,
+      400: #000,
+      500: #000,
+      600: #000,
+      700: #000,
+      800: #fff,
+      900: #fff,
+    ),
+  )
+);
+$warn-palette: mat.define-palette(
+  (
+    50: #fbe7e6,
+    100: #f5c3c1,
+    200: #ef9b98,
+    300: #e8736e,
+    400: #e3554f,
+    500: #de3730,
+    600: #da312b,
+    700: #d52a24,
+    800: #d1231e,
+    900: #c81613,
+    contrast: (
+      50: #000,
+      100: #000,
+      200: #000,
+      300: #000,
+      400: #000,
+      500: #fff,
+      600: #fff,
+      700: #fff,
+      800: #fff,
+      900: #fff,
+    ),
+  )
+);
+$dark-mode-palette: (
+  50: colors.$primary-dark-50,
+  100: colors.$primary-dark-100,
+  200: colors.$primary-dark-200,
+  300: colors.$primary-dark-300,
+  400: colors.$primary-dark-400,
+  500: colors.$primary-dark-500,
+  600: colors.$primary-dark-600,
+  700: colors.$primary-dark-700,
+  800: colors.$primary-dark-800,
+  900: colors.$primary-dark-900,
+  contrast: (
+    50: #000,
+    100: #000,
+    200: #000,
+    300: #000,
+    400: #fff,
+    500: #fff,
+    600: #fff,
+    700: #fff,
+    800: #fff,
+    900: #fff,
+  ),
+);
+$preferred-line-height: 1.5;
+$helix-typography: mat.define-typography-config(
+  $font-family: '"Source Sans 3", sans-serif',
+  $headline-1: mat.define-typography-level(40px, 56px, 700),
+  $headline-2: mat.define-typography-level(32px, 40px, 700),
+  $headline-3: mat.define-typography-level(24px, 32px, 700),
+  $headline-4: mat.define-typography-level(18px, 24px, 700),
+  $headline-5: mat.define-typography-level(16px, 24px, 600),
+  $headline-6: mat.define-typography-level(14px, $preferred-line-height, 600),
+  $subtitle-1: mat.define-typography-level(18px, $preferred-line-height, 400),
+  $subtitle-2: mat.define-typography-level(16px, $preferred-line-height, 400),
+  $body-1: mat.define-typography-level(16px, $preferred-line-height, 400),
+  $body-2: mat.define-typography-level(14px, $preferred-line-height, 400),
+  $caption: mat.define-typography-level(12px, $preferred-line-height, 400),
+  $button: mat.define-typography-level(inherit, $font-weight: 600),
+);
+$helix-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $primary-palette,
+      accent: $accent-palette,
+      warn: $warn-palette,
+    ),
+    density: 0,
+    typography: $helix-typography,
+  )
+);
+
+@mixin theme-helix-overrides() {
+  @include mat.core-color($helix-theme);
+  @include mat.all-component-colors($helix-theme);
+  @include mat.all-component-typographies($helix-theme);
+  @include mat.all-component-densities($helix-theme);
+
+  --mdc-protected-button-container-shape: 2px;
+  --mdc-outlined-button-container-shape: 2px;
+  --mdc-filled-button-container-shape: 2px;
+  --mdc-text-button-container-shape: 2px;
+  --mdc-filled-button-container-height: 44px;
+  --mdc-outlined-button-container-height: 44px;
+  --mdc-protected-button-container-height: 44px;
+  --mdc-text-button-container-height: 44px;
+  --mdc-tab-indicator-active-indicator-height: 2px;
+  --mdc-shape-small: 0;
+
+  .mdc-text-field {
+    border-radius: 0 !important;
+
+    --mdc-shape-small: 0;
+  }
+
+  .hlx-btn-small {
+    button.mdc-button {
+      padding: 6px 16px;
+      font-size: 14px;
+    }
+  }
+
+  .hlx-btn-x-small {
+    button.mdc-button {
+      padding: 4px 12px;
+      font-size: 12px;
+    }
+  }
+
+  .hlx-btn-large {
+    button.mdc-button {
+      height: auto;
+      padding: 18px 32px;
+    }
+  }
+
+  .hlx-secondary-btn {
+    --mdc-outlined-button-outline-color: #5e33bf;
+    --mdc-outlined-button-label-text-color: #5e33bf;
+
+    button.mdc-button:hover {
+      background-color: #faf5ff;
+    }
+  }
+
+  .hlx-warn-btn {
+    --mdc-outlined-button-outline-color: #c52a4f;
+    --mdc-filled-button-container-color: #f9e9ed;
+  }
+
+  &.cdx-dark-mode {
+    --mdc-protected-button-container-shape: 0;
+    --mdc-outlined-button-container-shape: 0;
+  }
+
+  .display-large {
+    @include mat.typography-level($helix-typography, 'headline-1');
+  }
+
+  .display-medium {
+    @include mat.typography-level($helix-typography, 'headline-3');
+  }
+
+  .display-small {
+    @include mat.typography-level($helix-typography, 'headline-4');
+  }
+
+  .headline-large {
+    @include mat.typography-level($helix-typography, 'headline-2');
+  }
+
+  .headline-medium {
+    @include mat.typography-level($helix-typography, 'headline-3');
+
+    font-weight: 600;
+  }
+
+  .headline-small {
+    @include mat.typography-level($helix-typography, 'headline-4');
+
+    font-weight: 600;
+  }
+
+  .title-large {
+    @include mat.typography-level($helix-typography, 'headline-3');
+
+    font-weight: 400;
+  }
+
+  .title-medium {
+    @include mat.typography-level($helix-typography, 'headline-4');
+
+    font-weight: 400;
+  }
+
+  .title-small {
+    @include mat.typography-level($helix-typography, 'headline-5');
+
+    font-weight: 400;
+  }
+
+  .body-large {
+    @include mat.typography-level($helix-typography, 'body-1');
+  }
+
+  .body-medium {
+    @include mat.typography-level($helix-typography, 'body-2');
+  }
+
+  .body-small {
+    @include mat.typography-level($helix-typography, 'body-1');
+
+    font-size: 13px;
+    line-height: 16px;
+  }
+
+  .label-large {
+    @include mat.typography-level($helix-typography, 'body-1');
+
+    font-weight: 600;
+    line-height: 20px;
+  }
+
+  .label-medium {
+    @include mat.typography-level($helix-typography, 'body-2');
+
+    font-weight: 600;
+    line-height: 20px;
+  }
+
+  .label-small {
+    @include mat.typography-level($helix-typography, 'caption');
+
+    font-weight: 600;
+    line-height: 20px;
+  }
+}
