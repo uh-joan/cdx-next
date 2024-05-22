@@ -1,6 +1,6 @@
 {
   "name": "@cdx/theme-expansion-panel",
-  "version": "17.0.1",
+  "version": "17.0.2-alpha.0",
   "repository": {
     "type": "git",
     "url": "ssh://git@git.clarivate.io/cdxn/cdx-next.git",
@@ -20,6 +20,6 @@
     "@material/theme": "14.0.0"
   },
   "peerDependencies": {
-    "@cdx/theme-material-components-web": "17.0.1"
+    "@cdx/theme-material-components-web": "17.0.2-alpha.0"
   }
 }
