@@ -1,6 +1,6 @@
 {
   "name": "@cdx/ngx-session-activity",
-  "version": "17.0.2-alpha.0",
+  "version": "17.0.2-alpha.1",
   "repository": {
     "type": "git",
     "url": "ssh://git@git.clarivate.io/cdxn/cdx-next.git",

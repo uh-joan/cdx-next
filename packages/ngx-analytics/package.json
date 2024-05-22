@@ -1,6 +1,6 @@
 {
   "name": "@cdx/ngx-analytics",
-  "version": "17.0.2-alpha.0",
+  "version": "17.0.2-alpha.1",
   "repository": {
     "type": "git",
     "url": "ssh://git@git.clarivate.io/cdxn/cdx-next.git",
@@ -10,7 +10,7 @@
     "tslib": "^2.3.0"
   },
   "peerDependencies": {
-    "@cdx/ngx-branding": "17.0.2-alpha.0",
+    "@cdx/ngx-branding": "17.0.2-alpha.1",
     "@snowplow/browser-tracker": "^3.7.0"
   }
 }
