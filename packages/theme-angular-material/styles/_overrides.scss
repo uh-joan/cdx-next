@@ -4,18 +4,6 @@
     border-color: inherit;
   }
 
-  // make anchor focus state look consistent with mat in footer
-  /* stylelint-disable order/properties-order */
-  .cdx-footer a:focus:not(.mat-button-base) {
-    outline: none; // turn off default user-agent styles
-    /* stylelint-disable-next-line scss/at-extend-no-missing-placeholder */
-    @extend .mat-focus-indicator; // grab construct and colors from mat
-
-    // move the :before border "away" a comfortable amount
-    margin: -5px;
-    padding: 5px;
-  }
-
   .mat-menu-panel {
     max-width: none !important;
   }
@@ -42,10 +30,8 @@
 
   .mat-typography.mat-legacy-spacing {
     p {
-      margin-block-start: 1em;
       margin-block-end: 1em;
+      margin-block-start: 1em;
     }
   }
-
-  /* stylelint-enable order/properties-order */
 }
