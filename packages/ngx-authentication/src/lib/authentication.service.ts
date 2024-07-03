@@ -90,6 +90,12 @@ export class AuthenticationService {
     );
   }
 
+  entitlementError(): void {
+    window.location.assign(
+      this.accessAppActionWithReferrer('entitlementError'),
+    );
+  }
+
   private accessAppActionWithReferrer(
     action: string,
     referrerUrl?: string,
