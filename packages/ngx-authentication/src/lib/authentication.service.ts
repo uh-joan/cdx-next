@@ -21,6 +21,9 @@ export class AuthenticationService {
     private http: HttpClient,
   ) {
     this.environment = this.settings.environment;
+    if (this.settings.legacyTokenSupport) {
+      this.runLegacyCdxTransform();
+    }
   }
 
   setEnvironment(environment: string): void {
@@ -59,6 +62,13 @@ export class AuthenticationService {
     }
   }
 
+  runLegacyCdxTransform(): void {
+    const legacyToken = JSON.parse(localStorage.getItem('ls.token') || '{}');
+    if (legacyToken && legacyToken.token) {
+      this.tokenService.setToken(legacyToken.token);
+    }
+  }
+
   async createSession(code: string): Promise<boolean> {
     const url = this.accessAppActionWithReferrer(`api/session/user/${code}`);
     let authResponse;
@@ -67,6 +77,20 @@ export class AuthenticationService {
         token: string;
       };
       this.tokenService.setToken(authResponse.token);
+      if (this.settings.legacyTokenSupport) {
+        localStorage.setItem(
+          'ls.token',
+          JSON.stringify({
+            email: this.getUserEmail(),
+            expire:
+              1000 * parseInt((this.getTokenField('exp') as string).toString()),
+            provider: this.getUserProvider(),
+            token: authResponse.token,
+            truids: [this.getUserId()],
+            userid: this.getUserId(),
+          }),
+        );
+      }
       return true;
     } catch (error) {
       this.logout();

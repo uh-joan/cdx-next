@@ -5,6 +5,7 @@ export interface AutenticationsSettings {
   environment?: string;
   tokenLabel?: string;
   brokerRoute?: string;
+  legacyTokenSupport?: boolean;
 }
 
 export interface JwtToken {
