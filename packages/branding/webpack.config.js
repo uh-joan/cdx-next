@@ -1,39 +1,42 @@
-const { mergeWithRules, merge } = require('webpack-merge');
+const path = require('path');
+const { merge } = require('webpack-merge');
 
 module.exports = (config) => {
-  const withLitCss = mergeWithRules({
-    module: {
-      rules: {
-        test: 'match',
-        use: 'replace',
-        oneOf: 'replace',
-      },
+  const baseConfig = {
+    mode: 'production',
+    entry: './packages/branding/src/branding.ts',
+    output: {
+      filename: 'branding.[name].esm.js',
+      path: path.resolve(__dirname, 'dist'),
     },
-  })(config, {
+    resolve: {
+      extensions: ['.ts', '.js', '.scss'],
+    },
     module: {
       rules: [
         {
-          test: /\.css$|\.scss$|\.sass$|\.less$|\.styl$/,
+          test: /\.ts$/,
+          use: 'ts-loader',
+          exclude: /node_modules/,
+        },
+        {
+          test: /\.(css|scss|sass|less|styl)$/,
           use: [
             'lit-scss-loader',
             'extract-loader',
-            { loader: 'css-loader', options: { url: false } },
+            {
+              loader: 'css-loader',
+              options: { url: false },
+            },
             'sass-loader',
           ],
-          oneOf: undefined,
         },
       ],
     },
-  });
-
-  return merge(withLitCss, {
-    // TODO there is an open bug with the Nx webpack executor that ignores the project.json config for this flag
-    // https://github.com/nrwl/nx/pull/7747/files
     optimization: {
       runtimeChunk: false,
     },
-    output: {
-      filename: 'branding.[name].esm.js',
-    },
-  });
+  };
+
+  return merge(config, baseConfig);
 };

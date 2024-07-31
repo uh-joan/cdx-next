@@ -1,7 +1,7 @@
 @use '@angular/material' as mat;
 @use '@cdx/colors' as colors;
 
-$primary-palette: mat.define-palette(
+$primary-palette: mat.m2-define-palette(
   (
     50: #e5e6e6,
     100: #bfbfc0,
@@ -27,7 +27,7 @@ $primary-palette: mat.define-palette(
     ),
   )
 );
-$accent-palette: mat.define-palette(
+$accent-palette: mat.m2-define-palette(
   (
     50: #ece7f7,
     100: #cec2ec,
@@ -53,7 +53,7 @@ $accent-palette: mat.define-palette(
     ),
   )
 );
-$warn-palette: mat.define-palette(
+$warn-palette: mat.m2-define-palette(
   (
     50: #fbe7e6,
     100: #f5c3c1,
@@ -104,22 +104,22 @@ $dark-mode-palette: (
   ),
 );
 $preferred-line-height: 1.5;
-$helix-typography: mat.define-typography-config(
+$helix-typography: mat.m2-define-typography-config(
   $font-family: '"Source Sans 3", sans-serif',
-  $headline-1: mat.define-typography-level(40px, 56px, 700),
-  $headline-2: mat.define-typography-level(32px, 40px, 700),
-  $headline-3: mat.define-typography-level(24px, 32px, 700),
-  $headline-4: mat.define-typography-level(18px, 24px, 700),
-  $headline-5: mat.define-typography-level(16px, 24px, 600),
-  $headline-6: mat.define-typography-level(14px, $preferred-line-height, 600),
-  $subtitle-1: mat.define-typography-level(18px, $preferred-line-height, 400),
-  $subtitle-2: mat.define-typography-level(16px, $preferred-line-height, 400),
-  $body-1: mat.define-typography-level(16px, $preferred-line-height, 400),
-  $body-2: mat.define-typography-level(14px, $preferred-line-height, 400),
-  $caption: mat.define-typography-level(12px, $preferred-line-height, 400),
-  $button: mat.define-typography-level(inherit, $font-weight: 600),
+  $headline-1: mat.m2-define-typography-level(40px, 56px, 700),
+  $headline-2: mat.m2-define-typography-level(32px, 40px, 700),
+  $headline-3: mat.m2-define-typography-level(24px, 32px, 700),
+  $headline-4: mat.m2-define-typography-level(18px, 24px, 700),
+  $headline-5: mat.m2-define-typography-level(16px, 24px, 600),
+  $headline-6: mat.m2-define-typography-level(14px, $preferred-line-height, 600),
+  $subtitle-1: mat.m2-define-typography-level(18px, $preferred-line-height, 400),
+  $subtitle-2: mat.m2-define-typography-level(16px, $preferred-line-height, 400),
+  $body-1: mat.m2-define-typography-level(16px, $preferred-line-height, 400),
+  $body-2: mat.m2-define-typography-level(14px, $preferred-line-height, 400),
+  $caption: mat.m2-define-typography-level(12px, $preferred-line-height, 400),
+  $button: mat.m2-define-typography-level(inherit, $font-weight: 600),
 );
-$helix-theme: mat.define-light-theme(
+$helix-theme: mat.m2-define-light-theme(
   (
     color: (
       primary: $primary-palette,
@@ -195,82 +195,82 @@ $helix-theme: mat.define-light-theme(
   }
 
   .display-large {
-    @include mat.typography-level($helix-typography, 'headline-1');
+    @include mat.typography-hierarchy($helix-typography, 'headline-1');
   }
 
   .display-medium {
-    @include mat.typography-level($helix-typography, 'headline-3');
+    @include mat.typography-hierarchy($helix-typography, 'headline-3');
   }
 
   .display-small {
-    @include mat.typography-level($helix-typography, 'headline-4');
+    @include mat.typography-hierarchy($helix-typography, 'headline-4');
   }
 
   .headline-large {
-    @include mat.typography-level($helix-typography, 'headline-2');
+    @include mat.typography-hierarchy($helix-typography, 'headline-2');
   }
 
   .headline-medium {
-    @include mat.typography-level($helix-typography, 'headline-3');
+    @include mat.typography-hierarchy($helix-typography, 'headline-3');
 
     font-weight: 600;
   }
 
   .headline-small {
-    @include mat.typography-level($helix-typography, 'headline-4');
+    @include mat.typography-hierarchy($helix-typography, 'headline-4');
 
     font-weight: 600;
   }
 
   .title-large {
-    @include mat.typography-level($helix-typography, 'headline-3');
+    @include mat.typography-hierarchy($helix-typography, 'headline-3');
 
     font-weight: 400;
   }
 
   .title-medium {
-    @include mat.typography-level($helix-typography, 'headline-4');
+    @include mat.typography-hierarchy($helix-typography, 'headline-4');
 
     font-weight: 400;
   }
 
   .title-small {
-    @include mat.typography-level($helix-typography, 'headline-5');
+    @include mat.typography-hierarchy($helix-typography, 'headline-5');
 
     font-weight: 400;
   }
 
   .body-large {
-    @include mat.typography-level($helix-typography, 'body-1');
+    @include mat.typography-hierarchy($helix-typography, 'body-1');
   }
 
   .body-medium {
-    @include mat.typography-level($helix-typography, 'body-2');
+    @include mat.typography-hierarchy($helix-typography, 'body-2');
   }
 
   .body-small {
-    @include mat.typography-level($helix-typography, 'body-1');
+    @include mat.typography-hierarchy($helix-typography, 'body-1');
 
     font-size: 13px;
     line-height: 16px;
   }
 
   .label-large {
-    @include mat.typography-level($helix-typography, 'body-1');
+    @include mat.typography-hierarchy($helix-typography, 'body-1');
 
     font-weight: 600;
     line-height: 20px;
   }
 
   .label-medium {
-    @include mat.typography-level($helix-typography, 'body-2');
+    @include mat.typography-hierarchy($helix-typography, 'body-2');
 
     font-weight: 600;
     line-height: 20px;
   }
 
   .label-small {
-    @include mat.typography-level($helix-typography, 'caption');
+    @include mat.typography-hierarchy($helix-typography, 'caption');
 
     font-weight: 600;
     line-height: 20px;

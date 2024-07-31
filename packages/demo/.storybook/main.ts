@@ -5,7 +5,7 @@ const config: StorybookConfig = {
 
   stories: [
     '../src/lib/**/*.stories.@(js|jsx|ts|tsx)',
-    '../../ngx-notification/src/lib/**/*.stories.@(js|jsx|ts|tsx)',
+    // '../../ngx-notification/src/lib/**/*.stories.@(js|jsx|ts|tsx)',
     '../../ngx-authentication/src/lib/**/*.stories.@(js|jsx|ts|tsx)',
   ],
   framework: {

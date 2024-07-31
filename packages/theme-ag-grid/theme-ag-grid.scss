@@ -1,29 +1,20 @@
-@use 'ag-grid-community/src/styles/ag-theme-material/sass/ag-theme-material-mixin'
-  as theme;
-@use 'ag-grid-community/src/styles/mixins/ag-theme-params' as params;
-
 @use '../colors';
 
 .ag-theme-cdx {
-  @include theme.ag-theme-material(
-    (
-      material-primary-color: colors.$primary-500,
-      material-accent-color: colors.$accent-500,
-      row-hover-color: params.ag-derived(material-primary-color, $opacity: 0.05),
-      selected-row-background-color:
-        params.ag-derived(material-primary-color, $opacity: 0.1),
-      range-selection-background-color:
-        params.ag-derived(material-primary-color, $opacity: 0.1),
-      value-change-delta-up-color: #128902,
-      value-change-delta-down-color: #f89324,
-      header-background-color: #fafafa,
-      header-foreground-color: #212121,
-      subheader-background-color: #f5f5f5,
-      font-family: unquote("'Source Sans Pro', sans-serif"),
-    )
-  );
+  --ag-theme-alpine-primary-color: #{colors.$primary-500};
+  --ag-theme-alpine-accent-color: #{colors.$accent-500};
+  --ag-row-hover-color: #{rgba(colors.$primary-500, 0.05)};
+  --ag-selected-row-background-color: #{rgba(colors.$primary-500, 0.1)};
+  --ag-range-selection-background-color: #{rgba(colors.$primary-500, 0.1)};
+  --ag-value-change-delta-up-color: #128902;
+  --ag-value-change-delta-down-color: #f89324;
+  --ag-header-background-color: #fafafa;
+  --ag-header-foreground-color: #212121;
+  --ag-subheader-background-color: #f5f5f5;
+  --ag-font-family: 'Source Sans Pro', sans-serif;
 
+  // Ensure custom checkbox color
   .ag-checkbox-input-wrapper.ag-checked::after {
-    color: colors.$primary-500;
+    color: #{colors.$primary-500};
   }
 }

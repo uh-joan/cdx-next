@@ -8,8 +8,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ThemeModule } from '@cdx/theme-angular-material';
-import { Meta, moduleMetadata, StoryFn } from '@storybook/angular';
-import { html } from 'common-tags';
+import { Meta, moduleMetadata, StoryObj } from '@storybook/angular';
 
 const datepickerMeta: Meta<MatDatepicker<string>> = {
   title: 'Date Picker',
@@ -27,17 +26,12 @@ const datepickerMeta: Meta<MatDatepicker<string>> = {
       ],
     }),
   ],
-  render: (args: MatDatepicker<string>) => ({
-    props: {
-      ...args,
-    },
-  }),
 };
 
 export default datepickerMeta;
+type DatepickerStory = StoryObj<MatDatepicker<string>>;
 
-const DatepickerTemplate: StoryFn = () => ({
-  template: html`
+const DatepickerTemplate = `
     <h3>Date Picker</h3>
     <div class="story">
       <mat-form-field appearance="outline">
@@ -56,11 +50,9 @@ const DatepickerTemplate: StoryFn = () => ({
         <mat-datepicker #picker></mat-datepicker>
       </mat-form-field>
     </div>
-  `,
-});
+  `;
 
-const RangeDatepickerTemplate: StoryFn = () => ({
-  template: html` <h3>Date Picker With Range</h3>
+const RangeDatepickerTemplate = `<h3>Date Picker With Range</h3>
     <div class="story">
       <mat-form-field appearance="outline">
         <mat-label>Choose a date range</mat-label>
@@ -74,8 +66,23 @@ const RangeDatepickerTemplate: StoryFn = () => ({
         ></mat-datepicker-toggle>
         <mat-date-range-picker #picker4></mat-date-range-picker>
       </mat-form-field>
-    </div>`,
-});
+    </div>`;
 
+export const datepicker: DatepickerStory = {
+  render: (args) => ({
+    props: args,
+    template: DatepickerTemplate,
+  }),
+};
+
+export const rangeDatepicker: DatepickerStory = {
+  render: (args) => ({
+    props: args,
+    template: RangeDatepickerTemplate,
+  }),
+};
+
+/*
 export const datepicker = DatepickerTemplate.bind({});
 export const rangeDatepicker = RangeDatepickerTemplate.bind({});
+*/

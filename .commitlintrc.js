@@ -15,7 +15,8 @@ async function getConfig() {
           ...(await getProjects(
             ctx,
             ({ name, projectType }) =>
-              !name.includes('e2e') && projectType == 'application',
+              !name.includes('e2e') &&
+              (projectType == 'application' || projectType == 'library'),
           )),
         ],
       ],

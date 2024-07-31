@@ -5,7 +5,7 @@
   @include clv.clarivate-font-faces; // this should go someplace global (like a CDN)
 
   .cdx-header {
-    @include mat.typography-level($typography-config, body-1);
+    @include mat.typography-hierarchy($typography-config, body-1);
 
     &__product-name-or-logo {
       @include clv.clarivate-bold(26px); // aligns with "headline"
@@ -14,8 +14,8 @@
 }
 
 @mixin theme($theme) {
-  $typography-config: mat.get-typography-config($theme);
-  @if $typography-config {
-    @include typography($typography-config);
+  @include mat.typography-hierarchy($theme, $back-compat: true);
+  @if $theme {
+    @include typography($theme);
   }
 }

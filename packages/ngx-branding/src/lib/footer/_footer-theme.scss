@@ -18,8 +18,8 @@
 }
 
 @mixin theme($theme) {
-  $typography-config: mat.get-typography-config($theme);
-  @if $typography-config {
-    @include typography($typography-config);
+  @include mat.typography-hierarchy($theme, $back-compat: true);
+  @if $theme {
+    @include typography($theme);
   }
 }

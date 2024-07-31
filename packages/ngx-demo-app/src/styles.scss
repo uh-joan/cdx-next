@@ -4,9 +4,8 @@
 @import './themes/custom-theme';
 @import './themes/helix.scss';
 
-@include cdx.default;
-@include header.theme(cdx.$cdx-theme);
-@include footer.theme(cdx.$cdx-theme);
+@include header.theme(cdx.$light-theme);
+@include footer.theme(cdx.$light-theme);
 
 html,
 body {
@@ -15,8 +14,11 @@ body {
 }
 
 body {
+  @include cdx.default;
+  @include cdx.theme(cdx.$light-theme);
+
   &.cdx-dark-mode {
-    @include cdx.theme(cdx.$cdx-dark-theme);
+    @include cdx.theme(cdx.$dark-theme);
   }
 
   &.cdx-theme-teal {
@@ -40,6 +42,14 @@ body {
 
     &.cdx-dark-mode {
       @include cdx.theme($helix-dark-theme);
+    }
+  }
+
+  &.cdx-theme-avalon {
+    @include cdx.theme(cdx.$avalon-light-theme);
+
+    &.cdx-dark-mode {
+      @include cdx.theme(cdx.$avalon-dark-theme);
     }
   }
 

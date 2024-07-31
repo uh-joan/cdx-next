@@ -5,11 +5,11 @@
 @mixin typography($typography-config) {
   .cdx-header-global-user-profile {
     &__user-name {
-      @include mat.typography-level($typography-config, headline-3);
+      @include mat.typography-hierarchy($typography-config, headline-3);
     }
 
     &__user-email {
-      @include mat.typography-level($typography-config, caption);
+      @include mat.typography-hierarchy($typography-config, caption);
     }
   }
 }
@@ -23,9 +23,9 @@
 }
 
 @mixin theme($theme) {
-  $typography-config: mat.get-typography-config($theme);
-  @if $typography-config {
-    @include typography($typography-config);
+  @include mat.typography-hierarchy($theme, $back-compat: true);
+  @if $theme {
+    @include typography($theme);
   }
 
   @include color;

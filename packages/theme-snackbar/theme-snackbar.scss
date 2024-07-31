@@ -1,16 +1,7 @@
 /* stylelint-disable plugin/stylelint-bem-namics */
 @use 'sass:map';
-@use '@angular/material' as mat;
-@use 'theme-angular-material/styles' as cdx;
 
 @use 'colors' as colors;
-
-@include cdx.default;
-
-$color-config: mat.get-color-config(cdx.$cdx-theme);
-$primary-palette: map.get($color-config, 'primary');
-$accent-palette: map.get($color-config, 'accent');
-$warn-palette: map.get($color-config, 'warn');
 
 .mat-snack-bar-container {
   padding: 0 !important;

@@ -2,7 +2,7 @@
 
 @use '@cdx/colors' as colors;
 
-$blue-palette: mat.define-palette(
+$blue-palette: mat.m2-define-palette(
   (
     50: colors.$blue-50,
     100: colors.$blue-100,
@@ -28,7 +28,7 @@ $blue-palette: mat.define-palette(
     ),
   )
 );
-$blue-dark-palette: mat.define-palette(
+$blue-dark-palette: mat.m2-define-palette(
   (
     50: colors.$blue-dark-50,
     100: colors.$blue-dark-100,
@@ -54,7 +54,7 @@ $blue-dark-palette: mat.define-palette(
     ),
   )
 );
-$accent-palette: mat.define-palette(
+$accent-palette: mat.m2-define-palette(
   (
     50: colors.$accent-50,
     100: colors.$accent-100,
@@ -80,7 +80,7 @@ $accent-palette: mat.define-palette(
     ),
   )
 );
-$warn-palette: mat.define-palette(
+$warn-palette: mat.m2-define-palette(
   (
     50: colors.$warn-50,
     100: colors.$warn-100,
@@ -107,22 +107,22 @@ $warn-palette: mat.define-palette(
   )
 );
 $preferred-line-height: 1.3;
-$cdx-blue-typography: mat.define-typography-config(
+$cdx-blue-typography: mat.m2-define-typography-config(
   $font-family: '"Source Sans Pro", sans-serif',
-  $headline-1: mat.define-typography-level(96px, 116px, 700),
-  $headline-2: mat.define-typography-level(56px, 64px, 700),
-  $headline-3: mat.define-typography-level(48px, 56px, 700),
-  $headline-4: mat.define-typography-level(32px, 40px, 700),
-  $headline-5: mat.define-typography-level(26px, 26px, 600),
-  $headline-6: mat.define-typography-level(20px, $preferred-line-height, 600),
-  $subtitle-1: mat.define-typography-level(18px, $preferred-line-height, 400),
-  $subtitle-2: mat.define-typography-level(16px, $preferred-line-height, 400),
-  $body-1: mat.define-typography-level(18px, $preferred-line-height, 400),
-  $body-2: mat.define-typography-level(16px, $preferred-line-height, 400),
-  $caption: mat.define-typography-level(12px, $preferred-line-height, 400),
-  $button: mat.define-typography-level(inherit, $font-weight: 600),
+  $headline-1: mat.m2-define-typography-level(96px, 116px, 700),
+  $headline-2: mat.m2-define-typography-level(56px, 64px, 700),
+  $headline-3: mat.m2-define-typography-level(48px, 56px, 700),
+  $headline-4: mat.m2-define-typography-level(32px, 40px, 700),
+  $headline-5: mat.m2-define-typography-level(26px, 26px, 600),
+  $headline-6: mat.m2-define-typography-level(20px, $preferred-line-height, 600),
+  $subtitle-1: mat.m2-define-typography-level(18px, $preferred-line-height, 400),
+  $subtitle-2: mat.m2-define-typography-level(16px, $preferred-line-height, 400),
+  $body-1: mat.m2-define-typography-level(18px, $preferred-line-height, 400),
+  $body-2: mat.m2-define-typography-level(16px, $preferred-line-height, 400),
+  $caption: mat.m2-define-typography-level(12px, $preferred-line-height, 400),
+  $button: mat.m2-define-typography-level(inherit, $font-weight: 600),
 );
-$cdx-blue-theme: mat.define-light-theme(
+$cdx-blue-theme: mat.m2-define-light-theme(
   (
     color: (
       primary: $blue-palette,
@@ -133,7 +133,7 @@ $cdx-blue-theme: mat.define-light-theme(
     typography: $cdx-blue-typography,
   )
 );
-$cdx-blue-dark-theme: mat.define-dark-theme(
+$cdx-blue-dark-theme: mat.m2-define-dark-theme(
   (
     color: (
       primary: $blue-dark-palette,
