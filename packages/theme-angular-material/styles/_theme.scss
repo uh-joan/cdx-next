@@ -3,21 +3,31 @@
 @use '../../colors' as colors;
 @use './overrides';
 @use './theme/default.scss' as default;
+@use './theme/cdx.scss' as cdx;
 
 @mixin default() {
   @include mat.core;
+
+  :root {
+    @include mat.all-component-themes(cdx.$light-theme);
+  }
+
+  /*
   @include mat.core-theme(default.$cdx-theme);
   @include mat.all-component-themes(default.$cdx-theme);
   @include mat.typography-hierarchy(default.$cdx-typography);
   @include overrides.material-overrides;
   @include focus-indicators-color(colors.$primary-500);
+  */
 }
 
 @mixin theme($theme) {
+  /*
   @include mat.core-color($theme);
   @include mat.all-component-colors($theme);
   @include mat.all-component-typographies($theme);
   @include mat.all-component-densities($theme);
+  */
 }
 
 @mixin focus-indicators-color($color, $transparent-background: false) {

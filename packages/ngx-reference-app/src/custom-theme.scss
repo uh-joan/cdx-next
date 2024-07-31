@@ -4,22 +4,22 @@
 $dark-primary-text: black;
 $light-primary-text: white;
 $preferred-line-height: 1.5;
-$custom-typography: mat.define-typography-config(
+$custom-typography: mat.m2-define-typography-config(
   $font-family: '"Source Code Pro", sans-serif',
-  $headline-1: mat.define-typography-level(96px, 116px, 700),
-  $headline-2: mat.define-typography-level(56px, 64px, 700),
-  $headline-3: mat.define-typography-level(48px, 56px, 700),
-  $headline-4: mat.define-typography-level(32px, 40px, 700),
-  $headline-5: mat.define-typography-level(26px, 26px, 600),
-  $headline-6: mat.define-typography-level(20px, $preferred-line-height, 600),
-  $subtitle-1: mat.define-typography-level(18px, $preferred-line-height, 400),
-  $subtitle-2: mat.define-typography-level(16px, $preferred-line-height, 400),
-  $body-1: mat.define-typography-level(18px, $preferred-line-height, 400),
-  $body-2: mat.define-typography-level(16px, $preferred-line-height, 400),
-  $caption: mat.define-typography-level(12px, $preferred-line-height, 400),
-  $button: mat.define-typography-level(inherit, $font-weight: 600),
+  $headline-1: mat.m2-define-typography-level(96px, 116px, 700),
+  $headline-2: mat.m2-define-typography-level(56px, 64px, 700),
+  $headline-3: mat.m2-define-typography-level(48px, 56px, 700),
+  $headline-4: mat.m2-define-typography-level(32px, 40px, 700),
+  $headline-5: mat.m2-define-typography-level(26px, 26px, 600),
+  $headline-6: mat.m2-define-typography-level(20px, $preferred-line-height, 600),
+  $subtitle-1: mat.m2-define-typography-level(18px, $preferred-line-height, 400),
+  $subtitle-2: mat.m2-define-typography-level(16px, $preferred-line-height, 400),
+  $body-1: mat.m2-define-typography-level(18px, $preferred-line-height, 400),
+  $body-2: mat.m2-define-typography-level(16px, $preferred-line-height, 400),
+  $caption: mat.m2-define-typography-level(12px, $preferred-line-height, 400),
+  $button: mat.m2-define-typography-level(inherit, $font-weight: 600),
 );
-$custom-palette: mat.define-palette(
+$custom-palette: mat.m2-define-palette(
   (
     50: #e8f5e9,
     100: #c8e6c9,
@@ -53,7 +53,7 @@ $custom-palette: mat.define-palette(
     ),
   )
 );
-$accent-palette: mat.define-palette(
+$accent-palette: mat.m2-define-palette(
   (
     50: colors.$accent-50,
     100: colors.$accent-100,
@@ -79,7 +79,7 @@ $accent-palette: mat.define-palette(
     ),
   )
 );
-$warn-palette: mat.define-palette(
+$warn-palette: mat.m2-define-palette(
   (
     50: colors.$warn-50,
     100: colors.$warn-100,
@@ -105,7 +105,7 @@ $warn-palette: mat.define-palette(
     ),
   )
 );
-$custom-theme: mat.define-light-theme(
+$custom-theme: mat.m2-define-light-theme(
   (
     color: (
       primary: $custom-palette,
@@ -115,7 +115,7 @@ $custom-theme: mat.define-light-theme(
     density: 0,
   )
 );
-$custom-dark-theme: mat.define-dark-theme(
+$custom-dark-theme: mat.m2-define-dark-theme(
   (
     color: (
       primary: $custom-palette,

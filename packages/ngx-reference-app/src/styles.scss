@@ -1,19 +1,29 @@
 @use '@angular/material' as mat;
 
-@use '@cdx/theme-angular-material' as cdx;
+// @use '@cdx/theme-angular-material' as cdx;
+
+/*
 @use '@cdx/ngx-branding/header/theme' as header;
 @use '@cdx/ngx-branding/footer/theme' as footer;
 @import 'custom-theme';
+*/
 
-@include cdx.default;
+// @include cdx.default;
+@use './cdx-theme' as cdx;
+@include mat.core;
+
+/*
 @include header.theme(cdx.$cdx-theme);
 @include footer.theme(cdx.$cdx-theme);
+*/
 
 :root {
   --light-text: rgba(#000, 0.87);
   --light-background: #fff;
   --dark-text: white;
   --dark-background: #181d1f;
+
+  @include mat.all-component-themes(cdx.$light-theme);
 }
 
 html,
@@ -22,6 +32,20 @@ body {
   margin: 0;
 }
 
+body {
+  background-color: var(--light-background);
+  color: var(--light-text);
+
+  &.cdx-dark-mode {
+    background-color: var(--dark-background);
+    color: var(--dark-text);
+
+    @include mat.all-component-themes(cdx.$dark-theme);
+    @include mat.all-component-colors(cdx.$dark-theme);
+  }
+}
+
+/*
 body {
   background-color: var(--light-background);
   color: var(--light-text);
@@ -57,6 +81,7 @@ body {
     }
   }
 }
+  */
 
 /*
  * Example apply dark theme based on system settings

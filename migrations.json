@@ -1,0 +1,115 @@
+{
+  "migrations": [
+    {
+      "cli": "nx",
+      "description": "Updates the default workspace data directory to .nx/workspace-data",
+      "implementation": "./src/migrations/update-19-2-0/move-workspace-data-directory",
+      "name": "19-2-0-move-graph-cache-directory",
+      "package": "nx",
+      "version": "19.2.0-beta.2"
+    },
+    {
+      "cli": "nx",
+      "description": "Updates the nx wrapper.",
+      "implementation": "./src/migrations/update-17-3-0/update-nxw",
+      "name": "19-2-2-update-nx-wrapper",
+      "package": "nx",
+      "version": "19.2.2-beta.0"
+    },
+    {
+      "description": "Set project name in nx.json explicitly",
+      "implementation": "./src/migrations/update-19-2-4/set-project-name",
+      "name": "19-2-4-set-project-name",
+      "package": "nx",
+      "version": "19.2.4-beta.0",
+      "x-repair-skip": true
+    },
+    {
+      "cli": "nx",
+      "description": "Migrate no-extra-semi rules into user config, out of nx extendable configs",
+      "implementation": "./src/migrations/update-19-1-0-migrate-no-extra-semi/migrate-no-extra-semi",
+      "name": "update-19-1-0-rename-no-extra-semi",
+      "package": "@nx/eslint-plugin",
+      "version": "19.1.0-beta.6"
+    },
+    {
+      "cli": "nx",
+      "description": "Update the @angular/cli package version to ~17.3.0.",
+      "factory": "./src/migrations/update-18-2-0/update-angular-cli",
+      "name": "update-angular-cli-version-17-3-0",
+      "package": "@nx/angular",
+      "requires": {
+        "@angular/core": ">=17.3.0"
+      },
+      "version": "18.2.0-beta.0"
+    },
+    {
+      "cli": "nx",
+      "description": "Update the @angular/cli package version to ~18.0.0.",
+      "factory": "./src/migrations/update-19-1-0/update-angular-cli",
+      "name": "update-angular-cli-version-18-0-0",
+      "package": "@nx/angular",
+      "requires": {
+        "@angular/core": ">=18.0.0"
+      },
+      "version": "19.1.0-beta.2"
+    },
+    {
+      "cli": "nx",
+      "description": "Installs the '@typescript-eslint/utils' package when having installed '@angular-eslint/eslint-plugin' or '@angular-eslint/eslint-plugin-template' with version >=18.0.0.",
+      "factory": "./src/migrations/update-19-2-1/add-typescript-eslint-utils",
+      "name": "add-typescript-eslint-utils",
+      "package": "@nx/angular",
+      "requires": {
+        "@angular-eslint/eslint-plugin": ">=18.0.0"
+      },
+      "version": "19.2.1-beta.0"
+    },
+    {
+      "cli": "nx",
+      "description": "Update the @angular/cli package version to ~18.1.0.",
+      "factory": "./src/migrations/update-19-5-0/update-angular-cli",
+      "name": "update-angular-cli-version-18-1-0",
+      "package": "@nx/angular",
+      "requires": {
+        "@angular/core": ">=18.1.0"
+      },
+      "version": "19.5.0-beta.1"
+    },
+    {
+      "description": "Updates two-way bindings that have an invalid expression to use the longform expression instead.",
+      "factory": "./migrations/invalid-two-way-bindings/bundle",
+      "name": "invalid-two-way-bindings",
+      "package": "@angular/core",
+      "version": "18.0.0"
+    },
+    {
+      "description": "Replace deprecated HTTP related modules with provider functions",
+      "factory": "./migrations/http-providers/bundle",
+      "name": "migration-http-providers",
+      "package": "@angular/core",
+      "version": "18.0.0"
+    },
+    {
+      "description": "Updates calls to afterRender with an explicit phase to the new API",
+      "factory": "./migrations/after-render-phase/bundle",
+      "name": "migration-after-render-phase",
+      "package": "@angular/core",
+      "version": "18.1.0"
+    },
+    {
+      "description": "Updates Angular Material to v18",
+      "factory": "./ng-update/index_bundled#updateToV18",
+      "name": "migration-v18",
+      "package": "@angular/material",
+      "version": "18.0.0-0"
+    },
+    {
+      "description": "Updates the Angular CDK to v18",
+      "factory": "./ng-update/index#updateToV18",
+      "name": "migration-v18",
+      "package": "@angular/cdk",
+      "version": "18.0.0-0"
+    }
+  ]
+}

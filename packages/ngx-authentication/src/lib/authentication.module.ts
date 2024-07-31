@@ -1,5 +1,8 @@
 import { APP_BASE_HREF } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
+import {
+  provideHttpClient,
+  withInterceptorsFromDi,
+} from '@angular/common/http';
 import {
   ModuleWithProviders,
   NgModule,
@@ -24,8 +27,9 @@ export function jwtOptionsFactory(tokenService: TokenService) {
 }
 
 @NgModule({
+  declarations: [BrokerComponent],
+  exports: [RouterModule],
   imports: [
-    HttpClientModule,
     RouterModule.forChild([]),
     JwtModule.forRoot({
       jwtOptionsProvider: {
@@ -35,8 +39,7 @@ export function jwtOptionsFactory(tokenService: TokenService) {
       },
     }),
   ],
-  declarations: [BrokerComponent],
-  exports: [RouterModule],
+  providers: [provideHttpClient(withInterceptorsFromDi())],
 })
 export class AuthenticationModule {
   constructor(@Optional() @SkipSelf() parentModule?: AuthenticationModule) {

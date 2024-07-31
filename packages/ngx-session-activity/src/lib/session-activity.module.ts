@@ -1,5 +1,8 @@
 import { CommonModule } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
+import {
+  provideHttpClient,
+  withInterceptorsFromDi,
+} from '@angular/common/http';
 import {
   ModuleWithProviders,
   NgModule,
@@ -22,9 +25,9 @@ import { SessionActivitySettings } from './session-activity.model';
     MatDialogModule,
     MatButtonModule,
     NgIdleKeepaliveModule.forRoot(),
-    HttpClientModule,
     TranslateModule.forChild(),
   ],
+  providers: [provideHttpClient(withInterceptorsFromDi())],
 })
 export class SessionActivityModule {
   static forRoot(
