@@ -1,11 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { AgGridModule } from 'ag-grid-angular';
+import { AgGridAngular } from 'ag-grid-angular';
 
 import { AgGridDemoComponent } from './ag-grid-demo.component';
 
 @NgModule({
-  imports: [CommonModule, AgGridModule],
+  imports: [CommonModule, AgGridAngular],
   declarations: [AgGridDemoComponent],
   exports: [AgGridDemoComponent],
 })

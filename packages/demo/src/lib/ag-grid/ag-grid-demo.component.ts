@@ -11,6 +11,7 @@ export class AgGridDemoComponent {
   columnDefs: ColDef[] = [
     {
       field: 'make',
+      checkboxSelection: true,
       sortable: true,
       cellRenderer: 'agGroupCellRenderer',
       cellRendererParams: { checkbox: true },

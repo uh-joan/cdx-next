@@ -1,8 +1,15 @@
 @use '../colors';
+@use 'ag-grid-community/styles' as ag;
 
+@include ag.grid-styles(
+  (
+    theme: ag-theme-cdx,
+    extend-theme: material,
+  )
+);
 .ag-theme-cdx {
-  --ag-theme-alpine-primary-color: #{colors.$primary-500};
-  --ag-theme-alpine-accent-color: #{colors.$accent-500};
+  --ag-material-primary-color: #{colors.$primary-500};
+  --ag-material-accent-color: #{colors.$accent-500};
   --ag-row-hover-color: #{rgba(colors.$primary-500, 0.05)};
   --ag-selected-row-background-color: #{rgba(colors.$primary-500, 0.1)};
   --ag-range-selection-background-color: #{rgba(colors.$primary-500, 0.1)};
