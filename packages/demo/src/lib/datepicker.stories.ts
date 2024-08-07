@@ -1,5 +1,7 @@
+import { Overlay } from '@angular/cdk/overlay';
 import { MatNativeDateModule } from '@angular/material/core';
 import {
+  MAT_DATEPICKER_SCROLL_STRATEGY,
   MatDatepicker,
   MatDatepickerModule,
 } from '@angular/material/datepicker';
@@ -23,6 +25,14 @@ const datepickerMeta: Meta<MatDatepicker<string>> = {
         BrowserAnimationsModule,
         MatIconModule,
         ThemeModule,
+      ],
+      providers: [
+        {
+          provide: MAT_DATEPICKER_SCROLL_STRATEGY,
+          deps: [Overlay],
+          useFactory: (overlay: Overlay) => () =>
+            overlay.scrollStrategies.block(),
+        },
       ],
     }),
   ],

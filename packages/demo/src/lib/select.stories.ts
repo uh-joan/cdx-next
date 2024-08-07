@@ -1,6 +1,10 @@
+import { Overlay } from '@angular/cdk/overlay';
 import { FormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatSelectModule } from '@angular/material/select';
+import {
+  MAT_SELECT_SCROLL_STRATEGY,
+  MatSelectModule,
+} from '@angular/material/select';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { Meta, moduleMetadata, StoryFn } from '@storybook/angular';
 import { html } from 'common-tags';
@@ -16,6 +20,14 @@ export default {
         BrowserAnimationsModule,
         FormsModule,
         BrowserAnimationsModule,
+      ],
+      providers: [
+        {
+          provide: MAT_SELECT_SCROLL_STRATEGY,
+          deps: [Overlay],
+          useFactory: (overlay: Overlay) => () =>
+            overlay.scrollStrategies.block(),
+        },
       ],
     }),
   ],

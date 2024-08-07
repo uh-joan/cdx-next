@@ -1,3 +1,4 @@
+import { Overlay } from '@angular/cdk/overlay';
 import { Component } from '@angular/core';
 import {
   FormBuilder,
@@ -10,7 +11,10 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
-import { MatMenuModule } from '@angular/material/menu';
+import {
+  MAT_MENU_SCROLL_STRATEGY,
+  MatMenuModule,
+} from '@angular/material/menu';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ThemeModule } from '@cdx/theme-angular-material';
 import { Meta } from '@storybook/angular';
@@ -29,6 +33,14 @@ export const BasicMenu = () => ({
       MatButtonModule,
       ThemeModule,
     ],
+    providers: [
+      {
+        provide: MAT_MENU_SCROLL_STRATEGY,
+        deps: [Overlay],
+        useFactory: (overlay: Overlay) => () =>
+          overlay.scrollStrategies.block(),
+      },
+    ],
   },
   template: html`
     <h3>Basic Menu</h3>
@@ -36,7 +48,7 @@ export const BasicMenu = () => ({
       <button mat-flat-button [matMenuTriggerFor]="menu" color="primary">
         Menu
       </button>
-      <mat-menu #menu="matMenu" role="menu">
+      <mat-menu #menu="matMenu" role="menu" yPosition="below">
         <button mat-menu-item role="menuitem">Item 1</button>
         <button mat-menu-item role="menuitem" disabled>
           Item 2 (Disabled option)
@@ -50,6 +62,14 @@ export const BasicMenu = () => ({
 export const MenuWithIcons = () => ({
   moduleMetadata: {
     imports: [MatMenuModule, MatButtonModule, MatIconModule, ThemeModule],
+    providers: [
+      {
+        provide: MAT_MENU_SCROLL_STRATEGY,
+        deps: [Overlay],
+        useFactory: (overlay: Overlay) => () =>
+          overlay.scrollStrategies.block(),
+      },
+    ],
   },
   template: html`
     <h3>Menu With Icons</h3>
@@ -57,7 +77,7 @@ export const MenuWithIcons = () => ({
       <button mat-button [matMenuTriggerFor]="menu2">
         <mat-icon>settings</mat-icon>
       </button>
-      <mat-menu #menu2="matMenu" role="menu">
+      <mat-menu #menu2="matMenu" role="menu" yPosition="below">
         <button mat-menu-item role="menuitem but-inline">
           <mat-icon>invert_colors</mat-icon>
           <span>Item 1</span>
@@ -80,7 +100,7 @@ const customMenuTemplate = html`
   >
     Complex Menu
   </button>
-  <mat-menu #menu="matMenu" class="my-menu-panel">
+  <mat-menu #menu="matMenu" class="my-menu-panel" yPosition="below">
     <div
       (click)="$event.stopPropagation()"
       style="display: flex; flex-direction: column; justify-content: center; padding: 20px"
@@ -151,6 +171,14 @@ export const MenuWithComplexContent = () => ({
       MatButtonModule,
       BrowserAnimationsModule,
       ThemeModule,
+    ],
+    providers: [
+      {
+        provide: MAT_MENU_SCROLL_STRATEGY,
+        deps: [Overlay],
+        useFactory: (overlay: Overlay) => () =>
+          overlay.scrollStrategies.block(),
+      },
     ],
     declarations: [CustomMenuComponent],
   },
