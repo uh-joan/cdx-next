@@ -33,14 +33,6 @@ export const BasicMenu = () => ({
       MatButtonModule,
       ThemeModule,
     ],
-    providers: [
-      {
-        provide: MAT_MENU_SCROLL_STRATEGY,
-        deps: [Overlay],
-        useFactory: (overlay: Overlay) => () =>
-          overlay.scrollStrategies.block(),
-      },
-    ],
   },
   template: html`
     <h3>Basic Menu</h3>
@@ -171,14 +163,6 @@ export const MenuWithComplexContent = () => ({
       MatButtonModule,
       BrowserAnimationsModule,
       ThemeModule,
-    ],
-    providers: [
-      {
-        provide: MAT_MENU_SCROLL_STRATEGY,
-        deps: [Overlay],
-        useFactory: (overlay: Overlay) => () =>
-          overlay.scrollStrategies.block(),
-      },
     ],
     declarations: [CustomMenuComponent],
   },

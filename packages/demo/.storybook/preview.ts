@@ -16,10 +16,12 @@ const parameters: Preview = {
         icon: 'circlehollow',
         // Array of plain string values or MenuItem shape (see below)
         items: [
-          { value: 'cdx-theme-clv', title: 'Clarivate' },
-          { value: 'cdx-theme-helix', title: 'Helix' },
+          { value: 'cdx-theme-clv', title: 'CDX' },
           { value: 'cdx-theme-teal', title: 'Teal' },
           { value: 'cdx-theme-blue', title: 'Blue' },
+          { value: 'cdx-theme-helix-m2', title: 'Helix M2' },
+          { value: 'cdx-theme-avalon', title: 'Avalon' },
+          { value: 'cdx-theme-legacy', title: 'CDX M2' },
         ],
         // Change title based on selected value
         dynamicTitle: true,
@@ -29,7 +31,7 @@ const parameters: Preview = {
 
   decorators: [
     componentWrapperDecorator(
-      (story) => `<div [class]="myTheme">${story}</div>`,
+      (story) => `<body [class]="myTheme">${story}</body>`,
       ({ globals }) => {
         return { myTheme: globals['theme'] };
       },
