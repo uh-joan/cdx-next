@@ -20,13 +20,4 @@
       {{ theme | titlecase }}
     </button>
   </ng-container>
-  <ng-container *ngFor="let theme of XTHEMES">
-    <button mat-menu-item (click)="selectTheme(theme)">
-      <div
-        class="cdx-circle cdx-circle--{{ theme }}"
-        [class.cdx-circle-dark]="(currentMode$ | async) === 'dark'"
-      ></div>
-      {{ theme | titlecase }} (Material 3)
-    </button>
-  </ng-container>
 </mat-menu>

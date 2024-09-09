@@ -4,21 +4,21 @@
 
 $_palettes: (
   primary: (
-    0: #000,
-    10: #210452,
-    20: #35127a,
-    25: #351399,
-    30: #451f99,
-    35: #451f99,
-    40: #5e33bf,
-    50: #7548db,
-    60: #9163f7,
-    70: #a378ff,
-    80: #c0a1ff,
-    90: #e0ccff,
-    95: #f6edff,
-    98: #fdfafe,
-    99: #fdfaff,
+    0: #0f1011,
+    10: #191a1c,
+    20: #1f2022,
+    25: #1f2022,
+    30: #252628,
+    35: #252628,
+    40: #2a2b2d,
+    50: #4a4b4d,
+    60: #6a6b6c,
+    70: #959596,
+    80: #bfbfc0,
+    90: #e5e6e6,
+    95: #f2f2f2,
+    98: #f8f8f8,
+    99: #fcfcfc,
     100: #fff,
   ),
   secondary: (
@@ -129,7 +129,7 @@ $_rest: (
 );
 $_primary: map.merge(map.get($_palettes, primary), $_rest);
 $_tertiary: map.merge(map.get($_palettes, tertiary), $_rest);
-$avalon-light-theme: mat.define-theme(
+$helix-theme: mat.define-theme(
   (
     color: (
       theme-type: light,
@@ -138,7 +138,7 @@ $avalon-light-theme: mat.define-theme(
     ),
   )
 );
-$avalon-dark-theme: mat.define-theme(
+$helix-dark-theme: mat.define-theme(
   (
     color: (
       theme-type: dark,
@@ -147,3 +147,62 @@ $avalon-dark-theme: mat.define-theme(
     ),
   )
 );
+
+@mixin theme-helix-overrides() {
+  --mdc-protected-button-container-shape: 2px;
+  --mdc-outlined-button-container-shape: 2px;
+  --mdc-filled-button-container-shape: 2px;
+  --mdc-text-button-container-shape: 2px;
+  --mdc-filled-button-container-height: 44px;
+  --mdc-outlined-button-container-height: 44px;
+  --mdc-protected-button-container-height: 44px;
+  --mdc-text-button-container-height: 44px;
+  --mdc-tab-indicator-active-indicator-height: 2px;
+  --mdc-shape-small: 0;
+
+  .mdc-text-field {
+    border-radius: 0 !important;
+
+    --mdc-shape-small: 0;
+  }
+
+  .hlx-btn-small {
+    button.mdc-button {
+      padding: 6px 16px;
+      font-size: 14px;
+    }
+  }
+
+  .hlx-btn-x-small {
+    button.mdc-button {
+      padding: 4px 12px;
+      font-size: 12px;
+    }
+  }
+
+  .hlx-btn-large {
+    button.mdc-button {
+      height: auto;
+      padding: 18px 32px;
+    }
+  }
+
+  .hlx-secondary-btn {
+    --mdc-outlined-button-outline-color: #5e33bf;
+    --mdc-outlined-button-label-text-color: #5e33bf;
+
+    button.mdc-button:hover {
+      background-color: #faf5ff;
+    }
+  }
+
+  .hlx-warn-btn {
+    --mdc-outlined-button-outline-color: #c52a4f;
+    --mdc-filled-button-container-color: #f9e9ed;
+  }
+
+  &.cdx-dark-mode {
+    --mdc-protected-button-container-shape: 0;
+    --mdc-outlined-button-container-shape: 0;
+  }
+}

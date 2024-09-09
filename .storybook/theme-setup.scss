@@ -26,9 +26,14 @@ body {
     @include cdx.theme(cdx.$cdx-blue-theme);
   }
 
-  &.cdx-theme-helix-m2 {
-    @include cdx.theme(cdx.$cdx-theme);
+  &.cdx-theme-helix {
+    @include cdx.theme(cdx.$helix-theme);
     @include cdx.theme-helix-overrides;
+  }
+
+  &.cdx-theme-helix-m2 {
+    @include cdx.theme(cdx.$helix-m2-theme);
+    @include cdx.theme-helix-m2-overrides;
   }
 
   &.cdx-theme-avalon {

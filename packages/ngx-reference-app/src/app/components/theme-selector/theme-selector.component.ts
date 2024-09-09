@@ -23,7 +23,16 @@ import { ThemeService } from '../../services/theme.service';
   ],
 })
 export class ThemeSelectorComponent implements OnInit {
-  THEMES = ['purple', 'teal', 'blue', 'custom', 'helix', 'avalon', 'legacy'];
+  THEMES = [
+    'purple',
+    'helix',
+    'avalon',
+    'purple-legacy',
+    'helix-legacy',
+    'teal-legacy',
+    'blue-legacy',
+    'custom',
+  ];
 
   currentTheme = 'purple';
 

@@ -2,7 +2,6 @@
 @use '@cdx/ngx-branding/header/theme' as header;
 @use '@cdx/ngx-branding/footer/theme' as footer;
 @import './themes/custom-theme';
-@import './themes/helix.scss';
 
 @include header.theme(cdx.$light-theme);
 @include footer.theme(cdx.$light-theme);
@@ -38,10 +37,20 @@ body {
   }
 
   &.cdx-theme-helix {
-    @include cdx.theme($helix-theme);
+    @include cdx.theme(cdx.$helix-theme);
+    @include cdx.theme-helix-overrides;
 
     &.cdx-dark-mode {
-      @include cdx.theme($helix-dark-theme);
+      @include cdx.theme(cdx.$helix-theme);
+    }
+  }
+
+  &.cdx-theme-helix-legacy {
+    @include cdx.theme(cdx.$helix-m2-theme);
+    @include cdx.theme-helix-m2-overrides;
+
+    &.cdx-dark-mode {
+      @include cdx.theme(cdx.$helix-theme);
     }
   }
 

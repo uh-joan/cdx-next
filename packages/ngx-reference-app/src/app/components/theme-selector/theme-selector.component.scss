@@ -26,14 +26,6 @@
     background-color: #5e33bf;
   }
 
-  &--teal {
-    background-color: #006c7b;
-  }
-
-  &--blue {
-    background-color: #035887;
-  }
-
   &--custom {
     background-color: #4caf50;
   }
@@ -48,9 +40,22 @@
     box-shadow: 0 0 0 0.0625rem rgb(255 255 255 / 80%);
   }
 
-  &--legacy {
+  &--purple-legacy {
     background-color: #5e33bf;
     box-shadow: 0 0 0 0.0625rem rgb(255 255 255 / 80%);
+  }
+
+  &--helix-legacy {
+    background-color: #000;
+    box-shadow: 0 0 0 0.0625rem rgb(255 255 255 / 80%);
+  }
+
+  &--teal-legacy {
+    background-color: #006c7b;
+  }
+
+  &--blue-legacy {
+    background-color: #035887;
   }
 }
 

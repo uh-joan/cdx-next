@@ -119,7 +119,7 @@ $helix-typography: mat.m2-define-typography-config(
   $caption: mat.m2-define-typography-level(12px, $preferred-line-height, 400),
   $button: mat.m2-define-typography-level(inherit, $font-weight: 600),
 );
-$helix-theme: mat.m2-define-light-theme(
+$helix-m2-theme: mat.m2-define-light-theme(
   (
     color: (
       primary: $primary-palette,
@@ -131,11 +131,11 @@ $helix-theme: mat.m2-define-light-theme(
   )
 );
 
-@mixin theme-helix-overrides() {
-  @include mat.core-color($helix-theme);
-  @include mat.all-component-colors($helix-theme);
-  @include mat.all-component-typographies($helix-theme);
-  @include mat.all-component-densities($helix-theme);
+@mixin theme-helix-m2-overrides() {
+  @include mat.core-color($helix-m2-theme);
+  @include mat.all-component-colors($helix-m2-theme);
+  @include mat.all-component-typographies($helix-m2-theme);
+  @include mat.all-component-densities($helix-m2-theme);
 
   --mdc-protected-button-container-shape: 2px;
   --mdc-outlined-button-container-shape: 2px;

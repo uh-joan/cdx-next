@@ -33,7 +33,42 @@ body {
     @include cdx.theme(cdx.$dark-theme);
   }
 
-  &.cdx-theme-teal {
+  &.cdx-theme-helix {
+    @include cdx.theme(cdx.$helix-theme);
+    @include cdx.theme-helix-overrides;
+
+    &.cdx-dark-mode {
+      @include cdx.theme(cdx.$helix-theme);
+      @include cdx.theme-helix-overrides;
+    }
+  }
+
+  &.cdx-theme-avalon {
+    @include cdx.theme(cdx.$avalon-light-theme);
+
+    &.cdx-dark-mode {
+      @include cdx.theme(cdx.$avalon-dark-theme);
+    }
+  }
+
+  &.cdx-theme-purple-legacy {
+    @include cdx.theme(cdx.$cdx-theme);
+
+    &.cdx-dark-mode {
+      @include cdx.theme(cdx.$cdx-dark-theme);
+    }
+  }
+
+  &.cdx-theme-helix-legacy {
+    @include cdx.theme(cdx.$helix-m2-theme);
+    @include cdx.theme-helix-m2-overrides;
+
+    &.cdx-dark-mode {
+      @include cdx.theme(cdx.$helix-m2-theme);
+    }
+  }
+
+  &.cdx-theme-teal-legacy {
     @include cdx.theme(cdx.$cdx-teal-theme);
 
     &.cdx-dark-mode {
@@ -41,7 +76,7 @@ body {
     }
   }
 
-  &.cdx-theme-blue {
+  &.cdx-theme-blue-legacy {
     @include cdx.theme(cdx.$cdx-blue-theme);
 
     &.cdx-dark-mode {
@@ -54,14 +89,6 @@ body {
 
     &.cdx-dark-mode {
       @include cdx.theme(custom.$custom-dark-theme);
-    }
-  }
-
-  &.cdx-theme-legacy {
-    @include cdx.theme(cdx.$cdx-theme);
-
-    &.cdx-dark-mode {
-      @include cdx.theme(cdx.$cdx-dark-theme);
     }
   }
 }

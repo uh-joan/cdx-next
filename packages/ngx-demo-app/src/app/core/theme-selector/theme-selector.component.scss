@@ -13,21 +13,26 @@
   border-radius: 50%;
 
   &--purple,
-  &--you {
+  &--purple-legacy {
     background-color: #5e33bf;
   }
 
-  &--teal {
+  &--teal-legacy {
     background-color: #006c7b;
   }
 
-  &--blue {
+  &--blue-legacy {
     background-color: #035887;
   }
 
-  &--helix {
+  &--helix,
+  &--helix-legacy {
     background-color: #000000;
     box-shadow: 0 0 0 0.0625rem rgba(255, 255, 255, 0.8);
+  }
+
+  &--avalon {
+    background-color: #5e33bf;
   }
 
   &--custom {

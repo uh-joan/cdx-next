@@ -17,11 +17,12 @@ const parameters: Preview = {
         // Array of plain string values or MenuItem shape (see below)
         items: [
           { value: 'cdx-theme-clv', title: 'CDX' },
-          { value: 'cdx-theme-teal', title: 'Teal' },
-          { value: 'cdx-theme-blue', title: 'Blue' },
-          { value: 'cdx-theme-helix-m2', title: 'Helix M2' },
+          { value: 'cdx-theme-helix', title: 'Helix' },
           { value: 'cdx-theme-avalon', title: 'Avalon' },
-          { value: 'cdx-theme-legacy', title: 'CDX M2' },
+          { value: 'cdx-theme-legacy', title: 'CDX Legacy M2' },
+          { value: 'cdx-theme-helix-m2', title: 'Helix Legacy M2' },
+          { value: 'cdx-theme-teal', title: 'Teal Legacy M2' },
+          { value: 'cdx-theme-blue', title: 'Blue  Legacy M2' },
         ],
         // Change title based on selected value
         dynamicTitle: true,

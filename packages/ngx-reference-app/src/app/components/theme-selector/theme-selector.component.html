@@ -16,13 +16,13 @@
     </mat-select-trigger>
 
     <ng-container *ngFor="let theme of THEMES">
-      <mat-option [value]="theme"
-        ><div
+      <mat-option [value]="theme">
+        <div
           class="cdx-circle cdx-circle--{{ theme }}"
           [class.cdx-circle-dark]="(currentMode$ | async) === 'dark'"
         ></div>
-        {{ theme | titlecase }}</mat-option
-      >
+        {{ theme | titlecase }}
+      </mat-option>
     </ng-container>
   </mat-select>
 </mat-form-field>
