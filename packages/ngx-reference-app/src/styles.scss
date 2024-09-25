@@ -20,6 +20,12 @@ body {
   margin: 0;
 }
 
+html[dir='rtl'],
+body[dir='rtl'] {
+  direction: rtl;
+  text-align: right;
+}
+
 body {
   background-color: var(--light-background);
   color: var(--light-text);
@@ -53,6 +59,7 @@ body {
 
   &.cdx-theme-purple-legacy {
     @include cdx.theme(cdx.$cdx-theme);
+    @include cdx.m2-compat;
 
     &.cdx-dark-mode {
       @include cdx.theme(cdx.$cdx-dark-theme);
@@ -62,6 +69,7 @@ body {
   &.cdx-theme-helix-legacy {
     @include cdx.theme(cdx.$helix-m2-theme);
     @include cdx.theme-helix-m2-overrides;
+    @include cdx.m2-compat;
 
     &.cdx-dark-mode {
       @include cdx.theme(cdx.$helix-m2-theme);
@@ -70,6 +78,7 @@ body {
 
   &.cdx-theme-teal-legacy {
     @include cdx.theme(cdx.$cdx-teal-theme);
+    @include cdx.m2-compat;
 
     &.cdx-dark-mode {
       @include cdx.theme(cdx.$cdx-teal-dark-theme);
@@ -78,6 +87,7 @@ body {
 
   &.cdx-theme-blue-legacy {
     @include cdx.theme(cdx.$cdx-blue-theme);
+    @include cdx.m2-compat;
 
     &.cdx-dark-mode {
       @include cdx.theme(cdx.$cdx-blue-dark-theme);

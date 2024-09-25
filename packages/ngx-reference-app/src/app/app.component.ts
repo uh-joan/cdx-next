@@ -8,6 +8,8 @@ import {
 } from '@cdx/ngx-analytics';
 import { filter, map } from 'rxjs';
 
+import { ThemeService } from './services/theme.service';
+
 @Component({
   selector: 'cdx-root',
   templateUrl: './app.component.html',
@@ -17,7 +19,14 @@ import { filter, map } from 'rxjs';
 export class AppComponent {
   routerEvents$;
 
+  isHelix$ = this.themeService.currentTheme$.pipe(
+    map((theme) => {
+      return theme === 'helix';
+    }),
+  );
+
   constructor(
+    public themeService: ThemeService,
     private analyticsService: AnalyticsService,
     private router: Router,
   ) {

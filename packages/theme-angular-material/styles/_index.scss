@@ -1,8 +1,9 @@
-@forward 'theme' show default, theme, focus-indicators-color;
+@forward 'theme' show default, theme, focus-indicators-color, m2-compat;
 @forward 'theme/default.scss' show $light-theme, $dark-theme;
 @forward 'theme/teal.scss' show $cdx-teal-theme, $cdx-teal-dark-theme;
 @forward 'theme/blue.scss' show $cdx-blue-theme, $cdx-blue-dark-theme;
 @forward 'theme/cdx.m2.scss' show $cdx-typography, $cdx-theme, $cdx-dark-theme;
-@forward 'theme/helix.scss' show $helix-theme, theme-helix-overrides;
+@forward 'theme/helix.scss' show $helix-theme, $helix-dark-theme,
+  theme-helix-overrides;
 @forward 'theme/helix.m2.scss' show $helix-m2-theme, theme-helix-m2-overrides;
 @forward 'theme/avalon.scss' show $avalon-light-theme, $avalon-dark-theme;

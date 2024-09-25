@@ -8,6 +8,7 @@
     "../src/**/*",
     "../../ngx-notification/src/**/*",
     "../../ngx-authentication/src/**/*",
+    "../../ngx-branding/src/**/*",
     "*.ts"
   ]
 }

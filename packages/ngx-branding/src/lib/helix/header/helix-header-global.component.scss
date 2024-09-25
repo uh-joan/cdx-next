@@ -1,0 +1,10 @@
+$header-spacing: 2rem;
+
+.hlx-header {
+  &__global,
+  slot[name='hlx-header-global'] {
+    display: inherit;
+    align-items: inherit;
+    column-gap: calc($header-spacing / 8);
+  }
+}

@@ -28,7 +28,7 @@
     "publish:prerelease": "npm run publish:release:common -- --tag=alpha",
     "publish:release": "npm run publish:release:common -- --tag=latest",
     "publish:release:common": "nx run-many --all --exclude=workspace --target=deploy --parallel=1 --skip-nx-cache",
-    "test": "nx run-many --all --exclude=workspace --target=test  --skip-nx-cache"
+    "test": "nx run-many --all --exclude=workspace --target=test --skip-nx-cache"
   },
   "dependencies": {
     "@angular/animations": "18.2.3",

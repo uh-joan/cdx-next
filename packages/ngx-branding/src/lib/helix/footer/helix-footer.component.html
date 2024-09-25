@@ -1,0 +1,65 @@
+<div
+  class="hlx-footer"
+  [style.background-color]="theme?.footer?.background"
+  [style.color]="theme?.footer?.color"
+  [class.cdx-footer--slim]="slim"
+>
+  <div class="hlx-footer__copyright">© {{ currentYear }} Clarivate</div>
+
+  <div class="hlx-footer__content">
+    <ng-template [ngIf]="groupCompanyLinks" [ngIfElse]="companyLinks">
+      <hlx-footer-group>
+        <hlx-footer-group-title>
+          {{
+            shouldShowTranslations ? ('FOOTER.COMPANY' | translate) : 'Company'
+          }}
+        </hlx-footer-group-title>
+        <ng-container *ngTemplateOutlet="companyLinks"></ng-container>
+      </hlx-footer-group>
+    </ng-template>
+    <ng-template #companyLinks>
+      <a cdx-footer-link href="https://clarivate.com/legal-center/">
+        {{
+          shouldShowTranslations
+            ? ('FOOTER.LEGAL_CENTER' | translate)
+            : 'Legal center'
+        }}
+      </a>
+      <a
+        cdx-footer-link
+        href="https://clarivate.com/privacy-center/notices-policies/privacy-policy/"
+      >
+        {{
+          shouldShowTranslations
+            ? ('FOOTER.PRIVACY_NOTICE' | translate)
+            : 'Privacy notice'
+        }}
+      </a>
+      <a
+        cdx-footer-link
+        href="https://clarivate.com/privacy-center/notices-policies/cookie-policy/"
+      >
+        {{
+          shouldShowTranslations
+            ? ('FOOTER.COOKIE_POLICY' | translate)
+            : 'Cookie policy'
+        }}
+      </a>
+      <a
+        (click)="manageCookiePreferences()"
+        (keydown.enter)="manageCookiePreferences()"
+        *ngIf="isCookieManagementEnabled()"
+        cdx-footer-link
+        tabindex="0"
+      >
+        {{
+          shouldShowTranslations
+            ? ('FOOTER.MANAGE_COOKIE_PREFERENCES' | translate)
+            : 'Manage cookie preferences'
+        }}
+      </a>
+    </ng-template>
+
+    <ng-content></ng-content>
+  </div>
+</div>

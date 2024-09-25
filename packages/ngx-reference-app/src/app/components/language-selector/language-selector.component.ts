@@ -94,6 +94,10 @@ export class LanguageSelectorComponent implements OnInit {
       if (formLanguageSelected.language) {
         this.translateService.use(formLanguageSelected.language);
         localStorage.setItem('language', formLanguageSelected.language);
+        document.documentElement.setAttribute(
+          'dir',
+          formLanguageSelected.language === 'ar_SA' ? 'rtl' : 'ltr',
+        );
       }
     });
     const initialLang = localStorage.getItem('language');
@@ -110,5 +114,10 @@ export class LanguageSelectorComponent implements OnInit {
   selectLanguage(languageValue: string): void {
     this.formLanguage.get('language')?.setValue(languageValue);
     localStorage.setItem('language', languageValue);
+    console.log(`language`, languageValue);
+    document.documentElement.setAttribute(
+      'dir',
+      languageValue === 'ar_SA' ? 'rtl' : 'ltr',
+    );
   }
 }

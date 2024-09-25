@@ -9,10 +9,13 @@
   @include mat.core;
   @include mat.core-theme(default.$light-theme);
   @include mat.all-component-themes(default.$light-theme);
-  @include mat.typography-hierarchy(cdx-m2.$cdx-typography);
-  @include mat.color-variants-backwards-compatibility(default.$light-theme);
   @include overrides.material-overrides;
   @include focus-indicators-color(colors.$primary-500);
+}
+
+@mixin m2-compat() {
+  @include mat.typography-hierarchy(cdx-m2.$cdx-typography);
+  @include mat.color-variants-backwards-compatibility(default.$light-theme);
 }
 
 @mixin theme($theme) {

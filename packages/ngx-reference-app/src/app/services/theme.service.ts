@@ -2,17 +2,36 @@ import { DOCUMENT } from '@angular/common';
 import { Inject, Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 
+export const THEMES = [
+  'purple',
+  'helix',
+  'avalon',
+  'purple-legacy',
+  'helix-legacy',
+  'teal-legacy',
+  'blue-legacy',
+  'custom',
+];
+
 @Injectable({
   providedIn: 'root',
 })
 export class ThemeService {
   currentThemeMode$: BehaviorSubject<string> = new BehaviorSubject('light');
+  currentTheme$: BehaviorSubject<string> = new BehaviorSubject('');
+  themes = THEMES;
 
   constructor(@Inject(DOCUMENT) private document: Document) {
     const initialThemeValue = this.getThemeMode();
     if (initialThemeValue) {
       this.setThemeMode(initialThemeValue);
       this.currentThemeMode$.next(initialThemeValue);
+    }
+    const themeColor = localStorage.getItem('themeColor');
+    if (themeColor) {
+      if (themeColor && THEMES.includes(themeColor)) {
+        this.selectTheme(themeColor);
+      }
     }
   }
 
@@ -43,5 +62,18 @@ export class ThemeService {
     } else {
       localStorage.removeItem('themeMode');
     }
+  }
+
+  selectTheme(theme: string): void {
+    localStorage.setItem('themeColor', theme);
+
+    document.body.classList.forEach((className) => {
+      if (className.startsWith('cdx-theme-')) {
+        document.body.classList.remove(className);
+      }
+    });
+    document.body.classList.add(`cdx-theme-${theme}`);
+
+    this.currentTheme$.next(theme);
   }
 }

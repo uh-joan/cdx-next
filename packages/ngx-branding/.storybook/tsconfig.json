@@ -7,6 +7,7 @@
   "include": [
     "../src/**/*",
     "*.js",
+    //  "../../theme-angular-material/src/**/*",
     "../../ngx-authentication/src/lib/header-global-user-profile/header-global-user-profile.component.stories.ts"
   ]
 }

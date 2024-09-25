@@ -1,3 +1,33 @@
+@if(isHelix$ | async) {
+<header hlx-header>
+  <hlx-header-product-name
+    >Clarivate Digital Experience
+  </hlx-header-product-name>
+  <div class="hlx-selectors">
+    <language-selector></language-selector>
+    <theme-selector></theme-selector>
+    <mode-selector></mode-selector>
+  </div>
+  <hlx-header-global>
+    <div
+      style="
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 10px;
+        width: 100%;
+        height: 100%;
+      "
+    >
+      <mat-icon>language</mat-icon>
+      <mat-icon>apps</mat-icon>
+      <mat-icon class="material-icons-outlined">account_circle</mat-icon>
+      <!-- <cdx-header-global-user-profile withSessionManagement
+        [shouldShowTranslations]="true"></cdx-header-global-user-profile> -->
+    </div>
+  </hlx-header-global>
+</header>
+} @else {
 <header cdx-header>
   <cdx-header-global>
     <cdx-header-global-user-profile
@@ -15,10 +45,18 @@
     <mode-selector></mode-selector>
   </div>
 </header>
+}
 
 <router-outlet></router-outlet>
 
+@if(isHelix$ | async) {
+<footer hlx-footer>
+  <a hlx-footer-link href="https://stackoverflow.com/">Stack Overflow</a>
+  <a hlx-footer-link href="https://www.powerlanguage.co.uk/wordle/"> Wordle </a>
+</footer>
+} @else {
 <footer cdx-footer [shouldShowTranslations]="true">
   <a cdx-footer-link href="https://stackoverflow.com/">Stack Overflow</a>
   <a cdx-footer-link href="https://www.powerlanguage.co.uk/wordle/"> Wordle </a>
 </footer>
+}

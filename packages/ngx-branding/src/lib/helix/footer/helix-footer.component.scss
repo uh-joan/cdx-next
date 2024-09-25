@@ -1,0 +1,68 @@
+$cdx-footer-padding: 2rem;
+$cdx-footer-column-width: clamp(
+  7.5rem,
+  calc(7.5rem + (12 - 7.5) * ((100vw - 48rem) / (85 - 48))),
+  12rem
+);
+$cdx-footer-grid-gap: 1.5rem;
+
+.hlx-footer {
+  display: flex;
+  flex-wrap: wrap;
+  padding: $cdx-footer-padding;
+  border-top: 1px solid #dfe1e2;
+  color: #5f6368;
+  font-family: 'Source Sans 3', sans-serif;
+  gap: $cdx-footer-grid-gap;
+
+  &--slim {
+    padding: calc($cdx-footer-padding / 4);
+  }
+
+  &__copyright {
+    width: $cdx-footer-column-width;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 24px;
+  }
+
+  &__group-title {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 24px;
+  }
+
+  &__content {
+    display: grid;
+    flex: 1;
+    font-size: 14px;
+    font-weight: 400;
+    gap: inherit;
+    grid-template-columns: repeat(auto-fit, $cdx-footer-column-width);
+    line-height: 24px;
+
+    // slotted will be targeted only in the web components
+    > *,
+    ::slotted(*) {
+      align-self: start;
+      justify-self: start;
+    }
+
+    a {
+      padding-top: 3px;
+      padding-bottom: 3px;
+    }
+
+    a,
+    ::slotted(a) {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    a:hover,
+    ::slotted(a:hover) {
+      cursor: pointer;
+      text-decoration: underline;
+    }
+  }
+}

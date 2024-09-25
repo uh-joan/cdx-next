@@ -37,7 +37,6 @@ export class ThemeSelectorComponent implements OnInit {
   ];
 
   currentTheme = 'purple';
-
   constructor(private themeService: ThemeService) {}
 
   currentMode$ = this.themeService.currentThemeMode$;
