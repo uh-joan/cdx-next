@@ -1,3 +1,5 @@
+import { dirname, join } from 'path';
+
 const rootMain = require('../../../.storybook/main-react');
 const path = require('path');
 
@@ -10,9 +12,9 @@ module.exports = {
         actions: false,
       },
     },
-    '@storybook/preset-scss',
+    getAbsolutePath('@storybook/preset-scss'),
   ],
-  core: { builder: 'webpack5' },
+  core: { builder: getAbsolutePath('webpack5') },
   stories: [
     {
       directory: '../src/lib/',
@@ -46,3 +48,7 @@ module.exports = {
     return config;
   },
 };
+
+function getAbsolutePath(value) {
+  return dirname(require.resolve(join(value, 'package.json')));
+}
