@@ -1,1 +1,26 @@
 <body class="mat-typography mat-legacy-spacing"></body>
+
+<script>
+  function getAppliedTheme(destinationUrl) {
+    const url = new URL(destinationUrl);
+    const params = new URLSearchParams(url.search);
+    const theme = params.get('globals').split(':')[1];
+    if (theme && theme.startsWith('cdx-theme')) {
+      return theme;
+    }
+    return null;
+  }
+
+  window.navigation.addEventListener('navigate', (event) => {
+    console.log('location changed! navigate');
+    const theme = getAppliedTheme(event.destination.url);
+    if (theme) {
+      document.body.className = '';
+      document.body.classList.add(
+        'mat-typography',
+        'mat-legacy-spacing',
+        theme,
+      );
+    }
+  });
+</script>
