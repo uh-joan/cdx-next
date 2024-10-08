@@ -5,10 +5,10 @@ $header-spacing: 2rem;
 $header-bar-base-height: 3.5rem;
 
 .hlx-header {
-  @include mat.all-component-themes(cdx.$dark-theme);
-  @include mat.all-component-densities(-5);
-
   &__global-bar {
+    @include mat.all-component-themes(cdx.$helix-dark-theme);
+    @include mat.all-component-densities(-5);
+
     display: flex;
     height: $header-bar-base-height;
     align-items: center;
