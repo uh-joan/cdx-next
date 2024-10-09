@@ -165,6 +165,14 @@ $helix-dark-theme: mat.define-theme(
   --mdc-text-button-container-height: 44px;
   --mdc-tab-indicator-active-indicator-height: 2px;
   --mdc-shape-small: 0;
+  --mat-autocomplete-background-color: white;
+  --mat-select-panel-background-color: white;
+  --mat-datepicker-calendar-container-background-color: white;
+  --mat-menu-container-color: white;
+  /* stylelint-disable-next-line scss/operator-no-newline-after */
+  --mat-datepicker-calendar-container-elevation-shadow: 0 3px 1px -2px rgb(0 0 0 /
+          20%),
+    0 2px 2px 0 rgb(0 0 0 / 14%), 0 1px 5px 0 rgb(0 0 0 / 12%);
 
   .mdc-text-field {
     border-radius: 0 !important;
