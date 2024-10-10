@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
@@ -24,39 +24,17 @@ import { ThemeService } from '../../services/theme.service';
     TranslateModule,
   ],
 })
-export class ThemeSelectorComponent implements OnInit {
-  THEMES = [
-    'purple',
-    'helix',
-    'avalon',
-    'purple-legacy',
-    'helix-legacy',
-    'teal-legacy',
-    'blue-legacy',
-    'custom',
-  ];
+export class ThemeSelectorComponent {
+  currentTheme = '';
+  themes = this.themeService.themes;
 
-  currentTheme = 'purple';
-  constructor(private themeService: ThemeService) {}
+  constructor(private themeService: ThemeService) {
+    this.currentTheme = this.themeService.currentTheme$.getValue();
+  }
 
   currentMode$ = this.themeService.currentThemeMode$;
 
-  ngOnInit(): void {
-    const themeColor = localStorage.getItem('themeColor');
-    if (themeColor && this.THEMES.includes(themeColor)) {
-      this.selectTheme(themeColor);
-    }
-  }
-
-  selectTheme(theme: string): void {
-    this.currentTheme = theme;
-    localStorage.setItem('themeColor', theme);
-
-    document.body.classList.forEach((className) => {
-      if (className.startsWith('cdx-theme-')) {
-        document.body.classList.remove(className);
-      }
-    });
-    document.body.classList.add(`cdx-theme-${this.currentTheme}`);
+  selectTheme(theme: string) {
+    this.themeService.selectTheme(theme);
   }
 }

@@ -7,6 +7,7 @@ import { MatMenuModule } from '@angular/material/menu';
 
 import { HelixHeaderComponent } from './helix-header.component';
 import { HelixHeaderGlobalComponent } from './helix-header-global.component';
+import { HelixHeaderProductNameOrLogoComponent } from './helix-header-product-name-or-logo.component';
 
 @NgModule({
   imports: [
@@ -16,7 +17,15 @@ import { HelixHeaderGlobalComponent } from './helix-header-global.component';
     MatMenuModule,
     MatIconModule,
   ],
-  declarations: [HelixHeaderComponent, HelixHeaderGlobalComponent],
-  exports: [HelixHeaderComponent, HelixHeaderGlobalComponent],
+  declarations: [
+    HelixHeaderComponent,
+    HelixHeaderGlobalComponent,
+    HelixHeaderProductNameOrLogoComponent,
+  ],
+  exports: [
+    HelixHeaderComponent,
+    HelixHeaderGlobalComponent,
+    HelixHeaderProductNameOrLogoComponent,
+  ],
 })
 export class HelixHeaderModule {}
