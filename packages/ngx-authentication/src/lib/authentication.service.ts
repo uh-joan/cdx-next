@@ -98,9 +98,9 @@ export class AuthenticationService {
     }
   }
 
-  login(): void {
+  login(referrerUrl?: string): void {
     window.location.assign(
-      this.accessAppActionWithReferrer('login', this.router.url),
+      this.accessAppActionWithReferrer('login', referrerUrl || this.router.url),
     );
   }
 
