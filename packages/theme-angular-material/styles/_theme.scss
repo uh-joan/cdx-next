@@ -5,12 +5,14 @@
 @use './theme/default.scss' as default;
 @use './theme/cdx.m2.scss' as cdx-m2;
 
-@mixin default() {
+@mixin default($theme: default.$light-theme) {
   @include mat.core;
-  @include mat.core-theme(default.$light-theme);
-  @include mat.all-component-themes(default.$light-theme);
-  @include overrides.material-overrides;
-  @include focus-indicators-color(colors.$primary-500);
+
+  html {
+    @include mat.all-component-themes($theme);
+    @include overrides.material-overrides;
+    @include focus-indicators-color(colors.$primary-500);
+  }
 }
 
 @mixin m2-compat() {
@@ -19,10 +21,10 @@
 }
 
 @mixin theme($theme) {
-  @include mat.all-component-themes($theme);
+  @include mat.core-color($theme);
   @include mat.all-component-colors($theme);
-  @include mat.all-component-typographies($theme);
   @include mat.all-component-densities($theme);
+  @include mat.all-component-typographies($theme);
 }
 
 @mixin focus-indicators-color($color, $transparent-background: false) {

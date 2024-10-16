@@ -6,6 +6,7 @@
 
 @include header.theme(cdx.$light-theme);
 @include footer.theme(cdx.$light-theme);
+@include cdx.default;
 
 :root {
   --light-text: rgba(#000, 0.87);
@@ -29,8 +30,6 @@ body[dir='rtl'] {
 body {
   background-color: var(--light-background);
   color: var(--light-text);
-  @include cdx.default;
-  @include cdx.theme(cdx.$light-theme);
 
   &.cdx-dark-mode {
     background-color: var(--dark-background);
@@ -44,7 +43,7 @@ body {
     @include cdx.theme-helix-overrides;
 
     &.cdx-dark-mode {
-      @include cdx.theme(cdx.$helix-theme);
+      @include cdx.theme(cdx.$helix-dark-theme);
       @include cdx.theme-helix-overrides;
     }
   }
@@ -71,9 +70,9 @@ body {
     @include cdx.theme-helix-m2-overrides;
     @include cdx.m2-compat;
 
-    &.cdx-dark-mode {
-      @include cdx.theme(cdx.$helix-m2-theme);
-    }
+    // &.cdx-dark-mode {
+    //   @include cdx.theme(cdx.$helix-dark-theme);
+    // }
   }
 
   &.cdx-theme-teal-legacy {

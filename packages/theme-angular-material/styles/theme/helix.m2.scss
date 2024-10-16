@@ -132,11 +132,6 @@ $helix-m2-theme: mat.m2-define-light-theme(
 );
 
 @mixin theme-helix-m2-overrides() {
-  @include mat.core-color($helix-m2-theme);
-  @include mat.all-component-colors($helix-m2-theme);
-  @include mat.all-component-typographies($helix-m2-theme);
-  @include mat.all-component-densities($helix-m2-theme);
-
   --mdc-protected-button-container-shape: 2px;
   --mdc-outlined-button-container-shape: 2px;
   --mdc-filled-button-container-shape: 2px;
