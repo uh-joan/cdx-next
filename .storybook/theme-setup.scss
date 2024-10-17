@@ -9,11 +9,9 @@
 @include footer-theme.theme(cdx.$light-theme);
 @include header-theme.theme(cdx.$light-theme);
 @include profile-theme.theme(cdx.$light-theme);
+@include cdx.default;
 
 body {
-  @include cdx.default;
-  @include cdx.theme(cdx.$light-theme);
-
   &.cdx-theme-clv {
     @include cdx.theme(cdx.$light-theme);
   }
