@@ -1,6 +1,6 @@
 {
   "name": "@cdx/theme-highcharts",
-  "version": "18.1.0-alpha.5",
+  "version": "18.1.0",
   "repository": {
     "type": "git",
     "url": "ssh://git@git.clarivate.io/cdxn/cdx-next.git",
