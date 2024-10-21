@@ -163,7 +163,7 @@ $helix-dark-theme: mat.define-theme(
   --mdc-outlined-button-container-height: 44px;
   --mdc-protected-button-container-height: 44px;
   --mdc-text-button-container-height: 44px;
-  --mdc-tab-indicator-active-indicator-height: 2px;
+  --mdc-tab-indicator-active-indicator-height: 4px;
   --mdc-shape-small: 0;
   --mat-autocomplete-background-color: white;
   --mat-select-panel-background-color: white;
@@ -178,6 +178,10 @@ $helix-dark-theme: mat.define-theme(
     border-radius: 0 !important;
 
     --mdc-shape-small: 0;
+  }
+
+  [fitInkBarToContent] {
+    --mdc-tab-indicator-active-indicator-shape: 2px 2px 0 0;
   }
 
   .hlx-btn-small {
