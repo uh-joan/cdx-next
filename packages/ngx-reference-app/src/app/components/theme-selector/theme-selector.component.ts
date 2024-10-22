@@ -24,13 +24,14 @@ import { ThemeService } from '../../services/theme.service';
 })
 export class ThemeSelectorComponent {
   currentTheme = '';
-  themes = this.themeService.themes;
+  themes;
+  currentMode$;
 
   constructor(private themeService: ThemeService) {
     this.currentTheme = this.themeService.currentTheme$.getValue();
+    this.themes = this.themeService.themes;
+    this.currentMode$ = this.themeService.currentThemeMode$;
   }
-
-  currentMode$ = this.themeService.currentThemeMode$;
 
   selectTheme(theme: string) {
     this.themeService.selectTheme(theme);

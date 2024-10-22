@@ -9,6 +9,7 @@
     "build": {
       "configurations": {
         "development": {
+          "allowedCommonJsDependencies": ["sha1", "uuid"],
           "buildOptimizer": false,
           "extractLicenses": false,
           "namedChunks": true,

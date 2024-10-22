@@ -3,6 +3,8 @@
 
 $header-spacing: 2rem;
 $header-bar-base-height: 3.5rem;
+$white-color: white;
+$black-background: black;
 
 .hlx-header {
   &__global-bar {
@@ -14,19 +16,15 @@ $header-bar-base-height: 3.5rem;
     align-items: center;
     justify-content: space-between;
     padding: 0 $header-spacing;
-    background: black;
     background: var(--surface-invert, #2a2b2d);
-    color: white;
+    color: $white-color;
     font-family: 'Source Sans 3', sans-serif;
     vertical-align: middle;
 
-    .mat-mdc-outlined-button:not(:disabled) {
+    .mat-mdc-outlined-button:not(:disabled),
+    .mat-mdc-button {
       border-color: inherit;
       color: inherit;
-    }
-
-    .mat-mdc-button {
-      color: inherit !important;
     }
   }
 
@@ -45,7 +43,7 @@ $header-bar-base-height: 3.5rem;
       cursor: pointer;
 
       > path {
-        fill: white;
+        fill: $white-color;
       }
     }
   }
@@ -60,7 +58,7 @@ $header-bar-base-height: 3.5rem;
     width: 1px;
     height: 100%;
     margin: 0 10px;
-    background: #ffffff29;
+    background: rgb(255 255 255 / 16%);
     content: '';
     vertical-align: middle;
   }

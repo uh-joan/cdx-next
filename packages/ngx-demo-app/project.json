@@ -9,11 +9,21 @@
     "build": {
       "configurations": {
         "development": {
+          "allowedCommonJsDependencies": [
+            "sha1",
+            "uuid",
+            "highcharts/highcharts"
+          ],
           "extractLicenses": false,
           "optimization": false,
           "sourceMap": true
         },
         "production": {
+          "allowedCommonJsDependencies": [
+            "sha1",
+            "uuid",
+            "highcharts/highcharts"
+          ],
           "budgets": [
             {
               "maximumError": "4mb",

@@ -19,11 +19,7 @@ import { ThemeService } from './services/theme.service';
 export class AppComponent {
   routerEvents$;
 
-  isHelix$ = this.themeService.currentTheme$.pipe(
-    map((theme) => {
-      return theme === 'helix';
-    }),
-  );
+  isHelix$;
 
   constructor(
     public themeService: ThemeService,
@@ -36,6 +32,12 @@ export class AppComponent {
         map((ev) => this.trackPageView((ev as NavigationEnd).url)),
       )
       .subscribe();
+
+    this.isHelix$ = this.themeService.currentTheme$.pipe(
+      map((theme) => {
+        return theme === 'helix';
+      }),
+    );
   }
 
   onClickLogo(): void {

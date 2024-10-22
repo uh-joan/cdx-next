@@ -12,10 +12,6 @@
 @include cdx.default;
 
 body {
-  &.cdx-theme-clv {
-    @include cdx.theme(cdx.$light-theme);
-  }
-
   &.cdx-theme-teal {
     @include cdx.theme(cdx.$cdx-teal-theme);
   }
