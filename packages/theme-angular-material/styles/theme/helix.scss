@@ -22,39 +22,39 @@ $_palettes: (
     100: #fff,
   ),
   secondary: (
-    0: #000,
-    10: #0f1014,
-    20: #212129,
-    25: #044600,
-    30: #2f303b,
-    35: #2f303f,
-    40: #41424f,
-    50: #585969,
-    60: #717385,
-    70: #8b8d9e,
-    80: #a8a9ba,
-    90: #c2c4d1,
-    95: #e6e7f0,
-    98: #fafbff,
-    99: #fafbff,
-    100: #fff,
+    0: #fff,
+    10: #fcfcfc,
+    20: #f8f8f8,
+    25: #f2f2f2,
+    30: #e5e6e6,
+    35: #bfbfc0,
+    40: #959596,
+    50: #6a6b6c,
+    60: #4a4b4d,
+    70: #2a2b2d,
+    80: #252628,
+    90: #252628,
+    95: #1f2022,
+    98: #1f2022,
+    99: #191a1c,
+    100: #0f1011,
   ),
   tertiary: (
     0: #000,
-    10: #292b17,
-    20: #40422b,
-    25: #53573e,
-    30: #53573e,
-    35: #a11d00,
-    40: #6b7053,
-    50: #868c69,
-    60: #9fa67e,
-    70: #bac295,
-    80: #d1d6a7,
-    90: #e3e8ba,
-    95: #f5f7d7,
-    98: #fafaf5,
-    99: #fafaf5,
+    10: #22005d,
+    20: #3a0092,
+    25: #460da7,
+    30: #5223b3,
+    35: #5e33bf,
+    40: #6a41cc,
+    50: #845de7,
+    60: #9e79ff,
+    70: #b69bff,
+    80: #cfbcff,
+    90: #e9ddff,
+    95: #e9ddff,
+    98: #fdf7ff,
+    99: #fffbff,
     100: #fff,
   ),
   neutral: (
@@ -176,6 +176,7 @@ $helix-dark-theme: mat.define-theme(
     0 2px 2px 0 rgb(0 0 0 / 14%), 0 1px 5px 0 rgb(0 0 0 / 12%);
   --mat-divider-color: #dfe1e2;
   --mdc-linear-progress-track-color: #cfcfcf;
+  --mdc-chip-container-shape-radius: 16px;
 
   .mdc-text-field {
     border-radius: 0 !important;
@@ -187,43 +188,63 @@ $helix-dark-theme: mat.define-theme(
     --mdc-tab-indicator-active-indicator-shape: 2px 2px 0 0;
   }
 
-  .hlx-btn-small {
-    button.mdc-button {
-      padding: 6px 16px;
-      font-size: 14px;
-    }
+  .hlx-accent-button {
+    @include mat.button-color($helix-theme, $color-variant: tertiary);
   }
 
-  .hlx-btn-x-small {
-    button.mdc-button {
-      padding: 4px 12px;
-      font-size: 12px;
-    }
+  .hlx-negative-button {
+    @include mat.button-color($helix-theme, $color-variant: error);
   }
 
-  .hlx-btn-large {
-    button.mdc-button {
-      height: auto;
-      padding: 18px 32px;
-    }
+  .hlx-invert-button {
+    @include mat.button-color($helix-theme, $color-variant: secondary);
   }
 
-  .hlx-secondary-btn {
-    --mdc-outlined-button-outline-color: #5e33bf;
-    --mdc-outlined-button-label-text-color: #5e33bf;
+  .hlx-neutral-chip {
+    @include mat.chips-color($helix-theme, $color-variant: secondary);
 
-    button.mdc-button:hover {
-      background-color: #faf5ff;
-    }
+    --mdc-chip-elevated-container-color: #dfe1e2;
   }
 
-  .hlx-warn-btn {
-    --mdc-outlined-button-outline-color: #c52a4f;
-    --mdc-filled-button-container-color: #f9e9ed;
+  .hlx-primary-chip {
+    @include mat.chips-color($helix-theme, $color-variant: primary);
+
+    --mdc-chip-elevated-container-color: #2a2b2d;
+    --mdc-chip-label-text-color: #fff;
   }
 
-  &.cdx-dark-mode {
-    --mdc-protected-button-container-shape: 0;
-    --mdc-outlined-button-container-shape: 0;
+  .hlx-accent-chip {
+    @include mat.chips-color($helix-theme, $color-variant: tertiary);
+
+    --mdc-chip-elevated-container-color: #5e33bf;
+    --mdc-chip-label-text-color: #fff;
+  }
+
+  .hlx-negative-chip {
+    @include mat.chips-color($helix-theme, $color-variant: error);
+
+    --mdc-chip-elevated-container-color: #fadcdc;
+    --mdc-chip-label-text-color: #410b0d;
+  }
+
+  .hlx-warn-chip {
+    @include mat.chips-color($helix-theme, $color-variant: error);
+
+    --mdc-chip-elevated-container-color: #ffefd1;
+    --mdc-chip-label-text-color: #402b00;
+  }
+
+  .hlx-positive-chip {
+    @include mat.chips-color($helix-theme, $color-variant: error);
+
+    --mdc-chip-elevated-container-color: #d2f7d6;
+    --mdc-chip-label-text-color: #003600;
+  }
+
+  .hlx-info-chip {
+    @include mat.chips-color($helix-theme, $color-variant: error);
+
+    --mdc-chip-elevated-container-color: #d7e8f7;
+    --mdc-chip-label-text-color: #031c40;
   }
 }

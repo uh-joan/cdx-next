@@ -17,7 +17,7 @@ export default {
 const TabsTemplate: StoryFn = () => ({
   template: html`
     <div class="story">
-      <mat-tab-group>
+      <mat-tab-group fitInkBarToContent>
         <mat-tab label="First">Code</mat-tab>
         <mat-tab label="Second">More code</mat-tab>
       </mat-tab-group>
