@@ -1,0 +1,71 @@
+@use '@material/elevation';
+
+.hlx-notification {
+  @include elevation.elevation(1);
+
+  display: flex;
+  justify-content: space-between;
+  padding: 16px 24px;
+  background-color: white;
+  gap: 0 20px;
+  user-select: none;
+
+  &__icon,
+  &__close {
+    align-self: flex-start;
+    color: #2a2b2d;
+  }
+
+  &__content {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-self: center;
+  }
+
+  &__actions {
+    color: #2a2b2d;
+  }
+}
+
+.hlx-notification--inline {
+  border-left: 8px solid #babcbe;
+  border-radius: 6px;
+
+  .hlx-notification__actions {
+    color: #2a2b2d;
+  }
+}
+
+.hlx-notification--banner {
+  .hlx-notification__actions {
+    align-self: center;
+  }
+}
+
+.hlx-notification--success {
+  border-left-color: #018760;
+  background-color: #d2f7d6;
+
+  .hlx-notification__icon,
+  .hlx-notification__actions,
+  .hlx-notification__close {
+    color: #003600;
+  }
+}
+
+.hlx-notification--warn {
+  border-left-color: #c43136;
+  background-color: #fadcdc;
+
+  .hlx-notification__icon,
+  .hlx-notification__actions,
+  .hlx-notification__close {
+    color: #410b0d;
+  }
+}
+
+/* stylelint-disable-next-line plugin/stylelint-bem-namics */
+.dismissed {
+  display: none;
+}
