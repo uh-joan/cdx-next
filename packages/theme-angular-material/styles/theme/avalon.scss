@@ -136,6 +136,12 @@ $avalon-light-theme: mat.define-theme(
       primary: $_primary,
       tertiary: $_tertiary,
     ),
+    typography: (
+      brand-family: 'Source Sans 3',
+      bold-weight: 700,
+      medium-weight: 600,
+      regular-weight: 400,
+    ),
   )
 );
 $avalon-dark-theme: mat.define-theme(
@@ -147,3 +153,13 @@ $avalon-dark-theme: mat.define-theme(
     ),
   )
 );
+
+@mixin theme-avalon-overrides() {
+  --mdc-protected-button-container-shape: 8px;
+  --mdc-outlined-button-container-shape: 8px;
+  --mdc-filled-button-container-shape: 8px;
+  --mdc-text-button-container-shape: 8px;
+  --mdc-chip-container-shape-radius: 999px;
+  --mdc-filled-text-field-container-shape: 4px;
+  --mdc-dialog-container-shape: 12px;
+}

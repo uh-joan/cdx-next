@@ -6,4 +6,5 @@
 @forward 'theme/helix.scss' show $helix-theme, $helix-dark-theme,
   theme-helix-overrides;
 @forward 'theme/helix.m2.scss' show $helix-m2-theme, theme-helix-m2-overrides;
-@forward 'theme/avalon.scss' show $avalon-light-theme, $avalon-dark-theme;
+@forward 'theme/avalon.scss' show $avalon-light-theme, $avalon-dark-theme,
+  theme-avalon-overrides;

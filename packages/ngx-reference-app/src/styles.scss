@@ -44,12 +44,12 @@ body {
 
     &.cdx-dark-mode {
       @include cdx.theme(cdx.$helix-dark-theme);
-      @include cdx.theme-helix-overrides;
     }
   }
 
   &.cdx-theme-avalon {
     @include cdx.theme(cdx.$avalon-light-theme);
+    @include cdx.theme-avalon-overrides;
 
     &.cdx-dark-mode {
       @include cdx.theme(cdx.$avalon-dark-theme);

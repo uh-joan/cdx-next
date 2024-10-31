@@ -39,6 +39,7 @@ body {
 
   &.cdx-theme-avalon {
     @include cdx.theme(cdx.$avalon-light-theme);
+    @include cdx.theme-avalon-overrides;
 
     &.cdx-dark-mode {
       @include cdx.theme(cdx.$avalon-dark-theme);
