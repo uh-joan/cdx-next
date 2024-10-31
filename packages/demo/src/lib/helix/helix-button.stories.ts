@@ -29,21 +29,21 @@ const themeButtonsTemplate: StoryFn = () => ({
             </button>
           </div>
 
-          <div class="row hlx-accent-button">
+          <div class="row hlx-btn-accent">
             <button mat-flat-button>Button</button>
             <button mat-flat-button><mat-icon>anchor</mat-icon>Button</button>
             <button mat-flat-button>
               Button<mat-icon iconPositionEnd>anchor</mat-icon>
             </button>
           </div>
-          <div class="row hlx-negative-button">
+          <div class="row hlx-btn-negative">
             <button mat-flat-button>Button</button>
             <button mat-flat-button><mat-icon>anchor</mat-icon>Button</button>
             <button mat-flat-button>
               Button<mat-icon iconPositionEnd>anchor</mat-icon>
             </button>
           </div>
-          <div class="row hlx-hlx-invert-button">
+          <div class="row hlx-btn-invert">
             <button mat-button>Button</button>
             <button mat-button><mat-icon>anchor</mat-icon>Button</button>
             <button mat-button>
@@ -53,18 +53,18 @@ const themeButtonsTemplate: StoryFn = () => ({
         </div>
         <div class="row">
           <div class="row">
-            <button class="hlx-accent-button" mat-flat-button disabled>
+            <button class="hlx-btn-accent" mat-flat-button disabled>
               Button
             </button>
-            <button class="hlx-accent-button" mat-flat-button disabled>
+            <button class="hlx-btn-accent" mat-flat-button disabled>
               <mat-icon>anchor</mat-icon>Button
             </button>
-            <button class="hlx-accent-button" mat-flat-button disabled>
+            <button class="hlx-btn-accent" mat-flat-button disabled>
               Button<mat-icon iconPositionEnd>anchor</mat-icon>
             </button>
           </div>
 
-          <div class="row hlx-accent-button">
+          <div class="row hlx-btn-accent">
             <button mat-flat-button disabled>Button</button>
             <button mat-flat-button disabled>
               <mat-icon>anchor</mat-icon>Button
@@ -73,7 +73,7 @@ const themeButtonsTemplate: StoryFn = () => ({
               Button<mat-icon iconPositionEnd>anchor</mat-icon>
             </button>
           </div>
-          <div class="row hlx-negative-button">
+          <div class="row hlx-btn-negative">
             <button mat-flat-button disabled>Button</button>
             <button mat-flat-button disabled>
               <mat-icon>anchor</mat-icon>Button
@@ -82,7 +82,7 @@ const themeButtonsTemplate: StoryFn = () => ({
               Button<mat-icon iconPositionEnd>anchor</mat-icon>
             </button>
           </div>
-          <div class="row hlx-invert-button">
+          <div class="row hlx-btn-invert">
             <button mat-button disabled>Button</button>
             <button mat-button disabled>
               <mat-icon>anchor</mat-icon>Button
@@ -107,7 +107,7 @@ const themeButtonsTemplate: StoryFn = () => ({
             </button>
           </div>
 
-          <div class="row hlx-accent-button">
+          <div class="row hlx-btn-accent">
             <button mat-stroked-button>Button</button>
             <button mat-stroked-button>
               <mat-icon>anchor</mat-icon>Button
@@ -116,7 +116,7 @@ const themeButtonsTemplate: StoryFn = () => ({
               Button<mat-icon iconPositionEnd>anchor</mat-icon>
             </button>
           </div>
-          <div class="row hlx-negative-button">
+          <div class="row hlx-btn-negative">
             <button mat-stroked-button>Button</button>
             <button mat-stroked-button>
               <mat-icon>anchor</mat-icon>Button
@@ -125,7 +125,7 @@ const themeButtonsTemplate: StoryFn = () => ({
               Button<mat-icon iconPositionEnd>anchor</mat-icon>
             </button>
           </div>
-          <div class="row hlx-invert-button">
+          <div class="row hlx-btn-invert">
             <button mat-button>Button</button>
             <button mat-button><mat-icon>anchor</mat-icon>Button</button>
             <button mat-button>
@@ -144,7 +144,7 @@ const themeButtonsTemplate: StoryFn = () => ({
             </button>
           </div>
 
-          <div class="row hlx-accent-button">
+          <div class="row hlx-btn-accent">
             <button mat-stroked-button disabled>Button</button>
             <button mat-stroked-button disabled>
               <mat-icon>anchor</mat-icon>Button
@@ -153,7 +153,7 @@ const themeButtonsTemplate: StoryFn = () => ({
               Button<mat-icon iconPositionEnd>anchor</mat-icon>
             </button>
           </div>
-          <div class="row hlx-negative-button">
+          <div class="row hlx-btn-negative">
             <button mat-stroked-button disabled>Button</button>
             <button mat-stroked-button disabled>
               <mat-icon>anchor</mat-icon>Button
@@ -162,7 +162,7 @@ const themeButtonsTemplate: StoryFn = () => ({
               Button<mat-icon iconPositionEnd>anchor</mat-icon>
             </button>
           </div>
-          <div class="row hlx-invert-button">
+          <div class="row hlx-btn-invert">
             <button mat-button disabled>Button</button>
             <button mat-button disabled>
               <mat-icon>anchor</mat-icon>Button
@@ -185,21 +185,21 @@ const themeButtonsTemplate: StoryFn = () => ({
             </button>
           </div>
 
-          <div class="row hlx-accent-button">
+          <div class="row hlx-btn-accent">
             <button mat-button>Button</button>
             <button mat-button><mat-icon>anchor</mat-icon>Button</button>
             <button mat-button>
               Button<mat-icon iconPositionEnd>anchor</mat-icon>
             </button>
           </div>
-          <div class="row hlx-negative-button">
+          <div class="row hlx-btn-negative">
             <button mat-button>Button</button>
             <button mat-button><mat-icon>anchor</mat-icon>Button</button>
             <button mat-button>
               Button<mat-icon iconPositionEnd>anchor</mat-icon>
             </button>
           </div>
-          <div class="row hlx-invert-button">
+          <div class="row hlx-btn-invert">
             <button mat-button>Button</button>
             <button mat-button><mat-icon>anchor</mat-icon>Button</button>
             <button mat-button>
@@ -218,7 +218,7 @@ const themeButtonsTemplate: StoryFn = () => ({
             </button>
           </div>
 
-          <div class="row hlx-accent-button">
+          <div class="row hlx-btn-accent">
             <button mat-button disabled>Button</button>
             <button mat-button disabled>
               <mat-icon>anchor</mat-icon>Button
@@ -227,7 +227,7 @@ const themeButtonsTemplate: StoryFn = () => ({
               Button<mat-icon iconPositionEnd>anchor</mat-icon>
             </button>
           </div>
-          <div class="row hlx-negative-button">
+          <div class="row hlx-btn-negative">
             <button mat-button disabled>Button</button>
             <button mat-button disabled>
               <mat-icon>anchor</mat-icon>Button
@@ -236,97 +236,19 @@ const themeButtonsTemplate: StoryFn = () => ({
               Button<mat-icon iconPositionEnd>anchor</mat-icon>
             </button>
           </div>
-          <div class="row hlx-invert-button">
+          <div class="row hlx-btn-invert">
             <button mat-button disabled>Button</button>
             <button mat-button disabled>
               <mat-icon>anchor</mat-icon>Button
             </button>
             <button mat-button disabled>
-              Button<mat-icon iconPositionEnd>anchor</mat-icon>
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <h1>Sizing</h1>
-      <div class="btn-row hlx-btn-small">
-        <h2>Small Size (.hlx-btn-small)</h2>
-        <div class="row">
-          <div class="row hlx-btn-small">
-            <button mat-flat-button>Button</button>
-            <button mat-flat-button><mat-icon>anchor</mat-icon>Button</button>
-            <button mat-flat-button>
-              Button<mat-icon iconPositionEnd>anchor</mat-icon>
-            </button>
-          </div>
-
-          <div class="row ">
-            <button class="hlx-accent-button" mat-flat-button>Button</button>
-            <button class="hlx-accent-button" mat-flat-button>
-              <mat-icon>anchor</mat-icon>Button
-            </button>
-            <button class="hlx-accent-button" mat-flat-button>
-              Button<mat-icon iconPositionEnd>anchor</mat-icon>
-            </button>
-          </div>
-          <div class="row">
-            <button class="hlx-negative-button" mat-flat-button>Button</button>
-            <button class="hlx-negative-button" mat-flat-button>
-              <mat-icon>anchor</mat-icon>Button
-            </button>
-            <button class="hlx-negative-button" mat-flat-button>
-              Button<mat-icon iconPositionEnd>anchor</mat-icon>
-            </button>
-          </div>
-          <div class="row">
-            <button mat-button>Button</button>
-            <button mat-button><mat-icon>anchor</mat-icon>Button</button>
-            <button mat-button>
-              Button<mat-icon iconPositionEnd>anchor</mat-icon>
-            </button>
-          </div>
-        </div>
-      </div>
-      <div class="btn-row hlx-btn-x-small">
-        <h2>Extra Small Size (.hlx-btn-x-small)</h2>
-        <div class="row">
-          <div class="row hlx-btn-small">
-            <button mat-flat-button>Button</button>
-            <button mat-flat-button><mat-icon>anchor</mat-icon>Button</button>
-            <button mat-flat-button>
-              Button<mat-icon iconPositionEnd>anchor</mat-icon>
-            </button>
-          </div>
-
-          <div class="row">
-            <button class="hlx-accent-button" mat-flat-button>Button</button>
-            <button class="hlx-accent-button" mat-flat-button>
-              <mat-icon>anchor</mat-icon>Button
-            </button>
-            <button class="hlx-accent-button" mat-flat-button>
-              Button<mat-icon iconPositionEnd>anchor</mat-icon>
-            </button>
-          </div>
-          <div class="row ">
-            <button class="hlx-negative-button" mat-flat-button>Button</button>
-            <button class="hlx-negative-button" mat-flat-button>
-              <mat-icon>anchor</mat-icon>Button
-            </button>
-            <button class="hlx-negative-button" mat-flat-button>
-              Button<mat-icon iconPositionEnd>anchor</mat-icon>
-            </button>
-          </div>
-          <div class="row">
-            <button mat-button>Button</button>
-            <button mat-button><mat-icon>anchor</mat-icon>Button</button>
-            <button mat-button>
               Button<mat-icon iconPositionEnd>anchor</mat-icon>
             </button>
           </div>
         </div>
       </div>
       <div class="btn-row hlx-btn-large">
-        <h2>Large Size (.hlx-btn-large)</h2>
+        <h2>Large Size</h2>
         <div class="row">
           <div class="row">
             <button mat-flat-button>Button</button>
@@ -337,20 +259,20 @@ const themeButtonsTemplate: StoryFn = () => ({
           </div>
 
           <div class="row">
-            <button class="hlx-accent-button" mat-flat-button>Button</button>
-            <button class="hlx-accent-button" mat-flat-button>
+            <button class="hlx-btn-accent" mat-flat-button>Button</button>
+            <button class="hlx-btn-accent" mat-flat-button>
               <mat-icon>anchor</mat-icon>Button
             </button>
-            <button class="hlx-accent-button" mat-flat-button>
+            <button class="hlx-btn-accent" mat-flat-button>
               Button<mat-icon iconPositionEnd>anchor</mat-icon>
             </button>
           </div>
           <div class="row">
-            <button class="hlx-negative-button" mat-flat-button>Button</button>
-            <button class="hlx-negative-button" mat-flat-button>
+            <button class="hlx-btn-negative" mat-flat-button>Button</button>
+            <button class="hlx-btn-negative" mat-flat-button>
               <mat-icon>anchor</mat-icon>Button
             </button>
-            <button class="hlx-negative-button" mat-flat-button>
+            <button class="hlx-btn-negative" mat-flat-button>
               Button<mat-icon iconPositionEnd>anchor</mat-icon>
             </button>
           </div>

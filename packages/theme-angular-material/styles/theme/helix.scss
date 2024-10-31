@@ -189,30 +189,28 @@ $helix-dark-theme: mat.define-theme(
     --mdc-tab-indicator-active-indicator-shape: 2px 2px 0 0;
   }
 
-  .hlx-accent-button {
+  .hlx-btn-accent {
     @include mat.button-color($helix-theme, $color-variant: tertiary);
   }
 
-  .hlx-negative-button {
+  .hlx-btn-negative {
     @include mat.button-color($helix-theme, $color-variant: error);
   }
 
-  .hlx-invert-button {
+  .hlx-btn-invert {
     @include mat.button-color($helix-theme, $color-variant: secondary);
   }
 
   .hlx-btn-small {
-    button.mdc-button {
-      padding: 6px 16px;
-      font-size: 14px;
-    }
+    @include mat.button-density(-1);
   }
 
-  .hlx-btn-x-small {
-    button.mdc-button {
-      padding: 4px 12px;
-      font-size: 12px;
-    }
+  .hlx-btn-xsmall {
+    @include mat.button-density(-2);
+  }
+
+  .hlx-btn-xxsmall {
+    @include mat.button-density(-3);
   }
 
   .hlx-btn-large {
