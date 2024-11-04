@@ -15,12 +15,12 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatTableModule } from '@angular/material/table';
 import { ThemeModule } from '@cdx/theme-angular-material';
 
-import { DialogDemoComponent } from './dialog-demo/dialog-demo.component';
-import { DialogExampleComponent } from './dialog-demo/dialog-example.component';
-import { SnackBarDemoComponent } from './snackbars-demo/snackbar-demo.component';
-import { TableBasicDemoComponent } from './tables-demo/table-basic-demo.component';
-import { TableExpandableRowsDemoComponent } from './tables-demo/table-expandable-rows-demo.component';
-import { TableWithFilterSortingPaginationDemoComponent } from './tables-demo/table-with-filter-sort-pagination-demo.component';
+import { DialogDemoComponent } from './cdx/dialog-demo/dialog-demo.component';
+import { DialogExampleComponent } from './cdx/dialog-demo/dialog-example.component';
+import { SnackBarDemoComponent } from './cdx/snackbars-demo/snackbar-demo.component';
+import { TableBasicDemoComponent } from './cdx/tables-demo/table-basic-demo.component';
+import { TableExpandableRowsDemoComponent } from './cdx/tables-demo/table-expandable-rows-demo.component';
+import { TableWithFilterSortingPaginationDemoComponent } from './cdx/tables-demo/table-with-filter-sort-pagination-demo.component';
 
 @NgModule({
   imports: [
