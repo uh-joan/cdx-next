@@ -5,7 +5,7 @@ import { html } from 'common-tags';
 import { AgGridDemoModule } from './ag-grid/ag-grid-demo.module';
 
 export default {
-  title: 'cdx/AgGrid',
+  title: 'base/AgGrid',
   component: MatCheckboxModule,
   decorators: [
     moduleMetadata({

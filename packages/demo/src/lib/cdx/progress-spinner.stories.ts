@@ -4,7 +4,7 @@ import { Meta, moduleMetadata, StoryFn } from '@storybook/angular';
 import { html } from 'common-tags';
 
 export default {
-  title: 'cdx/Progress Spinner',
+  title: 'base/Progress Spinner',
   component: MatProgressSpinnerModule,
   decorators: [
     moduleMetadata({

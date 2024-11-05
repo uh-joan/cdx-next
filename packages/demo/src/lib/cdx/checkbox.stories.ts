@@ -4,7 +4,7 @@ import { Meta, moduleMetadata, StoryFn } from '@storybook/angular';
 import { html } from 'common-tags';
 
 export default {
-  title: 'cdx/Checkbox',
+  title: 'base/Checkbox',
   component: MatCheckboxModule,
   decorators: [
     moduleMetadata({

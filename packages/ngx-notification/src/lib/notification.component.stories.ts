@@ -5,7 +5,7 @@ import { Meta, moduleMetadata, StoryFn } from '@storybook/angular';
 import { NotificationComponent } from './notification.component';
 
 export default {
-  title: 'cdx/Notification',
+  title: 'base/Notification',
   component: NotificationComponent,
   decorators: [
     moduleMetadata({

@@ -4,7 +4,7 @@ import { Meta, moduleMetadata, StoryFn } from '@storybook/angular';
 import { html } from 'common-tags';
 
 export default {
-  title: 'cdx/Radio Button',
+  title: 'base/Radio Button',
   component: MatRadioModule,
   decorators: [
     moduleMetadata({

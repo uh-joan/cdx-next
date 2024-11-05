@@ -81,7 +81,7 @@ class TreeComponent {
 }
 
 export default {
-  title: 'cdx/Tree',
+  title: 'base/Tree',
   component: MatTreeModule,
   parameters: {
     layout: 'centered',

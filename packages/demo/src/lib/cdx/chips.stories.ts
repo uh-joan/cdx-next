@@ -5,7 +5,7 @@ import { Meta, moduleMetadata, StoryFn } from '@storybook/angular';
 import { html } from 'common-tags';
 
 export default {
-  title: 'cdx/Chips',
+  title: 'base/Chips',
   component: MatChipsModule,
   decorators: [
     moduleMetadata({

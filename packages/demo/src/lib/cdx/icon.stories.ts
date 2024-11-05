@@ -5,7 +5,7 @@ import { Meta, moduleMetadata } from '@storybook/angular';
 import { html } from 'common-tags';
 
 export default {
-  title: 'cdx/Icon',
+  title: 'base/Icon',
   decorators: [
     moduleMetadata({
       imports: [CommonModule, MatIconModule, ThemeModule],

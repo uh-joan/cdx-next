@@ -7,7 +7,7 @@ import { HighchartsStyledModule } from '../highcharts/highcharts-styled.module';
 import { HighchartsThemedModule } from '../highcharts/highcharts-themed.module';
 
 export default {
-  title: 'cdx/HighCharts',
+  title: 'base/HighCharts',
   component: MatTabsModule,
   decorators: [
     moduleMetadata({

@@ -87,7 +87,7 @@ function compare(a: number | string, b: number | string, isAsc: boolean) {
 }
 
 export default {
-  title: 'cdx/Sort Header',
+  title: 'base/Sort Header',
   component: MatSortModule,
 } as Meta;
 

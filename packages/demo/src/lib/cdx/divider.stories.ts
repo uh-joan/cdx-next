@@ -4,7 +4,7 @@ import { Meta, moduleMetadata, StoryFn } from '@storybook/angular';
 import { html } from 'common-tags';
 
 export default {
-  title: 'cdx/Divider',
+  title: 'base/Divider',
   component: MatDividerModule,
   decorators: [
     moduleMetadata({

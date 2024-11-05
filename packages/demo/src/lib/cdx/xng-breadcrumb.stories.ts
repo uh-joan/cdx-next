@@ -6,7 +6,7 @@ import { XngBreadcrumbThemedComponent } from './xng-breadcrumb-demo/xng-breadcru
 import { BreadcrumbDemoModule } from './xng-breadcrumb-demo/xng-breadcrumb-themed.module';
 
 export default {
-  title: 'cdx/XNG Breadcrumb',
+  title: 'base/XNG Breadcrumb',
   component: XngBreadcrumbThemedComponent,
   decorators: [
     moduleMetadata({

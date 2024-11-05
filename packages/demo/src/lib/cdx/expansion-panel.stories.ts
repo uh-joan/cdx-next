@@ -7,7 +7,7 @@ import { Meta, moduleMetadata, StoryFn } from '@storybook/angular';
 import { html } from 'common-tags';
 
 export default {
-  title: 'cdx/Expansion Panel',
+  title: 'base/Expansion Panel',
   component: MatExpansionPanel,
   decorators: [
     moduleMetadata({

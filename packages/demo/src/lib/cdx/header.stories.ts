@@ -21,7 +21,7 @@ import { html } from 'common-tags';
 import { of } from 'rxjs';
 
 export default {
-  title: 'cdx/Header',
+  title: 'base/Header',
   component: HeaderComponent,
   decorators: [
     moduleMetadata({

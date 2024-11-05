@@ -3,7 +3,7 @@ import { html } from 'common-tags';
 import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 
 export default {
-  title: 'cdx/Skeleton loader',
+  title: 'base/Skeleton loader',
   decorators: [
     moduleMetadata({
       imports: [NgxSkeletonLoaderModule],

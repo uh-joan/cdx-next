@@ -8,7 +8,7 @@ import { Meta, moduleMetadata, StoryFn } from '@storybook/angular';
 import { html } from 'common-tags';
 
 export default {
-  title: 'cdx/Button Toggle',
+  title: 'base/Button Toggle',
   component: MatButtonToggle,
   decorators: [
     moduleMetadata({

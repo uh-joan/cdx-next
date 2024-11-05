@@ -14,7 +14,7 @@ import { Meta } from '@storybook/angular';
 import { html } from 'common-tags';
 
 export default {
-  title: 'cdx/Stepper',
+  title: 'base/Stepper',
   component: MatStepperModule,
 } as Meta;
 

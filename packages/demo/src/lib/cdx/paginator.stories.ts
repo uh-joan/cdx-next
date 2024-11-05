@@ -5,7 +5,7 @@ import { Meta, moduleMetadata, StoryFn } from '@storybook/angular';
 import { html } from 'common-tags';
 
 export default {
-  title: 'cdx/Paginator',
+  title: 'base/Paginator',
   component: MatPaginatorModule,
   decorators: [
     moduleMetadata({

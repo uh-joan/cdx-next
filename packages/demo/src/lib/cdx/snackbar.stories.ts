@@ -7,7 +7,7 @@ import { html } from 'common-tags';
 import { DemoModule } from '../demo.module';
 
 export default {
-  title: 'cdx/Snackbar',
+  title: 'base/Snackbar',
   component: MatSnackBarModule,
   decorators: [
     moduleMetadata({

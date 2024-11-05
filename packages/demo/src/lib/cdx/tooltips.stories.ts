@@ -29,7 +29,7 @@ class AppOverlayContainer extends OverlayContainer {
 }
 
 const tooltipsMeta: Meta<MatTooltip> = {
-  title: 'cdx/Tooltips',
+  title: 'base/Tooltips',
   component: MatTooltip,
   decorators: [
     moduleMetadata({

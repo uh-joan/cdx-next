@@ -10,7 +10,7 @@ import { Meta, moduleMetadata, StoryFn } from '@storybook/angular';
 import { html } from 'common-tags';
 
 export default {
-  title: 'cdx/Sidenav',
+  title: 'base/Sidenav',
   component: MatSidenavModule,
   decorators: [
     moduleMetadata({

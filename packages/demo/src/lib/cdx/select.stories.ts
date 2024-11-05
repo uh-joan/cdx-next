@@ -6,7 +6,7 @@ import { Meta, moduleMetadata, StoryFn } from '@storybook/angular';
 import { html } from 'common-tags';
 
 export default {
-  title: 'cdx/Select',
+  title: 'base/Select',
   component: MatSelectModule,
   decorators: [
     moduleMetadata({

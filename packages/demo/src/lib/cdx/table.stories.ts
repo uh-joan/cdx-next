@@ -5,7 +5,7 @@ import { DemoModule } from '../demo.module';
 import { basicTableTemplate } from './tables-demo/table-basic-demo.component';
 
 export default {
-  title: 'cdx/Table',
+  title: 'base/Table',
   component: DemoModule,
 } as Meta;
 

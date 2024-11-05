@@ -5,7 +5,7 @@ import { Meta, moduleMetadata, StoryFn } from '@storybook/angular';
 import { html } from 'common-tags';
 
 export default {
-  title: 'cdx/Card',
+  title: 'base/Card',
   component: MatCardModule,
   decorators: [
     moduleMetadata({

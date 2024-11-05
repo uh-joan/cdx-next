@@ -7,7 +7,7 @@ import { html } from 'common-tags';
 import { DemoModule } from '../demo.module';
 
 export default {
-  title: 'cdx/Dialog',
+  title: 'base/Dialog',
   component: MatDialogModule,
   decorators: [
     moduleMetadata({

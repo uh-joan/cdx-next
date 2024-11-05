@@ -11,7 +11,7 @@ import {
 } from './basic-autocomplete.component';
 
 export default {
-  title: 'cdx/Autocomplete',
+  title: 'base/Autocomplete',
   component: MatAutocompleteModule,
   parameters: {
     layout: 'centered',

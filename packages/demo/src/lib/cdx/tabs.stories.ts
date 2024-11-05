@@ -5,7 +5,7 @@ import { Meta, moduleMetadata, StoryFn } from '@storybook/angular';
 import { html } from 'common-tags';
 
 export default {
-  title: 'cdx/Tabs',
+  title: 'base/Tabs',
   component: MatTabsModule,
   decorators: [
     moduleMetadata({

@@ -11,7 +11,7 @@ import { ThemeModule } from '@cdx/theme-angular-material';
 import { Meta, moduleMetadata, StoryObj } from '@storybook/angular';
 
 const datepickerMeta: Meta<MatDatepicker<string>> = {
-  title: 'cdx/Date Picker',
+  title: 'base/Date Picker',
   component: MatDatepicker,
   decorators: [
     moduleMetadata({
