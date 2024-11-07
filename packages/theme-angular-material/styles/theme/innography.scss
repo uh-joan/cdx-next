@@ -1,60 +1,61 @@
 /* stylelint-disable scss/dollar-variable-pattern */
 @use 'sass:map';
 @use '@angular/material' as mat;
+@use 'avalon' as ava;
 
 $_palettes: (
   primary: (
     0: #000,
-    10: #210452,
-    20: #35127a,
-    25: #351399,
-    30: #451f99,
-    35: #451f99,
-    40: #5e33bf,
-    50: #7548db,
-    60: #9163f7,
-    70: #a378ff,
-    80: #c0a1ff,
-    90: #e0ccff,
-    95: #f6edff,
-    98: #fdfafe,
-    99: #fdfaff,
+    10: #0c171f,
+    20: #13222e,
+    25: #13222e,
+    30: #192e3e,
+    35: #192e3e,
+    40: #1f394d,
+    50: #354d5f,
+    60: #4c6171,
+    70: #627482,
+    80: #798894,
+    90: #a5b0b8,
+    95: #d2d7db,
+    98: #e9ebed,
+    99: #e9ebed,
     100: #fff,
   ),
   secondary: (
     0: #000,
-    10: #0f1014,
-    20: #212129,
-    25: #044600,
-    30: #2f303b,
-    35: #2f303f,
-    40: #41424f,
-    50: #585969,
-    60: #717385,
-    70: #8b8d9e,
-    80: #a8a9ba,
-    90: #c2c4d1,
-    95: #e6e7f0,
-    98: #fafbff,
-    99: #fafbff,
+    10: #122936,
+    20: #163c52,
+    25: #163c52,
+    30: #23526c,
+    35: #23526c,
+    40: #2f6d90,
+    50: #3b88b4,
+    60: #5a9ec5,
+    70: #76accb,
+    80: #9dc4da,
+    90: #b7d3e4,
+    95: #d8eaf5,
+    98: #ebf3f8,
+    99: #ebf3f8,
     100: #fff,
   ),
   tertiary: (
     0: #000,
-    10: #292b17,
-    20: #40422b,
-    25: #53573e,
-    30: #53573e,
-    35: #a11d00,
-    40: #6b7053,
-    50: #868c69,
-    60: #9fa67e,
-    70: #bac295,
-    80: #d1d6a7,
-    90: #e3e8ba,
-    95: #f5f7d7,
-    98: #fafaf5,
-    99: #fafaf5,
+    10: #2d1009,
+    20: #5b2112,
+    25: #5b2112,
+    30: #88311c,
+    35: #88311c,
+    40: #b64225,
+    50: #e3522e,
+    60: #e97558,
+    70: #ee9782,
+    80: #f4baac,
+    90: #f5cfc6,
+    95: #f7ded7,
+    98: #fceeea,
+    99: #fceeea,
     100: #fff,
   ),
   neutral: (
@@ -130,39 +131,23 @@ $_rest: (
 $_primary: map.merge(map.get($_palettes, primary), $_rest);
 $_secondary: map.merge(map.get($_palettes, secondary), $_rest);
 $_tertiary: map.merge(map.get($_palettes, tertiary), $_rest);
-$avalon-typography: (
-  brand-family: 'Source Sans 3',
-  bold-weight: 700,
-  medium-weight: 600,
-  regular-weight: 400,
-);
-$avalon-light-theme: mat.define-theme(
+$innography-light-theme: mat.define-theme(
   (
     color: (
       theme-type: light,
       primary: $_primary,
       tertiary: $_tertiary,
     ),
-    typography: $avalon-typography,
+    typography: ava.$avalon-typography,
   )
 );
-$avalon-dark-theme: mat.define-theme(
+$innography-dark-theme: mat.define-theme(
   (
     color: (
       theme-type: dark,
       primary: $_primary,
       tertiary: $_tertiary,
     ),
-    typography: $avalon-typography,
+    typography: ava.$avalon-typography,
   )
 );
-
-@mixin theme-avalon-overrides() {
-  --mdc-protected-button-container-shape: 8px;
-  --mdc-outlined-button-container-shape: 8px;
-  --mdc-filled-button-container-shape: 8px;
-  --mdc-text-button-container-shape: 8px;
-  --mdc-chip-container-shape-radius: 999px;
-  --mdc-filled-text-field-container-shape: 4px;
-  --mdc-dialog-container-shape: 12px;
-}

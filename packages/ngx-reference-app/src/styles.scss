@@ -56,6 +56,24 @@ body {
     }
   }
 
+  &.cdx-theme-innography {
+    @include cdx.theme(cdx.$innography-light-theme);
+    @include cdx.theme-avalon-overrides;
+
+    &.cdx-dark-mode {
+      @include cdx.theme(cdx.$innography-dark-theme);
+    }
+  }
+
+  &.cdx-theme-derwent {
+    @include cdx.theme(cdx.$derwent-light-theme);
+    @include cdx.theme-avalon-overrides;
+
+    &.cdx-dark-mode {
+      @include cdx.theme(cdx.$derwent-dark-theme);
+    }
+  }
+
   &.cdx-theme-purple-legacy {
     @include cdx.theme(cdx.$cdx-theme);
     @include cdx.m2-compat;

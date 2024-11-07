@@ -36,6 +36,16 @@ body {
     @include cdx.theme-avalon-overrides;
   }
 
+  &.cdx-theme-innography {
+    @include cdx.theme(cdx.$innography-light-theme);
+    @include cdx.theme-avalon-overrides;
+  }
+
+  &.cdx-theme-derwent {
+    @include cdx.theme(cdx.$derwent-light-theme);
+    @include cdx.theme-avalon-overrides;
+  }
+
   &.cdx-theme-legacy {
     @include cdx.theme(cdx.$cdx-theme);
     @include cdx.m2-compat;

@@ -6,6 +6,8 @@ export const THEMES = [
   'purple',
   'helix',
   'avalon',
+  'innography',
+  'derwent',
   'purple-legacy',
   'helix-legacy',
   'teal-legacy',

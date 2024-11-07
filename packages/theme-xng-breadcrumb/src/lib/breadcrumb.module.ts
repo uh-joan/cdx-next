@@ -1,12 +1,21 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
-import { BreadcrumbModule } from 'xng-breadcrumb';
+import { RouterModule } from '@angular/router';
+import {
+  BreadcrumbComponent as xngBreadcrumbComponent,
+  BreadcrumbItemDirective,
+} from 'xng-breadcrumb';
 
 import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
 
 @NgModule({
-  imports: [CommonModule, BreadcrumbModule, MatIconModule],
+  imports: [
+    RouterModule,
+    xngBreadcrumbComponent,
+    BreadcrumbItemDirective,
+    MatIconModule,
+  ],
   declarations: [BreadcrumbComponent],
   exports: [BreadcrumbComponent],
 })

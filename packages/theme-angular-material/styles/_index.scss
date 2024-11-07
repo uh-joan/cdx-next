@@ -8,3 +8,6 @@
 @forward 'theme/helix.m2.scss' show $helix-m2-theme, theme-helix-m2-overrides;
 @forward 'theme/avalon.scss' show $avalon-light-theme, $avalon-dark-theme,
   theme-avalon-overrides;
+@forward 'theme/innography.scss' show $innography-light-theme,
+  $innography-dark-theme;
+@forward 'theme/derwent.scss' show $derwent-light-theme, $derwent-dark-theme;

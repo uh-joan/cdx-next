@@ -19,6 +19,8 @@ const parameters: Preview = {
           { value: 'cdx-theme-clv', title: 'CDX' },
           { value: 'cdx-theme-helix', title: 'Helix' },
           { value: 'cdx-theme-avalon', title: 'Avalon' },
+          { value: 'cdx-theme-innography', title: 'Innography' },
+          { value: 'cdx-theme-derwent', title: 'Derwent' },
           { value: 'cdx-theme-legacy', title: 'CDX Legacy M2' },
           { value: 'cdx-theme-helix-m2', title: 'Helix Legacy M2' },
           { value: 'cdx-theme-teal', title: 'Teal Legacy M2' },
