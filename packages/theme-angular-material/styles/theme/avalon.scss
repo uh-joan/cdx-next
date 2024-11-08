@@ -131,7 +131,8 @@ $_primary: map.merge(map.get($_palettes, primary), $_rest);
 $_secondary: map.merge(map.get($_palettes, secondary), $_rest);
 $_tertiary: map.merge(map.get($_palettes, tertiary), $_rest);
 $avalon-typography: (
-  brand-family: 'Source Sans 3',
+  brand-family: "'Source Sans 3', sans-serif",
+  plain-family: "'Source Sans 3', sans-serif",
   bold-weight: 700,
   medium-weight: 600,
   regular-weight: 400,
