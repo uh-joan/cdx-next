@@ -3,6 +3,7 @@ const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const RemoveEmptyScriptsPlugin = require('webpack-remove-empty-scripts');
 const svgToMiniDataURI = require('mini-svg-data-uri');
+const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   mode: 'production',
@@ -62,5 +63,10 @@ module.exports = {
   plugins: [
     new MiniCssExtractPlugin({ filename: '[name].min.css' }),
     new RemoveEmptyScriptsPlugin(),
+    new CopyPlugin({
+      patterns: [
+        'ag-theme-helix.css', // absolute or relative, files/directories/globs - see below for examples
+      ],
+    }),
   ],
 };
