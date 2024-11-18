@@ -2,6 +2,8 @@
 @use 'sass:map';
 @use '@angular/material' as mat;
 
+$SurfaceContainerHighest: #e6e6e6;
+$primaryColor: #5e33bf;
 $_palettes: (
   primary: (
     0: #000,
@@ -166,4 +168,8 @@ $avalon-dark-theme: mat.define-theme(
   --mdc-chip-container-shape-radius: 999px;
   --mdc-filled-text-field-container-shape: 4px;
   --mdc-dialog-container-shape: 12px;
+
+  // --mat-autocomplete-background-color: #e6e6e6;
+  --mat-option-selected-state-layer-color: $SurfaceContainerHighest;
+  --mat-option-selected-state-label-text-color: #5e33bf;
 }
