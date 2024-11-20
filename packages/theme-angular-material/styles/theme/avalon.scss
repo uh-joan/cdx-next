@@ -1,3 +1,4 @@
+/* stylelint-disable plugin/stylelint-bem-namics */
 /* stylelint-disable scss/dollar-variable-pattern */
 @use 'sass:map';
 @use '@angular/material' as mat;
@@ -132,6 +133,26 @@ $_rest: (
 $_primary: map.merge(map.get($_palettes, primary), $_rest);
 $_secondary: map.merge(map.get($_palettes, secondary), $_rest);
 $_tertiary: map.merge(map.get($_palettes, tertiary), $_rest);
+$_error: map.merge(map.get($_palettes, error), $_rest);
+$_success_palette: (
+  0: #000,
+  10: #003600,
+  20: #004d03,
+  25: #004d03,
+  30: #006607,
+  35: #006607,
+  40: #04800f,
+  50: #1ca629,
+  60: #44bd4f,
+  70: #7ad683,
+  80: #aeebb3,
+  90: #d2f7d6,
+  95: #d2f7d6,
+  98: #d2f7d6,
+  99: #d2f7d6,
+  100: #fff,
+);
+$_success: map.merge($_success_palette, $_rest);
 $avalon-typography: (
   brand-family: "'Source Sans 3', sans-serif",
   plain-family: "'Source Sans 3', sans-serif",
@@ -149,6 +170,46 @@ $avalon-light-theme: mat.define-theme(
     typography: $avalon-typography,
   )
 );
+$avalon-secondary-theme: mat.define-theme(
+  (
+    color: (
+      theme-type: light,
+      primary: $_secondary,
+      tertiary: $_tertiary,
+    ),
+    typography: $avalon-typography,
+  )
+);
+$avalon-tertiary-theme: mat.define-theme(
+  (
+    color: (
+      theme-type: light,
+      primary: $_tertiary,
+      tertiary: $_primary,
+    ),
+    typography: $avalon-typography,
+  )
+);
+$avalon-error-theme: mat.define-theme(
+  (
+    color: (
+      theme-type: light,
+      primary: $_error,
+      tertiary: $_tertiary,
+    ),
+    typography: $avalon-typography,
+  )
+);
+$avalon-success-theme: mat.define-theme(
+  (
+    color: (
+      theme-type: light,
+      primary: $_success,
+      tertiary: $_tertiary,
+    ),
+    typography: $avalon-typography,
+  )
+);
 $avalon-dark-theme: mat.define-theme(
   (
     color: (
@@ -160,7 +221,48 @@ $avalon-dark-theme: mat.define-theme(
   )
 );
 
+@mixin theme-avalon-buttons() {
+  .ava-btn-secondary {
+    @include mat.button-theme($avalon-secondary-theme);
+    @include mat.fab-theme($avalon-secondary-theme);
+
+    --mdc-protected-button-container-shape: 8px;
+    --mdc-outlined-button-container-shape: 8px;
+    --mdc-filled-button-container-shape: 8px;
+    --mdc-text-button-container-shape: 8px;
+  }
+
+  .ava-btn-tertiary {
+    @include mat.button-theme($avalon-tertiary-theme);
+
+    --mdc-protected-button-container-shape: 8px;
+    --mdc-outlined-button-container-shape: 8px;
+    --mdc-filled-button-container-shape: 8px;
+    --mdc-text-button-container-shape: 8px;
+  }
+
+  .ava-btn-error {
+    @include mat.button-theme($avalon-error-theme);
+
+    --mdc-protected-button-container-shape: 8px;
+    --mdc-outlined-button-container-shape: 8px;
+    --mdc-filled-button-container-shape: 8px;
+    --mdc-text-button-container-shape: 8px;
+  }
+
+  .ava-btn-success {
+    @include mat.button-theme($avalon-success-theme);
+
+    --mdc-protected-button-container-shape: 8px;
+    --mdc-outlined-button-container-shape: 8px;
+    --mdc-filled-button-container-shape: 8px;
+    --mdc-text-button-container-shape: 8px;
+  }
+}
+
 @mixin theme-avalon-overrides() {
+  @include theme-avalon-buttons;
+
   --mdc-protected-button-container-shape: 8px;
   --mdc-outlined-button-container-shape: 8px;
   --mdc-filled-button-container-shape: 8px;
@@ -168,8 +270,26 @@ $avalon-dark-theme: mat.define-theme(
   --mdc-chip-container-shape-radius: 999px;
   --mdc-filled-text-field-container-shape: 4px;
   --mdc-dialog-container-shape: 12px;
-
-  // --mat-autocomplete-background-color: #e6e6e6;
   --mat-option-selected-state-layer-color: $SurfaceContainerHighest;
   --mat-option-selected-state-label-text-color: #5e33bf;
+
+  .ava-btn-xsmall {
+    height: auto;
+    height: 4px 8px;
+  }
+
+  .ava-btn-small {
+    height: auto;
+    padding: 4px 8px;
+  }
+
+  .ava-btn-large {
+    height: auto;
+    padding: 28px 48px;
+  }
+
+  .ava-btn-promotional {
+    height: auto;
+    padding: 42px 56px;
+  }
 }
