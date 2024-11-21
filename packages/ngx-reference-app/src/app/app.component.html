@@ -27,6 +27,40 @@
     </div>
   </hlx-header-global>
 </header>
+} @else if(isAvalon$ | async) {
+<header ava-header>
+  <ava-header-product-name
+    >Clarivate Digital Experience
+  </ava-header-product-name>
+  <div class="ava-selectors">
+    <language-selector></language-selector>
+    <theme-selector></theme-selector>
+    <mode-selector></mode-selector>
+  </div>
+  <ava-header-global>
+    <div
+      style="
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 10px;
+        width: 100%;
+        height: 100%;
+      "
+    >
+      <mat-icon>language</mat-icon>
+      <mat-icon>apps</mat-icon>
+      <mat-icon class="material-icons-outlined">account_circle</mat-icon>
+    </div>
+  </ava-header-global>
+  <ava-subheader>
+    <mat-tab-group mat-stretch-tabs="false" mat-align-tabs="start">
+      <mat-tab label="First"></mat-tab>
+      <mat-tab label="Second"></mat-tab>
+      <mat-tab label="Third"></mat-tab>
+    </mat-tab-group>
+  </ava-subheader>
+</header>
 } @else {
 <header cdx-header>
   <cdx-header-global>

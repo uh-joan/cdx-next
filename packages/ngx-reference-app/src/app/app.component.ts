@@ -20,6 +20,7 @@ export class AppComponent {
   routerEvents$;
 
   isHelix$;
+  isAvalon$;
 
   constructor(
     public themeService: ThemeService,
@@ -36,6 +37,12 @@ export class AppComponent {
     this.isHelix$ = this.themeService.currentTheme$.pipe(
       map((theme) => {
         return theme === 'helix';
+      }),
+    );
+
+    this.isAvalon$ = this.themeService.currentTheme$.pipe(
+      map((theme) => {
+        return ['avalon', 'innography', 'derwent'].includes(theme);
       }),
     );
   }

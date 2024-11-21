@@ -1,5 +1,6 @@
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
+import { MatTabsModule } from '@angular/material/tabs';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {
   AnalyticsContextSchema,
@@ -11,6 +12,7 @@ import {
   HeaderGlobalUserProfileModule,
 } from '@cdx/ngx-authentication';
 import {
+  AvalonHeaderModule,
   FooterModule,
   HeaderModule,
   HelixFooterModule,
@@ -52,6 +54,7 @@ const ANALYTICS_CONTEXT: AnalyticsContextSchema = {
     HeaderGlobalUserProfileModule,
     HeaderGlobalSessionManagementModule,
     MatIconModule,
+    MatTabsModule,
     AnalyticsModule.forRoot(
       {
         appId: 'reference-app',
@@ -76,6 +79,7 @@ const ANALYTICS_CONTEXT: AnalyticsContextSchema = {
     ThemeSelectorComponent,
     LanguageSelectorComponent,
     HelixHeaderModule,
+    AvalonHeaderModule,
     HelixFooterModule,
   ],
   providers: [],

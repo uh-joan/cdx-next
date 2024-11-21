@@ -1,3 +1,7 @@
+export * from './lib/avalon/header/avalon-header.component';
+export * from './lib/avalon/header/avalon-header.module';
+export * from './lib/avalon/header/avalon-header-global.component';
+export * from './lib/avalon/header/avalon-header-product-name-or-logo.component';
 export * from './lib/footer/footer.component';
 export * from './lib/footer/footer.module';
 export * from './lib/footer/footer-group.component';

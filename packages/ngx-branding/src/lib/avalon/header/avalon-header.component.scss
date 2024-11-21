@@ -1,0 +1,98 @@
+@use '@angular/material' as mat;
+@use '../../../../../theme-angular-material/styles' as cdx;
+
+$header-spacing: 2rem;
+$header-bar-base-height: 48px;
+$white-color: white;
+$black-background: black;
+
+.ava-header {
+  &__global-bar {
+    @include mat.all-component-themes(cdx.$avalon-dark-theme);
+    @include mat.all-component-densities(-5);
+
+    display: flex;
+    height: $header-bar-base-height;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 $header-spacing;
+    background: $black-background;
+    color: $white-color;
+    font-family: 'Clarivate Regular', sans-serif;
+
+    .mat-mdc-outlined-button:not(:disabled),
+    .mat-mdc-button {
+      border-color: inherit;
+      color: inherit;
+    }
+  }
+
+  &__logo--clarivate {
+    display: flex;
+    width: 100%;
+    height: 32px;
+    cursor: default;
+    font-size: 24px;
+    gap: 20px;
+    white-space: nowrap;
+
+    > svg {
+      min-width: 146px;
+      height: 34px;
+      cursor: pointer;
+
+      > path {
+        fill: $white-color;
+      }
+    }
+  }
+
+  &__content {
+    display: flex;
+    height: 1.5rem;
+    gap: 10px;
+  }
+
+  .cdx-separator {
+    width: 1px;
+    height: 100%;
+    margin: 0 8px;
+    background: #616161;
+    content: '';
+    vertical-align: middle;
+  }
+
+  &__product-identification {
+    font-family: 'Regular Clarivate', sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 32px;
+
+    // line-height: 35px;
+    text-align: left;
+    text-decoration-skip-ink: none;
+    text-underline-position: from-font;
+  }
+
+  &__product-name-or-logo {
+    // margin: calc(header.$header-spacing / 2) 0;
+  }
+
+  &__global,
+  slot[name='cdx-header-global'] {
+    display: inherit;
+    align-items: inherit;
+    column-gap: calc($header-spacing / 8);
+  }
+
+  .mat-tab-nav-bar {
+    align-self: end;
+    border: none;
+
+    &[cdx-size-compact] .mat-tab-link {
+      width: fit-content;
+      min-width: unset;
+    }
+  }
+}
