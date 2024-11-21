@@ -5,6 +5,7 @@
 
 $SurfaceContainerHighest: #e6e6e6;
 $primaryColor: #5e33bf;
+$elevation2: 5px 5px 10px 0 #a6abbd66;
 $_palettes: (
   primary: (
     0: #000,
@@ -258,20 +259,6 @@ $avalon-dark-theme: mat.define-theme(
     --mdc-filled-button-container-shape: 8px;
     --mdc-text-button-container-shape: 8px;
   }
-}
-
-@mixin theme-avalon-overrides() {
-  @include theme-avalon-buttons;
-
-  --mdc-protected-button-container-shape: 8px;
-  --mdc-outlined-button-container-shape: 8px;
-  --mdc-filled-button-container-shape: 8px;
-  --mdc-text-button-container-shape: 8px;
-  --mdc-chip-container-shape-radius: 999px;
-  --mdc-filled-text-field-container-shape: 4px;
-  --mdc-dialog-container-shape: 12px;
-  --mat-option-selected-state-layer-color: $SurfaceContainerHighest;
-  --mat-option-selected-state-label-text-color: #5e33bf;
 
   .ava-btn-xsmall {
     height: auto;
@@ -291,5 +278,29 @@ $avalon-dark-theme: mat.define-theme(
   .ava-btn-promotional {
     height: auto;
     padding: 42px 56px;
+  }
+}
+
+@mixin theme-avalon-overrides() {
+  @include theme-avalon-buttons;
+
+  --mdc-protected-button-container-shape: 8px;
+  --mdc-outlined-button-container-shape: 8px;
+  --mdc-filled-button-container-shape: 8px;
+  --mdc-text-button-container-shape: 8px;
+  --mdc-chip-container-shape-radius: 999px;
+  --mdc-filled-text-field-container-shape: 4px;
+  --mdc-dialog-container-shape: 12px;
+  --mat-option-selected-state-layer-color: $SurfaceContainerHighest;
+  --mat-option-selected-state-label-text-color: #5e33bf;
+  --mdc-elevated-card-container-elevation: $elevation2;
+  --mdc-elevated-card-container-color: #fff;
+  --mat-dialog-container-elevation-shadow: $elevation2;
+
+  .mat-mdc-card-header,
+  .mat-mdc-card-content,
+  .mat-mdc-card-actions,
+  .mat-mdc-dialog-surface {
+    padding: 24px;
   }
 }
