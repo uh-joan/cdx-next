@@ -5,7 +5,7 @@ import { Meta, moduleMetadata, StoryFn } from '@storybook/angular';
 import { html } from 'common-tags';
 
 export default {
-  title: 'base/Chips',
+  title: 'avalon/Chips',
   component: MatChipsModule,
   decorators: [
     moduleMetadata({
@@ -14,7 +14,7 @@ export default {
   ],
 } as Meta;
 
-const ChipsTemplate: StoryFn = () => ({
+const AvalonChipsTemplate: StoryFn = () => ({
   template: html`
     <h3>Chips</h3>
     <div class="story story--sections">
@@ -65,8 +65,16 @@ const ChipsTemplate: StoryFn = () => ({
           <mat-chip-option>Ringo</mat-chip-option>
         </mat-chip-listbox>
       </div>
+      <div class="story__section">
+        <h4>Chip Colors</h4>
+        <mat-chip-set>
+          <mat-chip>basic</mat-chip>
+          <mat-chip class="ava-chip-primary">primary</mat-chip>
+          <mat-chip class="ava-chip-secondary">secondary</mat-chip>
+        </mat-chip-set>
+      </div>
     </div>
   `,
 });
 
-export const chips = ChipsTemplate.bind({});
+export const chips = AvalonChipsTemplate.bind({});

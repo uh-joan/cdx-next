@@ -5,7 +5,7 @@ import { Meta, moduleMetadata, StoryFn } from '@storybook/angular';
 import { html } from 'common-tags';
 
 export default {
-  title: 'base/Chips',
+  title: 'helix/Chips',
   component: MatChipsModule,
   decorators: [
     moduleMetadata({
@@ -14,7 +14,7 @@ export default {
   ],
 } as Meta;
 
-const ChipsTemplate: StoryFn = () => ({
+const HelixChipsTemplate: StoryFn = () => ({
   template: html`
     <h3>Chips</h3>
     <div class="story story--sections">
@@ -65,8 +65,20 @@ const ChipsTemplate: StoryFn = () => ({
           <mat-chip-option>Ringo</mat-chip-option>
         </mat-chip-listbox>
       </div>
+      <div class="story__section">
+        <h4>Chip Colors</h4>
+        <mat-chip-set>
+          <mat-chip class="hlx-primary-chip">primary</mat-chip>
+          <mat-chip class="hlx-accent-chip">accent</mat-chip>
+          <mat-chip class="hlx-negative-chip">negative</mat-chip>
+          <mat-chip class="hlx-warn-chip" color="primary">warn</mat-chip>
+          <mat-chip class="hlx-positive-chip" color="accent">positive</mat-chip>
+          <mat-chip class="hlx-info-chip" color="warn">info</mat-chip>
+          <mat-chip class="hlx-neutral-chip">neutral</mat-chip>
+        </mat-chip-set>
+      </div>
     </div>
   `,
 });
 
-export const chips = ChipsTemplate.bind({});
+export const chips = HelixChipsTemplate.bind({});

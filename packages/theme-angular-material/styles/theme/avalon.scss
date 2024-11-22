@@ -285,6 +285,7 @@ $avalon-dark-theme: mat.define-theme(
   @include theme-avalon-buttons;
   @include mat.checkbox-theme($avalon-secondary-theme);
   @include mat.radio-theme($avalon-secondary-theme);
+  @include mat.slide-toggle-theme($avalon-secondary-theme);
 
   --mdc-protected-button-container-shape: 8px;
   --mdc-outlined-button-container-shape: 8px;
@@ -308,5 +309,18 @@ $avalon-dark-theme: mat.define-theme(
 
   .ava-checkbox-error {
     @include mat.checkbox-theme($avalon-error-theme);
+  }
+
+  .ava-chip-primary {
+    @include mat.chips-color($avalon-light-theme, $color-variant: primary);
+
+    --mdc-chip-elevated-container-color: #c2c4d1;
+  }
+
+  .ava-chip-secondary {
+    @include mat.chips-color($avalon-light-theme, $color-variant: secondary);
+
+    --mdc-chip-elevated-container-color: #41424f;
+    --mdc-chip-label-text-color: #fff;
   }
 }
