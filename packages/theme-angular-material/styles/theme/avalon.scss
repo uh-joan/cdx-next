@@ -283,6 +283,8 @@ $avalon-dark-theme: mat.define-theme(
 
 @mixin theme-avalon-overrides() {
   @include theme-avalon-buttons;
+  @include mat.checkbox-theme($avalon-secondary-theme);
+  @include mat.radio-theme($avalon-secondary-theme);
 
   --mdc-protected-button-container-shape: 8px;
   --mdc-outlined-button-container-shape: 8px;
@@ -302,5 +304,9 @@ $avalon-dark-theme: mat.define-theme(
   .mat-mdc-card-actions,
   .mat-mdc-dialog-surface {
     padding: 24px;
+  }
+
+  .ava-checkbox-error {
+    @include mat.checkbox-theme($avalon-error-theme);
   }
 }
