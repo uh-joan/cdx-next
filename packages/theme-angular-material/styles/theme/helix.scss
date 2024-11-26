@@ -1,5 +1,6 @@
 /* stylelint-disable scss/dollar-variable-pattern */
 @use 'sass:map';
+
 @use '@angular/material' as mat;
 
 $_palettes: (
@@ -137,8 +138,8 @@ $helix-theme: mat.define-theme(
       tertiary: $_tertiary,
     ),
     typography: (
-      brand-family: "'Source Sans 3', sans-serif",
-      plain-family: "'Source Sans 3', sans-serif",
+      brand-family: 'Source Sans 3',
+      plain-family: 'Source Sans 3',
       bold-weight: 600,
       medium-weight: 500,
       regular-weight: 400,

@@ -53,6 +53,52 @@
     </div>
   </div>
 </section>
+<section class="cdx-section cdx-section--contact-form">
+  <form>
+    <mat-form-field appearance="outline">
+      <mat-label>Name</mat-label>
+      <input matInput type="text" placeholder="Enter your name" />
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Email</mat-label>
+      <input matInput type="email" placeholder="Enter your email" />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Birth Date</mat-label>
+      <input matInput [matDatepicker]="picker" />
+      <mat-hint>MM/DD/YYYY</mat-hint>
+      <mat-datepicker-toggle
+        matIconSuffix
+        [for]="picker"
+      ></mat-datepicker-toggle>
+      <mat-datepicker #picker [calendarHeaderComponent]="exampleHeader">
+        <mat-datepicker-actions>
+          <button mat-button matDatepickerCancel>Cancel</button>
+          <button mat-raised-button matDatepickerApply>Apply</button>
+        </mat-datepicker-actions>
+      </mat-datepicker>
+      <!-- <mat-datepicker #picker [calendarHeaderComponent]="exampleHeader"></mat-datepicker>
+     -->
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Message</mat-label>
+      <textarea matInput rows="4" placeholder="Enter your message"></textarea>
+    </mat-form-field>
+    <mat-slide-toggle>Subscribe to our newsletter</mat-slide-toggle>
+    <mat-checkbox>I agree to the terms and conditions</mat-checkbox>
+    <mat-radio-group>
+      <mat-radio-button value="email">Contact me via Email</mat-radio-button>
+      <mat-radio-button value="phone">Contact me via Phone</mat-radio-button>
+    </mat-radio-group>
+
+    <!-- Submit Button -->
+    <div class="button-group">
+      <button mat-raised-button color="primary" type="button">Submit</button>
+    </div>
+  </form>
+</section>
 <section class="cdx-section cdx-section--search">
   <div>
     <h1>{{ 'HOME_PAGE.SEARCH.TITLE' | translate }}</h1>
@@ -93,7 +139,7 @@
     {{ 'HOME_PAGE.SEARCH.BUTTON' | translate }}
   </button>
 </section>
-<section class="cdx-section">
+<section class="cdx-section cdx-section">
   <div>
     <h1>{{ 'HOME_PAGE.PLAYGROUND.TITLE' | translate }}</h1>
     <p>{{ 'HOME_PAGE.PLAYGROUND.DESCRIPTION' | translate }}</p>

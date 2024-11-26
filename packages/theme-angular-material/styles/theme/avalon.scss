@@ -154,8 +154,8 @@ $_success_palette: (
 );
 $_success: map.merge($_success_palette, $_rest);
 $avalon-typography: (
-  brand-family: "'Source Sans 3', sans-serif",
-  plain-family: "'Source Sans 3', sans-serif",
+  brand-family: 'Source Sans 3',
+  plain-family: 'Source Sans 3',
   bold-weight: 700,
   medium-weight: 600,
   regular-weight: 400,
@@ -296,6 +296,9 @@ $avalon-dark-theme: mat.define-theme(
   --mdc-elevated-card-container-elevation: $elevation2;
   --mdc-elevated-card-container-color: #fff;
   --mat-dialog-container-elevation-shadow: $elevation2;
+  --mat-datepicker-calendar-container-background-color: #f5f5f5;
+  --mat-datepicker-calendar-container-text-color: #7e7e7e;
+  --mat-datepicker-calendar-container-elevation-shadow: 5px 5px 10px 0 #a6abbd66;
 
   .mat-mdc-card-header,
   .mat-mdc-card-content,

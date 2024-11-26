@@ -34,6 +34,40 @@
     }
   }
 
+  &--contact-form {
+    display: flex;
+    justify-content: center;
+    padding: 2rem 0;
+
+    form {
+      display: grid;
+      width: 100%;
+      max-width: 400px;
+      grid-template-columns: 1fr;
+      row-gap: 1rem;
+    }
+
+    mat-form-field,
+    textarea {
+      width: 100%;
+    }
+
+    mat-slide-toggle {
+      justify-self: start;
+    }
+
+    mat-checkbox {
+      justify-self: start;
+    }
+
+    mat-radio-group {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+  }
+
   &--title {
     padding-top: 8rem;
   }
