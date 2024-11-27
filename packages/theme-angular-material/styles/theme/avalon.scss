@@ -223,8 +223,8 @@ $avalon-dark-theme: mat.define-theme(
 
 @mixin theme-avalon-buttons() {
   .ava-btn-secondary {
-    @include mat.button-theme($avalon-secondary-theme);
-    @include mat.fab-theme($avalon-secondary-theme);
+    @include mat.button-color($avalon-secondary-theme);
+    @include mat.fab-color($avalon-secondary-theme);
 
     --mdc-protected-button-container-shape: 8px;
     --mdc-outlined-button-container-shape: 8px;
@@ -233,7 +233,8 @@ $avalon-dark-theme: mat.define-theme(
   }
 
   .ava-btn-tertiary {
-    @include mat.button-theme($avalon-tertiary-theme);
+    @include mat.button-color($avalon-tertiary-theme);
+    @include mat.fab-color($avalon-tertiary-theme);
 
     --mdc-protected-button-container-shape: 8px;
     --mdc-outlined-button-container-shape: 8px;
@@ -242,7 +243,8 @@ $avalon-dark-theme: mat.define-theme(
   }
 
   .ava-btn-error {
-    @include mat.button-theme($avalon-error-theme);
+    @include mat.button-color($avalon-error-theme);
+    @include mat.fab-color($avalon-error-theme);
 
     --mdc-protected-button-container-shape: 8px;
     --mdc-outlined-button-container-shape: 8px;
@@ -251,7 +253,8 @@ $avalon-dark-theme: mat.define-theme(
   }
 
   .ava-btn-success {
-    @include mat.button-theme($avalon-success-theme);
+    @include mat.button-color($avalon-success-theme);
+    @include mat.fab-color($avalon-success-theme);
 
     --mdc-protected-button-container-shape: 8px;
     --mdc-outlined-button-container-shape: 8px;
@@ -280,9 +283,9 @@ $avalon-dark-theme: mat.define-theme(
 
 @mixin theme-avalon-overrides() {
   @include theme-avalon-buttons;
-  @include mat.checkbox-theme($avalon-secondary-theme);
-  @include mat.radio-theme($avalon-secondary-theme);
-  @include mat.slide-toggle-theme($avalon-secondary-theme);
+  @include mat.checkbox-color($avalon-secondary-theme);
+  @include mat.radio-color($avalon-secondary-theme);
+  @include mat.slide-toggle-color($avalon-secondary-theme);
 
   --mdc-protected-button-container-shape: 8px;
   --mdc-outlined-button-container-shape: 8px;

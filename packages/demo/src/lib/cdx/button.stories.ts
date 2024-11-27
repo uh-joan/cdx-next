@@ -114,24 +114,9 @@ const floatingActionButtonTemplate: StoryFn = () => ({
     <div class="story">
       <button
         mat-fab
-        color="primary"
         aria-label="Example icon button with a create new folder icond"
       >
         <mat-icon>add</mat-icon>
-      </button>
-      <button
-        mat-fab
-        color="accent"
-        aria-label="Example icon button with a chat icon"
-      >
-        <mat-icon>chat</mat-icon>
-      </button>
-      <button
-        mat-fab
-        color="warn"
-        aria-label="Example icon button with an important notification icon"
-      >
-        <mat-icon>notification_important</mat-icon>
       </button>
       <button
         mat-fab
@@ -150,24 +135,9 @@ const miniFloatingActionButtonTemplate: StoryFn = () => ({
     <div class="story">
       <button
         mat-mini-fab
-        color="primary"
         aria-label="Example icon button with a create new folder icond"
       >
         <mat-icon>add</mat-icon>
-      </button>
-      <button
-        mat-mini-fab
-        color="accent"
-        aria-label="Example icon button with a chat icon"
-      >
-        <mat-icon>chat</mat-icon>
-      </button>
-      <button
-        mat-mini-fab
-        color="warn"
-        aria-label="Example icon button with an important notification icon"
-      >
-        <mat-icon>notification_important</mat-icon>
       </button>
       <button
         mat-mini-fab

@@ -130,6 +130,7 @@ $_rest: (
 );
 $_primary: map.merge(map.get($_palettes, primary), $_rest);
 $_tertiary: map.merge(map.get($_palettes, tertiary), $_rest);
+$_error: map.merge(map.get($_palettes, error), $_rest);
 $helix-theme: mat.define-theme(
   (
     color: (
@@ -155,8 +156,19 @@ $helix-dark-theme: mat.define-theme(
     ),
   )
 );
+$helix-error-theme: mat.define-theme(
+  (
+    color: (
+      theme-type: light,
+      primary: $_error,
+      tertiary: $_tertiary,
+    ),
+  )
+);
 
 @mixin theme-helix-overrides() {
+  @include mat.fab-color($helix-theme, $color-variant: secondary);
+
   --mdc-protected-button-container-shape: 2px;
   --mdc-outlined-button-container-shape: 2px;
   --mdc-filled-button-container-shape: 2px;
@@ -180,8 +192,31 @@ $helix-dark-theme: mat.define-theme(
   --mat-divider-color: #dfe1e2;
   --mdc-linear-progress-track-color: #cfcfcf;
   --mdc-chip-container-shape-radius: 16px;
+  --mdc-fab-container-shape: 28px;
+  --mdc-fab-small-container-shape: 28px;
 
-  .mdc-text-field {
+  a {
+    color: inherit;
+    text-decoration: none;
+
+    &:hover {
+      cursor: pointer;
+      text-decoration: underline;
+    }
+
+    &[underline] {
+      text-decoration: underline;
+      text-decoration-skip-ink: auto;
+      text-decoration-style: solid;
+      text-underline-position: from-font;
+
+      &:hover {
+        text-decoration-thickness: 12%;
+      }
+    }
+  }
+
+  a .mdc-text-field {
     border-radius: 0 !important;
 
     --mdc-shape-small: 0;
@@ -193,14 +228,28 @@ $helix-dark-theme: mat.define-theme(
 
   .hlx-btn-accent {
     @include mat.button-color($helix-theme, $color-variant: tertiary);
+    @include mat.fab-color($helix-theme, $color-variant: tertiary);
+
+    --mdc-fab-container-color: #5e33bf;
+    --mat-fab-foreground-color: #fff;
+    --mdc-fab-small-container-color: #5e33bf;
+    --mat-fab-small-foreground-color: #fff;
   }
 
   .hlx-btn-negative {
-    @include mat.button-color($helix-theme, $color-variant: error);
+    @include mat.button-color($helix-error-theme);
+
+    --mdc-fab-container-color: #c43136;
+    --mdc-fab-small-container-color: #c43136;
   }
 
   .hlx-btn-invert {
     @include mat.button-color($helix-theme, $color-variant: secondary);
+
+    --mdc-fab-container-color: #fff;
+    --mat-fab-foreground-color: #2a2b2d;
+    --mdc-fab-small-container-color: #fff;
+    --mat-fab-small-foreground-color: #2a2b2d;
   }
 
   .hlx-btn-small {

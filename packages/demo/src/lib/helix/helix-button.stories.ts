@@ -247,6 +247,76 @@ const themeButtonsTemplate: StoryFn = () => ({
           </div>
         </div>
       </div>
+      <div class="btn-row">
+        <h2>Fab</h2>
+        <div class="row">
+          <div class="row">
+            <button mat-fab><mat-icon>anchor</mat-icon></button>
+          </div>
+
+          <div class="row hlx-btn-accent">
+            <button mat-fab><mat-icon>anchor</mat-icon></button>
+          </div>
+          <div class="row hlx-btn-negative">
+            <button mat-fab><mat-icon>anchor</mat-icon></button>
+          </div>
+          <div class="row hlx-btn-invert">
+            <button mat-fab><mat-icon>anchor</mat-icon></button>
+          </div>
+        </div>
+        <div class="row">
+          <div class="row">
+            <button mat-fab disabled><mat-icon>anchor</mat-icon></button>
+          </div>
+
+          <div class="row hlx-btn-accent">
+            <button mat-fab disabled><mat-icon>anchor</mat-icon></button>
+          </div>
+          <div class="row hlx-btn-negative">
+            <button mat-fab disabled>
+              <mat-icon>anchor</mat-icon>
+            </button>
+          </div>
+          <div class="row hlx-btn-invert">
+            <button mat-fab disabled><mat-icon>anchor</mat-icon></button>
+          </div>
+        </div>
+      </div>
+      <div class="btn-row">
+        <h2>Minifab</h2>
+        <div class="row">
+          <div class="row">
+            <button mat-mini-fab><mat-icon>anchor</mat-icon></button>
+          </div>
+
+          <div class="row hlx-btn-accent">
+            <button mat-mini-fab><mat-icon>anchor</mat-icon></button>
+          </div>
+          <div class="row hlx-btn-negative">
+            <button mat-mini-fab><mat-icon>anchor</mat-icon></button>
+          </div>
+          <div class="row hlx-btn-invert">
+            <button mat-mini-fab><mat-icon>anchor</mat-icon></button>
+          </div>
+        </div>
+        <div class="row">
+          <div class="row">
+            <button mat-mini-fab disabled><mat-icon>anchor</mat-icon></button>
+          </div>
+
+          <div class="row hlx-btn-accent">
+            <button mat-mini-fab disabled><mat-icon>anchor</mat-icon></button>
+          </div>
+          <div class="row hlx-btn-negative">
+            <button mat-mini-fab disabled>
+              <mat-icon>anchor</mat-icon>
+            </button>
+          </div>
+          <div class="row hlx-btn-invert">
+            <button mat-mini-fab disabled><mat-icon>anchor</mat-icon></button>
+          </div>
+        </div>
+      </div>
       <div class="btn-row hlx-btn-large">
         <h2>Large Size</h2>
         <div class="row">

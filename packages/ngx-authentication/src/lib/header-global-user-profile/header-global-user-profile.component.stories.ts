@@ -19,7 +19,7 @@ import { HeaderGlobalUserProfileComponent } from './header-global-user-profile.c
 import { HeaderGlobalUserProfileModule } from './header-global-user-profile.module';
 
 export default {
-  title: 'Header/HeaderGlobalUserProfile',
+  title: 'Base/HeaderGlobalUserProfile',
   component: HeaderGlobalUserProfileComponent,
   decorators: [
     moduleMetadata({
