@@ -15,7 +15,7 @@ import {
 import { html } from 'common-tags';
 
 export default {
-  title: 'base/Footer',
+  title: 'avalon/Footer',
   component: FooterComponent,
   decorators: [
     moduleMetadata({
