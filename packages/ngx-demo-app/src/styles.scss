@@ -48,7 +48,7 @@ body {
 
   &.cdx-theme-innography {
     @include cdx.theme(cdx.$innography-light-theme);
-    @include cdx.theme-avalon-overrides;
+    @include cdx.theme-innography-overrides;
 
     &.cdx-dark-mode {
       @include cdx.theme(cdx.$innography-dark-theme);
@@ -57,7 +57,7 @@ body {
 
   &.cdx-theme-derwent {
     @include cdx.theme(cdx.$derwent-light-theme);
-    @include cdx.theme-avalon-overrides;
+    @include cdx.theme-derwent-overrides;
 
     &.cdx-dark-mode {
       @include cdx.theme(cdx.$derwent-dark-theme);

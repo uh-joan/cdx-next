@@ -1,3 +1,4 @@
+/* stylelint-disable scss/no-global-function-names */
 /* stylelint-disable scss/dollar-variable-pattern */
 @use 'sass:map';
 @use '@angular/material' as mat;
@@ -154,7 +155,7 @@ $_success_palette: (
 );
 $_success: map.merge($_success_palette, $_rest);
 $avalon-typography: (
-  brand-family: 'Source Sans 3',
+  brand-family: 'Clarivate Regular',
   plain-family: 'Source Sans 3',
   bold-weight: 700,
   medium-weight: 600,
@@ -220,7 +221,158 @@ $avalon-dark-theme: mat.define-theme(
     typography: $avalon-typography,
   )
 );
+$font-families: (
+  display: 'Clarivate Regular, sans-serif',
+  headline: 'Clarivate Regular, sans-serif',
+  title: 'Source Sans 3, sans-serif',
+  body: 'Source Sans 3, sans-serif',
+  label: 'Source Sans 3, sans-serif',
+);
+$weights: (
+  regular: 400,
+  semibold: 600,
+  bold: 700,
+);
+$sizes: (
+  display: (
+    large: 48px,
+    medium: 40px,
+    small: 32px,
+  ),
+  headline: (
+    large: 32px,
+    medium: 28px,
+    small: 24px,
+  ),
+  title: (
+    large: 24px,
+    medium: 20px,
+    small: 16px,
+  ),
+  body: (
+    large: 18px,
+    medium: 16px,
+    small: 14px,
+  ),
+  label: (
+    large: 16px,
+    medium: 14px,
+    small: 12px,
+  ),
+);
+$line-heights: (
+  display: (
+    large: 60px,
+    medium: 48px,
+    small: 40px,
+  ),
+  headline: (
+    large: 40px,
+    medium: 36px,
+    small: 32px,
+  ),
+  title: (
+    large: 32px,
+    medium: 28px,
+    small: 24px,
+  ),
+  body: (
+    large: 28px,
+    medium: 24px,
+    small: 20px,
+  ),
+  label: (
+    large: 24px,
+    medium: 20px,
+    small: 16px,
+  ),
+);
 
+@mixin typography($type, $size, $weight: $regular) {
+  $font-size: map-get(map-get($sizes, $type), $size);
+  $line-height: map-get(map-get($line-heights, $type), $size);
+
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: $font-size;
+  font-weight: $weight;
+  letter-spacing: normal;
+  line-height: $line-height;
+}
+
+@mixin ava-display($size, $weight: bold) {
+  font-family: map-get($font-families, display);
+  @include typography(display, $size, map-get($weights, $weight));
+}
+
+@mixin ava-headline($size, $weight: bold) {
+  font-family: map-get($font-families, headline);
+  @include typography(headline, $size, map-get($weights, $weight));
+}
+
+@mixin ava-title($size, $weight: semibold) {
+  font-family: map-get($font-families, title);
+  @include typography(title, $size, map-get($weights, $weight));
+}
+
+@mixin ava-body($size, $weight: regular) {
+  font-family: map-get($font-families, body);
+  @include typography(body, $size, map-get($weights, $weight));
+}
+
+@mixin ava-label($size, $weight: regular) {
+  font-family: map-get($font-families, label);
+  @include typography(label, $size, map-get($weights, $weight));
+}
+
+@mixin theme-avalon-typography-levels {
+  .ava-display-1 {
+    @include ava-display(large);
+  }
+
+  .ava-display-2 {
+    @include ava-display(medium);
+  }
+
+  .ava-display-3 {
+    @include ava-display(small);
+  }
+
+  .ava-headline-1 {
+    @include ava-headline(large);
+  }
+
+  .ava-headline-2 {
+    @include ava-headline(medium);
+  }
+
+  .ava-headline-3 {
+    @include ava-headline(small);
+  }
+
+  .ava-body-1 {
+    @include ava-body(large);
+  }
+
+  .ava-body-2 {
+    @include ava-body(medium);
+  }
+
+  .ava-body-3 {
+    @include ava-body(small, bold);
+  }
+
+  .ava-label-1 {
+    @include ava-label(large);
+  }
+
+  .ava-label-2 {
+    @include ava-label(medium);
+  }
+
+  .ava-label-3 {
+    @include ava-label(small);
+  }
+}
 @mixin theme-avalon-buttons() {
   .ava-btn-secondary {
     @include mat.button-color($avalon-secondary-theme);
@@ -281,11 +433,28 @@ $avalon-dark-theme: mat.define-theme(
   }
 }
 
-@mixin theme-avalon-overrides() {
-  @include theme-avalon-buttons;
+@mixin theme-avalon-color-overrides() {
   @include mat.checkbox-color($avalon-secondary-theme);
   @include mat.radio-color($avalon-secondary-theme);
   @include mat.slide-toggle-color($avalon-secondary-theme);
+
+  .ava-chip-primary {
+    @include mat.chips-color($avalon-light-theme, $color-variant: primary);
+
+    --mdc-chip-elevated-container-color: #c2c4d1;
+  }
+
+  .ava-chip-secondary {
+    @include mat.chips-color($avalon-light-theme, $color-variant: secondary);
+
+    --mdc-chip-elevated-container-color: #41424f;
+    --mdc-chip-label-text-color: #fff;
+  }
+}
+
+@mixin theme-avalon-general-overrides() {
+  @include theme-avalon-typography-levels;
+  @include theme-avalon-buttons;
 
   --mdc-protected-button-container-shape: 8px;
   --mdc-outlined-button-container-shape: 8px;
@@ -313,17 +482,9 @@ $avalon-dark-theme: mat.define-theme(
   .ava-checkbox-error {
     @include mat.checkbox-theme($avalon-error-theme);
   }
+}
 
-  .ava-chip-primary {
-    @include mat.chips-color($avalon-light-theme, $color-variant: primary);
-
-    --mdc-chip-elevated-container-color: #c2c4d1;
-  }
-
-  .ava-chip-secondary {
-    @include mat.chips-color($avalon-light-theme, $color-variant: secondary);
-
-    --mdc-chip-elevated-container-color: #41424f;
-    --mdc-chip-label-text-color: #fff;
-  }
+@mixin theme-avalon-overrides() {
+  @include theme-avalon-general-overrides;
+  @include theme-avalon-color-overrides;
 }

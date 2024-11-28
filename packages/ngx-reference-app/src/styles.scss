@@ -49,6 +49,8 @@ body {
 
   &.cdx-theme-avalon {
     @include cdx.theme(cdx.$avalon-light-theme);
+    @include mat.typography-hierarchy(cdx.$avalon-light-theme);
+    @include mat.system-level-typography(cdx.$avalon-light-theme);
     @include cdx.theme-avalon-overrides;
 
     &.cdx-dark-mode {
@@ -58,7 +60,7 @@ body {
 
   &.cdx-theme-innography {
     @include cdx.theme(cdx.$innography-light-theme);
-    @include cdx.theme-avalon-overrides;
+    @include cdx.theme-innography-overrides;
 
     &.cdx-dark-mode {
       @include cdx.theme(cdx.$innography-dark-theme);
@@ -67,7 +69,7 @@ body {
 
   &.cdx-theme-derwent {
     @include cdx.theme(cdx.$derwent-light-theme);
-    @include cdx.theme-avalon-overrides;
+    @include cdx.theme-derwent-overrides;
 
     &.cdx-dark-mode {
       @include cdx.theme(cdx.$derwent-dark-theme);

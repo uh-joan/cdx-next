@@ -151,3 +151,35 @@ $derwent-dark-theme: mat.define-theme(
     typography: ava.$avalon-typography,
   )
 );
+$derwent-secondary-theme: mat.define-theme(
+  (
+    color: (
+      theme-type: light,
+      primary: $_secondary,
+      tertiary: $_tertiary,
+    ),
+    typography: ava.$avalon-typography,
+  )
+);
+@mixin theme-derwent-color-overrides() {
+  @include mat.checkbox-color($derwent-secondary-theme);
+  @include mat.radio-color($derwent-secondary-theme);
+  @include mat.slide-toggle-color($derwent-secondary-theme);
+
+  .ava-chip-primary {
+    @include mat.chips-color($derwent-light-theme, $color-variant: primary);
+
+    --mdc-chip-elevated-container-color: #c2c4d1;
+  }
+
+  .ava-chip-secondary {
+    @include mat.chips-color($derwent-light-theme, $color-variant: secondary);
+
+    --mdc-chip-elevated-container-color: #41424f;
+    --mdc-chip-label-text-color: #fff;
+  }
+}
+@mixin theme-derwent-overrides() {
+  @include ava.theme-avalon-general-overrides;
+  @include theme-derwent-color-overrides;
+}

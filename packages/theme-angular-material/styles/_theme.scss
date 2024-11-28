@@ -8,7 +8,7 @@
 @mixin default($theme: default.$light-theme) {
   @include mat.core;
 
-  html {
+  body {
     @include mat.all-component-themes($theme);
     @include overrides.material-overrides;
     @include focus-indicators-color(colors.$primary-500);

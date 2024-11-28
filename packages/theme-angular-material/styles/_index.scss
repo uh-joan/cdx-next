@@ -7,7 +7,9 @@
   theme-helix-overrides;
 @forward 'theme/helix.m2.scss' show $helix-m2-theme, theme-helix-m2-overrides;
 @forward 'theme/avalon.scss' show $avalon-light-theme, $avalon-dark-theme,
-  theme-avalon-overrides;
+  theme-avalon-overrides, ava-display, ava-headline, ava-title, ava-body,
+  ava-label;
 @forward 'theme/innography.scss' show $innography-light-theme,
-  $innography-dark-theme;
-@forward 'theme/derwent.scss' show $derwent-light-theme, $derwent-dark-theme;
+  $innography-dark-theme, theme-innography-overrides;
+@forward 'theme/derwent.scss' show $derwent-light-theme, $derwent-dark-theme,
+  theme-derwent-overrides;
