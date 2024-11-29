@@ -21,7 +21,7 @@
     "deploy": "npm publish",
     "deploy:cdn": "deploy-aws-s3-cloudfront --bucket cdx-cdn.digital-experience.clarivate.io --distribution EF022SLU13YUI --source dist --destination @cdx/theme-ag-grid/${VERSION:-latest} --non-interactive"
   },
-  "dependencies": {
-    "ag-grid-community": "27.1.0"
+  "peerDependencies": {
+    "ag-grid-community": ">=28"
   }
 }
