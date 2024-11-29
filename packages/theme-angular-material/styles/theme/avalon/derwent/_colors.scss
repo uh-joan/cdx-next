@@ -1,8 +1,4 @@
 /* stylelint-disable scss/dollar-variable-pattern */
-@use 'sass:map';
-@use '@angular/material' as mat;
-@use 'avalon' as ava;
-
 $_palettes: (
   primary: (
     0: #000,
@@ -131,36 +127,7 @@ $_rest: (
 $_primary: map.merge(map.get($_palettes, primary), $_rest);
 $_secondary: map.merge(map.get($_palettes, secondary), $_rest);
 $_tertiary: map.merge(map.get($_palettes, tertiary), $_rest);
-$derwent-light-theme: mat.define-theme(
-  (
-    color: (
-      theme-type: light,
-      primary: $_primary,
-      tertiary: $_tertiary,
-    ),
-    typography: ava.$avalon-typography,
-  )
-);
-$derwent-dark-theme: mat.define-theme(
-  (
-    color: (
-      theme-type: dark,
-      primary: $_primary,
-      tertiary: $_tertiary,
-    ),
-    typography: ava.$avalon-typography,
-  )
-);
-$derwent-secondary-theme: mat.define-theme(
-  (
-    color: (
-      theme-type: light,
-      primary: $_secondary,
-      tertiary: $_tertiary,
-    ),
-    typography: ava.$avalon-typography,
-  )
-);
+
 @mixin theme-derwent-color-overrides() {
   @include mat.checkbox-color($derwent-secondary-theme);
   @include mat.radio-color($derwent-secondary-theme);
@@ -178,8 +145,4 @@ $derwent-secondary-theme: mat.define-theme(
     --mdc-chip-elevated-container-color: #41424f;
     --mdc-chip-label-text-color: #fff;
   }
-}
-@mixin theme-derwent-overrides() {
-  @include ava.theme-avalon-general-overrides;
-  @include theme-derwent-color-overrides;
 }

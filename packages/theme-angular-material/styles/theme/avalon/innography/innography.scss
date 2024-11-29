@@ -1,0 +1,41 @@
+/* stylelint-disable scss/dollar-variable-pattern */
+@use 'sass:map';
+@use '@angular/material' as mat;
+@use '../avalon' as ava;
+@import 'colors';
+
+$innography-light-theme: mat.define-theme(
+  (
+    color: (
+      theme-type: light,
+      primary: $_primary,
+      tertiary: $_tertiary,
+    ),
+    typography: ava.$avalon-typography,
+  )
+);
+$innography-dark-theme: mat.define-theme(
+  (
+    color: (
+      theme-type: dark,
+      primary: $_primary,
+      tertiary: $_tertiary,
+    ),
+    typography: ava.$avalon-typography,
+  )
+);
+$innography-secondary-theme: mat.define-theme(
+  (
+    color: (
+      theme-type: light,
+      primary: $_secondary,
+      tertiary: $_tertiary,
+    ),
+    typography: ava.$avalon-typography,
+  )
+);
+
+@mixin theme-innography-overrides() {
+  @include ava.theme-avalon-general-overrides;
+  @include theme-innography-color-overrides;
+}

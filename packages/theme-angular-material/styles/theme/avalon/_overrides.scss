@@ -1,0 +1,96 @@
+@mixin theme-avalon-overrides() {
+  @include theme-avalon-general-overrides;
+  @include theme-avalon-color-overrides;
+}
+
+@mixin theme-avalon-general-overrides() {
+  @include theme-avalon-typography-levels;
+  @include theme-avalon-buttons;
+
+  --mdc-protected-button-container-shape: 8px;
+  --mdc-outlined-button-container-shape: 8px;
+  --mdc-filled-button-container-shape: 8px;
+  --mdc-text-button-container-shape: 8px;
+  --mdc-chip-container-shape-radius: 999px;
+  --mdc-filled-text-field-container-shape: 4px;
+  --mdc-dialog-container-shape: 12px;
+  --mat-option-selected-state-layer-color: $SurfaceContainerHighest;
+  --mat-option-selected-state-label-text-color: #5e33bf;
+  --mdc-elevated-card-container-elevation: $elevation2;
+  --mdc-elevated-card-container-color: #fff;
+  --mat-dialog-container-elevation-shadow: $elevation2;
+  --mat-datepicker-calendar-container-background-color: #f5f5f5;
+  --mat-datepicker-calendar-container-text-color: #7e7e7e;
+  --mat-datepicker-calendar-container-elevation-shadow: 5px 5px 10px 0 #a6abbd66;
+
+  .mat-mdc-card-header,
+  .mat-mdc-card-content,
+  .mat-mdc-card-actions,
+  .mat-mdc-dialog-surface {
+    padding: 24px;
+  }
+
+  .ava-checkbox-error {
+    @include mat.checkbox-theme($avalon-error-theme);
+  }
+}
+
+@mixin theme-avalon-buttons() {
+  .ava-btn-secondary {
+    @include mat.button-color($avalon-secondary-theme);
+    @include mat.fab-color($avalon-secondary-theme);
+
+    --mdc-protected-button-container-shape: 8px;
+    --mdc-outlined-button-container-shape: 8px;
+    --mdc-filled-button-container-shape: 8px;
+    --mdc-text-button-container-shape: 8px;
+  }
+
+  .ava-btn-tertiary {
+    @include mat.button-color($avalon-tertiary-theme);
+    @include mat.fab-color($avalon-tertiary-theme);
+
+    --mdc-protected-button-container-shape: 8px;
+    --mdc-outlined-button-container-shape: 8px;
+    --mdc-filled-button-container-shape: 8px;
+    --mdc-text-button-container-shape: 8px;
+  }
+
+  .ava-btn-error {
+    @include mat.button-color($avalon-error-theme);
+    @include mat.fab-color($avalon-error-theme);
+
+    --mdc-protected-button-container-shape: 8px;
+    --mdc-outlined-button-container-shape: 8px;
+    --mdc-filled-button-container-shape: 8px;
+    --mdc-text-button-container-shape: 8px;
+  }
+
+  .ava-btn-success {
+    @include mat.button-color($avalon-success-theme);
+    @include mat.fab-color($avalon-success-theme);
+
+    --mdc-protected-button-container-shape: 8px;
+    --mdc-outlined-button-container-shape: 8px;
+    --mdc-filled-button-container-shape: 8px;
+    --mdc-text-button-container-shape: 8px;
+  }
+
+  .ava-btn-xsmall {
+    @include mat.button-density(-2);
+  }
+
+  .ava-btn-small {
+    @include mat.button-density(-1);
+  }
+
+  .ava-btn-large {
+    height: auto;
+    padding: 18px 32px;
+  }
+
+  .ava-btn-promotional {
+    height: auto;
+    padding: 28px 48px;
+  }
+}

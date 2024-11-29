@@ -1,0 +1,160 @@
+@use 'sass:map';
+
+$avalon-typography: (
+  brand-family: 'Clarivate Regular',
+  plain-family: 'Source Sans 3',
+  bold-weight: 700,
+  medium-weight: 600,
+  regular-weight: 400,
+);
+$font-families: (
+  display: 'Clarivate Regular, sans-serif',
+  headline: 'Clarivate Regular, sans-serif',
+  title: 'Source Sans 3, sans-serif',
+  body: 'Source Sans 3, sans-serif',
+  label: 'Source Sans 3, sans-serif',
+);
+$weights: (
+  regular: 400,
+  semibold: 600,
+  bold: 700,
+);
+$sizes: (
+  display: (
+    large: 48px,
+    medium: 40px,
+    small: 32px,
+  ),
+  headline: (
+    large: 32px,
+    medium: 28px,
+    small: 24px,
+  ),
+  title: (
+    large: 24px,
+    medium: 20px,
+    small: 16px,
+  ),
+  body: (
+    large: 18px,
+    medium: 16px,
+    small: 14px,
+  ),
+  label: (
+    large: 16px,
+    medium: 14px,
+    small: 12px,
+  ),
+);
+$line-heights: (
+  display: (
+    large: 60px,
+    medium: 48px,
+    small: 40px,
+  ),
+  headline: (
+    large: 40px,
+    medium: 36px,
+    small: 32px,
+  ),
+  title: (
+    large: 32px,
+    medium: 28px,
+    small: 24px,
+  ),
+  body: (
+    large: 28px,
+    medium: 24px,
+    small: 20px,
+  ),
+  label: (
+    large: 24px,
+    medium: 20px,
+    small: 16px,
+  ),
+);
+@mixin typography($type, $size, $weight: $regular) {
+  $font-size: map.get(map.get($sizes, $type), $size);
+  $line-height: map.get(map.get($line-heights, $type), $size);
+
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: $font-size;
+  font-weight: $weight;
+  letter-spacing: normal;
+  line-height: $line-height;
+}
+
+@mixin ava-display($size, $weight: bold) {
+  font-family: map.get($font-families, display);
+  @include typography(display, $size, map.get($weights, $weight));
+}
+
+@mixin ava-headline($size, $weight: bold) {
+  font-family: map.get($font-families, headline);
+  @include typography(headline, $size, map.get($weights, $weight));
+}
+
+@mixin ava-title($size, $weight: semibold) {
+  font-family: map.get($font-families, title);
+  @include typography(title, $size, map.get($weights, $weight));
+}
+
+@mixin ava-body($size, $weight: regular) {
+  font-family: map.get($font-families, body);
+  @include typography(body, $size, map.get($weights, $weight));
+}
+
+@mixin ava-label($size, $weight: regular) {
+  font-family: map.get($font-families, label);
+  @include typography(label, $size, map.get($weights, $weight));
+}
+
+@mixin theme-avalon-typography-levels {
+  .ava-display-large {
+    @include ava-display(large);
+  }
+
+  .ava-display-medium {
+    @include ava-display(medium);
+  }
+
+  .ava-display-small {
+    @include ava-display(small);
+  }
+
+  .ava-headline-large {
+    @include ava-headline(large);
+  }
+
+  .ava-headline-medium {
+    @include ava-headline(medium);
+  }
+
+  .ava-headline-small {
+    @include ava-headline(small);
+  }
+
+  .ava-body-large {
+    @include ava-body(large);
+  }
+
+  .ava-body-medium {
+    @include ava-body(medium);
+  }
+
+  .ava-body-small {
+    @include ava-body(small, bold);
+  }
+
+  .ava-label-large {
+    @include ava-label(large);
+  }
+
+  .ava-label-medium {
+    @include ava-label(medium);
+  }
+
+  .ava-label-small {
+    @include ava-label(small);
+  }
+}

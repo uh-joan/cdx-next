@@ -3,13 +3,14 @@
 @forward 'theme/teal.scss' show $cdx-teal-theme, $cdx-teal-dark-theme;
 @forward 'theme/blue.scss' show $cdx-blue-theme, $cdx-blue-dark-theme;
 @forward 'theme/cdx.m2.scss' show $cdx-typography, $cdx-theme, $cdx-dark-theme;
-@forward 'theme/helix.scss' show $helix-theme, $helix-dark-theme,
+@forward 'theme/helix/helix.scss' show $helix-theme, $helix-dark-theme,
   theme-helix-overrides;
-@forward 'theme/helix.m2.scss' show $helix-m2-theme, theme-helix-m2-overrides;
-@forward 'theme/avalon.scss' show $avalon-light-theme, $avalon-dark-theme,
+@forward 'theme/helix/helix.m2.scss' show $helix-m2-theme,
+  theme-helix-m2-overrides;
+@forward 'theme/avalon/avalon.scss' show $avalon-light-theme, $avalon-dark-theme,
   theme-avalon-overrides, ava-display, ava-headline, ava-title, ava-body,
   ava-label;
-@forward 'theme/innography.scss' show $innography-light-theme,
+@forward 'theme/avalon/innography/innography.scss' show $innography-light-theme,
   $innography-dark-theme, theme-innography-overrides;
-@forward 'theme/derwent.scss' show $derwent-light-theme, $derwent-dark-theme,
-  theme-derwent-overrides;
+@forward 'theme/avalon/derwent/derwent.scss' show $derwent-light-theme,
+  $derwent-dark-theme, theme-derwent-overrides;
