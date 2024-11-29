@@ -1,6 +1,6 @@
 {
   "name": "@cdx/notification",
-  "version": "18.1.1",
+  "version": "18.2.0-alpha.0",
   "repository": {
     "type": "git",
     "url": "ssh://git@git.clarivate.io/cdxn/cdx-next.git",
