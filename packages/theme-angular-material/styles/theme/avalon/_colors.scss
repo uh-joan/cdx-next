@@ -2,9 +2,6 @@
 @use 'sass:map';
 @use '@angular/material' as mat;
 
-$surface-container-highest: #e6e6e6;
-$primary-color: #5e33bf;
-$elevation-2: 5px 5px 10px 0 #a6abbd66;
 $_palettes: (
   primary: (
     0: #000,
