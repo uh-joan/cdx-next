@@ -31,19 +31,19 @@ $sizes: (
     small: 24px,
   ),
   title: (
-    large: 24px,
-    medium: 20px,
+    large: 22px,
+    medium: 18px,
     small: 16px,
   ),
   body: (
-    large: 18px,
-    medium: 16px,
-    small: 14px,
-  ),
-  label: (
     large: 16px,
     medium: 14px,
     small: 12px,
+  ),
+  label: (
+    large: 14px,
+    medium: 12px,
+    small: 11px,
   ),
 );
 $line-heights: (
@@ -68,8 +68,8 @@ $line-heights: (
     small: 20px,
   ),
   label: (
-    large: 24px,
-    medium: 20px,
+    large: 20px,
+    medium: 16px,
     small: 16px,
   ),
 );
@@ -96,16 +96,19 @@ $line-heights: (
 
 @mixin ava-title($size, $weight: semibold) {
   font-family: map.get($font-families, title);
+  letter-spacing: 0.0012em;
   @include typography(title, $size, map.get($weights, $weight));
 }
 
 @mixin ava-body($size, $weight: regular) {
   font-family: map.get($font-families, body);
+  letter-spacing: 0.0012em;
   @include typography(body, $size, map.get($weights, $weight));
 }
 
 @mixin ava-label($size, $weight: regular) {
   font-family: map.get($font-families, label);
+  letter-spacing: 0.0012em;
   @include typography(label, $size, map.get($weights, $weight));
 }
 
@@ -132,6 +135,18 @@ $line-heights: (
 
   .ava-headline-small {
     @include ava-headline(small);
+  }
+
+  .ava-title-large {
+    @include ava-title(large);
+  }
+
+  .ava-title-medium {
+    @include ava-title(medium);
+  }
+
+  .ava-title-small {
+    @include ava-title(small);
   }
 
   .ava-body-large {

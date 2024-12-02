@@ -1,3 +1,6 @@
+@use 'typography';
+@use '@angular/material' as mat;
+
 @mixin theme-avalon-overrides() {
   @include theme-avalon-general-overrides;
   @include theme-avalon-color-overrides;
@@ -22,6 +25,7 @@
   --mat-datepicker-calendar-container-background-color: #f5f5f5;
   --mat-datepicker-calendar-container-text-color: #7e7e7e;
   --mat-datepicker-calendar-container-elevation-shadow: 5px 5px 10px 0 #a6abbd66;
+  --mdc-filled-button-container-height: inherit;
 
   .mat-mdc-card-header,
   .mat-mdc-card-content,
@@ -77,20 +81,32 @@
   }
 
   .ava-btn-xsmall {
-    @include mat.button-density(-2);
+    @include ava-label(small);
   }
 
   .ava-btn-small {
-    @include mat.button-density(-1);
+    @include ava-label(medium, bold);
+
+    padding: 10px 16px;
+  }
+
+  .ava-btn-standard {
+    @include ava-label(large, bold);
+
+    height: auto;
+    padding: 10px 20px;
   }
 
   .ava-btn-large {
+    @include ava-title(small, bold);
+
     height: auto;
-    padding: 18px 32px;
+    padding: 10px 24px;
   }
 
   .ava-btn-promotional {
-    height: auto;
-    padding: 28px 48px;
+    @include ava-title(medium);
+
+    padding: 10px 32px;
   }
 }

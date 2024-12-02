@@ -107,9 +107,8 @@ export const Sizes = {
     template: `
     <h3>Sizes</h3>
     <div class="story">
-    <button mat-flat-button class="ava-btn-xsmall">{{label}}</button>
       <button mat-flat-button class="ava-btn-small">{{label}}</button>
-      <button mat-flat-button>{{label}}</button>
+      <button mat-flat-button class="ava-btn-standard">{{label}}</button>
       <button mat-flat-button class="ava-btn-large">{{label}}</button>
       <button mat-flat-button class="ava-btn-promotional">{{label}}</button>
     </div>`,
@@ -122,11 +121,11 @@ export const Colors = {
     template: `
     <h3>Colors</h3>
     <div class="story">
-      <button mat-flat-button>{{label}}</button>
-      <button mat-flat-button class="ava-btn-secondary">{{label}}</button>
-      <button mat-flat-button class="ava-btn-tertiary">{{label}}</button>
-      <button mat-flat-button class="ava-btn-error">{{label}}</button>
-      <button mat-flat-button class="ava-btn-success">{{label}}</button>
+      <button mat-flat-button class="ava-btn-standard">{{label}}</button>
+      <button mat-flat-button class="ava-btn-standard ava-btn-secondary">{{label}}</button>
+      <button mat-flat-button class="ava-btn-standard ava-btn-tertiary">{{label}}</button>
+      <button mat-flat-button class="ava-btn-standard ava-btn-error">{{label}}</button>
+      <button mat-flat-button class="ava-btn-standard ava-btn-success">{{label}}</button>
     </div>`,
   }),
 } as Story;
