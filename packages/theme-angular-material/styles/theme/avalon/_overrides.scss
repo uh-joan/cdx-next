@@ -52,6 +52,17 @@ $elevation-2: 5px 5px 10px 0 #a6abbd66;
   .ava-checkbox-error {
     @include mat.checkbox-theme($avalon-error-theme);
   }
+
+  .mdc-tab {
+    color: var(--mdc-theme-on-surface-variant, #4f4f4f);
+    @include ava-label(large);
+
+    &.mdc-tab--active {
+      @include ava-label(large, bold);
+
+      color: var(--mdc-theme-on-surface, #212121);
+    }
+  }
 }
 
 @mixin theme-avalon-buttons() {
