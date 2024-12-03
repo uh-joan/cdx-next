@@ -20,13 +20,21 @@ const meta = {
     },
     size: {
       control: 'select',
-      options: ['xsmall', 'small', 'standard', 'large', 'promotional'],
+      options: ['small', 'standard', 'large', 'promotional'],
       defaultValue: 'standard',
       description: 'Size',
     },
     appearance: {
       control: 'select',
-      options: ['ghost', 'raised', 'stroked', 'flat', 'fab'],
+      options: [
+        'ghost',
+        'raised',
+        'stroked',
+        'flat',
+        'fab',
+        'fab-extended',
+        'mini-fab',
+      ],
       defaultValue: 'primary',
       description: 'Appearance',
     },
@@ -86,6 +94,18 @@ export const Basic = {
         </ng-container>
         <ng-container *ngIf="appearance === 'fab'">
           <button mat-fab class="ava-btn-{{size}} ava-btn-{{color}}"
+            >
+            <mat-icon>home</mat-icon>
+          </button>
+        </ng-container>
+        <ng-container *ngIf="appearance === 'fab-extended'">
+          <button mat-fab extended class="ava-btn-{{size}} ava-btn-{{color}}"
+            >
+            <mat-icon>home</mat-icon> Extended
+          </button>
+        </ng-container>
+        <ng-container *ngIf="appearance === 'mini-fab'">
+          <button mat-mini-fab class="ava-btn-{{size}} ava-btn-{{color}}"
             >
             <mat-icon>home</mat-icon>
           </button>

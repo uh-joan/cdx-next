@@ -24,7 +24,9 @@ const CheckboxTemplate: StoryFn = () => ({
       <mat-checkbox [indeterminate]="true">Indeterminate</mat-checkbox>
       <mat-checkbox>Unchecked</mat-checkbox>
       <mat-checkbox [disabled]="true">Unchecked + Disabled</mat-checkbox>
-      <mat-checkbox class="ava-checkbox-error">Error</mat-checkbox>
+      <mat-checkbox class="ava-checkbox-error" [checked]="true"
+        >Error</mat-checkbox
+      >
     </div>
   `,
 });

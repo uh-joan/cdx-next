@@ -11,7 +11,8 @@
   body {
     @include mat.all-component-themes($theme);
     @include overrides.material-overrides;
-    @include focus-indicators-color(colors.$primary-500);
+
+    //  @include focus-indicators-color(colors.$primary-500);
   }
 }
 

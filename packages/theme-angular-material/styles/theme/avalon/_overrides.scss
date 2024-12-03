@@ -112,10 +112,6 @@ $elevation-2: 5px 5px 10px 0 #a6abbd66;
     padding: 10px 20px;
   }
 
-  .ava-btn-xsmall {
-    @include ava-label(small);
-  }
-
   .ava-btn-small {
     @include ava-label(medium, bold);
 
