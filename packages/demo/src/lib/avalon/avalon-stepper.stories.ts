@@ -34,7 +34,7 @@ export const HorizontalStepper = () => ({
     <h3>Horizontal Stepper</h3>
     <div class="story">
       <mat-stepper>
-        <mat-step [stepControl]="firstFormGroup">
+        <mat-step [stepControl]="firstFormGroup" [editable]="false">
           <form [formGroup]="firstFormGroup">
             <ng-template matStepLabel>Fill out your name</ng-template>
             <mat-form-field appearance="outline">
