@@ -1,12 +1,27 @@
 @use '@angular/material' as mat;
 @use '@cdx/theme-angular-material' as cdx;
-@use '@cdx/ngx-branding/header/theme' as header;
-@use '@cdx/ngx-branding/footer/theme' as footer;
-@use 'custom-theme' as custom;
 
-@include header.theme(cdx.$light-theme);
-@include footer.theme(cdx.$light-theme);
-@include cdx.default;
+@include cdx.default();
+
+@include cdx.default(cdx.$helix-theme, 'helix-theme-material');
+.helix-theme-material {
+  @include cdx.theme-helix-overrides();
+}
+
+@include cdx.default(cdx.$innography-light-theme, 'innography-theme-material');
+.innography-theme-material {
+  @include cdx.theme-innography-overrides();
+}
+
+@include cdx.default(cdx.$avalon-light-theme, 'avalon-theme-material');
+.avalon-theme-material {
+  @include cdx.theme-avalon-overrides();
+}
+
+@include cdx.default(cdx.$derwent-light-theme, 'derwent-theme-material');
+.derwent-theme-material {
+  @include cdx.theme-derwent-overrides();
+}
 
 :root {
   --light-text: rgba(#000, 0.87);
@@ -30,96 +45,6 @@ body[dir='rtl'] {
 body {
   background-color: var(--light-background);
   color: var(--light-text);
-
-  &.cdx-dark-mode {
-    background-color: var(--dark-background);
-    color: var(--dark-text);
-
-    @include cdx.theme(cdx.$dark-theme);
-  }
-
-  &.cdx-theme-helix {
-    @include cdx.theme(cdx.$helix-theme);
-    @include cdx.theme-helix-overrides;
-
-    &.cdx-dark-mode {
-      @include cdx.theme(cdx.$helix-dark-theme);
-    }
-  }
-
-  &.cdx-theme-avalon {
-    @include cdx.theme(cdx.$avalon-light-theme);
-    @include mat.typography-hierarchy(cdx.$avalon-light-theme);
-    @include mat.system-level-typography(cdx.$avalon-light-theme);
-    @include cdx.theme-avalon-overrides;
-
-    &.cdx-dark-mode {
-      @include cdx.theme(cdx.$avalon-dark-theme);
-    }
-  }
-
-  &.cdx-theme-innography {
-    @include cdx.theme(cdx.$innography-light-theme);
-    @include cdx.theme-innography-overrides;
-
-    &.cdx-dark-mode {
-      @include cdx.theme(cdx.$innography-dark-theme);
-    }
-  }
-
-  &.cdx-theme-derwent {
-    @include cdx.theme(cdx.$derwent-light-theme);
-    @include cdx.theme-derwent-overrides;
-
-    &.cdx-dark-mode {
-      @include cdx.theme(cdx.$derwent-dark-theme);
-    }
-  }
-
-  &.cdx-theme-purple-legacy {
-    @include cdx.theme(cdx.$cdx-theme);
-    @include cdx.m2-compat;
-
-    &.cdx-dark-mode {
-      @include cdx.theme(cdx.$cdx-dark-theme);
-    }
-  }
-
-  &.cdx-theme-helix-legacy {
-    @include cdx.theme(cdx.$helix-m2-theme);
-    @include cdx.theme-helix-m2-overrides;
-    @include cdx.m2-compat;
-
-    // &.cdx-dark-mode {
-    //   @include cdx.theme(cdx.$helix-dark-theme);
-    // }
-  }
-
-  &.cdx-theme-teal-legacy {
-    @include cdx.theme(cdx.$cdx-teal-theme);
-    @include cdx.m2-compat;
-
-    &.cdx-dark-mode {
-      @include cdx.theme(cdx.$cdx-teal-dark-theme);
-    }
-  }
-
-  &.cdx-theme-blue-legacy {
-    @include cdx.theme(cdx.$cdx-blue-theme);
-    @include cdx.m2-compat;
-
-    &.cdx-dark-mode {
-      @include cdx.theme(cdx.$cdx-blue-dark-theme);
-    }
-  }
-
-  &.cdx-theme-custom {
-    @include cdx.theme(custom.$custom-theme);
-
-    &.cdx-dark-mode {
-      @include cdx.theme(custom.$custom-dark-theme);
-    }
-  }
 }
 
 /*

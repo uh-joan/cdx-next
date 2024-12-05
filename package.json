@@ -23,7 +23,6 @@
     "lint:nx": "run-s lint:nx:*",
     "lint:nx:format": "nx format:check --skip-nx-cache",
     "lint:nx:lint": "nx run-many --all --exclude=workspace --target=lint --skip-nx-cache",
-    "lint:nx:stylelint": "nx run-many --all --exclude=workspace --target=stylelint --skip-nx-cache",
     "prepare": "husky install",
     "publish:prerelease": "npm run publish:release:common -- --tag=alpha",
     "publish:release": "npm run publish:release:common -- --tag=latest",

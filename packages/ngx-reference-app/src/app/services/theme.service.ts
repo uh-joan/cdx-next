@@ -2,18 +2,7 @@ import { DOCUMENT } from '@angular/common';
 import { Inject, Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 
-export const THEMES = [
-  'purple',
-  'helix',
-  'avalon',
-  'innography',
-  'derwent',
-  'purple-legacy',
-  'helix-legacy',
-  'teal-legacy',
-  'blue-legacy',
-  'custom',
-];
+export const THEMES = ['cdx', 'helix', 'avalon', 'innography', 'derwent'];
 
 @Injectable({
   providedIn: 'root',
@@ -70,11 +59,11 @@ export class ThemeService {
     localStorage.setItem('themeColor', theme);
 
     document.body.classList.forEach((className) => {
-      if (className.startsWith('cdx-theme-')) {
+      if (className.endsWith('theme-material')) {
         document.body.classList.remove(className);
       }
     });
-    document.body.classList.add(`cdx-theme-${theme}`);
+    document.body.classList.add(`${theme}-theme-material`);
 
     this.currentTheme$.next(theme);
   }

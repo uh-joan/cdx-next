@@ -139,11 +139,7 @@ $helix-theme: mat.define-theme(
       tertiary: $_tertiary,
     ),
     typography: (
-      brand-family: 'Source Sans 3',
-      plain-family: 'Source Sans 3',
-      bold-weight: 600,
-      medium-weight: 500,
-      regular-weight: 400,
+      use-system-variables: true,
     ),
   )
 );
@@ -168,6 +164,42 @@ $helix-error-theme: mat.define-theme(
 
 @mixin theme-helix-overrides() {
   @include mat.fab-color($helix-theme, $color-variant: secondary);
+
+  // Typography definitions
+  --sys-display-large: 700 40px/ 56px 'Regular Clarivate';
+  --sys-display-large-tracking: -0.25px;
+  --sys-display-medium: 700 24px / 32px 'Regular Clarivate';
+  --sys-display-medium-tracking: normal;
+  --sys-display-small: 700 18px / 24px 'Regular Clarivate';
+  --sys-display-small-tracking: normal;
+
+  --sys-headline-large: 700 32px / 40px 'Source Sans 3', sans-serif;
+  --sys-headline-large-tracking: -0.25px;
+  --sys-headline-medium: 600 24px / 32px 'Source Sans 3', sans-serif;
+  --sys-headline-medium-tracking: normal;
+  --sys-headline-small: 600 18px / 24px 'Source Sans 3', sans-serif;
+  --sys-headline-small-tracking: normal;
+
+  --sys-title-large: 400 24px / 32px 'Source Sans 3', sans-serif;
+  --sys-title-large-tracking: normal;
+  --sys-title-medium: 400 18px / 24px 'Source Sans 3', sans-serif;
+  --sys-title-medium-tracking: 0.15px;
+  --sys-title-small: 400 16px / 24px 'Source Sans 3', sans-serif;
+  --sys-title-small-tracking: 0.1px;
+
+  --sys-label-large: 600 16px / 20px 'Source Sans 3', sans-serif;
+  --sys-label-large-tracking: 0.1px;
+  --sys-label-medium: 600 14px / 20px 'Source Sans 3', sans-serif;
+  --sys-label-medium-tracking: 0.5px;
+  --sys-label-small: 600 12px / 20px 'Source Sans 3', sans-serif;
+  --sys-label-small-tracking: 0.5px;
+
+  --sys-body-large: 400 16px / 24px 'Source Sans 3', sans-serif;
+  --sys-body-large-tracking: 0px;
+  --sys-body-medium: 400 14px / 24px 'Source Sans 3', sans-serif;
+  --sys-body-medium-tracking: 0.25px;
+  --sys-body-small: 400 13px / 16px 'Source Sans 3', sans-serif;
+  --sys-body-small-tracking: 0.4px;
 
   --mdc-protected-button-container-shape: 2px;
   --mdc-outlined-button-container-shape: 2px;
@@ -264,6 +296,10 @@ $helix-error-theme: mat.define-theme(
     @include mat.button-density(-3);
   }
 
+  .hlx-input-small {
+    @include mat.form-field-density(-3);
+  }
+
   .hlx-btn-large {
     button.mdc-button {
       height: auto;
@@ -317,5 +353,10 @@ $helix-error-theme: mat.define-theme(
 
     --mdc-chip-elevated-container-color: #d7e8f7;
     --mdc-chip-label-text-color: #031c40;
+  }
+
+  h1.hlx-custom-small-font {
+    color: red;
+    font: mat.get-theme-typography($helix-theme, body-small, font);
   }
 }
