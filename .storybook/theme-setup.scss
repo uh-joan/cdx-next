@@ -25,12 +25,6 @@ body {
     @include cdx.theme-helix-overrides;
   }
 
-  &.cdx-theme-helix-m2 {
-    @include cdx.theme(cdx.$helix-m2-theme);
-    @include cdx.theme-helix-m2-overrides;
-    @include cdx.m2-compat;
-  }
-
   &.cdx-theme-avalon {
     @include cdx.theme(cdx.$avalon-light-theme);
     @include cdx.theme-avalon-overrides;
@@ -44,11 +38,6 @@ body {
   &.cdx-theme-derwent {
     @include cdx.theme(cdx.$derwent-light-theme);
     @include cdx.theme-derwent-overrides;
-  }
-
-  &.cdx-theme-legacy {
-    @include cdx.theme(cdx.$cdx-theme);
-    @include cdx.m2-compat;
   }
 
   .mat-mdc-form-field--no-bottom-space {

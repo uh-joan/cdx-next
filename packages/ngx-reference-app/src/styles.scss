@@ -4,23 +4,27 @@
 @include cdx.default();
 
 @include cdx.default(cdx.$helix-theme, 'helix-theme-material');
+
 .helix-theme-material {
-  @include cdx.theme-helix-overrides();
+  @include cdx.theme-helix-overrides;
 }
 
 @include cdx.default(cdx.$innography-light-theme, 'innography-theme-material');
+
 .innography-theme-material {
-  @include cdx.theme-innography-overrides();
+  @include cdx.theme-innography-overrides;
 }
 
 @include cdx.default(cdx.$avalon-light-theme, 'avalon-theme-material');
+
 .avalon-theme-material {
-  @include cdx.theme-avalon-overrides();
+  @include cdx.theme-avalon-overrides;
 }
 
 @include cdx.default(cdx.$derwent-light-theme, 'derwent-theme-material');
+
 .derwent-theme-material {
-  @include cdx.theme-derwent-overrides();
+  @include cdx.theme-derwent-overrides;
 }
 
 :root {
