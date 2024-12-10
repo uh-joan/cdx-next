@@ -10,7 +10,9 @@ $avalon-light-theme: mat.define-theme(
       primary: $_primary,
       tertiary: $_tertiary,
     ),
-    typography: $avalon-typography,
+    typography: (
+      use-system-variables: true,
+    ),
   )
 );
 $avalon-secondary-theme: mat.define-theme(
@@ -20,7 +22,9 @@ $avalon-secondary-theme: mat.define-theme(
       primary: $_secondary,
       tertiary: $_tertiary,
     ),
-    typography: $avalon-typography,
+    typography: (
+      use-system-variables: true,
+    ),
   )
 );
 $avalon-tertiary-theme: mat.define-theme(
@@ -30,7 +34,9 @@ $avalon-tertiary-theme: mat.define-theme(
       primary: $_tertiary,
       tertiary: $_primary,
     ),
-    typography: $avalon-typography,
+    typography: (
+      use-system-variables: true,
+    ),
   )
 );
 $avalon-error-theme: mat.define-theme(
@@ -40,7 +46,9 @@ $avalon-error-theme: mat.define-theme(
       primary: $_error,
       tertiary: $_tertiary,
     ),
-    typography: $avalon-typography,
+    typography: (
+      use-system-variables: true,
+    ),
   )
 );
 $avalon-success-theme: mat.define-theme(
@@ -50,7 +58,9 @@ $avalon-success-theme: mat.define-theme(
       primary: $_success,
       tertiary: $_tertiary,
     ),
-    typography: $avalon-typography,
+    typography: (
+      use-system-variables: true,
+    ),
   )
 );
 $avalon-dark-theme: mat.define-theme(
@@ -60,6 +70,5 @@ $avalon-dark-theme: mat.define-theme(
       primary: $_primary,
       tertiary: $_tertiary,
     ),
-    typography: $avalon-typography,
   )
 );

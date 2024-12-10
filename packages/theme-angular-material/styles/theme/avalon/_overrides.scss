@@ -55,12 +55,11 @@ $elevation-2: 5px 5px 10px 0 #a6abbd66;
 
   .mdc-tab {
     color: var(--mdc-theme-on-surface-variant, #4f4f4f);
-    @include ava-label(large);
+    font: mat.get-theme-typography($avalon-light-theme, label-large, font);
 
     &.mdc-tab--active {
-      @include ava-label(large, bold);
-
       color: var(--mdc-theme-on-surface, #212121);
+      font-weight: 700;
     }
   }
 }
@@ -107,26 +106,23 @@ $elevation-2: 5px 5px 10px 0 #a6abbd66;
   }
 
   .mdc-button {
-    @include ava-label(large, bold);
-
     padding: 10px 20px;
+    font: mat.get-theme-typography($avalon-light-theme, label-large, font);
   }
 
   .ava-btn-small {
-    @include ava-label(medium, bold);
-
     padding: 10px 16px;
+    font: mat.get-theme-typography($avalon-light-theme, label-medium, font);
   }
 
   .ava-btn-large {
-    @include ava-title(small, bold);
-
     padding: 10px 24px;
+    font: mat.get-theme-typography($avalon-light-theme, title-small, font);
+    font-weight: 700;
   }
 
   .ava-btn-promotional {
-    @include ava-title(medium);
-
     padding: 10px 32px;
+    font: mat.get-theme-typography($avalon-light-theme, title-medium, font);
   }
 }

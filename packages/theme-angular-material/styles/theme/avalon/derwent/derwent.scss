@@ -10,7 +10,9 @@ $derwent-light-theme: mat.define-theme(
       primary: $_primary,
       tertiary: $_tertiary,
     ),
-    typography: ava.$avalon-typography,
+    typography: (
+      use-system-variables: true,
+    ),
   )
 );
 $derwent-dark-theme: mat.define-theme(
@@ -20,7 +22,9 @@ $derwent-dark-theme: mat.define-theme(
       primary: $_primary,
       tertiary: $_tertiary,
     ),
-    typography: ava.$avalon-typography,
+    typography: (
+      use-system-variables: true,
+    ),
   )
 );
 $derwent-secondary-theme: mat.define-theme(
@@ -30,7 +34,9 @@ $derwent-secondary-theme: mat.define-theme(
       primary: $_secondary,
       tertiary: $_tertiary,
     ),
-    typography: ava.$avalon-typography,
+    typography: (
+      use-system-variables: true,
+    ),
   )
 );
 

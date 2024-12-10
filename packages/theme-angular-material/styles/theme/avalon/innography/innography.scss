@@ -10,7 +10,9 @@ $innography-light-theme: mat.define-theme(
       primary: $_primary,
       tertiary: $_tertiary,
     ),
-    typography: ava.$avalon-typography,
+    typography: (
+      use-system-variables: true,
+    ),
   )
 );
 $innography-dark-theme: mat.define-theme(
@@ -20,7 +22,9 @@ $innography-dark-theme: mat.define-theme(
       primary: $_primary,
       tertiary: $_tertiary,
     ),
-    typography: ava.$avalon-typography,
+    typography: (
+      use-system-variables: true,
+    ),
   )
 );
 $innography-secondary-theme: mat.define-theme(
@@ -30,7 +34,9 @@ $innography-secondary-theme: mat.define-theme(
       primary: $_secondary,
       tertiary: $_tertiary,
     ),
-    typography: ava.$avalon-typography,
+    typography: (
+      use-system-variables: true,
+    ),
   )
 );
 

@@ -1,175 +1,32 @@
-@use 'sass:map';
-
-$avalon-typography: (
-  brand-family: 'Clarivate Regular',
-  plain-family: 'Source Sans 3',
-  bold-weight: 700,
-  medium-weight: 600,
-  regular-weight: 400,
-);
-$font-families: (
-  display: 'Clarivate Regular, sans-serif',
-  headline: 'Clarivate Regular, sans-serif',
-  title: 'Source Sans 3, sans-serif',
-  body: 'Source Sans 3, sans-serif',
-  label: 'Source Sans 3, sans-serif',
-);
-$weights: (
-  regular: 400,
-  semibold: 600,
-  bold: 700,
-);
-$sizes: (
-  display: (
-    large: 48px,
-    medium: 40px,
-    small: 32px,
-  ),
-  headline: (
-    large: 32px,
-    medium: 28px,
-    small: 24px,
-  ),
-  title: (
-    large: 22px,
-    medium: 18px,
-    small: 16px,
-  ),
-  body: (
-    large: 16px,
-    medium: 14px,
-    small: 12px,
-  ),
-  label: (
-    large: 14px,
-    medium: 12px,
-    small: 11px,
-  ),
-);
-$line-heights: (
-  display: (
-    large: 60px,
-    medium: 48px,
-    small: 40px,
-  ),
-  headline: (
-    large: 40px,
-    medium: 36px,
-    small: 32px,
-  ),
-  title: (
-    large: 32px,
-    medium: 28px,
-    small: 24px,
-  ),
-  body: (
-    large: 28px,
-    medium: 24px,
-    small: 20px,
-  ),
-  label: (
-    large: 20px,
-    medium: 16px,
-    small: 16px,
-  ),
-);
-@mixin typography($type, $size, $weight: $regular) {
-  $font-size: map.get(map.get($sizes, $type), $size);
-  $line-height: map.get(map.get($line-heights, $type), $size);
-
-  font-family: 'Source Sans 3', sans-serif;
-  font-size: $font-size;
-  font-weight: $weight;
-  letter-spacing: normal;
-  line-height: $line-height;
-}
-
-@mixin ava-display($size, $weight: bold) {
-  font-family: map.get($font-families, display);
-  @include typography(display, $size, map.get($weights, $weight));
-}
-
-@mixin ava-headline($size, $weight: bold) {
-  font-family: map.get($font-families, headline);
-  @include typography(headline, $size, map.get($weights, $weight));
-}
-
-@mixin ava-title($size, $weight: semibold) {
-  font-family: map.get($font-families, title);
-  letter-spacing: 0.0012em;
-  @include typography(title, $size, map.get($weights, $weight));
-}
-
-@mixin ava-body($size, $weight: regular) {
-  font-family: map.get($font-families, body);
-  letter-spacing: 0.0012em;
-  @include typography(body, $size, map.get($weights, $weight));
-}
-
-@mixin ava-label($size, $weight: regular) {
-  font-family: map.get($font-families, label);
-  letter-spacing: 0.0012em;
-  @include typography(label, $size, map.get($weights, $weight));
-}
-
 @mixin theme-avalon-typography-levels {
-  .ava-display-large {
-    @include ava-display(large);
-  }
-
-  .ava-display-medium {
-    @include ava-display(medium);
-  }
-
-  .ava-display-small {
-    @include ava-display(small);
-  }
-
-  .ava-headline-large {
-    @include ava-headline(large);
-  }
-
-  .ava-headline-medium {
-    @include ava-headline(medium);
-  }
-
-  .ava-headline-small {
-    @include ava-headline(small);
-  }
-
-  .ava-title-large {
-    @include ava-title(large);
-  }
-
-  .ava-title-medium {
-    @include ava-title(medium);
-  }
-
-  .ava-title-small {
-    @include ava-title(small);
-  }
-
-  .ava-body-large {
-    @include ava-body(large);
-  }
-
-  .ava-body-medium {
-    @include ava-body(medium);
-  }
-
-  .ava-body-small {
-    @include ava-body(small, bold);
-  }
-
-  .ava-label-large {
-    @include ava-label(large);
-  }
-
-  .ava-label-medium {
-    @include ava-label(medium);
-  }
-
-  .ava-label-small {
-    @include ava-label(small);
-  }
+  --sys-display-large: 700 48px / 60px 'Clarivate Regular, sans-serif';
+  --sys-display-large-tracking: normal;
+  --sys-display-medium: 700 40px / 48px 'Clarivate Regular, sans-serif';
+  --sys-display-medium-tracking: normal;
+  --sys-display-small: 700 32px / 40px 'Clarivate Regular, sans-serif';
+  --sys-display-small-tracking: normal;
+  --sys-headline-large: 700 32px / 40px 'Clarivate Regular, sans-serif';
+  --sys-headline-large-tracking: -0.25px;
+  --sys-headline-medium: 700 28px / 36px 'Clarivate Regular, sans-serif';
+  --sys-headline-medium-tracking: normal;
+  --sys-headline-small: 700 24px / 32px 'Clarivate Regular, sans-serif';
+  --sys-headline-small-tracking: normal;
+  --sys-title-large: 600 22px / 28px 'Source Sans 3, sans-serif';
+  --sys-title-large-tracking: 0.0012em;
+  --sys-title-medium: 600 18px / 28px 'Source Sans 3, sans-serif';
+  --sys-title-medium-tracking: 0.15px;
+  --sys-title-small: 700 16px / 24px 'Source Sans 3, sans-serif';
+  --sys-title-small-tracking: 0.0012em;
+  --sys-label-large: 400 14px / 20px 'Source Sans 3, sans-serif';
+  --sys-label-large-tracking: 0.0012em;
+  --sys-label-medium: 400 12px / 16px 'Source Sans 3, sans-serif';
+  --sys-label-medium-tracking: 0.0012em;
+  --sys-label-small: 400 11px / 16px 'Source Sans 3, sans-serif';
+  --sys-label-small-tracking: 0.0012em;
+  --sys-body-large: 400 16px / 24px 'Source Sans 3, sans-serif';
+  --sys-body-large-tracking: 0.0012em;
+  --sys-body-medium: 400 14px / 20px 'Source Sans 3, sans-serif';
+  --sys-body-medium-tracking: 0.0012em;
+  --sys-body-small: 400 12px / 16px 'Source Sans 3, sans-serif';
+  --sys-body-small-tracking: 0.0012em;
 }
