@@ -27,12 +27,7 @@ const basicCardTemplate: StoryFn = () => ({
           <p>Card content goes here.</p>
         </mat-card-content>
         <mat-card-actions>
-          <button mat-button mat-stroked-button color="primary">
-            Card action button
-          </button>
-          <button mat-button mat-flat-button color="primary">
-            Card action button
-          </button>
+          <button mat-flat-button color="primary">Card action button</button>
         </mat-card-actions>
       </mat-card>
     </div>

@@ -23,7 +23,9 @@ $elevation-2: 5px 5px 10px 0 #a6abbd66;
   --mdc-dialog-container-shape: 12px;
   --mat-option-selected-state-layer-color: #e6e6e6;
   --mat-option-selected-state-label-text-color: #5e33bf;
-  --mdc-elevated-card-container-elevation: $elevation2;
+
+  // --mdc-elevated-card-container-elevation: $elevation2;
+  --mdc-elevated-card-container-elevation: 5px 5px 10px 0 #a6abbd66;
   --mdc-elevated-card-container-color: #fff;
   --mat-dialog-container-elevation-shadow: $elevation2;
   --mat-select-panel-background-color: #e6e6e6;
@@ -61,6 +63,15 @@ $elevation-2: 5px 5px 10px 0 #a6abbd66;
       color: var(--mdc-theme-on-surface, #212121);
       font-weight: 700;
     }
+  }
+
+  .mat-mdc-card-header {
+    padding: 24px 24px 0;
+    font: mat.get-theme-typography($avalon-light-theme, headline-small, font);
+  }
+
+  .mat-mdc-card-subtitle {
+    font: mat.get-theme-typography($avalon-light-theme, body-large, font);
   }
 }
 

@@ -16,11 +16,11 @@ const parameters: Preview = {
         icon: 'circlehollow',
         // Array of plain string values or MenuItem shape (see below)
         items: [
-          { value: 'cdx-theme-clv', title: 'CDX' },
+          { value: 'cdx-theme-material', title: 'CDX' },
           { value: 'helix-theme-material', title: 'Helix' },
-          { value: 'cdx-theme-avalon', title: 'Avalon' },
-          { value: 'cdx-theme-innography', title: 'Innography' },
-          { value: 'cdx-theme-derwent', title: 'Derwent' },
+          { value: 'avalon-theme-material', title: 'Avalon' },
+          { value: 'innography-theme-material', title: 'Innography' },
+          { value: 'derwent-theme-material', title: 'Derwent' },
         ],
         // Change title based on selected value
         dynamicTitle: true,
