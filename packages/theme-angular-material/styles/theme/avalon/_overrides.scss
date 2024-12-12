@@ -36,6 +36,9 @@ $elevation-2: 5px 5px 10px 0 #a6abbd66;
   --mat-stepper-header-done-state-icon-foreground-color: #fff;
   --mat-stepper-header-selected-state-icon-background-color: #5e33bf;
   --mat-stepper-header-icon-foreground-color: #4f4f4f;
+  --mat-dialog-headline-padding: 0;
+  --mat-dialog-with-actions-content-padding: 20px 0 0;
+  --mat-divider-color: rgb(208 208 208 / 100%);
 
   .mat-pseudo-checkbox {
     --mat-option-selected-state-label-text-color: #5e33bf;
@@ -66,13 +69,19 @@ $elevation-2: 5px 5px 10px 0 #a6abbd66;
   }
 
   .mat-mdc-card-header {
-    padding: 24px 24px 0;
     font: mat.get-theme-typography($avalon-light-theme, headline-small, font);
   }
 
   .mat-mdc-card-subtitle,
   .mat-mdc-dialog-title {
     font: mat.get-theme-typography($avalon-light-theme, body-large, font);
+  }
+
+  .ava-dialog-simple {
+    .mat-mdc-dialog-title {
+      font: mat.get-theme-typography($avalon-light-theme, title-large, font);
+    }
+    @include mat.button-color($avalon-secondary-theme);
   }
 }
 

@@ -5,6 +5,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatDividerModule } from '@angular/material/divider';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
@@ -15,6 +16,9 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatTableModule } from '@angular/material/table';
 import { ThemeModule } from '@cdx/theme-angular-material';
 
+import { AvalonComplexDialogExampleComponent } from './avalon/dialog-demo/avalon-complex-dialog-example.component';
+import { AvalonDialogDemoComponent } from './avalon/dialog-demo/avalon-dialog-demo.component';
+import { AvalonSimpleDialogExampleComponent } from './avalon/dialog-demo/avalon-simple-dialog-example.component';
 import { DialogDemoComponent } from './cdx/dialog-demo/dialog-demo.component';
 import { DialogExampleComponent } from './cdx/dialog-demo/dialog-example.component';
 import { SnackBarDemoComponent } from './cdx/snackbars-demo/snackbar-demo.component';
@@ -31,6 +35,7 @@ import { TableWithFilterSortingPaginationDemoComponent } from './cdx/tables-demo
     MatTableModule,
     MatIconModule,
     MatDialogModule,
+    MatDividerModule,
     MatButtonModule,
     MatPaginatorModule,
     MatSortModule,
@@ -44,6 +49,9 @@ import { TableWithFilterSortingPaginationDemoComponent } from './cdx/tables-demo
   declarations: [
     SnackBarDemoComponent,
     DialogDemoComponent,
+    AvalonDialogDemoComponent,
+    AvalonComplexDialogExampleComponent,
+    AvalonSimpleDialogExampleComponent,
     DialogExampleComponent,
     TableBasicDemoComponent,
     TableExpandableRowsDemoComponent,
@@ -52,6 +60,9 @@ import { TableWithFilterSortingPaginationDemoComponent } from './cdx/tables-demo
   exports: [
     SnackBarDemoComponent,
     DialogDemoComponent,
+    AvalonDialogDemoComponent,
+    AvalonComplexDialogExampleComponent,
+    AvalonSimpleDialogExampleComponent,
     DialogExampleComponent,
     TableBasicDemoComponent,
     TableExpandableRowsDemoComponent,

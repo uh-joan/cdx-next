@@ -20,7 +20,7 @@ const DialogTemplate: StoryFn = () => ({
   template: html`
     <h3>Basic dialog</h3>
     <div class="mat-typography story">
-      <demo-dialog></demo-dialog>
+      <demo-avalon-dialog></demo-avalon-dialog>
     </div>
   `,
 });
