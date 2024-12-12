@@ -164,6 +164,8 @@ $helix-error-theme: mat.define-theme(
 
 @mixin theme-helix-overrides() {
   @include mat.fab-color($helix-theme, $color-variant: secondary);
+  $helix-default-round-shape: 2px;
+  $helix-default-container-background: white;
 
   // Typography definitions
   --sys-display-large: 700 40px/ 56px 'Clarivate Regular';
@@ -196,21 +198,23 @@ $helix-error-theme: mat.define-theme(
   --sys-body-medium-tracking: 0.25px;
   --sys-body-small: 400 13px / 16px 'Source Sans 3', sans-serif;
   --sys-body-small-tracking: 0.4px;
-  --mdc-protected-button-container-shape: 2px;
-  --mdc-outlined-button-container-shape: 2px;
-  --mdc-filled-button-container-shape: 2px;
-  --mdc-text-button-container-shape: 2px;
-  --mdc-filled-text-field-container-shape: 2px;
-  --mat-standard-button-toggle-shape: 2px;
+
+  --mdc-protected-button-container-shape: $helix-default-round-shape;
+  --mdc-outlined-button-container-shape: $helix-default-round-shape;
+  --mdc-filled-button-container-shape: $helix-default-round-shape;
+  --mdc-text-button-container-shape: $helix-default-round-shape;
+  --mdc-filled-text-field-container-shape: $helix-default-round-shape;
+  --mat-standard-button-toggle-shape: $helix-default-round-shape;
+  --mat-standard-button-toggle-divider-color: transparent;
   --mdc-filled-button-container-height: 44px;
   --mdc-outlined-button-container-height: 44px;
   --mdc-protected-button-container-height: 44px;
   --mdc-text-button-container-height: 44px;
   --mdc-tab-indicator-active-indicator-height: 4px;
   --mdc-shape-small: 0;
-  --mat-autocomplete-background-color: white;
-  --mat-select-panel-background-color: white;
-  --mat-datepicker-calendar-container-background-color: white;
+  --mat-autocomplete-background-color: $helix-default-container-background;
+  --mat-select-panel-background-color: $helix-default-container-background;
+  --mat-datepicker-calendar-container-background-color: $helix-default-container-background;
   --mat-menu-container-color: white;
   /* stylelint-disable-next-line scss/operator-no-newline-after */
   --mat-datepicker-calendar-container-elevation-shadow: 0 3px 1px -2px rgb(0 0 0 /
@@ -219,8 +223,13 @@ $helix-error-theme: mat.define-theme(
   --mat-divider-color: #dfe1e2;
   --mdc-linear-progress-track-color: #cfcfcf;
   --mdc-chip-container-shape-radius: 16px;
+  --mdc-chip-outline-color: transparent;
   --mdc-fab-container-shape: 28px;
   --mdc-fab-small-container-shape: 28px;
+  --mat-paginator-container-background-color: transparent;
+  --mdc-plain-tooltip-container-color: #5f6368;
+  --mat-expansion-container-shape: $helix-default-round-shape;
+  --mat-expansion-container-background-color: $helix-default-container-background;
 
   a {
     color: inherit;
@@ -256,7 +265,7 @@ $helix-error-theme: mat.define-theme(
   .hlx-btn-accent {
     @include mat.button-color($helix-theme, $color-variant: tertiary);
     @include mat.fab-color($helix-theme, $color-variant: tertiary);
-
+    --mdc-outlined-button-outline-color: #5e33bf;
     --mdc-fab-container-color: #5e33bf;
     --mat-fab-foreground-color: #fff;
     --mdc-fab-small-container-color: #5e33bf;
@@ -265,7 +274,7 @@ $helix-error-theme: mat.define-theme(
 
   .hlx-btn-negative {
     @include mat.button-color($helix-error-theme);
-
+    --mdc-outlined-button-outline-color: #c43136;
     --mdc-fab-container-color: #c43136;
     --mdc-fab-small-container-color: #c43136;
   }
@@ -304,54 +313,57 @@ $helix-error-theme: mat.define-theme(
 
   .hlx-neutral-chip {
     @include mat.chips-color($helix-theme, $color-variant: secondary);
-
+    --mdc-chip-outline-color: transparent;
     --mdc-chip-elevated-container-color: #dfe1e2;
   }
 
   .hlx-primary-chip {
     @include mat.chips-color($helix-theme, $color-variant: primary);
-
+    --mdc-chip-outline-color: transparent;
     --mdc-chip-elevated-container-color: #2a2b2d;
     --mdc-chip-label-text-color: #fff;
   }
 
   .hlx-accent-chip {
     @include mat.chips-color($helix-theme, $color-variant: tertiary);
-
+    --mdc-chip-outline-color: transparent;
     --mdc-chip-elevated-container-color: #5e33bf;
     --mdc-chip-label-text-color: #fff;
   }
 
   .hlx-negative-chip {
     @include mat.chips-color($helix-theme, $color-variant: error);
-
+    --mdc-chip-outline-color: transparent;
     --mdc-chip-elevated-container-color: #fadcdc;
     --mdc-chip-label-text-color: #410b0d;
   }
 
   .hlx-warn-chip {
     @include mat.chips-color($helix-theme, $color-variant: error);
-
+    --mdc-chip-outline-color: transparent;
     --mdc-chip-elevated-container-color: #ffefd1;
     --mdc-chip-label-text-color: #402b00;
   }
 
   .hlx-positive-chip {
     @include mat.chips-color($helix-theme, $color-variant: error);
-
+    --mdc-chip-outline-color: transparent;
     --mdc-chip-elevated-container-color: #d2f7d6;
     --mdc-chip-label-text-color: #003600;
   }
 
   .hlx-info-chip {
     @include mat.chips-color($helix-theme, $color-variant: error);
-
+    --mdc-chip-outline-color: transparent;
     --mdc-chip-elevated-container-color: #d7e8f7;
     --mdc-chip-label-text-color: #031c40;
   }
 
-  h1.hlx-custom-small-font {
-    color: red;
-    font: mat.get-theme-typography($helix-theme, body-small, font);
+  .hlx-button-toggle-container {
+    padding: 4px;
+    background-color: #f2f2f2;
+    border: 1px solid #babcbe;
+    width: fit-content;
+    border-radius: 2px;
   }
 }

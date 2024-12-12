@@ -17,14 +17,10 @@ const parameters: Preview = {
         // Array of plain string values or MenuItem shape (see below)
         items: [
           { value: 'cdx-theme-clv', title: 'CDX' },
-          { value: 'cdx-theme-helix', title: 'Helix' },
+          { value: 'helix-theme-material', title: 'Helix' },
           { value: 'cdx-theme-avalon', title: 'Avalon' },
           { value: 'cdx-theme-innography', title: 'Innography' },
           { value: 'cdx-theme-derwent', title: 'Derwent' },
-          { value: 'cdx-theme-legacy', title: 'CDX Legacy M2' },
-          { value: 'cdx-theme-helix-m2', title: 'Helix Legacy M2' },
-          { value: 'cdx-theme-teal', title: 'Teal Legacy M2' },
-          { value: 'cdx-theme-blue', title: 'Blue  Legacy M2' },
         ],
         // Change title based on selected value
         dynamicTitle: true,
@@ -34,7 +30,8 @@ const parameters: Preview = {
 
   decorators: [
     componentWrapperDecorator(
-      (story) => `<body [class]="myTheme">${story}</body>`,
+      (story) =>
+        `<body [class]="myTheme" class="mat-typography">${story}</body>`,
       ({ globals }) => {
         return { myTheme: globals['theme'] };
       },

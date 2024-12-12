@@ -20,7 +20,7 @@ export default {
 const DefaultTemplate: StoryFn = () => ({
   template: html`
     <h3>Default Button Toggle</h3>
-    <div class="story">
+    <div class="hlx-button-toggle-container">
       <mat-button-toggle-group name="switcher" aria-label="Switcher">
         <mat-button-toggle value="fielded" checked role="button">
           Fielded

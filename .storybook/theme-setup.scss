@@ -6,40 +6,13 @@
 @use '../packages/ngx-authentication/src/lib/header-global-user-profile/header-global-user-profile-theme'
   as profile-theme;
 
-@include footer-theme.theme(cdx.$light-theme);
-@include header-theme.theme(cdx.$light-theme);
-@include profile-theme.theme(cdx.$light-theme);
-@include cdx.default;
+@include cdx.default(cdx.$helix-theme, 'helix-theme-material');
+
+.helix-theme-material {
+  @include cdx.theme-helix-overrides;
+}
 
 body {
-  &.cdx-theme-teal {
-    @include cdx.theme(cdx.$cdx-teal-theme);
-  }
-
-  &.cdx-theme-blue {
-    @include cdx.theme(cdx.$cdx-blue-theme);
-  }
-
-  &.cdx-theme-helix {
-    @include cdx.theme(cdx.$helix-theme);
-    @include cdx.theme-helix-overrides;
-  }
-
-  &.cdx-theme-avalon {
-    @include cdx.theme(cdx.$avalon-light-theme);
-    @include cdx.theme-avalon-overrides;
-  }
-
-  &.cdx-theme-innography {
-    @include cdx.theme(cdx.$innography-light-theme);
-    @include cdx.theme-innography-overrides;
-  }
-
-  &.cdx-theme-derwent {
-    @include cdx.theme(cdx.$derwent-light-theme);
-    @include cdx.theme-derwent-overrides;
-  }
-
   .mat-mdc-form-field--no-bottom-space {
     .mat-mdc-form-field-subscript-wrapper {
       display: none;

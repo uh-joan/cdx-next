@@ -5,7 +5,7 @@
     const url = new URL(destinationUrl);
     const params = new URLSearchParams(url.search);
     const theme = params.get('globals').split(':')[1];
-    if (theme && theme.startsWith('cdx-theme')) {
+    if (theme && theme.endsWith('theme-material')) {
       return theme;
     }
     return null;
