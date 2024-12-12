@@ -22,9 +22,6 @@ $elevation-2: 5px 5px 10px 0 #a6abbd66;
   --mdc-filled-text-field-container-shape: 4px;
   --mdc-dialog-container-shape: 12px;
   --mat-option-selected-state-layer-color: #e6e6e6;
-  --mat-option-selected-state-label-text-color: #5e33bf;
-
-  // --mdc-elevated-card-container-elevation: $elevation2;
   --mdc-elevated-card-container-elevation: 5px 5px 10px 0 #a6abbd66;
   --mdc-elevated-card-container-color: #fff;
   --mat-dialog-container-elevation-shadow: $elevation2;
@@ -40,7 +37,10 @@ $elevation-2: 5px 5px 10px 0 #a6abbd66;
   --mat-stepper-header-selected-state-icon-background-color: #5e33bf;
   --mat-stepper-header-icon-foreground-color: #4f4f4f;
 
-  .mat-mdc-card-header,
+  .mat-pseudo-checkbox {
+    --mat-option-selected-state-label-text-color: #5e33bf;
+  }
+
   .mat-mdc-card-content,
   .mat-mdc-card-actions,
   .mat-mdc-dialog-surface {
@@ -70,7 +70,8 @@ $elevation-2: 5px 5px 10px 0 #a6abbd66;
     font: mat.get-theme-typography($avalon-light-theme, headline-small, font);
   }
 
-  .mat-mdc-card-subtitle {
+  .mat-mdc-card-subtitle,
+  .mat-mdc-dialog-title {
     font: mat.get-theme-typography($avalon-light-theme, body-large, font);
   }
 }
