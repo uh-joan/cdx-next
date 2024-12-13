@@ -1,6 +1,6 @@
 {
   "name": "@cdx/theme-button-toggle",
-  "version": "18.2.0-alpha.0",
+  "version": "18.2.0-alpha.1",
   "files": [
     "dist",
     "*.scss",
@@ -15,6 +15,6 @@
     "@material/theme": "14.0.0"
   },
   "peerDependencies": {
-    "@cdx/theme-material-components-web": "18.2.0-alpha.0"
+    "@cdx/theme-material-components-web": "18.2.0-alpha.1"
   }
 }
