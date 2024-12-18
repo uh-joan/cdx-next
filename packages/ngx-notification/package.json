@@ -1,6 +1,6 @@
 {
   "name": "@cdx/ngx-notification",
-  "version": "18.2.0-alpha.1",
+  "version": "18.2.0-alpha.2",
   "dependencies": {
     "tslib": "^2.3.0"
   },
