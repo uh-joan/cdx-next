@@ -204,12 +204,9 @@ $helix-error-theme: mat.define-theme(
   --mdc-filled-button-container-shape: #{$helix-default-round-shape};
   --mdc-text-button-container-shape: #{$helix-default-round-shape};
   --mdc-filled-text-field-container-shape: #{$helix-default-round-shape};
+  --mdc-outlined-text-field-container-shape: #{$helix-default-round-shape};
   --mat-standard-button-toggle-shape: #{$helix-default-round-shape};
   --mat-standard-button-toggle-divider-color: transparent;
-  --mdc-filled-button-container-height: 44px;
-  --mdc-outlined-button-container-height: 44px;
-  --mdc-protected-button-container-height: 44px;
-  --mdc-text-button-container-height: 44px;
   --mdc-tab-indicator-active-indicator-height: 4px;
   --mdc-shape-small: 0;
   --mat-autocomplete-background-color: #{$helix-default-container-background};
@@ -230,6 +227,11 @@ $helix-error-theme: mat.define-theme(
   --mdc-plain-tooltip-container-color: #5f6368;
   --mat-expansion-container-shape: #{$helix-default-round-shape};
   --mat-expansion-container-background-color: #{$helix-default-container-background};
+  --mdc-elevated-card-container-shape: #{$helix-default-round-shape};
+  --mdc-elevated-card-container-color: #{$helix-default-container-background};
+
+  --mdc-dialog-container-shape: #{$helix-default-round-shape};
+  --mdc-dialog-container-color: #{$helix-default-container-background};
 
   a {
     color: inherit;
@@ -311,6 +313,11 @@ $helix-error-theme: mat.define-theme(
     }
   }
 
+  .hlx-slide-toggle-small {
+    @include mat.slide-toggle-density(-2);
+    --mdc-switch-track-height: 28px;
+  }
+
   .hlx-neutral-chip {
     @include mat.chips-color($helix-theme, $color-variant: secondary);
     --mdc-chip-outline-color: transparent;
@@ -357,6 +364,21 @@ $helix-error-theme: mat.define-theme(
     --mdc-chip-outline-color: transparent;
     --mdc-chip-elevated-container-color: #d7e8f7;
     --mdc-chip-label-text-color: #031c40;
+  }
+
+  .hlx-outlined-chip {
+    @include mat.chips-color($helix-theme, $color-variant: error);
+    --mdc-chip-outline-color: #babcbe;
+    --mdc-chip-elevated-container-color: white;
+    --mdc-chip-label-text-color: #2a2b2d;
+  }
+
+  .hlx-chip-small {
+    @include mat.chips-density(-1);
+  }
+
+  .hlx-chip-xsmall {
+    @include mat.chips-density(-2);
   }
 
   .hlx-button-toggle-container {

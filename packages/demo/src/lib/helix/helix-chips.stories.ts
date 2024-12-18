@@ -75,6 +75,29 @@ const HelixChipsTemplate: StoryFn = () => ({
           <mat-chip class="hlx-positive-chip" color="accent">positive</mat-chip>
           <mat-chip class="hlx-info-chip" color="warn">info</mat-chip>
           <mat-chip class="hlx-neutral-chip">neutral</mat-chip>
+          <mat-chip class="hlx-outlined-chip">outlined</mat-chip>
+        </mat-chip-set>
+        <h4>Density -1 (.hlx-chip-small)</h4>
+        <mat-chip-set class="hlx-chip-small">
+          <mat-chip class="hlx-primary-chip">primary</mat-chip>
+          <mat-chip class="hlx-accent-chip">accent</mat-chip>
+          <mat-chip class="hlx-negative-chip">negative</mat-chip>
+          <mat-chip class="hlx-warn-chip" color="primary">warn</mat-chip>
+          <mat-chip class="hlx-positive-chip" color="accent">positive</mat-chip>
+          <mat-chip class="hlx-info-chip" color="warn">info</mat-chip>
+          <mat-chip class="hlx-neutral-chip">neutral</mat-chip>
+          <mat-chip class="hlx-outlined-chip">outlined</mat-chip>
+        </mat-chip-set>
+        <h4>Density -2 (.hlx-chip-xsmall)</h4>
+        <mat-chip-set class="hlx-chip-xsmall">
+          <mat-chip class="hlx-primary-chip">primary</mat-chip>
+          <mat-chip class="hlx-accent-chip">accent</mat-chip>
+          <mat-chip class="hlx-negative-chip">negative</mat-chip>
+          <mat-chip class="hlx-warn-chip" color="primary">warn</mat-chip>
+          <mat-chip class="hlx-positive-chip" color="accent">positive</mat-chip>
+          <mat-chip class="hlx-info-chip" color="warn">info</mat-chip>
+          <mat-chip class="hlx-neutral-chip">neutral</mat-chip>
+          <mat-chip class="hlx-outlined-chip">outlined</mat-chip>
         </mat-chip-set>
       </div>
     </div>
