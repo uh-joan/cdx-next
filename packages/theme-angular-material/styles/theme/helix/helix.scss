@@ -186,13 +186,13 @@ $helix-error-theme: mat.define-theme(
   --sys-title-medium-tracking: 0.15px;
   --sys-title-small: 400 16px / 24px 'Source Sans 3', sans-serif;
   --sys-title-small-tracking: 0.1px;
-  --sys-label-large: 600 16px / 20px 'Source Sans 3', sans-serif;
+  --sys-label-large: 600 14px / 20px 'Source Sans 3', sans-serif;
   --sys-label-large-tracking: 0.1px;
   --sys-label-medium: 600 14px / 20px 'Source Sans 3', sans-serif;
   --sys-label-medium-tracking: 0.5px;
   --sys-label-small: 600 12px / 20px 'Source Sans 3', sans-serif;
   --sys-label-small-tracking: 0.5px;
-  --sys-body-large: 400 16px / 24px 'Source Sans 3', sans-serif;
+  --sys-body-large: 400 14px / 24px 'Source Sans 3', sans-serif;
   --sys-body-large-tracking: 0;
   --sys-body-medium: 400 14px / 24px 'Source Sans 3', sans-serif;
   --sys-body-medium-tracking: 0.25px;
@@ -229,7 +229,7 @@ $helix-error-theme: mat.define-theme(
   --mat-expansion-container-background-color: #{$helix-default-container-background};
   --mdc-elevated-card-container-shape: #{$helix-default-round-shape};
   --mdc-elevated-card-container-color: #{$helix-default-container-background};
-
+  --mat-tree-container-background-color: #{$helix-default-container-background};
   --mdc-dialog-container-shape: #{$helix-default-round-shape};
   --mdc-dialog-container-color: #{$helix-default-container-background};
 
@@ -387,5 +387,13 @@ $helix-error-theme: mat.define-theme(
     border: 1px solid #babcbe;
     width: fit-content;
     border-radius: 2px;
+  }
+
+  .mat-label-xlarge {
+    font-size: 16px;
+  }
+
+  .mat-body-xlarge {
+    font-size: 16px;
   }
 }
