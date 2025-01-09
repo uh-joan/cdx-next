@@ -1,8 +1,9 @@
+/* stylelint-disable no-descending-specificity */
 $cdx-footer-padding: 2rem;
 $cdx-footer-column-width: clamp(
   7.5rem,
   calc(7.5rem + (12 - 7.5) * ((100vw - 48rem) / (85 - 48))),
-  12rem
+  10rem
 );
 $cdx-footer-grid-gap: 1.5rem;
 
@@ -14,6 +15,12 @@ $cdx-footer-grid-gap: 1.5rem;
   color: #5f6368;
   font-family: 'Source Sans 3', sans-serif;
   gap: $cdx-footer-grid-gap;
+
+  &--branded {
+    .hlx-footer__content {
+      justify-content: end;
+    }
+  }
 
   &--slim {
     padding: calc($cdx-footer-padding / 4);

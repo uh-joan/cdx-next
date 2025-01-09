@@ -21,6 +21,11 @@ $black-background: black;
     font-family: 'Source Sans 3', sans-serif;
     vertical-align: middle;
 
+    .hlx-product-divider {
+      width: 1px;
+      height: 24px;
+    }
+
     .mat-mdc-outlined-button:not(:disabled),
     .mat-mdc-button {
       border-color: inherit;
@@ -40,10 +45,12 @@ $black-background: black;
     line-height: 24px;
     white-space: nowrap;
 
-    .hlx-header__product-identification--only-product {
-      font-size: 24px;
-      font-weight: 700;
-      line-height: 32px;
+    .hlx-header__product-identification {
+      &--only-product {
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 32px;
+      }
     }
 
     > svg {

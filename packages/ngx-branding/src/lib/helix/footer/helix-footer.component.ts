@@ -19,6 +19,7 @@ import { OneTrustService } from '../../one-trust/one-trust.service';
 })
 export class HelixFooterComponent {
   @Input() shouldShowTranslations = false;
+
   @Input()
   get groupCompanyLinks() {
     return this._groupCompanyLinks;
@@ -35,6 +36,15 @@ export class HelixFooterComponent {
   set slim(value: BooleanInput) {
     this._slim = coerceBooleanProperty(value);
   }
+
+  @Input()
+  get branded() {
+    return this._branded;
+  }
+  set branded(value: BooleanInput) {
+    this._branded = coerceBooleanProperty(value);
+  }
+  private _branded = false;
 
   @Input() theme?: ThemeOptionsBranding;
 
