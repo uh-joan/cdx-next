@@ -18,7 +18,7 @@ export default {
 const sizesBadgeTemplate: StoryFn = () => ({
   template: html`
     <h3>Sizes</h3>
-    <div class="story story--sections">
+    <div class="story story--sections hlx-badge-accent">
       <div class="story__section">
         <h4>Large</h4>
         <div class="story__section__content">
@@ -74,7 +74,7 @@ const sizesBadgeTemplate: StoryFn = () => ({
 const colorsBadgeTemplate: StoryFn = () => ({
   template: html`
     <h3>Colors</h3>
-    <div class="story story--sections">
+    <div class="story story--sections hlx-badge-primary">
       <div class="story__section">
         <h4>Primary</h4>
         <div class="story__section__content">
@@ -83,53 +83,13 @@ const colorsBadgeTemplate: StoryFn = () => ({
             matBadge="9"
             matBadgeOverlap="false"
           ></span>
-          <span
-            matBadgeColor="primary"
-            matBadge="9"
-            matBadgeOverlap="false"
-          ></span>
-          <span
-            matBadgeColor="primary"
-            matBadge="9"
-            matBadgeOverlap="false"
-          ></span>
         </div>
       </div>
-      <div class="story__section">
-        <h4>Error</h4>
+      <div class="story__section hlx-badge-accent">
+        <h4>Accent</h4>
         <div class="story__section__content">
           <span
             matBadgeColor="warn"
-            matBadge="9"
-            matBadgeOverlap="false"
-          ></span>
-          <span
-            matBadgeColor="warn"
-            matBadge="9"
-            matBadgeOverlap="false"
-          ></span>
-          <span
-            matBadgeColor="warn"
-            matBadge="9"
-            matBadgeOverlap="false"
-          ></span>
-        </div>
-      </div>
-      <div class="story__section">
-        <h4>Success</h4>
-        <div class="story__section__content">
-          <span
-            matBadgeColor="accent"
-            matBadge="9"
-            matBadgeOverlap="false"
-          ></span>
-          <span
-            matBadgeColor="accent"
-            matBadge="9"
-            matBadgeOverlap="false"
-          ></span>
-          <span
-            matBadgeColor="accent"
             matBadge="9"
             matBadgeOverlap="false"
           ></span>

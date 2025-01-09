@@ -97,7 +97,7 @@ $_palettes: (
     60: #999,
     70: #b4b4b4,
     80: #d0d0d0,
-    90: #ececec,
+    90: #dfe1e2,
     95: #fafafa,
     98: #fcfcfc,
     99: #fcfcfc,
@@ -211,6 +211,7 @@ $helix-error-theme: mat.define-theme(
   --mdc-shape-small: 0;
   --mat-autocomplete-background-color: #{$helix-default-container-background};
   --mat-select-panel-background-color: #{$helix-default-container-background};
+  --mat-datepicker-calendar-container-shape: #{$helix-default-round-shape};
   --mat-datepicker-calendar-container-background-color: #{$helix-default-container-background};
   --mat-menu-container-color: white;
   /* stylelint-disable-next-line scss/operator-no-newline-after */
@@ -322,6 +323,7 @@ $helix-error-theme: mat.define-theme(
     @include mat.chips-color($helix-theme, $color-variant: secondary);
     --mdc-chip-outline-color: transparent;
     --mdc-chip-elevated-container-color: #dfe1e2;
+    --mdc-chip-label-text-color: #2a2b2d;
   }
 
   .hlx-primary-chip {
@@ -395,5 +397,13 @@ $helix-error-theme: mat.define-theme(
 
   .mat-body-xlarge {
     font-size: 16px;
+  }
+
+  .hlx-badge-primary {
+    @include mat.badge-color($helix-theme, $color-variant: primary);
+  }
+
+  .hlx-badge-accent {
+    @include mat.badge-color($helix-theme, $color-variant: tertiary);
   }
 }
