@@ -41,6 +41,8 @@ export class HelixHeaderComponent implements AfterViewInit {
 
   @Input() theme?: ThemeOptionsBranding;
 
+  @Input() branded?: boolean = true;
+
   @Input() openExternalLink = false;
 
   constructor(private cdr: ChangeDetectorRef) {}
