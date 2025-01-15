@@ -62,7 +62,7 @@ $_palettes: (
     0: #000,
     4: #0d0d0d,
     6: #171717,
-    10: #212121,
+    10: #2a2b2d,
     12: #262626,
     17: #2e2e2e,
     20: #363636,
@@ -169,34 +169,94 @@ $helix-error-theme: mat.define-theme(
 
   // Typography definitions
   --sys-display-large: 700 40px/ 56px 'Clarivate Regular';
+  --sys-display-large-font: 'Clarivate Regular';
+  --sys-display-large-weight: 700;
+  --sys-display-large-line-height: 56px;
+  --sys-display-large-size: 40px;
   --sys-display-large-tracking: -0.25px;
   --sys-display-medium: 700 24px / 32px 'Clarivate Regular';
+  --sys-display-medium-font: 'Clarivate Regular';
+  --sys-display-medium-weight: 700;
+  --sys-display-medium-line-height: 32px;
+  --sys-display-medium-size: 24px;
   --sys-display-medium-tracking: normal;
   --sys-display-small: 700 18px / 24px 'Clarivate Regular';
+  --sys-display-small-font: 'Clarivate Regular';
+  --sys-display-small-weight: 700;
+  --sys-display-small-line-height: 24px;
+  --sys-display-small-size: 18px;
   --sys-display-small-tracking: normal;
   --sys-headline-large: 700 32px / 40px 'Source Sans 3', sans-serif;
+  --sys-headline-large-font: 'Source Sans 3', sans-serif;
+  --sys-headline-large-weight: 700;
+  --sys-headline-large-line-height: 40px;
+  --sys-headline-large-size: 32px;
   --sys-headline-large-tracking: -0.25px;
   --sys-headline-medium: 600 24px / 32px 'Source Sans 3', sans-serif;
+  --sys-headline-medium-font: 'Source Sans 3', sans-serif;
+  --sys-headline-medium-weight: 600;
+  --sys-headline-medium-line-height: 32px;
+  --sys-headline-medium-size: 24px;
   --sys-headline-medium-tracking: normal;
   --sys-headline-small: 600 18px / 24px 'Source Sans 3', sans-serif;
+  --sys-headline-small-font: 'Source Sans 3', sans-serif;
+  --sys-headline-small-weight: 600;
+  --sys-headline-small-line-height: 24px;
+  --sys-headline-small-size: 18px;
   --sys-headline-small-tracking: normal;
   --sys-title-large: 400 24px / 32px 'Source Sans 3', sans-serif;
+  --sys-title-large-font: 'Source Sans 3', sans-serif;
+  --sys-title-large-weight: 400;
+  --sys-title-large-line-height: 32px;
+  --sys-title-large-size: 24px;
   --sys-title-large-tracking: normal;
   --sys-title-medium: 400 18px / 24px 'Source Sans 3', sans-serif;
+  --sys-title-medium-font: 'Source Sans 3', sans-serif;
+  --sys-title-medium-weight: 400;
+  --sys-title-medium-line-height: 24px;
+  --sys-title-medium-size: 18px;
   --sys-title-medium-tracking: 0.15px;
   --sys-title-small: 400 16px / 24px 'Source Sans 3', sans-serif;
+  --sys-title-small-font: 'Source Sans 3', sans-serif;
+  --sys-title-small-weight: 400;
+  --sys-title-small-line-height: 24px;
+  --sys-title-small-size: 16px;
   --sys-title-small-tracking: 0.1px;
   --sys-label-large: 600 14px / 20px 'Source Sans 3', sans-serif;
+  --sys-label-large-font: 'Source Sans 3', sans-serif;
+  --sys-label-large-weight: 600;
+  --sys-label-large-line-height: 20px;
+  --sys-label-large-size: 14px;
   --sys-label-large-tracking: 0.1px;
   --sys-label-medium: 600 14px / 20px 'Source Sans 3', sans-serif;
+  --sys-label-medium-font: 'Source Sans 3', sans-serif;
+  --sys-label-medium-weight: 600;
+  --sys-label-medium-line-height: 20px;
+  --sys-label-medium-size: 14px;
   --sys-label-medium-tracking: 0.5px;
   --sys-label-small: 600 12px / 20px 'Source Sans 3', sans-serif;
+  --sys-small-large-font: 'Source Sans 3', sans-serif;
+  --sys-small-large-weight: 600;
+  --sys-small-large-line-height: 20px;
+  --sys-small-large-size: 12px;
   --sys-label-small-tracking: 0.5px;
   --sys-body-large: 400 14px / 24px 'Source Sans 3', sans-serif;
+  --sys-body-large-font: 'Source Sans 3', sans-serif;
+  --sys-body-large-weight: 400;
+  --sys-body-large-line-height: 24px;
+  --sys-body-large-size: 14px;
   --sys-body-large-tracking: 0;
   --sys-body-medium: 400 14px / 24px 'Source Sans 3', sans-serif;
+  --sys-body-medium-font: 'Source Sans 3', sans-serif;
+  --sys-body-medium-weight: 400;
+  --sys-body-medium-line-height: 24px;
+  --sys-body-medium-size: 14px;
   --sys-body-medium-tracking: 0.25px;
   --sys-body-small: 400 13px / 16px 'Source Sans 3', sans-serif;
+  --sys-body-small-font: 'Source Sans 3', sans-serif;
+  --sys-body-small-weight: 400;
+  --sys-body-small-line-height: 16px;
+  --sys-body-small-size: 13px;
   --sys-body-small-tracking: 0.4px;
 
   --mdc-protected-button-container-shape: #{$helix-default-round-shape};
@@ -405,5 +465,15 @@ $helix-error-theme: mat.define-theme(
 
   .hlx-badge-accent {
     @include mat.badge-color($helix-theme, $color-variant: tertiary);
+  }
+
+  .hlx-table {
+    --mat-table-row-item-outline-color: #dfe1e2;
+    th {
+      background-color: #f2f2f2;
+    }
+    tr {
+      background-color: white;
+    }
   }
 }
