@@ -72,6 +72,7 @@
       "plugin": "@nx/eslint/plugin"
     }
   ],
+  "nxCloudId": "6787d1239a68ee28b89d6d2a",
   "pluginsConfig": {
     "@nrwl/js": {
       "analyzeSourceFiles": true
