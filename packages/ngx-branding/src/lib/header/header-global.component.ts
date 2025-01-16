@@ -6,11 +6,12 @@ import {
 } from '@angular/core';
 
 @Component({
-  selector: 'cdx-header-global',
-  template: `<ng-content></ng-content>`,
-  styleUrls: ['./header-global.component.scss'],
-  encapsulation: ViewEncapsulation.None,
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'cdx-header-global',
+    template: `<ng-content></ng-content>`,
+    styleUrls: ['./header-global.component.scss'],
+    encapsulation: ViewEncapsulation.None,
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class HeaderGlobalComponent {
   @HostBinding('class') classes = 'cdx-header__global';

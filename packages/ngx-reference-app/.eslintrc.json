@@ -4,7 +4,7 @@
   "overrides": [
     {
       "extends": [
-        "plugin:@nrwl/nx/angular",
+        "plugin:@nx/angular",
         "plugin:@angular-eslint/template/process-inline-templates"
       ],
       "files": ["*.ts"],
@@ -22,11 +22,12 @@
             "prefix": "cdx",
             "style": "kebab-case"
           }
-        ]
+        ],
+        "@angular-eslint/prefer-standalone": "off"
       }
     },
     {
-      "extends": ["plugin:@nrwl/nx/angular-template"],
+      "extends": ["plugin:@nx/angular-template"],
       "files": ["*.html"],
       "rules": {}
     }

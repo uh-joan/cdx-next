@@ -7,18 +7,17 @@ import { RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
-  selector: 'demo-left-navigation',
-  standalone: true,
-  imports: [
-    CommonModule,
-    MatButtonModule,
-    MatDividerModule,
-    RouterModule,
-    TranslateModule,
-    MatTabsModule,
-  ],
-  templateUrl: './left-navigation.component.html',
-  styleUrl: './left-navigation.component.scss',
+    selector: 'demo-left-navigation',
+    imports: [
+        CommonModule,
+        MatButtonModule,
+        MatDividerModule,
+        RouterModule,
+        TranslateModule,
+        MatTabsModule,
+    ],
+    templateUrl: './left-navigation.component.html',
+    styleUrl: './left-navigation.component.scss'
 })
 export class LeftNavigationComponent {
   links = [

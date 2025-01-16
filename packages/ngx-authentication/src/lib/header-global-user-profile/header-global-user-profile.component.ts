@@ -12,11 +12,12 @@ import { AuthenticationService } from '../authentication.service';
 import { JwtToken } from '../authentication.types';
 
 @Component({
-  selector: 'cdx-header-global-user-profile',
-  templateUrl: './header-global-user-profile.component.html',
-  styleUrls: ['./header-global-user-profile.component.scss'],
-  encapsulation: ViewEncapsulation.None,
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'cdx-header-global-user-profile',
+    templateUrl: './header-global-user-profile.component.html',
+    styleUrls: ['./header-global-user-profile.component.scss'],
+    encapsulation: ViewEncapsulation.None,
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class HeaderGlobalUserProfileComponent implements OnInit {
   @ContentChild('menuTriggerCustom') menuTriggerCustom!: ElementRef;

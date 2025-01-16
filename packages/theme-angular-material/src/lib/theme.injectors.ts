@@ -1,13 +1,20 @@
 import { FocusMonitor } from '@angular/cdk/a11y';
 import { DOCUMENT } from '@angular/common';
-import { APP_INITIALIZER, Provider } from '@angular/core';
+import {
+  EnvironmentProviders,
+  inject,
+  provideAppInitializer,
+} from '@angular/core';
 
-export const THEME_INITIALIZER: Provider = {
-  provide: APP_INITIALIZER,
-  multi: true,
-  useFactory: themeInitializer,
-  deps: [FocusMonitor, DOCUMENT],
-};
+export const THEME_INITIALIZER: EnvironmentProviders = provideAppInitializer(
+  () => {
+    const initializerFn = themeInitializer(
+      inject(FocusMonitor),
+      inject(DOCUMENT),
+    );
+    return initializerFn();
+  },
+);
 
 export function themeInitializer(
   focusMonitor: FocusMonitor,

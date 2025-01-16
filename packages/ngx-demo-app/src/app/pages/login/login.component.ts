@@ -8,19 +8,18 @@ import { RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
-  standalone: true,
-  imports: [
-    CommonModule,
-    MatCardModule,
-    MatInputModule,
-    MatCheckboxModule,
-    MatButtonModule,
-    RouterModule,
-    MatCardModule,
-    TranslateModule,
-  ],
-  templateUrl: './login.component.html',
-  styleUrl: './login.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    imports: [
+        CommonModule,
+        MatCardModule,
+        MatInputModule,
+        MatCheckboxModule,
+        MatButtonModule,
+        RouterModule,
+        MatCardModule,
+        TranslateModule,
+    ],
+    templateUrl: './login.component.html',
+    styleUrl: './login.component.scss',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class LoginComponent {}

@@ -11,11 +11,12 @@ import {
 } from '@angular/core';
 
 @Component({
-  selector: 'hlx-notification',
-  templateUrl: './helix-notification.component.html',
-  styleUrls: ['./helix-notification.component.scss'],
-  encapsulation: ViewEncapsulation.None,
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'hlx-notification',
+    templateUrl: './helix-notification.component.html',
+    styleUrls: ['./helix-notification.component.scss'],
+    encapsulation: ViewEncapsulation.None,
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class HelixNotificationComponent {
   @HostBinding('class') private get classes(): string {

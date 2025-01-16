@@ -8,19 +8,18 @@ import { RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
-  standalone: true,
-  imports: [
-    CommonModule,
-    MatButtonModule,
-    RouterModule,
-    MatCardModule,
-    MatInputModule,
-    MatCheckboxModule,
-    TranslateModule,
-  ],
-  templateUrl: './home.component.html',
-  styleUrl: './home.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    imports: [
+        CommonModule,
+        MatButtonModule,
+        RouterModule,
+        MatCardModule,
+        MatInputModule,
+        MatCheckboxModule,
+        TranslateModule,
+    ],
+    templateUrl: './home.component.html',
+    styleUrl: './home.component.scss',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HomeComponent {
   scrollToBottom() {

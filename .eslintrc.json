@@ -4,7 +4,7 @@
     {
       "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
       "rules": {
-        "@nrwl/nx/enforce-module-boundaries": [
+        "@nx/enforce-module-boundaries": [
           "error",
           {
             "allow": [],
@@ -25,16 +25,22 @@
       }
     },
     {
-      "extends": ["plugin:@nrwl/nx/typescript"],
+      "extends": ["plugin:@nx/typescript"],
       "files": ["*.ts", "*.tsx"],
       "rules": {}
     },
     {
-      "extends": ["plugin:@nrwl/nx/javascript"],
+      "extends": ["plugin:@nx/javascript"],
       "files": ["*.js", "*.jsx"],
       "rules": {}
+    },
+    {
+      "files": ["*.ts"],
+      "rules": {
+        "@angular-eslint/prefer-standalone": "off"
+      }
     }
   ],
-  "plugins": ["@nrwl/nx", "import", "simple-import-sort"],
+  "plugins": ["@nx", "import", "simple-import-sort"],
   "root": true
 }

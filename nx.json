@@ -6,7 +6,20 @@
   "defaultProject": "demo",
   "extends": "nx/presets/core.json",
   "generators": {
-    "@nrwl/react": {
+    "@nx/angular:application": {
+      "e2eTestRunner": "none",
+      "linter": "eslint",
+      "style": "scss",
+      "unitTestRunner": "jest"
+    },
+    "@nx/angular:component": {
+      "style": "scss"
+    },
+    "@nx/angular:library": {
+      "linter": "eslint",
+      "unitTestRunner": "jest"
+    },
+    "@nx/react": {
       "application": {
         "babel": true,
         "linter": "eslint",
@@ -20,28 +33,15 @@
         "style": "scss"
       }
     },
-    "@nrwl/web:application": {
+    "@nx/web:application": {
       "e2eTestRunner": "none",
       "linter": "eslint",
       "style": "scss",
       "unitTestRunner": "jest"
     },
-    "@nrwl/web:library": {
+    "@nx/web:library": {
       "linter": "eslint",
       "style": "scss",
-      "unitTestRunner": "jest"
-    },
-    "@nx/angular:application": {
-      "e2eTestRunner": "none",
-      "linter": "eslint",
-      "style": "scss",
-      "unitTestRunner": "jest"
-    },
-    "@nx/angular:component": {
-      "style": "scss"
-    },
-    "@nx/angular:library": {
-      "linter": "eslint",
       "unitTestRunner": "jest"
     }
   },
@@ -74,7 +74,7 @@
   ],
   "nxCloudId": "6787d1239a68ee28b89d6d2a",
   "pluginsConfig": {
-    "@nrwl/js": {
+    "@nx/js": {
       "analyzeSourceFiles": true
     }
   },
@@ -121,6 +121,7 @@
       }
     }
   },
+  "useLegacyCache": true,
   "workspaceLayout": {
     "appsDir": "packages",
     "libsDir": "packages"

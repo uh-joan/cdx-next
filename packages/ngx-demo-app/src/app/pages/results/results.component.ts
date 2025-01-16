@@ -6,15 +6,14 @@ import { MatIconModule } from '@angular/material/icon';
 import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
-  standalone: true,
-  imports: [
-    CommonModule,
-    MatIconModule,
-    MatDividerModule,
-    MatCardModule,
-    TranslateModule,
-  ],
-  templateUrl: './results.component.html',
-  styleUrl: './results.component.scss',
+    imports: [
+        CommonModule,
+        MatIconModule,
+        MatDividerModule,
+        MatCardModule,
+        TranslateModule,
+    ],
+    templateUrl: './results.component.html',
+    styleUrl: './results.component.scss'
 })
 export class ResultsComponent {}

@@ -21,7 +21,7 @@
         "external": ["react/jsx-runtime"],
         "outputPath": "dist/packages/rcx-branding",
         "project": "packages/rcx-branding/package.json",
-        "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
+        "rollupConfig": "@nx/react/plugins/bundle-rollup",
         "tsConfig": "packages/rcx-branding/tsconfig.lib.json"
       },
       "outputs": ["{options.outputPath}"]
@@ -33,14 +33,14 @@
       }
     },
     "lint": {
-      "executor": "@nrwl/linter:eslint",
+      "executor": "@nx/linter:eslint",
       "options": {
         "lintFilePatterns": ["packages/rcx-branding/**/*.{ts,tsx,js,jsx}"]
       },
       "outputs": ["{options.outputFile}"]
     },
     "test": {
-      "executor": "@nrwl/jest:jest",
+      "executor": "@nx/jest:jest",
       "options": {
         "jestConfig": "packages/rcx-branding/jest.config.ts",
         "passWithNoTests": true

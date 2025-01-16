@@ -1,5 +1,5 @@
 import type Highcharts from 'highcharts';
-export declare const CDX_FONT_FAMILY = '"Source Sans Pro", sans-serif';
+export declare const CDX_FONT_FAMILY = "\"Source Sans Pro\", sans-serif";
 export declare const CDX_MATERIAL_THEME_COLORS: string[];
 export declare const CDX_BRAND_PRIMARY_COLORS: string[];
 export declare const CDX_BRAND_PRIMARY_HOVER_COLORS: string[];

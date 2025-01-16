@@ -1,10 +1,10 @@
 import { DOCUMENT } from '@angular/common';
 import {
-  APP_INITIALIZER,
+  EnvironmentProviders,
+  inject,
   InjectionToken,
   isDevMode,
-  Optional,
-  Provider,
+  provideAppInitializer,
 } from '@angular/core';
 import { OneTrustModule } from '@cdx/ngx-branding';
 import { ContextPrimitive } from '@snowplow/browser-tracker';
@@ -21,12 +21,20 @@ export const ANALYTICS_SETTINGS = new InjectionToken<AnalyticsSettings>(
 
 const DEFAULT_CONTEXT: ContextPrimitive = { data: {}, schema: '' };
 
-export const ANALYTICS_INITIALIZER: Provider = {
-  provide: APP_INITIALIZER,
-  multi: true,
-  useFactory: analyticsInitializer,
-  deps: [ANALYTICS_SETTINGS, DOCUMENT, [new Optional(), OneTrustModule]],
-};
+export const ANALYTICS_INITIALIZER: EnvironmentProviders =
+  provideAppInitializer(() => {
+    const oneTrustModule = inject(OneTrustModule, { optional: true });
+    const context: ContextPrimitive = oneTrustModule
+      ? { data: { oneTrustModule }, schema: '' }
+      : DEFAULT_CONTEXT;
+
+    const initializerFn = analyticsInitializer(
+      inject(ANALYTICS_SETTINGS),
+      inject(DOCUMENT),
+      context,
+    );
+    return initializerFn();
+  });
 
 export const ANALYTICS_CONTEXT_DATA = new InjectionToken<AnalyticsContextData>(
   'ANALYTICS_CONTEXT_DATA',

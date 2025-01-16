@@ -6,9 +6,10 @@ import { Subscription } from 'rxjs';
 import { DIALOG_RESULTS } from '../session-activity.model';
 
 @Component({
-  selector: 'cdx-inactivity-dialog',
-  templateUrl: './inactivity-dialog.component.html',
-  styleUrls: ['./inactivity-dialog.component.scss'],
+    selector: 'cdx-inactivity-dialog',
+    templateUrl: './inactivity-dialog.component.html',
+    styleUrls: ['./inactivity-dialog.component.scss'],
+    standalone: false
 })
 export class InactivityDialogComponent implements OnDestroy {
   public DIALOG_RESULTS = DIALOG_RESULTS;

@@ -11,11 +11,12 @@ import { ThemeOptionsBranding } from '@cdx/theme-angular-material';
 import { OneTrustService } from '../../one-trust/one-trust.service';
 
 @Component({
-  selector: 'footer[hlx-footer]',
-  templateUrl: './helix-footer.component.html',
-  styleUrls: ['./helix-footer.component.scss'],
-  encapsulation: ViewEncapsulation.None,
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'footer[hlx-footer]',
+    templateUrl: './helix-footer.component.html',
+    styleUrls: ['./helix-footer.component.scss'],
+    encapsulation: ViewEncapsulation.None,
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class HelixFooterComponent {
   @Input() shouldShowTranslations = false;

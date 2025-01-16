@@ -19,7 +19,7 @@
         }
       },
       "defaultConfiguration": "production",
-      "executor": "@nrwl/webpack:webpack",
+      "executor": "@nx/webpack:webpack",
       "options": {
         "assets": [],
         "baseHref": "/",
@@ -35,7 +35,7 @@
       "outputs": ["{options.outputPath}"]
     },
     "lint": {
-      "executor": "@nrwl/linter:eslint",
+      "executor": "@nx/linter:eslint",
       "options": {
         "lintFilePatterns": ["packages/notification/**/*.ts"]
       },
@@ -47,7 +47,7 @@
           "buildTarget": "notification:build:production"
         }
       },
-      "executor": "@nrwl/webpack:dev-server",
+      "executor": "@nx/webpack:dev-server",
       "options": {
         "buildTarget": "notification:build"
       }
@@ -63,7 +63,7 @@
       "outputs": ["{options.outputFile}"]
     },
     "test": {
-      "executor": "@nrwl/jest:jest",
+      "executor": "@nx/jest:jest",
       "options": {
         "jestConfig": "packages/notification/jest.config.ts",
         "passWithNoTests": true

@@ -59,8 +59,8 @@ const COMPONENTS = [
 
 /** Custom header component for datepicker. */
 @Component({
-  selector: 'example-header',
-  styles: `
+    selector: 'example-header',
+    styles: `
     .example-header {
       display: flex;
       align-items: center;
@@ -74,7 +74,7 @@ const COMPONENTS = [
       text-align: center;
     }
   `,
-  template: `
+    template: `
     <div class="example-header">
       <button mat-icon-button (click)="previousClicked('year')">
         <mat-icon>keyboard_double_arrow_left</mat-icon>
@@ -91,9 +91,8 @@ const COMPONENTS = [
       </button>
     </div>
   `,
-  standalone: true,
-  imports: [MatButtonModule, MatIconModule],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    imports: [MatButtonModule, MatIconModule],
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ExampleHeaderComponent<D> implements OnDestroy {
   private _calendar = inject<MatCalendar<D>>(MatCalendar);
@@ -139,9 +138,10 @@ export class ExampleHeaderComponent<D> implements OnDestroy {
   }
 }
 @Component({
-  templateUrl: './home.component.html',
-  styleUrl: './home.component.scss',
-  encapsulation: ViewEncapsulation.None,
+    templateUrl: './home.component.html',
+    styleUrl: './home.component.scss',
+    encapsulation: ViewEncapsulation.None,
+    standalone: false
 })
 export class HomeComponent implements OnInit {
   searchControl = new FormControl('');

@@ -1,9 +1,11 @@
 import { DOCUMENT } from '@angular/common';
 import {
-  APP_INITIALIZER,
+  EnvironmentProviders,
+  inject,
   InjectionToken,
   isDevMode,
-  Provider,
+  makeEnvironmentProviders,
+  provideAppInitializer,
 } from '@angular/core';
 
 import { OneTrustSettings } from './one-trust.types';
@@ -12,12 +14,16 @@ export const ONE_TRUST_SETTINGS = new InjectionToken<OneTrustSettings>(
   'OneTrust Settings',
 );
 
-export const ONE_TRUST_INITIALIZER: Provider = {
-  provide: APP_INITIALIZER,
-  multi: true,
-  useFactory: oneTrustInitializer,
-  deps: [ONE_TRUST_SETTINGS, DOCUMENT],
-};
+export const ONE_TRUST_INITIALIZER: EnvironmentProviders =
+  makeEnvironmentProviders([
+    provideAppInitializer(() => {
+      const initializerFn = oneTrustInitializer(
+        inject(ONE_TRUST_SETTINGS),
+        inject(DOCUMENT),
+      );
+      return initializerFn();
+    }),
+  ]);
 
 export function oneTrustInitializer(
   settings: OneTrustSettings,

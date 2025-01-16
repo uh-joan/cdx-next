@@ -11,7 +11,7 @@
           "quiet": true
         }
       },
-      "executor": "@nrwl/storybook:build",
+      "executor": "@nx/storybook:build",
       "options": {
         "configDir": "packages/rcx-demo/.storybook",
         "outputDir": "dist/storybook/rcx-demo"
@@ -19,7 +19,7 @@
       "outputs": ["{options.outputDir}"]
     },
     "lint": {
-      "executor": "@nrwl/linter:eslint",
+      "executor": "@nx/linter:eslint",
       "options": {
         "lintFilePatterns": ["packages/rcx-demo/**/*.{ts,tsx,js,jsx}"]
       },
@@ -31,14 +31,14 @@
           "quiet": true
         }
       },
-      "executor": "@nrwl/storybook:storybook",
+      "executor": "@nx/storybook:storybook",
       "options": {
         "configDir": "packages/rcx-demo/.storybook",
         "port": 4400
       }
     },
     "test": {
-      "executor": "@nrwl/jest:jest",
+      "executor": "@nx/jest:jest",
       "options": {
         "jestConfig": "packages/rcx-demo/jest.config.ts",
         "passWithNoTests": true

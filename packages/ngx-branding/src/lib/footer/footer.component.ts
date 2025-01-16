@@ -11,11 +11,12 @@ import { ThemeOptionsBranding } from '@cdx/theme-angular-material';
 import { OneTrustService } from '../one-trust/one-trust.service';
 
 @Component({
-  selector: 'footer[cdx-footer]',
-  templateUrl: './footer.component.html',
-  styleUrls: ['./footer.component.scss'],
-  encapsulation: ViewEncapsulation.None,
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'footer[cdx-footer]',
+    templateUrl: './footer.component.html',
+    styleUrls: ['./footer.component.scss'],
+    encapsulation: ViewEncapsulation.None,
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class FooterComponent {
   @Input() shouldShowTranslations = false;

@@ -17,6 +17,7 @@ import { ThemeOptionsBranding } from '@cdx/theme-angular-material';
   selector: 'header[hlx-header]',
   templateUrl: './helix-header.component.html',
   styleUrls: ['./helix-header.component.scss'],
+  standalone: false,
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })

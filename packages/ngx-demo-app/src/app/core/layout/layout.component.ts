@@ -21,29 +21,28 @@ import { ModeSelectorComponent } from '../mode-selector/mode-selector.component'
 import { ThemeSelectorComponent } from '../theme-selector/theme-selector.component';
 
 @Component({
-  standalone: true,
-  imports: [
-    HelixHeaderModule,
-    CommonModule,
-    RouterModule,
-    HeaderModule,
-    FooterModule,
-    TranslateModule,
-    HeaderGlobalUserProfileModule,
-    HeaderGlobalSessionManagementModule,
-    MatTabsModule,
-    ModeSelectorComponent,
-    ThemeSelectorComponent,
-    LanguageSelectorComponent,
-    LeftNavigationComponent,
-    MatIconModule,
-    HelixFooterModule,
-    ModeSelectorComponent,
-    ThemeSelectorComponent,
-    LanguageSelectorComponent,
-  ],
-  templateUrl: './layout.component.html',
-  styleUrl: './layout.component.scss',
+    imports: [
+        HelixHeaderModule,
+        CommonModule,
+        RouterModule,
+        HeaderModule,
+        FooterModule,
+        TranslateModule,
+        HeaderGlobalUserProfileModule,
+        HeaderGlobalSessionManagementModule,
+        MatTabsModule,
+        ModeSelectorComponent,
+        ThemeSelectorComponent,
+        LanguageSelectorComponent,
+        LeftNavigationComponent,
+        MatIconModule,
+        HelixFooterModule,
+        ModeSelectorComponent,
+        ThemeSelectorComponent,
+        LanguageSelectorComponent,
+    ],
+    templateUrl: './layout.component.html',
+    styleUrl: './layout.component.scss'
 })
 export class LayoutComponent {
   links = [
