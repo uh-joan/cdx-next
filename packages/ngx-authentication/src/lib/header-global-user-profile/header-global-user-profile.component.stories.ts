@@ -16,7 +16,6 @@ import { of } from 'rxjs';
 
 import { AuthenticationModule } from '../authentication.module';
 import { HeaderGlobalUserProfileComponent } from './header-global-user-profile.component';
-import { HeaderGlobalUserProfileModule } from './header-global-user-profile.module';
 
 export default {
   title: 'Base/HeaderGlobalUserProfile',
@@ -24,10 +23,10 @@ export default {
   decorators: [
     moduleMetadata({
       imports: [
+        HeaderGlobalUserProfileComponent,
         BrowserAnimationsModule,
         ThemeModule,
         MatIconModule,
-        HeaderGlobalUserProfileModule,
         MatButtonModule,
         MatDividerModule,
         TranslateModule.forChild(),

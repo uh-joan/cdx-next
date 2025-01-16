@@ -4,9 +4,9 @@ import { ActivatedRoute } from '@angular/router';
 import { AuthenticationService } from './authentication.service';
 
 @Component({
-    selector: 'cdx-broker',
-    template: '',
-    standalone: false
+  selector: 'cdx-broker',
+  template: '',
+  standalone: false,
 })
 export class BrokerComponent {
   constructor(

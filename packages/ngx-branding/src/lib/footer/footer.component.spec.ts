@@ -32,6 +32,7 @@ describe('FooterComponent', () => {
   beforeEach(() => {
     host = createHost('<footer cdx-footer><div>stuff</div></footer>');
     oneTrust = host.inject<OneTrustService>(OneTrustService);
+    jest.spyOn(oneTrust, 'isReady').mockReturnValue(true);
   });
 
   it('should set footer class', () => {
@@ -51,7 +52,8 @@ describe('FooterComponent', () => {
   describe('when Company links', () => {
     describe('are grouped', () => {
       beforeEach(() => {
-        host.setInput({ groupCompanyLinks: true });
+        host.component.groupCompanyLinks = true;
+        host.detectComponentChanges();
       });
 
       it('should show company group first', () => {
@@ -61,7 +63,8 @@ describe('FooterComponent', () => {
 
     describe('are not grouped', () => {
       beforeEach(() => {
-        host.setInput({ groupCompanyLinks: false });
+        host.component.groupCompanyLinks = false;
+        host.detectComponentChanges();
       });
 
       it('should show a Company link first', () => {
@@ -75,7 +78,7 @@ describe('FooterComponent', () => {
 
     describe('configured and available', () => {
       beforeEach(() => {
-        oneTrust.isReady.mockReturnValue(true);
+        jest.spyOn(oneTrust, 'isReady').mockReturnValue(true);
         host.detectComponentChanges();
       });
 
@@ -97,7 +100,7 @@ describe('FooterComponent', () => {
         beforeEach(() => {
           host.keyboard.pressEnter(
             byText(manageCookiePreferencesLinkText),
-            'keydown', // defaults to keyup, which doesn't match the behavior of anchors with href
+            'keydown',
           );
         });
 
@@ -109,7 +112,7 @@ describe('FooterComponent', () => {
 
     describe('not configured', () => {
       beforeEach(() => {
-        oneTrust.isReady.mockReturnValue(false);
+        jest.spyOn(oneTrust, 'isReady').mockReturnValue(false);
         host.detectComponentChanges();
       });
 

@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import {
   AfterViewInit,
   ChangeDetectionStrategy,
@@ -11,14 +12,24 @@ import {
   ViewChild,
   ViewEncapsulation,
 } from '@angular/core';
+import { MatButtonModule } from '@angular/material/button';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatIconModule } from '@angular/material/icon';
+import { MatMenuModule } from '@angular/material/menu';
 import { ThemeOptionsBranding } from '@cdx/theme-angular-material';
 
 @Component({
   selector: 'header[hlx-header]',
   templateUrl: './helix-header.component.html',
   styleUrls: ['./helix-header.component.scss'],
-  standalone: false,
   encapsulation: ViewEncapsulation.None,
+  imports: [
+    CommonModule,
+    MatDividerModule,
+    MatButtonModule,
+    MatMenuModule,
+    MatIconModule,
+  ],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HelixHeaderComponent implements AfterViewInit {

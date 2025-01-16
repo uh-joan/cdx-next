@@ -3,7 +3,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { AnalyticsModule, AnalyticsService } from '@cdx/ngx-analytics';
 import {
   AuthenticationModule,
-  HeaderGlobalUserProfileModule,
+  HeaderGlobalUserProfileComponent,
 } from '@cdx/ngx-authentication';
 import { HeaderModule, OneTrustModule } from '@cdx/ngx-branding';
 import {
@@ -38,7 +38,7 @@ describe('AppComponent', () => {
         TranslateModule.forRoot({
           defaultLanguage: 'en',
         }),
-        HeaderGlobalUserProfileModule,
+        HeaderGlobalUserProfileComponent,
         HeaderGlobalSessionManagementModule,
         ModeSelectorComponent,
         ThemeSelectorComponent,

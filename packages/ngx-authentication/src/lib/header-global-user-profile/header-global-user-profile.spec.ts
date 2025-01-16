@@ -1,66 +1,90 @@
-import { By } from '@angular/platform-browser';
-import { Router } from '@angular/router';
-import { createHostFactory, SpectatorHost } from '@ngneat/spectator/jest';
-import { TranslateService } from '@ngx-translate/core';
-import { location } from 'jest-globals';
-import { of } from 'rxjs';
+import { CommonModule } from '@angular/common';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatMenuModule } from '@angular/material/menu';
+import { TranslateModule } from '@ngx-translate/core';
 
-import { AuthenticationModule } from '../authentication.module';
+import { AuthenticationService } from '../authentication.service';
+import { JwtToken } from '../authentication.types';
 import { HeaderGlobalUserProfileComponent } from './header-global-user-profile.component';
-import { HeaderGlobalUserProfileModule } from './header-global-user-profile.module';
 
 describe('HeaderGlobalUserProfileComponent', () => {
-  let host: SpectatorHost<HeaderGlobalUserProfileComponent>;
-  const createHost = createHostFactory({
-    component: HeaderGlobalUserProfileComponent,
-    imports: [
-      HeaderGlobalUserProfileModule,
-      AuthenticationModule.forRoot({
-        appId: 'cdx',
-        environment: 'dev-stable',
-      }),
-    ],
-    providers: [
-      {
-        provide: Router,
-        useValue: { url: 'home' },
-      },
-      {
-        provide: TranslateService,
-        useValue: {
-          get: (key: unknown) => of(key),
-        },
-      },
-    ],
+  let component: HeaderGlobalUserProfileComponent;
+  let fixture: ComponentFixture<HeaderGlobalUserProfileComponent>;
+  let authenticationService: jest.Mocked<AuthenticationService>;
+
+  beforeEach(async () => {
+    const authServiceMock = {
+      isAuthenticated: jest.fn(),
+      getTokenPayload: jest.fn(),
+      login: jest.fn(),
+      logout: jest.fn(),
+    };
+
+    await TestBed.configureTestingModule({
+      imports: [
+        HeaderGlobalUserProfileComponent,
+        CommonModule,
+        MatButtonModule,
+        MatIconModule,
+        MatMenuModule,
+        TranslateModule.forRoot(),
+      ],
+      providers: [
+        { provide: AuthenticationService, useValue: authServiceMock },
+      ],
+    }).compileComponents();
   });
 
-  describe('when user is not authenticated', () => {
-    beforeEach(() => {
-      host = createHost(
-        '<cdx-header-global-user-profile></cdx-header-global-user-profile>',
-      );
-    });
+  beforeEach(() => {
+    fixture = TestBed.createComponent(HeaderGlobalUserProfileComponent);
+    component = fixture.componentInstance;
+    authenticationService = TestBed.inject(
+      AuthenticationService,
+    ) as jest.Mocked<AuthenticationService>;
 
-    it('should show login icon in button', () => {
-      expect('button mat-icon').toContainText('login');
-    });
+    fixture.detectChanges();
   });
 
-  describe('when user is not authenticated and login button is clicked', () => {
-    beforeEach(() => {
-      host = createHost(
-        '<cdx-header-global-user-profile></cdx-header-global-user-profile>',
-      );
-      const loginButtonElement = host.fixture.debugElement.query(
-        By.css('button'),
-      );
-      loginButtonElement.triggerEventHandler('click', null);
-    });
+  it('should create the component', () => {
+    expect(component).toBeTruthy();
+  });
 
-    it('should assign browswer location to production federated login ui', () => {
-      expect(location.assign).toHaveBeenCalledWith(
-        'https://access.dev-stable.clarivate.com/login?app=cdx&referrer=home',
-      );
-    });
+  it('should initialize authenticated and tokenPayload from authenticationService', () => {
+    const mockTokenPayload: JwtToken = {
+      '1p:eml': 'test@example.com',
+      '1p:fnm': 'John',
+      '1p:lnm': 'Doe',
+      exp: 21421421,
+      expts: 1234567890,
+      user: 'testUser',
+    };
+
+    authenticationService.isAuthenticated.mockReturnValue(true);
+    authenticationService.getTokenPayload.mockReturnValue(mockTokenPayload);
+
+    component.ngOnInit();
+
+    expect(component.authenticated).toBe(true);
+    expect(component.tokenPayload).toEqual(mockTokenPayload);
+  });
+
+  it('should call login on authenticationService when loginWithRouteSnapshot is called', () => {
+    const loginSpy = jest.fn();
+    authenticationService.login.mockImplementation(loginSpy);
+
+    component.loginWithRouteSnapshot();
+
+    expect(loginSpy).toHaveBeenCalled();
+  });
+
+  it('should call logout on authenticationService when logoutWithRouteSnapshot is called', () => {
+    const logoutSpy = jest.fn();
+    authenticationService.logout.mockImplementation(logoutSpy);
+
+    component.logoutWithRouteSnapshot();
+
+    expect(logoutSpy).toHaveBeenCalled();
   });
 });

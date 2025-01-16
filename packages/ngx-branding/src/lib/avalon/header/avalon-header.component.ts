@@ -13,11 +13,11 @@ import {
 import { ThemeOptionsBranding } from '@cdx/theme-angular-material';
 
 @Component({
-    selector: 'header[ava-header]',
-    templateUrl: './avalon-header.component.html',
-    styleUrls: ['./avalon-header.component.scss'],
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: false
+  selector: 'header[ava-header]',
+  templateUrl: './avalon-header.component.html',
+  styleUrls: ['./avalon-header.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: false,
 })
 export class AvalonHeaderComponent implements AfterViewInit {
   @HostBinding('class') classes = 'ava-header';

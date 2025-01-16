@@ -3,12 +3,14 @@ import { Component } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTabsModule } from '@angular/material/tabs';
 import { RouterModule } from '@angular/router';
-import { HeaderGlobalUserProfileModule } from '@cdx/ngx-authentication';
+import { HeaderGlobalUserProfileComponent } from '@cdx/ngx-authentication';
 import {
   FooterModule,
   HeaderModule,
-  HelixFooterModule,
-  HelixHeaderModule,
+  HelixFooterComponent,
+  HelixHeaderComponent,
+  HelixHeaderGlobalComponent,
+  HelixHeaderProductNameOrLogoComponent,
 } from '@cdx/ngx-branding';
 import { HeaderGlobalSessionManagementModule } from '@cdx/ngx-session-activity';
 import { TranslateModule } from '@ngx-translate/core';
@@ -21,28 +23,30 @@ import { ModeSelectorComponent } from '../mode-selector/mode-selector.component'
 import { ThemeSelectorComponent } from '../theme-selector/theme-selector.component';
 
 @Component({
-    imports: [
-        HelixHeaderModule,
-        CommonModule,
-        RouterModule,
-        HeaderModule,
-        FooterModule,
-        TranslateModule,
-        HeaderGlobalUserProfileModule,
-        HeaderGlobalSessionManagementModule,
-        MatTabsModule,
-        ModeSelectorComponent,
-        ThemeSelectorComponent,
-        LanguageSelectorComponent,
-        LeftNavigationComponent,
-        MatIconModule,
-        HelixFooterModule,
-        ModeSelectorComponent,
-        ThemeSelectorComponent,
-        LanguageSelectorComponent,
-    ],
-    templateUrl: './layout.component.html',
-    styleUrl: './layout.component.scss'
+  imports: [
+    HelixHeaderComponent,
+    HelixHeaderGlobalComponent,
+    HelixHeaderProductNameOrLogoComponent,
+    HelixFooterComponent,
+    CommonModule,
+    RouterModule,
+    HeaderModule,
+    FooterModule,
+    TranslateModule,
+    HeaderGlobalUserProfileComponent,
+    HeaderGlobalSessionManagementModule,
+    MatTabsModule,
+    ModeSelectorComponent,
+    ThemeSelectorComponent,
+    LanguageSelectorComponent,
+    LeftNavigationComponent,
+    MatIconModule,
+    ModeSelectorComponent,
+    ThemeSelectorComponent,
+    LanguageSelectorComponent,
+  ],
+  templateUrl: './layout.component.html',
+  styleUrl: './layout.component.scss',
 })
 export class LayoutComponent {
   links = [
