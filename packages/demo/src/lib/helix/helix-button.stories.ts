@@ -44,9 +44,9 @@ const themeButtonsTemplate: StoryFn = () => ({
             </button>
           </div>
           <div class="row hlx-btn-invert">
-            <button mat-button>Button</button>
-            <button mat-button><mat-icon>anchor</mat-icon>Button</button>
-            <button mat-button>
+            <button mat-flat-button>Button</button>
+            <button mat-flat-button><mat-icon>anchor</mat-icon>Button</button>
+            <button mat-flat-button>
               Button<mat-icon iconPositionEnd>anchor</mat-icon>
             </button>
           </div>
@@ -83,11 +83,11 @@ const themeButtonsTemplate: StoryFn = () => ({
             </button>
           </div>
           <div class="row hlx-btn-invert">
-            <button mat-button disabled>Button</button>
-            <button mat-button disabled>
+            <button mat-flat-button disabled>Button</button>
+            <button mat-flat-button disabled>
               <mat-icon>anchor</mat-icon>Button
             </button>
-            <button mat-button disabled>
+            <button mat-flat-button disabled>
               Button<mat-icon iconPositionEnd>anchor</mat-icon>
             </button>
           </div>
@@ -126,9 +126,11 @@ const themeButtonsTemplate: StoryFn = () => ({
             </button>
           </div>
           <div class="row hlx-btn-invert">
-            <button mat-button>Button</button>
-            <button mat-button><mat-icon>anchor</mat-icon>Button</button>
-            <button mat-button>
+            <button mat-stroked-button>Button</button>
+            <button mat-stroked-button>
+              <mat-icon>anchor</mat-icon>Button
+            </button>
+            <button mat-stroked-button>
               Button<mat-icon iconPositionEnd>anchor</mat-icon>
             </button>
           </div>
@@ -163,11 +165,11 @@ const themeButtonsTemplate: StoryFn = () => ({
             </button>
           </div>
           <div class="row hlx-btn-invert">
-            <button mat-button disabled>Button</button>
-            <button mat-button disabled>
+            <button mat-stroked-button disabled>Button</button>
+            <button mat-stroked-button disabled>
               <mat-icon>anchor</mat-icon>Button
             </button>
-            <button mat-button disabled>
+            <button mat-stroked-button disabled>
               Button<mat-icon iconPositionEnd>anchor</mat-icon>
             </button>
           </div>
@@ -346,10 +348,10 @@ const themeButtonsTemplate: StoryFn = () => ({
               Button<mat-icon iconPositionEnd>anchor</mat-icon>
             </button>
           </div>
-          <div class="row">
-            <button mat-button>Button</button>
-            <button mat-button><mat-icon>anchor</mat-icon>Button</button>
-            <button mat-button>
+          <div class="row hlx-btn-invert">
+            <button mat-flat-button>Button</button>
+            <button mat-flat-button><mat-icon>anchor</mat-icon>Button</button>
+            <button mat-flat-button>
               Button<mat-icon iconPositionEnd>anchor</mat-icon>
             </button>
           </div>

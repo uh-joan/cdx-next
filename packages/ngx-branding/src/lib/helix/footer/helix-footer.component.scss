@@ -10,8 +10,7 @@ $cdx-footer-grid-gap: 1.5rem;
 .hlx-footer {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
-  padding: $cdx-footer-padding;
+  padding: 1.5rem $cdx-footer-padding;
   border-top: 1px solid #dfe1e2;
   color: #5f6368;
   font-family: 'Source Sans 3', sans-serif;

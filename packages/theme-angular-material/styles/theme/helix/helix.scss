@@ -24,12 +24,12 @@ $_palettes: (
   ),
   secondary: (
     0: #fff,
-    10: #fcfcfc,
-    20: #f8f8f8,
-    25: #f2f2f2,
-    30: #e5e6e6,
-    35: #bfbfc0,
-    40: #959596,
+    10: #ffffff,
+    20: #ffffff,
+    25: #ffffff,
+    30: #ffffff,
+    35: #ffffff,
+    40: #ffffff,
     50: #6a6b6c,
     60: #4a4b4d,
     70: #2a2b2d,
@@ -129,6 +129,7 @@ $_rest: (
   error: map.get($_palettes, error),
 );
 $_primary: map.merge(map.get($_palettes, primary), $_rest);
+$_secondary: map.merge(map.get($_palettes, secondary), $_rest);
 $_tertiary: map.merge(map.get($_palettes, tertiary), $_rest);
 $_error: map.merge(map.get($_palettes, error), $_rest);
 $helix-theme: mat.define-theme(
@@ -158,6 +159,16 @@ $helix-error-theme: mat.define-theme(
       theme-type: light,
       primary: $_error,
       tertiary: $_tertiary,
+    ),
+  )
+);
+
+$helix-invert-theme: mat.define-theme(
+  (
+    color: (
+      theme-type: light,
+      primary: $_secondary,
+      tertiary: $_primary,
     ),
   )
 );
@@ -235,10 +246,10 @@ $helix-error-theme: mat.define-theme(
   --sys-label-medium-size: 14px;
   --sys-label-medium-tracking: 0.5px;
   --sys-label-small: 600 12px / 20px 'Source Sans 3', sans-serif;
-  --sys-small-large-font: 'Source Sans 3', sans-serif;
-  --sys-small-large-weight: 600;
-  --sys-small-large-line-height: 20px;
-  --sys-small-large-size: 12px;
+  --sys-label-small-font: 'Source Sans 3', sans-serif;
+  --sys-label-small-weight: 600;
+  --sys-label-small-line-height: 20px;
+  --sys-label-small-size: 12px;
   --sys-label-small-tracking: 0.5px;
   --sys-body-large: 400 14px / 24px 'Source Sans 3', sans-serif;
   --sys-body-large-font: 'Source Sans 3', sans-serif;
@@ -293,6 +304,15 @@ $helix-error-theme: mat.define-theme(
   --mat-tree-container-background-color: #{$helix-default-container-background};
   --mdc-dialog-container-shape: #{$helix-default-round-shape};
   --mdc-dialog-container-color: #{$helix-default-container-background};
+  --mat-stepper-header-focus-state-layer-shape: #{$helix-default-round-shape};
+  --mat-stepper-header-hover-state-layer-shape: #{$helix-default-round-shape};
+  --mat-sidenav-container-shape: #{$helix-default-round-shape};
+  --mat-snack-bar-button-color: #ffffff;
+  --mdc-outlined-text-field-outline-color: #babcbe;
+  --mdc-outlined-text-field-hover-outline-color: #5f6368;
+  --mdc-outlined-text-field-focus-outline-color: #2a2b2d;
+
+  @include mat.badge-color($helix-theme, $color-variant: tertiary);
 
   a {
     color: inherit;
@@ -343,8 +363,8 @@ $helix-error-theme: mat.define-theme(
   }
 
   .hlx-btn-invert {
-    @include mat.button-color($helix-theme, $color-variant: secondary);
-
+    @include mat.button-color($helix-invert-theme, $color-variant: primary);
+    --mdc-outlined-button-outline-color: #ffffff;
     --mdc-fab-container-color: #fff;
     --mat-fab-foreground-color: #2a2b2d;
     --mdc-fab-small-container-color: #fff;
@@ -391,6 +411,8 @@ $helix-error-theme: mat.define-theme(
     --mdc-chip-outline-color: transparent;
     --mdc-chip-elevated-container-color: #2a2b2d;
     --mdc-chip-label-text-color: #fff;
+    --mdc-chip-hover-state-layer-color: #000;
+    --mdc-chip-hover-state-layer-opacity: 1;
   }
 
   .hlx-accent-chip {
@@ -398,6 +420,8 @@ $helix-error-theme: mat.define-theme(
     --mdc-chip-outline-color: transparent;
     --mdc-chip-elevated-container-color: #5e33bf;
     --mdc-chip-label-text-color: #fff;
+    --mdc-chip-hover-state-layer-color: #000;
+    --mdc-chip-hover-state-layer-opacity: 0.16;
   }
 
   .hlx-negative-chip {
@@ -405,6 +429,8 @@ $helix-error-theme: mat.define-theme(
     --mdc-chip-outline-color: transparent;
     --mdc-chip-elevated-container-color: #fadcdc;
     --mdc-chip-label-text-color: #410b0d;
+    --mdc-chip-hover-state-layer-color: #000;
+    --mdc-chip-hover-state-layer-opacity: 0.04;
   }
 
   .hlx-warn-chip {
@@ -412,6 +438,8 @@ $helix-error-theme: mat.define-theme(
     --mdc-chip-outline-color: transparent;
     --mdc-chip-elevated-container-color: #ffefd1;
     --mdc-chip-label-text-color: #402b00;
+    --mdc-chip-hover-state-layer-color: #000;
+    --mdc-chip-hover-state-layer-opacity: 0.04;
   }
 
   .hlx-positive-chip {
@@ -419,6 +447,8 @@ $helix-error-theme: mat.define-theme(
     --mdc-chip-outline-color: transparent;
     --mdc-chip-elevated-container-color: #d2f7d6;
     --mdc-chip-label-text-color: #003600;
+    --mdc-chip-hover-state-layer-color: #000;
+    --mdc-chip-hover-state-layer-opacity: 0.04;
   }
 
   .hlx-info-chip {
@@ -426,6 +456,8 @@ $helix-error-theme: mat.define-theme(
     --mdc-chip-outline-color: transparent;
     --mdc-chip-elevated-container-color: #d7e8f7;
     --mdc-chip-label-text-color: #031c40;
+    --mdc-chip-hover-state-layer-color: #000;
+    --mdc-chip-hover-state-layer-opacity: 0.04;
   }
 
   .hlx-outlined-chip {
@@ -451,6 +483,13 @@ $helix-error-theme: mat.define-theme(
     border-radius: 2px;
   }
 
+  .hlx-button-toggle-invert {
+    --mat-standard-button-toggle-selected-state-background-color: #ffffff;
+    --mat-standard-button-toggle-selected-state-text-color: #2a2b2d;
+    --mat-standard-button-toggle-hover-state-layer-opacity: 0.04;
+    --mat-standard-button-toggle-state-layer-color: #000000;
+  }
+
   .mat-label-xlarge {
     font-size: 16px;
   }
@@ -470,10 +509,80 @@ $helix-error-theme: mat.define-theme(
   .hlx-table {
     --mat-table-row-item-outline-color: #dfe1e2;
     th {
+      font: mat.get-theme-typography($helix-theme, body-small, font);
+      line-height: mat.get-theme-typography(
+        $helix-theme,
+        body-small,
+        line-height
+      );
+      font-weight: mat.get-theme-typography(
+        $helix-theme,
+        headline-small,
+        font-weight
+      );
       background-color: #f2f2f2;
     }
     tr {
+      font: mat.get-theme-typography($helix-theme, body-small, font);
+      line-height: mat.get-theme-typography(
+        $helix-theme,
+        body-small,
+        line-height
+      );
       background-color: white;
+    }
+  }
+
+  .hlx-elevation-sm {
+    @include mat.elevation(3);
+  }
+
+  .hlx-elevation-md {
+    @include mat.elevation(9);
+  }
+
+  .hlx-elevation-lg {
+    @include mat.elevation(18);
+  }
+
+  $color-purple-600: #5e33bf;
+  $color-purple-400: #b175e1;
+  $color-neutral-0: #ffffff;
+  $color-neutral-1000: #000000;
+  $color-neutral-100: #f2f2f2;
+  $color-neutral-200: #dfe1e2;
+  $color-neutral-400: #babcbe;
+  $color-neutral-600: #5f6368;
+  $color-neutral-800: #2a2b2d;
+  $color-red-500: #c43136;
+  $color-red-900: #410b0d;
+  $color-red-100: #fadcdc;
+  $color-yellow-500: #ef9f00;
+  $color-yellow-100: #ffefd1;
+  $color-yellow-900: #402b00;
+  $color-green-900: #003600;
+  $color-green-500: #04800f;
+  $color-green-100: #d2f7d6;
+  $color-blue-100: #d7e8f7;
+  $color-blue-500: #0c6ac1;
+  $color-blue-900: #031c40;
+
+  $colors: (
+    primary: $color-neutral-800,
+    secondary: $color-neutral-600,
+    invert: $color-neutral-0,
+    info: $color-blue-900,
+    negative: $color-red-500,
+    warn: $color-yellow-900,
+    positive: $color-green-900,
+    brand: $color-purple-400,
+    accent: $color-purple-600,
+    disabled: $color-neutral-400,
+  );
+
+  @each $key, $value in $colors {
+    .hlx-icon-#{$key} {
+      color: $value;
     }
   }
 }

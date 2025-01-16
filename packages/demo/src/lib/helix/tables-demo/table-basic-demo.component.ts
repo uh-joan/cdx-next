@@ -4,7 +4,7 @@ export const basicTableTemplate = `
 <table
   mat-table
   [dataSource]="dataSource"
-  class="mat-elevation-z8"
+  class="mat-elevation-z8 hlx-table"
   style="width: 500px"
 >
   <!--- Note that these columns can be defined in any order.

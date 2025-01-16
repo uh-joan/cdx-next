@@ -22,7 +22,9 @@ export const Sizes = () => ({
           <h4>Icons</h4>
           <div class="story__section__content">
             <mat-icon class="material-symbols-outlined">search</mat-icon>
-            <mat-icon class="material-symbols-outlined">home</mat-icon>
+            <mat-icon class="material-symbols-outlined hlx-icon-accent"
+              >home</mat-icon
+            >
             <mat-icon class="material-symbols-outlined">menu</mat-icon>
             <mat-icon class="material-symbols-outlined">close</mat-icon>
             <mat-icon class="material-symbols-outlined">settings</mat-icon>
