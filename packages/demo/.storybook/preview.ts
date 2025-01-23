@@ -31,7 +31,7 @@ const parameters: Preview = {
   decorators: [
     componentWrapperDecorator(
       (story) =>
-        `<body [class]="myTheme" class="mat-typography">${story}</body>`,
+        `<body class="mat-typography helix-theme-material">${story}</body>`,
       ({ globals }) => {
         return { myTheme: globals['theme'] };
       },

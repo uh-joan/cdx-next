@@ -1,4 +1,8 @@
 @use '@material/elevation';
+@use '@angular/material' as mat;
+@use '../../../../../theme-angular-material/styles/' as hlx;
+@use '../../../../../theme-angular-material/styles/theme/helix/variables/primitives.scss'
+  as hlx-primitives;
 
 .hlx-notification {
   @include elevation.elevation(1);
@@ -13,7 +17,7 @@
   &__icon,
   &__close {
     align-self: flex-start;
-    color: #2a2b2d;
+    color: hlx.$icon-primary;
   }
 
   &__content {
@@ -24,16 +28,16 @@
   }
 
   &__actions {
-    color: #2a2b2d;
+    color: hlx.$icon-primary;
   }
 }
 
 .hlx-notification--inline {
-  border-left: 8px solid #babcbe;
+  border-left: 8px solid hlx.$border-primary;
   border-radius: 6px;
 
   .hlx-notification__actions {
-    color: #2a2b2d;
+    color: hlx.$icon-primary;
   }
 }
 
@@ -44,24 +48,32 @@
 }
 
 .hlx-notification--success {
+  @include mat.button-color(hlx.$helix-success-theme);
+
   border-left-color: #018760;
-  background-color: #d2f7d6;
+  background-color: hlx.$surface-positive;
+  color: hlx.$text-positive;
 
   .hlx-notification__icon,
   .hlx-notification__actions,
   .hlx-notification__close {
-    color: #003600;
+    color: hlx.$icon-positive;
   }
 }
 
 .hlx-notification--warn {
-  border-left-color: #c43136;
-  background-color: #fadcdc;
+  @include mat.button-color(hlx.$helix-error-theme);
+
+  border-left-color: hlx-primitives.$color-red-500;
+  background-color: hlx.$surface-negative;
+
+  .hlx-notification__actions {
+    color: hlx.$text-negative;
+  }
 
   .hlx-notification__icon,
-  .hlx-notification__actions,
   .hlx-notification__close {
-    color: #410b0d;
+    color: hlx-primitives.$color-red-900;
   }
 }
 

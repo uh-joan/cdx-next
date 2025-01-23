@@ -3,38 +3,10 @@
 @forward 'theme/teal.scss' show $cdx-teal-theme, $cdx-teal-dark-theme;
 @forward 'theme/blue.scss' show $cdx-blue-theme, $cdx-blue-dark-theme;
 @forward 'theme/cdx.m2.scss' show $cdx-typography, $cdx-theme, $cdx-dark-theme;
-@forward 'theme/helix/helix.scss' show $helix-theme, $helix-dark-theme;
+@forward 'theme/helix/helix.scss' show $helix-theme, $helix-dark-theme,
+  $helix-error-theme, $helix-success-theme, $helix-invert-theme;
 @forward 'theme/helix/overrides.scss' show theme-helix-overrides;
-@forward 'theme/helix/variables/tokens.scss' show $surface-primary,
-  $surface-minimal, $surface-contrast, $surface-invert, $surface-info,
-  $surface-positive, $surface-negative, $surface-warn, $text-primary,
-  $text-secondary, $text-invert, $border-primary, $border-secondary,
-  $border-contrast, $border-invert, $border-radius-default, $icon-primary,
-  $icon-secondary, $icon-invert, $icon-info, $icon-positive, $icon-negative,
-  $icon-warn, $icon-accent, $icon-brand, $icon-disabled,
-  $components-primary-filled, $components-secondary-filled,
-  $components-secondary-filled-hover, $components-primary-filled-hover,
-  $components-primary-outline, $components-primary-outlined_basic-hover,
-  $components-accent-filled, $components-accent-filled-hover,
-  $components-accent-outline, $components-accent-outlined_basic-hover,
-  $components-negative-filled, $components-negative-filled-light,
-  $components-negative-filled-hover, $components-negative-outline,
-  $components-negative-outlined_basic-hover, $components-disabled,
-  $components-disabled-outline, $components-warn-filled,
-  $components-ripple-pressed_focused, $components-ripple-hover,
-  $components-positive-filled, $components-positive-filled-hover,
-  $components-info-filled, $components-info-filled-hover,
-  $components-invert-filled, $components-invert-filled-hover,
-  $components-invert-outline, $components-invert-hover,
-  $components-text-input-outlined-enabled, $components-text-input-outlined-hover,
-  $components-text-input-outlined-focused, $components-text-input-outlined-error,
-  $components-text-input-outlined-disabled, $components-text-input-filled-fill,
-  $components-text-input-filled-enabled-border,
-  $components-text-input-filled-hover-fill,
-  $components-text-input-filled-hover_focused-border,
-  $components-text-input-filled-error-border,
-  $components-text-input-filled-disabled-border, $components-warn-filled-hover,
-  $text-negative, $text-warn, $text-positive, $text-info, $text-disabled;
+@forward 'theme/helix/variables/tokens.scss';
 @forward 'theme/helix/helix.m2.scss' show $helix-m2-theme,
   theme-helix-m2-overrides;
 @forward 'theme/avalon/avalon.scss' show $avalon-light-theme, $avalon-dark-theme,

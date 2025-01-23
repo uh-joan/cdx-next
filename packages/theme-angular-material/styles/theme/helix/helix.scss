@@ -32,6 +32,15 @@ $helix-error-theme: mat.define-theme(
     ),
   )
 );
+$helix-success-theme: mat.define-theme(
+  (
+    color: (
+      theme-type: light,
+      primary: paletes.$success,
+      tertiary: paletes.$tertiary,
+    ),
+  )
+);
 $helix-invert-theme: mat.define-theme(
   (
     color: (

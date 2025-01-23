@@ -161,6 +161,10 @@
     }
   }
 
+  .mat-mdc-tab {
+    font: mat.get-theme-typography(hlx.$helix-theme, label-large, font);
+  }
+
   .hlx-elevation-sm {
     @include mat.elevation(3);
   }
@@ -227,78 +231,70 @@
 @mixin theme-helix-chips() {
   .hlx-neutral-chip {
     @include mat.chips-color(hlx.$helix-theme, $color-variant: secondary);
-
+    @include hlx-chip-text-color(tokens.$text-primary);
     --mdc-chip-outline-color: transparent;
     --mdc-chip-elevated-container-color: #{tokens.$components-secondary-filled};
-    --mdc-chip-label-text-color: #{tokens.$text-primary};
   }
 
   .hlx-primary-chip {
     @include mat.chips-color(hlx.$helix-theme, $color-variant: primary);
-
+    @include hlx-chip-text-color(tokens.$text-invert);
     --mdc-chip-outline-color: transparent;
     --mdc-chip-elevated-container-color: #{tokens.$components-primary-filled};
-    --mdc-chip-label-text-color: #{tokens.$text-invert};
     --mdc-chip-hover-state-layer-color: #000;
     --mdc-chip-hover-state-layer-opacity: 1;
   }
 
   .hlx-accent-chip {
     @include mat.chips-color(hlx.$helix-theme, $color-variant: tertiary);
-
+    @include hlx-chip-text-color(tokens.$text-invert);
     --mdc-chip-outline-color: transparent;
     --mdc-chip-elevated-container-color: #{tokens.$components-accent-filled};
-    --mdc-chip-label-text-color: #{tokens.$text-invert};
     --mdc-chip-hover-state-layer-color: #000;
     --mdc-chip-hover-state-layer-opacity: 0.16;
   }
 
   .hlx-negative-chip {
     @include mat.chips-color(hlx.$helix-theme, $color-variant: error);
-
+    @include hlx-chip-text-color(primitives.$color-red-900);
     --mdc-chip-outline-color: transparent;
     --mdc-chip-elevated-container-color: #{tokens.$components-negative-filled-light};
-    --mdc-chip-label-text-color: #{primitives.$color-red-900};
     --mdc-chip-hover-state-layer-color: #000;
     --mdc-chip-hover-state-layer-opacity: 0.04;
   }
 
   .hlx-warn-chip {
     @include mat.chips-color(hlx.$helix-theme, $color-variant: error);
-
+    @include hlx-chip-text-color(tokens.$text-warn);
     --mdc-chip-outline-color: transparent;
     --mdc-chip-elevated-container-color: #{tokens.$components-warn-filled};
-    --mdc-chip-label-text-color: #{tokens.$text-warn};
     --mdc-chip-hover-state-layer-color: #000;
     --mdc-chip-hover-state-layer-opacity: 0.04;
   }
 
   .hlx-positive-chip {
     @include mat.chips-color(hlx.$helix-theme, $color-variant: error);
-
+    @include hlx-chip-text-color(tokens.$text-positive);
     --mdc-chip-outline-color: transparent;
     --mdc-chip-elevated-container-color: #{tokens.$components-positive-filled};
-    --mdc-chip-label-text-color: #{tokens.$text-positive};
     --mdc-chip-hover-state-layer-color: #000;
     --mdc-chip-hover-state-layer-opacity: 0.04;
   }
 
   .hlx-info-chip {
     @include mat.chips-color(hlx.$helix-theme, $color-variant: error);
-
+    @include hlx-chip-text-color(tokens.$text-info);
     --mdc-chip-outline-color: transparent;
     --mdc-chip-elevated-container-color: #{tokens.$components-info-filled};
-    --mdc-chip-label-text-color: #{tokens.$text-info};
     --mdc-chip-hover-state-layer-color: #000;
     --mdc-chip-hover-state-layer-opacity: 0.04;
   }
 
   .hlx-outlined-chip {
     @include mat.chips-color(hlx.$helix-theme, $color-variant: error);
-
+    @include hlx-chip-text-color(tokens.$text-primary);
     --mdc-chip-outline-color: #{tokens.$components-primary-outline};
     --mdc-chip-elevated-container-color: white;
-    --mdc-chip-label-text-color: #{tokens.$text-primary};
   }
 
   .hlx-chip-small {
@@ -308,6 +304,12 @@
   .hlx-chip-xsmall {
     @include mat.chips-density(-2);
   }
+}
+
+@mixin hlx-chip-text-color($color) {
+  --mdc-chip-label-text-color: #{$color};
+  --mdc-chip-with-icon-icon-color: #{$color};
+  --mdc-chip-with-trailing-icon-trailing-icon-color: #{$color};
 }
 
 @mixin theme-helix-icons() {
