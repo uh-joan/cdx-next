@@ -9,6 +9,7 @@ import {
   Input,
   QueryList,
   ViewChild,
+  ViewEncapsulation,
 } from '@angular/core';
 import { ThemeOptionsBranding } from '@cdx/theme-angular-material';
 
@@ -16,6 +17,7 @@ import { ThemeOptionsBranding } from '@cdx/theme-angular-material';
   selector: 'header[hlx-header]',
   templateUrl: './helix-header.component.html',
   styleUrls: ['./helix-header.component.scss'],
+  encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HelixHeaderComponent implements AfterViewInit {
