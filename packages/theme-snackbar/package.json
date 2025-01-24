@@ -1,6 +1,6 @@
 {
   "name": "@cdx/theme-snackbar",
-  "version": "18.2.0-alpha.6",
+  "version": "18.2.0-alpha.7",
   "type": "commonjs",
   "scripts": {
     "build": "webpack",
