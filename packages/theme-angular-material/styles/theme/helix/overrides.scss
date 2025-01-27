@@ -30,19 +30,19 @@
   --mat-select-panel-background-color: #{$helix-default-container-background};
   --mat-datepicker-calendar-container-shape: #{$helix-default-round-shape};
   --mat-datepicker-calendar-container-background-color: #{$helix-default-container-background};
-  --mat-menu-container-color: $helix-default-container-background;
+  --mat-menu-container-color: #{$helix-default-container-background};
   /* stylelint-disable-next-line scss/operator-no-newline-after */
   --mat-datepicker-calendar-container-elevation-shadow: 0 3px 1px -2px rgb(0 0 0 /
           20%),
     0 2px 2px 0 rgb(0 0 0 / 14%), 0 1px 5px 0 rgb(0 0 0 / 12%);
-  --mat-divider-color: tokens.$surface-contrast;
-  --mdc-linear-progress-track-color: tokens.$surface-contrast;
+  --mat-divider-color: #{tokens.$surface-contrast};
+  --mdc-linear-progress-track-color: #{tokens.$surface-contrast};
   --mdc-chip-container-shape-radius: 16px;
   --mdc-chip-outline-color: transparent;
   --mdc-fab-container-shape: 28px;
   --mdc-fab-small-container-shape: 28px;
   --mat-paginator-container-background-color: transparent;
-  --mdc-plain-tooltip-container-color: primitives.$color-neutral-600;
+  --mdc-plain-tooltip-container-color: #{primitives.$color-neutral-600};
   --mat-expansion-container-shape: #{$helix-default-round-shape};
   --mat-expansion-container-background-color: #{$helix-default-container-background};
   --mdc-elevated-card-container-shape: #{$helix-default-round-shape};
@@ -133,7 +133,7 @@
   }
 
   .hlx-table {
-    --mat-table-row-item-outline-color: tokens.$border-secondary;
+    --mat-table-row-item-outline-color: #{tokens.$border-secondary};
 
     th {
       background-color: tokens.$surface-minimal;
@@ -232,6 +232,7 @@
   .hlx-neutral-chip {
     @include mat.chips-color(hlx.$helix-theme, $color-variant: secondary);
     @include hlx-chip-text-color(tokens.$text-primary);
+
     --mdc-chip-outline-color: transparent;
     --mdc-chip-elevated-container-color: #{tokens.$components-secondary-filled};
   }
@@ -239,6 +240,7 @@
   .hlx-primary-chip {
     @include mat.chips-color(hlx.$helix-theme, $color-variant: primary);
     @include hlx-chip-text-color(tokens.$text-invert);
+
     --mdc-chip-outline-color: transparent;
     --mdc-chip-elevated-container-color: #{tokens.$components-primary-filled};
     --mdc-chip-hover-state-layer-color: #000;
@@ -248,6 +250,7 @@
   .hlx-accent-chip {
     @include mat.chips-color(hlx.$helix-theme, $color-variant: tertiary);
     @include hlx-chip-text-color(tokens.$text-invert);
+
     --mdc-chip-outline-color: transparent;
     --mdc-chip-elevated-container-color: #{tokens.$components-accent-filled};
     --mdc-chip-hover-state-layer-color: #000;
@@ -257,6 +260,7 @@
   .hlx-negative-chip {
     @include mat.chips-color(hlx.$helix-theme, $color-variant: error);
     @include hlx-chip-text-color(primitives.$color-red-900);
+
     --mdc-chip-outline-color: transparent;
     --mdc-chip-elevated-container-color: #{tokens.$components-negative-filled-light};
     --mdc-chip-hover-state-layer-color: #000;
@@ -266,6 +270,7 @@
   .hlx-warn-chip {
     @include mat.chips-color(hlx.$helix-theme, $color-variant: error);
     @include hlx-chip-text-color(tokens.$text-warn);
+
     --mdc-chip-outline-color: transparent;
     --mdc-chip-elevated-container-color: #{tokens.$components-warn-filled};
     --mdc-chip-hover-state-layer-color: #000;
@@ -275,6 +280,7 @@
   .hlx-positive-chip {
     @include mat.chips-color(hlx.$helix-theme, $color-variant: error);
     @include hlx-chip-text-color(tokens.$text-positive);
+
     --mdc-chip-outline-color: transparent;
     --mdc-chip-elevated-container-color: #{tokens.$components-positive-filled};
     --mdc-chip-hover-state-layer-color: #000;
@@ -284,6 +290,7 @@
   .hlx-info-chip {
     @include mat.chips-color(hlx.$helix-theme, $color-variant: error);
     @include hlx-chip-text-color(tokens.$text-info);
+
     --mdc-chip-outline-color: transparent;
     --mdc-chip-elevated-container-color: #{tokens.$components-info-filled};
     --mdc-chip-hover-state-layer-color: #000;
@@ -293,6 +300,7 @@
   .hlx-outlined-chip {
     @include mat.chips-color(hlx.$helix-theme, $color-variant: error);
     @include hlx-chip-text-color(tokens.$text-primary);
+
     --mdc-chip-outline-color: #{tokens.$components-primary-outline};
     --mdc-chip-elevated-container-color: white;
   }
