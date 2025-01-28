@@ -109,8 +109,14 @@
     @include mat.form-field-density(-3);
   }
 
+  .hlx-input-x-small {
+    @include mat.form-field-density(-4);
+  }
+
   .hlx-button-toggle-container {
+    --mat-standard-button-toggle-height: 30px;
     width: fit-content;
+    height: fit-content;
     padding: 4px;
     border: 1px solid #babcbe;
     background-color: #{tokens.$surface-minimal};

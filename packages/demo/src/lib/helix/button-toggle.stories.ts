@@ -2,7 +2,10 @@ import {
   MatButtonToggle,
   MatButtonToggleModule,
 } from '@angular/material/button-toggle';
+import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { ThemeModule } from '@cdx/theme-angular-material';
 import { Meta, moduleMetadata, StoryFn } from '@storybook/angular';
 import { html } from 'common-tags';
@@ -12,7 +15,14 @@ export default {
   component: MatButtonToggle,
   decorators: [
     moduleMetadata({
-      imports: [MatButtonToggleModule, ThemeModule, MatIconModule],
+      imports: [
+        MatButtonToggleModule,
+        MatInputModule,
+        NoopAnimationsModule,
+        MatFormFieldModule,
+        ThemeModule,
+        MatIconModule,
+      ],
     }),
   ],
 } as Meta;
@@ -20,8 +30,16 @@ export default {
 const DefaultTemplate: StoryFn = () => ({
   template: html`
     <h3>Default Button Toggle</h3>
-    <div class="hlx-button-toggle-container">
-      <mat-button-toggle-group name="switcher" aria-label="Switcher">
+    <div style="display: flex">
+      <mat-form-field appearance="outline" class="hlx-input-x-small">
+        <mat-label>Outlined text input</mat-label>
+        <input matInput title="Please enter text" placeholder="Placeholder" />
+      </mat-form-field>
+      <mat-button-toggle-group
+        name="switcher"
+        aria-label="Switcher"
+        class="hlx-button-toggle-container hlx-button-toggle-invert"
+      >
         <mat-button-toggle value="fielded" checked role="button">
           Fielded
         </mat-button-toggle>
