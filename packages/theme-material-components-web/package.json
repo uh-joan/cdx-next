@@ -1,6 +1,6 @@
 {
   "name": "@cdx/theme-material-components-web",
-  "version": "18.2.0-alpha.7",
+  "version": "18.2.0-alpha.8",
   "repository": {
     "type": "git",
     "url": "ssh://git@git.clarivate.io/cdxn/cdx-next.git",
@@ -16,7 +16,7 @@
     "deploy:cdn": "deploy-aws-s3-cloudfront --bucket cdx-cdn.digital-experience.clarivate.io --distribution EF022SLU13YUI --source dist --destination @cdx/theme-material-components-web/${VERSION:-latest} --non-interactive"
   },
   "peerDependencies": {
-    "@cdx/colors": "18.2.0-alpha.7",
+    "@cdx/colors": "18.2.0-alpha.8",
     "material-components-web": "14.0.0"
   }
 }
