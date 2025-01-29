@@ -1,6 +1,6 @@
 {
   "name": "@cdx/theme-angular-material",
-  "version": "18.2.0-alpha.8",
+  "version": "18.2.0-alpha.9",
   "exports": {
     ".": {
       "sass": "./styles/_index.scss"
@@ -11,6 +11,6 @@
   },
   "peerDependencies": {
     "@angular/material": "18",
-    "@cdx/colors": "18.2.0-alpha.8"
+    "@cdx/colors": "18.2.0-alpha.9"
   }
 }
