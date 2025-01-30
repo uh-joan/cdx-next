@@ -115,11 +115,12 @@
 
   .hlx-button-toggle-container {
     --mat-standard-button-toggle-height: 30px;
+
     width: fit-content;
     height: fit-content;
     padding: 4px;
     border: 1px solid #babcbe;
-    background-color: #{tokens.$surface-minimal};
+    background-color: tokens.$surface-minimal;
     border-radius: $helix-default-round-shape;
   }
 
@@ -131,11 +132,21 @@
   }
 
   .mat-label-xlarge {
+    font: mat.get-theme-typography(hlx.$helix-theme, label-large, font);
     font-size: 16px;
   }
 
   .mat-body-xlarge {
+    font: mat.get-theme-typography(hlx.$helix-theme, body-large, font);
     font-size: 16px;
+  }
+
+  .mat-weight-regular {
+    font-weight: 400;
+  }
+
+  .mat-weight-semi-bold {
+    font-weight: 600;
   }
 
   .hlx-table {
