@@ -1,0 +1,31 @@
+:host {
+  display: block;
+
+  .header {
+    &__navigation {
+      height: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 2px;
+    }
+
+    &__link {
+      height: 2.5rem;
+      text-transform: capitalize;
+      border-radius: 2px;
+      text-decoration: none;
+      color: white;
+
+      &--active {
+        background: var(--components-invert-hover, rgba(255, 255, 255, 0.08));
+        cursor: default;
+        pointer-events: none;
+      }
+    }
+
+    .hlx-header__product-name-or-logo {
+      cursor: pointer;
+    }
+  }
+}

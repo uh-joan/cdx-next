@@ -1,0 +1,20 @@
+<header hlx-header class="header" [branded]="false">
+  <hlx-header-product-name [routerLink]="['/home']">
+    Helix Design System
+  </hlx-header-product-name>
+  <nav class="header__navigation">
+    @for (link of links; track link.path) {
+    <a
+      mat-button
+      class="header__link"
+      [routerLink]="[link.path]"
+      routerLinkActive="header__link--active"
+    >
+      {{ link.label }}
+    </a>
+    }
+  </nav>
+  <hlx-header-global>
+    <cdx-search></cdx-search>
+  </hlx-header-global>
+</header>

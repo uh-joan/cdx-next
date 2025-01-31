@@ -1,0 +1,87 @@
+<hlx-page
+  [title]="'Colors'"
+  [subtitle]="'Developers guide to the Helix color palette.'"
+  [section]="'Development'"
+>
+  <h2>Overview</h2>
+  <p>
+    Clarivate's color palette utilizes Material Design's color scale to
+    accurately output colors for the UI. This includes the variants for brand
+    colors, semantic colors, and neutral colors used in backgrounds. This
+    section is related to color usage for development purposes. Color values are
+    represented as design tokens, which can be included as part of the npm
+    package install. Below are the tokens related to the color palette.
+  </p>
+
+  <mat-divider></mat-divider>
+  <h2>Formats</h2>
+  <p>We support the following formats:</p>
+  <cdx-external-link
+    [text]="'SCSS/SASS'"
+    [url]="'https://sass-lang.com/'"
+    [inline]="false"
+  ></cdx-external-link>
+
+  <mat-divider></mat-divider>
+
+  <p>
+    To apply helix theme system variables for app background and color , you can
+    use the following CSS code:
+  </p>
+  <cdx-highlight [text]="systemBackground" [language]="'css'"></cdx-highlight>
+
+  <mat-divider></mat-divider>
+
+  <h2>Apply Angular Material Theme Values</h2>
+
+  <p>
+    To apply a color from an specific palette to an specific component you can
+    use the following material mixin:
+  </p>
+  <cdx-highlight [text]="colorsFromPalette" [language]="'css'"></cdx-highlight>
+
+  <mat-divider></mat-divider>
+
+  <h2>Helix Tokens</h2>
+
+  <p>
+    Helix <code>angular-material-theme</code> package comes also with a set of
+    variables offered by Helix UX Team, here is how you can refer to a token and
+    consume it:
+  </p>
+
+  <cdx-highlight [text]="useTokens"></cdx-highlight>
+  <mat-divider></mat-divider>
+
+  <h2>Token List</h2>
+
+  <p>
+    This is the list of tokens available for use in Helix pages and components.
+  </p>
+
+  <table mat-table [dataSource]="tokenList" class="mat-elevation-z8 hlx-table">
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef>Variable Name</th>
+      <td mat-cell *matCellDef="let element" class="mat-body-xlarge">
+        {{ element.name }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="primitive">
+      <th mat-header-cell *matHeaderCellDef>Primitive</th>
+      <td mat-cell *matCellDef="let element" class="mat-body-large">
+        {{ element.primitive }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="value">
+      <th mat-header-cell *matHeaderCellDef>Value</th>
+      <td mat-cell *matCellDef="let element">
+        <app-color-pill [value]="element.value"></app-color-pill>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+</hlx-page>

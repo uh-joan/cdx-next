@@ -1,0 +1,16 @@
+<div class="content">
+  <div class="content__top-block">
+    <div class="top-block__title mat-display-large">
+      Design, develop and deliver intuitive Life Science & Healthcare products
+    </div>
+    <img [src]="'../../../assets/home/home.svg'" />
+  </div>
+
+  <div class="content__bottom-block">
+    @for (cardData of cardConfigs; track cardData.title) {
+    <app-card-c [cardData]="cardData"> </app-card-c>
+    }
+  </div>
+</div>
+
+<footer hlx-footer slim branded></footer>

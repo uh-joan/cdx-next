@@ -1,0 +1,35 @@
+<form
+  [formGroup]="searchForm"
+  class="search-wrapper"
+  (click)="onSearchIconClick()"
+>
+  <mat-icon matPrefix class="search-wrapper__search-icon">search</mat-icon>
+
+  <input
+    #searchInput
+    matInput
+    formControlName="query"
+    placeholder="Search..."
+    (input)="onSearchInput()"
+    (keydown.escape)="onEscapeKey()"
+    [matAutocomplete]="auto"
+    class="search-wrapper__input"
+    [class.visible]="isSearchVisible"
+  />
+  <mat-icon
+    class="search-wrapper__close-icon"
+    (click)="onCloseSearchClick($event)"
+    *ngIf="isSearchVisible"
+    >close</mat-icon
+  >
+
+  <mat-autocomplete
+    #auto="matAutocomplete"
+    [displayWith]="displayOption"
+    (optionSelected)="onSelectRoute($event.option.value.route)"
+  >
+    <mat-option *ngFor="let option of filteredOptions" [value]="option">
+      {{ option.title }}
+    </mat-option>
+  </mat-autocomplete>
+</form>

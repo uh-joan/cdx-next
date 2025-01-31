@@ -1,0 +1,144 @@
+<hlx-page
+  [title]="'Translations'"
+  [subtitle]="
+    'This translate service offer the possibility to syncronyze the translations of the project and the translations of HLX components and services (at the moment header, footer and the popup of session activity management).'
+  "
+  [section]="'Services'"
+>
+  <h2>Introduction</h2>
+
+  <p>
+    In today's interconnected world, where the internet connects people from
+    different cultures and languages, having a multilingual website is becoming
+    increasingly essential. Website translations involve the process of adapting
+    your website's content into multiple languages, allowing you to effectively
+    communicate and engage with a broader audience.
+  </p>
+
+  <mat-divider></mat-divider>
+
+  <h2>Key Benefits</h2>
+  <ul>
+    <li>
+      <p>
+        <strong>Reaching a Global Audience:</strong> By translating your website
+        into multiple languages, you can tap into new markets and extend your
+        reach to a global audience. A multilingual website enables you to engage
+        with potential customers, clients, or users who prefer to browse the web
+        in their native language. Breaking language barriers enhances user
+        experience, making your website more accessible and user-friendly.
+      </p>
+    </li>
+    <li>
+      <p>
+        <strong>Building Trust and Credibility:</strong> A well-translated
+        website demonstrates your commitment to providing a localized experience
+        to your visitors. It showcases your respect for their language and
+        culture, thereby building trust and credibility. Users are more likely
+        to trust a website that speaks their language fluently, as it helps them
+        feel understood and valued. Building trust is crucial for attracting and
+        retaining customers in the highly competitive online landscape.
+      </p>
+    </li>
+    <li>
+      <p>
+        <strong>Enhanced User Experience:</strong> Website translations enhance
+        the user experience by allowing visitors to navigate, understand, and
+        engage with your content effortlessly. When users encounter a language
+        they are comfortable with, they are more likely to spend time exploring
+        your website, browsing products, or consuming your content. This
+        increased engagement can lead to higher conversion rates and improved
+        customer satisfaction.
+      </p>
+    </li>
+    <li>
+      <p>
+        <strong>Improved SEO and Search Visibility:</strong> Translating your
+        website can significantly impact its search engine optimization (SEO)
+        and search visibility. By offering content in different languages, you
+        increase the chances of your website appearing in search results
+        conducted in those languages. This expanded visibility can attract
+        organic traffic from diverse language markets, driving more qualified
+        leads to your site.
+      </p>
+    </li>
+    <li>
+      <p>
+        <strong>Staying Ahead of Competitors:</strong> In an increasingly
+        globalized marketplace, having translated content gives you a
+        competitive advantage. By catering to the linguistic preferences of your
+        target audience, you differentiate your brand from competitors who may
+        not have invested in website translations. Standing out as a business
+        that is dedicated to reaching a diverse range of customers can position
+        you as an industry leader.
+      </p>
+    </li>
+  </ul>
+
+  <mat-divider></mat-divider>
+
+  <h2>Configuration</h2>
+
+  <ol>
+    <li>Install <strong>&#64;cdx/ngx-translations</strong></li>
+    <cdx-highlight [text]="'npm i @cdx/ngx-translations'"></cdx-highlight>
+    Once
+    <strong>&#64;cdx/ngx-translations</strong
+    >is installed, also
+    <strong>&#64;ngx-translate/core</strong>
+    should be installed automatically as peer dependency
+
+    <br /><br />
+    <li>
+      <p>
+        Import and configure <strong>TranslateModule</strong> and
+        <strong>NgxTranslationsModule</strong> in your root module's imports
+        list.
+      </p>
+    </li>
+
+    <cdx-highlight [text]="modulesTranslationsAngular"></cdx-highlight>
+
+    <li>
+      <p>
+        The components or modules that will require translation will require as
+        input the variable
+        <strong>shouldShowTranslations</strong> set as true.
+      </p>
+    </li>
+    <cdx-highlight
+      [text]="translationsTemplateAngular"
+      [language]="'html'"
+    ></cdx-highlight>
+    <cdx-highlight
+      [text]="'SessionActivityModule.forRoot({shouldShowTranslations: true})'"
+    ></cdx-highlight>
+
+    <li>
+      <p>
+        From the root component (the same where TranslateModule and
+        NgxTranslationsModule are imported) the
+        <strong>mergeTranslationsLabels</strong> function from
+        NgxTranslationsService should be called and ought to get as input the
+        list of the languages (in language code / locale code) to merge the
+        translation of HLX and translations of your app.
+      </p>
+    </li>
+  </ol>
+
+  <mat-divider></mat-divider>
+
+  <h2>Usage</h2>
+  <cdx-highlight [text]="translationsSampleComponentAngular"></cdx-highlight>
+
+  <mat-divider></mat-divider>
+
+  <h2>Keys</h2>
+  Here the list of the Keys we're currently using in HLX, it'll be possible to
+  override those keys by adding then in your proper i18n translation file or use
+  them directly; in this case it won't be needed to follow all configuration
+  step, it'll be enough to add those keys in your i18n files and follow the step
+  3.
+
+  <cdx-highlight [text]="translationsKeysAngular"></cdx-highlight>
+</hlx-page>

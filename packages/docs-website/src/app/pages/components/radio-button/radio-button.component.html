@@ -1,0 +1,24 @@
+<hlx-page
+  [title]="'Radio Button'"
+  [subtitle]="
+    'A radio button allows the user to make one selection from a list of choices. A radio button should always appear in a group with 2 or more options.'
+  "
+  [section]="'Components'"
+>
+  <h2>Angular Material Documentation</h2>
+  <p>
+    For more information about the API for <strong>radio button</strong>, visit
+    the Angular Material docs:
+  </p>
+  <cdx-external-link
+    [inline]="false"
+    [url]="'https://material.angular.io/components/radio/api'"
+  ></cdx-external-link>
+  <mat-divider></mat-divider>
+
+  <h2>Examples</h2>
+  @for (sample of sampleList; track sample.exampleName) {
+  <hlx-example-viewer [inputViewerComponent]="sample"></hlx-example-viewer>
+
+  }
+</hlx-page>

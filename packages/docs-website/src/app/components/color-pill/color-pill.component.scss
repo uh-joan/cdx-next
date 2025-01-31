@@ -1,0 +1,30 @@
+@use '@angular/material' as mat;
+@use '@cdx/theme-angular-material' as hlx;
+
+:host {
+  .color-pill {
+    display: flex;
+    align-items: center;
+    border: 1px solid hlx.$border-secondary;
+    background-color: hlx.$surface-minimal;
+    justify-content: space-between;
+    border-radius: 2px;
+    padding: 4px;
+    width: 140px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: box-shadow 0.2s ease-in-out;
+
+    &:hover {
+      @include mat.elevation(2);
+    }
+
+    &__box {
+      width: 42px;
+      height: 24px;
+      border-radius: 2px;
+      margin-right: 8px;
+      border: 1px solid hlx.$border-invert;
+    }
+  }
+}

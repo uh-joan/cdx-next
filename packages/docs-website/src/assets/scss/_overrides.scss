@@ -1,0 +1,64 @@
+.mat-tab-no-content {
+  .mat-mdc-tab-body-wrapper {
+    height: 0;
+  }
+}
+
+.mat-tab--no-grow {
+  .mat-mdc-tab-label-container {
+    padding-left: 3rem;
+    flex-grow: 0 !important;
+  }
+}
+
+.mat-mdc-tab-label-container {
+  padding-left: 3rem;
+}
+
+.mat-mdc-tab-header {
+  border-bottom-style: solid;
+  border-bottom-color: var(--mat-divider-color);
+  border-bottom-width: var(--mat-divider-width);
+}
+
+.mat-mdc-form-field--no-bottom-space {
+  .mat-mdc-form-field-subscript-wrapper {
+    display: none;
+  }
+}
+
+.mat-form-field--transparent {
+  .mdc-text-field--filled:not(.mdc-text-field--disabled) {
+    background-color: transparent;
+
+    .mat-mdc-form-field-focus-overlay {
+      background-color: transparent;
+    }
+  }
+}
+
+.mat-mdc-form-field--no-bottom-border {
+  .mdc-text-field {
+    position: unset;
+    will-change: unset;
+  }
+
+  .mdc-line-ripple {
+    display: none;
+  }
+}
+
+.mat-mdc-form-field--custom-grey-radius {
+  background-color: #f1f1f1;
+}
+
+.mat-mdc-form-field--smaller {
+  transform: scale(0.8);
+  transform-origin: center;
+}
+
+.mat-mdc-tab-group--no-padding-left {
+  .mat-mdc-tab-label-container {
+    padding-left: 0;
+  }
+}

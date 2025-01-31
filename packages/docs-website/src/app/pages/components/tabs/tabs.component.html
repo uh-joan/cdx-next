@@ -1,0 +1,24 @@
+<hlx-page
+  [title]="'Tabs'"
+  [subtitle]="
+    'Tabs organize related content and separate it into different views, one view per a tab.'
+  "
+  [section]="'Components'"
+>
+  <h2>Angular Material Documentation</h2>
+  <p>
+    For more information about the API for <strong>tabs</strong>, visit the
+    Angular Material docs:
+  </p>
+  <cdx-external-link
+    [inline]="false"
+    [url]="'https://material.angular.io/components/tabs/api'"
+  ></cdx-external-link>
+  <mat-divider></mat-divider>
+
+  <h2>Examples</h2>
+  @for (sample of sampleList; track sample.exampleName) {
+  <hlx-example-viewer [inputViewerComponent]="sample"></hlx-example-viewer>
+
+  }
+</hlx-page>

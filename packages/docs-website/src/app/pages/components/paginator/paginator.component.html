@@ -1,0 +1,27 @@
+<hlx-page
+  [title]="'Paginator'"
+  [subtitle]="
+    'The paginator provides navigation for paged information, typically used with a table.'
+  "
+  [section]="'Components'"
+>
+  <h2>Angular Material Documentation</h2>
+
+  <p>
+    For more information about the API for <strong>paginator</strong>, visit the
+    Angular Material docs:
+  </p>
+  <cdx-external-link
+    [inline]="false"
+    [url]="'https://material.angular.io/components/paginator/api'"
+  ></cdx-external-link>
+
+  <mat-divider></mat-divider>
+
+  <h2>Examples</h2>
+
+  @for (sample of sampleList; track sample.exampleName) {
+  <hlx-example-viewer [inputViewerComponent]="sample"></hlx-example-viewer>
+
+  }
+</hlx-page>

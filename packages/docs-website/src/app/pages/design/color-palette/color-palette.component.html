@@ -1,0 +1,109 @@
+<cdx-page-content
+  [title]="'Colors'"
+  [subtitle]="
+    'The HLX color system uses an organized approach to applying color to your UI.'
+  "
+>
+  <cdx-paragraph [title]="'Overview'">
+    <p>
+      Clarivate's colors used in interface design follow a set of standards. How
+      color is applied, where, and why are important within the designs.
+    </p>
+    <ul>
+      <li>The brand color is the primary color for actionable elements</li>
+      <li>Neutrals are used for background elements</li>
+      <li>Semantic colors are used for specific meaning</li>
+      <li>For each color there is a dark and light variant</li>
+      <li>Material Design uses a color scale ranging from light to dark</li>
+    </ul>
+  </cdx-paragraph>
+
+  <cdx-paragraph [title]="'Color Usage'">
+    <h3>Primary Colors</h3>
+    <div class="color-box" [style.background-color]="'rgb(65, 37, 175)'"></div>
+    <div class="color-box" [style.background-color]="'rgb(94, 51, 191)'"></div>
+    <div
+      class="color-box"
+      [style.background-color]="'rgb(178, 157, 226)'"
+    ></div>
+    <br /><br />
+    <h4><em>ABOUT</em></h4>
+    <p>
+      The primary color is used to call attention to the most important user
+      actions in the UI. As screen real estate of the primary is typically
+      related to user actions, these component interactions remain visually
+      obvious to your users.
+    </p>
+    <br />
+    <h4><em>EXAMPLES</em></h4>
+    <p>Buttons, CTA’s, Links, FAB, Icons, etc.</p>
+    <br />
+
+    <h3>Accent Colors</h3>
+    <div class="color-box" [style.background-color]="'rgb(0, 139, 0)'"></div>
+    <div class="color-box" [style.background-color]="'rgb(23, 171, 3)'"></div>
+    <div
+      class="color-box"
+      [style.background-color]="'rgb(154, 212, 144)'"
+    ></div>
+    <br /><br />
+    <h4><em>ABOUT</em></h4>
+    <p>
+      The secondary accent color is a complementary color to the primary. It is
+      meant to call attention to areas of importance that are not actionable,
+      but instead meant to highlight the static parts of the interface that
+      require a user's attention (that are not semantic).
+    </p>
+    <br />
+    <h4><em>EXAMPLES</em></h4>
+    <p>A toolbar, component header, secondary attention</p>
+
+    <h3>Neutral Colors</h3>
+    <div class="color-box" [style.background-color]="'rgb(33, 33, 33)'"></div>
+    <div
+      class="color-box"
+      [style.background-color]="'rgb(117, 117, 117)'"
+    ></div>
+    <div
+      class="color-box"
+      [style.background-color]="'rgb(224, 224, 224)'"
+    ></div>
+    <br /><br />
+    <h4><em>ABOUT</em></h4>
+    <p>
+      The neutral colors are used for background layering of components and
+      interface elements. Most of your screen real estate should be neutral
+      colors so as to not distract the user. They must not diminish or overtake
+      the primary, accent, or semantic colors within the UI.
+    </p>
+    <br />
+    <h4><em>EXAMPLES</em></h4>
+    <p>
+      Page backgrounds, component backgrounds, visual separation of elements,
+      elevation (drop shadows)
+    </p>
+
+    <h3>Semantic Colors</h3>
+    <div class="color-box" [style.background-color]="'rgb(221, 44, 0)'"></div>
+    <div class="color-box" [style.background-color]="'rgb(0, 136, 39)'"></div>
+    <div class="color-box" [style.background-color]="'rgb(0, 118, 245)'"></div>
+    <br /><br />
+    <h4><em>ABOUT</em></h4>
+    <p>
+      The semantic colors are used to communicate specific meanings within the
+      state of the UI. Within a component, a semantic color is referred to as a
+      variant from the original state.
+    </p>
+    <br />
+    <h4><em>EXAMPLES</em></h4>
+    <p>Buttons, component variants, etc.</p>
+  </cdx-paragraph>
+
+  <cdx-paragraph [title]="'Color Values'">
+    <p>
+      Color values are represented as design tokens for developers to access
+      when building applications. Designers typically will get the color values
+      directly from the Sketch UI Library file.
+    </p>
+  </cdx-paragraph>
+</cdx-page-content>

@@ -1,0 +1,144 @@
+<hlx-page
+  [title]="'Authentication'"
+  [subtitle]="
+    'This authentication Module is a suite of user authentication, session, and security components bundled toghether to provide conveniente integration with platform Authentication for working with user login and session management, as well as for handling JWTs.'
+  "
+  [section]="'Services'"
+>
+  <h2>Seamless Login</h2>
+  <p>
+    Authentication component supports Seamless Login by implementting the OAuth
+    2.0 standard by generating a session (JWT) through the exchange of an
+    auth_code for a JWT from the 1P Auth server.
+  </p>
+  <p>In summary, the flow is as follows:</p>
+  <ol>
+    <li>
+      <p>
+        Login page (MicroUI) will continue to be hosted under
+        <em>https://access.[env].clarivate.com</em>.
+      </p>
+    </li>
+    <li>
+      <p>
+        After successful login by the user, the MicroUI will redirect the user
+        to the application with the auth_code via a path param, e.g.
+        <em>https://apps.[env].clarivate.com/[appId]/broker/:[auth_code]</em>
+      </p>
+    </li>
+    <li>
+      <p>
+        The application can then utilize the
+        <em>&#64;cdx/ngx-authentication</em> component to exchange the
+        <em>auth_code</em> for a token.
+      </p>
+    </li>
+    <li>
+      <p>
+        Upon successful exchange of the <em>auth_code</em> for a JWT, the app
+        can then redirect to it's own home / landing page.
+      </p>
+    </li>
+  </ol>
+  <br />
+  <p>
+    <strong>NOTE:</strong> The application domain and the path is configurable
+    at the MicroUI.
+  </p>
+  <br />
+  <p>
+    <strong>References:</strong>
+    <cdx-external-link
+      [text]="'Seamless Login in IAM'"
+      [url]="'https://wiki.clarivate.io/display/CPS/Seamless+login+2.0'"
+    ></cdx-external-link>
+  </p>
+
+  <mat-divider></mat-divider>
+
+  <h2>Configuration</h2>
+
+  <p>
+    Install &#64;cdx/ngx-authentication package
+    <cdx-highlight [text]="'npm i @cdx/ngx-authentication'"></cdx-highlight>
+    Import and configure AuthenticationModule in your root module's imports
+    list. Configure the required appName and eventually the other options.
+    <cdx-highlight [text]="appModuleAuthAngular"></cdx-highlight>
+  </p>
+
+  <p>
+    Environment is not mandatory, it can be left empty and you'll be redirected
+    to the production site. You may optionally set these additional
+    configurations when calling AuthenticationModule.forRoot()
+  </p>
+  <ul>
+    <li>
+      <em>tokenLabel</em> (defaults to 'token'): Sets the localStorage key
+      prefix e.g. ls.token,
+    </li>
+    <li>
+      <em>brokerRoute</em> (defaults to 'broker/:authCode'): Sets the url of the
+      broker component. It will need to contain a ':authCode' path to get the
+      value of the authcode
+    </li>
+  </ul>
+
+  <mat-divider></mat-divider>
+
+  <h2>Adding a new app to the Platform Login Portal</h2>
+
+  <p>
+    ⚠️ For your application to correctly integrate with the Login Portal
+    (MicroUI), please follow
+    <cdx-external-link
+      [text]="'these steps'"
+      [url]="
+        'https://wiki.clarivate.io/display/CPS/Microui+Login+Ngx+Steps+for+adding+a+new+app'
+      "
+    ></cdx-external-link>
+    to get your app integrated into the
+    <strong
+      ><cdx-external-link
+        [url]="
+          'https://git.clarivate.io/projects/SP/repos/1p-microui-login-ngx/'
+        "
+        [text]="'1p-microui-login-ngx'"
+      ></cdx-external-link>
+    </strong>
+    repo. If you have any questions, please reach out to the
+    <cdx-external-link
+      [url]="
+        'https://teams.microsoft.com/l/channel/19%3a40df5409a45e4be7a1e9da60f54193a6%40thread.skype/Help?groupId=e44b249f-9c5f-4f27-a86e-e84af5633b37&tenantId=127fa96e-00b4-429e-95f9-72c2828437a4'
+      "
+      [text]="'IAM team'"
+    ></cdx-external-link>
+    .
+  </p>
+
+  <mat-divider></mat-divider>
+
+  <h2>Usage</h2>
+
+  <p>
+    Utilize the AuthenticationService to manage user logout and get a
+    redirection url for the user.
+    <cdx-highlight [text]="authenticationServiceAngular"></cdx-highlight>
+  </p>
+
+  <mat-divider></mat-divider>
+
+  <h2>Using header (hlx-header) with authentication</h2>
+
+  <p>
+    Authentication can be easily integrated using the
+    cdx-header-global-user-profile that belong to HeaderGlobalUserProfileModule
+    and it is intended to be used inside the cdx-header, but it can be used
+    independently of it.
+  </p>
+
+  <cdx-highlight [text]="authenticationServiceAngular"></cdx-highlight>
+  <cdx-highlight
+    [text]="headerAuthTemplateAngular"
+    [language]="'html'"
+  ></cdx-highlight>
+</hlx-page>

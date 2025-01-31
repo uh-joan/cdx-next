@@ -1,0 +1,20 @@
+<nav class="navigation-tree">
+  <ng-container *ngFor="let section of config">
+    <div class="navigation-tree__section">
+      <ng-container *ngIf="section.heading">
+        <div class="navigation-tree__heading">{{ section.heading }}</div>
+      </ng-container>
+      <div class="navigation-tree__elements">
+        <ng-container *ngFor="let element of section.elements">
+          <a
+            class="navigation-tree__link"
+            [routerLink]="element.url"
+            routerLinkActive="active"
+          >
+            <span>{{ element.label }}</span>
+          </a>
+        </ng-container>
+      </div>
+    </div>
+  </ng-container>
+</nav>

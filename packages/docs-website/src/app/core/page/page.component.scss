@@ -1,0 +1,30 @@
+@use '@cdx/theme-angular-material' as hlx;
+
+:host {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1;
+  margin: 3rem 0 0;
+
+  .heading {
+    padding: 0 4rem;
+
+    &__section {
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 24px;
+      letter-spacing: 0.05em;
+      color: hlx.$text-secondary;
+    }
+
+    .mat-divider {
+      margin: 1rem 0 2rem 0;
+    }
+  }
+
+  .content {
+    padding: 0 4rem 2rem 4rem;
+    flex: 1;
+  }
+}

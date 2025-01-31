@@ -1,0 +1,92 @@
+<hlx-page
+  [title]="'Analytics'"
+  [subtitle]="
+    'Library to help analyze app usage and visitor behavior by gathering, synthesizing, and reporting data'
+  "
+  [section]="'Services'"
+>
+  <h2>Overview</h2>
+  <p>
+    ngx-analytics package provides a seamless way to integrate user tracking
+    within a Clarivate app environment.
+  </p>
+  <p>
+    It uses Snowplow browser-tracker under the hood. You can read more about it
+    through this
+    <cdx-external-link
+      [text]="'reference'"
+      [url]="
+        'https://docs.snowplow.io/docs/collecting-data/collecting-from-own-applications/javascript-trackers/javascript-tracker/javascript-tracker-v3/'
+      "
+    ></cdx-external-link>
+    . ngx-analytics reads user's preferences if OneTrustModule of branding
+    package is present. If this module is available events only get tracked when
+    user accept cookie preferences.
+  </p>
+  <mat-divider></mat-divider>
+
+  <h2>Installation</h2>
+  <p>
+    Install Analytics Package
+    <cdx-highlight [text]="'npm install @cdx/ngx-analytics'"></cdx-highlight>
+    Add analyticsModule in your AppModule and AnalyticsService in the providers
+    array of the consuming module.
+    <cdx-highlight [text]="appModuleAngular"></cdx-highlight>
+    Where settings are defined following AnalyticsSettings interface:
+    <cdx-highlight [text]="analyticsSettingsAngular"></cdx-highlight>
+    Schema for context is defined following AnalyticsContextSchema interface.
+    You can find information about Clarivate IGLU schema on the wiki page
+  </p>
+
+  <mat-divider></mat-divider>
+
+  <h2>Usage</h2>
+
+  <p>
+    Add analyticsService to the component constructor method.
+    <cdx-highlight
+      [text]="'constructor ( private analyticsService: AnalyticsService ) {}'"
+    ></cdx-highlight>
+
+    Track user events with trackEvent method. To see more details about Snowplow
+    Structured event click here
+    <cdx-highlight
+      [text]="'this.analyticsService.trackEvent(event)'"
+    ></cdx-highlight>
+
+    Track user page views using trackPageView.
+    <cdx-highlight
+      [text]="'this.analyticsService.trackPageView({ title: ´page title´ })'"
+    ></cdx-highlight>
+  </p>
+
+  <mat-divider></mat-divider>
+
+  <h2>Context</h2>
+
+  <p>
+    A context Schema can be provided on
+    <em>AnalyticsModule.forRoot()</em> declaration. By default
+    CLARIVATE_IGLU_SCHEMA is provided but a custom one can be difined. You can
+    read here more about how to create a Self-describing JSON
+  </p>
+  <p>
+    AnalyticsService also provides resetContext and updateContextData which
+    allow to override defined context and update specific attributes as shown on
+    the next example.
+  </p>
+  <cdx-highlight [text]="contextAngular"></cdx-highlight>
+
+  <p>
+    Context can be provided also on <em>trackPageView</em> and
+    <em>trackEvent</em> methods.
+  </p>
+
+  <cdx-highlight
+    [text]="'this.analyticsService.trackPageView({ title: ´page title´ })'"
+  ></cdx-highlight>
+
+  <cdx-highlight
+    [text]="'this.analyticsService.trackEvent({ ..., context: CONTEXT_DATA })'"
+  ></cdx-highlight>
+</hlx-page>

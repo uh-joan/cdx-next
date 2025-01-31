@@ -1,0 +1,40 @@
+.search-wrapper {
+  display: flex;
+  align-items: center;
+  position: relative;
+  height: 100%;
+
+  &__search-icon {
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+    transition: transform 1s ease;
+  }
+
+  &__input {
+    width: 0;
+    opacity: 0;
+    transition: width 0.25s ease, opacity 0.1s ease;
+    color: white;
+    background: transparent;
+    border: none;
+    padding: 8px 16px;
+    font-size: 16px;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  &__input.visible {
+    width: 14rem;
+    opacity: 1;
+  }
+
+  input:focus {
+    outline: none;
+  }
+
+  &__close-icon {
+    cursor: pointer;
+    margin-left: 8px;
+  }
+}

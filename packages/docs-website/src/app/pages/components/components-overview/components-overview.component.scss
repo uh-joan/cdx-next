@@ -1,0 +1,32 @@
+@use '@cdx/theme-angular-material' as hlx;
+
+.component-list {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 30px 30px 100px;
+  justify-content: center;
+
+  &__item {
+    cursor: pointer;
+    margin: 20px;
+    width: 300px;
+    transition: all 0.2s;
+    &:hover {
+      transform: scale(1.05);
+    }
+
+    .item-header {
+      height: 170px;
+      background-color: hlx.$surface-contrast;
+      background-size: 50%;
+      background-position: center;
+      background-repeat: no-repeat;
+      padding: 0;
+    }
+
+    .item-content {
+      margin-top: 8px;
+      min-height: 100px;
+    }
+  }
+}

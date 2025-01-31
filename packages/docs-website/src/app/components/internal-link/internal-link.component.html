@@ -1,0 +1,12 @@
+<ng-container *ngIf="inline; else newLineTemplate">
+  <a underline [routerLink]="url">
+    {{ text || url }}
+  </a>
+</ng-container>
+<ng-template #newLineTemplate>
+  <p>
+    <a underline [routerLink]="url">
+      {{ text || url }}
+    </a>
+  </p>
+</ng-template>

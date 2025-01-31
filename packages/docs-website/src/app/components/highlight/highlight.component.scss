@@ -1,0 +1,29 @@
+:host {
+  display: block;
+  pre {
+    display: flex;
+    flex-direction: column;
+    margin-top: 0.5rem;
+    position: relative;
+
+    &:hover .copy-button {
+      visibility: visible;
+    }
+  }
+
+  .copy-button {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    color: #d4d4d4;
+    cursor: pointer;
+    visibility: hidden;
+  }
+
+  .dark-theme {
+    background-color: #1e1e1e;
+    color: #d4d4d4;
+  }
+}

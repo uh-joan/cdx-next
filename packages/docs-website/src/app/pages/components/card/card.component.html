@@ -1,0 +1,26 @@
+<hlx-page
+  [title]="'Card'"
+  [subtitle]="
+    'Cards are used to group similar concepts and tasks together to make it easier for users to scan, read, and get things done.'
+  "
+  [section]="'Components'"
+>
+  <h2>Angular Material Documentation</h2>
+  <p>
+    For more information about the API for <strong>card</strong>, visit the
+    Angular Material docs:
+  </p>
+  <cdx-external-link
+    [inline]="false"
+    [url]="'https://material.angular.io/components/card/api'"
+  ></cdx-external-link>
+
+  <mat-divider></mat-divider>
+
+  <h2>Examples</h2>
+
+  @for (sample of sampleList; track sample.exampleName) {
+  <hlx-example-viewer [inputViewerComponent]="sample"></hlx-example-viewer>
+
+  }
+</hlx-page>

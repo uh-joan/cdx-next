@@ -1,0 +1,12 @@
+<ng-container *ngIf="inline; else newLineTemplate">
+  <a underline [href]="url" target="_blank">
+    {{ text || url }}
+  </a>
+</ng-container>
+<ng-template #newLineTemplate>
+  <p>
+    <a underline [href]="url" target="_blank">
+      {{ text || url }}
+    </a>
+  </p>
+</ng-template>

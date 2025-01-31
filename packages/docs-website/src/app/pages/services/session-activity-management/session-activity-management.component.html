@@ -1,0 +1,124 @@
+<hlx-page
+  [title]="'Session Activity Management'"
+  [subtitle]="
+    'This session activity module is a suite to track the session activity of an authenticated user.'
+  "
+  [section]="'Services'"
+>
+  <h2>Session Activity</h2>
+
+  <p>
+    After a certain amount of configurable time of inactivity a popup will be
+    opened, to continue the session the user will have to click on continue
+    session to continue the navigation, if not at the end of the countdown the
+    user will be logged out. Session Activity popup
+  </p>
+
+  <mat-divider></mat-divider>
+
+  <h2>Rehydrate</h2>
+  <p>
+    Once the continue session button is clicked or once some amount of
+    configurable ping interval amount of time is passed (while some action are
+    perfomed during that amount of time) the rehydrate API
+    'api/session/user/rehydrate' is called to keep the backend aware of the fact
+    that the session is active.
+  </p>
+
+  <mat-divider></mat-divider>
+
+  <h3>Configuration</h3>
+  <ol>
+    <li>Install <strong>&#64;cdx/ngx-session-activity</strong></li>
+    <cdx-highlight [text]="'npm i @cdx/ngx-session-activity'"></cdx-highlight>
+    <p>
+      Once <strong>&#64;cdx/ngx-session-activity</strong> is installed, also
+      <strong>&#64;ng-idle/core</strong> and
+      <strong>&#64;ng-idle/keepalive</strong> should be installed automatically
+      as peer dependency
+    </p>
+    <br />
+    <li>
+      Import and configure <em>SessionActivityModule</em> in your root module's
+      imports list.
+    </li>
+    <cdx-highlight [text]="sessionActivityModuleAngular"></cdx-highlight>
+    <li>
+      💡 You may optionally set these additional configurations when calling
+      SessionActivityModule.forRoot( )
+    </li>
+    <br />
+    <ul>
+      <li>
+        <p>
+          <strong>expireDurationMinutes: </strong> (defaults to 22): Sets the
+          interval in minutes after which the user will be logged out for
+          inactivity.
+        </p>
+      </li>
+      <li>
+        <p>
+          <strong>expireWarningMinutes: </strong> (defaults to 2): Sets
+          countdown in minutes that will be displayed in the popup. It is
+          important for this value to be bigger than expireDurationMinutes
+          because the popup will be opened after a time what will be calculated
+          as: expireDurationMinutes - expireWarningMinutes of inactivity.
+        </p>
+      </li>
+      <li>
+        <p>
+          <strong>pingIntervalMinutes: </strong> (defaults to 30): Sets the
+          interval in which the rehydrate ('api/session/user/rehydrate')
+          function will be called.
+        </p>
+      </li>
+      <li>
+        <p>
+          <strong>shouldNotRehydrate: </strong> Sets to true if the rehydrate
+          function should not be called.
+        </p>
+      </li>
+    </ul>
+  </ol>
+
+  <cdx-highlight [text]="sessionActivityModuleSampleAngular"></cdx-highlight>
+
+  <mat-divider></mat-divider>
+
+  <h3>Usage</h3>
+  <p>
+    Utilize the SessionActivityService to manage session activity and logout for
+    the user.
+  </p>
+
+  <cdx-highlight
+    [text]="sessionActivityServiceComponentAngular"
+  ></cdx-highlight>
+  <p>
+    Where sessionActivitySubject is a Subject emitted from
+    session-activity.service once logout button is clicked as
+    LOGOUT_TYPE.LOGOUT_SELECTED or once countdown expire with no action as
+    LOGOUT_TYPE.SESSION_EXPIRED
+  </p>
+
+  <p>
+    The parameters that we are passing to the module can be also passed to the
+    function sessionActivityService.initialize(), in case we also have injected
+    those parameters to the module they'll be overridden.
+  </p>
+
+  <mat-divider></mat-divider>
+  <h2>Using header (hlx-header) with authentication and session activity</h2>
+  <p>
+    Session activity management is already integrated in the header, it will
+    need only the import of the SessionActivityModule with optional
+    configurations as shown before and the cdx-header-global-user-profile (that
+    will require also AuthenticationModule. ) component that contains the
+    authentication inside it the withSessionManagement directive will be
+    responsible of adding the session mangement.
+  </p>
+  <cdx-highlight
+    [text]="headerSessioNActivityTemplateAngular"
+    [language]="'html'"
+  ></cdx-highlight>
+</hlx-page>

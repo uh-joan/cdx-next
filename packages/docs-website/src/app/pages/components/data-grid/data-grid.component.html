@@ -1,0 +1,35 @@
+<hlx-page
+  [title]="'Data Grid'"
+  [subtitle]="
+    'Data Grids show complex information in widely customizable tabular form.'
+  "
+  [section]="'Components'"
+>
+  <h2>AG Grid Documentation</h2>
+  <p>
+    For information about installation and usage for
+    <strong>AG Grid</strong> with Angular, visit AG Grid's Angular
+    <cdx-external-link
+      [text]="'Getting Started'"
+      [url]="'https://www.ag-grid.com/angular-data-grid/getting-started/'"
+    ></cdx-external-link>
+    documentation.
+  </p>
+  <p>
+    After successfully installing AG Grid, please see our
+    <cdx-internal-link
+      [text]="'Adding the Clarivate Theme'"
+      [url]="'/development/quick-start-new-project'"
+    ></cdx-internal-link>
+    instructions.
+  </p>
+
+  <mat-divider></mat-divider>
+
+  <h2>Examples</h2>
+
+  @for (sample of sampleList; track sample.exampleName) {
+  <hlx-example-viewer [inputViewerComponent]="sample"></hlx-example-viewer>
+
+  }
+</hlx-page>

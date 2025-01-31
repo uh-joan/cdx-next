@@ -1,0 +1,23 @@
+<hlx-page
+  [title]="'Density'"
+  [subtitle]="'Developers guide to apply size to components using density.'"
+  [section]="'Development'"
+>
+  <h2>Overview</h2>
+  <p>
+    Density is a system that allows you to apply size to components. Each level
+    has a specific margin that is applied to one or all components.
+  </p>
+  <mat-divider></mat-divider>
+
+  <h2>Applying Density</h2>
+
+  <p>
+    To apply density to a component, you need to add the density class to the
+    component. The density class is made up of two parts: density and the level.
+    The level is always a negative number from 0 to -5. the smaller the number,
+    the more dense the component will be.
+  </p>
+  <p>For example this is how you would apply density to a button:</p>
+  <cdx-highlight [text]="densityExample" [language]="'css'"></cdx-highlight>
+</hlx-page>

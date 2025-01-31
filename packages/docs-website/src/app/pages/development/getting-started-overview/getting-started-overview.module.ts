@@ -1,0 +1,29 @@
+import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
+import { MatDividerModule } from '@angular/material/divider';
+import { RouterModule, Routes } from '@angular/router';
+import { ExternalLinkComponent } from 'src/app/components/external-link/external-link.component';
+import { InternalLinkComponent } from 'src/app/components/internal-link/internal-link.component';
+import { PageComponent } from 'src/app/core/page/page.component';
+
+import { GettingStartedOverviewComponent } from './getting-started-overview.component';
+
+export const routes: Routes = [
+  {
+    path: '',
+    component: GettingStartedOverviewComponent,
+  },
+];
+
+@NgModule({
+  declarations: [GettingStartedOverviewComponent],
+  imports: [
+    CommonModule,
+    RouterModule.forChild(routes),
+    PageComponent,
+    MatDividerModule,
+    ExternalLinkComponent,
+    InternalLinkComponent,
+  ],
+})
+export class GettingStartedOverviewModule {}
