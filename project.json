@@ -1,6 +1,7 @@
 {
   "$schema": "node_modules/nx/schemas/project-schema.json",
   "name": "workspace",
+  "tags": ["exclude-from-build"],
   "targets": {
     "bumpDependencies": {
       "executor": "nx:run-commands",

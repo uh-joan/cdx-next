@@ -3,7 +3,7 @@
   "name": "rcx-demo-app",
   "projectType": "application",
   "sourceRoot": "packages/rcx-demo-app/src",
-  "tags": [],
+  "tags": ["exclude-from-build"],
   "targets": {
     "build": {
       "configurations": {

@@ -4,7 +4,7 @@
   "prefix": "demo",
   "projectType": "application",
   "sourceRoot": "packages/ngx-demo-app/src",
-  "tags": [],
+  "tags": ["exclude-from-build"],
   "targets": {
     "build": {
       "configurations": {

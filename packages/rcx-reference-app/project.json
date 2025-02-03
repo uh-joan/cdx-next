@@ -3,7 +3,7 @@
   "name": "rcx-reference-app",
   "projectType": "application",
   "sourceRoot": "packages/rcx-reference-app/src",
-  "tags": [],
+  "tags": ["exclude-from-build"],
   "targets": {
     "build": {
       "configurations": {

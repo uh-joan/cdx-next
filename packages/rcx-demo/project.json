@@ -3,7 +3,7 @@
   "name": "rcx-demo",
   "projectType": "library",
   "sourceRoot": "packages/rcx-demo/src",
-  "tags": [],
+  "tags": ["exclude-from-build"],
   "targets": {
     "build-storybook": {
       "configurations": {

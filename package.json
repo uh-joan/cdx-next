@@ -12,7 +12,7 @@
   "scripts": {
     "adr:new": "log4brains adr new",
     "adr:preview": "log4brains preview",
-    "build": "nx run-many --all --exclude=workspace,docs-website --target=build --skip-nx-cache",
+    "build": "node tools/scripts/exclude-build.js",
     "build:docs": "nx run docs-website:build --skip-nx-cache",
     "build:storybooks": "nx run-many --all --exclude=workspace --target=build-storybook --parallel=false --skip-nx-cache",
     "commit": "cz",
@@ -28,7 +28,7 @@
     "publish:prerelease": "npm run publish:release:common -- --tag=alpha",
     "publish:release": "npm run publish:release:common -- --tag=latest",
     "publish:release:common": "nx run-many --all --exclude=workspace --target=deploy --parallel=1 --skip-nx-cache",
-    "test": "nx run-many --all --exclude=workspace --target=test --skip-nx-cache"
+    "test": "nx run-many --all --exclude=workspace,docs-website --target=test --skip-nx-cache"
   },
   "dependencies": {
     "@angular/animations": "^18.2.11",

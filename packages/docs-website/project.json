@@ -3,7 +3,7 @@
   "name": "docs-website",
   "projectType": "application",
   "sourceRoot": "packages/docs-website/src",
-  "tags": [],
+  "tags": ["exclude-from-build"],
   "targets": {
     "build": {
       "configurations": {

@@ -4,7 +4,7 @@
   "prefix": "cdx",
   "projectType": "application",
   "sourceRoot": "packages/ngx-reference-app/src",
-  "tags": [],
+  "tags": ["exclude-from-build"],
   "targets": {
     "build": {
       "configurations": {
