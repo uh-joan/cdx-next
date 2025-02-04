@@ -34,7 +34,7 @@ pipeline {
             description: 'If Publish is true, the level of the release'
            )
         choice(
-            name: 'Storybooks',
+            name: 'Website',
             choices: ['nowhere', 'pre', 'prod'],
             description: 'Environment where Storybooks should be deployed'
            )
@@ -44,7 +44,7 @@ pipeline {
             when {
                 allOf {
                     expression { params.Publish == false }
-                    expression { params.Storybooks == 'nowhere' }
+                    expression { params.Website == 'nowhere' }
                     expression { params.DisableSkipCI == false }
                 }
             }
@@ -83,12 +83,12 @@ pipeline {
             }
         }
 
-        stage('Build Storybooks') {
+        stage('Build Website') {
             when {
-                expression { params.Storybooks != 'nowhere' }
+                expression { params.Website != 'nowhere' }
             }
             steps {
-                sh 'npm run build:storybooks -- --configuration=ci'
+                sh 'npm run build:website -- --configuration=ci'
             }
         }
 
@@ -284,11 +284,11 @@ pipeline {
             }
         }
 
-        stage('Deploy Stories to pre-prod') {
+        stage('Deploy Website to pre-prod') {
             when {
                 allOf {
                     expression {
-                        params.Storybooks == 'pre'
+                        params.Website == 'pre'
                     }
                 }
             }
@@ -300,12 +300,7 @@ pipeline {
                     useNode: true
                 ) {
                     sh '''
-                        npm run deploy:storybooks:demo -- \
-                            --bucket cdx-stories.dev.sp.aws.clarivate.net \
-                            --distribution E3GW94L15KJF3T
-                    '''
-                    sh '''
-                        npm run deploy:storybooks:rcx-demo -- \
+                        npm run deploy:website -- \
                             --bucket cdx-rcx-stories.dev.sp.aws.clarivate.net \
                             --distribution E3GW94L15KJF3T
                     '''
@@ -313,12 +308,12 @@ pipeline {
             }
         }
 
-        stage('Deploy Stories to prod') {
+        stage('Deploy Website to prod') {
             when {
                 allOf {
                     expression { BRANCH_NAME ==~ /(^main)/ }
                     expression {
-                        params.Storybooks == 'prod'
+                        params.Website == 'prod'
                     }
                 }
             }
@@ -330,13 +325,8 @@ pipeline {
                     useNode: true
                 ) {
                     sh '''
-                        npm run deploy:storybooks:demo -- \
+                        npm run deploy:website -- \
                             --bucket cdx-stories.prod.sp.aws.clarivate.net \
-                            --distribution E2D5B9JW4EDZO5
-                    '''
-                    sh '''
-                        npm run deploy:storybooks:rcx-demo -- \
-                            --bucket cdx-rcx-stories-prod.prod.sp.aws.clarivate.net \
                             --distribution E2D5B9JW4EDZO5
                     '''
                 }
