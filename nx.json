@@ -64,12 +64,25 @@
       "{workspaceRoot}/.stylelintrc.json"
     ]
   },
+  "plugins": [
+    {
+      "options": {
+        "targetName": "eslint:lint"
+      },
+      "plugin": "@nx/eslint/plugin"
+    }
+  ],
   "pluginsConfig": {
     "@nrwl/js": {
       "analyzeSourceFiles": true
     }
   },
   "targetDefaults": {
+    "@nx/js:tsc": {
+      "cache": true,
+      "dependsOn": ["^build"],
+      "inputs": ["production", "^production"]
+    },
     "build": {
       "cache": true,
       "dependsOn": ["^build"],

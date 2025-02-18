@@ -1,0 +1,25 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "name": "oti-snippet",
+  "projectType": "library",
+  "sourceRoot": "packages/oti-snippet/src",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "options": {
+        "assets": ["packages/oti-snippet/*.md"],
+        "main": "packages/oti-snippet/src/index.ts",
+        "outputPath": "dist/packages/oti-snippet",
+        "tsConfig": "packages/oti-snippet/tsconfig.lib.json"
+      },
+      "outputs": ["{options.outputPath}"]
+    },
+    "deploy": {
+      "executor": "ngx-deploy-npm:deploy",
+      "options": {
+        "distFolderPath": "{workspaceRoot}/dist/packages/oti-snippet"
+      }
+    }
+  }
+}

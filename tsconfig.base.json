@@ -21,6 +21,7 @@
       ],
       "@cdx/ngx-translations": ["packages/ngx-translations/src/index.ts"],
       "@cdx/notification": ["packages/notification/src/index.ts"],
+      "@cdx/oti-snippet": ["packages/oti-snippet/src/index.ts"],
       "@cdx/rcx-analytics": ["packages/rcx-analytics/src/index.ts"],
       "@cdx/rcx-branding": ["packages/rcx-branding/src/index.ts"],
       "@cdx/rcx-demo": ["packages/rcx-demo/src/index.ts"],

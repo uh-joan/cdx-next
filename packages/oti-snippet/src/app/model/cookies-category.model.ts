@@ -1,0 +1,8 @@
+export enum CookiesCategory {
+  STRICTLY_NECESSARY = 'C0001',
+  PERFORMANCE = 'C0002',
+  FUNCTIONAL = 'C0003',
+  TARGETING = 'C0004',
+  SOCIAL_MEDIA = 'C0005',
+  VIDEO = 'VID1',
+}
