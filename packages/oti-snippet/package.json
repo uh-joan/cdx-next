@@ -1,6 +1,6 @@
 {
   "name": "@cdx/oti-snippet",
-  "version": "0.0.1",
+  "version": "18.2.0-alpha.10",
   "private": true,
   "type": "commonjs",
   "main": "./src/index.js",
