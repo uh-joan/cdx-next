@@ -1,7 +1,11 @@
 {
   "name": "@cdx/oti-snippet",
   "version": "18.2.0-alpha.10",
-  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@git.clarivate.io/cdxn/cdx-next.git",
+    "directory": "packages/oti-snippet"
+  },
   "type": "commonjs",
   "main": "./src/index.js",
   "typings": "./src/index.d.ts",
