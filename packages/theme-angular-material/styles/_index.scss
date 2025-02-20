@@ -1,14 +1,9 @@
 @forward 'theme' show default, theme, focus-indicators-color, m2-compat;
 @forward 'theme/default.scss' show $light-theme, $dark-theme;
-@forward 'theme/teal.scss' show $cdx-teal-theme, $cdx-teal-dark-theme;
-@forward 'theme/blue.scss' show $cdx-blue-theme, $cdx-blue-dark-theme;
-@forward 'theme/cdx.m2.scss' show $cdx-typography, $cdx-theme, $cdx-dark-theme;
 @forward 'theme/helix/helix.scss' show $helix-theme, $helix-dark-theme,
   $helix-error-theme, $helix-success-theme, $helix-invert-theme;
 @forward 'theme/helix/overrides.scss' show theme-helix-overrides;
 @forward 'theme/helix/variables/tokens.scss';
-@forward 'theme/helix/helix.m2.scss' show $helix-m2-theme,
-  theme-helix-m2-overrides;
 @forward 'theme/avalon/avalon.scss' show $avalon-light-theme, $avalon-dark-theme,
   theme-avalon-overrides, ava-display, ava-headline, ava-title, ava-body,
   ava-label;
