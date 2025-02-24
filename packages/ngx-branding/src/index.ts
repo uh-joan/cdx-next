@@ -22,6 +22,8 @@ export * from './lib/helix/header/helix-header-global.component';
 export * from './lib/helix/header/helix-header-product-name-or-logo.component';
 export * from './lib/helix/notification/helix-notification.component';
 export * from './lib/helix/notification/helix-notification.module';
+export * from './lib/helix/rich-tooltip/rich-tooltip.component';
+export * from './lib/helix/rich-tooltip/rich-tooltip.directive';
 export * from './lib/one-trust/one-trust.injectors';
 export * from './lib/one-trust/one-trust.module';
 export * from './lib/one-trust/one-trust.service';
