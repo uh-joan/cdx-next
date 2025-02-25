@@ -1,7 +1,10 @@
+@use '../../../../../theme-angular-material/styles/theme/helix/variables/primitives'
+  as primitives;
+
 .tooltip-content {
   position: relative;
   width: fit-content;
-  background: rgba(0, 0, 0, 0.85);
+  background-color: #{primitives.$color-neutral-600};
   color: white;
   padding: 8px;
   border-radius: 2px;

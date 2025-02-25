@@ -36,8 +36,8 @@ const htmlCode = `<div class="story">
 </div>`;
 
 const styleCode = `.story {
-  width: 25rem;
-  height: 30rem;
+  min-width: 18rem;
+  min-height: 25rem;
   padding: 1rem;
 }`;
 

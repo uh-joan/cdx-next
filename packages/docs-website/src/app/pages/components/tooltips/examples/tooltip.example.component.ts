@@ -15,13 +15,21 @@ const htmlCode = `<div class="story">
     (click)="tooltip.toggle()"
     color="primary"
     #tooltip="matTooltip"
-    matTooltip="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vel iaculis nunc. Duis magna erat, semper id iaculis eget, luctus nec nisi. Nulla facilisi. In quis urna sit amet erat bibendum varius. In rhoncus eu sapien molestie ullamcorper. In convallis feugiat sem, sed condimentum lectus lobortis at. Donec et elit eu ante gravida dapibus quis et elit. Nunc blandit condimentum diam at iaculis. Sed quis odio sed massa rhoncus volutpat in in arcu. Integer ultricies auctor velit dapibus vulputate. Nulla tincidunt finibus hendrerit."
-    aria-label="Button that displays a
-    tooltip when focused or hovered over"
+    matTooltip="Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+    Pellentesque vel iaculis nunc. Duis magna erat, semper id iaculis 
+    eget, luctus nec nisi. Nulla facilisi. In quis urna sit amet erat 
+    bibendum varius. In rhoncus eu sapien molestie ullamcorper. 
+    In convallis feugiat sem, sed condimentum lectus lobortis at. 
+    Donec et elit eu ante gravida dapibus quis et elit. Nunc blandit 
+    condimentum diam at iaculis. Sed quis odio sed massa rhoncus 
+    volutpat in in arcu. Integer ultricies auctor velit dapibus 
+    vulputate. Nulla tincidunt finibus hendrerit."
+    aria-label="Button that displays a tooltip when 
+    focused or hovered over"
   >
     Action
   </button>
-  <button
+  <button mat-flat-button
    (click)="tooltip.toggle()">
   Toggle
 </button>
@@ -76,7 +84,7 @@ class SampleComponent {}
 export const TooltipComponent: InputViewerComponent = {
   exampleName: 'Tooltip',
   dynamicComponent: SampleComponent,
-  height: 40,
+  height: 48,
   hideCss: true,
   htmlCode: htmlCode,
   cssCode: styleCode,
