@@ -1,0 +1,115 @@
+<hlx-page
+  [title]="'Skeleton Loader'"
+  [subtitle]="
+    'Skeleton Loader provides a visual representation of content loading, giving users a seamless experience while waiting for data to load.'
+  "
+  [section]="'Components'"
+>
+  <h2>NGX Skeleton loader Documentation</h2>
+  <p>
+    For more information about the API for <strong>skeleton loader</strong>,
+    visit the docs:
+  </p>
+  <cdx-external-link
+    [inline]="false"
+    [url]="'https://www.npmjs.com/package/ngx-skeleton-loader'"
+  ></cdx-external-link>
+  <mat-divider></mat-divider>
+
+  <h2>Installation</h2>
+
+  <cdx-highlight [text]="moduleText"></cdx-highlight>
+
+  <br /><br />
+
+  <h2>Using NgxSkeletonLoaderModule.forRoot()</h2>
+
+  <p>
+    Also, you can import the module in your app by calling
+    NgxSkeletonLoaderModule.forRoot() when adding it. So it will be available
+    across your Angular application.
+  </p>
+  <p>
+    Importing the module this way also allows you to globally configure the
+    default values for the ngx-skeleton-loader components in your application,
+    in case you need some different default values for your app.
+  </p>
+
+  <cdx-highlight [text]="complexModule"></cdx-highlight>
+
+  <ul>
+    <li>
+      By default, every ngx-skeleton-loader component will use theme coming from
+      NgxSkeletonLoaderModule.forRoot() as the source of truth
+    </li>
+    <li>
+      If there's any CSS attribute on the component locally which overrides the
+      CSS spec, it combines both themes, but overriding global CSS attributes in
+      favor of local ones.
+    </li>
+  </ul>
+
+  <cdx-highlight [text]="complexModule2"></cdx-highlight>
+
+  <br /><br />
+
+  <h2>Appearance</h2>
+
+  <p>
+    You can also define which appearance want to use in your skeleton loader by
+    passing the options in your component via [appearance] attribute.
+  </p>
+
+  <h5>Options</h5>
+  <ul>
+    <li>
+      '' - default: it will use it '' as appearance. At the end, it will render
+      like a line;
+    </li>
+    <li>
+      line: it will render like a line. This is the same behavior as passing an
+      empty string;
+    </li>
+    <li>
+      circle: it will use circle as appearance. Great for avatar skeletons, for
+      example :);
+    </li>
+    <li>
+      custom-content: it will NOT add any appearance. Great for custom content,
+      such as SVG, internal components and such;
+    </li>
+  </ul>
+
+  <h2>Animations</h2>
+  <p>
+    You can also define which CSS animation you want to use - even not use any,
+    if it's the case - in your skeleton loader by passing the options in your
+    component via [animation] attribute.
+  </p>
+  <h5>Options</h5>
+  <ul>
+    <li>false (as boolean or string): it will disable the animation.</li>
+    <li>progress - default: it will use it progress as animation;</li>
+    <li>
+      progress-dark: it will use it progress-dark as animation. Recommended if
+      your color schema is darken;
+    </li>
+    <li>pulse: it will use pulse as animation;</li>
+  </ul>
+
+  <h2>Theming</h2>
+  <p>
+    You can also define different styles for the skeleton loader by passing an
+    object with the css styles - in dashed case - into the component via [theme]
+    attribute. The [theme] attribute now accepts the same configuration as
+    ngStyle as well. That means you can manage to use like you're doing with the
+    built-in directive, having a pleasure and beautiful experience
+  </p>
+
+  <br /><br />
+
+  <h2>Examples</h2>
+  @for (sample of sampleList; track sample.exampleName) {
+  <hlx-example-viewer [inputViewerComponent]="sample"></hlx-example-viewer>
+  }
+</hlx-page>

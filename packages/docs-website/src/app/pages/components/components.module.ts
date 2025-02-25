@@ -175,6 +175,13 @@ const routes: Routes = [
           import('./sidenav/sidenav.module').then((m) => m.SidenavModule),
       },
       {
+        path: 'skeleton-loader',
+        loadChildren: () =>
+          import('./skeleton-loader/skeleton-loader.module').then(
+            (m) => m.SkeletonLoaderModule,
+          ),
+      },
+      {
         path: 'slide-toggle',
         loadChildren: () =>
           import('./slide-toggle/slide-toggle.module').then(

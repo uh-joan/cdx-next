@@ -124,6 +124,10 @@ export class ComponentsComponent {
           url: 'sidenav',
         },
         {
+          label: 'Skeleton Loader',
+          url: 'skeleton-loader',
+        },
+        {
           label: 'Slide Toggle',
           url: 'slide-toggle',
         },
