@@ -15,7 +15,7 @@ export class FoundationsComponent {
           label: 'About Helix',
           url: 'about-helix',
         },
-        {
+        /*{
           label: 'Quickstart guide',
           url: 'quickstart-guide',
         },
@@ -30,7 +30,7 @@ export class FoundationsComponent {
         {
           label: 'Accessibility',
           url: 'accessibility',
-        },
+        },*/
       ],
     },
   ];

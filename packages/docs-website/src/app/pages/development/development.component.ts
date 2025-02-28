@@ -38,6 +38,10 @@ export class DevelopmentComponent {
           label: 'Responsive Development',
           url: 'responsive-development',
         },
+        {
+          label: 'Release Note',
+          url: 'release-note',
+        },
       ],
     },
   ];

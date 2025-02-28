@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HelixFooterModule, HelixHeaderModule } from '@cdx/ngx-branding';
+import { HelixFooterModule } from '@cdx/ngx-branding';
 import { LeftNavigationComponent } from 'src/app/core/left-navigation/left-navigation.component';
 
 import { DevelopmentComponent } from './development.component';
@@ -59,6 +59,13 @@ const routes: Routes = [
         loadChildren: () =>
           import('./responsive-development/responsive-development.module').then(
             (m) => m.ResponsiveDevelopmentModule,
+          ),
+      },
+      {
+        path: 'release-note',
+        loadChildren: () =>
+          import('./release-note/release-note.module').then(
+            (m) => m.RleaseNoteModule,
           ),
       },
       { path: '', redirectTo: 'getting-started-overview', pathMatch: 'full' },

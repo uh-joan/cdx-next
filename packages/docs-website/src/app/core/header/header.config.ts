@@ -9,5 +9,5 @@ export const links: NavigationLink[] = [
   { path: '/foundations', label: 'Foundations' },
   { path: '/components', label: 'Components' },
   { path: '/services', label: 'Services' },
-  { path: '/patterns', label: 'Patterns' },
+  // { path: '/patterns', label: 'Patterns' },
 ];
