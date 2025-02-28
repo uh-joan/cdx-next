@@ -6,6 +6,7 @@
     "url": "ssh://git@git.clarivate.io/cdxn/cdx-next.git",
     "directory": "packages/ngx-branding"
   },
+  "type": "module",
   "exports": {
     "./footer/theme": {
       "sass": "./src/lib/footer/_footer-theme.scss"
@@ -13,6 +14,9 @@
     "./header/theme": {
       "sass": "./src/lib/header/_header-theme.scss"
     }
+  },
+  "bin": {
+    "helix-check": "./src/bin/helix-check.js"
   },
   "dependencies": {
     "tslib": "^2.3.0"
