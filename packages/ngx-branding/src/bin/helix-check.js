@@ -321,13 +321,11 @@ function checkIndexHtml(themeClass) {
           allIndexValid = false;
         }
       } else {
-        console.log(chalk.red('❌ <body> tag with classes is missing.'));
+        console.log(chalk.red('❌ <body> tag not found in index.html.'));
         allIndexValid = false;
       }
     } catch (error) {
-      console.error(
-        chalk.red(`❌ Error processing index.html: ${error.message}`),
-      );
+      console.error(chalk.red(`❌ Error reading index.html: ${error.message}`));
       allIndexValid = false;
     }
   } else {

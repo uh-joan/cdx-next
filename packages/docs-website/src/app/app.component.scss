@@ -1,15 +1,20 @@
 :host {
-  height: 100vh;
   display: flex;
+  height: 100vh;
   flex-direction: column;
+
+  .routing-loader {
+    position: absolute;
+    top: 56px;
+  }
 
   .content {
     overflow: auto;
     height: 100%;
     background: linear-gradient(
         0deg,
-        rgba(255, 255, 255, 0.5) 0%,
-        rgba(255, 255, 255, 0.5) 100%
+        rgb(255 255 255 / 50%) 0%,
+        rgb(255 255 255 / 50%) 100%
       ),
       var(--surface-minimal, #f2f2f2);
   }

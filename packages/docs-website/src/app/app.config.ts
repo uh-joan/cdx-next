@@ -24,14 +24,6 @@ export const appConfig: ApplicationConfig = {
       routes,
       withViewTransitions({
         skipInitialTransition: true,
-        onViewTransitionCreated: ({ transition }) => {
-          const router = inject(Router);
-          const currentUrl = router.url;
-
-          if (currentUrl.startsWith('/dashboard/reports')) {
-            transition.skipTransition();
-          }
-        },
       }),
       withComponentInputBinding(),
     ),
