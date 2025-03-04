@@ -1,17 +1,8 @@
-import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
-import { HIGHLIGHT_OPTIONS } from 'ngx-highlightjs';
+import { bootstrapApplication } from '@angular/platform-browser';
 
-import { AppModule } from './app/app.module';
+import { AppComponent } from './app/app.component';
+import { appConfig } from './app/app.config';
 
-platformBrowserDynamic()
-  .bootstrapModule(AppModule, {
-    providers: [
-      {
-        provide: HIGHLIGHT_OPTIONS,
-        useValue: {
-          fullLibraryLoader: () => import('highlight.js'),
-        },
-      },
-    ],
-  })
-  .catch((err) => console.error(err));
+bootstrapApplication(AppComponent, appConfig).catch((err) =>
+  console.error(err),
+);
