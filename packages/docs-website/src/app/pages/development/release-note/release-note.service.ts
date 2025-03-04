@@ -20,4 +20,14 @@ export class ReleaseNoteService {
       }),
     );
   }
+
+  getAllReleaseNotesFiles(): Observable<string[]> {
+    return this.http.get<string[]>('assets/release-notes/index.json');
+  }
+
+  getReleaseNote(file: string): Observable<string> {
+    return this.http.get(`assets/release-notes/${file}`, {
+      responseType: 'text',
+    });
+  }
 }

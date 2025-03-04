@@ -9,7 +9,7 @@ fi
 OLD_TAG=$1
 NEW_TAG=$2
 REPO_URL="https://git.clarivate.io/projects/CDXN/repos/cdx-next"
-OUTPUT_FILE="../../docs/RELEASE_NOTES_${NEW_TAG}.md"
+OUTPUT_FILE="../../packages/docs-website/src/assets/release-notes/RELEASE_NOTES_${NEW_TAG}.md"
 
 echo "Generating release notes from $OLD_TAG to $NEW_TAG..."
 

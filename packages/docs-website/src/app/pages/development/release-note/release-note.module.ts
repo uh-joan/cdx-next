@@ -5,6 +5,9 @@ import {
   withInterceptorsFromDi,
 } from '@angular/common/http';
 import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSelectModule } from '@angular/material/select';
 import { RouterModule, Routes } from '@angular/router';
 import { ExternalLinkComponent } from 'src/app/components/external-link/external-link.component';
 import { PageComponent } from 'src/app/core/page/page.component';
@@ -26,6 +29,9 @@ export const routes: Routes = [
     RouterModule.forChild(routes),
     PageComponent,
     ExternalLinkComponent,
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    MatSelectModule,
   ],
   providers: [ReleaseNoteService, provideHttpClient(withInterceptorsFromDi())],
 })
