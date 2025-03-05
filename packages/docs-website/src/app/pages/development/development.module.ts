@@ -62,10 +62,10 @@ const routes: Routes = [
           ),
       },
       {
-        path: 'release-note',
+        path: 'release-notes',
         loadChildren: () =>
-          import('./release-note/release-note.module').then(
-            (m) => m.RleaseNoteModule,
+          import('./release-notes/release-notes.module').then(
+            (m) => m.ReleaseNotesModule,
           ),
       },
       { path: '', redirectTo: 'getting-started-overview', pathMatch: 'full' },

@@ -1,6 +1,5 @@
 import { CommonModule } from '@angular/common';
 import {
-  HttpClientModule,
   provideHttpClient,
   withInterceptorsFromDi,
 } from '@angular/common/http';
@@ -12,18 +11,23 @@ import { RouterModule, Routes } from '@angular/router';
 import { ExternalLinkComponent } from 'src/app/components/external-link/external-link.component';
 import { PageComponent } from 'src/app/core/page/page.component';
 
-import { ReleaseNoteComponent } from './release-note.component';
-import { ReleaseNoteService } from './release-note.service';
+import { ReleaseNotesComponent } from './release-notes.component';
+import { ReleaseNotesService } from './release-notes.service';
 
-export const routes: Routes = [
+const routes: Routes = [
   {
     path: '',
-    component: ReleaseNoteComponent,
+    redirectTo: 'v18',
+    pathMatch: 'full',
+  },
+  {
+    path: ':version',
+    component: ReleaseNotesComponent,
   },
 ];
 
 @NgModule({
-  declarations: [ReleaseNoteComponent],
+  declarations: [ReleaseNotesComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
@@ -33,6 +37,6 @@ export const routes: Routes = [
     MatFormFieldModule,
     MatSelectModule,
   ],
-  providers: [ReleaseNoteService, provideHttpClient(withInterceptorsFromDi())],
+  providers: [ReleaseNotesService, provideHttpClient(withInterceptorsFromDi())],
 })
-export class RleaseNoteModule {}
+export class ReleaseNotesModule {}

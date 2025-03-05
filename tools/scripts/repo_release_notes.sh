@@ -16,3 +16,5 @@ for ((i = 1; i < NUM_TAGS; i++)); do
 
     ./generate_release_notes.sh "$OLD_TAG" "$NEW_TAG"
 done
+
+bash  ./generate_release-notes_index.sh

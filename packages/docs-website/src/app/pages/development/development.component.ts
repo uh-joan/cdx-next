@@ -39,8 +39,8 @@ export class DevelopmentComponent {
           url: 'responsive-development',
         },
         {
-          label: 'Release Note',
-          url: 'release-note',
+          label: 'Release Notes',
+          url: 'release-notes',
         },
       ],
     },

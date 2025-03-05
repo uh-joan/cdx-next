@@ -35,11 +35,11 @@ export class HomeComponent {
       url: '/components',
     },
     {
-      title: 'Patterns',
+      title: 'Services',
       text: 'Find out about our preferred solutions to common use-cases.',
       imageUrl: '../../../assets/home/pictograms/patterns.svg',
-      buttonName: 'Explore patterns',
-      url: '/patterns',
+      buttonName: 'Explore services',
+      url: '/services',
     },
   ];
 }
