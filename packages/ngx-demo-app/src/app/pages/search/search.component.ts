@@ -14,22 +14,22 @@ import { TranslateModule } from '@ngx-translate/core';
 import { PaperSearchComponent } from '../../components/paper-search/paper-search.component';
 
 @Component({
-    imports: [
-        CommonModule,
-        MatButtonModule,
-        MatInputModule,
-        PaperSearchComponent,
-        MatDividerModule,
-        MatCheckboxModule,
-        MatSlideToggleModule,
-        MatDatepickerModule,
-        MatNativeDateModule,
-        MatIconModule,
-        MatCardModule,
-        TranslateModule,
-    ],
-    templateUrl: './search.component.html',
-    styleUrl: './search.component.scss'
+  imports: [
+    CommonModule,
+    MatButtonModule,
+    MatInputModule,
+    PaperSearchComponent,
+    MatDividerModule,
+    MatCheckboxModule,
+    MatSlideToggleModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatIconModule,
+    MatCardModule,
+    TranslateModule,
+  ],
+  templateUrl: './search.component.html',
+  styleUrl: './search.component.scss',
 })
 export class SearchComponent {
   isSearchActivated = false;

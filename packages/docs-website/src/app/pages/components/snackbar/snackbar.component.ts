@@ -5,6 +5,8 @@ import * as samples from './examples';
 
 @Component({
   selector: 'app-snackbar',
+  // eslint-disable-next-line @angular-eslint/prefer-standalone
+  standalone: false,
   templateUrl: './snackbar.component.html',
   styleUrls: ['./snackbar.component.scss'],
 })

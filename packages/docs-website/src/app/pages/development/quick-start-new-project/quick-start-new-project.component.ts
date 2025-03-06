@@ -10,6 +10,8 @@ export interface DataRow {
 
 @Component({
   selector: 'cdx-quick-start-new-project',
+  // eslint-disable-next-line @angular-eslint/prefer-standalone
+  standalone: false,
   templateUrl: './quick-start-new-project.component.html',
   styleUrls: ['./quick-start-new-project.component.scss'],
 })

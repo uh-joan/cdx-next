@@ -23,20 +23,20 @@ import * as zh_CN from '../../../assets/i18n/zh_CN.json';
 import * as zh_TW from '../../../assets/i18n/zh_TW.json';
 
 @Component({
-    selector: 'language-selector',
-    templateUrl: './language-selector.component.html',
-    styleUrls: ['./language-selector.component.scss'],
-    imports: [
-        CommonModule,
-        MatSelectModule,
-        MatFormFieldModule,
-        ReactiveFormsModule,
-        MatIconModule,
-        MatButtonModule,
-        MatMenuModule,
-        NgxTranslationsModule,
-        TranslateModule,
-    ]
+  selector: 'language-selector',
+  templateUrl: './language-selector.component.html',
+  styleUrls: ['./language-selector.component.scss'],
+  imports: [
+    CommonModule,
+    MatSelectModule,
+    MatFormFieldModule,
+    ReactiveFormsModule,
+    MatIconModule,
+    MatButtonModule,
+    MatMenuModule,
+    NgxTranslationsModule,
+    TranslateModule,
+  ],
 })
 export class LanguageSelectorComponent implements OnInit {
   MAP_LANGUAGE_NAME = {

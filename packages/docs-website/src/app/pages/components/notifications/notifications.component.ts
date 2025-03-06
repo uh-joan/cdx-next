@@ -51,6 +51,8 @@ const ELEMENT_APIS: ElementApis[] = [
 
 @Component({
   selector: 'app-notifications',
+  // eslint-disable-next-line @angular-eslint/prefer-standalone
+  standalone: false,
   templateUrl: './notifications.component.html',
   styleUrls: ['./notifications.component.scss'],
 })

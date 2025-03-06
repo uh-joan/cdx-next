@@ -4,6 +4,8 @@ import * as samples from './examples';
 
 @Component({
   selector: 'cdx-breadcrumbs',
+  // eslint-disable-next-line @angular-eslint/prefer-standalone
+  standalone: false,
   templateUrl: './breadcrumbs.component.html',
   styleUrls: ['./breadcrumbs.component.scss'],
 })

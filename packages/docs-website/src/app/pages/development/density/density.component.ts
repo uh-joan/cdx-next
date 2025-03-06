@@ -2,6 +2,8 @@ import { Component, HostBinding } from '@angular/core';
 
 @Component({
   selector: 'cdx-density',
+  // eslint-disable-next-line @angular-eslint/prefer-standalone
+  standalone: false,
   templateUrl: './density.component.html',
   styleUrls: ['./density.component.scss'],
 })

@@ -1,7 +1,12 @@
 // TODO ADJUST THE HEADER TO REMOVE THE ERROR IN CONSOLE
 import { Component } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
-import { HelixHeaderModule } from '@cdx/ngx-branding';
+import {
+  HelixFooterGroupComponent,
+  HelixHeaderComponent,
+  HelixHeaderGlobalComponent,
+  HelixHeaderProductNameOrLogoComponent,
+} from '@cdx/ngx-branding';
 import { InputViewerComponent } from 'src/app/core/example-viewer/example-viewer.model';
 
 const htmlCode = `<div class="story">
@@ -42,7 +47,12 @@ const styleCode = `.story {
 @Component({
   standalone: true,
   template: htmlCode,
-  imports: [HelixHeaderModule, MatIconModule],
+  imports: [
+    HelixHeaderComponent,
+    HelixHeaderGlobalComponent,
+    HelixHeaderProductNameOrLogoComponent,
+    MatIconModule,
+  ],
   styles: styleCode,
 })
 class SampleComponent {}
@@ -57,16 +67,23 @@ export const HeaderWithProductNameComponent: InputViewerComponent = {
   cssCode: styleCode,
   tsCode: `import { Component } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
-import { HelixHeaderModule } from '@cdx/ngx-branding';
+import {
+  HelixFooterGroupComponent,
+  HelixHeaderComponent,
+  HelixHeaderGlobalComponent,
+  HelixHeaderProductNameOrLogoComponent,
+} from '@cdx/ngx-branding';
 
 @Component({
-    standalone: true,
-    template: htmlCode,
-    imports: [
-        HelixHeaderModule,
-        MatIconModule
-    ],
-    styles: styleCode,
+  standalone: true,
+  template: htmlCode,
+  imports: [
+    HelixHeaderComponent,
+    HelixHeaderGlobalComponent,
+    HelixHeaderProductNameOrLogoComponent,
+    MatIconModule,
+  ],
+  styles: styleCode,
 })
 class SampleComponent {}`,
 };

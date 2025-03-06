@@ -4,6 +4,8 @@ import * as samples from './examples';
 
 @Component({
   selector: 'app-toolbar',
+  // eslint-disable-next-line @angular-eslint/prefer-standalone
+  standalone: false,
   templateUrl: './toolbar.component.html',
   styleUrls: ['./toolbar.component.scss'],
 })

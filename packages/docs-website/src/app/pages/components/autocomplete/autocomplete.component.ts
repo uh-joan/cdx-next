@@ -4,6 +4,8 @@ import * as samples from './examples';
 
 @Component({
   selector: 'cdx-autocomplete',
+  // eslint-disable-next-line @angular-eslint/prefer-standalone
+  standalone: false,
   templateUrl: './autocomplete.component.html',
   styleUrls: ['./autocomplete.component.scss'],
 })

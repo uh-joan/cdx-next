@@ -4,6 +4,8 @@ import * as samples from './examples';
 
 @Component({
   selector: 'cdx-badge',
+  // eslint-disable-next-line @angular-eslint/prefer-standalone
+  standalone: false,
   templateUrl: './badge.component.html',
   styleUrls: ['./badge.component.scss'],
 })

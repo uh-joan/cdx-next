@@ -14,19 +14,19 @@ import { DataBoxComponent } from '../../components/data-box/data-box.component';
 import { devices, enrollmentOptions, options } from './dashboard.data';
 
 @Component({
-    imports: [
-        CommonModule,
-        DataBoxComponent,
-        HighchartsChartModule,
-        MatIconModule,
-        MatDividerModule,
-        MatButtonModule,
-        MatProgressBarModule,
-        MatCardModule,
-        TranslateModule,
-    ],
-    templateUrl: './dashboard.component.html',
-    styleUrl: './dashboard.component.scss'
+  imports: [
+    CommonModule,
+    DataBoxComponent,
+    HighchartsChartModule,
+    MatIconModule,
+    MatDividerModule,
+    MatButtonModule,
+    MatProgressBarModule,
+    MatCardModule,
+    TranslateModule,
+  ],
+  templateUrl: './dashboard.component.html',
+  styleUrl: './dashboard.component.scss',
 })
 export class DashboardComponent {
   Highcharts = Highcharts;

@@ -4,6 +4,8 @@ import * as samples from './examples';
 
 @Component({
   selector: 'app-sort-header',
+  // eslint-disable-next-line @angular-eslint/prefer-standalone
+  standalone: false,
   templateUrl: './sort-header.component.html',
   styleUrls: ['./sort-header.component.scss'],
 })

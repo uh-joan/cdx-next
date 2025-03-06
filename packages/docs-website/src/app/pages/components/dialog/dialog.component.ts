@@ -5,6 +5,8 @@ import * as samples from './examples';
 
 @Component({
   selector: 'app-dialog',
+  // eslint-disable-next-line @angular-eslint/prefer-standalone
+  standalone: false,
   templateUrl: './dialog.component.html',
   styleUrls: ['./dialog.component.scss'],
 })

@@ -4,6 +4,8 @@ import * as samples from './examples';
 
 @Component({
   selector: 'app-slide-toggle',
+  // eslint-disable-next-line @angular-eslint/prefer-standalone
+  standalone: false,
   templateUrl: './slide-toggle.component.html',
   styleUrls: ['./slide-toggle.component.scss'],
 })

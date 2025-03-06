@@ -3,6 +3,7 @@ import { NavbarSection } from 'src/app/core/left-navigation/left-navigation.inte
 
 @Component({
   selector: 'cdx-patterns',
+  // eslint-disable-next-line @angular-eslint/prefer-standalone
   standalone: false,
   templateUrl: './patterns.component.html',
   styleUrl: './patterns.component.scss',

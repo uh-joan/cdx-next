@@ -1,6 +1,9 @@
 // TODO ADJUST THE HEADER TO REMOVE THE ERROR IN CONSOLE
 import { Component } from '@angular/core';
-import { HelixHeaderModule } from '@cdx/ngx-branding';
+import {
+  HelixHeaderComponent,
+  HelixHeaderProductNameOrLogoComponent,
+} from '@cdx/ngx-branding';
 import { InputViewerComponent } from 'src/app/core/example-viewer/example-viewer.model';
 
 const htmlCode = `<div class="story">
@@ -16,7 +19,7 @@ const styleCode = `.story {
 @Component({
   standalone: true,
   template: htmlCode,
-  imports: [HelixHeaderModule],
+  imports: [HelixHeaderComponent, HelixHeaderProductNameOrLogoComponent],
   styles: styleCode,
 })
 class SampleComponent {}
@@ -30,15 +33,17 @@ export const HeaderUnbrandedComponent: InputViewerComponent = {
   htmlCode: htmlCode,
   cssCode: styleCode,
   tsCode: `import { Component } from '@angular/core';
-import { HelixHeaderModule } from '@cdx/ngx-branding';
+import {
+  HelixHeaderComponent,
+  HelixHeaderProductNameOrLogoComponent,
+} from '@cdx/ngx-branding';
+
 
 @Component({
-    standalone: true,
-    template: htmlCode,
-    imports: [
-        HelixHeaderModule
-    ],
-    styles: styleCode,
+  standalone: true,
+  template: htmlCode,
+  imports: [HelixHeaderComponent, HelixHeaderProductNameOrLogoComponent],
+  styles: styleCode,
 })
 class SampleComponent {}`,
 };

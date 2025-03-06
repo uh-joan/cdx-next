@@ -11,11 +11,11 @@ import { filter, map } from 'rxjs';
 import { ThemeService } from './services/theme.service';
 
 @Component({
-    selector: 'cdx-root',
-    templateUrl: './app.component.html',
-    styleUrls: ['./app.component.scss'],
-    encapsulation: ViewEncapsulation.None,
-    standalone: false
+  selector: 'cdx-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.scss'],
+  encapsulation: ViewEncapsulation.None,
+  standalone: false,
 })
 export class AppComponent {
   routerEvents$;

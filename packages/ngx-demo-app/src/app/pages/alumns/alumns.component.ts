@@ -154,20 +154,20 @@ export const alumns = [
 ];
 
 @Component({
-    imports: [
-        CommonModule,
-        MatIconModule,
-        MatButtonModule,
-        MatDividerModule,
-        MatInputModule,
-        MatTableModule,
-        MatCheckboxModule,
-        MatCardModule,
-        TranslateModule,
-    ],
-    templateUrl: './alumns.component.html',
-    styleUrl: './alumns.component.scss',
-    changeDetection: ChangeDetectionStrategy.OnPush
+  imports: [
+    CommonModule,
+    MatIconModule,
+    MatButtonModule,
+    MatDividerModule,
+    MatInputModule,
+    MatTableModule,
+    MatCheckboxModule,
+    MatCardModule,
+    TranslateModule,
+  ],
+  templateUrl: './alumns.component.html',
+  styleUrl: './alumns.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AlumnsComponent {
   displayedColumns: string[] = ['id', 'name', 'email', 'phone', 'location'];

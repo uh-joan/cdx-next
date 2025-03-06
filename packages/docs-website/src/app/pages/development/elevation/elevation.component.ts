@@ -1,4 +1,3 @@
-import { TemplateLiteral } from '@angular/compiler';
 import { Component, HostBinding } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 
@@ -11,6 +10,8 @@ interface ElTable {
 
 @Component({
   selector: 'cdx-elevation',
+  // eslint-disable-next-line @angular-eslint/prefer-standalone
+  standalone: false,
   templateUrl: './elevation.component.html',
   styleUrls: ['./elevation.component.scss'],
 })

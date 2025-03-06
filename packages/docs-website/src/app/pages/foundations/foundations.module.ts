@@ -1,7 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HelixFooterModule } from '@cdx/ngx-branding';
 import { LeftNavigationComponent } from 'src/app/core/left-navigation/left-navigation.component';
 
 import { FoundationsComponent } from './foundations.component';
@@ -29,7 +28,6 @@ const routes: Routes = [
     CommonModule,
     RouterModule.forChild(routes),
     LeftNavigationComponent,
-    HelixFooterModule,
   ],
 })
 export class FoundationsModule {}

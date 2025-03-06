@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { MatBadgeModule } from '@angular/material/badge';
 import { MatDividerModule } from '@angular/material/divider';
-import { MatLabel } from '@angular/material/form-field';
 import { InputViewerComponent } from 'src/app/core/example-viewer/example-viewer.model';
 
 const htmlCode = `<div matBadge="4" matBadgeOverlap="false" 
@@ -42,7 +41,7 @@ const styleCode = `:host {
 @Component({
   standalone: true,
   template: htmlCode,
-  imports: [MatBadgeModule, MatLabel, MatDividerModule],
+  imports: [MatBadgeModule, MatDividerModule],
   styles: styleCode,
 })
 class SampleComponent {}

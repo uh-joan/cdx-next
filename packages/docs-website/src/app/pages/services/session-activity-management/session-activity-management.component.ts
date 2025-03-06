@@ -9,6 +9,8 @@ import {
 
 @Component({
   selector: 'cdx-session-activity-management',
+  // eslint-disable-next-line @angular-eslint/prefer-standalone
+  standalone: false,
   templateUrl: './session-activity-management.component.html',
   styleUrls: ['./session-activity-management.component.scss'],
 })

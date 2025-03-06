@@ -8,17 +8,17 @@ import { MatInputModule } from '@angular/material/input';
 import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
-    imports: [
-        CommonModule,
-        MatDividerModule,
-        MatButtonModule,
-        MatCheckboxModule,
-        MatInputModule,
-        MatCardModule,
-        TranslateModule,
-    ],
-    templateUrl: './settings.component.html',
-    styleUrl: './settings.component.scss',
-    changeDetection: ChangeDetectionStrategy.OnPush
+  imports: [
+    CommonModule,
+    MatDividerModule,
+    MatButtonModule,
+    MatCheckboxModule,
+    MatInputModule,
+    MatCardModule,
+    TranslateModule,
+  ],
+  templateUrl: './settings.component.html',
+  styleUrl: './settings.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SettingsComponent {}

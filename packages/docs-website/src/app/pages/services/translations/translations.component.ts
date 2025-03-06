@@ -9,6 +9,8 @@ import {
 
 @Component({
   selector: 'cdx-translations',
+  // eslint-disable-next-line @angular-eslint/prefer-standalone
+  standalone: false,
   templateUrl: './translations.component.html',
   styleUrls: ['./translations.component.scss'],
 })

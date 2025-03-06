@@ -9,6 +9,8 @@ interface ComponentExample {
 
 @Component({
   selector: 'cdx-components-overview',
+  // eslint-disable-next-line @angular-eslint/prefer-standalone
+  standalone: false,
   templateUrl: './components-overview.component.html',
   styleUrls: ['./components-overview.component.scss'],
 })

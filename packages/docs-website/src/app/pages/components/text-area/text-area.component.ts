@@ -4,6 +4,8 @@ import * as samples from './examples';
 
 @Component({
   selector: 'app-text-area',
+  // eslint-disable-next-line @angular-eslint/prefer-standalone
+  standalone: false,
   templateUrl: './text-area.component.html',
   styleUrls: ['./text-area.component.scss'],
 })

@@ -4,6 +4,8 @@ import * as samples from './examples';
 
 @Component({
   selector: 'app-footer',
+  // eslint-disable-next-line @angular-eslint/prefer-standalone
+  standalone: false,
   templateUrl: './footer.component.html',
   styleUrls: ['./footer.component.scss'],
 })

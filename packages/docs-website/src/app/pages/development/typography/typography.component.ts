@@ -3,6 +3,8 @@ import { MatTableDataSource } from '@angular/material/table';
 
 @Component({
   selector: 'cdx-typography',
+  // eslint-disable-next-line @angular-eslint/prefer-standalone
+  standalone: false,
   templateUrl: './typography.component.html',
   styleUrls: ['./typography.component.scss'],
 })

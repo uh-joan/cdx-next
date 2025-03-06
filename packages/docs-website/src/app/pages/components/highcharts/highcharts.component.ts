@@ -4,6 +4,8 @@ import * as samples from './examples';
 
 @Component({
   selector: 'app-highcharts',
+  // eslint-disable-next-line @angular-eslint/prefer-standalone
+  standalone: false,
   templateUrl: './highcharts.component.html',
   styleUrls: ['./highcharts.component.scss'],
 })

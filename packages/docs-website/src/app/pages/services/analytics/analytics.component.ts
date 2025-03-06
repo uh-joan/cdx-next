@@ -12,6 +12,8 @@ import {
 
 @Component({
   selector: 'cdx-analytics',
+  // eslint-disable-next-line @angular-eslint/prefer-standalone
+  standalone: false,
   templateUrl: './analytics.component.html',
   styleUrls: ['./analytics.component.scss'],
 })

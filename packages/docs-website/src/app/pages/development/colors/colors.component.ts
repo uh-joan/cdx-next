@@ -3,6 +3,8 @@ import { MatTableDataSource } from '@angular/material/table';
 
 @Component({
   selector: 'cdx-colors',
+  // eslint-disable-next-line @angular-eslint/prefer-standalone
+  standalone: false,
   templateUrl: './colors.component.html',
   styleUrls: ['./colors.component.scss'],
 })

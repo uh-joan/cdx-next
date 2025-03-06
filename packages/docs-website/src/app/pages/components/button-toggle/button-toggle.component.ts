@@ -4,6 +4,8 @@ import * as samples from './examples';
 
 @Component({
   selector: 'app-button-toggle',
+  // eslint-disable-next-line @angular-eslint/prefer-standalone
+  standalone: false,
   templateUrl: './button-toggle.component.html',
   styleUrls: ['./button-toggle.component.scss'],
 })

@@ -3,6 +3,7 @@ import { NavbarSection } from 'src/app/core/left-navigation/left-navigation.inte
 
 @Component({
   selector: 'cdx-foundations',
+  // eslint-disable-next-line @angular-eslint/prefer-standalone
   standalone: false,
   templateUrl: './foundations.component.html',
   styleUrl: './foundations.component.scss',

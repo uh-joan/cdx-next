@@ -9,6 +9,8 @@ import { ReleaseNotesService } from './release-notes.service';
 
 @Component({
   selector: 'cdx-release-notes',
+  // eslint-disable-next-line @angular-eslint/prefer-standalone
+  standalone: false,
   templateUrl: './release-notes.component.html',
   styleUrls: ['./release-notes.component.scss'],
 })

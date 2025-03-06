@@ -10,18 +10,18 @@ import { TranslateModule } from '@ngx-translate/core';
 import { ThemeService } from '../../services/theme.service';
 
 @Component({
-    selector: 'demo-theme-selector',
-    templateUrl: './theme-selector.component.html',
-    styleUrls: ['./theme-selector.component.scss'],
-    imports: [
-        MatIconModule,
-        MatButtonModule,
-        MatMenuModule,
-        CommonModule,
-        MatTooltipModule,
-        MatSelectModule,
-        TranslateModule,
-    ]
+  selector: 'demo-theme-selector',
+  templateUrl: './theme-selector.component.html',
+  styleUrls: ['./theme-selector.component.scss'],
+  imports: [
+    MatIconModule,
+    MatButtonModule,
+    MatMenuModule,
+    CommonModule,
+    MatTooltipModule,
+    MatSelectModule,
+    TranslateModule,
+  ],
 })
 export class ThemeSelectorComponent {
   currentTheme = '';

@@ -4,6 +4,8 @@ import * as samples from './examples';
 
 @Component({
   selector: 'app-stepper',
+  // eslint-disable-next-line @angular-eslint/prefer-standalone
+  standalone: false,
   templateUrl: './stepper.component.html',
   styleUrls: ['./stepper.component.scss'],
 })

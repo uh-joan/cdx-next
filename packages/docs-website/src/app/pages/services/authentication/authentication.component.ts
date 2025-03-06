@@ -8,6 +8,8 @@ import {
 
 @Component({
   selector: 'cdx-authentication',
+  // eslint-disable-next-line @angular-eslint/prefer-standalone
+  standalone: false,
   templateUrl: './authentication.component.html',
   styleUrls: ['./authentication.component.scss'],
 })

@@ -4,6 +4,8 @@ import * as samples from './examples';
 
 @Component({
   selector: 'app-select',
+  // eslint-disable-next-line @angular-eslint/prefer-standalone
+  standalone: false,
   templateUrl: './select.component.html',
   styleUrls: ['./select.component.scss'],
 })

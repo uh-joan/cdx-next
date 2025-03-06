@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { HelixFooterModule } from '@cdx/ngx-branding';
+import { HelixFooterComponent } from '@cdx/ngx-branding';
 import { InputViewerComponent } from 'src/app/core/example-viewer/example-viewer.model';
 
 const htmlCode = `<div class="story">
@@ -19,7 +19,7 @@ const styleCode = `.story {
 @Component({
   standalone: true,
   template: htmlCode,
-  imports: [HelixFooterModule],
+  imports: [HelixFooterComponent],
   styles: styleCode,
 })
 class SampleComponent {}
@@ -33,15 +33,14 @@ export const FooterWithApplicationLinksComponent: InputViewerComponent = {
   htmlCode: htmlCode,
   cssCode: styleCode,
   tsCode: `import { Component } from '@angular/core';
-import { HelixFooterModule } from '@cdx/ngx-branding';
+import { HelixFooterComponent } from '@cdx/ngx-branding';
+
 
 @Component({
-    standalone: true,
-    template: htmlCode,
-    imports: [
-        HelixFooterModule
-    ],
-    styles: styleCode,
+  standalone: true,
+  template: htmlCode,
+  imports: [HelixFooterComponent],
+  styles: styleCode,
 })
 class SampleComponent {}`,
 };

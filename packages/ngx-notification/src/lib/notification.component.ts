@@ -11,12 +11,12 @@ import {
 } from '@angular/core';
 
 @Component({
-    selector: 'cdx-notification',
-    templateUrl: './notification.component.html',
-    styleUrls: ['./notification.component.scss'],
-    encapsulation: ViewEncapsulation.None,
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: false
+  selector: 'cdx-notification',
+  templateUrl: './notification.component.html',
+  styleUrls: ['./notification.component.scss'],
+  encapsulation: ViewEncapsulation.None,
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: false,
 })
 export class NotificationComponent {
   @HostBinding('class') private get classes(): string {

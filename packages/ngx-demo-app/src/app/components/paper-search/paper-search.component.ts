@@ -13,19 +13,19 @@ import { RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
-    selector: 'demo-paper-search',
-    imports: [
-        CommonModule,
-        MatCheckboxModule,
-        MatDividerModule,
-        MatIconModule,
-        RouterModule,
-        MatCardModule,
-        TranslateModule,
-    ],
-    templateUrl: './paper-search.component.html',
-    styleUrl: './paper-search.component.scss',
-    changeDetection: ChangeDetectionStrategy.OnPush
+  selector: 'demo-paper-search',
+  imports: [
+    CommonModule,
+    MatCheckboxModule,
+    MatDividerModule,
+    MatIconModule,
+    RouterModule,
+    MatCardModule,
+    TranslateModule,
+  ],
+  templateUrl: './paper-search.component.html',
+  styleUrl: './paper-search.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class PaperSearchComponent {
   @HostBinding('class') classes = 'mat-elevation-z3';

@@ -4,6 +4,8 @@ import * as samples from './examples';
 
 @Component({
   selector: 'app-slider',
+  // eslint-disable-next-line @angular-eslint/prefer-standalone
+  standalone: false,
   templateUrl: './slider.component.html',
   styleUrls: ['./slider.component.scss'],
 })

@@ -4,6 +4,8 @@ import * as samples from './examples';
 
 @Component({
   selector: 'app-chips',
+  // eslint-disable-next-line @angular-eslint/prefer-standalone
+  standalone: false,
   templateUrl: './chips.component.html',
   styleUrls: ['./chips.component.scss'],
 })

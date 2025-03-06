@@ -9,19 +9,19 @@ import { MatSelectModule } from '@angular/material/select';
 import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
-    imports: [
-        CommonModule,
-        MatButtonModule,
-        MatDividerModule,
-        MatInputModule,
-        MatSelectModule,
-        FormsModule,
-        MatCardModule,
-        TranslateModule,
-    ],
-    templateUrl: './account.component.html',
-    styleUrl: './account.component.scss',
-    changeDetection: ChangeDetectionStrategy.OnPush
+  imports: [
+    CommonModule,
+    MatButtonModule,
+    MatDividerModule,
+    MatInputModule,
+    MatSelectModule,
+    FormsModule,
+    MatCardModule,
+    TranslateModule,
+  ],
+  templateUrl: './account.component.html',
+  styleUrl: './account.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AccountComponent {
   selectedState = 'alabama';

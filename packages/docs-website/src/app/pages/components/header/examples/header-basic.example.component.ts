@@ -1,6 +1,6 @@
 // TODO ADJUST THE HEADER TO REMOVE THE ERROR IN CONSOLE
 import { Component } from '@angular/core';
-import { HelixHeaderModule } from '@cdx/ngx-branding';
+import { HelixHeaderComponent } from '@cdx/ngx-branding';
 import { InputViewerComponent } from 'src/app/core/example-viewer/example-viewer.model';
 
 const htmlCode = `<div class="story">
@@ -14,7 +14,7 @@ const styleCode = `.story {
 @Component({
   standalone: true,
   template: htmlCode,
-  imports: [HelixHeaderModule],
+  imports: [HelixHeaderComponent],
   styles: styleCode,
 })
 class SampleComponent {}

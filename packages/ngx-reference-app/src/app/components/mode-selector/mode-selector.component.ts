@@ -6,10 +6,10 @@ import { TranslateModule } from '@ngx-translate/core';
 import { ThemeService } from '../../services/theme.service';
 
 @Component({
-    selector: 'mode-selector',
-    templateUrl: './mode-selector.component.html',
-    styleUrls: ['./mode-selector.component.scss'],
-    imports: [FormsModule, MatSlideToggleModule, TranslateModule]
+  selector: 'mode-selector',
+  templateUrl: './mode-selector.component.html',
+  styleUrls: ['./mode-selector.component.scss'],
+  imports: [FormsModule, MatSlideToggleModule, TranslateModule],
 })
 export class ModeSelectorComponent implements OnInit {
   constructor(private themeService: ThemeService) {}
