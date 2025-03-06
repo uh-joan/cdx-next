@@ -1,6 +1,6 @@
 {
   "name": "@cdx/ngx-branding",
-  "version": "18.2.0-alpha.15",
+  "version": "18.2.0",
   "repository": {
     "type": "git",
     "url": "ssh://git@git.clarivate.io/cdxn/cdx-next.git",
@@ -22,8 +22,8 @@
     "tslib": "^2.3.0"
   },
   "peerDependencies": {
-    "@cdx/shared-branding": "18.2.0-alpha.15",
-    "@cdx/theme-angular-material": "18.2.0-alpha.15",
+    "@cdx/shared-branding": "18.2.0",
+    "@cdx/theme-angular-material": "18.2.0",
     "@ngx-translate/core": ">=14.0.0"
   }
 }
