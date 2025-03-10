@@ -41,6 +41,10 @@ export class DevelopmentComponent {
           url: 'responsive-development',
         },
         {
+          label: 'Migration Guide',
+          url: 'migration-guide',
+        },
+        {
           label: 'Release Notes',
           url: 'release-notes',
         },

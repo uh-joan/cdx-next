@@ -48,15 +48,22 @@ export class QuickStartNewProjectComponent {
   <!-- BODY CONTENTS -->
 </body>`;
 
-  headerFooterModule = `//...
-import { HelixHeaderModule, HelixFooterModule } from '@cdx/ngx-branding';
+  headerFooterComponents = `//...
+import { HelixHeaderComponent, HelixHeaderGlobalComponent, HelixHeaderProductNameOrLogoComponent } from '@cdx/ngx-branding';
+import { HelixFooterComponent, HelixFooterGroupComponent, HelixFooterLinkDirective, HelixFooterGroupTitleDirective } from '@cdx/ngx-branding';
 
 @NgModule({
   //...
   imports: [
     //...
-    HelixHeaderModule,
-    HelixFooterModule
+    HelixHeaderComponent,
+    HelixHeaderGlobalComponent,
+    HelixHeaderProductNameOrLogoComponent,
+    //...
+    HelixFooterComponent,
+    HelixFooterGroupComponent,
+    HelixFooterLinkDirective,
+    HelixFooterGroupTitleDirective,
   ],
 //...
 })`;

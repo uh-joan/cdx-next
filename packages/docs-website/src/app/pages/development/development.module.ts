@@ -61,6 +61,13 @@ const routes: Routes = [
           ),
       },
       {
+        path: 'migration-guide',
+        loadChildren: () =>
+          import('./migration-guide/migration-guide.module').then(
+            (m) => m.MigrationGuideModule,
+          ),
+      },
+      {
         path: 'release-notes',
         loadChildren: () =>
           import('./release-notes/release-notes.module').then(
