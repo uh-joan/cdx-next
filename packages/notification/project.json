@@ -3,7 +3,7 @@
   "name": "notification",
   "projectType": "library",
   "sourceRoot": "packages/notification/src",
-  "tags": [],
+  "tags": ["exclude-from-build"],
   "targets": {
     "build": {
       "configurations": {

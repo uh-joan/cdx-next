@@ -3,7 +3,7 @@
   "name": "branding",
   "projectType": "library",
   "sourceRoot": "packages/branding/src",
-  "tags": [],
+  "tags": ["exclude-from-build"],
   "targets": {
     "build": {
       "configurations": {
