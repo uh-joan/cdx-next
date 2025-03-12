@@ -1,9 +1,0 @@
-{
-  "name": "@cdx/rcx-branding",
-  "version": "18.2.0",
-  "repository": {
-    "type": "git",
-    "url": "ssh://git@git.clarivate.io/cdxn/cdx-next.git",
-    "directory": "packages/rcx-branding"
-  }
-}

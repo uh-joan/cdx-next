@@ -9,6 +9,7 @@ import { AvalonSimpleDialogExampleComponent } from './avalon-simple-dialog-examp
  */
 @Component({
   selector: 'demo-avalon-dialog',
+  standalone: false,
   templateUrl: 'avalon-dialog-demo.component.html',
 })
 export class AvalonDialogDemoComponent {

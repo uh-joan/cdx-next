@@ -12,6 +12,16 @@ async function getConfig() {
         'always',
         [
           'workspace',
+          'rcx-branding',
+          'notification',
+          'rcx-analytics',
+          'branding',
+          'ngx-notification',
+          'rcx-demo',
+          'rcx-demo-app',
+          'rcx-reference-app',
+          'theme-popperjs',
+          'theme-react-mui',
           ...(await getProjects(
             ctx,
             ({ name, projectType }) =>

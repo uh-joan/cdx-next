@@ -8,7 +8,8 @@ import { Meta, moduleMetadata, StoryFn } from '@storybook/angular';
 import { html } from 'common-tags';
 
 import { HelixHeaderComponent } from './helix-header.component';
-import { HelixHeaderModule } from './helix-header.module';
+import { HelixHeaderGlobalComponent } from './helix-header-global.component';
+import { HelixHeaderProductNameOrLogoComponent } from './helix-header-product-name-or-logo.component';
 
 export default {
   title: 'Helix/Header',
@@ -16,7 +17,9 @@ export default {
   decorators: [
     moduleMetadata({
       imports: [
-        HelixHeaderModule,
+        HelixHeaderComponent,
+        HelixHeaderGlobalComponent,
+        HelixHeaderProductNameOrLogoComponent,
         MatIconModule,
         MatInputModule,
         MatButtonModule,

@@ -6,6 +6,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
  */
 @Component({
   selector: 'demo-snack-bar',
+  standalone: false,
   templateUrl: './snackbar-demo.component.html',
 })
 export class SnackBarDemoComponent {

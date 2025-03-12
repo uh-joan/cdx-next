@@ -4,14 +4,22 @@ import { html } from 'common-tags';
 
 // import { OneTrustModule } from '../../one-trust/one-trust.module';
 import { HelixFooterComponent } from './helix-footer.component';
-import { HelixFooterModule } from './helix-footer.module';
+import { HelixFooterGroupComponent } from './helix-footer-group.component';
+import { HelixFooterGroupTitleDirective } from './helix-footer-group-title.directive';
+import { HelixFooterLinkDirective } from './helix-footer-link.directive';
 
 export default {
   title: 'Helix/Footer',
   component: HelixFooterComponent,
   decorators: [
     moduleMetadata({
-      imports: [HelixFooterModule, ThemeModule],
+      imports: [
+        HelixFooterComponent,
+        HelixFooterGroupComponent,
+        HelixFooterGroupTitleDirective,
+        HelixFooterLinkDirective,
+        ThemeModule,
+      ],
     }),
   ],
 } as Meta<HelixFooterComponent>;
