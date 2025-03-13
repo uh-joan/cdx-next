@@ -1,11 +1,10 @@
-import { Component, HostBinding } from '@angular/core';
+import { AfterViewInit, Component, HostBinding } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 export interface DataRow {
-  cdx: string;
-  angular: string;
-  typescript: string;
-  rxjs: string;
-  material: string;
+  name: string;
+  description: string;
+  dependencies?: string[];
 }
 
 @Component({
@@ -15,7 +14,7 @@ export interface DataRow {
   templateUrl: './quick-start-new-project.component.html',
   styleUrls: ['./quick-start-new-project.component.scss'],
 })
-export class QuickStartNewProjectComponent {
+export class QuickStartNewProjectComponent implements AfterViewInit {
   @HostBinding('class') hostClass = 'cdx-section';
 
   displayedColumns: string[] = [
@@ -44,7 +43,7 @@ export class QuickStartNewProjectComponent {
 </head>
 `;
 
-  typography = `<body class="mat-typography">
+  typography = `<body class="mat-typography helix-theme-material">
   <!-- BODY CONTENTS -->
 </body>`;
 
@@ -98,4 +97,78 @@ footer {
   .helix-theme-material {
     @include cdx.theme-helix-overrides;
   }`;
+
+  packages: DataRow[] = [
+    {
+      name: '@cdx/colors',
+      description: 'Color palette and utility functions',
+    },
+    {
+      name: '@cdx/ngx-session-activity',
+      description: 'Session Activity service',
+      dependencies: [
+        `"@ng-idle/keepalive": "^15.0.0"`,
+        `"@ngx-translate/core": ">=14.0.0"`,
+      ],
+    },
+    {
+      name: '@cdx/ngx-translations',
+      description: 'Translation service',
+      dependencies: [`"@ngx-translate/core": ">=14.0.0"`],
+    },
+    {
+      name: '@cdx/ngx-analytics',
+      description: 'Analytics service',
+      dependencies: [`"@snowplow/browser-tracker": "^3.7.0"`],
+    },
+    {
+      name: '@cdx/ngx-authentication',
+      description: 'Authentication service',
+    },
+    {
+      name: '@cdx/theme-ag-grid',
+      description: 'AG Grid theme',
+      dependencies: [`"ag-grid-community": ">=28"`],
+    },
+    {
+      name: '@cdx/theme-badge',
+      description: 'Badge theme',
+    },
+    {
+      name: '@cdx/theme-button-toggle',
+      description: 'Button Toggle theme',
+    },
+    {
+      name: '@cdx/theme-expansion-panel',
+      description: 'Expansion Panel theme',
+    },
+    {
+      name: '@cdx/theme-highcharts',
+      description: 'Highcharts theme',
+      dependencies: [`"highcharts": "^11.3.0"`],
+    },
+    {
+      name: '@cdx/theme-snackbar',
+      description: 'Snackbar theme',
+    },
+    {
+      name: '@cdx/theme-xng-breadcrumb',
+      description: 'Breadcrumb theme',
+    },
+  ];
+
+  columns: string[] = ['name', 'description', 'dependencies', 'code'];
+
+  constructor(private route: ActivatedRoute) {}
+
+  ngAfterViewInit() {
+    this.route.fragment.subscribe((fragment) => {
+      if (fragment) {
+        const element = document.getElementById(fragment);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }
+    });
+  }
 }

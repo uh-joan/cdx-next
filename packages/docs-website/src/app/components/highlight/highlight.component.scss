@@ -1,29 +1,36 @@
+/* stylelint-disable plugin/stylelint-bem-namics */
 :host {
   display: block;
-  pre {
-    display: flex;
-    flex-direction: column;
-    margin-top: 0.5rem;
-    position: relative;
 
-    &:hover .copy-button {
-      visibility: visible;
-    }
+  &.dark-theme {
+    background-color: #1e1e1e;
+    color: #d4d4d4;
+  }
+
+  &.light-theme {
+    background-color: #f5f5f5;
+    color: #333;
   }
 
   .copy-button {
     position: absolute;
-    top: 1rem;
-    right: 1rem;
-    background: none;
+    top: 0.5rem;
+    right: 0.5rem;
     border: none;
-    color: #d4d4d4;
+    background: none;
+    color: inherit;
     cursor: pointer;
     visibility: hidden;
   }
 
-  .dark-theme {
-    background-color: #1e1e1e;
-    color: #d4d4d4;
+  pre {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-top: 0.5rem;
+
+    &:hover .copy-button {
+      visibility: visible;
+    }
   }
 }

@@ -62,12 +62,14 @@ function checkNpmrc() {
 
   if (fs.existsSync(npmrcPath)) {
     try {
-      const npmrcContent = fs.readFileSync(npmrcPath, 'utf-8');
+      let npmrcContent = fs.readFileSync(npmrcPath, 'utf-8');
 
-      const requiredLine =
-        '@cdx:registry = https://repo.clarivate.io/artifactory/api/npm/npm-central/';
+      npmrcContent = npmrcContent.replace(/http:\/\//g, 'https://');
 
-      if (npmrcContent.includes(requiredLine)) {
+      const requiredPattern =
+        /^\s*@cdx:registry\s*=\s*https:\/\/repo\.clarivate\.io\/artifactory\/api\/npm\/npm-central\/\s*$/m;
+
+      if (requiredPattern.test(npmrcContent)) {
         console.log(chalk.green(`✅ .npmrc file registry`));
         return true;
       } else {
@@ -115,6 +117,8 @@ const isNodeVersionValid = checkNodeVersion();
 const isNpmrcValid = checkNpmrc();
 const areFilesValid = checkProjectFiles();
 
+const isEnvironmentValid = isNodeVersionValid && isNpmrcValid && areFilesValid;
+
 console.log(chalk.blue('\n---------------------------------\n'));
 
 // ============================
@@ -128,7 +132,7 @@ const requiredPackages = [
   '@angular/material',
 ];
 
-function checkPackageVersion(packageName, minVersion) {
+function checkPackageVersion(packageName, hlxVersion) {
   const packagePath = path.join(
     projectRoot,
     'node_modules',
@@ -145,7 +149,7 @@ function checkPackageVersion(packageName, minVersion) {
     const packageJson = JSON.parse(fs.readFileSync(packagePath, 'utf8'));
     const packageVersion = parseInt(packageJson.version.split('.')[0], 10);
 
-    if (packageVersion >= minVersion) {
+    if (packageVersion === hlxVersion) {
       console.log(
         chalk.green(
           `✅ ${packageName} (v${packageJson.version}) is installed and up-to-date.`,
@@ -155,7 +159,7 @@ function checkPackageVersion(packageName, minVersion) {
     } else {
       console.log(
         chalk.yellow(
-          `⚠️ ${packageName} (v${packageJson.version}) is outdated. Minimum required: ${minVersion}.`,
+          `⚠️ ${packageName} (v${packageJson.version}) is incorrect. Version required: ${hlxVersion}.`,
         ),
       );
       return false;
@@ -169,100 +173,173 @@ function checkPackageVersion(packageName, minVersion) {
 }
 
 const allPackagesValid = requiredPackages
-  .map((pkg) => checkPackageVersion(pkg, 18))
+  .map((pkg) => checkPackageVersion(pkg, 19))
   .every((valid) => valid);
 
 console.log(chalk.blue('\n---------------------------------\n'));
 
 // ============================
-// 🎨 STYLES CHECK
+// 🎨 THEME CHECK
 // ============================
-console.log(chalk.magenta.bold('🎨 STYLES CHECK (styles.scss)\n'));
+console.log(chalk.magenta.bold('🎨 THEME CHECK (styles.scss)\n'));
 
 let allStylesValid = true;
-let allIndexValid = true;
-let allModulesValid = true;
-let allElementsValid = true;
 
-function checkStyles() {
-  const stylesPath = path.join(projectRoot, 'src', 'styles.scss');
-  let themeClass = null;
-  allStylesValid = true;
-
-  if (fs.existsSync(stylesPath)) {
-    try {
-      let stylesContent = fs
-        .readFileSync(stylesPath, 'utf8')
-        .replace(/\/\/.*|\/\*[\s\S]*?\*\//g, '');
-
-      const checks = [
-        {
-          text: '@use "@cdx/ngx-branding/header/theme" as header;',
-          message: 'Header theme import',
-        },
-        {
-          text: '@use "@cdx/ngx-branding/footer/theme" as footer;',
-          message: 'Footer theme import',
-        },
-        {
-          text: '@include header.theme(hlx.$helix-theme);',
-          message: 'Header theme applied',
-        },
-        {
-          text: '@include footer.theme(hlx.$helix-theme);',
-          message: 'Footer theme applied',
-        },
-      ];
-
-      for (const check of checks) {
-        if (stylesContent.includes(check.text)) {
-          console.log(chalk.green(`✅ ${check.message}`));
-        } else {
-          console.log(chalk.red(`❌ ${check.message} is missing.`));
-          allStylesValid = false;
+function getFilesRecursive(dir, ext) {
+  let results = [];
+  try {
+    const list = fs.readdirSync(dir);
+    list.forEach((file) => {
+      file = path.join(dir, file);
+      try {
+        const stat = fs.statSync(file);
+        if (stat && stat.isDirectory()) {
+          results = results.concat(getFilesRecursive(file, ext));
+        } else if (file.endsWith(ext)) {
+          results.push(file);
         }
+      } catch (error) {
+        console.error(
+          chalk.red(`❌ Error processing file: ${file}, ${error.message}`),
+        );
       }
+    });
+  } catch (error) {
+    console.error(
+      chalk.red(`❌ Error reading directory: ${dir}, ${error.message}`),
+    );
+  }
+  return results;
+}
 
-      const themeMatch = stylesContent.match(
-        /@include hlx\.default\(hlx\.\$helix-theme,\s*"([^"]+)"\);/,
-      );
-      if (themeMatch) {
-        themeClass = themeMatch[1];
-        console.log(chalk.green(`✅ Found theme class: ${themeClass}`));
+function checkThemeClass(scssFiles, htmlFiles) {
+  const themeRegex = /@include\s+[^(]+\.default\s*\([^,]+,\s*'([^']+)'\s*\)/;
+  let themeClass = null;
 
-        if (stylesContent.includes(`.${themeClass}`)) {
-          console.log(chalk.green(`✅ ${themeClass} class is defined.`));
-        } else {
-          console.log(chalk.red(`❌ ${themeClass} class is missing.`));
-          allStylesValid = false;
-        }
-      } else {
-        console.log(chalk.red('❌ No @include hlx.default(...) found.'));
-        allStylesValid = false;
+  scssFiles.some((file) => {
+    try {
+      let content = fs
+        .readFileSync(file, 'utf8')
+        .replace(/\/\/.*|\/\*[\s\S]*?\*\//g, '');
+      const match = content.match(themeRegex);
+      if (match) {
+        themeClass = match[1];
+        console.log(
+          chalk.green(`✅ Found theme class '${themeClass}' in ${file}`),
+        );
+        return true;
       }
     } catch (error) {
       console.error(
-        chalk.red(`❌ Error processing styles.scss: ${error.message}`),
+        chalk.red(`❌ Error reading file: ${file}, ${error.message}`),
       );
-      allStylesValid = false;
     }
-  } else {
-    console.log(chalk.red('❌ styles.scss not found.'));
-    allStylesValid = false;
+    return false;
+  });
+
+  if (!themeClass) {
+    console.log(chalk.red('❌ No default theme class found in any SCSS file.'));
+    return false;
   }
-  return allStylesValid;
+
+  let foundOverrides = false;
+  let foundInBody = false;
+  const classRegex = new RegExp(`\\.${themeClass}\\s*{([^}]*)}`, 's');
+
+  scssFiles.forEach((file) => {
+    try {
+      let content = fs
+        .readFileSync(file, 'utf8')
+        .replace(/\/\/.*|\/\*[\s\S]*?\*\//g, '');
+      const classMatch = content.match(classRegex);
+
+      if (classMatch && classMatch[1].includes('theme-helix-overrides')) {
+        console.log(
+          chalk.green(
+            `✅ '${themeClass}' includes 'theme-helix-overrides' in ${file}`,
+          ),
+        );
+        foundOverrides = true;
+      }
+    } catch (error) {
+      console.error(
+        chalk.red(`❌ Error reading file: ${file}, ${error.message}`),
+      );
+    }
+  });
+
+  const bodyRegex = new RegExp(`<body[^>]*class=["']([^"']*)["']`, 's');
+
+  htmlFiles.some((file) => {
+    try {
+      let content = fs.readFileSync(file, 'utf8');
+      const match = content.match(bodyRegex);
+
+      if (match) {
+        const classAttr = match[1];
+        if (
+          classAttr.includes(themeClass) &&
+          classAttr.includes('mat-typography')
+        ) {
+          console.log(
+            chalk.green(
+              `✅ '${themeClass}' and 'mat-typography' are applied to <body> in ${file}`,
+            ),
+          );
+          foundInBody = true;
+          return true;
+        } else {
+          console.log(
+            chalk.yellow(`⚠ Found <body> class in ${file}: "${classAttr}"`),
+          );
+        }
+      }
+    } catch (error) {
+      console.error(
+        chalk.red(`❌ Error reading file: ${file}, ${error.message}`),
+      );
+    }
+    return false;
+  });
+
+  if (!foundOverrides) {
+    console.log(
+      chalk.red(
+        `❌ '${themeClass}' does not include 'theme-helix-overrides' in any SCSS file.`,
+      ),
+    );
+  }
+
+  if (!foundInBody) {
+    console.log(
+      chalk.red(
+        `❌ '${themeClass}' or 'mat-typography' is missing from the <body> in HTML files.`,
+      ),
+    );
+  }
+
+  return foundOverrides && foundInBody;
 }
 
-checkStyles();
+function checkStyles() {
+  const scssFiles = getFilesRecursive(path.join(projectRoot, 'src'), '.scss');
+  const htmlFiles = getFilesRecursive(path.join(projectRoot, 'src'), '.html');
+
+  checkThemeClass(scssFiles, htmlFiles);
+}
+
+const stylesValid = checkStyles();
 
 console.log(chalk.blue('\n---------------------------------\n'));
 
 // ============================
 // 📄 INDEX.HTML CHECK
 // ============================
+
+let allIndexValid = true;
 console.log(chalk.yellow.bold('📄 INDEX.HTML CHECK\n'));
 
-function checkIndexHtml(themeClass) {
+function checkIndexHtml() {
   const indexPath = path.join(projectRoot, 'src', 'index.html');
   allIndexValid = true;
 
@@ -274,15 +351,15 @@ function checkIndexHtml(themeClass) {
 
       const checks = [
         {
-          text: '<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons',
+          text: 'https://fonts.googleapis.com/css?family=Material+Icons',
           message: 'Material Icons',
         },
         {
-          text: '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+3',
+          text: 'https://fonts.googleapis.com/css2?family=Source+Sans+3',
           message: 'Source Sans 3',
         },
         {
-          text: '<link rel="stylesheet" href="https://cdn.digital-experience.clarivate.io/@cdx/clarivate-font/latest/clarivate-font.css"',
+          text: 'https://cdn.digital-experience.clarivate.io/@cdx/clarivate-font/latest/clarivate-font.css"',
           message: 'Clarivate Font',
         },
       ];
@@ -296,33 +373,12 @@ function checkIndexHtml(themeClass) {
         }
       }
 
-      const bodyMatch = indexContent.match(/<body class="([^"]+)">/);
-      if (bodyMatch) {
-        const bodyClasses = bodyMatch[1].split(' ');
-        if (bodyClasses.includes('mat-typography')) {
-          console.log(chalk.green('✅ mat-typography is present in <body>.'));
-        } else {
-          console.log(chalk.red('❌ mat-typography is missing in <body>.'));
-          allIndexValid = false;
-        }
-
-        if (themeClass && bodyClasses.includes(themeClass)) {
-          console.log(
-            chalk.green(
-              `✅ The theme class "${themeClass}" is applied to <body>.`,
-            ),
-          );
-        } else if (themeClass) {
-          console.log(
-            chalk.red(
-              `❌ The theme class "${themeClass}" is missing in <body>.`,
-            ),
-          );
-          allIndexValid = false;
-        }
-      } else {
-        console.log(chalk.red('❌ <body> tag not found in index.html.'));
-        allIndexValid = false;
+      if (indexContent.includes('Source+Sans+Pro')) {
+        console.log(
+          chalk.yellow(
+            `⚠️  Source Sans Pro is not part of Helix used fonts. Consider removing it.`,
+          ),
+        );
       }
     } catch (error) {
       console.error(chalk.red(`❌ Error reading index.html: ${error.message}`));
@@ -335,7 +391,6 @@ function checkIndexHtml(themeClass) {
   return allIndexValid;
 }
 
-const stylesValid = checkStyles();
 let themeClass = null;
 
 if (stylesValid) {
@@ -359,13 +414,21 @@ console.log(chalk.blue('\n---------------------------------\n'));
 // ============================
 // 📄 BRANDING CHECK
 // ============================
+
+let allModulesValid = true;
+let allElementsValid = true;
+
 console.log(chalk.magenta.bold('🖼️  BRANDING CHECK \n'));
 
 function checkBranding() {
-  const checkModules = () => {
+  function checkModules() {
     const sourcePath = path.join(projectRoot, 'src');
-    allModulesValid = false;
-    const modulesToCheck = ['HelixHeaderModule', 'HelixFooterModule'];
+    let allModulesValid = false;
+    const modulesToCheck = [
+      'HelixHeaderComponent',
+      'HeaderComponent',
+      'HelixFooterComponent',
+    ];
 
     const tsFiles = getFilesRecursive(sourcePath, '.ts');
 
@@ -377,9 +440,15 @@ function checkBranding() {
         const content = fs.readFileSync(file, 'utf-8');
         modulesToCheck.forEach((module) => {
           if (content.includes(module)) {
-            console.log(chalk.green(`✅ Found ${module} in ${file}`));
-            if (module === 'HelixHeaderModule') foundHeader = true;
-            if (module === 'HelixFooterModule') foundFooter = true;
+            if (
+              module === 'HelixHeaderComponent' ||
+              module === 'HeaderComponent'
+            ) {
+              foundHeader = true;
+            }
+            if (module === 'HelixFooterComponent') {
+              foundFooter = true;
+            }
           }
         });
       } catch (error) {
@@ -391,13 +460,14 @@ function checkBranding() {
     });
 
     if (foundHeader && foundFooter) {
+      console.log(chalk.green('✅ Found both Header and Footer Components'));
       allModulesValid = true;
     } else {
-      console.log(chalk.red(`❌ One or both modules are missing`));
+      console.log(chalk.red('❌ One or both components are missing'));
     }
 
     return allModulesValid;
-  };
+  }
 
   const checkHtmlElements = () => {
     const htmlFiles = getFilesRecursive(path.join(projectRoot, 'src'), '.html');
@@ -405,7 +475,7 @@ function checkBranding() {
     let foundHeader = false;
     let foundFooter = false;
 
-    const headerRegex = /<header[^>]*\s+hlx-header[^>]*>/i;
+    const headerRegex = /<header[^>]*\s+(hlx-header|cdx-header)[^>]*>/i;
     const footerRegex = /<footer[^>]*\s+hlx-footer[^>]*>/i;
 
     htmlFiles.some((file) => {
@@ -413,7 +483,11 @@ function checkBranding() {
         const content = fs.readFileSync(file, 'utf-8');
 
         if (!foundHeader && headerRegex.test(content)) {
-          console.log(chalk.green(`✅ <header hlx-header> found in ${file}`));
+          console.log(
+            chalk.green(
+              `✅ <header hlx-header> or <header cdx-header> found in ${file}`,
+            ),
+          );
           foundHeader = true;
         }
 
@@ -480,16 +554,61 @@ checkBranding();
 function displayFinalSummary() {
   console.log(chalk.green('\n================================='));
 
-  if (
-    isNodeVersionValid &&
-    isNpmrcValid &&
-    areFilesValid &&
-    allPackagesValid &&
-    allStylesValid &&
-    allIndexValid &&
-    allModulesValid &&
-    allElementsValid
-  ) {
+  const issueMessages = [];
+
+  if (!isEnvironmentValid) {
+    issueMessages.push(
+      `❌ ${chalk.yellow('Environment checks failed.')}\n   ${chalk.underline(
+        'https://design-lsh.clarivate.io/development/quick-start-new-project#environment',
+      )}`,
+    );
+  }
+
+  if (!allPackagesValid) {
+    issueMessages.push(
+      `❌ ${chalk.yellow('Package checks failed.')}\n   ${chalk.underline(
+        'https://design-lsh.clarivate.io/development/quick-start-new-project#packages',
+      )}`,
+    );
+  }
+
+  if (!allStylesValid) {
+    issueMessages.push(
+      `❌ ${chalk.yellow('Theme checks failed.')}\n   ${chalk.underline(
+        'https://design-lsh.clarivate.io/development/quick-start-new-project#styles',
+      )}`,
+    );
+  }
+
+  if (!allIndexValid) {
+    issueMessages.push(
+      `❌ ${chalk.yellow('Resource checks failed.')}\n   ${chalk.underline(
+        'https://design-lsh.clarivate.io/development/quick-start-new-project#assets',
+      )}`,
+    );
+  }
+
+  if (!allModulesValid) {
+    issueMessages.push(
+      `❌ ${chalk.yellow(
+        'Branding module checks failed.',
+      )}\n   ${chalk.underline(
+        'https://design-lsh.clarivate.io/development/quick-start-new-project#branding',
+      )}`,
+    );
+  }
+
+  if (!allElementsValid) {
+    issueMessages.push(
+      `❌ ${chalk.yellow(
+        'Branding element checks failed.',
+      )}\n   ${chalk.underline(
+        'https://design-lsh.clarivate.io/development/quick-start-new-project#branding',
+      )}`,
+    );
+  }
+
+  if (issueMessages.length === 0) {
     console.log(
       chalk.green.bold(`
 ╔════════════════════════════════════╗
@@ -502,20 +621,15 @@ function displayFinalSummary() {
     console.log(
       chalk.yellow.bold(`
 ╔════════════════════════════════════╗
-║   ❗ ${chalk.bold('WARNING: Issues detected! ')}    ║
+║   ❗ ${chalk.bold('WARNING: Issues detected!')}     ║
 ╚════════════════════════════════════╝
 `),
     );
-    console.log(chalk.cyanBright('Check log and review setup.   \n '));
-    console.log(chalk.cyanBright('For additional information, visit:\n '));
-    console.log(
-      chalk.underline(
-        'https://design-lsh.clarivate.io/development/quick-start-new-project\n',
-      ),
-    );
+    console.log(chalk.cyanBright('Check the log and review setup:\n'));
+    issueMessages.forEach((message) => console.log(message + '\n'));
   }
 
-  console.log(chalk.green('=================================\n'));
+  console.log(chalk.green('\n=================================\n'));
 }
 
 displayFinalSummary();

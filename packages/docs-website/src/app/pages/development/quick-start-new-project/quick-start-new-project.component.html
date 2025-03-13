@@ -37,28 +37,54 @@
   <h2>Create Angular App</h2>
 
   <p>
-    <strong>
-      This guide assumes a baseline familiarity with the Angular environment. If
-      this is your first time using Angular, we recommend starting with the
-      official
-    </strong>
+    This guide assumes a baseline familiarity with the Angular environment. If
+    this is your first time using Angular, we recommend starting with the
+    official
     <cdx-external-link
       [url]="'https://v19.angular.dev/overview'"
       [text]="'Getting Started Guide'"
     ></cdx-external-link>
     .
   </p>
+  <mat-divider></mat-divider>
+  <h2 id="environment">Environment</h2>
+  <p>
+    Before you can create an Angular application, you need to have Node.js and
+    npm installed on your machine. You can check if you have these installed by
+    running the following commands in your terminal:
+  </p>
+  <cdx-highlight [text]="'node -v'"></cdx-highlight>
+  <cdx-highlight [text]="'npm -v'"></cdx-highlight>
+  <p>
+    To make sure you have also matching Typescript and Rxjs versions you can
+    visit
+    <a
+      underline
+      href="https://angular.dev/reference/versions#actively-supported-versions:~:text=to%20the%20top-,Actively%20supported%20versions,-This%20table%20covers
+"
+      >the official Angular support table</a
+    >
+  </p>
+
+  <mat-divider></mat-divider>
+
+  <p>
+    Also it is recommended to have the Angular CLI installed. You can install it
+    globally by running the following command:
+  </p>
+  <cdx-highlight [text]="'npm install -g @angular/cli'"></cdx-highlight>
+  <p>
+    Once you have all the necessary tools installed, you can create your Angular
+    application.
+  </p>
+  <mat-divider></mat-divider>
   <p>
     In your terminal, navigate to the directory that you would like your local
     project to live. Then, create your Angular application.
   </p>
   <cdx-highlight
-    [text]="'npx @angular/cli@19 new my-example-app-ui'"
+    [text]="'npx @angular/cli@19 my-example-app-ui'"
   ></cdx-highlight>
-  <p>
-    Answer the prompts that follow this command, making sure that you choose
-    'SCSS' for stylesheet format.
-  </p>
   <p>
     Following the prompts, your Angular application will build and install
     necessary dependencies. Once it is complete, open the directory
@@ -68,10 +94,24 @@
     Open src/app/app.component.html and delete its contents to remove all the
     placeholder content that Angular places in new apps.
   </p>
+  <mat-divider></mat-divider>
+  <h3>Clarivate repository</h3>
+  <p>
+    Also, we need to point your project to the Clarivate package repository
+    instead of NPM, because the next few packages we need are only available for
+    use by Clarivate projects. Create a file at the root of your project, in the
+    same place as package.json, name it <strong>.npmrc</strong> (don't forget
+    the leading dot!) and give it this content:
+  </p>
+  <cdx-highlight
+    text="@cdx:registry = https://repo.clarivate.io/artifactory/api/npm/npm-central/"
+  ></cdx-highlight>
 
   <mat-divider></mat-divider>
 
-  <h2>Install Angular Material</h2>
+  <h2 id="packages">Packages</h2>
+
+  <h3>Install Angular Material</h3>
   <p>
     Helix is based on
     <cdx-external-link
@@ -109,22 +149,12 @@
 
   <mat-divider></mat-divider>
 
-  <h2>Install Packages</h2>
+  <h3>Helix required packages</h3>
   <p>
     Helix team has published a package of theme and typography settings that
     override the default Angular Material settings with those custom to Life
     Science & Healcare.
   </p>
-  <p>
-    First, we need to point your project to the Clarivate package repository
-    instead of NPM, because the next few packages we need are only available for
-    use by Clarivate projects. Create a file at the root of your project, in the
-    same place as package.json, name it <strong>.npmrc</strong> (don't forget
-    the leading dot!) and give it this content:
-  </p>
-  <cdx-highlight
-    text="@cdx:registry = https://repo.clarivate.io/artifactory/api/npm/npm-central/"
-  ></cdx-highlight>
   <p>
     Then, install the theme package and the branding package, which contains the
     component code for the Clarivate header and footer.
@@ -134,47 +164,94 @@
   ></cdx-highlight>
   <cdx-highlight [text]="'npm install @cdx/ngx-branding'"></cdx-highlight>
 
-  <mat-divider>
-    <h2>Adding Styles</h2>
-    <p>
-      In your main style entrypoint (styles.scss), replace the generated
-      contents of the file with the following:
-    </p>
-    <cdx-highlight [text]="helixThemeStyles" language="css"></cdx-highlight>
+  <mat-divider></mat-divider>
 
-    <h2>Install Fonts</h2>
-    <p>
-      It is a good idea to have access to the Material Icons, Source Sans 3 and
-      Clarivate fonts. Embed the following in the &lt;head> of your HTML code.
-    </p>
-    <cdx-highlight [text]="fonts" language="html"></cdx-highlight>
-    <p>
-      <strong>Note:</strong> This version of Material Icons includes all variant
-      fonts: Default (no descriptor, filled), Outlined, Two-Tone, Round, and
-      Sharp. You can improve performance by reducing your request to only the
-      variant(s) you need. Please see the
-      <cdx-internal-link
-        [url]="'/components/icons'"
-        [text]="'Material Icons page'"
-      ></cdx-internal-link>
-
-      for further information.
-    </p>
-
-    <mat-divider></mat-divider>
-
-    <h2>Set Up Typography</h2>
-    <p>
-      To enable Material's type system for Angular you will need to add the
-      'mat-typography' class to the body of your page.
-    </p>
-    <p>For example:</p>
-    <cdx-highlight [text]="typography"></cdx-highlight>
-  </mat-divider>
-
-  <h2>Place Header & Footer</h2>
+  <h3>Helix available packages</h3>
   <p>
-    The first components to be placed into your new app are the CDX
+    Helix has other packages available which could be necessary or useful for
+    your project. here is the list of the available packages:
+  </p>
+  <table mat-table [dataSource]="packages" class="mat-elevation-z8 hlx-table">
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef>Name</th>
+      <td mat-cell *matCellDef="let element">{{ element.name }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="description">
+      <th mat-header-cell *matHeaderCellDef>Description</th>
+      <td mat-cell *matCellDef="let element">{{ element.description }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="dependencies">
+      <th mat-header-cell *matHeaderCellDef>Dependencies</th>
+      <td mat-cell *matCellDef="let element">
+        <div *ngFor="let dependency of element.dependencies">
+          {{ dependency }}
+        </div>
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="code">
+      <th mat-header-cell *matHeaderCellDef></th>
+      <td mat-cell *matCellDef="let element">
+        <cdx-highlight
+          theme="light"
+          [text]="'npm i ' + element.name"
+        ></cdx-highlight>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="columns"></tr>
+    <tr mat-row *matRowDef="let row; columns: columns"></tr>
+  </table>
+
+  <mat-divider></mat-divider>
+  <h2 id="styles">Theme Setup</h2>
+  <h3>Configure styles</h3>
+  <p>
+    In your main style entrypoint (styles.scss), replace the generated contents
+    of the file with the following:
+  </p>
+  <cdx-highlight [text]="helixThemeStyles" language="css"></cdx-highlight>
+
+  <mat-divider></mat-divider>
+
+  <h3 id="resources">Add Theme and Material Typography to body</h3>
+  <p>
+    To enable Material's type system for Angular you will need to add the
+    'mat-typography' class and the class name defined on the default mixin
+    (helix-theme-material) on the same DOM level. this is to ensure helix
+    overrides are applied.
+  </p>
+  <p>For example:</p>
+  <cdx-highlight [text]="typography"></cdx-highlight>
+
+  <h3 id="assets">Include Additional Assets</h3>
+  <p>
+    It is a good idea to have access to the Material Icons, Source Sans 3 and
+    Clarivate fonts. Embed the following in the &lt;head> of your HTML code.
+  </p>
+  <cdx-highlight [text]="fonts" language="html"></cdx-highlight>
+  <p>
+    <strong>Note:</strong> This version of Material Icons includes all variant
+    fonts: Default (no descriptor, filled), Outlined, Two-Tone, Round, and
+    Sharp. You can improve performance by reducing your request to only the
+    variant(s) you need. Please see the
+    <cdx-internal-link
+      [url]="'/components/icons'"
+      [text]="'Material Icons page'"
+    ></cdx-internal-link>
+
+    for further information.
+  </p>
+
+  <mat-divider></mat-divider>
+
+  <h2 id="branding">Branding</h2>
+
+  <h3>Place Header & Footer</h3>
+  <p>
+    The first components to be placed into your new app are the
     <cdx-internal-link
       [text]="'Header'"
       [url]="'/components/header'"
@@ -191,8 +268,8 @@
     more about what kind of customization options are available.
   </p>
   <p>
-    In src/app/app.module.ts import the header and footer components you need,
-    then add to the imports array.
+    In src/app/app.module.ts import the header and footer packages, then add to
+    the imports array.
   </p>
   <cdx-highlight [text]="headerFooterComponents"></cdx-highlight>
   <p>Then, in src/app/app.component.html add the following content.</p>
@@ -206,14 +283,27 @@
 
   <mat-divider></mat-divider>
 
+  <h2>Verify Installation</h2>
+  <p>
+    To verify that your Helix setup is correct, you can use the following
+    command in your terminal:
+  </p>
+  <cdx-highlight [text]="'npx helix-check'"></cdx-highlight>
+  <p>
+    This command will run a series of checks to ensure that your environment is
+    properly configured for Helix development.
+  </p>
+
+  <mat-divider></mat-divider>
+
   <h2>Explore Docs</h2>
   <p>
     We've set up a new Angular application with CDX, but that's only the start.
     Here's some great resources to check out (or bookmark!)
   </p>
   <p>
-    For a full list of CDX components and details on how to implement them,
-    visit our
+    For a full list of components and details on how to implement them, visit
+    our
     <cdx-internal-link
       [url]="'/components/components-overview'"
       [text]="'Components Page'"
@@ -233,18 +323,5 @@
     ></cdx-internal-link>
     ! Follow our Lens page for updates, and join our Teams channels if you need
     help with something.
-  </p>
-
-  <mat-divider></mat-divider>
-
-  <h2>Verify Installation</h2>
-  <p>
-    To verify that your Helix setup is correct, you can use the following
-    command in your terminal:
-  </p>
-  <cdx-highlight [text]="'npx helix-check'"></cdx-highlight>
-  <p>
-    This command will run a series of checks to ensure that your environment is
-    properly configured for Helix development.
   </p>
 </hlx-page>
