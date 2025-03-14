@@ -1,13 +1,15 @@
-@use '../../../../../theme-angular-material/styles/theme/helix/variables/primitives'
-  as primitives;
+@use '@angular/material' as mat;
+@use '../../../../../theme-angular-material/styles/theme/helix/variables/tokens'
+  as tokens;
 
-.tooltip-content {
+:host {
+  display: block;
+  @include mat.elevation(3);
   position: relative;
   width: fit-content;
-  background-color: #{primitives.$color-neutral-600};
-  color: white;
-  padding: 8px;
-  border-radius: 2px;
+  background-color: #{tokens.$surface-primary};
+  color: #{tokens.$text-primary};
+  border-radius: #{tokens.$border-radius-default};
   word-wrap: break-word;
   white-space: normal;
 }

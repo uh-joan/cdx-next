@@ -8,22 +8,19 @@ const htmlCode = `<div class="story">
     Hover me
   </button>
   <ng-template #tooltipTemplate>
-    <h6 class="title">Trial</h6>
-    <span class="sub-title">Filter specific to the clinical Trials to find</span>
-    <p >Investigator and sites associated <br>
-    with specific clinical trial deal</p>
+  <div class="tooltip-content">
+    <h6 >Rich tooltip</h6>
+    <p>Rich tooltips bring attention to a particular element of feature that warrants the user's focus</p>
+  </div>
   </ng-template>
 </div>`;
 
 const styleCode = `.story {
   padding: 1rem;
 }
-.title {
-  font-weight: bold;
-  color: yellow
-}
-.sub-title {
-  color: yellow;
+.tooltip-content {
+  width: 280px;
+  padding: 12px 16px;
 }
 `;
 
@@ -36,7 +33,7 @@ const styleCode = `.story {
 class SampleComponent {}
 
 export const RichTooltipComponent: InputViewerComponent = {
-  exampleName: 'Custom Tooltip',
+  exampleName: 'Rich Tooltip',
   dynamicComponent: SampleComponent,
   height: 36,
   hideCss: false,
