@@ -32,8 +32,10 @@ export class MigrationGuideComponent {
 
   helixVersions = [18, 19];
 
-  versionControl1 = new FormControl(18);
-  versionControl2 = new FormControl(19);
+  versionControl1 = new FormControl(this.helixVersions[0]);
+  versionControl2 = new FormControl(
+    this.helixVersions[this.helixVersions.length - 1],
+  );
 
   headerFooterModule = `//...
 import { HelixHeaderModule, HelixFooterModule } from '@cdx/ngx-branding';
