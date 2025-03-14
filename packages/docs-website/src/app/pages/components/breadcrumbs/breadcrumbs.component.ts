@@ -1,13 +1,14 @@
 import { Component, HostBinding } from '@angular/core';
+import { RouterModule } from '@angular/router';
 
+import { PagesCommonModule } from '../../pages-common.module';
 import * as samples from './examples';
 
 @Component({
   selector: 'cdx-breadcrumbs',
-  // eslint-disable-next-line @angular-eslint/prefer-standalone
-  standalone: false,
   templateUrl: './breadcrumbs.component.html',
   styleUrls: ['./breadcrumbs.component.scss'],
+  imports: [RouterModule, PagesCommonModule],
 })
 export class BreadcrumbsComponent {
   @HostBinding('class') hostClass = 'cdx-section';

@@ -1,13 +1,12 @@
+import { provideHttpClient, withFetch } from '@angular/common/http';
 import {
   ApplicationConfig,
   importProvidersFrom,
-  inject,
   provideZoneChangeDetection,
 } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {
   provideRouter,
-  Router,
   withComponentInputBinding,
   withViewTransitions,
 } from '@angular/router';
@@ -20,6 +19,7 @@ import { routes } from './app.routes';
 export const appConfig: ApplicationConfig = {
   providers: [
     provideZoneChangeDetection({ eventCoalescing: true }),
+    provideHttpClient(withFetch()),
     provideRouter(
       routes,
       withViewTransitions({

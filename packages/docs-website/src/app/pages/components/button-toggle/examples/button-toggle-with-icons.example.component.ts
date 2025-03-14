@@ -26,7 +26,6 @@ const styleCode = `.story {
 }`;
 
 @Component({
-  standalone: true,
   template: htmlCode,
   imports: [MatButtonToggleModule, MatIconModule],
   styles: styleCode,
@@ -45,7 +44,6 @@ import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatIconModule } from '@angular/material/icon';
 
 @Component({
-  standalone: true,
   template: htmlCode,
   imports: [
     MatButtonToggleModule,

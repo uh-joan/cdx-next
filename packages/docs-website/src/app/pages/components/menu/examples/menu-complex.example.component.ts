@@ -91,7 +91,6 @@ const styleCode = `.story {
 }`;
 
 @Component({
-  standalone: true,
   template: htmlCode,
   imports: [
     MatMenuModule,
@@ -138,7 +137,6 @@ import { MatInputModule } from '@angular/material/input';
 import { MatMenuModule } from '@angular/material/menu';
 
 @Component({
-    standalone: true,
     template: htmlCode,
     imports: [
         MatMenuModule,

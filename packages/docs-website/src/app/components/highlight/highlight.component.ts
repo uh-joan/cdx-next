@@ -8,7 +8,6 @@ import { HighlightModule } from 'ngx-highlightjs';
   selector: 'cdx-highlight',
   templateUrl: './highlight.component.html',
   styleUrls: ['./highlight.component.scss'],
-  standalone: true,
   imports: [HighlightModule, MatButtonModule, MatIconModule],
 })
 export class HighlightComponent {

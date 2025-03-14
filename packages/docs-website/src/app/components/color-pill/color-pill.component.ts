@@ -6,7 +6,6 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-color-pill',
-  standalone: true,
   imports: [CommonModule, MatIconModule, MatRippleModule],
   templateUrl: './color-pill.component.html',
   styleUrls: ['./color-pill.component.scss'],

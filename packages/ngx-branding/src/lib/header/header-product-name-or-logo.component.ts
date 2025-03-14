@@ -12,7 +12,6 @@ import {
   styleUrls: ['./header-product-name-or-logo.component.scss'],
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
 })
 export class HeaderProductNameOrLogoComponent {
   @HostBinding('class') classes = 'cdx-header__product-name-or-logo';

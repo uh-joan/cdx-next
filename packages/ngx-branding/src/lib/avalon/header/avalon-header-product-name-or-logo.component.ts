@@ -12,7 +12,6 @@ import {
   styleUrls: ['./avalon-header-product-name-or-logo.component.scss'],
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
 })
 export class AvalonHeaderProductNameOrLogoComponent {
   @HostBinding('class') classes = 'ava-header__product-name-or-logo';

@@ -1,11 +1,14 @@
 import { Component, HostBinding } from '@angular/core';
+import { MatDivider } from '@angular/material/divider';
+
+import { HighlightComponent } from '../../../components/highlight/highlight.component';
+import { PageComponent } from '../../../core/page/page.component';
 
 @Component({
   selector: 'cdx-density',
-  // eslint-disable-next-line @angular-eslint/prefer-standalone
-  standalone: false,
   templateUrl: './density.component.html',
   styleUrls: ['./density.component.scss'],
+  imports: [PageComponent, MatDivider, HighlightComponent],
 })
 export class DensityComponent {
   @HostBinding('class') hostClass = 'cdx-section';

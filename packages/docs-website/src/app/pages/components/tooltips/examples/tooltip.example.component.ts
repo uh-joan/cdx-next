@@ -62,7 +62,6 @@ class AppOverlayContainer extends OverlayContainer {
 }
 
 @Component({
-  standalone: true,
   template: htmlCode,
   imports: [MatIconModule, MatButtonModule, MatTooltipModule],
   providers: [
@@ -114,7 +113,6 @@ class AppOverlayContainer extends OverlayContainer {
 }
 
 @Component({
-    standalone: true,
     template: htmlCode,
     imports: [
       MatIconModule,

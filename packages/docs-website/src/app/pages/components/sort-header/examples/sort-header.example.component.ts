@@ -37,7 +37,6 @@ export interface Dessert {
 }
 
 @Component({
-  standalone: true,
   template: htmlCode,
   imports: [MatSortModule],
   styles: styleCode,
@@ -113,7 +112,6 @@ export interface Dessert {
 }
 
 @Component({
-    standalone: true,
     template: htmlCode,
     imports: [
       MatSortModule

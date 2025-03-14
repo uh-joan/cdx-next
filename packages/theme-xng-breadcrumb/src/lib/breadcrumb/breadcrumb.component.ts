@@ -3,6 +3,11 @@ import {
   Component,
   ViewEncapsulation,
 } from '@angular/core';
+import { MatIcon } from '@angular/material/icon';
+import {
+  BreadcrumbComponent as BreadcrumbComponent_1,
+  BreadcrumbItemDirective,
+} from 'xng-breadcrumb';
 
 @Component({
   selector: 'cdx-breadcrumb',
@@ -10,6 +15,6 @@ import {
   styleUrls: ['./breadcrumb.component.scss'],
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [BreadcrumbComponent_1, BreadcrumbItemDirective, MatIcon],
 })
 export class BreadcrumbComponent {}

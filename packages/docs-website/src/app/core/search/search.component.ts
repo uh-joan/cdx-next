@@ -13,7 +13,6 @@ import { NavigationItem, navigationMap } from './search.config';
   selector: 'cdx-search',
   templateUrl: './search.component.html',
   styleUrls: ['./search.component.scss'],
-  standalone: true,
   imports: [
     CommonModule,
     MatInputModule,

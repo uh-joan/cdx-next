@@ -80,7 +80,6 @@ const styleCode = `@use "@cdx/theme-angular-material" as hlx;
 }`;
 
 @Component({
-  standalone: true,
   template: htmlCode,
   imports: [MatButtonModule, MatIconModule],
   styles: styleCode,
@@ -98,7 +97,6 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 
 @Component({
-    standalone: true,
     template: htmlCode,
     imports: [
         MatButtonModule,

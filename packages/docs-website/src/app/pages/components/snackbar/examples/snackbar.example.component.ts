@@ -49,7 +49,6 @@ const styleCode = `.story {
 }`;
 
 @Component({
-  standalone: true,
   selector: 'snack-bar-annotated-component-example-snack',
   template: htmlCode2,
   styles: `
@@ -70,7 +69,6 @@ class PizzaPartyAnnotatedComponent {
 }
 
 @Component({
-  standalone: true,
   template: htmlCode,
   imports: [MatFormFieldModule, FormsModule, MatInputModule, MatButtonModule],
   styles: styleCode,
@@ -100,7 +98,6 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 
 @Component({
-    standalone: true,
     selector: 'dialog-content-example-dialog',
     template: htmlCode2,
     imports: [MatDialogModule, MatButtonModule],
@@ -109,7 +106,6 @@ import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 class DialogContentExampleDialog {}
 
 @Component({
-    standalone: true,
     template: htmlCode,
     imports: [
         MatButtonModule,

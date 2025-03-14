@@ -5,7 +5,6 @@ import { MatIconModule } from '@angular/material/icon';
   selector: 'cdx-do',
   templateUrl: './cdx-do.component.html',
   styleUrls: ['./cdx-do.component.scss'],
-  standalone: true,
   imports: [MatIconModule],
 })
 export class CdxDoComponent {}

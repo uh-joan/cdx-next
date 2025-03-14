@@ -1,4 +1,5 @@
 import { BooleanInput, coerceBooleanProperty } from '@angular/cdk/coercion';
+import { NgIf, NgTemplateOutlet } from '@angular/common';
 import {
   ChangeDetectionStrategy,
   Component,
@@ -7,8 +8,12 @@ import {
   ViewEncapsulation,
 } from '@angular/core';
 import { ThemeOptionsBranding } from '@cdx/theme-angular-material';
+import { TranslateModule } from '@ngx-translate/core';
 
 import { OneTrustService } from '../one-trust/one-trust.service';
+import { FooterGroupComponent } from './footer-group.component';
+import { FooterGroupTitleDirective } from './footer-group-title.directive';
+import { FooterLinkDirective } from './footer-link.directive';
 
 @Component({
   selector: 'footer[cdx-footer]',
@@ -16,7 +21,14 @@ import { OneTrustService } from '../one-trust/one-trust.service';
   styleUrls: ['./footer.component.scss'],
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [
+    NgIf,
+    FooterGroupComponent,
+    FooterGroupTitleDirective,
+    NgTemplateOutlet,
+    FooterLinkDirective,
+    TranslateModule,
+  ],
 })
 export class FooterComponent {
   @Input() shouldShowTranslations = false;

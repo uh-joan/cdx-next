@@ -1,12 +1,43 @@
+import { NgClass } from '@angular/common';
 import { Component, HostBinding } from '@angular/core';
-import { MatTableDataSource } from '@angular/material/table';
+import { MatDivider } from '@angular/material/divider';
+import {
+  MatCell,
+  MatCellDef,
+  MatColumnDef,
+  MatHeaderCell,
+  MatHeaderCellDef,
+  MatHeaderRow,
+  MatHeaderRowDef,
+  MatRow,
+  MatRowDef,
+  MatTable,
+  MatTableDataSource,
+} from '@angular/material/table';
+
+import { HighlightComponent } from '../../../components/highlight/highlight.component';
+import { PageComponent } from '../../../core/page/page.component';
 
 @Component({
   selector: 'cdx-typography',
-  // eslint-disable-next-line @angular-eslint/prefer-standalone
-  standalone: false,
   templateUrl: './typography.component.html',
   styleUrls: ['./typography.component.scss'],
+  imports: [
+    PageComponent,
+    MatDivider,
+    HighlightComponent,
+    MatTable,
+    MatColumnDef,
+    MatHeaderCellDef,
+    MatHeaderCell,
+    MatCellDef,
+    MatCell,
+    NgClass,
+    MatHeaderRowDef,
+    MatHeaderRow,
+    MatRowDef,
+    MatRow,
+  ],
 })
 export class TypographyComponent {
   @HostBinding('class') hostClass = 'cdx-section';
@@ -19,8 +50,19 @@ export class TypographyComponent {
 
   @include mat.typography-hierarchy(cdx.$helix-typography, 'body-1');
 `;
-  //typograflylevels
-  typographyLevels: MatTableDataSource<any> = new MatTableDataSource([
+
+  typographyLevels: MatTableDataSource<{
+    level: string;
+    className: string;
+    systemVariable?: string;
+    nativeElement: string;
+    properties: {
+      fontSize: string;
+      lineHeight: string;
+      fontFace: string;
+      fontWeight: string;
+    };
+  }> = new MatTableDataSource([
     {
       level: 'Display large',
       className: 'mat-display-large',

@@ -29,7 +29,6 @@ describe('InactivityDialogComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [InactivityDialogComponent],
       imports: [MatDialogModule, TranslateModule.forChild()],
       providers: [
         Idle,

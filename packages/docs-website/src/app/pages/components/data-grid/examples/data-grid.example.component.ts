@@ -31,7 +31,6 @@ interface IRow {
 }
 
 @Component({
-  standalone: true,
   template: htmlCode,
   imports: [AgGridAngular],
   styles: styleCode,
@@ -85,7 +84,6 @@ interface IRow {
 }
 
 @Component({
-  standalone: true,
   template: htmlCode,
   imports: [
         AgGridAngular

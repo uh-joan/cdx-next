@@ -13,7 +13,6 @@ const styleCode = `.story {
 }`;
 
 @Component({
-  standalone: true,
   template: htmlCode,
   imports: [NgxSkeletonLoaderModule],
   styles: styleCode,
@@ -30,7 +29,6 @@ export const SkeletonLoaderCircular: InputViewerComponent = {
 import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 
 @Component({
-  standalone: true,
   template: htmlCode,
   imports: [NgxSkeletonLoaderModule],
   styles: styleCode,

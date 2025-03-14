@@ -53,7 +53,6 @@ interface FlatNode {
 }
 
 @Component({
-  standalone: true,
   template: htmlCode,
   imports: [MatTreeModule, MatIconModule, MatButtonModule],
   styles: styleCode,
@@ -115,7 +114,6 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 
 @Component({
-    standalone: true,
     template: htmlCode,
     imports: [
       MatTreeModule,

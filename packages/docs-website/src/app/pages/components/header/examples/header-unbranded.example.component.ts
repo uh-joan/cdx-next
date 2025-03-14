@@ -17,7 +17,6 @@ const styleCode = `.story {
 }`;
 
 @Component({
-  standalone: true,
   template: htmlCode,
   imports: [HelixHeaderComponent, HelixHeaderProductNameOrLogoComponent],
   styles: styleCode,
@@ -40,7 +39,6 @@ import {
 
 
 @Component({
-  standalone: true,
   template: htmlCode,
   imports: [HelixHeaderComponent, HelixHeaderProductNameOrLogoComponent],
   styles: styleCode,

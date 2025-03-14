@@ -1,5 +1,10 @@
-import { AfterViewInit, Component, HostBinding } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Component, HostBinding } from '@angular/core';
+import { MatDivider } from '@angular/material/divider';
+
+import { ExternalLinkComponent } from '../../../components/external-link/external-link.component';
+import { HighlightComponent } from '../../../components/highlight/highlight.component';
+import { InternalLinkComponent } from '../../../components/internal-link/internal-link.component';
+import { PageComponent } from '../../../core/page/page.component';
 
 export interface DataRow {
   name: string;
@@ -9,10 +14,15 @@ export interface DataRow {
 
 @Component({
   selector: 'cdx-quick-start-new-project',
-  // eslint-disable-next-line @angular-eslint/prefer-standalone
-  standalone: false,
   templateUrl: './quick-start-new-project.component.html',
   styleUrls: ['./quick-start-new-project.component.scss'],
+  imports: [
+    PageComponent,
+    ExternalLinkComponent,
+    HighlightComponent,
+    MatDivider,
+    InternalLinkComponent,
+  ],
 })
 export class QuickStartNewProjectComponent implements AfterViewInit {
   @HostBinding('class') hostClass = 'cdx-section';

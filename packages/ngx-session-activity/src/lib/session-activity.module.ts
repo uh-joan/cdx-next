@@ -19,13 +19,13 @@ import { SESSION_ACTIVITY_SETTINGS } from './session-activity.injectors';
 import { SessionActivitySettings } from './session-activity.model';
 
 @NgModule({
-  declarations: [InactivityDialogComponent],
   imports: [
     CommonModule,
     MatDialogModule,
     MatButtonModule,
     NgIdleKeepaliveModule.forRoot(),
     TranslateModule.forChild(),
+    InactivityDialogComponent,
   ],
   providers: [provideHttpClient(withInterceptorsFromDi())],
 })

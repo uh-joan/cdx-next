@@ -7,7 +7,6 @@ import { RouterModule } from '@angular/router';
   selector: 'cdx-card-b',
   templateUrl: './card-b.component.html',
   styleUrls: ['./card-b.component.scss'],
-  standalone: true,
   imports: [MatButtonModule, MatCardModule, RouterModule],
 })
 export class CardBComponent {

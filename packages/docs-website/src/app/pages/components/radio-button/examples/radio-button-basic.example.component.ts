@@ -43,7 +43,6 @@ const styleCode = `.story {
 }`;
 
 @Component({
-  standalone: true,
   template: htmlCode,
   imports: [MatRadioModule],
   styles: styleCode,
@@ -61,7 +60,6 @@ export const RadioButtonBasicComponent: InputViewerComponent = {
 import { MatRadioModule } from '@angular/material/radio';
 
 @Component({
-    standalone: true,
     template: htmlCode,
     imports: [
       MatRadioModule

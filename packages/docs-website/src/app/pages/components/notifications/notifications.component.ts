@@ -1,6 +1,7 @@
 import { Component, HostBinding } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 
+import { PagesCommonModule } from '../../pages-common.module';
 import * as samples from './examples';
 
 interface ElTable {
@@ -51,10 +52,9 @@ const ELEMENT_APIS: ElementApis[] = [
 
 @Component({
   selector: 'app-notifications',
-  // eslint-disable-next-line @angular-eslint/prefer-standalone
-  standalone: false,
   templateUrl: './notifications.component.html',
   styleUrls: ['./notifications.component.scss'],
+  imports: [PagesCommonModule],
 })
 export class NotificationsComponent {
   @HostBinding('class') hostClass = 'cdx-section';

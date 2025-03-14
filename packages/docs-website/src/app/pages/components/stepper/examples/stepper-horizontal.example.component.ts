@@ -60,7 +60,6 @@ const styleCode = `.story {
 }`;
 
 @Component({
-  standalone: true,
   template: htmlCode,
   imports: [
     MatStepperModule,
@@ -99,7 +98,6 @@ import { MatInputModule } from '@angular/material/input';
 import { MatStepperModule } from '@angular/material/stepper';
 
 @Component({
-    standalone: true,
     template: htmlCode,
     imports: [
       MatStepperModule,

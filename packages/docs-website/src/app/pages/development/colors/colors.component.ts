@@ -1,17 +1,54 @@
 import { Component, HostBinding } from '@angular/core';
-import { MatTableDataSource } from '@angular/material/table';
+import { MatDivider } from '@angular/material/divider';
+import {
+  MatCell,
+  MatCellDef,
+  MatColumnDef,
+  MatHeaderCell,
+  MatHeaderCellDef,
+  MatHeaderRow,
+  MatHeaderRowDef,
+  MatRow,
+  MatRowDef,
+  MatTable,
+  MatTableDataSource,
+} from '@angular/material/table';
+
+import { ColorPillComponent } from '../../../components/color-pill/color-pill.component';
+import { ExternalLinkComponent } from '../../../components/external-link/external-link.component';
+import { HighlightComponent } from '../../../components/highlight/highlight.component';
+import { PageComponent } from '../../../core/page/page.component';
 
 @Component({
   selector: 'cdx-colors',
-  // eslint-disable-next-line @angular-eslint/prefer-standalone
-  standalone: false,
   templateUrl: './colors.component.html',
   styleUrls: ['./colors.component.scss'],
+  imports: [
+    PageComponent,
+    MatDivider,
+    ExternalLinkComponent,
+    HighlightComponent,
+    MatTable,
+    MatColumnDef,
+    MatHeaderCellDef,
+    MatHeaderCell,
+    MatCellDef,
+    MatCell,
+    ColorPillComponent,
+    MatHeaderRowDef,
+    MatHeaderRow,
+    MatRowDef,
+    MatRow,
+  ],
 })
 export class ColorsComponent {
   @HostBinding('class') hostClass = 'cdx-section';
 
-  tokenList: MatTableDataSource<any> = new MatTableDataSource([
+  tokenList: MatTableDataSource<{
+    name: string;
+    primitive: string;
+    value: string;
+  }> = new MatTableDataSource([
     {
       name: '$surface-primary',
       primitive: 'neutral-0',

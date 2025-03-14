@@ -32,7 +32,6 @@ const styleCode = `.story {
 }`;
 
 @Component({
-  standalone: true,
   template: htmlCode,
   imports: [MatExpansionModule],
   styles: styleCode,
@@ -50,7 +49,6 @@ export const ExpansionPanelComponent: InputViewerComponent = {
 import { MatExpansionModule } from '@angular/material/expansion';
 
 @Component({
-    standalone: true,
     template: htmlCode,
     imports: [
         MatExpansionModule

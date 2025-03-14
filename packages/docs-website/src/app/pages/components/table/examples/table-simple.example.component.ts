@@ -68,7 +68,6 @@ const ELEMENT_DATA: PeriodicElement[] = [
 ];
 
 @Component({
-  standalone: true,
   template: htmlCode,
   imports: [MatTableModule],
   styles: styleCode,
@@ -109,7 +108,6 @@ import { Component } from '@angular/core';
 import { MatTableModule } from '@angular/material/table';
 
 @Component({
-    standalone: true,
     template: htmlCode,
     imports: [
       MatTableModule

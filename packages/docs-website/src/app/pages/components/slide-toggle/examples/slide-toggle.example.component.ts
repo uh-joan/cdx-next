@@ -29,7 +29,6 @@ const styleCode = `.story {
 }`;
 
 @Component({
-  standalone: true,
   template: htmlCode,
   imports: [MatSlideToggleModule],
   styles: styleCode,
@@ -46,7 +45,6 @@ export const SidenavComponent: InputViewerComponent = {
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 
 @Component({
-    standalone: true,
     template: htmlCode,
     imports: [
       MatSlideToggleModule

@@ -29,7 +29,6 @@ const styleCode = `.story {
 }`;
 
 @Component({
-  standalone: true,
   template: htmlCode,
   imports: [
     MatDatepickerModule,
@@ -57,7 +56,6 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 
 @Component({
-    standalone: true,
     template: htmlCode,
     imports: [
         MatDatepickerModule,

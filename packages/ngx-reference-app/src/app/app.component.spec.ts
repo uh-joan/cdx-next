@@ -5,9 +5,9 @@ import {
   AuthenticationModule,
   HeaderGlobalUserProfileComponent,
 } from '@cdx/ngx-authentication';
-import { HeaderModule, OneTrustModule } from '@cdx/ngx-branding';
+import { HeaderComponent, OneTrustModule } from '@cdx/ngx-branding';
 import {
-  HeaderGlobalSessionManagementModule,
+  HeaderGlobalSessionManagementDirective,
   SessionActivityModule,
 } from '@cdx/ngx-session-activity';
 import { TranslateModule } from '@ngx-translate/core';
@@ -22,7 +22,7 @@ describe('AppComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [AppComponent],
       imports: [
-        HeaderModule,
+        HeaderComponent,
         AuthenticationModule.forRoot({
           appId: 'cdx',
           environment: 'dev-stable',
@@ -39,7 +39,7 @@ describe('AppComponent', () => {
           defaultLanguage: 'en',
         }),
         HeaderGlobalUserProfileComponent,
-        HeaderGlobalSessionManagementModule,
+        HeaderGlobalSessionManagementDirective,
         ModeSelectorComponent,
         ThemeSelectorComponent,
         LanguageSelectorComponent,

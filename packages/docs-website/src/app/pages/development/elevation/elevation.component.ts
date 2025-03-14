@@ -1,5 +1,22 @@
+import { NgClass } from '@angular/common';
 import { Component, HostBinding } from '@angular/core';
-import { MatTableDataSource } from '@angular/material/table';
+import { MatDivider } from '@angular/material/divider';
+import {
+  MatCell,
+  MatCellDef,
+  MatColumnDef,
+  MatHeaderCell,
+  MatHeaderCellDef,
+  MatHeaderRow,
+  MatHeaderRowDef,
+  MatRow,
+  MatRowDef,
+  MatTable,
+  MatTableDataSource,
+} from '@angular/material/table';
+
+import { HighlightComponent } from '../../../components/highlight/highlight.component';
+import { PageComponent } from '../../../core/page/page.component';
 
 interface ElTable {
   name: string;
@@ -10,10 +27,24 @@ interface ElTable {
 
 @Component({
   selector: 'cdx-elevation',
-  // eslint-disable-next-line @angular-eslint/prefer-standalone
-  standalone: false,
   templateUrl: './elevation.component.html',
   styleUrls: ['./elevation.component.scss'],
+  imports: [
+    PageComponent,
+    MatDivider,
+    HighlightComponent,
+    MatTable,
+    MatColumnDef,
+    MatHeaderCellDef,
+    MatHeaderCell,
+    MatCellDef,
+    MatCell,
+    NgClass,
+    MatHeaderRowDef,
+    MatHeaderRow,
+    MatRowDef,
+    MatRow,
+  ],
 })
 export class ElevationComponent {
   @HostBinding('class') hostClass = 'cdx-section';

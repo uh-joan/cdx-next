@@ -12,7 +12,6 @@ import {
   HelixHeaderGlobalComponent,
   HelixHeaderProductNameOrLogoComponent,
 } from '@cdx/ngx-branding';
-import { HeaderGlobalSessionManagementModule } from '@cdx/ngx-session-activity';
 import { TranslateModule } from '@ngx-translate/core';
 import { map } from 'rxjs';
 

@@ -55,7 +55,6 @@ const styleCode = `.story {
 }`;
 
 @Component({
-  standalone: true,
   template: htmlCode,
   imports: [MatSliderModule],
   styles: styleCode,
@@ -72,7 +71,6 @@ export const SliderSimpleComponent: InputViewerComponent = {
 import { MatSliderModule } from '@angular/material/slider';
 
 @Component({
-    standalone: true,
     template: htmlCode,
     imports: [
       MatSliderModule

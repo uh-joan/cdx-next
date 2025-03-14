@@ -43,7 +43,6 @@ const styleCode = `.story {
 }`;
 
 @Component({
-  standalone: true,
   template: htmlCode,
   imports: [MatChipsModule],
   styles: styleCode,
@@ -60,7 +59,6 @@ export const ColorChipsComponent: InputViewerComponent = {
 import { MatChipsModule } from '@angular/material/chips';
 
 @Component({
-    standalone: true,
     template: htmlCode,
     imports: [
         MatChipsModule

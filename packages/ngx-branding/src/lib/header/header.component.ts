@@ -16,7 +16,6 @@ import { ThemeOptionsBranding } from '@cdx/theme-angular-material';
   styleUrls: ['./header.component.scss'],
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
 })
 export class HeaderComponent implements AfterViewInit {
   @HostBinding('class') classes = 'cdx-header';

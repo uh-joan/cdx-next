@@ -11,7 +11,6 @@ import { links, NavigationLink } from './header.config';
 
 @Component({
   selector: 'web-hlx-header',
-  standalone: true,
   imports: [
     HelixHeaderComponent,
     HelixHeaderGlobalComponent,

@@ -15,7 +15,6 @@ const styleCode = `.story {
 }`;
 
 @Component({
-  standalone: true,
   template: htmlCode,
   imports: [MatPaginator],
   styles: styleCode,
@@ -34,7 +33,6 @@ export const PaginatorBasicComponent: InputViewerComponent = {
 import { MatPaginator } from '@angular/material/paginator';
 
 @Component({
-    standalone: true,
     template: htmlCode,
     imports: [
         MatPaginator

@@ -6,7 +6,6 @@ import {
 } from 'src/app/components/card-c/card-c.component';
 
 @Component({
-  standalone: true,
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
   imports: [CardCComponent, HelixFooterComponent],

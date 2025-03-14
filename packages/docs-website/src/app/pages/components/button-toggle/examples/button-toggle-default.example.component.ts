@@ -46,7 +46,6 @@ const styleCode = `.story {
 }`;
 
 @Component({
-  standalone: true,
   template: htmlCode,
   imports: [MatButtonToggleModule, MatDividerModule],
   styles: styleCode,
@@ -64,7 +63,6 @@ export const ButtonToggleDefaultComponent: InputViewerComponent = {
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 
 @Component({
-    standalone: true,
     template: htmlCode,
     imports: [
         MatButtonToggleModule,

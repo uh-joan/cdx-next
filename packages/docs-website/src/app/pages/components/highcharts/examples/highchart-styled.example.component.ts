@@ -34,7 +34,6 @@ const styleCode = `
 HighchartsAccessibilityModule(Highcharts);
 
 @Component({
-  standalone: true,
   template: htmlCode,
   imports: [HighchartsChartModule],
   styles: styleCode,
@@ -142,7 +141,6 @@ import { HighchartsChartModule } from 'highcharts-angular';
 
 
 @Component({
-    standalone: true,
     template: htmlCode,
     imports: [
         HighchartsChartModule

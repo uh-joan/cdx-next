@@ -4,8 +4,7 @@ import { SandwichComponent } from './sandwich.component';
 import { SandwichRoutingModule } from './sandwich.routes';
 
 @NgModule({
-  imports: [SandwichRoutingModule],
-  declarations: [SandwichComponent],
+  imports: [SandwichRoutingModule, SandwichComponent],
   exports: [SandwichComponent],
 })
 export class SandwichModule {}

@@ -1,18 +1,40 @@
+import { CommonModule } from '@angular/common';
 import { Component, HostBinding, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { FormControl, ReactiveFormsModule } from '@angular/forms';
+import { MatOption } from '@angular/material/core';
+import {
+  MatFormField,
+  MatFormFieldModule,
+  MatLabel,
+} from '@angular/material/form-field';
+import { MatSelect, MatSelectModule } from '@angular/material/select';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { marked } from 'marked';
 import { forkJoin } from 'rxjs';
 
+import { PageComponent } from '../../../core/page/page.component';
 import { ReleaseNotesService } from './release-notes.service';
 
 @Component({
   selector: 'cdx-release-notes',
-  // eslint-disable-next-line @angular-eslint/prefer-standalone
-  standalone: false,
   templateUrl: './release-notes.component.html',
   styleUrls: ['./release-notes.component.scss'],
+  imports: [
+    PageComponent,
+    MatFormField,
+    MatLabel,
+    MatSelect,
+    ReactiveFormsModule,
+    MatOption,
+    CommonModule,
+    RouterModule,
+    PageComponent,
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    MatSelectModule,
+  ],
+  providers: [ReleaseNotesService],
 })
 export class ReleaseNotesComponent implements OnInit {
   @HostBinding('class') hostClass = 'cdx-section';

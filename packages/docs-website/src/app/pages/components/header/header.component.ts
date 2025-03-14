@@ -1,13 +1,13 @@
 import { Component, HostBinding } from '@angular/core';
 
+import { PagesCommonModule } from '../../pages-common.module';
 import * as samples from './examples';
 
 @Component({
   selector: 'app-header',
-  // eslint-disable-next-line @angular-eslint/prefer-standalone
-  standalone: false,
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
+  imports: [PagesCommonModule],
 })
 export class HeaderComponent {
   @HostBinding('class') hostClass = 'cdx-section';

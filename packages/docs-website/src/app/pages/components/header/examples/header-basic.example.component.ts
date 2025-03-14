@@ -12,7 +12,6 @@ const styleCode = `.story {
 }`;
 
 @Component({
-  standalone: true,
   template: htmlCode,
   imports: [HelixHeaderComponent],
   styles: styleCode,
@@ -31,7 +30,6 @@ export const ExpansionPanelComponent: InputViewerComponent = {
 import { HelixHeaderModule } from '@cdx/ngx-branding';
 
 @Component({
-    standalone: true,
     template: htmlCode,
     imports: [
         HelixHeaderModule

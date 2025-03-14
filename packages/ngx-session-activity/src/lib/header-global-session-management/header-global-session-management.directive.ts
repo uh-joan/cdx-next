@@ -8,7 +8,6 @@ import { SessionActivityService } from '../session-activity.service';
 @Directive({
   // eslint-disable-next-line @angular-eslint/directive-selector
   selector: '[withSessionManagement]',
-  standalone: false,
 })
 export class HeaderGlobalSessionManagementDirective implements OnDestroy {
   authenticated = false;

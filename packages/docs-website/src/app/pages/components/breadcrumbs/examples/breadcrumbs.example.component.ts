@@ -27,7 +27,6 @@ const styleCode = `.hlx-breadcrumb-home {
 `;
 
 @Component({
-  standalone: true,
   template: htmlCode,
   imports: [
     CommonModule,
@@ -52,7 +51,6 @@ import {CommonModule} from "@angular/common";
 import { MatIconModule } from "@angular/material/icon";
 
 @Component({
-  standalone: true,
   template: htmlCode,
   imports: [
     CommonModule,

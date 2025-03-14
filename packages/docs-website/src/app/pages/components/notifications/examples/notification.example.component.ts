@@ -7,7 +7,7 @@ import {
 } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
-import { NotificationModule } from '@cdx/ngx-branding';
+import { HelixNotificationComponent } from '@cdx/ngx-branding';
 import { InputViewerComponent } from 'src/app/core/example-viewer/example-viewer.model';
 
 const htmlCode = `<div class="story">
@@ -73,10 +73,9 @@ const styleCode = `.story {
 }`;
 
 @Component({
-  standalone: true,
   template: htmlCode,
   imports: [
-    NotificationModule,
+    HelixNotificationComponent,
     FormsModule,
     ReactiveFormsModule,
     MatSelectModule,
@@ -114,7 +113,6 @@ import { MatSelectModule } from '@angular/material/select';
 import { NotificationModule } from '@cdx/ngx-branding';
 
 @Component({
-    standalone: true,
     template: htmlCode,
     imports: [
         NotificationModule,

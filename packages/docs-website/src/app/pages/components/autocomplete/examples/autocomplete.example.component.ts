@@ -38,7 +38,6 @@ const styleCode = `.story {
 }`;
 
 @Component({
-  standalone: true,
   template: htmlCode,
   imports: [
     FormsModule,
@@ -86,7 +85,6 @@ import { MatInputModule } from '@angular/material/input';
 import { map, Observable, startWith } from 'rxjs';
 
 @Component({
-  standalone: true,
   template: htmlCode,
   imports: [
     FormsModule,

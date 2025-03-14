@@ -87,7 +87,6 @@ const styleCode = `.close-btn{
 }`;
 
 @Component({
-  standalone: true,
   selector: 'dialog-content-example-dialog',
   template: htmlCode2,
   imports: [MatDialogModule, MatButtonModule, MatIconModule],
@@ -97,7 +96,6 @@ const styleCode = `.close-btn{
 class DialogContentExampleDialog {}
 
 @Component({
-  standalone: true,
   template: htmlCode,
   imports: [MatIconModule, MatButtonModule, MatDialogModule],
   styles: styleCode,
@@ -127,7 +125,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 
 @Component({
-    standalone: true,
+
     selector: 'dialog-content-example-dialog',
     template: htmlCode2,
     imports: [MatDialogModule, MatButtonModule],
@@ -137,7 +135,7 @@ class DialogContentExampleDialog {}
 
 
 @Component({
-    standalone: true,
+
     template: htmlCode,
     imports: [
         MatButtonModule,

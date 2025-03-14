@@ -1,13 +1,13 @@
 import { Component, HostBinding } from '@angular/core';
 
+import { PagesCommonModule } from '../../pages-common.module';
 import * as samples from './examples';
 
 @Component({
   selector: 'app-tooltips',
-  // eslint-disable-next-line @angular-eslint/prefer-standalone
-  standalone: false,
   templateUrl: './tooltips.component.html',
   styleUrls: ['./tooltips.component.scss'],
+  imports: [PagesCommonModule],
 })
 export class TooltipsComponent {
   @HostBinding('class') hostClass = 'cdx-section';

@@ -21,7 +21,6 @@ const styleCode = `.story {
 }`;
 
 @Component({
-  standalone: true,
   template: htmlCode,
   imports: [MatListModule],
   styles: styleCode,
@@ -39,7 +38,6 @@ export const ListBasicComponent: InputViewerComponent = {
 import { MatListModule } from '@angular/material/list';
 
 @Component({
-    standalone: true,
     template: htmlCode,
     imports: [
         MatListModule

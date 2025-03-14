@@ -1,3 +1,4 @@
+import { AsyncPipe } from '@angular/common';
 import {
   ChangeDetectionStrategy,
   Component,
@@ -7,12 +8,39 @@ import {
   signal,
   ViewEncapsulation,
 } from '@angular/core';
-import { FormControl } from '@angular/forms';
-import { MatAutocompleteSelectedEvent } from '@angular/material/autocomplete';
-import { MatButtonModule } from '@angular/material/button';
-import { DateAdapter, MAT_DATE_FORMATS } from '@angular/material/core';
-import { MatCalendar } from '@angular/material/datepicker';
-import { MatIconModule } from '@angular/material/icon';
+import { FormControl, ReactiveFormsModule } from '@angular/forms';
+import {
+  MatAutocomplete,
+  MatAutocompleteSelectedEvent,
+  MatAutocompleteTrigger,
+} from '@angular/material/autocomplete';
+import { MatButton, MatButtonModule } from '@angular/material/button';
+import { MatCheckbox } from '@angular/material/checkbox';
+import {
+  DateAdapter,
+  MAT_DATE_FORMATS,
+  MatOption,
+} from '@angular/material/core';
+import {
+  MatCalendar,
+  MatDatepicker,
+  MatDatepickerActions,
+  MatDatepickerApply,
+  MatDatepickerCancel,
+  MatDatepickerInput,
+  MatDatepickerToggle,
+} from '@angular/material/datepicker';
+import {
+  MatFormField,
+  MatHint,
+  MatLabel,
+  MatSuffix,
+} from '@angular/material/form-field';
+import { MatIcon, MatIconModule } from '@angular/material/icon';
+import { MatInput } from '@angular/material/input';
+import { MatRadioButton, MatRadioGroup } from '@angular/material/radio';
+import { MatSlideToggle } from '@angular/material/slide-toggle';
+import { TranslateModule } from '@ngx-translate/core';
 import { map, Observable, startWith, Subject, takeUntil } from 'rxjs';
 
 const COMPONENTS = [
@@ -141,7 +169,31 @@ export class ExampleHeaderComponent<D> implements OnDestroy {
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
   encapsulation: ViewEncapsulation.None,
-  standalone: false,
+  imports: [
+    MatButton,
+    MatIcon,
+    ReactiveFormsModule,
+    MatFormField,
+    MatLabel,
+    MatInput,
+    MatDatepickerInput,
+    MatHint,
+    MatDatepickerToggle,
+    MatSuffix,
+    MatDatepicker,
+    MatDatepickerActions,
+    MatDatepickerCancel,
+    MatDatepickerApply,
+    MatSlideToggle,
+    MatCheckbox,
+    MatRadioGroup,
+    MatRadioButton,
+    MatAutocompleteTrigger,
+    MatAutocomplete,
+    MatOption,
+    TranslateModule,
+    AsyncPipe,
+  ],
 })
 export class HomeComponent implements OnInit {
   searchControl = new FormControl('');

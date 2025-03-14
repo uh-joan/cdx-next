@@ -6,7 +6,6 @@ import { RouterModule } from '@angular/router';
   selector: 'cdx-internal-link',
   templateUrl: './internal-link.component.html',
   styleUrls: ['./internal-link.component.scss'],
-  standalone: true,
   imports: [CommonModule, RouterModule],
 })
 export class InternalLinkComponent {

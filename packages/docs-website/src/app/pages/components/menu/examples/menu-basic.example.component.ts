@@ -26,7 +26,6 @@ const styleCode = `.story {
 }`;
 
 @Component({
-  standalone: true,
   template: htmlCode,
   imports: [MatMenuModule, MatButtonModule],
   styles: styleCode,
@@ -45,7 +44,6 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatMenuModule } from '@angular/material/menu';
 
 @Component({
-    standalone: true,
     template: htmlCode,
     imports: [
         MatMenuModule,

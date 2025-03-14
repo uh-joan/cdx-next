@@ -6,7 +6,6 @@ import { AuthenticationService } from './authentication.service';
 @Component({
   selector: 'cdx-broker',
   template: '',
-  standalone: false,
 })
 export class BrokerComponent {
   constructor(

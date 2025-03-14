@@ -5,7 +5,6 @@ import { Component, Input } from '@angular/core';
   selector: 'cdx-external-link',
   templateUrl: './external-link.component.html',
   styleUrls: ['./external-link.component.scss'],
-  standalone: true,
   imports: [CommonModule],
 })
 export class ExternalLinkComponent {

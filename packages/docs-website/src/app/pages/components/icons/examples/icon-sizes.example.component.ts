@@ -66,7 +66,6 @@ const styleCode = `.story {
 }`;
 
 @Component({
-  standalone: true,
   template: htmlCode,
   imports: [MatIconModule],
   styles: styleCode,
@@ -83,7 +82,6 @@ export const IconsSizesComponent: InputViewerComponent = {
 import { MatIconModule } from '@angular/material/icon';
 
 @Component({
-    standalone: true,
     template: htmlCode,
     imports: [
         MatIconModule

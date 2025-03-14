@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
+import { RouterModule } from '@angular/router';
+import { LeftNavigationComponent } from 'src/app/core/left-navigation/left-navigation.component';
 import { NavbarSection } from 'src/app/core/left-navigation/left-navigation.interface';
 
 @Component({
   selector: 'cdx-patterns',
-  // eslint-disable-next-line @angular-eslint/prefer-standalone
-  standalone: false,
   templateUrl: './patterns.component.html',
   styleUrl: './patterns.component.scss',
+  imports: [RouterModule, LeftNavigationComponent],
 })
 export class PatternsComponent {
   leftNavbarConfig: NavbarSection[] = [

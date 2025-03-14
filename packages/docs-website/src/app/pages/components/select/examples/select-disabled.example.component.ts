@@ -39,7 +39,6 @@ const styleCode = `.story {
 }`;
 
 @Component({
-  standalone: true,
   template: htmlCode,
   imports: [MatSelectModule],
   styles: styleCode,
@@ -56,7 +55,6 @@ export const SelectDisabledComponent: InputViewerComponent = {
 import { MatSelectModule } from '@angular/material/select';
 
 @Component({
-    standalone: true,
     template: htmlCode,
     imports: [
       MatSelectModule

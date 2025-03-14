@@ -1,4 +1,10 @@
+import { CommonModule } from '@angular/common';
 import { Component, HostBinding } from '@angular/core';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+import { MatRippleModule } from '@angular/material/core';
+import { RouterModule } from '@angular/router';
+import { PageComponent } from 'src/app/core/page/page.component';
 
 interface ComponentExample {
   title: string;
@@ -9,10 +15,16 @@ interface ComponentExample {
 
 @Component({
   selector: 'cdx-components-overview',
-  // eslint-disable-next-line @angular-eslint/prefer-standalone
-  standalone: false,
   templateUrl: './components-overview.component.html',
   styleUrls: ['./components-overview.component.scss'],
+  imports: [
+    CommonModule,
+    RouterModule,
+    MatCardModule,
+    MatButtonModule,
+    MatRippleModule,
+    PageComponent,
+  ],
 })
 export class ComponentsOverviewComponent {
   @HostBinding('class') hostClass = 'cdx-section';

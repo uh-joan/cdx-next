@@ -1,5 +1,8 @@
 import { Component, HostBinding } from '@angular/core';
+import { MatDivider } from '@angular/material/divider';
 
+import { HighlightComponent } from '../../../components/highlight/highlight.component';
+import { PageComponent } from '../../../core/page/page.component';
 import {
   headerSessioNActivityTemplateAngular,
   sessionActivityModuleAngular,
@@ -9,10 +12,9 @@ import {
 
 @Component({
   selector: 'cdx-session-activity-management',
-  // eslint-disable-next-line @angular-eslint/prefer-standalone
-  standalone: false,
   templateUrl: './session-activity-management.component.html',
   styleUrls: ['./session-activity-management.component.scss'],
+  imports: [PageComponent, MatDivider, HighlightComponent],
 })
 export class SessionActivityManagementComponent {
   @HostBinding('class') hostClass = 'cdx-section';

@@ -14,7 +14,6 @@ const styleCode = `.story {
 }`;
 
 @Component({
-  standalone: true,
   template: htmlCode,
   imports: [MatTabsModule],
   styles: styleCode,
@@ -32,7 +31,6 @@ export const TabsSimpleComponent: InputViewerComponent = {
 import { MatTabsModule } from '@angular/material/tabs';
 
 @Component({
-    standalone: true,
     template: htmlCode,
     imports: [
       MatTabsModule

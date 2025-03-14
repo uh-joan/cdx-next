@@ -18,7 +18,6 @@ const styleCode = `.story {
 }`;
 
 @Component({
-  standalone: true,
   template: htmlCode,
   imports: [MatToolbarModule],
   styles: styleCode,
@@ -36,7 +35,6 @@ export const ToolbarDefaultComponent: InputViewerComponent = {
 import { MatToolbarModule } from '@angular/material/toolbar';
 
 @Component({
-    standalone: true,
     template: htmlCode,
     imports: [
       MatToolbarModule

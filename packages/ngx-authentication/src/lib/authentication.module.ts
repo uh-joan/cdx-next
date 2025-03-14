@@ -27,7 +27,6 @@ export function jwtOptionsFactory(tokenService: TokenService) {
 }
 
 @NgModule({
-  declarations: [BrokerComponent],
   exports: [RouterModule],
   imports: [
     RouterModule.forChild([]),
@@ -38,6 +37,7 @@ export function jwtOptionsFactory(tokenService: TokenService) {
         deps: [TokenService],
       },
     }),
+    BrokerComponent,
   ],
   providers: [provideHttpClient(withInterceptorsFromDi())],
 })

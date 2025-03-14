@@ -1,14 +1,14 @@
 import { Component, HostBinding } from '@angular/core';
 import { InputViewerComponent } from 'src/app/core/example-viewer/example-viewer.model';
 
+import { PagesCommonModule } from '../../pages-common.module';
 import * as samples from './examples';
 
 @Component({
   selector: 'app-snackbar',
-  // eslint-disable-next-line @angular-eslint/prefer-standalone
-  standalone: false,
   templateUrl: './snackbar.component.html',
   styleUrls: ['./snackbar.component.scss'],
+  imports: [PagesCommonModule],
 })
 export class SnackbarComponent {
   @HostBinding('class') hostClass = 'cdx-section';

@@ -15,7 +15,6 @@ import { InputViewerComponent } from './example-viewer.model';
 
 @Component({
   selector: 'hlx-example-viewer',
-  standalone: true,
   templateUrl: './example-viewer.component.html',
   styleUrls: ['./example-viewer.component.scss'],
   imports: [MatTabsModule, CommonModule, HighlightComponent],
@@ -35,7 +34,7 @@ export class ExampleViewerComponent implements AfterViewInit {
     }
   }
 
-  loadComponent(component: Type<any>) {
+  loadComponent(component: Type<unknown>) {
     this.container.clear();
     this.container.createComponent(component);
   }

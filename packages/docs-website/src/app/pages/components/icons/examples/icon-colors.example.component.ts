@@ -96,7 +96,6 @@ const styleCode = `@use "@cdx/theme-angular-material" as hlx;
 }`;
 
 @Component({
-  standalone: true,
   template: htmlCode,
   imports: [MatIconModule],
   styles: styleCode,
@@ -113,7 +112,6 @@ export const IconsColorsComponent: InputViewerComponent = {
 import { MatIconModule } from '@angular/material/icon';
 
 @Component({
-    standalone: true,
     template: htmlCode,
     imports: [
         MatIconModule

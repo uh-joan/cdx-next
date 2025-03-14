@@ -12,7 +12,6 @@ export interface CardCInput {
 
 @Component({
   selector: 'app-card-c',
-  standalone: true,
   imports: [MatButtonModule, RouterModule],
   templateUrl: './card-c.component.html',
   styleUrl: './card-c.component.scss',

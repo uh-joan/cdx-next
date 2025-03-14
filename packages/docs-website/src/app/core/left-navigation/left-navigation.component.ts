@@ -8,7 +8,6 @@ import { NavbarSection } from './left-navigation.interface';
   selector: 'left-navigation',
   templateUrl: './left-navigation.component.html',
   styleUrls: ['./left-navigation.component.scss'],
-  standalone: true,
   imports: [CommonModule, RouterModule],
 })
 export class LeftNavigationComponent {

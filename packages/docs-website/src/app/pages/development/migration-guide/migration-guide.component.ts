@@ -1,12 +1,31 @@
 import { Component, HostBinding } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { FormControl, ReactiveFormsModule } from '@angular/forms';
+import { MatOption } from '@angular/material/core';
+import { MatDivider } from '@angular/material/divider';
+import { MatFormField, MatLabel } from '@angular/material/form-field';
+import { MatSelect } from '@angular/material/select';
+
+import { ExternalLinkComponent } from '../../../components/external-link/external-link.component';
+import { HighlightComponent } from '../../../components/highlight/highlight.component';
+import { InternalLinkComponent } from '../../../components/internal-link/internal-link.component';
+import { PageComponent } from '../../../core/page/page.component';
 
 @Component({
   selector: 'cdx-migration-guide',
-  // eslint-disable-next-line @angular-eslint/prefer-standalone
-  standalone: false,
   templateUrl: './migration-guide.component.html',
   styleUrls: ['./migration-guide.component.scss'],
+  imports: [
+    PageComponent,
+    ExternalLinkComponent,
+    MatDivider,
+    InternalLinkComponent,
+    MatFormField,
+    MatLabel,
+    MatSelect,
+    ReactiveFormsModule,
+    MatOption,
+    HighlightComponent,
+  ],
 })
 export class MigrationGuideComponent {
   @HostBinding('class') hostClass = 'cdx-section';

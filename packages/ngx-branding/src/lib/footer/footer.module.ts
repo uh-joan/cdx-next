@@ -13,8 +13,6 @@ import { FooterLinkDirective } from './footer-link.directive';
     CommonModule,
     OneTrustModule.forChild(),
     TranslateModule.forChild(),
-  ],
-  declarations: [
     FooterComponent,
     FooterLinkDirective,
     FooterGroupComponent,

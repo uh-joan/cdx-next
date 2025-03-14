@@ -32,9 +32,9 @@ import { HomeRoutingModule } from './home.routes';
     MatRadioModule,
     ReactiveFormsModule,
     AsyncPipe,
+    HomeComponent,
   ],
   providers: [MatDatepickerModule],
-  declarations: [HomeComponent],
   exports: [HomeComponent],
 })
 export class HomeModule {}

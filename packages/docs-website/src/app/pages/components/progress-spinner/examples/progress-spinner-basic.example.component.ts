@@ -26,7 +26,6 @@ const styleCode = `.story {
 }`;
 
 @Component({
-  standalone: true,
   template: htmlCode,
   imports: [MatProgressSpinnerModule],
   styles: styleCode,
@@ -43,7 +42,6 @@ export const ProgressSpinnerBasicComponent: InputViewerComponent = {
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @Component({
-    standalone: true,
     template: htmlCode,
     imports: [
         MatProgressSpinnerModule

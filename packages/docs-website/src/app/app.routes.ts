@@ -1,51 +1,50 @@
 import { Routes } from '@angular/router';
 
-import { HomeComponent } from './pages/home/home.component';
-
 export const routes: Routes = [
   {
     path: 'home',
-    component: HomeComponent,
-  },
-  {
-    path: 'development',
-    loadChildren: () =>
-      import('./pages/development/development.module').then(
-        (m) => m.DevelopmentModule,
-      ),
-  },
-  {
-    path: 'foundations',
-    loadChildren: () =>
-      import('./pages/foundations/foundations.module').then(
-        (m) => m.FoundationsModule,
-      ),
-  },
-  {
-    path: 'components',
-    loadChildren: () =>
-      import('./pages/components/components.module').then(
-        (m) => m.ComponentsModule,
-      ),
-  },
-  {
-    path: 'services',
-    loadChildren: () =>
-      import('./pages/services/services.module').then((m) => m.ServicesModule),
-  },
-  {
-    path: 'patterns',
-    loadChildren: () =>
-      import('./pages/patterns/patterns.module').then((m) => m.PatternsModule),
-  },
-  {
-    path: '',
-    pathMatch: 'full',
-    component: HomeComponent,
+    loadComponent: () =>
+      import('./pages/home/home.component').then((c) => c.HomeComponent),
     data: {
       breadcrumb: {
         info: 'home',
       },
     },
+  },
+  {
+    path: 'development',
+    loadChildren: () =>
+      import('./pages/development/development.routes').then(
+        (m) => m.developmentRoutes,
+      ),
+  },
+  {
+    path: 'foundations',
+    loadChildren: () =>
+      import('./pages/foundations/foundations.routes').then(
+        (m) => m.foundationsRoutes,
+      ),
+  },
+  {
+    path: 'components',
+    loadChildren: () =>
+      import('./pages/components/components.routes').then(
+        (m) => m.componentsRoutes,
+      ),
+  },
+  {
+    path: 'services',
+    loadChildren: () =>
+      import('./pages/services/services.routes').then((m) => m.servicesRoutes),
+  },
+  {
+    path: 'patterns',
+    loadChildren: () =>
+      import('./pages/patterns/patterns.routes').then((m) => m.patternsRoutes),
+  },
+  {
+    path: '',
+    pathMatch: 'full',
+    redirectTo: 'home',
   },
 ];

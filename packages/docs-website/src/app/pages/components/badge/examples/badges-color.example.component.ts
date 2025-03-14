@@ -39,7 +39,6 @@ const styleCode = `:host {
 }`;
 
 @Component({
-  standalone: true,
   template: htmlCode,
   imports: [MatBadgeModule, MatDividerModule],
   styles: styleCode,
@@ -56,7 +55,6 @@ export const badgeColorsComponent: InputViewerComponent = {
 import { MatBadgeModule } from '@angular/material/badge';
 
 @Component({
-    standalone: true,
     template: htmlCode,
     imports: [
       MatBadgeModule

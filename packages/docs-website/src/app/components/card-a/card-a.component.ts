@@ -5,7 +5,6 @@ import { MatCardModule } from '@angular/material/card';
   selector: 'cdx-card-a',
   templateUrl: './card-a.component.html',
   styleUrls: ['./card-a.component.scss'],
-  standalone: true,
   imports: [MatCardModule],
 })
 export class CardAComponent {

@@ -18,7 +18,6 @@ const styleCode = `.story {
 }`;
 
 @Component({
-  standalone: true,
   template: htmlCode,
   imports: [MatDividerModule, MatListModule],
   styles: styleCode,
@@ -37,7 +36,6 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatListModule } from '@angular/material/list';
 
 @Component({
-    standalone: true,
     template: htmlCode,
     imports: [
         MatDividerModule,

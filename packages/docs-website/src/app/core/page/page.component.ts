@@ -7,7 +7,6 @@ import { HelixFooterComponent } from '@cdx/ngx-branding';
   selector: 'hlx-page',
   templateUrl: './page.component.html',
   styleUrls: ['./page.component.scss'],
-  standalone: true,
   imports: [MatDividerModule, CommonModule, HelixFooterComponent],
   providers: [UpperCasePipe],
 })

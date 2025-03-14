@@ -29,7 +29,6 @@ const styleCode = `.story {
 }`;
 
 @Component({
-  standalone: true,
   template: htmlCode,
   imports: [MatCheckboxModule],
   styles: styleCode,
@@ -46,7 +45,6 @@ export const CheckboxStatesComponent: InputViewerComponent = {
 import { MatCheckboxModule } from '@angular/material/checkbox';
 
 @Component({
-    standalone: true,
     template: htmlCode,
     imports: [
         MatCheckboxModule,

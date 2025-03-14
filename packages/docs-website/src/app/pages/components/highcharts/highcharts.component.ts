@@ -1,13 +1,13 @@
 import { Component, HostBinding } from '@angular/core';
 
+import { PagesCommonModule } from '../../pages-common.module';
 import * as samples from './examples';
 
 @Component({
   selector: 'app-highcharts',
-  // eslint-disable-next-line @angular-eslint/prefer-standalone
-  standalone: false,
   templateUrl: './highcharts.component.html',
   styleUrls: ['./highcharts.component.scss'],
+  imports: [PagesCommonModule],
 })
 export class HighchartsComponent {
   @HostBinding('class') hostClass = 'cdx-section';

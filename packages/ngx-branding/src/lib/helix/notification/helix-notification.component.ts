@@ -1,3 +1,4 @@
+import { NgIf, NgTemplateOutlet } from '@angular/common';
 import {
   ChangeDetectionStrategy,
   Component,
@@ -9,6 +10,8 @@ import {
   Output,
   ViewEncapsulation,
 } from '@angular/core';
+import { MatButton } from '@angular/material/button';
+import { MatIcon } from '@angular/material/icon';
 
 @Component({
   selector: 'hlx-notification',
@@ -16,7 +19,7 @@ import {
   styleUrls: ['./helix-notification.component.scss'],
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
+  imports: [NgIf, MatIcon, NgTemplateOutlet, MatButton],
 })
 export class HelixNotificationComponent {
   @HostBinding('class') private get classes(): string {

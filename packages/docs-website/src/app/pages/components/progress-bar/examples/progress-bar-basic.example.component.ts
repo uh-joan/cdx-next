@@ -29,7 +29,6 @@ const styleCode = `.story {
 }`;
 
 @Component({
-  standalone: true,
   template: htmlCode,
   imports: [MatProgressBarModule],
   styles: styleCode,
@@ -46,7 +45,6 @@ export const PaginatorBasicComponent: InputViewerComponent = {
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 @Component({
-    standalone: true,
     template: htmlCode,
     imports: [
         MatProgressBarModule

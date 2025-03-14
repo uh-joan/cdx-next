@@ -31,7 +31,6 @@ const styleCode = `.story {
 }`;
 
 @Component({
-  standalone: true,
   template: htmlCode,
   imports: [MatCardModule, MatButtonModule],
   styles: styleCode,
@@ -50,7 +49,6 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 
 @Component({
-    standalone: true,
     template: htmlCode,
     imports: [
         MatCardModule,

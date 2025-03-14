@@ -25,7 +25,6 @@ const styleCode = `.story {
 }`;
 
 @Component({
-  standalone: true,
   template: htmlCode,
   imports: [MatCheckboxModule, MatListModule],
   styles: styleCode,
@@ -45,7 +44,6 @@ import { MatCheckboxModule }
 import { MatListModule } from '@angular/material/list';
 
 @Component({
-    standalone: true,
     template: htmlCode,
     imports: [
         MatCheckboxModule,

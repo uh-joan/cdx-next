@@ -2,7 +2,6 @@
 import { Component } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import {
-  HelixFooterGroupComponent,
   HelixHeaderComponent,
   HelixHeaderGlobalComponent,
   HelixHeaderProductNameOrLogoComponent,
@@ -45,7 +44,6 @@ const styleCode = `.story {
 }`;
 
 @Component({
-  standalone: true,
   template: htmlCode,
   imports: [
     HelixHeaderComponent,
@@ -75,7 +73,6 @@ import {
 } from '@cdx/ngx-branding';
 
 @Component({
-  standalone: true,
   template: htmlCode,
   imports: [
     HelixHeaderComponent,

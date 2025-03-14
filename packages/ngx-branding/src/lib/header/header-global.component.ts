@@ -11,7 +11,6 @@ import {
   styleUrls: ['./header-global.component.scss'],
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: false,
 })
 export class HeaderGlobalComponent {
   @HostBinding('class') classes = 'cdx-header__global';

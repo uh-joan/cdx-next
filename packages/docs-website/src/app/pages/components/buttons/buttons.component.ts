@@ -1,13 +1,14 @@
 import { Component, HostBinding } from '@angular/core';
 
+import { PagesCommonModule } from '../../pages-common.module';
 import * as samples from './examples';
 
 @Component({
   selector: 'cdx-buttons',
-  // eslint-disable-next-line @angular-eslint/prefer-standalone
-  standalone: false,
   templateUrl: './buttons.component.html',
   styleUrls: ['./buttons.component.scss'],
+
+  imports: [PagesCommonModule],
 })
 export class ButtonsComponent {
   @HostBinding('class') hostClass = 'cdx-section';

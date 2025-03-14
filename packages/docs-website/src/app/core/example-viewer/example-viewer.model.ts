@@ -2,7 +2,7 @@ import { Type } from '@angular/core';
 
 export interface InputViewerComponent {
   exampleName?: string;
-  dynamicComponent?: Type<any>;
+  dynamicComponent?: Type<unknown>;
   height?: number;
   verticalView?: boolean;
   hideCss?: boolean;

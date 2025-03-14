@@ -27,7 +27,6 @@ const styleCode = `.story {
 }`;
 
 @Component({
-  standalone: true,
   template: htmlCode,
   imports: [MatFormFieldModule, MatInputModule, MatSelectModule],
   styles: styleCode,
@@ -47,7 +46,6 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 
 @Component({
-    standalone: true,
     template: htmlCode,
     imports: [
         MatFormFieldModule,

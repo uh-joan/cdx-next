@@ -54,7 +54,6 @@ const styleCode = `.story {
 }`;
 
 @Component({
-  standalone: true,
   template: htmlCode,
   imports: [
     MatSidenavModule,
@@ -85,7 +84,6 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatSidenavModule } from '@angular/material/sidenav';
 
 @Component({
-    standalone: true,
     template: htmlCode,
     imports: [
       MatSidenavModule,

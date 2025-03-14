@@ -1,13 +1,13 @@
 import { Component, HostBinding } from '@angular/core';
 
+import { PagesCommonModule } from '../../pages-common.module';
 import * as samples from './examples';
 
 @Component({
   selector: 'app-skeleton-loader',
-  // eslint-disable-next-line @angular-eslint/prefer-standalone
-  standalone: false,
   templateUrl: './skeleton-loader.component.html',
   styleUrls: ['./skeleton-loader.component.scss'],
+  imports: [PagesCommonModule],
 })
 export class SkeletonLoaderComponent {
   @HostBinding('class') hostClass = 'cdx-section';
