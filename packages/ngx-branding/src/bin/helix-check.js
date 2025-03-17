@@ -213,7 +213,9 @@ function getFilesRecursive(dir, ext) {
 }
 
 function checkThemeClass(scssFiles, htmlFiles) {
-  const themeRegex = /@include\s+[^(]+\.default\s*\([^,]+,\s*'([^']+)'\s*\)/;
+  const themeRegex =
+    /@include\s+[^(]+\.default\s*\([^,]+,\s*["']([^"']+)["']\s*\)/;
+
   let themeClass = null;
 
   scssFiles.some((file) => {
