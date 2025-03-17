@@ -1,6 +1,7 @@
 {
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "name": "theme-expansion-panel",
+  "tags": ["exclude-from-build"],
   "targets": {
     "stylelint": {
       "executor": "nx-stylelint:lint",

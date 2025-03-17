@@ -121,7 +121,6 @@
       }
     }
   },
-  "useLegacyCache": true,
   "workspaceLayout": {
     "appsDir": "packages",
     "libsDir": "packages"
