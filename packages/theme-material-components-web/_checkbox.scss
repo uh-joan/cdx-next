@@ -1,6 +1,0 @@
-@use '@material/theme/theme-color';
-
-@use '@material/checkbox/checkbox-theme' with (
-  $baseline-theme-color: primary,
-  $mark-color: theme-color.prop-value(on-primary)
-);

@@ -1,9 +1,0 @@
-@use './index';
-
-// finally, emit css for all MDC components
-@use 'material-components-web/material-components-web';
-
-// strange bug where, for checkbox, the secondary color "wins"
-.mdc-checkbox {
-  --mdc-theme-secondary: initial;
-}

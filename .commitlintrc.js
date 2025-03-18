@@ -5,6 +5,23 @@ async function getConfig() {
     },
   } = await import('@commitlint/config-nx-scopes');
 
+  const deletedProjects = [
+    'rcx-branding',
+    'notification',
+    'rcx-analytics',
+    'branding',
+    'ngx-notification',
+    'rcx-demo',
+    'rcx-demo-app',
+    'rcx-reference-app',
+    'theme-popperjs',
+    'theme-badge',
+    'theme-button-toggle',
+    'theme-expansion-panel',
+    'theme-material-components-web',
+    'theme-react-mui',
+  ];
+
   return {
     rules: {
       'scope-enum': async (ctx) => [
@@ -12,16 +29,7 @@ async function getConfig() {
         'always',
         [
           'workspace',
-          'rcx-branding',
-          'notification',
-          'rcx-analytics',
-          'branding',
-          'ngx-notification',
-          'rcx-demo',
-          'rcx-demo-app',
-          'rcx-reference-app',
-          'theme-popperjs',
-          'theme-react-mui',
+          ...deletedProjects,
           ...(await getProjects(
             ctx,
             ({ name, projectType }) =>
