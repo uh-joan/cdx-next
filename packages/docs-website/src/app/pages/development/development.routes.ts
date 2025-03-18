@@ -1,6 +1,7 @@
 import { Routes } from '@angular/router';
 
 import { DevelopmentComponent } from './development.component';
+import { VersionResolver } from './release-notes/release-notes.version.resolver';
 
 export const developmentRoutes: Routes = [
   {
@@ -72,6 +73,19 @@ export const developmentRoutes: Routes = [
           import('./release-notes/release-notes.component').then(
             (m) => m.ReleaseNotesComponent,
           ),
+        resolve: {
+          version: VersionResolver,
+        },
+      },
+      {
+        path: 'release-notes/:version',
+        loadComponent: () =>
+          import('./release-notes/release-notes.component').then(
+            (m) => m.ReleaseNotesComponent,
+          ),
+        resolve: {
+          version: VersionResolver,
+        },
       },
       { path: '', redirectTo: 'getting-started-overview', pathMatch: 'full' },
     ],
