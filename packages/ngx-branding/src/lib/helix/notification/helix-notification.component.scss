@@ -1,11 +1,13 @@
-@use '@material/elevation';
 @use '@angular/material' as mat;
-@use '../../../../../theme-angular-material/styles/' as hlx;
+@use '../../../../../theme-angular-material/styles/theme/helix/variables/tokens'
+  as hlx;
+@use '../../../../../theme-angular-material/styles/theme/helix/helix' as
+  hlx-themes;
 @use '../../../../../theme-angular-material/styles/theme/helix/variables/primitives.scss'
   as hlx-primitives;
 
 .hlx-notification {
-  @include elevation.elevation(1);
+  @include mat.elevation(1);
 
   display: flex;
   justify-content: space-between;
@@ -48,7 +50,7 @@
 }
 
 .hlx-notification--success {
-  @include mat.button-color(hlx.$helix-success-theme);
+  @include mat.button-color(hlx-themes.$helix-success-theme);
 
   border-left-color: #018760;
   background-color: hlx.$surface-positive;
@@ -62,7 +64,7 @@
 }
 
 .hlx-notification--warn {
-  @include mat.button-color(hlx.$helix-error-theme);
+  @include mat.button-color(hlx-themes.$helix-error-theme);
 
   border-left-color: hlx-primitives.$color-red-500;
   background-color: hlx.$surface-negative;
