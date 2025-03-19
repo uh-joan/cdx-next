@@ -1,0 +1,592 @@
+<hlx-page
+  [title]="'Oti Snippets'"
+  [subtitle]="
+    'This API is designed to use OneTrust as Cookies acceptance manager and integrate some analytics tools (such as pendo) within it.'
+  "
+  [section]="'Services'"
+>
+  <h1>Installation</h1>
+
+  <p>
+    The API is prepared to be installed as a package or imported as a
+    <cdx-external-link
+      text="UMD"
+      url="https://github.com/umdjs/umd"
+    ></cdx-external-link>
+    file, for those implementations that do not use modules.
+  </p>
+  <mat-divider></mat-divider>
+
+  <h5>Installation on npm projects</h5>
+  <p>
+    First, it is necessary to point the project to the Clarivate package
+    repository instead of NPM, because the current package is only available for
+    use by Clarivate projects. Create a file at the root of your project, in the
+    same place as package.json, name it .npmrc (don't forget the leading dot!)
+    and give it this content:
+  </p>
+  <cdx-highlight
+    text="@sp:registry = https://repo.clarivate.io/artifactory/api/npm/npm-central/"
+  ></cdx-highlight>
+  <p>Then, install the library containing the snippet.</p>
+  <cdx-highlight text="npm install @sp/oti-snippet"></cdx-highlight>
+
+  <mat-divider></mat-divider>
+
+  <h5>Installation on non npm projects</h5>
+  <p>Import the library in the header of the application index.html:</p>
+
+  <cdx-highlight [text]="scriptRegistry"></cdx-highlight>
+
+  <p>
+    Notice that
+    <em
+      ><strong>{{ '{' }}VERSION {{ '}' }}</strong></em
+    >
+    must be replaced by the desired library version, for example in case of
+    1.1.61, the import should be:
+  </p>
+
+  <cdx-highlight [text]="scriptRegistryWithVersion"></cdx-highlight>
+
+  <p>
+    <strong> !NOTE:</strong> Check the versions section at the end of the
+    document.
+  </p>
+
+  <p>
+    There is also a latest folder with the most up to dated version of the
+    repository. It is not recomended, almost forbidden, to use this url in
+    production environments. But it might be useful on development:
+  </p>
+
+  <cdx-highlight [text]="scriptRegistryWithLatestVersion"></cdx-highlight>
+
+  <mat-divider></mat-divider>
+
+  <h1>Usage</h1>
+
+  <p>
+    The use of the Oti library depends on whether the library has been imported
+    as an npm package or as an umd file. In the first case the library can be
+    imported as a module; while in the second it is referenced a global
+    variable.
+  </p>
+
+  <h5>Usage as module</h5>
+
+  <p>In case of using npm, the Oti resources can be imported as a module:</p>
+
+  <cdx-highlight [text]="usageAsModule"></cdx-highlight>
+
+  <mat-divider> </mat-divider>
+
+  <h5>Usage as a variable</h5>
+
+  <p>
+    The script import provides the Oti package as a global variable. This
+    package contains the OtiService, which should be used like this:
+  </p>
+
+  <cdx-highlight [text]="usageAsAVariable"></cdx-highlight>
+
+  <p>
+    The service creation and initialization can be done as soon as pendo details
+    are available. Sometime those details are obtained from a request call;
+    then, should be done after obtaining the response.
+  </p>
+
+  <p>This applies to both npm and non npm usage.</p>
+
+  <mat-divider> </mat-divider>
+
+  <h2>Options</h2>
+
+  <p>The OtiService initialize method can receive the following options:</p>
+
+  <table mat-table [dataSource]="dataSourceOptions" class="mat-elevation-z8">
+    <ng-container matColumnDef="option">
+      <th mat-header-cell *matHeaderCellDef>Option</th>
+      <td mat-cell *matCellDef="let element">{{ element.option }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="required">
+      <th mat-header-cell *matHeaderCellDef>Required</th>
+      <td mat-cell *matCellDef="let element">{{ element.required }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="type">
+      <th mat-header-cell *matHeaderCellDef>Type</th>
+      <td mat-cell *matCellDef="let element">{{ element.type }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="default">
+      <th mat-header-cell *matHeaderCellDef>Default</th>
+      <td mat-cell *matCellDef="let element">{{ element.default }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="description">
+      <th mat-header-cell *matHeaderCellDef>Description</th>
+      <td mat-cell *matCellDef="let element">{{ element.description }}</td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumnsOptions"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumnsOptions"></tr>
+  </table>
+
+  <mat-divider></mat-divider>
+
+  <h1>Methods</h1>
+
+  <table mat-table [dataSource]="dataSourceMethods" class="mat-elevation-z8">
+    <ng-container matColumnDef="method">
+      <th mat-header-cell *matHeaderCellDef>Method</th>
+      <td mat-cell *matCellDef="let element">{{ element.method }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="params">
+      <th mat-header-cell *matHeaderCellDef>Parameters</th>
+      <td mat-cell *matCellDef="let element">{{ element.params || '-' }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="returnType">
+      <th mat-header-cell *matHeaderCellDef>Return Type</th>
+      <td mat-cell *matCellDef="let element">{{ element.returnType }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="description">
+      <th mat-header-cell *matHeaderCellDef>Description</th>
+      <td mat-cell *matCellDef="let element">{{ element.description }}</td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumnsMethods"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumnsMethods"></tr>
+  </table>
+
+  <mat-divider></mat-divider>
+
+  <h2>Use cases</h2>
+
+  <p>
+    In the following sections are explained some uses cases that tries to help
+    in order to decide the options configuration.
+  </p>
+
+  <h6>One Trust integration</h6>
+
+  <p>
+    This is the minimum and necessary configuration. This API is designed to use
+    OneTrust and integrate some other tools within it. For that reason, ot_key
+    is a required attribute:
+  </p>
+
+  <cdx-highlight [text]="oneTrustIntegration"></cdx-highlight>
+
+  <p>
+    The attribute prod_domain allow notifying which is the host used for
+    production, in order to load OneTrust for production or development mode.
+    But, it can be replaced by the attribute prod_env, in case the corresponding
+    flag is available.
+  </p>
+
+  <cdx-highlight [text]="oneTrustIntegrationEnv"></cdx-highlight>
+
+  <p>
+    With this configuration, One Trust will be loaded and the Cookie Preferences
+    Banner will appear when accessing the application. The Cookie Categories
+    shown in the Cookies Configuration Panel depend on the scan associated with
+    the provided key.
+  </p>
+
+  <mat-divider> </mat-divider>
+
+  <h6>Listening to Cookies changes</h6>
+
+  <p>
+    The following example shows how to an application can listen to Cookie
+    settings modifications.
+  </p>
+
+  <cdx-highlight [text]="cookieChanges"></cdx-highlight>
+
+  <mat-divider></mat-divider>
+
+  <h1>Pendo integration</h1>
+  <p>Pendo is an analytic tool used with those main goals:</p>
+  <ul>
+    <li>Provide application news, help and guidance</li>
+    <li>Track user application usage</li>
+  </ul>
+  <p>
+    To comply with the legislation of some countries, these functionalities must
+    be subjected to the acceptance of cookies.
+  </p>
+  <p>
+    This API enables pendo and OneTrust integration, in order to satisfy this
+    compliance. To achieve this, is necessary to set up, at least, the pendo_key
+    and pendo_details attributes:
+  </p>
+
+  <cdx-highlight [text]="pendoIntegration"></cdx-highlight>
+
+  <p>
+    With this configuration, Pendo will be loaded and initialized depending on
+    the user Cookies acceptance and Pendo configuration.
+  </p>
+
+  <h6>Pendo communication and backend integration</h6>
+  <p>
+    User information is stored in pendo application using three request calls:
+  </p>
+  <ul>
+    <li>
+      Visitor creation
+      <cdx-highlight [text]="visitorCreation"></cdx-highlight>
+      <p>
+        The body data for this request is obtained from pendo_visitor_payload
+        attribute.
+      </p>
+    </li>
+
+    <li>
+      DNP update
+      <cdx-highlight [text]="dnpUpdate"></cdx-highlight>
+    </li>
+
+    <li>
+      Metadata update
+      <cdx-highlight [text]="metadataUpdate"></cdx-highlight>
+    </li>
+  </ul>
+
+  <p>
+    Executing those requests directly from the front-end application implies
+    several issues:
+  </p>
+  <ul>
+    <li>The request to a different domain might lead to Cross-Origin error</li>
+    <li>
+      Exposing x-pendo-integration-keyin the request header is insecure. A
+      malicious user might use it to generate fake usage of the application.
+    </li>
+  </ul>
+  <p>In order to solve those issues there are two proposed workarounds:</p>
+  <ul>
+    <li>Using a reverse proxy</li>
+    <li>Using backend services as proxy</li>
+  </ul>
+  <p>
+    In both cases, the solution implies specifying an internal url for the pendo
+    requests. The attributes pendo_visitor_url, pendo_dnp_url and
+    pendo_visitor_url are made for that purpose:
+  </p>
+
+  <cdx-highlight [text]="workAroud1"></cdx-highlight>
+
+  <p>
+    By default, the request for pendo_visitor_url uses POST method and
+    pendo_dnp_url and pendo_metadata_url uses PUT. Those methods can be modified
+    with the pendo_visitor_method, pendo_dnp_method and pendo_metadata_method
+    attributes.
+  </p>
+
+  <h6>Reverse proxy</h6>
+  <p>
+    In case of having a reverse proxy it can be used to handle those requests.
+  </p>
+  <p>
+    For example, in case of having Nginx, it could be handled with the following
+    config:
+  </p>
+
+  <cdx-highlight [text]="reverseProxy"></cdx-highlight>
+
+  <p>
+    Or in case of an Angular app, adding the next entry into the proxy.conf
+    file:
+  </p>
+
+  <cdx-highlight [text]="angular"></cdx-highlight>
+
+  <p>
+    There are other Nginx configurations that allow this functionality,
+    depending on whether other parameters are required, etc. Or even different
+    reverse proxies. Please consult their documentation.
+  </p>
+
+  <h6>Proxy service</h6>
+
+  <p>
+    In case of not having a reverse proxy available, the solution would be
+    implement a custom service which receive the request from the front and
+    execute a request call to https://app.pendo.io, injecting the
+    x-pendo-integration-key header.
+  </p>
+
+  <br />
+  <h2>Custom headers</h2>
+  <p>
+    In some cases is necessary to add some header parameters to the pendo
+    requests: authentication, api identification, etc. For that purpose exists
+    the request_headers attribute:
+  </p>
+
+  <cdx-highlight [text]="customHeaders"></cdx-highlight>
+
+  <br />
+  <h2>CNAME</h2>
+
+  <p>
+    CNAME features, handled by the attributes pendo_cname_content and
+    pendo_cname_content, helps ensure that events are collected and guides are
+    served to end users who are subject to ad-blocking software, firewalls, web
+    filters, etc. Visit CNAME setups for more information.
+  </p>
+
+  <p>
+    That might be an implementation of local urls for pendo guides and events:
+  </p>
+  <cdx-highlight [text]="cname"></cdx-highlight>
+  <p>
+    In that case the application must have a service or a reverse proxy for
+    handling those urls. There is an example of a Nginx configuration for those
+    urls:
+  </p>
+  <cdx-highlight [text]="cname2"></cdx-highlight>
+  <p>
+    <strong>NOTE:</strong> The url
+    https://pendo-static-XXXXXXXXX.storage.googleapis.com is specific of each
+    project and depends on Pendo configuration. You can get this url by
+    executing pendo.validateEnvironment() from the browser console. The output
+    of this command will contain the url, under Validate Config options >
+    allowedOriginServers.
+  </p>
+
+  <br />
+  <h2>Anonymous user</h2>
+  <p>
+    In case of public applications, where no login is required, the OTIService
+    generates an anonymous visitorId automatically. In that case,
+    pendo_visitor_payload attribute is not necessary and will be generated
+    automatically with the generated visitorId.
+  </p>
+
+  <cdx-highlight [text]="anonymousUser"></cdx-highlight>
+  <p>
+    In case of needing to customize the generation of anonymous users, the
+    pendo_visitor_id_generator attribute can be used:
+  </p>
+  <cdx-highlight [text]="anonymousUser2"></cdx-highlight>
+  <p>
+    In case of needing to customize the visitor payload, the
+    pendo_visitor_payload attribute receive a function that receives the
+    generated visitorId and returns the payload:
+  </p>
+  <cdx-highlight [text]="anonymousUser3"></cdx-highlight>
+
+  <mat-divider></mat-divider>
+
+  <h1>Snowplow integration</h1>
+  <p>
+    Snowplow is an analytic tool used to track user events and page views. To
+    integrate Snowplow with the OtiService, it is necessary to set up the
+    snowplow_enabled attribute as true:
+  </p>
+  <cdx-highlight [text]="snowPlow"></cdx-highlight>
+  <p>
+    With this configuration, Snowplow will be loaded and initialized depending
+    on the user Cookies acceptance and Snowplow configuration.
+  </p>
+
+  <mat-divider></mat-divider>
+
+  <h1>ZenDesk Integration</h1>
+  <p>This API enables ZenDesk and Pendo integration.</p>
+  <p>To achieve this, is only necessary to set up the zendesk_key attribute:</p>
+  <cdx-highlight [text]="zenDesk"></cdx-highlight>
+  <p>
+    With this configuration, Zendesk will be loaded and initialized depending on
+    its configuration.
+  </p>
+
+  <mat-divider></mat-divider>
+
+  <h1>Domain and subdomain issues</h1>
+  <p>
+    There is a known issue with the OneTrust API when exists different
+    applications sharing the same main domain with different OT Keys.
+  </p>
+  <p>
+    For example, having the applications http://clarivate.com and
+    http://myapp.clarivate.com. If a user chose their preferences for
+    http://clarivate.com they automatically apply to http://myapp.clarivate.com,
+    which is not the desired behaviour.
+  </p>
+  <p>
+    <strong>NOTE:</strong> It is imporant to highlight the issue applies to this
+    particular case. Take into account the following considerations:
+  </p>
+  <ul>
+    <li>
+      Applications http://clarivate.com and http://myapp.clarivate.com have
+      different cookies requirements > and have been scanned separately, so they
+      have a different OT Key.
+    </li>
+    <li>
+      Both applications are set up in OT with the same domain, generally the
+      root domain /. > If the application domains were
+      http://clarivate.com/company and http://clarivate.com/myapp; > and they
+      would be registered in OT with the domains /company and /myapp, the issue
+      would not apply.
+    </li>
+  </ul>
+  <h6>The problem</h6>
+  <p>
+    OneTrust API generates some global variables depending on user cookies
+    setup. Those are: dataLayer, OnetrustActiveGroups, etc. But, when different
+    applications coexist sharing part of their domain, those variables mix the
+    user preferences between the subdomain and the main domain. As a result,
+    using those variables to determine whether enable analytics or not is not
+    truthful.
+  </p>
+  <p>
+    The issue has to do with how OneTrust API reads cookies and how browsers'
+    manage those cookies. The API stores the user preferences as a Cookie with
+    the name OptanonConsent. Generally, cookies have a name that allows them to
+    be distinguished from each other, but the fact is the browser allows
+    different cookies to be stored with the same name if they belong to a
+    different domain.
+  </p>
+  <p>
+    But, when reading the cookies it is not possible to specify or distinguish
+    the cookie from one domain or other. They are retrieved with the same name:
+  </p>
+  <cdx-highlight [text]="problem"></cdx-highlight>
+  <p>
+    The OneTrust API is not prepared for this, so they take one of the for
+    building the mentioned global variables.
+  </p>
+  <h6>The solution</h6>
+  <p>
+    OneTrust allows using browser Local Storage instead of cookies for storing
+    the user preferences.
+  </p>
+  <p>
+    This is achieved by importing the OneTrust SDK adding the attribute amp=true
+    to the script import. But using the OTIService is as simple as setting to
+    true the ot_localStorage attribute:
+  </p>
+  <cdx-highlight [text]="solution"></cdx-highlight>
+
+  <mat-divider></mat-divider>
+
+  <h1>Keys and more keys</h1>
+
+  <p>
+    In relation with OneTrust and Pendo Integration, there are several keys
+    involved that have been mentioned above. Distinguishing between those keys
+    can be confusing; so this section tries to summarize what those keys are and
+    what they are for.
+  </p>
+
+  <ul>
+    <li>OneTrust Key</li>
+    <li>Pendo API Key</li>
+    <li>Pendo Integration Key</li>
+    <li>Zendesk Key</li>
+  </ul>
+  <p>
+    The OneTrust Key corresponds with the application Cookies scan. It is
+    generally provided by the platform team, at the initial stages of the
+    implementation. The key is provided by opening a Jira ticket, cloned from
+    <cdx-external-link
+      url="https://jira.clarivate.io/browse/PEP-21"
+      text="this"
+    ></cdx-external-link>
+    . Finally, when having the key it must set as the ot_key option attribute
+    when creating the OtiService.
+  </p>
+  <p>
+    The Pendo API Key corresponds with the specific Pendo settings for each
+    application. Which mainly includes Pendo Guides and Tracking. It should be
+    provided by the Product Owner and must be specific for application. This key
+    is set as the pendo_key option attribute when creating the OtiService.
+  </p>
+  <p>
+    The Pendo Integration Key is used for authenticating the requests executed
+    to Pendo. This key must be hidden from the user, and is sent via a header
+    parameter ´x-pendo-integration-key´. You can read further information
+    <cdx-external-link
+      url="https://engageapi.pendo.io/?bash#authentication"
+      text="here"
+    ></cdx-external-link>
+    .
+  </p>
+
+  <mat-divider></mat-divider>
+
+  <h1>Versions</h1>
+
+  <p>
+    This section tries to enum the main versions of the library, and the changes
+    on each version:
+  </p>
+
+  <ul>
+    <li><strong>1.1.23</strong> - Initial version.</li>
+    <li>
+      <strong>1.1.27</strong>
+      <ul>
+        <li>Performance upgrade.</li>
+        <li>Initialize Pendo App right after visitor is created.</li>
+        <li>
+          Add <code>pendo_optimize_requests</code> parameter to minimize Pendo
+          API requests.
+        </li>
+      </ul>
+    </li>
+    <li>
+      <strong>1.1.28</strong> - Add
+      <code>requestWithCredentials</code> parameter to include credentials in
+      requests to different domains.
+    </li>
+    <li>
+      <strong>1.1.29</strong> - Fix error 451 Unavailable For Legal Reasons when
+      enabling Functional cookies. Bug introduced in 1.1.27.
+    </li>
+    <li><strong>1.1.30</strong> - Implement CName for Pendo Engage.</li>
+    <li>
+      <strong>1.1.33</strong> - Fix error: <code>isReady</code> undefined on
+      Pendo.js lazy load.
+    </li>
+    <li><strong>1.1.35</strong> - Implement ZenDesk integration.</li>
+    <li>
+      <strong>1.1.37</strong>
+      <ul>
+        <li>New functionalities:</li>
+        <li>Add method <code>openCookiePreferences</code>.</li>
+        <li>Add <code>ot_language</code> parameter.</li>
+      </ul>
+    </li>
+    <li><strong>1.1.39</strong> - Add Zendesk JWT authentication.</li>
+    <li>
+      <strong>1.1.54</strong>
+      <ul>
+        <li>
+          Update Zendesk links within WebWidget to be automatically
+          authenticated.
+        </li>
+        <li>
+          Add attributes:
+          <ul>
+            <li><code>zendesk_access_url</code></li>
+            <li><code>zendesk_help_center_url</code></li>
+            <li><code>zendesk_redirect_to_help_center</code></li>
+            <li><code>zendesk_hide_article_link</code></li>
+            <li><code>zendesk_position</code></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</hlx-page>

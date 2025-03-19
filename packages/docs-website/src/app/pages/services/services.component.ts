@@ -30,6 +30,10 @@ export class ServicesComponent {
           url: 'session-activity-management',
         },
         {
+          label: 'Oti Snippet',
+          url: 'oti-snippet',
+        },
+        {
           label: 'Translations',
           url: 'translations',
         },

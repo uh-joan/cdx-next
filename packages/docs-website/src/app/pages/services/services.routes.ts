@@ -36,6 +36,13 @@ export const servicesRoutes: Routes = [
           ).then((m) => m.SessionActivityManagementComponent),
       },
       {
+        path: 'oti-snippet',
+        loadComponent: () =>
+          import('./oti-snippet/oti-snippet.component').then(
+            (c) => c.OtiSnippetComponent,
+          ),
+      },
+      {
         path: 'translations',
         loadComponent: () =>
           import('./translations/translations.component').then(
