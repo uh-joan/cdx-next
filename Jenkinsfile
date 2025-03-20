@@ -301,8 +301,8 @@ pipeline {
                 ) {
                     sh '''
                         npm run deploy:website -- \
-                            --bucket cdx-rcx-stories.dev.sp.aws.clarivate.net \
-                            --distribution E3GW94L15KJF3T
+                            --bucket helix-v19.dev.sp.aws.clarivate.net \
+                            --distribution E3384JA1YITDIC
                     '''
                 }
             }
