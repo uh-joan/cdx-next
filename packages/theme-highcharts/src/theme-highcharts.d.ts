@@ -1,6 +1,5 @@
-import type Highcharts from 'highcharts';
-export declare const CDX_FONT_FAMILY = '"Source Sans Pro", sans-serif';
-export declare const CDX_MATERIAL_THEME_COLORS: string[];
+export declare const HLX_FONT_FAMILY = '"Source Sans 3", sans-serif';
+export declare const HLX_HIGHCHARTS_THEME_COLORS: string[];
 export declare const CDX_BRAND_PRIMARY_COLORS: string[];
 export declare const CDX_BRAND_PRIMARY_HOVER_COLORS: string[];
 export declare const CDX_BRAND_SECONDARY_COLORS: string[];
@@ -10,3 +9,4 @@ export declare const CDX_BRAND_TERTIARY_HOVER_COLORS: string[];
 export declare const HIGHCHARTS_CDX_THEME: Highcharts.Options;
 export declare const HIGHCHARTS_CDX_SECONDARY_THEME: Highcharts.Options;
 export declare const HIGHCHARTS_CDX_TERTIARY_THEME: Highcharts.Options;
+export declare const version = 'version 19';

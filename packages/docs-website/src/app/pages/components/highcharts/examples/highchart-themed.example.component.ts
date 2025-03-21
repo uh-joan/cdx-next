@@ -1,5 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+// @ts-expect-error no type is defined here
+// eslint-disable-next-line @nx/enforce-module-boundaries
+import { HIGHCHARTS_HLX_THEME } from '@cdx/theme-highcharts';
 import * as Highcharts from 'highcharts';
 import HighchartsAccessibilityModule from 'highcharts/modules/accessibility';
 import { HighchartsChartModule } from 'highcharts-angular';
@@ -22,8 +25,7 @@ const styleCode = `.story {
         height: 400px;
         display: block
     }
-}`;
-// import { HIGHCHARTS_CDX_THEME } from '@cdx/theme-highcharts'; // TODO FIX THIS
+}`; // TODO FIX THIS
 
 HighchartsAccessibilityModule(Highcharts);
 
@@ -34,7 +36,7 @@ HighchartsAccessibilityModule(Highcharts);
 })
 class SampleComponent {
   constructor() {
-    // Highcharts.setOptions(HIGHCHARTS_CDX_THEME);
+    Highcharts.setOptions(HIGHCHARTS_HLX_THEME);
   }
   Highcharts: typeof Highcharts = Highcharts;
   chartOptionsThemed: Highcharts.Options = {

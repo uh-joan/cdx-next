@@ -1,4 +1,5 @@
 /* stylelint-disable color-hex-length */
+@import 'https://code.highcharts.com/css/highcharts.css';
 
 $cdx-brand-primary-colors: #5e33bf, #16ab03, #cf005b, #5693f5, #ff4e3e, #9c27b0,
   #cddc39, #00bcd4, #304ffe, #8bc34a;
@@ -11,10 +12,6 @@ $cdx-brand-tertiary-colors: #00bfa5, #607d8b, #3f51b5, #03a9f4, #aeea00, #ffab00
 
 $cdx-font-family: 'Source Sans Pro', sans-serif;
 
-.highcharts-container {
-  font-family: $cdx-font-family;
-}
-
 @mixin cdx-highcharts-styled-mode-theme(
   $color-palette: $cdx-brand-primary-colors
 ) {
@@ -23,6 +20,29 @@ $cdx-font-family: 'Source Sans Pro', sans-serif;
     .highcharts-color-#{$i - 1} {
       fill: $color;
       stroke: $color;
+    }
+  }
+}
+
+$hlx-font-family: 'Source Sans 3', sans-serif;
+$hlx-highcharts-colors: #b175e1, #18a381, #3595f0, #ed5564, #5e33bf, #003f51,
+  #a39300, #ec40db, #c8582a, #1e48dd, #558b2f, #282c75, #ec407a, #0277bd,
+  #165550, #9f7d1c, #ad1457, #00897b, #1565c0, #d81b60, #6b9e00, #0378ff,
+  #8c1d66, #ef6c00, #933f1d, #8e9926, #00a0b5, #e53935, #5c6bc0, #c28b00,
+  #00695c, #f4511e, #8e24aa, #43a047, #c2156e, #b67325, #ab47bc, #2e7d32,
+  #1b809f, #c13800;
+
+.highcharts-container {
+  font-family: $hlx-font-family;
+}
+
+@mixin hlx-highcharts-styled-mode-theme(
+  $color-palette: $hlx-highcharts-colors
+) {
+  body {
+    @for $i from 1 through length($color-palette) {
+      $color: nth($color-palette, $i);
+      --highcharts-color-#{$i - 1}: #{$color};
     }
   }
 }

@@ -18,6 +18,9 @@
   @include mat.badge-color(hlx.$helix-theme, $color-variant: tertiary);
 }
 
+@import '@cdx/theme-highcharts';
+@include hlx-highcharts-styled-mode-theme;
+
 body {
   margin: 0;
 

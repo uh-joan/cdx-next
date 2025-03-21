@@ -20,6 +20,7 @@ async function getConfig() {
     'theme-expansion-panel',
     'theme-material-components-web',
     'theme-react-mui',
+    'theme-highcharts',
   ];
 
   return {
