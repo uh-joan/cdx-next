@@ -6,6 +6,7 @@
   "tags": ["exclude-from-build"],
   "targets": {
     "build": {
+      "builder": "@angular-devkit/build-angular:browser-esbuild",
       "configurations": {
         "development": {
           "allowedCommonJsDependencies": ["sha1", "uuid"],
@@ -33,7 +34,6 @@
         }
       },
       "defaultConfiguration": "production",
-      "executor": "@angular-devkit/build-angular:browser",
       "options": {
         "assets": [
           "packages/docs-website/src/favicon.ico",
