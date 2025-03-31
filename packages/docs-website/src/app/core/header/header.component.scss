@@ -24,6 +24,14 @@
       }
     }
 
+    &__select {
+      width: 12.75rem;
+    }
+
+    .hlx-header__global {
+      column-gap: 2rem;
+    }
+
     .hlx-header__product-name-or-logo {
       cursor: pointer;
     }

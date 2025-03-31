@@ -15,6 +15,11 @@
     }
   </nav>
   <hlx-header-global>
+    <mat-select class="header__select" [formControl]="versionControl">
+      @for (version of versions; track version) {
+      <mat-option [value]="version"> Version: {{ version }} </mat-option>
+      }
+    </mat-select>
     <cdx-search></cdx-search>
   </hlx-header-global>
 </header>

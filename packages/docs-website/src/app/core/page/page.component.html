@@ -6,6 +6,9 @@
     <mat-divider></mat-divider>
   </div>
   <div class="content">
+    @if(componentName) {
+    <hlx-material-doc [title]="componentName"></hlx-material-doc>
+    }
     <ng-content></ng-content>
   </div>
 </div>
