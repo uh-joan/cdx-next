@@ -39,12 +39,15 @@ export class HeaderComponent implements OnDestroy {
       .getAllHelixVersions()
       .subscribe((versions) => {
         this.versions = versions;
+        const mainVersions = this.versions.map(
+          (version) => version.split('.')[0],
+        );
 
         const url = window.location.href;
         const versionMatch = url.match(/^https:\/\/v(\d+)-/);
         if (versionMatch) {
           const versionNumber = versionMatch[1];
-          if (this.versions.includes(versionNumber)) {
+          if (mainVersions.includes(versionNumber)) {
             this.versionControl.setValue(versionNumber);
           }
         } else {
@@ -58,12 +61,9 @@ export class HeaderComponent implements OnDestroy {
 
         this.versionControl.valueChanges.subscribe((version: string | null) => {
           if (version) {
+            const mainVersions = version.split('.')[0];
             const currentPath = this.router.url.replace(/^\//, '');
-            if (version.includes('latest')) {
-              window.location.href = `https://design-lsh.clarivate.io/${currentPath}`;
-            } else {
-              window.location.href = `https://v${version}-helix-website.dev.sp.aws.clarivate.net/${currentPath}`;
-            }
+            window.location.href = `https://v${mainVersions}-helix-website.dev.sp.aws.clarivate.net/${currentPath}`;
           }
         });
       });
