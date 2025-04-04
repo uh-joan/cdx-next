@@ -48,7 +48,10 @@ export class HeaderComponent implements OnDestroy {
         if (versionMatch) {
           const versionNumber = versionMatch[1];
           if (mainVersions.includes(versionNumber)) {
-            this.versionControl.setValue(versionNumber);
+            const matchingVersion = this.versions.find((version) =>
+              version.startsWith(versionNumber + '.'),
+            );
+            this.versionControl.setValue(matchingVersion);
           }
         } else {
           const latestVersion = this.versions.find((version) =>

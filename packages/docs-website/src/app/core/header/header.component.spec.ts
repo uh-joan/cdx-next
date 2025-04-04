@@ -25,7 +25,7 @@ describe('HeaderComponent', () => {
     });
 
     headerServiceSpy.getAllHelixVersions.mockReturnValue(
-      of(['1.0.0', '2.0.0', 'latest']),
+      of(['1.0.0', '2.0.0', '3.0.0 (latest)']),
     );
 
     component = new HeaderComponent(routerSpy, headerServiceSpy);
@@ -33,7 +33,7 @@ describe('HeaderComponent', () => {
 
   it('should fetch all Helix versions on initialization', () => {
     expect(headerServiceSpy.getAllHelixVersions).toHaveBeenCalled();
-    expect(component.versions).toEqual(['1.0.0', '2.0.0', 'latest']);
+    expect(component.versions).toEqual(['1.0.0', '2.0.0', '3.0.0 (latest)']);
   });
 
   it('should set versionControl to the matched version from URL', () => {
@@ -43,7 +43,7 @@ describe('HeaderComponent', () => {
 
     component = new HeaderComponent(routerSpy, headerServiceSpy);
 
-    expect(component.versionControl.value).toBe('2');
+    expect(component.versionControl.value).toBe('2.0.0');
   });
 
   it('should set versionControl to the latest version if no match is found', () => {
@@ -53,6 +53,6 @@ describe('HeaderComponent', () => {
 
     component = new HeaderComponent(routerSpy, headerServiceSpy);
 
-    expect(component.versionControl.value).toBe('latest');
+    expect(component.versionControl.value).toBe('3.0.0 (latest)');
   });
 });
