@@ -1,58 +1,64 @@
-import { TestBed } from '@angular/core/testing';
-import { Router } from '@angular/router';
-import { jest } from '@jest/globals';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ReactiveFormsModule } from '@angular/forms';
+import { RouterTestingModule } from '@angular/router/testing';
 import { of } from 'rxjs';
 
 import { HeaderComponent } from './header.component';
 import { HeaderService } from './header.service';
 
+class MockHeaderService {
+  getAllHelixVersions = jest
+    .fn()
+    .mockReturnValue(of(['1.0.0', '2.0.0', '3.0.0']));
+  http = { get: jest.fn() };
+}
+
 describe('HeaderComponent', () => {
   let component: HeaderComponent;
-  let headerServiceSpy: jest.Mocked<HeaderService>;
-  let routerSpy: jest.Mocked<Router>;
+  let fixture: ComponentFixture<HeaderComponent>;
 
-  beforeEach(() => {
-    headerServiceSpy = {
-      getAllHelixVersions: jest.fn(),
-    } as unknown as jest.Mocked<HeaderService>;
-    routerSpy = { url: '/test-path' } as unknown as jest.Mocked<Router>;
-
-    TestBed.configureTestingModule({
-      providers: [
-        { provide: HeaderService, useValue: headerServiceSpy },
-        { provide: Router, useValue: routerSpy },
-      ],
-    });
-
-    headerServiceSpy.getAllHelixVersions.mockReturnValue(
-      of(['1.0.0', '2.0.0', '3.0.0 (latest)']),
-    );
-
-    component = new HeaderComponent(routerSpy, headerServiceSpy);
+  beforeAll(() => {
+    // eslint-disable-next-line @typescript-eslint/no-empty-function
+    jest.spyOn(window.history, 'pushState').mockImplementation(() => {});
   });
 
-  it('should fetch all Helix versions on initialization', () => {
-    expect(headerServiceSpy.getAllHelixVersions).toHaveBeenCalled();
-    expect(component.versions).toEqual(['1.0.0', '2.0.0', '3.0.0 (latest)']);
+  beforeEach(() => {
+    TestBed.configureTestingModule({
+      imports: [
+        RouterTestingModule,
+        ReactiveFormsModule,
+        HttpClientTestingModule,
+      ],
+      providers: [{ provide: HeaderService, useClass: MockHeaderService }],
+    }).compileComponents();
+
+    fixture = TestBed.createComponent(HeaderComponent);
+    component = fixture.componentInstance;
   });
 
   it('should set versionControl to the matched version from URL', () => {
-    jest.spyOn(window, 'location', 'get').mockReturnValue({
-      href: 'https://v2-helix-website.dev.sp.aws.clarivate.net/test-path',
-    } as Location);
+    Object.defineProperty(window, 'location', {
+      value: {
+        href: 'https://v2-helix-website.dev.sp.aws.clarivate.net/',
+      },
+      writable: true,
+    });
 
-    component = new HeaderComponent(routerSpy, headerServiceSpy);
+    fixture.detectChanges();
 
-    expect(component.versionControl.value).toBe('2.0.0');
+    expect(component.currentVersion).toBe('2.0.0');
   });
 
-  it('should set versionControl to the latest version if no match is found', () => {
-    jest.spyOn(window, 'location', 'get').mockReturnValue({
-      href: 'https://helix-website.dev.sp.aws.clarivate.net/test-path',
-    } as Location);
+  it('should default to latest version if no version in URL', () => {
+    Object.defineProperty(window, 'location', {
+      value: {
+        href: 'hhttps://design-lsh.clarivate.io',
+      },
+      writable: true,
+    });
 
-    component = new HeaderComponent(routerSpy, headerServiceSpy);
-
-    expect(component.versionControl.value).toBe('3.0.0 (latest)');
+    fixture.detectChanges();
+    expect(component.currentVersion).toBe('3.0.0 (latest)');
   });
 });

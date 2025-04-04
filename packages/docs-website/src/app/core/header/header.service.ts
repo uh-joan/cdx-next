@@ -9,6 +9,8 @@ export class HeaderService {
   constructor(private http: HttpClient) {}
 
   getAllHelixVersions(): Observable<string[]> {
-    return this.http.get<string[]>('assets/helix-versions.json');
+    return this.http.get<string[]>(
+      'https://v19-helix-website.dev.sp.aws.clarivate.net/assets/helix-versions.json',
+    );
   }
 }

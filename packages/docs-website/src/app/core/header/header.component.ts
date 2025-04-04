@@ -1,13 +1,12 @@
-import { Component, OnDestroy } from '@angular/core';
-import { FormControl, ReactiveFormsModule } from '@angular/forms';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
-import { MatSelectModule } from '@angular/material/select';
+import { MatMenuModule } from '@angular/material/menu';
 import { Router, RouterModule } from '@angular/router';
 import {
   HelixHeaderComponent,
   HelixHeaderGlobalComponent,
 } from '@cdx/ngx-branding';
-import { Subscription } from 'rxjs';
+import { first } from 'rxjs';
 
 import { SearchComponent } from '../search/search.component';
 import { links, NavigationLink } from './header.config';
@@ -21,58 +20,62 @@ import { HeaderService } from './header.service';
     SearchComponent,
     RouterModule,
     MatButtonModule,
-    MatSelectModule,
-    ReactiveFormsModule,
+    MatMenuModule,
   ],
   templateUrl: './header.component.html',
-  styleUrl: './header.component.scss',
+  styleUrls: ['./header.component.scss'],
 })
-export class HeaderComponent implements OnDestroy {
+export class HeaderComponent implements OnInit {
   links: NavigationLink[] = links;
 
   versions: string[] = [];
-  versionControl = new FormControl();
-  allVersionsSubscription?: Subscription;
+  currentVersion?: string;
 
-  constructor(private router: Router, private headerService: HeaderService) {
-    this.allVersionsSubscription = this.headerService
+  constructor(private router: Router, private headerService: HeaderService) {}
+
+  ngOnInit(): void {
+    this.headerService
       .getAllHelixVersions()
+      .pipe(first())
       .subscribe((versions) => {
-        this.versions = versions;
-        const mainVersions = this.versions.map(
-          (version) => version.split('.')[0],
-        );
+        this.versions = versions.sort((a, b) => {
+          const versionA = a.split('.').map((num) => parseInt(num, 10));
+          const versionB = b.split('.').map((num) => parseInt(num, 10));
 
-        const url = window.location.href;
-        const versionMatch = url.match(/^https:\/\/v(\d+)-/);
-        if (versionMatch) {
-          const versionNumber = versionMatch[1];
-          if (mainVersions.includes(versionNumber)) {
-            const matchingVersion = this.versions.find((version) =>
-              version.startsWith(versionNumber + '.'),
-            );
-            this.versionControl.setValue(matchingVersion);
+          for (let i = 0; i < Math.min(versionA.length, versionB.length); i++) {
+            if (versionA[i] > versionB[i]) return -1;
+            if (versionA[i] < versionB[i]) return 1;
           }
-        } else {
-          const latestVersion = this.versions.find((version) =>
-            version.includes('latest'),
-          );
-          if (latestVersion) {
-            this.versionControl.setValue(latestVersion);
-          }
-        }
-
-        this.versionControl.valueChanges.subscribe((version: string | null) => {
-          if (version) {
-            const mainVersions = version.split('.')[0];
-            const currentPath = this.router.url.replace(/^\//, '');
-            window.location.href = `https://v${mainVersions}-helix-website.dev.sp.aws.clarivate.net/${currentPath}`;
-          }
+          return 0;
         });
+        this.versions[0] = this.versions[0] + ' (latest)';
+        this.updateVersionFromUrl();
       });
   }
 
-  ngOnDestroy(): void {
-    this.allVersionsSubscription?.unsubscribe;
+  onVersionSelected(version: string): void {
+    if (version) {
+      const mainVersion = version.split('.')[0];
+      const currentPath = this.router.url.replace(/^\//, '');
+      window.location.href = `https://v${mainVersion}-helix-website.dev.sp.aws.clarivate.net/${currentPath}`;
+    }
+  }
+
+  private updateVersionFromUrl(): void {
+    const versionMatch = window.location.href.match(/^https:\/\/v(\d+)-/);
+    const versionNumber = versionMatch && versionMatch[1];
+    const mainVersions = this.versions.map((version) => version.split('.')[0]);
+    const matchingVersion = this.versions.find((version) =>
+      version.startsWith(versionNumber + '.'),
+    );
+    if (
+      versionNumber &&
+      mainVersions.includes(versionNumber) &&
+      matchingVersion
+    ) {
+      this.currentVersion = matchingVersion;
+    } else {
+      this.currentVersion = this.versions[0];
+    }
   }
 }

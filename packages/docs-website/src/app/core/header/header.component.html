@@ -15,11 +15,16 @@
     }
   </nav>
   <hlx-header-global>
-    <mat-select class="header__select" [formControl]="versionControl">
+    <button class="header__menu" mat-button [matMenuTriggerFor]="versionMenu">
+      Version: {{ currentVersion }}
+    </button>
+    <mat-menu #versionMenu="matMenu">
       @for (version of versions; track version) {
-      <mat-option [value]="version"> Version: {{ version }} </mat-option>
+      <button mat-menu-item (click)="onVersionSelected(version)">
+        {{ version }}
+      </button>
       }
-    </mat-select>
+    </mat-menu>
     <cdx-search></cdx-search>
   </hlx-header-global>
 </header>
