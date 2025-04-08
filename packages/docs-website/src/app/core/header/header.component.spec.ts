@@ -10,7 +10,7 @@ import { HeaderService } from './header.service';
 class MockHeaderService {
   getAllHelixVersions = jest
     .fn()
-    .mockReturnValue(of(['1.0.0', '2.0.0', '3.0.0']));
+    .mockReturnValue(of(['18.0.0', '20.0.0', '30.0.0']));
   http = { get: jest.fn() };
 }
 
@@ -40,14 +40,14 @@ describe('HeaderComponent', () => {
   it('should set versionControl to the matched version from URL', () => {
     Object.defineProperty(window, 'location', {
       value: {
-        href: 'https://v2-helix-website.dev.sp.aws.clarivate.net/',
+        href: 'https://v20-helix-website.dev.sp.aws.clarivate.net/',
       },
       writable: true,
     });
 
     fixture.detectChanges();
 
-    expect(component.currentVersion).toBe('2.0.0');
+    expect(component.currentVersion).toBe('20.0.0');
   });
 
   it('should default to latest version if no version in URL', () => {
@@ -59,6 +59,6 @@ describe('HeaderComponent', () => {
     });
 
     fixture.detectChanges();
-    expect(component.currentVersion).toBe('3.0.0 (latest)');
+    expect(component.currentVersion).toBe('30.0.0 (latest)');
   });
 });

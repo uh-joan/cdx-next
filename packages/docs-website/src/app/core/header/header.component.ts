@@ -26,6 +26,7 @@ import { HeaderService } from './header.service';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
+  readonly MIN_SUPPORTED_VERSION = 18;
   links: NavigationLink[] = links;
 
   versions: string[] = [];
@@ -38,23 +39,50 @@ export class HeaderComponent implements OnInit {
       .getAllHelixVersions()
       .pipe(first())
       .subscribe((versions) => {
-        this.versions = versions.sort((a, b) => {
-          const versionA = a.split('.').map((num) => parseInt(num, 10));
-          const versionB = b.split('.').map((num) => parseInt(num, 10));
+        const filteredAndSorted = versions
+          .filter((version) => {
+            const major = parseInt(version.split('.')[0], 10);
+            return major >= this.MIN_SUPPORTED_VERSION;
+          })
+          .sort((a, b) => {
+            const versionA = a.split('.').map(Number);
+            const versionB = b.split('.').map(Number);
+            for (
+              let i = 0;
+              i < Math.min(versionA.length, versionB.length);
+              i++
+            ) {
+              if (versionA[i] > versionB[i]) return -1;
+              if (versionA[i] < versionB[i]) return 1;
+            }
+            return 0;
+          });
 
-          for (let i = 0; i < Math.min(versionA.length, versionB.length); i++) {
-            if (versionA[i] > versionB[i]) return -1;
-            if (versionA[i] < versionB[i]) return 1;
+        const seenMajors = new Set<string>();
+        const finalVersions: string[] = [];
+
+        for (const version of filteredAndSorted) {
+          const major = version.split('.')[0];
+          if (!seenMajors.has(major)) {
+            seenMajors.add(major);
+            finalVersions.push(version);
           }
-          return 0;
-        });
-        this.versions[0] = this.versions[0] + ' (latest)';
+        }
+
+        if (finalVersions.length > 0) {
+          finalVersions[0] += ' (latest)';
+          for (let i = 1; i < finalVersions.length; i++) {
+            finalVersions[i] = finalVersions[i].split('.')[0];
+          }
+        }
+
+        this.versions = finalVersions;
         this.updateVersionFromUrl();
       });
   }
 
   onVersionSelected(version: string): void {
-    if (version) {
+    if (version && version !== this.currentVersion) {
       const mainVersion = version.split('.')[0];
       const currentPath = this.router.url.replace(/^\//, '');
       window.location.href = `https://v${mainVersion}-helix-website.dev.sp.aws.clarivate.net/${currentPath}`;
