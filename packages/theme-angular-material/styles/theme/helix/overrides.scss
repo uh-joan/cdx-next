@@ -225,6 +225,40 @@
     --mat-fab-small-foreground-color: #{tokens.$icon-primary};
   }
 
+  .hlx-tab-invert {
+    .mat-mdc-tab-header {
+      color: #{tokens.$text-invert};
+      background-color: #{tokens.$surface-invert};
+
+      .mat-mdc-tab {
+        .mat-ripple-element {
+          background-color: lighten(tokens.$surface-invert, 90%);
+        }
+        &:hover {
+          background-color: lighten(tokens.$surface-invert, 10%);
+        }
+      }
+
+      .mat-mdc-tab-list {
+        .mdc-tab__content {
+          .mdc-tab__text-label {
+            color: #{tokens.$text-invert};
+          }
+
+          .mdc-tab-indicator {
+            .mdc-tab-indicator__content {
+              border-color: #{tokens.$text-invert};
+            }
+          }
+
+          .mat-ink-bar {
+            background-color: #{tokens.$text-invert};
+          }
+        }
+      }
+    }
+  }
+
   .hlx-btn-small {
     @include mat.button-density(-1);
   }
