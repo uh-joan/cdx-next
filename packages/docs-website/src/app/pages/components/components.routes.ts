@@ -240,6 +240,13 @@ export const componentsRoutes: Routes = [
           ),
       },
       {
+        path: 'time-picker',
+        loadComponent: () =>
+          import('./time-picker/time-picker.component').then(
+            (c) => c.TimePickerComponent,
+          ),
+      },
+      {
         path: 'toolbar',
         loadComponent: () =>
           import('./toolbar/toolbar.component').then((m) => m.ToolbarComponent),

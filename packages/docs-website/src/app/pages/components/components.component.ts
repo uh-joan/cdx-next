@@ -167,6 +167,10 @@ export class ComponentsComponent {
           url: 'text-input',
         },
         {
+          label: 'Time Picker',
+          url: 'time-picker',
+        },
+        {
           label: 'Toolbar',
           url: 'toolbar',
         },
