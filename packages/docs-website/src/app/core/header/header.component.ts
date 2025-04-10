@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatMenuModule } from '@angular/material/menu';
 import { Router, RouterModule } from '@angular/router';
@@ -8,6 +8,8 @@ import {
 } from '@cdx/ngx-branding';
 import { first } from 'rxjs';
 
+// eslint-disable-next-line @nx/enforce-module-boundaries
+import packageJson from '../../../../../../package.json';
 import { SearchComponent } from '../search/search.component';
 import { links, NavigationLink } from './header.config';
 import { HeaderService } from './header.service';
@@ -90,20 +92,12 @@ export class HeaderComponent implements OnInit {
   }
 
   private updateVersionFromUrl(): void {
-    const versionMatch = window.location.href.match(/^https:\/\/v(\d+)-/);
-    const versionNumber = versionMatch && versionMatch[1];
-    const mainVersions = this.versions.map((version) => version.split('.')[0]);
-    const matchingVersion = this.versions.find((version) =>
-      version.startsWith(versionNumber + '.'),
-    );
-    if (
-      versionNumber &&
-      mainVersions.includes(versionNumber) &&
-      matchingVersion
-    ) {
-      this.currentVersion = matchingVersion;
-    } else {
+    const versionNumber = packageJson.version;
+    const majorVersion = versionNumber.split('.')[0];
+    if (majorVersion === this.versions[0].split('.')[0]) {
       this.currentVersion = this.versions[0];
+    } else {
+      this.currentVersion = majorVersion;
     }
   }
 }

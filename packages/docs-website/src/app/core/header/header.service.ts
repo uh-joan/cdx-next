@@ -10,7 +10,7 @@ export class HeaderService {
 
   getAllHelixVersions(): Observable<string[]> {
     return this.http.get<string[]>(
-      'https://v19-helix-website.dev.sp.aws.clarivate.net/assets/helix-versions.json',
+      'https://design-lsh.clarivate.io/assets/helix-versions.json',
     );
   }
 }
