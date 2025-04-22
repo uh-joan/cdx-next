@@ -57,6 +57,10 @@
   --mdc-outlined-text-field-outline-color: #{tokens.$components-text-input-outlined-enabled};
   --mdc-outlined-text-field-hover-outline-color: #{tokens.$components-text-input-outlined-hover};
   --mdc-outlined-text-field-focus-outline-color: #{tokens.$components-text-input-outlined-focused};
+  --mat-filled-button-state-layer-color: #{tokens.$components-button-hover-background} !important;
+  --mat-filled-button-hover-state-layer-opacity: 1 !important;
+  --mat-text-button-hover-state-layer-color: #{tokens.$components-button-hover-background} !important;
+  --mat-text-button-hover-state-layer-opacity: 0.04 !important;
 
   @include mat.badge-color(hlx.$helix-theme, $color-variant: tertiary);
 
@@ -205,6 +209,8 @@
     --mat-fab-foreground-color: #{tokens.$text-invert};
     --mdc-fab-small-container-color: #{tokens.$components-accent-outline};
     --mat-fab-small-foreground-color: #{tokens.$text-invert};
+    --mat-filled-button-state-layer-color: #{tokens.$components-button-hover-background} !important;
+    --mat-filled-button-hover-state-layer-opacity: 0.16 !important;
   }
 
   .hlx-btn-negative {
@@ -213,6 +219,8 @@
     --mdc-outlined-button-outline-color: #{tokens.$components-negative-filled};
     --mdc-fab-container-color: #{tokens.$components-negative-filled};
     --mdc-fab-small-container-color: #{tokens.$components-negative-filled};
+    --mat-filled-button-state-layer-color: #{tokens.$components-button-hover-background} !important;
+    --mat-filled-button-hover-state-layer-opacity: 0.04 !important;
   }
 
   .hlx-btn-invert {
@@ -223,6 +231,8 @@
     --mat-fab-foreground-color: #{tokens.$icon-primary};
     --mdc-fab-small-container-color: #{tokens.$surface-primary};
     --mat-fab-small-foreground-color: #{tokens.$icon-primary};
+    --mat-filled-button-state-layer-color: #{tokens.$components-button-hover-background} !important;
+    --mat-filled-button-hover-state-layer-opacity: 0.04 !important;
   }
 
   .hlx-tab-invert {
