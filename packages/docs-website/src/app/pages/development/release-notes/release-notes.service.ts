@@ -9,7 +9,9 @@ export class ReleaseNotesService {
   constructor(private http: HttpClient) {}
 
   getAllReleaseNotesFiles(): Observable<string[]> {
-    return this.http.get<string[]>('assets/release-notes/index.json');
+    return this.http.get<string[]>(
+      'https://design-lsh.clarivate.io/assets/release-notes/index.json',
+    );
   }
 
   getReleaseNote(file: string): Observable<string> {
