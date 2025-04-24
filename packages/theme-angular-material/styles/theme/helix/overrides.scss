@@ -211,6 +211,10 @@
     --mat-fab-small-foreground-color: #{tokens.$text-invert};
     --mat-filled-button-state-layer-color: #{tokens.$components-button-hover-background} !important;
     --mat-filled-button-hover-state-layer-opacity: 0.16 !important;
+    --mat-text-button-state-layer-color: #{tokens.$components-accent-filled} !important;
+    --mat-text-button-hover-state-layer-opacity: 0.04 !important;
+    --mat-outlined-button-state-layer-color: #{tokens.$components-accent-filled} !important;
+    --mat-outlined-button-hover-state-layer-opacity: 0.04 !important;
   }
 
   .hlx-btn-negative {
@@ -221,6 +225,10 @@
     --mdc-fab-small-container-color: #{tokens.$components-negative-filled};
     --mat-filled-button-state-layer-color: #{tokens.$components-button-hover-background} !important;
     --mat-filled-button-hover-state-layer-opacity: 0.04 !important;
+    --mat-text-button-state-layer-color: #{tokens.$text-negative} !important;
+    --mat-text-button-hover-state-layer-opacity: 0.16 !important;
+    --mat-outlined-button-state-layer-color: #{tokens.$text-negative} !important;
+    --mat-outlined-button-hover-state-layer-opacity: 0.16 !important;
   }
 
   .hlx-btn-invert {
