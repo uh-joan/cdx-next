@@ -31,7 +31,9 @@ export class NgxTranslationsService {
   constructor(private translateService: TranslateService) {}
 
   public mergeTranslationsLabels(appLanguages?: string[]): void {
-    appLanguages?.length && this.translateService.addLangs(appLanguages);
+    if (appLanguages?.length) {
+      this.translateService.addLangs(appLanguages);
+    }
     this.translateService.langs.forEach((lang) => {
       if (CDX_TRANSLATIONS[lang]?.default) {
         CDX_TRANSLATIONS[lang] = CDX_TRANSLATIONS[lang].default;

@@ -129,7 +129,9 @@ export class AuthenticationService {
     }clarivate.com/${action}?app=${this.settings.appId}`;
 
     const appAction = new URL(url);
-    referrerUrl && appAction.searchParams.append('referrer', referrerUrl);
+    if (referrerUrl) {
+      appAction.searchParams.append('referrer', referrerUrl);
+    }
     return appAction.href;
   }
 

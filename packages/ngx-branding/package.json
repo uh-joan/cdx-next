@@ -23,7 +23,7 @@
   },
   "peerDependencies": {
     "@cdx/shared-branding": "19.1.0",
-    "@cdx/theme-angular-material": "19.1.0",
+    "@cdx/theme-angular-material": "^19.1.0",
     "@ngx-translate/core": ">=14.0.0"
   }
 }

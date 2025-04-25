@@ -10,8 +10,8 @@
     "tslib": "^2.3.0"
   },
   "peerDependencies": {
-    "@angular/material": "19",
-    "@angular/router": "19",
+    "@angular/material": "^19",
+    "@angular/router": "^19",
     "@cdx/theme-angular-material": "19.1.0"
   }
 }
