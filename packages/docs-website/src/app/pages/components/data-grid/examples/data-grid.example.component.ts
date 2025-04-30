@@ -1,6 +1,10 @@
 import { Component } from '@angular/core';
 import { AgGridAngular } from 'ag-grid-angular';
-import { ColDef } from 'ag-grid-community';
+import {
+  ClientSideRowModelModule,
+  ColDef,
+  ModuleRegistry,
+} from 'ag-grid-community';
 import { InputViewerComponent } from 'src/app/core/example-viewer/example-viewer.model';
 
 const htmlCode = `<div class="story">
@@ -29,6 +33,8 @@ interface IRow {
   price: number;
   electric: boolean;
 }
+
+ModuleRegistry.registerModules([ClientSideRowModelModule]);
 
 @Component({
   template: htmlCode,
@@ -67,15 +73,14 @@ export const AgGridBasicdDefaultComponent: InputViewerComponent = {
   htmlCode: htmlCode,
   cssCode: styleCode,
   tsCode: `import { Component } from '@angular/core';
+import { AgGridAngular } from 'ag-grid-angular';
+import {
+  ClientSideRowModelModule,
+  ColDef,
+  ModuleRegistry,
+} from 'ag-grid-community';
 import { InputViewerComponent } from 'src/app/core/example-viewer/example-viewer.model';
-import { ColDef } from "ag-grid-community";
-import { AgGridAngular } from "ag-grid-angular";
-import { AllCommunityModule, ModuleRegistry } from 'ag-grid-community';
 
-// Register all Community features
-ModuleRegistry.registerModules([AllCommunityModule])
-
-// Row Data Interface
 interface IRow {
   make: string;
   model: string;
@@ -83,37 +88,35 @@ interface IRow {
   electric: boolean;
 }
 
+ModuleRegistry.registerModules([ClientSideRowModelModule]);
+
 @Component({
   template: htmlCode,
-  imports: [
-        AgGridAngular
-  ],
+  imports: [AgGridAngular],
   styles: styleCode,
 })
 class SampleComponent {
-
   // Row Data: The data to be displayed.
   rowData: IRow[] = [
-    { make: "Tesla", model: "Model Y", price: 64950, electric: true },
-    { make: "Ford", model: "F-Series", price: 33850, electric: false },
-    { make: "Toyota", model: "Corolla", price: 29600, electric: false },
-    { make: "Mercedes", model: "EQA", price: 48890, electric: true },
-    { make: "Fiat", model: "500", price: 15774, electric: false },
-    { make: "Nissan", model: "Juke", price: 20675, electric: false },
+    { make: 'Tesla', model: 'Model Y', price: 64950, electric: true },
+    { make: 'Ford', model: 'F-Series', price: 33850, electric: false },
+    { make: 'Toyota', model: 'Corolla', price: 29600, electric: false },
+    { make: 'Mercedes', model: 'EQA', price: 48890, electric: true },
+    { make: 'Fiat', model: '500', price: 15774, electric: false },
+    { make: 'Nissan', model: 'Juke', price: 20675, electric: false },
   ];
 
   // Column Definitions: Defines & controls grid columns.
   colDefs: ColDef<IRow>[] = [
-    { field: "make" },
-    { field: "model" },
-    { field: "price" },
-    { field: "electric" },
+    { field: 'make' },
+    { field: 'model' },
+    { field: 'price' },
+    { field: 'electric' },
   ];
 
   defaultColDef: ColDef = {
     flex: 1,
   };
 }
-
   `,
 };
