@@ -3,7 +3,7 @@
   "version": "19.1.0",
   "repository": {
     "type": "git",
-    "url": "ssh://git@git.clarivate.io/cdxn/cdx-next.git",
+    "url": "ssh://git@github.com:clarivate-prod/cdx-next.git",
     "directory": "packages/ngx-session-activity"
   },
   "dependencies": {
