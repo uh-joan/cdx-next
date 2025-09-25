@@ -1,10 +1,9 @@
 import { FocusMonitor } from '@angular/cdk/a11y';
-
 import {
+  DOCUMENT,
   EnvironmentProviders,
   inject,
   provideAppInitializer,
-  DOCUMENT,
 } from '@angular/core';
 
 export const THEME_INITIALIZER: EnvironmentProviders = provideAppInitializer(

@@ -1,10 +1,10 @@
 import {
+  DOCUMENT,
   EnvironmentProviders,
   inject,
   InjectionToken,
   isDevMode,
   provideAppInitializer,
-  DOCUMENT,
 } from '@angular/core';
 import { OneTrustModule } from '@cdx/ngx-branding';
 import { ContextPrimitive } from '@snowplow/browser-tracker';

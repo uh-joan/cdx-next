@@ -1,11 +1,11 @@
 import {
+  DOCUMENT,
   EnvironmentProviders,
   inject,
   InjectionToken,
   isDevMode,
   makeEnvironmentProviders,
   provideAppInitializer,
-  DOCUMENT,
 } from '@angular/core';
 
 import { OneTrustSettings } from './one-trust.types';
