@@ -10,6 +10,7 @@
     "noImplicitOverride": true,
     "noImplicitReturns": true,
     "noPropertyAccessFromIndexSignature": true,
+    "resolveJsonModule": true,
     "strict": true
   },
   "extends": "../../tsconfig.base.json",
