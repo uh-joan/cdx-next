@@ -21,7 +21,9 @@
         fill="#FAFAFA"
       />
     </svg>
-    <mat-divider [vertical]="true" *ngIf="showDivider"></mat-divider>
+    @if (showDivider) {
+    <mat-divider [vertical]="true"></mat-divider>
+    }
     <div class="ava-header__product-identification" #productIdentification>
       <ng-content
         select="a[ava-header-product-logo], img[ava-header-product-logo]"
@@ -34,10 +36,9 @@
 
   <div class="ava-header__content" #headerGlobal>
     <ng-content></ng-content>
-    <mat-divider
-      [vertical]="true"
-      *ngIf="showHeaderGlobalDivider"
-    ></mat-divider>
+    @if (showHeaderGlobalDivider) {
+    <mat-divider [vertical]="true"></mat-divider>
+    }
     <ng-content select="ava-header-global"></ng-content>
   </div>
 </div>

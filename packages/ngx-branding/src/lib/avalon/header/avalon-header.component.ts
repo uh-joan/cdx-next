@@ -1,4 +1,3 @@
-import { NgIf } from '@angular/common';
 import {
   AfterViewInit,
   ChangeDetectionStrategy,
@@ -19,7 +18,7 @@ import { ThemeOptionsBranding } from '@cdx/theme-angular-material';
   templateUrl: './avalon-header.component.html',
   styleUrls: ['./avalon-header.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [NgIf, MatDivider],
+  imports: [MatDivider],
 })
 export class AvalonHeaderComponent implements AfterViewInit {
   @HostBinding('class') classes = 'ava-header';

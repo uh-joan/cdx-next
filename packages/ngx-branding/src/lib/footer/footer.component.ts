@@ -1,5 +1,5 @@
 import { BooleanInput, coerceBooleanProperty } from '@angular/cdk/coercion';
-import { NgIf, NgTemplateOutlet } from '@angular/common';
+import { NgTemplateOutlet } from '@angular/common';
 import {
   ChangeDetectionStrategy,
   Component,
@@ -22,7 +22,6 @@ import { FooterLinkDirective } from './footer-link.directive';
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [
-    NgIf,
     FooterGroupComponent,
     FooterGroupTitleDirective,
     NgTemplateOutlet,

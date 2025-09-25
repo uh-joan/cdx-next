@@ -97,15 +97,15 @@
       ></highcharts-chart>
     </div>
     <div class="device-details">
-      <ng-container *ngFor="let device of devices">
-        <div>
-          <mat-icon color="primary">{{ device.icon }}</mat-icon>
-          <span class="title">
-            {{ 'DASHBOARD.' + (device.title | uppercase) | translate }}
-          </span>
-          <span class="value">{{ device.value }}%</span>
-        </div>
-      </ng-container>
+      @for (device of devices; track device) {
+      <div>
+        <mat-icon color="primary">{{ device.icon }}</mat-icon>
+        <span class="title">
+          {{ 'DASHBOARD.' + (device.title | uppercase) | translate }}
+        </span>
+        <span class="value">{{ device.value }}%</span>
+      </div>
+      }
     </div>
   </mat-card>
 </div>

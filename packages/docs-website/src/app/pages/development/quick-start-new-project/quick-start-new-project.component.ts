@@ -1,4 +1,3 @@
-import { NgFor } from '@angular/common';
 import { AfterViewInit, Component, HostBinding } from '@angular/core';
 import { MatDivider } from '@angular/material/divider';
 import { MatTableModule } from '@angular/material/table';
@@ -20,7 +19,6 @@ export interface DataRow {
   templateUrl: './quick-start-new-project.component.html',
   styleUrls: ['./quick-start-new-project.component.scss'],
   imports: [
-    NgFor,
     PageComponent,
     ExternalLinkComponent,
     HighlightComponent,

@@ -1,4 +1,3 @@
-import { CommonModule } from '@angular/common';
 import {
   AfterViewInit,
   Component,
@@ -17,7 +16,7 @@ import { InputViewerComponent } from './example-viewer.model';
   selector: 'hlx-example-viewer',
   templateUrl: './example-viewer.component.html',
   styleUrls: ['./example-viewer.component.scss'],
-  imports: [MatTabsModule, CommonModule, HighlightComponent],
+  imports: [MatTabsModule, HighlightComponent],
 })
 export class ExampleViewerComponent implements AfterViewInit {
   @HostBinding('class.vertical') get isVertical() {

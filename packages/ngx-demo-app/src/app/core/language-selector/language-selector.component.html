@@ -9,10 +9,10 @@
     {{ getLanguageFlag(this.formLanguage.get('language')?.value || 'en') }}
   </button>
   <mat-menu #menu="matMenu">
-    <ng-container *ngFor="let language of MAP_LANGUAGE_NAME | keyvalue">
-      <button mat-menu-item (click)="selectLanguage(language.key)">
-        {{ getLanguageFlag(language.key) }} {{ language.value }}
-      </button>
-    </ng-container>
+    @for (language of MAP_LANGUAGE_NAME | keyvalue; track language) {
+    <button mat-menu-item (click)="selectLanguage(language.key)">
+      {{ getLanguageFlag(language.key) }} {{ language.value }}
+    </button>
+    }
   </mat-menu>
 </form>

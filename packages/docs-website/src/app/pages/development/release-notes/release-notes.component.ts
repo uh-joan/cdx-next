@@ -1,4 +1,3 @@
-import { CommonModule } from '@angular/common';
 import { Component, HostBinding, OnInit } from '@angular/core';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { MatOption } from '@angular/material/core';
@@ -27,7 +26,6 @@ import { ReleaseNotesService } from './release-notes.service';
     MatSelect,
     ReactiveFormsModule,
     MatOption,
-    CommonModule,
     RouterModule,
     PageComponent,
     ReactiveFormsModule,

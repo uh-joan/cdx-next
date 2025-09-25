@@ -132,21 +132,21 @@ $helix-m2-theme: mat.m2-define-light-theme(
 );
 
 @mixin theme-helix-m2-overrides() {
-  --mdc-protected-button-container-shape: 2px;
-  --mdc-outlined-button-container-shape: 2px;
-  --mdc-filled-button-container-shape: 2px;
-  --mdc-text-button-container-shape: 2px;
-  --mdc-filled-button-container-height: 44px;
-  --mdc-outlined-button-container-height: 44px;
-  --mdc-protected-button-container-height: 44px;
-  --mdc-text-button-container-height: 44px;
-  --mdc-tab-indicator-active-indicator-height: 2px;
-  --mdc-shape-small: 0;
+  --mat-button-protected-container-shape: 2px;
+  --mat-button-outlined-container-shape: 2px;
+  --mat-button-filled-container-shape: 2px;
+  --mat-button-text-container-shape: 2px;
+  --mat-button-filled-container-height: 44px;
+  --mat-button-outlined-container-height: 44px;
+  --mat-button-protected-container-height: 44px;
+  --mat-button-text-container-height: 44px;
+  --mat-tab-active-indicator-height: 2px;
+  --mat-shape-small: 0;
 
   .mdc-text-field {
     border-radius: 0 !important;
 
-    --mdc-shape-small: 0;
+    --mat-shape-small: 0;
   }
 
   .hlx-btn-small {
@@ -171,8 +171,8 @@ $helix-m2-theme: mat.m2-define-light-theme(
   }
 
   .hlx-secondary-btn {
-    --mdc-outlined-button-outline-color: #5e33bf;
-    --mdc-outlined-button-label-text-color: #5e33bf;
+    --mat-button-outlined-outline-color: #5e33bf;
+    --mat-button-outlined-label-text-color: #5e33bf;
 
     button.mdc-button:hover {
       background-color: #faf5ff;
@@ -180,13 +180,13 @@ $helix-m2-theme: mat.m2-define-light-theme(
   }
 
   .hlx-warn-btn {
-    --mdc-outlined-button-outline-color: #c52a4f;
-    --mdc-filled-button-container-color: #f9e9ed;
+    --mat-button-outlined-outline-color: #c52a4f;
+    --mat-button-filled-container-color: #f9e9ed;
   }
 
   &.cdx-dark-mode {
-    --mdc-protected-button-container-shape: 0;
-    --mdc-outlined-button-container-shape: 0;
+    --mat-button-protected-container-shape: 0;
+    --mat-button-outlined-container-shape: 0;
   }
 
   .display-large {

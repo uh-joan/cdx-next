@@ -26,11 +26,11 @@ $default-theme-name: 'cdx-theme-material';
     @include mat.strong-focus-indicators-theme($color);
 
     @if $transparent-background {
-      --mat-text-button-focus-state-layer-opacity: 0;
-      --mat-tab-header-active-ripple-color: transparent;
+      --mat-button-text-focus-state-layer-opacity: 0;
+      --mat-tab-active-ripple-color: transparent;
 
       span.mat-mdc-button-persistent-ripple {
-        --mat-outlined-button-state-layer-color: transparent;
+        --mat-button-outlined-state-layer-color: transparent;
       }
     }
   }

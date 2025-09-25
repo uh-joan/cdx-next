@@ -1,4 +1,3 @@
-import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
@@ -6,7 +5,7 @@ import { RouterModule } from '@angular/router';
   selector: 'cdx-internal-link',
   templateUrl: './internal-link.component.html',
   styleUrls: ['./internal-link.component.scss'],
-  imports: [CommonModule, RouterModule],
+  imports: [RouterModule],
 })
 export class InternalLinkComponent {
   @Input() url = '';

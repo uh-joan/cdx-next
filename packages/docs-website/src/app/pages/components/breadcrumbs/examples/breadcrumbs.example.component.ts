@@ -1,4 +1,3 @@
-import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { InputViewerComponent } from 'src/app/core/example-viewer/example-viewer.model';
@@ -28,12 +27,7 @@ const styleCode = `.hlx-breadcrumb-home {
 
 @Component({
   template: htmlCode,
-  imports: [
-    CommonModule,
-    MatIconModule,
-    BreadcrumbComponent,
-    BreadcrumbItemDirective,
-  ],
+  imports: [MatIconModule, BreadcrumbComponent, BreadcrumbItemDirective],
   styles: styleCode,
 })
 class SampleComponent {}

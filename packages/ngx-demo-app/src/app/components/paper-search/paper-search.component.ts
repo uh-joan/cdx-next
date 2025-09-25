@@ -1,4 +1,3 @@
-import { CommonModule } from '@angular/common';
 import {
   ChangeDetectionStrategy,
   Component,
@@ -15,7 +14,6 @@ import { TranslateModule } from '@ngx-translate/core';
 @Component({
   selector: 'demo-paper-search',
   imports: [
-    CommonModule,
     MatCheckboxModule,
     MatDividerModule,
     MatIconModule,

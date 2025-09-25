@@ -136,13 +136,13 @@ $_tertiary: map.merge(map.get($_palettes, tertiary), $_rest);
   .ava-chip-primary {
     @include mat.chips-color($derwent-light-theme, $color-variant: primary);
 
-    --mdc-chip-elevated-container-color: #c2c4d1;
+    --mat-chip-elevated-container-color: #c2c4d1;
   }
 
   .ava-chip-secondary {
     @include mat.chips-color($derwent-light-theme, $color-variant: secondary);
 
-    --mdc-chip-elevated-container-color: #41424f;
-    --mdc-chip-label-text-color: #fff;
+    --mat-chip-elevated-container-color: #41424f;
+    --mat-chip-label-text-color: #fff;
   }
 }

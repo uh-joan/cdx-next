@@ -1,4 +1,3 @@
-import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import {
   FormBuilder,
@@ -99,7 +98,6 @@ const styleCode = `.story {
     MatFormFieldModule,
     MatInputModule,
     FormsModule,
-    CommonModule,
     ReactiveFormsModule,
     MatIconModule,
   ],

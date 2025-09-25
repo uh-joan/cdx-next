@@ -1,4 +1,3 @@
-import { CommonModule } from '@angular/common';
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
@@ -14,7 +13,6 @@ import { NavigationItem, navigationMap } from './search.config';
   templateUrl: './search.component.html',
   styleUrls: ['./search.component.scss'],
   imports: [
-    CommonModule,
     MatInputModule,
     MatButtonModule,
     MatIconModule,

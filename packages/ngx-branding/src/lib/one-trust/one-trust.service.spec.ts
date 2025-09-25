@@ -1,4 +1,3 @@
-import { DOCUMENT } from '@angular/common';
 import { createServiceFactory, SpectatorService } from '@ngneat/spectator/jest';
 import { html } from 'common-tags';
 

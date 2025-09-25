@@ -1,4 +1,3 @@
-import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
@@ -41,7 +40,6 @@ const styleCode = `.story {
   template: htmlCode,
   imports: [
     FormsModule,
-    CommonModule,
     ReactiveFormsModule,
     MatAutocompleteModule,
     MatInputModule,

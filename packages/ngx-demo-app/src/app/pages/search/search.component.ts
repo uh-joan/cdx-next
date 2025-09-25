@@ -1,4 +1,3 @@
-import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
@@ -15,7 +14,6 @@ import { PaperSearchComponent } from '../../components/paper-search/paper-search
 
 @Component({
   imports: [
-    CommonModule,
     MatButtonModule,
     MatInputModule,
     PaperSearchComponent,

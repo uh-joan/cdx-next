@@ -134,8 +134,8 @@
 
 @if (isSearchActivated) {
 <div class="results">
-  <ng-container *ngFor="let index of [1, 2, 3, 4]">
-    <demo-paper-search [index]="index"></demo-paper-search>
-  </ng-container>
+  @for (index of [1, 2, 3, 4]; track index) {
+  <demo-paper-search [index]="index"></demo-paper-search>
+  }
 </div>
 }

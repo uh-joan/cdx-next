@@ -1,49 +1,47 @@
-<ng-container *ngIf="authenticated; else notAuthenticated">
-  <button mat-button [matMenuTriggerFor]="menu">
-    <div #menuTriggerCustom>
-      <ng-content select="[cdx-menu-triggerer-custom]"></ng-content>
-    </div>
-    <ng-container *ngIf="!menuTriggerCustom?.children?.length">
-      <mat-icon>account_circle</mat-icon>
-      {{ tokenPayload ? tokenPayload['1p:fnm'] : '' }}
-      {{ tokenPayload ? tokenPayload['1p:lnm'] : '' }}
-    </ng-container>
-  </button>
-</ng-container>
+@if (authenticated) {
+<button mat-button [matMenuTriggerFor]="menu">
+  <div #menuTriggerCustom>
+    <ng-content select="[cdx-menu-triggerer-custom]"></ng-content>
+  </div>
+  @if (!menuTriggerCustom?.children?.length) {
+  <mat-icon>account_circle</mat-icon>
+  {{ tokenPayload ? tokenPayload['1p:fnm'] : '' }}
+  {{ tokenPayload ? tokenPayload['1p:lnm'] : '' }}
+  }
+</button>
+} @else {
+<button mat-button (click)="loginWithRouteSnapshot()">
+  <mat-icon>login</mat-icon>
+  <span>
+    {{ shouldShowTranslations ? ('HEADER.SIGN_IN' | translate) : 'Sign in' }}
+  </span>
+</button>
+}
 
 <mat-menu #menu="matMenu" class="cdx-header-global-user-profile__menu">
   <div #menuContentCustom>
     <ng-content select="[cdx-menu-content-custom]"></ng-content>
   </div>
-  <ng-container *ngIf="!menuContentCustom?.children?.length">
-    <div class="cdx-header-global-user-profile__default-content">
-      <div class="cdx-header-global-user-profile__user-name">
-        {{ tokenPayload ? tokenPayload['1p:fnm'] : 'First' }}
-        {{ tokenPayload ? tokenPayload['1p:lnm'] : 'Last' }}
-      </div>
-      <div class="cdx-header-global-user-profile__user-email">
-        {{ tokenPayload ? tokenPayload['1p:eml'] : 'Email' }}
-      </div>
+  @if (!menuContentCustom?.children?.length) {
+  <div class="cdx-header-global-user-profile__default-content">
+    <div class="cdx-header-global-user-profile__user-name">
+      {{ tokenPayload ? tokenPayload['1p:fnm'] : 'First' }}
+      {{ tokenPayload ? tokenPayload['1p:lnm'] : 'Last' }}
     </div>
-    <ng-content></ng-content>
-    <div class="cdx-header-global-user-profile__actions">
-      <div>
-        <ng-content select="[cdx-menu-content-action]"></ng-content>
-      </div>
-      <button color="primary" mat-button (click)="logoutWithRouteSnapshot()">
-        {{
-          shouldShowTranslations ? ('HEADER.SIGN_OUT' | translate) : 'Sign out'
-        }}
-      </button>
+    <div class="cdx-header-global-user-profile__user-email">
+      {{ tokenPayload ? tokenPayload['1p:eml'] : 'Email' }}
     </div>
-  </ng-container>
+  </div>
+  <ng-content></ng-content>
+  <div class="cdx-header-global-user-profile__actions">
+    <div>
+      <ng-content select="[cdx-menu-content-action]"></ng-content>
+    </div>
+    <button color="primary" mat-button (click)="logoutWithRouteSnapshot()">
+      {{
+        shouldShowTranslations ? ('HEADER.SIGN_OUT' | translate) : 'Sign out'
+      }}
+    </button>
+  </div>
+  }
 </mat-menu>
-
-<ng-template #notAuthenticated>
-  <button mat-button (click)="loginWithRouteSnapshot()">
-    <mat-icon>login</mat-icon>
-    <span>
-      {{ shouldShowTranslations ? ('HEADER.SIGN_IN' | translate) : 'Sign in' }}
-    </span>
-  </button>
-</ng-template>

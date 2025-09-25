@@ -56,6 +56,7 @@
           "buildTarget": "ngx-reference-app:build:development"
         }
       },
+      "continuous": true,
       "defaultConfiguration": "development",
       "executor": "@angular-devkit/build-angular:dev-server"
     }

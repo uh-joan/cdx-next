@@ -6,12 +6,12 @@
   "
 >
   <div class="component-list">
+    @for (component of components; track component) {
     <mat-card
       matRipple
       class="component-list__item"
       let
       i="index"
-      *ngFor="let component of components"
       [routerLink]="component.route"
     >
       <mat-card-header
@@ -26,5 +26,6 @@
         <div class="text">{{ component.text }}</div>
       </mat-card-content>
     </mat-card>
+    }
   </div>
 </hlx-page>

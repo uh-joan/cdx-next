@@ -1,5 +1,4 @@
-import { DOCUMENT } from '@angular/common';
-import { Inject, Injectable, Optional } from '@angular/core';
+import { Inject, Injectable, Optional, DOCUMENT } from '@angular/core';
 
 import { ONE_TRUST_SETTINGS } from './one-trust.injectors';
 import { OneTrust, OneTrustSettings } from './one-trust.types';

@@ -185,9 +185,11 @@
     <ng-container matColumnDef="dependencies">
       <th mat-header-cell *matHeaderCellDef>Dependencies</th>
       <td mat-cell *matCellDef="let element">
-        <div *ngFor="let dependency of element.dependencies">
+        @for (dependency of element.dependencies; track dependency) {
+        <div>
           {{ dependency }}
         </div>
+        }
       </td>
     </ng-container>
 

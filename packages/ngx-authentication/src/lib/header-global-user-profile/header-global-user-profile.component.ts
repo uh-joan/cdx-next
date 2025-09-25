@@ -1,4 +1,3 @@
-import { CommonModule } from '@angular/common';
 import {
   ChangeDetectionStrategy,
   Component,
@@ -20,13 +19,7 @@ import { JwtToken } from '../authentication.types';
   selector: 'cdx-header-global-user-profile',
   templateUrl: './header-global-user-profile.component.html',
   styleUrls: ['./header-global-user-profile.component.scss'],
-  imports: [
-    CommonModule,
-    MatButtonModule,
-    MatIconModule,
-    MatMenuModule,
-    TranslateModule,
-  ],
+  imports: [MatButtonModule, MatIconModule, MatMenuModule, TranslateModule],
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })

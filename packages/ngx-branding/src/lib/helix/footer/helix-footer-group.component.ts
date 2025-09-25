@@ -1,4 +1,3 @@
-import { CommonModule } from '@angular/common';
 import {
   ChangeDetectionStrategy,
   Component,
@@ -10,7 +9,7 @@ import {
   selector: 'hlx-footer-group',
   templateUrl: './helix-footer-group.component.html',
   styleUrls: ['./helix-footer-group.component.scss'],
-  imports: [CommonModule],
+  imports: [],
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })

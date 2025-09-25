@@ -1,4 +1,3 @@
-import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 // @ts-expect-error no type is defined here
 import { HIGHCHARTS_HLX_THEME } from '@cdx/theme-highcharts';
@@ -30,7 +29,7 @@ HighchartsAccessibilityModule(Highcharts);
 
 @Component({
   template: htmlCode,
-  imports: [HighchartsChartModule, CommonModule],
+  imports: [HighchartsChartModule],
   styles: styleCode,
 })
 class SampleComponent {
