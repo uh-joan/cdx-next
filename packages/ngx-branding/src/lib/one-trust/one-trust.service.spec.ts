@@ -4,6 +4,7 @@ import { html } from 'common-tags';
 import { ONE_TRUST_SETTINGS } from './one-trust.injectors';
 import { OneTrustService } from './one-trust.service';
 import { OneTrust } from './one-trust.types';
+import { DOCUMENT } from '@angular/core';
 
 declare let OneTrust: OneTrust;
 

@@ -2,11 +2,13 @@ import { createHostFactory, SpectatorHost } from '@ngneat/spectator/jest';
 import { html } from 'common-tags';
 
 import { HeaderComponent } from './header.component';
+import { HeaderProductNameOrLogoComponent } from './header-product-name-or-logo.component';
 
 describe('HeaderComponent', () => {
   let host: SpectatorHost<HeaderComponent>;
   const createHost = createHostFactory({
     component: HeaderComponent,
+    imports: [HeaderProductNameOrLogoComponent],
   });
 
   describe('when global area content is provided', () => {
