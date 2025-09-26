@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 
 import { AvalonComplexDialogExampleComponent } from './avalon-complex-dialog-example.component';
@@ -13,7 +13,7 @@ import { AvalonSimpleDialogExampleComponent } from './avalon-simple-dialog-examp
   templateUrl: 'avalon-dialog-demo.component.html',
 })
 export class AvalonDialogDemoComponent {
-  constructor(public dialog: MatDialog) {}
+  dialog = inject(MatDialog);
 
   openDialog(type: 'simple' | 'complex') {
     const component =

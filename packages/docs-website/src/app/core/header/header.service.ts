@@ -1,12 +1,12 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class HeaderService {
-  constructor(private http: HttpClient) {}
+  private http: HttpClient = inject(HttpClient);
 
   getAllHelixVersions(): Observable<string[]> {
     return this.http.get<string[]>(

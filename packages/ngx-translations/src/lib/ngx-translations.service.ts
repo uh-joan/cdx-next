@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 
 import * as ar_SA from './i18n/ar_SA.json';
@@ -27,7 +27,7 @@ const CDX_TRANSLATIONS: { [key: string]: any } = {
   providedIn: 'root',
 })
 export class NgxTranslationsService {
-  constructor(private translateService: TranslateService) {}
+  private translateService = inject(TranslateService);
 
   public mergeTranslationsLabels(appLanguages?: string[]): void {
     if (appLanguages?.length) {

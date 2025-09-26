@@ -1,4 +1,4 @@
-import { DOCUMENT, Inject, Injectable, Optional } from '@angular/core';
+import { DOCUMENT, inject, Injectable } from '@angular/core';
 
 import { ONE_TRUST_SETTINGS } from './one-trust.injectors';
 import { OneTrust, OneTrustSettings } from './one-trust.types';
@@ -7,14 +7,10 @@ declare let OneTrust: OneTrust;
 
 @Injectable()
 export class OneTrustService {
-  constructor(
-    @Optional()
-    @Inject(ONE_TRUST_SETTINGS)
-    private settings: OneTrustSettings | null,
-
-    @Inject(DOCUMENT) private document: Document,
-  ) {}
-
+  private settings: OneTrustSettings | null = inject(ONE_TRUST_SETTINGS, {
+    optional: true,
+  });
+  private document = inject(DOCUMENT);
   /**
    * Determines if the OneTrust module has been properly configured and
    * required JavaScript assets have been inserted into the DOM.

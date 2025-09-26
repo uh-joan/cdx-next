@@ -3,6 +3,7 @@ import { NgTemplateOutlet } from '@angular/common';
 import {
   ChangeDetectionStrategy,
   Component,
+  inject,
   Input,
   Optional,
   ViewEncapsulation,
@@ -54,13 +55,15 @@ export class FooterComponent {
 
   private _slim = false;
 
-  constructor(@Optional() private oneTrustService: OneTrustService) {}
+  private oneTrustService: OneTrustService | null = inject(OneTrustService, {
+    optional: true,
+  });
 
   isCookieManagementEnabled(): boolean {
-    return this.oneTrustService?.isReady();
+    return this.oneTrustService?.isReady() ?? false;
   }
 
   manageCookiePreferences(): void {
-    this.oneTrustService.openInfoDisplay();
+    this.oneTrustService?.openInfoDisplay();
   }
 }

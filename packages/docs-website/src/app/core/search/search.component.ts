@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, ElementRef, inject, ViewChild } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatButtonModule } from '@angular/material/button';
@@ -23,14 +23,14 @@ import { NavigationItem, navigationMap } from './search.config';
 export class SearchComponent {
   @ViewChild('searchInput') searchInput!: ElementRef;
 
+  private router: Router = inject(Router);
+
   searchForm = new FormGroup({
     query: new FormControl(''),
   });
 
   filteredOptions: NavigationItem[] = [];
   isSearchVisible = false;
-
-  constructor(private router: Router) {}
 
   onSearchIconClick(): void {
     this.isSearchVisible = true;

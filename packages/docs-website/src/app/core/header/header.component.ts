@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatMenuModule } from '@angular/material/menu';
 import { Router, RouterModule } from '@angular/router';
@@ -34,7 +34,8 @@ export class HeaderComponent implements OnInit {
   versions: string[] = [];
   currentVersion?: string;
 
-  constructor(private router: Router, private headerService: HeaderService) {}
+  private router: Router = inject(Router);
+  private headerService: HeaderService = inject(HeaderService);
 
   ngOnInit(): void {
     this.headerService

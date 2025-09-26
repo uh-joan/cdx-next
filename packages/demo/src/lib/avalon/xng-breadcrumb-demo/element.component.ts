@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { BreadcrumbService } from 'xng-breadcrumb';
 
@@ -7,10 +7,8 @@ import { BreadcrumbService } from 'xng-breadcrumb';
   template: '',
 })
 export class ElementComponent implements OnInit {
-  constructor(
-    private breadcrumbService: BreadcrumbService,
-    private router: Router,
-  ) {}
+  private breadcrumbService: BreadcrumbService = inject(BreadcrumbService);
+  private router: Router = inject(Router);
 
   ngOnInit(): void {
     this.breadcrumbService.set('@Element', 'Element');

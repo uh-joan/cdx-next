@@ -108,9 +108,10 @@ class SampleComponent {
   textInput = '';
 
   toppings: FormGroup;
+  private fb = inject(FormBuilder);
 
-  constructor(fb: FormBuilder) {
-    this.toppings = fb.group({
+  constructor() {
+    this.toppings = this.fb.group({
       pepperoni: false,
       extracheese: false,
       mushroom: false,

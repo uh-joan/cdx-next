@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
@@ -26,7 +26,9 @@ export class ThemeSelectorComponent {
   themes;
   currentMode$;
 
-  constructor(private themeService: ThemeService) {
+  private themeService: ThemeService = inject(ThemeService);
+
+  constructor() {
     this.currentTheme = this.themeService.currentTheme$.getValue();
     this.themes = this.themeService.themes;
     this.currentMode$ = this.themeService.currentThemeMode$;

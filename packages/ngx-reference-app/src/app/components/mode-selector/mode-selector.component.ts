@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { TranslateModule } from '@ngx-translate/core';
@@ -12,7 +12,7 @@ import { ThemeService } from '../../services/theme.service';
   imports: [FormsModule, MatSlideToggleModule, TranslateModule],
 })
 export class ModeSelectorComponent implements OnInit {
-  constructor(private themeService: ThemeService) {}
+  private themeService: ThemeService = inject(ThemeService);
 
   isDarkMode = false;
 

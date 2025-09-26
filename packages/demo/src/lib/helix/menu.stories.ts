@@ -1,5 +1,5 @@
 import { Overlay } from '@angular/cdk/overlay';
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import {
   FormBuilder,
   FormGroup,
@@ -136,13 +136,14 @@ const customMenuTemplate = html`
 
 @Component({ selector: 'demo-custom-menu', template: customMenuTemplate })
 class CustomMenuComponent {
+  fb = inject(FormBuilder);
   title = 'test';
   textInput = '';
 
   toppings: FormGroup;
 
-  constructor(fb: FormBuilder) {
-    this.toppings = fb.group({
+  constructor() {
+    this.toppings = this.fb.group({
       pepperoni: false,
       extracheese: false,
       mushroom: false,

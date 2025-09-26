@@ -1,11 +1,11 @@
 import { HttpClient } from '@angular/common/http';
-import { Inject, Injectable } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, ParamMap, Router } from '@angular/router';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { firstValueFrom } from 'rxjs';
 
 import { AUTHENTICATION_SETTINGS } from './authentication.injectors';
-import { AutenticationsSettings, JwtToken } from './authentication.types';
+import { JwtToken } from './authentication.types';
 import { TokenService } from './token.service';
 
 @Injectable({
@@ -13,15 +13,15 @@ import { TokenService } from './token.service';
 })
 export class AuthenticationService {
   environment?: string;
-  constructor(
-    @Inject(AUTHENTICATION_SETTINGS) private settings: AutenticationsSettings,
-    private jwtHelper: JwtHelperService,
-    private tokenService: TokenService,
-    public router: Router,
-    private http: HttpClient,
-  ) {
-    this.environment = this.settings.environment;
-    if (this.settings.legacyTokenSupport) {
+  private jwtHelper = inject(JwtHelperService);
+  private tokenService = inject(TokenService);
+  public router = inject(Router);
+  private http = inject(HttpClient);
+  private settings = inject(AUTHENTICATION_SETTINGS, { optional: true });
+
+  constructor() {
+    this.environment = this.settings?.environment;
+    if (this.settings?.legacyTokenSupport) {
       this.runLegacyCdxTransform();
     }
   }
@@ -77,7 +77,7 @@ export class AuthenticationService {
         token: string;
       };
       this.tokenService.setToken(authResponse.token);
-      if (this.settings.legacyTokenSupport) {
+      if (this.settings?.legacyTokenSupport) {
         localStorage.setItem(
           'ls.token',
           JSON.stringify({
@@ -126,7 +126,7 @@ export class AuthenticationService {
   ): string {
     const url = `https://access.${
       this.environment ? this.environment + '.' : ''
-    }clarivate.com/${action}?app=${this.settings.appId}`;
+    }clarivate.com/${action}?app=${this.settings?.appId}`;
 
     const appAction = new URL(url);
     if (referrerUrl) {

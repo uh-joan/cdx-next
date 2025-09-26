@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Inject, Injectable, OnDestroy, Renderer2 } from '@angular/core';
+import { inject, Injectable, OnDestroy, Renderer2 } from '@angular/core';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { DEFAULT_INTERRUPTSOURCES, Idle, LocalStorage } from '@ng-idle/core';
 import { Subject } from 'rxjs';
@@ -30,15 +30,14 @@ export class SessionActivityService implements OnDestroy {
   dialogRef?: MatDialogRef<InactivityDialogComponent>;
   shouldNotRehydrate?: boolean;
 
-  constructor(
-    @Inject(SESSION_ACTIVITY_SETTINGS)
-    private settings: SessionActivitySettings,
-    private idle: Idle,
-    private http: HttpClient,
-    private dialog: MatDialog,
-    private localStorage: LocalStorage,
-    private renderer: Renderer2,
-  ) {
+  private idle: Idle = inject(Idle);
+  private http: HttpClient = inject(HttpClient);
+  private dialog: MatDialog = inject(MatDialog);
+  private localStorage: LocalStorage = inject(LocalStorage);
+  private renderer: Renderer2 = inject(Renderer2);
+  private settings = inject(SESSION_ACTIVITY_SETTINGS);
+
+  constructor() {
     this.renderer.listen(
       BROWSER_VISIBILITY.DOCUMENT,
       BROWSER_VISIBILITY.VISIBILITY_CHANGE,
@@ -47,7 +46,7 @@ export class SessionActivityService implements OnDestroy {
       },
     );
 
-    idle.onIdleStart
+    this.idle.onIdleStart
       .pipe(takeWhile(() => this.isThisComponentAlive))
       .subscribe(() => {
         if (!this.dialogRef) {
@@ -55,23 +54,23 @@ export class SessionActivityService implements OnDestroy {
         }
       });
 
-    idle.onIdleEnd
+    this.idle.onIdleEnd
       .pipe(takeWhile(() => this.isThisComponentAlive))
       .subscribe(() => {
         this.resetIdle();
       });
 
-    idle.onTimeout
+    this.idle.onTimeout
       .pipe(takeWhile(() => this.isThisComponentAlive))
       .subscribe(() => {
         this.expireSession();
       });
 
-    idle.onTimeoutWarning
+    this.idle.onTimeoutWarning
       .pipe(takeWhile(() => this.isThisComponentAlive))
       .subscribe(() => this.idle.clearInterrupts());
 
-    idle.onInterrupt
+    this.idle.onInterrupt
       .pipe(takeWhile(() => this.isThisComponentAlive))
       .subscribe(() => {
         const lastHydrateMilliSeconds =

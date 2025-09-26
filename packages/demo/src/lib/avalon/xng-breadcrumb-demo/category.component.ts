@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { BreadcrumbService } from 'xng-breadcrumb';
 
 @Component({
@@ -6,7 +6,7 @@ import { BreadcrumbService } from 'xng-breadcrumb';
   templateUrl: './category.component.html',
 })
 export class CategoryComponent implements OnInit {
-  constructor(private breadcrumbService: BreadcrumbService) {}
+  private breadcrumbService: BreadcrumbService = inject(BreadcrumbService);
 
   ngOnInit(): void {
     this.breadcrumbService.set('@Category', 'Category');

@@ -1,4 +1,4 @@
-import { DOCUMENT, Inject, Injectable } from '@angular/core';
+import { DOCUMENT, inject, Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 
 export const THEMES = [
@@ -22,7 +22,9 @@ export class ThemeService {
   currentTheme$: BehaviorSubject<string> = new BehaviorSubject('');
   themes = THEMES;
 
-  constructor(@Inject(DOCUMENT) private document: Document) {
+  private document: Document = inject(DOCUMENT);
+
+  constructor() {
     const initialThemeValue = this.getThemeMode();
     if (initialThemeValue) {
       this.setThemeMode(initialThemeValue);

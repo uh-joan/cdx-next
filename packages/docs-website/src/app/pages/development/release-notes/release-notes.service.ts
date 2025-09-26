@@ -1,12 +1,12 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
 import { map, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ReleaseNotesService {
-  constructor(private http: HttpClient) {}
+  private http = inject(HttpClient);
 
   getAllReleaseNotesFiles(): Observable<string[]> {
     return this.http.get<string[]>(

@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -81,10 +81,10 @@ export class LanguageSelectorComponent implements OnInit {
     language: new FormControl('en'),
   });
 
-  constructor(
-    private ngxTranslationsService: NgxTranslationsService,
-    private translateService: TranslateService,
-  ) {}
+  private ngxTranslationsService: NgxTranslationsService = inject(
+    NgxTranslationsService,
+  );
+  private translateService: TranslateService = inject(TranslateService);
 
   ngOnInit(): void {
     this.translateService.translations = this.APP_TRANSLATIONS;

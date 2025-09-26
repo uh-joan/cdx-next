@@ -1,4 +1,4 @@
-import { Inject, Injectable, Optional } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
 import { OneTrustService } from '@cdx/ngx-branding';
 import {
   addGlobalContexts,
@@ -34,15 +34,20 @@ export class AnalyticsService {
 
   tracker: BrowserTracker;
 
-  constructor(
-    @Inject(ANALYTICS_SETTINGS)
-    readonly settings: AnalyticsSettings,
-    @Inject(ANALYTICS_CONTEXT_DATA) context: AnalyticsContextSchema,
-    @Optional() private oneTrustService: OneTrustService,
-  ) {
-    this.context = context;
-    this.settings = settings || DEFAULT_SETTINGS;
+  readonly settings = inject(ANALYTICS_SETTINGS) || DEFAULT_SETTINGS;
+  context: AnalyticsContextSchema | null = (() => {
+    const injected = inject(ANALYTICS_CONTEXT_DATA, { optional: true });
+    if (!injected) return null;
+    if ('schema' in injected && 'data' in injected)
+      return injected as unknown as AnalyticsContextSchema;
+    return {
+      schema: 'default-schema',
+      data: injected as AnalyticsContextData,
+    } as AnalyticsContextSchema;
+  })();
+  private oneTrustService = inject(OneTrustService, { optional: true });
 
+  constructor() {
     this.cookiesAccepted$.subscribe();
 
     this.tracker = newTracker(
@@ -56,8 +61,6 @@ export class AnalyticsService {
 
     if (this.context) this.tracker?.core?.addGlobalContexts([this.context]);
   }
-
-  context?: AnalyticsContextSchema;
 
   cookiesAccepted$: Observable<void> = fromEvent(
     window,
@@ -122,6 +125,6 @@ export class AnalyticsService {
   }
 
   private isOneTrustEnabled(): boolean {
-    return this.oneTrustService?.isReady();
+    return this.oneTrustService?.isReady() ?? false;
   }
 }

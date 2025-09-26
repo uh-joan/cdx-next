@@ -4,6 +4,7 @@ import {
   Directive,
   ElementRef,
   HostListener,
+  inject,
   Input,
   TemplateRef,
   ViewContainerRef,
@@ -20,11 +21,9 @@ export class RichTooltipDirective {
 
   private overlayRef!: OverlayRef;
 
-  constructor(
-    private overlay: Overlay,
-    private elementRef: ElementRef,
-    private viewContainerRef: ViewContainerRef,
-  ) {}
+  private overlay = inject(Overlay);
+  private elementRef = inject(ElementRef);
+  private viewContainerRef = inject(ViewContainerRef);
 
   @HostListener('mouseenter')
   show() {

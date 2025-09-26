@@ -6,6 +6,7 @@ import {
   ContentChildren,
   ElementRef,
   HostBinding,
+  inject,
   Input,
   QueryList,
   ViewChild,
@@ -45,7 +46,7 @@ export class AvalonHeaderComponent implements AfterViewInit {
 
   @Input() openExternalLink = false;
 
-  constructor(private cdr: ChangeDetectorRef) {}
+  private cdr = inject(ChangeDetectorRef);
 
   ngAfterViewInit() {
     const hasChildren =

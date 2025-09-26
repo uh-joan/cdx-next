@@ -66,7 +66,7 @@ export class HelixFooterComponent {
 
   private _slim = false;
 
-  constructor(@Optional() private oneTrustService: OneTrustService) {}
+  private oneTrustService = inject(OneTrustService, { optional: true });
 
   isCookieManagementEnabled(): boolean {
     return this.oneTrustService?.isReady();

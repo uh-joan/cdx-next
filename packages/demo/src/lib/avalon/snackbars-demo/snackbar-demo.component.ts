@@ -9,7 +9,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   templateUrl: './snackbar-demo.component.html',
 })
 export class SnackBarDemoComponent {
-  constructor(private _snackBar: MatSnackBar) {}
+  private _snackBar: MatSnackBar = inject(MatSnackBar);
 
   openSnackBar() {
     this._snackBar.open('Add your snackbar message here', 'Action Text', {

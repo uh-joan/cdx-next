@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, HostBinding } from '@angular/core';
+import { AfterViewInit, Component, HostBinding, inject } from '@angular/core';
 import { MatDivider } from '@angular/material/divider';
 import { MatTableModule } from '@angular/material/table';
 import { ActivatedRoute } from '@angular/router';
@@ -172,8 +172,7 @@ footer {
 
   columns: string[] = ['name', 'description', 'dependencies', 'code'];
 
-  constructor(private route: ActivatedRoute) {}
-
+  private route: ActivatedRoute = inject(ActivatedRoute);
   ngAfterViewInit() {
     this.route.fragment.subscribe((fragment) => {
       if (fragment) {

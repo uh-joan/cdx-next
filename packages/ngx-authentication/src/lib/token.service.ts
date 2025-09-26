@@ -1,18 +1,17 @@
-import { Inject, Injectable } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
 
 import { AUTHENTICATION_SETTINGS } from './authentication.injectors';
-import { AutenticationsSettings, LS_TOKEN } from './authentication.types';
+import { LS_TOKEN } from './authentication.types';
 
 @Injectable({
   providedIn: 'root',
 })
 export class TokenService {
   tokenLabel: string;
+  private settings = inject(AUTHENTICATION_SETTINGS, { optional: true });
 
-  constructor(
-    @Inject(AUTHENTICATION_SETTINGS) private settings: AutenticationsSettings,
-  ) {
-    this.tokenLabel = this.settings.tokenLabel || LS_TOKEN;
+  constructor() {
+    this.tokenLabel = this.settings?.tokenLabel || LS_TOKEN;
   }
 
   public setToken(jwt: string): void {

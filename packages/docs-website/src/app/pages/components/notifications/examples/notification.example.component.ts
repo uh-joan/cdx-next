@@ -1,4 +1,4 @@
-import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA, inject } from '@angular/core';
 import {
   FormBuilder,
   FormGroup,
@@ -86,8 +86,9 @@ const styleCode = `.story {
 })
 class SampleComponent {
   notificationForm: FormGroup;
+  private fb = inject(FormBuilder);
 
-  constructor(private fb: FormBuilder) {
+  constructor() {
     this.notificationForm = this.fb.group({
       presentation: ['inline'],
       title: [''],

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import { AuthenticationService } from './authentication.service';
@@ -8,10 +8,9 @@ import { AuthenticationService } from './authentication.service';
   template: '',
 })
 export class BrokerComponent {
-  constructor(
-    private route: ActivatedRoute,
-    private authenticationService: AuthenticationService,
-  ) {
+  private route = inject(ActivatedRoute);
+  private authenticationService = inject(AuthenticationService);
+  constructor() {
     const authCode = this.route.snapshot.paramMap.get('authCode');
     if (authCode) {
       this.authenticationService

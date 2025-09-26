@@ -1,12 +1,12 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTabsModule } from '@angular/material/tabs';
 import { RouterModule } from '@angular/router';
 import { HeaderGlobalUserProfileComponent } from '@cdx/ngx-authentication';
 import {
   FooterModule,
-  HeaderModule,
+  HeaderComponent,
   HelixFooterComponent,
   HelixHeaderComponent,
   HelixHeaderGlobalComponent,
@@ -29,11 +29,11 @@ import { ThemeSelectorComponent } from '../theme-selector/theme-selector.compone
     HelixFooterComponent,
     CommonModule,
     RouterModule,
-    HeaderModule,
+    HeaderComponent,
     FooterModule,
     TranslateModule,
     HeaderGlobalUserProfileComponent,
-    HeaderGlobalSessionManagementModule,
+    HeaderGlobalUserProfileComponent,
     MatTabsModule,
     ModeSelectorComponent,
     ThemeSelectorComponent,
@@ -48,6 +48,8 @@ import { ThemeSelectorComponent } from '../theme-selector/theme-selector.compone
   styleUrl: './layout.component.scss',
 })
 export class LayoutComponent {
+  themeService = inject(ThemeService);
+
   links = [
     { name: 'APP.HOME', path: 'home' },
     { name: 'SEARCH.TITLE', path: 'search' },
@@ -60,8 +62,6 @@ export class LayoutComponent {
       return theme === 'helix';
     }),
   );
-
-  constructor(public themeService: ThemeService) {}
 
   isActive(path: string): boolean {
     return path == window.location.pathname.substring(1);

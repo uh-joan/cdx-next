@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 
 import { DialogExampleComponent } from './dialog-example.component';
@@ -12,7 +12,7 @@ import { DialogExampleComponent } from './dialog-example.component';
   templateUrl: 'dialog-demo.component.html',
 })
 export class DialogDemoComponent {
-  constructor(public dialog: MatDialog) {}
+  dialog = inject(MatDialog);
 
   openDialog() {
     const dialogRef = this.dialog.open(DialogExampleComponent);

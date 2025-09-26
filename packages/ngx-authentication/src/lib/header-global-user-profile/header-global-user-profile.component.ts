@@ -3,6 +3,7 @@ import {
   Component,
   ContentChild,
   ElementRef,
+  inject,
   Input,
   OnInit,
   ViewEncapsulation,
@@ -28,10 +29,10 @@ export class HeaderGlobalUserProfileComponent implements OnInit {
   @ContentChild('menuContentCustom') menuContentCustom!: ElementRef;
   @Input() shouldShowTranslations = false;
 
+  private authenticationService = inject(AuthenticationService);
+
   authenticated = false;
   tokenPayload: JwtToken | null = null;
-
-  constructor(private authenticationService: AuthenticationService) {}
 
   ngOnInit(): void {
     this.authenticated = this.authenticationService.isAuthenticated();

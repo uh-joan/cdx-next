@@ -1,4 +1,4 @@
-import { Directive, OnDestroy } from '@angular/core';
+import { Directive, inject, OnDestroy } from '@angular/core';
 import { AuthenticationService } from '@cdx/ngx-authentication';
 import { Subscription } from 'rxjs';
 
@@ -13,10 +13,14 @@ export class HeaderGlobalSessionManagementDirective implements OnDestroy {
   authenticated = false;
   sessionActivityServiceSubscription?: Subscription;
 
-  constructor(
-    private authenticationService: AuthenticationService,
-    private sessionActivityService: SessionActivityService,
-  ) {
+  private authenticationService: AuthenticationService = inject(
+    AuthenticationService,
+  );
+  private sessionActivityService: SessionActivityService = inject(
+    SessionActivityService,
+  );
+
+  constructor() {
     this.authenticated = this.authenticationService.isAuthenticated();
     if (this.authenticated) {
       this.sessionActivityService.initialize();

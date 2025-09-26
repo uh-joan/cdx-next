@@ -1,4 +1,4 @@
-import { Component, HostBinding, OnInit } from '@angular/core';
+import { Component, HostBinding, inject, OnInit } from '@angular/core';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { MatOption } from '@angular/material/core';
 import {
@@ -43,12 +43,10 @@ export class ReleaseNotesComponent implements OnInit {
 
   availableVersions: string[] = [];
 
-  constructor(
-    private releaseNotesService: ReleaseNotesService,
-    private sanitizer: DomSanitizer,
-    private route: ActivatedRoute,
-    private router: Router,
-  ) {}
+  private releaseNotesService = inject(ReleaseNotesService);
+  private sanitizer = inject(DomSanitizer);
+  private route = inject(ActivatedRoute);
+  private router = inject(Router);
 
   ngOnInit(): void {
     this.releaseNotesService.getAllReleaseNotesFiles().subscribe((files) => {

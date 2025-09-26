@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, inject, ViewEncapsulation } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import {
   AnalyticsContextData,
@@ -22,11 +22,11 @@ export class AppComponent {
   isHelix$;
   isAvalon$;
 
-  constructor(
-    public themeService: ThemeService,
-    private analyticsService: AnalyticsService,
-    private router: Router,
-  ) {
+  themeService: ThemeService = inject(ThemeService);
+  private analyticsService: AnalyticsService = inject(AnalyticsService);
+  private router: Router = inject(Router);
+
+  constructor() {
     this.routerEvents$ = this.router.events
       .pipe(
         filter((ev) => ev instanceof NavigationEnd),
