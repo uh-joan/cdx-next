@@ -16,8 +16,8 @@ export class BrokerComponent {
       this.authenticationService
         .createSession(authCode)
         .then(() =>
-          authenticationService.enterApplicationAfterAuthentication(
-            route.snapshot,
+          this.authenticationService.enterApplicationAfterAuthentication(
+            this.route.snapshot,
           ),
         );
     } else {

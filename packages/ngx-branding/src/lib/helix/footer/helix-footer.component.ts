@@ -3,8 +3,8 @@ import { CommonModule } from '@angular/common';
 import {
   ChangeDetectionStrategy,
   Component,
+  inject,
   Input,
-  Optional,
   ViewEncapsulation,
 } from '@angular/core';
 import { ThemeOptionsBranding } from '@cdx/theme-angular-material';
@@ -69,10 +69,10 @@ export class HelixFooterComponent {
   private oneTrustService = inject(OneTrustService, { optional: true });
 
   isCookieManagementEnabled(): boolean {
-    return this.oneTrustService?.isReady();
+    return this.oneTrustService?.isReady() ?? false;
   }
 
   manageCookiePreferences(): void {
-    this.oneTrustService.openInfoDisplay();
+    this.oneTrustService?.openInfoDisplay();
   }
 }
