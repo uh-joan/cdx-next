@@ -32,8 +32,8 @@ const htmlCode = `<div class="story">
                 <mat-label>Search</mat-label>
                 <input matInput type="text" 
                     [(ngModel)]="textInput" />
-                <button
-                    *ngIf="textInput"
+                    @if(textInput) {
+                    <button
                     matSuffix
                     mat-icon-button
                     aria-label="Clear"
@@ -41,6 +41,8 @@ const htmlCode = `<div class="story">
                 >
                     <mat-icon>close</mat-icon>
                 </button>
+                    }
+                
             </mat-form-field>
 
             <section

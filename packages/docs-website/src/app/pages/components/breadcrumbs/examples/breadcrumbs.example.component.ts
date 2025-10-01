@@ -6,12 +6,15 @@ import { BreadcrumbComponent, BreadcrumbItemDirective } from 'xng-breadcrumb';
 const htmlCode = `<xng-breadcrumb separator=">" class="mat-body-medium">
   <ng-container *xngBreadcrumbItem="let breadcrumb; 
     let info = info; let first = first; let last = last">
-    <mat-icon class="hlx-breadcrumb-home" 
-      *ngIf="info">{{ info }}</mat-icon>
-    <div class="hlx-breadcrumb-link" 
-      *ngIf="!first && !last">{{ breadcrumb }}</div>
-    <div class="hlx-breadcrumb-last" 
-      *ngIf="last">{{ breadcrumb }}</div>
+    @if (info) {
+      <mat-icon class="hlx-breadcrumb-home">{{ info }}</mat-icon>
+    }
+    @if (!first && !last) {
+      <div class="hlx-breadcrumb-link">{{ breadcrumb }}</div>
+    }
+    @if (last) {
+      <div class="hlx-breadcrumb-last">{{ breadcrumb }}</div>
+    }
   </ng-container>
 </xng-breadcrumb>`;
 const styleCode = `.hlx-breadcrumb-home {
