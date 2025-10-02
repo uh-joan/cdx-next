@@ -5,7 +5,6 @@ import {
   Component,
   inject,
   Input,
-  Optional,
   ViewEncapsulation,
 } from '@angular/core';
 import { ThemeOptionsBranding } from '@cdx/theme-angular-material';

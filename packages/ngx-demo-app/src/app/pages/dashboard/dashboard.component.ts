@@ -5,7 +5,6 @@ import { MatCardModule } from '@angular/material/card';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatIconModule } from '@angular/material/icon';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
-import { HIGHCHARTS_CDX_THEME } from '@cdx/theme-highcharts';
 import { TranslateModule } from '@ngx-translate/core';
 import * as Highcharts from 'highcharts/highcharts';
 import { HighchartsChartModule } from 'highcharts-angular';
@@ -35,6 +34,6 @@ export class DashboardComponent {
   enrollmentOptions = enrollmentOptions;
 
   constructor() {
-    Highcharts.setOptions(HIGHCHARTS_CDX_THEME);
+    //Highcharts.setOptions(HIGHCHARTS_HLX_THEME);
   }
 }

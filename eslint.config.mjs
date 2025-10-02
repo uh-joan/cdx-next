@@ -17,7 +17,7 @@ const compat = new FlatCompat({
 });
 
 export default defineConfig([
-  globalIgnores(['**/*', '**/node_modules']),
+  globalIgnores(['**/node_modules']),
   {
     plugins: {
       '@nx': nx,

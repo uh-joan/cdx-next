@@ -27,12 +27,9 @@
       "outputs": ["{options.outputPath}"]
     },
     "lint": {
-      "executor": "@nx/linter:eslint",
+      "executor": "@nx/eslint:lint",
       "options": {
-        "lintFilePatterns": [
-          "packages/demo/src/**/*.ts",
-          "packages/demo/src/**/*.html"
-        ]
+        "lintFilePatterns": ["packages/demo/**/*.ts", "packages/demo/**/*.html"]
       }
     },
     "storybook": {

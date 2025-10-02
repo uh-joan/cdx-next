@@ -1,7 +1,7 @@
+import { DOCUMENT } from '@angular/core';
 import { createServiceFactory, SpectatorService } from '@ngneat/spectator/jest';
 import { html } from 'common-tags';
 
-import { DOCUMENT } from '@angular/core';
 import { ONE_TRUST_SETTINGS } from './one-trust.injectors';
 import { OneTrustService } from './one-trust.service';
 import { OneTrust } from './one-trust.types';
