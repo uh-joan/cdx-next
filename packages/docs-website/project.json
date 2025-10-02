@@ -8,7 +8,7 @@
     "build": {
       "configurations": {
         "development": {
-          "allowedCommonJsDependencies": ["sha1", "uuid"],
+          "allowedCommonJsDependencies": ["sha1", "uuid", "highcharts"],
           "buildOptimizer": false,
           "extractLicenses": false,
           "namedChunks": true,
@@ -45,7 +45,10 @@
         "outputPath": "dist/packages/docs-website",
         "polyfills": ["zone.js"],
         "scripts": [],
-        "styles": ["packages/docs-website/src/styles.scss"],
+        "styles": [
+          "packages/docs-website/src/styles.scss",
+          "node_modules/highlight.js/styles/atom-one-dark.css"
+        ],
         "tsConfig": "packages/docs-website/tsconfig.app.json"
       },
       "outputs": ["{options.outputPath}"]

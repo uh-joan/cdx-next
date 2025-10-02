@@ -12,11 +12,10 @@ const htmlCode = `<div class="story">
 </div>`;
 
 const styleCode = `
-@import 'https://code.highcharts.com/css/highcharts.css';
-@import '@cdx/theme-highcharts';
+@use '@cdx/theme-highcharts' as highcharts;
 
 .highcharts-styled-container {
-  @include cdx-highcharts-styled-mode-theme;
+  @include highcharts.cdx-highcharts-styled-mode-theme;
 }
 
 .story {

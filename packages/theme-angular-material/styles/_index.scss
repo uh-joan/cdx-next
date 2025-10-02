@@ -4,10 +4,3 @@
   $helix-error-theme, $helix-success-theme, $helix-invert-theme;
 @forward 'theme/helix/overrides.scss' show theme-helix-overrides;
 @forward 'theme/helix/variables/tokens.scss';
-@forward 'theme/avalon/avalon.scss' show $avalon-light-theme, $avalon-dark-theme,
-  theme-avalon-overrides, ava-display, ava-headline, ava-title, ava-body,
-  ava-label;
-@forward 'theme/avalon/innography/innography.scss' show $innography-light-theme,
-  $innography-dark-theme, theme-innography-overrides;
-@forward 'theme/avalon/derwent/derwent.scss' show $derwent-light-theme,
-  $derwent-dark-theme, theme-derwent-overrides;

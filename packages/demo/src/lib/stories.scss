@@ -1,8 +1,7 @@
 @use '../../../theme-angular-material/styles' as cdx;
 @use '../../../theme-xng-breadcrumb/src/lib/breadcrumb/breadcrumb-theme' as
   breadcrumb;
-/* stylelint-disable-next-line scss/at-import-partial-extension */
-@import '../../../theme-expansion-panel/expansion-panel.scss';
+@use '../../../theme-expansion-panel/expansion-panel.scss';
 
 // @include breadcrumb.theme(cdx.$cdx-theme);
 

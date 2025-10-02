@@ -1,7 +1,7 @@
 @use '@cdx/theme-angular-material' as cdx;
 @use '@cdx/ngx-branding/header/theme' as header;
 @use '@cdx/ngx-branding/footer/theme' as footer;
-@import './themes/custom-theme';
+@use './themes/custom-theme';
 
 @include header.theme(cdx.$light-theme);
 @include footer.theme(cdx.$light-theme);
