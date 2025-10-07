@@ -6,102 +6,105 @@ import { InputViewerComponent } from 'src/app/core/example-viewer/example-viewer
 const htmlCode = `<div class="story">
   <div class="story__box">
     <div class="story__row">
-      <button mat-stroked-button>Button</button>
-      <button mat-stroked-button>
+      <button matButton="outlined">Button</button>
+      <button matButton="outlined">
         <mat-icon>anchor</mat-icon>
         Button
       </button>
-      <button mat-stroked-button>
+      <button matButton="outlined">
         Button
         <mat-icon iconPositionEnd>anchor</mat-icon>
       </button>
     </div>
 
     <div class="story__row hlx-btn-accent">
-      <button mat-stroked-button>Button</button>
-      <button mat-stroked-button>
+      <button matButton="outlined">Button</button>
+      <button matButton="outlined">
         <mat-icon>anchor</mat-icon>
         Button
       </button>
-      <button mat-stroked-button>
+      <button matButton="outlined">
         Button
         <mat-icon iconPositionEnd>anchor</mat-icon>
       </button>
     </div>
+
     <div class="story__row hlx-btn-negative">
-      <button mat-stroked-button>Button</button>
-      <button mat-stroked-button>
+      <button matButton="outlined">Button</button>
+      <button matButton="outlined">
         <mat-icon>anchor</mat-icon>
         Button
       </button>
-      <button mat-stroked-button>
+      <button matButton="outlined">
         Button
         <mat-icon iconPositionEnd>anchor</mat-icon>
       </button>
     </div>
+
     <div class="story__row hlx-btn-invert background-invert">
-      <button mat-stroked-button>Button</button>
-      <button mat-stroked-button>
+      <button matButton="outlined">Button</button>
+      <button matButton="outlined">
         <mat-icon>anchor</mat-icon>
         Button
       </button>
-      <button mat-stroked-button>
+      <button matButton="outlined">
         Button
         <mat-icon iconPositionEnd>anchor</mat-icon>
       </button>
     </div>
   </div>
+
   <div class="story__box">
     <div class="story__row">
-      <button mat-stroked-button
-        disabled>Button</button>
-      <button mat-stroked-button disabled>
+      <button matButton="outlined" disabled>Button</button>
+      <button matButton="outlined" disabled>
         <mat-icon>anchor</mat-icon>
         Button
       </button>
-      <button mat-stroked-button disabled>
+      <button matButton="outlined" disabled>
         Button
         <mat-icon iconPositionEnd>anchor</mat-icon>
       </button>
     </div>
 
     <div class="story__row hlx-btn-accent">
-      <button mat-stroked-button
-        disabled>Button</button>
-      <button mat-stroked-button disabled>
+      <button matButton="outlined" disabled>Button</button>
+      <button matButton="outlined" disabled>
         <mat-icon>anchor</mat-icon>
         Button
       </button>
-      <button mat-stroked-button disabled>
+      <button matButton="outlined" disabled>
         Button
         <mat-icon iconPositionEnd>anchor</mat-icon>
       </button>
     </div>
+
     <div class="story__row hlx-btn-negative">
-      <button mat-stroked-button
-        disabled>Button</button>
-      <button mat-stroked-button disabled>
+      <button matButton="outlined" disabled>Button</button>
+      <button matButton="outlined" disabled>
         <mat-icon>anchor</mat-icon>
         Button
       </button>
-      <button mat-stroked-button disabled>
+      <button matButton="outlined" disabled>
         Button
         <mat-icon iconPositionEnd>anchor</mat-icon>
       </button>
     </div>
+
     <div class="story__row hlx-btn-invert background-invert">
-      <button mat-stroked-button disabled>Button</button>
-      <button mat-stroked-button disabled>
+      <button matButton="outlined" disabled>Button</button>
+      <button matButton="outlined" disabled>
         <mat-icon>anchor</mat-icon>
         Button
       </button>
-      <button mat-stroked-button disabled>
+      <button matButton="outlined" disabled>
         Button
         <mat-icon iconPositionEnd>anchor</mat-icon>
       </button>
     </div>
   </div>
-</div>`;
+</div>
+`;
 
 const styleCode = `@use "@cdx/theme-angular-material" as hlx;
 

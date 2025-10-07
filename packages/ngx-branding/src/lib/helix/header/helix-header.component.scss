@@ -9,7 +9,6 @@ $black-background: black;
 .hlx-header {
   &__global-bar {
     @include mat.all-component-themes(cdx.$helix-dark-theme);
-    @include mat.all-component-densities(-5);
 
     display: flex;
     height: $header-bar-base-height;

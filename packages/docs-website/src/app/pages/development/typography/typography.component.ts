@@ -1,4 +1,3 @@
-import { NgClass } from '@angular/common';
 import { Component, HostBinding } from '@angular/core';
 import { MatDivider } from '@angular/material/divider';
 import {
@@ -32,7 +31,6 @@ import { PageComponent } from '../../../core/page/page.component';
     MatHeaderCell,
     MatCellDef,
     MatCell,
-    NgClass,
     MatHeaderRowDef,
     MatHeaderRow,
     MatRowDef,

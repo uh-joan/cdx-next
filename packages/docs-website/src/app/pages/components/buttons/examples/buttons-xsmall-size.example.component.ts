@@ -4,61 +4,57 @@ import { MatIconModule } from '@angular/material/icon';
 import { InputViewerComponent } from 'src/app/core/example-viewer/example-viewer.model';
 
 const htmlCode = `<div class="story hlx-btn-xsmall">
-    <div class="story__box">
-        <div class="story__row">
-            <button mat-flat-button>Button</button>
-            <button mat-flat-button>
-            <mat-icon>anchor</mat-icon>
-            Button
-            </button>
-            <button mat-flat-button>
-            Button
-            <mat-icon iconPositionEnd>
-                anchor</mat-icon>
-            </button>
-        </div>
-
-        <div class="story__row">
-            <button class="hlx-btn-accent"
-                mat-flat-button>Button</button>
-            <button class="hlx-btn-accent"
-                mat-flat-button>
-                <mat-icon>anchor</mat-icon>
-                Button
-            </button>
-            <button class="hlx-btn-accent"
-                mat-flat-button>    Button
-                <mat-icon iconPositionEnd>
-                    anchor</mat-icon>
-            </button>
-        </div>
-        <div class="story__row">
-            <button class="hlx-btn-negative"
-                mat-flat-button>Button</button>
-            <button class="hlx-btn-negative"
-                mat-flat-button>
-            <mat-icon>anchor</mat-icon>
-            Button
-            </button>
-            <button class="hlx-btn-negative"
-                mat-flat-button>Button
-                <mat-icon iconPositionEnd>
-                    anchor</mat-icon>
-            </button>
-        </div>
-        <div class="story__row hlx-btn-invert background-invert">
-            <button mat-flat-button>Button</button>
-            <button mat-flat-button>
-            <mat-icon>anchor</mat-icon>
-            Button
-            </button>
-            <button mat-flat-button>
-                Button<mat-icon iconPositionEnd>
-                    anchor</mat-icon>
-            </button>
-        </div>
+  <div class="story__box">
+    <div class="story__row">
+      <button matButton="filled">Button</button>
+      <button matButton="filled">
+        <mat-icon>anchor</mat-icon>
+        Button
+      </button>
+      <button matButton="filled">
+        Button
+        <mat-icon iconPositionEnd>anchor</mat-icon>
+      </button>
     </div>
-</div>`;
+
+    <div class="story__row">
+      <button class="hlx-btn-accent" matButton="filled">Button</button>
+      <button class="hlx-btn-accent" matButton="filled">
+        <mat-icon>anchor</mat-icon>
+        Button
+      </button>
+      <button class="hlx-btn-accent" matButton="filled">
+        Button
+        <mat-icon iconPositionEnd>anchor</mat-icon>
+      </button>
+    </div>
+
+    <div class="story__row">
+      <button class="hlx-btn-negative" matButton="filled">Button</button>
+      <button class="hlx-btn-negative" matButton="filled">
+        <mat-icon>anchor</mat-icon>
+        Button
+      </button>
+      <button class="hlx-btn-negative" matButton="filled">
+        Button
+        <mat-icon iconPositionEnd>anchor</mat-icon>
+      </button>
+    </div>
+
+    <div class="story__row hlx-btn-invert background-invert">
+      <button matButton="filled">Button</button>
+      <button matButton="filled">
+        <mat-icon>anchor</mat-icon>
+        Button
+      </button>
+      <button matButton="filled">
+        Button
+        <mat-icon iconPositionEnd>anchor</mat-icon>
+      </button>
+    </div>
+  </div>
+</div>
+`;
 
 const styleCode = `@use "@cdx/theme-angular-material" as hlx;
 

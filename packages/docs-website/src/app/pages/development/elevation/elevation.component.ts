@@ -1,4 +1,3 @@
-import { NgClass } from '@angular/common';
 import { Component, HostBinding } from '@angular/core';
 import { MatDivider } from '@angular/material/divider';
 import {
@@ -39,7 +38,6 @@ interface ElTable {
     MatHeaderCell,
     MatCellDef,
     MatCell,
-    NgClass,
     MatHeaderRowDef,
     MatHeaderRow,
     MatRowDef,

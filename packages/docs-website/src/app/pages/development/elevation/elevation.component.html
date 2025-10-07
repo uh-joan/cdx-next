@@ -49,7 +49,9 @@
     <ng-container matColumnDef="example">
       <th mat-header-cell *matHeaderCellDef></th>
       <td mat-cell *matCellDef="let element">
-        <div class="elevation-example mat-body-large" [ngClass]="element.class">
+        <div
+          [class]="'elevation-example mat-body-large ' + (element.class || '')"
+        >
           {{ element.example }}
         </div>
       </td>

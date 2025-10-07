@@ -4,51 +4,53 @@ import { MatIconModule } from '@angular/material/icon';
 import { InputViewerComponent } from 'src/app/core/example-viewer/example-viewer.model';
 
 const htmlCode = `<div class="story">
-    <div class="story__box">
-        <div class="story__row">
-            <button mat-fab>
-                <mat-icon>anchor</mat-icon>
-            </button>
-        </div>
-        <div class="story__row hlx-btn-accent">
-            <button mat-fab>
-                <mat-icon>anchor</mat-icon>
-            </button>
-        </div>
-        <div class="story__row hlx-btn-negative">
-            <button mat-fab>
-                <mat-icon>anchor</mat-icon>
-            </button>
-        </div>
-        <div class="story__row hlx-btn-invert background-invert">
-            <button mat-fab>
-                <mat-icon>anchor</mat-icon>
-            </button>
-        </div>
+  <div class="story__box">
+    <div class="story__row">
+      <button matFab>
+        <mat-icon>anchor</mat-icon>
+      </button>
     </div>
-    <div class="story__box">
-        <div class="story__row">
-            <button mat-fab disabled>
-                <mat-icon>anchor</mat-icon>
-            </button>
-        </div>
-        <div class="story__row hlx-btn-accent">
-            <button mat-fab disabled>
-                <mat-icon>anchor</mat-icon>
-            </button>
-        </div>
-        <div class="story__row hlx-btn-negative ">
-            <button mat-fab disabled>
-            <mat-icon>anchor</mat-icon>
-            </button>
-        </div>
-        <div class="story__row hlx-btn-invert background-invert">
-            <button mat-fab disabled>
-                <mat-icon>anchor</mat-icon>
-            </button>
-        </div>
+    <div class="story__row hlx-btn-accent">
+      <button matFab>
+        <mat-icon>anchor</mat-icon>
+      </button>
     </div>
-</div>`;
+    <div class="story__row hlx-btn-negative">
+      <button matFab>
+        <mat-icon>anchor</mat-icon>
+      </button>
+    </div>
+    <div class="story__row hlx-btn-invert background-invert">
+      <button matFab>
+        <mat-icon>anchor</mat-icon>
+      </button>
+    </div>
+  </div>
+
+  <div class="story__box">
+    <div class="story__row">
+      <button matFab disabled>
+        <mat-icon>anchor</mat-icon>
+      </button>
+    </div>
+    <div class="story__row hlx-btn-accent">
+      <button matFab disabled>
+        <mat-icon>anchor</mat-icon>
+      </button>
+    </div>
+    <div class="story__row hlx-btn-negative">
+      <button matFab disabled>
+        <mat-icon>anchor</mat-icon>
+      </button>
+    </div>
+    <div class="story__row hlx-btn-invert background-invert">
+      <button matFab disabled>
+        <mat-icon>anchor</mat-icon>
+      </button>
+    </div>
+  </div>
+</div>
+`;
 
 const styleCode = `@use "@cdx/theme-angular-material" as hlx;
 

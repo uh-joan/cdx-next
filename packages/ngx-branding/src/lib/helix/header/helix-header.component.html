@@ -26,9 +26,7 @@
     }
     <div
       class="hlx-header__product-identification"
-      [ngClass]="{
-        'hlx-header__product-identification--only-product': !branded
-      }"
+      [class.hlx-header__product-identification--only-product]="!branded"
       #productIdentification
     >
       <ng-content
