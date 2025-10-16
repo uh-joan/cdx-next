@@ -117,7 +117,7 @@ pipeline {
                         git commit --amend --no-edit
                         git tag -f $OLD_TAG
                     '''
-                  withCredentials([usernamePassword(credentialsId: 'github-app-private-key', usernameVariable: 'GITHUB_APP', passwordVariable: 'GITHUB_ACCESS_TOKEN')]) {
+                  withCredentials([usernamePassword(credentialsId: 'github-app-private-key')]) {
                     sh("git remote set-url origin https://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@github.com/clarivate-prod/cdx-next.git}")
                     sh "git push --follow-tags origin ${BRANCH_NAME}"
                     sh  'git push --tags'
