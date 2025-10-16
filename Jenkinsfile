@@ -105,7 +105,7 @@ pipeline {
                 GIT_COMMITTER_NAME = "${GIT_AUTHOR_NAME}"
             }
             steps {
-                sshagent(credentials: ['jenkins-git-clarivate-io']) {
+                sshagent(credentials: ['github-app-private-key']) {
                     sh "git checkout ${BRANCH_NAME}"
                     sh 'npx nx run workspace:version --releaseAs=preminor --preid=alpha --skip-nx-cache'
                     sh 'npx nx run workspace:bumpDependencies --skip-nx-cache'
@@ -117,8 +117,11 @@ pipeline {
                         git commit --amend --no-edit
                         git tag -f $OLD_TAG
                     '''
+                withCredentials([usernamePassword(credentialsId: 'github-app-private-key', usernameVariable: 'GITHUB_APP', passwordVariable: 'GITHUB_ACCESS_TOKEN')]) {
+                    sh("git remote set-url origin https://x-access-token:${GITHUB_ACCESS_TOKEN}@${github_repo_url}")
                     sh "git push --follow-tags origin ${BRANCH_NAME}"
                     sh  'git push --tags'
+                }
                 }
                 sh 'npm run build'
                 sh """
