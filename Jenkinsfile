@@ -1,5 +1,4 @@
 /* groovylint-disable DuplicateListLiteral, DuplicateMapLiteral, DuplicateStringLiteral */
-@Library('clarivate-jenkins-pipeline-shared-function@github_support') _
 
 pipeline {
     agent {
