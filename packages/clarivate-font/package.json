@@ -1,6 +1,6 @@
 {
   "name": "@cdx/clarivate-font",
-  "version": "19.1.0",
+  "version": "1.0.0-alpha.0",
   "repository": {
     "type": "git",
     "url": "ssh://git@github.com:clarivate-prod/cdx-next.git",

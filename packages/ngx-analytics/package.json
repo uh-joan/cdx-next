@@ -1,6 +1,6 @@
 {
   "name": "@cdx/ngx-analytics",
-  "version": "19.1.0",
+  "version": "1.0.0-alpha.0",
   "repository": {
     "type": "git",
     "url": "ssh://git@github.com:clarivate-prod/cdx-next.git",
@@ -10,7 +10,7 @@
     "tslib": "^2.3.0"
   },
   "peerDependencies": {
-    "@cdx/ngx-branding": "19.1.0",
+    "@cdx/ngx-branding": "1.0.0-alpha.0",
     "@snowplow/browser-tracker": "^3.7.0"
   }
 }
