@@ -98,14 +98,15 @@ pipeline {
             }
             environment {
                 ARTIFACTORY = credentials('repo-clarivate-io')
-                GIT_SSH_COMMAND = 'ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no'
                 GIT_AUTHOR_EMAIL = 'platform-jenkins-noreply@clarivate.com'
                 GIT_AUTHOR_NAME = 'Platform Jenkins'
                 GIT_COMMITTER_EMAIL = "${GIT_AUTHOR_EMAIL}"
                 GIT_COMMITTER_NAME = "${GIT_AUTHOR_NAME}"
             }
             steps {
-                sshagent(credentials: ['github-app-private-key']) {
+                withCredentials([
+                    usernamePassword(credentialsId: 'github-app-private-key', usernameVariable: 'GITHUB_APP', passwordVariable: 'GITHUB_TOKEN')
+                ]) {
                     sh "git checkout ${BRANCH_NAME}"
                     sh 'npx nx run workspace:version --releaseAs=preminor --preid=alpha --skip-nx-cache'
                     sh 'npx nx run workspace:bumpDependencies --skip-nx-cache'
@@ -117,11 +118,10 @@ pipeline {
                         git commit --amend --no-edit
                         git tag -f $OLD_TAG
                     '''
-                  withCredentials([usernamePassword(credentialsId: 'github-app-private-key')]) {
-                    sh("git remote set-url origin https://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@github.com/clarivate-prod/cdx-next.git}")
-                    sh "git push --follow-tags origin ${BRANCH_NAME}"
-                    sh  'git push --tags'
-                }
+                    sh "git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/clarivate-prod/cdx-next.git"
+                    sh 'git fetch --all --tags'
+                    sh "git push --force-with-lease --follow-tags origin ${BRANCH_NAME}"
+                    sh 'git push --force-with-lease --tags'
                 }
                 sh 'npm run build'
                 sh """
@@ -164,14 +164,15 @@ pipeline {
             }
             environment {
                 ARTIFACTORY = credentials('repo-clarivate-io')
-                GIT_SSH_COMMAND = 'ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no'
                 GIT_AUTHOR_EMAIL = 'platform-jenkins-noreply@clarivate.com'
                 GIT_AUTHOR_NAME = 'Platform Jenkins'
                 GIT_COMMITTER_EMAIL = "${GIT_AUTHOR_EMAIL}"
                 GIT_COMMITTER_NAME = "${GIT_AUTHOR_NAME}"
             }
             steps {
-                sshagent(credentials: ['jenkins-git-clarivate-io']) {
+                withCredentials([
+                    usernamePassword(credentialsId: 'github-app-private-key', usernameVariable: 'GITHUB_APP', passwordVariable: 'GITHUB_TOKEN')
+                ]) {
                     sh "git checkout ${BRANCH_NAME}"
                     sh 'npx nx run workspace:version --releaseAs=prerelease --preid=alpha --skip-nx-cache'
                     sh 'npx nx run workspace:bumpDependencies --skip-nx-cache'
@@ -183,8 +184,10 @@ pipeline {
                         git commit --amend --no-edit
                         git tag -f $OLD_TAG
                     '''
-                    sh "git push --follow-tags origin ${BRANCH_NAME}"
-                    sh  'git push --tags'
+                    sh "git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/clarivate-prod/cdx-next.git"
+                    sh 'git fetch --all --tags'
+                    sh "git push --force-with-lease --follow-tags origin ${BRANCH_NAME}"
+                    sh 'git push --force-with-lease --tags'
                 }
                 sh 'npm run build'
                 sh """
@@ -229,7 +232,6 @@ pipeline {
             }
             environment {
                 ARTIFACTORY = credentials('repo-clarivate-io')
-                GIT_SSH_COMMAND = 'ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no'
                 GIT_AUTHOR_EMAIL = 'platform-jenkins-noreply@clarivate.com'
                 GIT_AUTHOR_NAME = 'Platform Jenkins'
                 GIT_COMMITTER_EMAIL = "${GIT_AUTHOR_EMAIL}"
@@ -237,7 +239,9 @@ pipeline {
             }
 
             steps {
-                sshagent(credentials: ['jenkins-git-clarivate-io']) {
+                withCredentials([
+                    usernamePassword(credentialsId: 'github-app-private-key', usernameVariable: 'GITHUB_APP', passwordVariable: 'GITHUB_TOKEN')
+                ]) {
                     sh "git checkout ${BRANCH_NAME}"
                     sh "npx nx run workspace:version --releaseAs=${params.Level} --skip-nx-cache"
                     sh 'npx nx run workspace:bumpDependencies --skip-nx-cache'
@@ -249,8 +253,10 @@ pipeline {
                         git commit --amend --no-edit
                         git tag -f $OLD_TAG
                     '''
-                    sh "git push --follow-tags origin ${BRANCH_NAME}"
-                    sh  'git push --tags'
+                    sh "git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/clarivate-prod/cdx-next.git"
+                    sh 'git fetch --all --tags'
+                    sh "git push --force-with-lease --follow-tags origin ${BRANCH_NAME}"
+                    sh 'git push --force-with-lease --tags'
                 }
                 sh 'npm run build'
                 sh """
