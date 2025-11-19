@@ -1,6 +1,6 @@
 {
   "name": "@cdx/oti-snippet",
-  "version": "0.1.0-alpha.0",
+  "version": "19.1.1",
   "repository": {
     "type": "git",
     "url": "ssh://git@github.com:clarivate-prod/cdx-next.git",
