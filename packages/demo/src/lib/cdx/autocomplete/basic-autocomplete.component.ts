@@ -33,7 +33,6 @@ export const basicTemplate = `<form>
   encapsulation: ViewEncapsulation.None,
   template: basicTemplate,
 })
-// eslint-disable-next-line @angular-eslint/component-class-suffix
 export class BasicAutocomplete implements OnInit {
   autoFocus = false;
   myControl = new FormControl();

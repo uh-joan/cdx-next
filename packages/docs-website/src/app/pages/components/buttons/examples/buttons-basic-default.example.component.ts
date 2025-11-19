@@ -7,7 +7,6 @@ const htmlCode = `<div class="story">
   <div class="story__box">
     <div class="story__row ">
       <button matButton>Button</button>
-      <button matButton="tonal">Button</button>
       <button matButton>
         <mat-icon>anchor</mat-icon>
         Button

@@ -1,8 +1,11 @@
-import { Component, OnInit } from '@angular/core';
-import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { Component, computed } from '@angular/core';
+import {
+  FormsModule,
+  ReactiveFormsModule,
+  UntypedFormControl,
+} from '@angular/forms';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatInputModule } from '@angular/material/input';
-import { map, Observable, startWith } from 'rxjs';
 import { InputViewerComponent } from 'src/app/core/example-viewer/example-viewer.model';
 
 const htmlCode = `<div class="story">
@@ -21,12 +24,14 @@ const htmlCode = `<div class="story">
         #auto="matAutocomplete"
         [autoActiveFirstOption]="autoFocus"
       >
+        @for (option of filteredOptions(); track option) {
+        
         <mat-option
-          *ngFor="let option of filteredOptions | async"
           [value]="option"
         >
           {{ option }}
         </mat-option>
+        }
       </mat-autocomplete>
     </mat-form-field>
   </form>
@@ -46,18 +51,12 @@ const styleCode = `.story {
   ],
   styles: styleCode,
 })
-class SampleComponent implements OnInit {
+class SampleComponent {
   autoFocus = false;
-  myControl = new FormControl();
+  myControl = new UntypedFormControl('');
   options: string[] = ['Apple', 'Orange', 'Banana'];
-  filteredOptions: Observable<string[]> | undefined;
 
-  ngOnInit() {
-    this.filteredOptions = this.myControl.valueChanges.pipe(
-      startWith(''),
-      map((value) => this._filter(value)),
-    );
-  }
+  filteredOptions = computed(() => this._filter(this.myControl.getRawValue()));
 
   private _filter(value: string): string[] {
     const filterValue = value.toLowerCase();
@@ -97,14 +96,8 @@ class SampleComponent implements OnInit {
   autoFocus = false;
   myControl = new FormControl();
   options: string[] = ['Apple', 'Orange', 'Banana'];
-  filteredOptions: Observable<string[]> | undefined;
+  filteredOptions = computed(() => this._filter(this.myControl.getRawValue()));
 
-  ngOnInit() {
-    this.filteredOptions = this.myControl.valueChanges.pipe(
-      startWith(''),
-      map((value) => this._filter(value)),
-    );
-  }
 
   private _filter(value: string): string[] {
     const filterValue = value.toLowerCase();
