@@ -14,6 +14,7 @@ import { OneTrustModule } from '../../one-trust/one-trust.module';
 import { OneTrustService } from '../../one-trust/one-trust.service';
 import { HelixFooterGroupComponent } from './helix-footer-group.component';
 import { HelixFooterGroupTitleDirective } from './helix-footer-group-title.directive';
+import { HelixFooterLinkDirective } from './helix-footer-link.directive';
 
 @Component({
   selector: 'footer[hlx-footer]',
@@ -24,6 +25,7 @@ import { HelixFooterGroupTitleDirective } from './helix-footer-group-title.direc
     OneTrustModule,
     TranslateModule,
     HelixFooterGroupComponent,
+    HelixFooterLinkDirective,
     HelixFooterGroupTitleDirective,
   ],
   encapsulation: ViewEncapsulation.None,
