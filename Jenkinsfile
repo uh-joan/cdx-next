@@ -148,7 +148,7 @@ pipeline {
                                 -s @cdx \
                                 --config-path=.
                         """
-                        sh 'cp ./.npmrc packages/*'
+                        sh 'find packages -maxdepth 1 -mindepth 1 -type d -exec cp ./.npmrc {} \\;'
                         sh 'npm run publish:prerelease'
                         withAWS(
                             role: 'arn:aws:iam::809146824789:role/cl/app/cdx/jenkins-cdx-prod_role',
@@ -300,7 +300,7 @@ pipeline {
                                 -s @cdx \
                                 --config-path=.
                         """
-                        sh 'cp ./.npmrc packages/*'
+                        sh 'find packages -maxdepth 1 -mindepth 1 -type d -exec cp ./.npmrc {} \\;'
                         sh 'npm run publish:release'
                         withAWS(
                             role: 'arn:aws:iam::809146824789:role/cl/app/cdx/jenkins-cdx-prod_role',
