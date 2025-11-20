@@ -1,14 +1,19 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import * as Highcharts from 'highcharts';
+import {
+  HighchartsChartComponent,
+  providePartialHighcharts,
+} from 'highcharts-angular';
 
 @Component({
   selector: 'demo-highcharts-styled',
   templateUrl: './highcharts-styled.component.html',
   styleUrls: ['./highcharts-styled.component.scss'],
   encapsulation: ViewEncapsulation.None,
+  imports: [HighchartsChartComponent],
+  providers: [providePartialHighcharts({})],
 })
 export class HighchartsStyledComponent {
-  Highcharts: typeof Highcharts = Highcharts;
   chartOptionsStyled: Highcharts.Options = {
     chart: {
       type: 'column',

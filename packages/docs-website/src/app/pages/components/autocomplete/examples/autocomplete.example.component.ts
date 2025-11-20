@@ -43,7 +43,7 @@ const styleCode = `.story {
     AsyncPipe,
   ],
 })
-class SampleComponent {
+class SampleComponent implements OnInit {
   myControl = new FormControl('');
   options: string[] = ['One', 'Two', 'Three'];
   filteredOptions!: Observable<string[]>;

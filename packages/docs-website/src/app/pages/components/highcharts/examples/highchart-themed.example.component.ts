@@ -2,13 +2,11 @@ import { Component } from '@angular/core';
 // @ts-expect-error no type is defined here
 import { HIGHCHARTS_HLX_THEME } from '@cdx/theme-highcharts';
 import * as Highcharts from 'highcharts';
-import HighchartsAccessibilityModule from 'highcharts/modules/accessibility';
-import { HighchartsChartModule } from 'highcharts-angular';
+import { HighchartsChartComponent } from 'highcharts-angular';
 import { InputViewerComponent } from 'src/app/core/example-viewer/example-viewer.model';
 
 const htmlCode = `<div class="story">
     <highcharts-chart
-        [Highcharts]="Highcharts"
         [options]="chartOptionsThemed"
     ></highcharts-chart>
 </div>`;
@@ -23,20 +21,17 @@ const styleCode = `.story {
         height: 400px;
         display: block
     }
-}`; // TODO FIX THIS
-
-HighchartsAccessibilityModule(Highcharts);
+}`;
 
 @Component({
   template: htmlCode,
-  imports: [HighchartsChartModule],
+  imports: [HighchartsChartComponent],
   styles: styleCode,
 })
 class SampleComponent {
   constructor() {
     Highcharts.setOptions(HIGHCHARTS_HLX_THEME);
   }
-  Highcharts: typeof Highcharts = Highcharts;
   chartOptionsThemed: Highcharts.Options = {
     title: {
       text: 'Solar Employment Growth by Sector, 2010-2016',
@@ -105,23 +100,20 @@ export const HighchartThemedComponent: InputViewerComponent = {
   htmlCode: htmlCode,
   cssCode: styleCode,
   tsCode: `import { Component } from '@angular/core';
-import * as Highcharts from 'highcharts';
-import { HighchartsChartModule } from 'highcharts-angular';
+import { HighchartsChartComponent, providePartialHighcharts} from 'highcharts-angular';
 // import { HIGHCHARTS_CDX_THEME } from '@cdx/theme-highcharts';
 
 
 @Component({
     template: htmlCode,
     imports: [
-        HighchartsChartModule
+        HighchartsChartComponent
     ],
     styles: styleCode,
 })
 class SampleComponent {
     constructor() {
-        // Highcharts.setOptions(HIGHCHARTS_CDX_THEME);
     }
-    Highcharts: typeof Highcharts = Highcharts;
     chartOptionsThemed: Highcharts.Options = {
         title: {
             text: 'Solar Employment Growth by Sector, 2010-2016',

@@ -12,6 +12,7 @@ import {
 } from '@angular/router';
 import { OneTrustModule } from '@cdx/ngx-branding';
 import { TranslateModule } from '@ngx-translate/core';
+import { provideHighcharts } from 'highcharts-angular';
 import { HIGHLIGHT_OPTIONS } from 'ngx-highlightjs';
 
 import { routes } from './app.routes';
@@ -21,6 +22,9 @@ export const appConfig: ApplicationConfig = {
     provideBrowserGlobalErrorListeners(),
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideHttpClient(withFetch()),
+    provideHighcharts({
+      modules: () => [import('highcharts/modules/accessibility')],
+    }),
     provideRouter(
       routes,
       withViewTransitions({

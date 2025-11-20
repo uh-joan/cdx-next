@@ -13,12 +13,12 @@ export class HighchartsComponent {
   @HostBinding('class') hostClass = 'cdx-section';
 
   moduleText = `import * as Highcharts from 'highcharts';
-  import { HighchartsChartModule } from 'highcharts-angular';
+  import { HighchartsChartComponent } from 'highcharts-angular';
   import { HIGHCHARTS_CDX_THEME } from '@cdx/theme-highcharts';
   
   @NgModule({
     declarations: [MyHighchartsComponent],
-    imports: [HighchartsChartModule],
+    imports: [HighchartsChartComponent],
   })
   export class MyHighchartsModule {
     constructor() {

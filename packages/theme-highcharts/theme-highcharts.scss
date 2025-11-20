@@ -37,10 +37,11 @@ $hlx-highcharts-colors: #b175e1, #18a381, #3595f0, #ed5564, #5e33bf, #003f51,
 @mixin hlx-highcharts-styled-mode-theme(
   $color-palette: $hlx-highcharts-colors
 ) {
-  body {
-    @for $i from 1 through length($color-palette) {
-      $color: nth($color-palette, $i);
-      --highcharts-color-#{$i - 1}: #{$color};
+  @for $i from 1 through length($color-palette) {
+    $color: nth($color-palette, $i);
+    .highcharts-color-#{$i - 1} {
+      fill: $color;
+      stroke: $color;
     }
   }
 }
