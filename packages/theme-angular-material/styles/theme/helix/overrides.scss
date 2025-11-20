@@ -309,7 +309,6 @@ Z'/>\
       )
     );
 
-    // FAB overrides using your negative/error tokens
     @include mat.fab-overrides(
       (
         container-color: #{tokens.$components-negative-filled},
@@ -381,76 +380,108 @@ Z'/>\
     @include mat.chips-color(hlx.$helix-theme, $color-variant: secondary);
     @include hlx-chip-text-color(tokens.$text-primary);
 
-    --mat-chip-outline-color: transparent;
-    --mat-chip-elevated-container-color: #{tokens.$components-secondary-filled};
+    @include mat.chips-overrides(
+      (
+        outline-color: transparent,
+        elevated-container-color: #{tokens.$components-secondary-filled},
+      )
+    );
   }
 
   .hlx-primary-chip {
     @include mat.chips-color(hlx.$helix-theme, $color-variant: primary);
     @include hlx-chip-text-color(tokens.$text-invert);
 
-    --mat-chip-outline-color: transparent;
-    --mat-chip-elevated-container-color: #{tokens.$components-primary-filled};
-    --mat-chip-hover-state-layer-color: #000;
-    --mat-chip-hover-state-layer-opacity: 1;
+    @include mat.chips-overrides(
+      (
+        outline-color: transparent,
+        elevated-container-color: #{tokens.$components-primary-filled},
+        hover-state-layer-color: #000,
+        hover-state-layer-opacity: 1,
+      )
+    );
   }
 
   .hlx-accent-chip {
     @include mat.chips-color(hlx.$helix-theme, $color-variant: tertiary);
     @include hlx-chip-text-color(tokens.$text-invert);
 
-    --mat-chip-outline-color: transparent;
-    --mat-chip-elevated-container-color: #{tokens.$components-accent-filled};
-    --mat-chip-hover-state-layer-color: #000;
-    --mat-chip-hover-state-layer-opacity: 0.16;
+    @include mat.chips-overrides(
+      (
+        outline-color: transparent,
+        elevated-container-color: #{tokens.$components-accent-filled},
+        hover-state-layer-color: #000,
+        hover-state-layer-opacity: 0.16,
+      )
+    );
   }
 
   .hlx-negative-chip {
     @include mat.chips-color(hlx.$helix-theme, $color-variant: error);
     @include hlx-chip-text-color(primitives.$color-red-900);
 
-    --mat-chip-outline-color: transparent;
-    --mat-chip-elevated-container-color: #{tokens.$components-negative-filled-light};
-    --mat-chip-hover-state-layer-color: #000;
-    --mat-chip-hover-state-layer-opacity: 0.04;
+    @include mat.chips-overrides(
+      (
+        outline-color: transparent,
+        elevated-container-color: #{tokens.$components-negative-filled-light},
+        hover-state-layer-color: #000,
+        hover-state-layer-opacity: 0.04,
+      )
+    );
   }
 
   .hlx-warn-chip {
     @include mat.chips-color(hlx.$helix-theme, $color-variant: error);
     @include hlx-chip-text-color(tokens.$text-warn);
 
-    --mat-chip-outline-color: transparent;
-    --mat-chip-elevated-container-color: #{tokens.$components-warn-filled};
-    --mat-chip-hover-state-layer-color: #000;
-    --mat-chip-hover-state-layer-opacity: 0.04;
+    @include mat.chips-overrides(
+      (
+        outline-color: transparent,
+        elevated-container-color: #{tokens.$components-warn-filled},
+        hover-state-layer-color: #000,
+        hover-state-layer-opacity: 0.04,
+      )
+    );
   }
 
   .hlx-positive-chip {
     @include mat.chips-color(hlx.$helix-theme, $color-variant: error);
     @include hlx-chip-text-color(tokens.$text-positive);
 
-    --mat-chip-outline-color: transparent;
-    --mat-chip-elevated-container-color: #{tokens.$components-positive-filled};
-    --mat-chip-hover-state-layer-color: #000;
-    --mat-chip-hover-state-layer-opacity: 0.04;
+    @include mat.chips-overrides(
+      (
+        outline-color: transparent,
+        elevated-container-color: #{tokens.$components-positive-filled},
+        hover-state-layer-color: #000,
+        hover-state-layer-opacity: 0.04,
+      )
+    );
   }
 
   .hlx-info-chip {
     @include mat.chips-color(hlx.$helix-theme, $color-variant: error);
     @include hlx-chip-text-color(tokens.$text-info);
 
-    --mat-chip-outline-color: transparent;
-    --mat-chip-elevated-container-color: #{tokens.$components-info-filled};
-    --mat-chip-hover-state-layer-color: #000;
-    --mat-chip-hover-state-layer-opacity: 0.04;
+    @include mat.chips-overrides(
+      (
+        outline-color: transparent,
+        elevated-container-color: #{tokens.$components-info-filled},
+        hover-state-layer-color: #000,
+        hover-state-layer-opacity: 0.04,
+      )
+    );
   }
 
   .hlx-outlined-chip {
     @include mat.chips-color(hlx.$helix-theme, $color-variant: error);
     @include hlx-chip-text-color(tokens.$text-primary);
 
-    --mat-chip-outline-color: #{tokens.$components-primary-outline};
-    --mat-chip-elevated-container-color: white;
+    @include mat.chips-overrides(
+      (
+        outline-color: #{tokens.$components-primary-outline},
+        elevated-container-color: white,
+      )
+    );
   }
 
   .hlx-chip-small {
@@ -463,28 +494,32 @@ Z'/>\
 }
 
 @mixin hlx-chip-text-color($color) {
-  --mat-chip-label-text-color: #{$color};
-  --mat-chip-with-icon-icon-color: #{$color};
-  --mat-chip-with-trailing-icon-trailing-icon-color: #{$color};
+  @include mat.chips-overrides(
+    (
+      label-text-color: #{$color},
+      with-icon-icon-color: #{$color},
+      with-trailing-icon-trailing-icon-color: #{$color},
+    )
+  );
 }
 
 @mixin theme-helix-icons() {
-  $colors: (
-    primary: #{primitives.$color-neutral-800},
-    secondary: #{primitives.$color-neutral-600},
-    invert: #{primitives.$color-neutral-0},
-    info: #{primitives.$color-blue-900},
-    negative: #{primitives.$color-red-500},
-    warn: #{primitives.$color-yellow-900},
-    positive: #{primitives.$color-green-900},
-    brand: #{primitives.$color-purple-400},
-    accent: #{primitives.$color-purple-600},
-    disabled: #{primitives.$color-neutral-400},
+  $hlx-icon-colors: (
+    primary: primitives.$color-neutral-800,
+    secondary: primitives.$color-neutral-600,
+    invert: primitives.$color-neutral-0,
+    info: primitives.$color-blue-900,
+    negative: primitives.$color-red-500,
+    warn: primitives.$color-yellow-900,
+    positive: primitives.$color-green-900,
+    brand: primitives.$color-purple-400,
+    accent: primitives.$color-purple-600,
+    disabled: primitives.$color-neutral-400,
   );
 
-  @each $key, $value in $colors {
-    .hlx-icon-#{$key} {
-      color: $value;
+  @each $name, $color in $hlx-icon-colors {
+    .hlx-icon-#{$name} {
+      color: #{$color};
     }
   }
 }
