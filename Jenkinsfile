@@ -300,20 +300,7 @@ pipeline {
                                 -s @cdx \
                                 --config-path=.
                         """
-                        sh 'cp ./.npmrc packages/branding'
-                        sh 'cp ./.npmrc packages/theme-ag-grid'
-                        sh 'cp ./.npmrc packages/theme-badge'
-                        sh 'cp ./.npmrc packages/theme-button-toggle'
-                        sh 'cp ./.npmrc packages/theme-material-components-web'
-                        sh 'cp ./.npmrc packages/theme-popperjs'
-                        sh 'cp ./.npmrc packages/theme-expansion-panel'
-                        sh 'cp ./.npmrc packages/theme-highcharts'
-                        sh 'cp ./.npmrc packages/colors'
-                        sh 'cp ./.npmrc packages/shared-branding'
-                        sh 'cp ./.npmrc packages/notification'
-                        sh 'cp ./.npmrc packages/theme-react-mui'
-                        sh 'cp ./.npmrc packages/theme-snackbar'
-                        sh 'cp ./.npmrc packages/rcx-branding'
+                        sh 'cp ./.npmrc packages/*'
                         sh 'npm run publish:release'
                         withAWS(
                             role: 'arn:aws:iam::809146824789:role/cl/app/cdx/jenkins-cdx-prod_role',
