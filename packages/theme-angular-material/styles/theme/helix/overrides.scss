@@ -124,8 +124,8 @@
     height: fit-content;
     padding: 4px;
     border: 1px solid #babcbe;
-    background-color: tokens.$surface-minimal;
     border-radius: $helix-default-round-shape;
+    background-color: tokens.$surface-minimal;
   }
 
   .hlx-button-toggle-invert {
@@ -271,79 +271,89 @@ Z'/>\
       )
     );
 
-    --mat-button-outlined-outline-color: #{tokens.$components-accent-outline};
-    --mat-fab-container-color: #{primitives.$color-purple-600};
-    --mat-fab-foreground-color: #{tokens.$text-invert};
-    --mat-fab-small-container-color: #{tokens.$components-accent-outline};
-    --mat-fab-small-foreground-color: #{tokens.$text-invert};
-    --mat-button-filled-state-layer-color: #{tokens.$components-button-hover-background} !important;
-    --mat-button-filled-hover-state-layer-opacity: 0.16 !important;
-    --mat-button-text-state-layer-color: #{tokens.$components-accent-filled} !important;
-    --mat-button-text-hover-state-layer-opacity: 0.04 !important;
-    --mat-button-outlined-state-layer-color: #{tokens.$components-accent-filled} !important;
-    --mat-button-outlined-hover-state-layer-opacity: 0.04 !important;
+    @include mat.button-overrides(
+      (
+        outlined-outline-color: #{tokens.$components-accent-outline},
+        filled-state-layer-color: #{tokens.$components-button-hover-background},
+        filled-hover-state-layer-opacity: 0.16,
+        text-state-layer-color: #{tokens.$components-accent-filled},
+        text-hover-state-layer-opacity: 0.04,
+        outlined-state-layer-color: #{tokens.$components-accent-filled},
+        outlined-hover-state-layer-opacity: 0.04,
+      )
+    );
+
+    @include mat.fab-overrides(
+      (
+        container-color: #{primitives.$color-purple-600},
+        foreground-color: #{tokens.$text-invert},
+        small-container-color: #{tokens.$components-accent-outline},
+        small-foreground-color: #{tokens.$text-invert},
+      )
+    );
   }
 
   .hlx-btn-negative {
     @include mat.button-color(hlx.$helix-error-theme);
     @include mat.fab-color(hlx.$helix-error-theme);
 
-    --mat-button-outlined-outline-color: #{tokens.$components-negative-filled};
-    --mat-fab-container-color: #{tokens.$components-negative-filled};
-    --mat-fab-small-container-color: #{tokens.$components-negative-filled};
-    --mat-button-filled-state-layer-color: #{tokens.$components-button-hover-background} !important;
-    --mat-button-filled-hover-state-layer-opacity: 0.04 !important;
-    --mat-button-text-state-layer-color: #{tokens.$text-negative} !important;
-    --mat-button-text-hover-state-layer-opacity: 0.16 !important;
-    --mat-button-outlined-state-layer-color: #{tokens.$text-negative} !important;
-    --mat-button-outlined-hover-state-layer-opacity: 0.16 !important;
+    @include mat.button-overrides(
+      (
+        outlined-outline-color: #{tokens.$components-negative-filled},
+        filled-state-layer-color: #{tokens.$components-button-hover-background},
+        filled-hover-state-layer-opacity: 0.04,
+        text-state-layer-color: #{tokens.$text-negative},
+        text-hover-state-layer-opacity: 0.16,
+        outlined-state-layer-color: #{tokens.$text-negative},
+        outlined-hover-state-layer-opacity: 0.16,
+      )
+    );
+
+    // FAB overrides using your negative/error tokens
+    @include mat.fab-overrides(
+      (
+        container-color: #{tokens.$components-negative-filled},
+        small-container-color: #{tokens.$components-negative-filled},
+      )
+    );
   }
 
   .hlx-btn-invert {
     @include mat.button-color(hlx.$helix-invert-theme, $color-variant: primary);
     @include mat.fab-color(hlx.$helix-invert-theme, $color-variant: primary);
 
-    --mat-button-outlined-outline-color: #{tokens.$text-invert};
-    --mat-fab-container-color: #{tokens.$surface-primary};
-    --mat-fab-foreground-color: #{tokens.$icon-primary};
-    --mat-fab-small-container-color: #{tokens.$surface-primary};
-    --mat-fab-small-foreground-color: #{tokens.$icon-primary};
-    --mat-button-filled-state-layer-color: #{tokens.$components-button-hover-background} !important;
-    --mat-button-filled-hover-state-layer-opacity: 0.04 !important;
+    @include mat.button-overrides(
+      (
+        outlined-outline-color: #{tokens.$text-invert},
+        filled-state-layer-color: #{tokens.$components-button-hover-background},
+        filled-hover-state-layer-opacity: 0.04,
+      )
+    );
+
+    @include mat.fab-overrides(
+      (
+        container-color: #{tokens.$surface-primary},
+        foreground-color: #{tokens.$icon-primary},
+        small-container-color: #{tokens.$surface-primary},
+        small-foreground-color: #{tokens.$icon-primary},
+      )
+    );
   }
 
   .hlx-tab-invert {
-    .mat-mdc-tab-header {
-      color: #{tokens.$text-invert};
-      background-color: #{tokens.$surface-invert};
+    @include mat.tabs-color(hlx.$helix-invert-theme, $color-variant: primary);
 
-      .mat-mdc-tab {
-        .mat-ripple-element {
-          background-color: lighten(tokens.$surface-invert, 90%);
-        }
-        &:hover {
-          background-color: lighten(tokens.$surface-invert, 10%);
-        }
-      }
-
-      .mat-mdc-tab-list {
-        .mdc-tab__content {
-          .mdc-tab__text-label {
-            color: #{tokens.$text-invert};
-          }
-
-          .mdc-tab-indicator {
-            .mdc-tab-indicator__content {
-              border-color: #{tokens.$text-invert};
-            }
-          }
-
-          .mat-ink-bar {
-            background-color: #{tokens.$text-invert};
-          }
-        }
-      }
-    }
+    --mat-tab-header-background-color: #{tokens.$surface-invert};
+    --mat-tab-label-text-color: #{tokens.$text-invert};
+    --mat-tab-active-label-text-color: #{tokens.$text-invert};
+    --mat-tab-active-focus-label-text-color: #{tokens.$text-invert};
+    --mat-tab-active-hover-label-text-color: #{tokens.$text-invert};
+    --mat-tab-inactive-label-text-color: #{tokens.$text-invert};
+    --mat-tab-inactive-focus-label-text-color: #{tokens.$text-invert};
+    --mat-tab-inactive-hover-label-text-color: #{tokens.$text-invert};
+    --mat-tab-active-indicator-color: #{tokens.$text-invert};
+    --mat-tab-active-focus-indicator-color: #{tokens.$text-invert};
+    --mat-tab-active-hover-indicator-color: #{tokens.$text-invert};
   }
 
   .hlx-btn-small {
