@@ -1,4 +1,4 @@
-/* groovylint-disable DuplicateListLiteral, DuplicateMapLiteral, DuplicateStringLiteral */
+/* groovylint-disable DuplicateListLiteral, DuplicateMapLiteral, DuplicateStringLiteral, LineLength */
 
 pipeline {
     agent {
@@ -34,7 +34,7 @@ pipeline {
         )
         choice(
             name: 'Level',
-            choices: ['patch', 'minor'],
+            choices: ['patch', 'minor', 'major'],
             description: 'If Publish is true, the level of the release'
         )
         choice(
@@ -116,7 +116,7 @@ pipeline {
                     sh "git checkout ${BRANCH_NAME}"
                     sh "git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/clarivate-prod/cdx-next.git"
                     sh 'git fetch --tags --force'
-                    sh 'npx nx run workspace:version --releaseAs=preminor --preid=alpha --skip-nx-cache'
+                    sh 'npx nx release preminor --preid=alpha'
                     sh 'npx nx run workspace:bumpDependencies --skip-nx-cache'
                     sh '''
                         OLD_TAG=$(git tag --points-at HEAD)
@@ -162,7 +162,6 @@ pipeline {
                         echo '[DryRun] Would deploy assets to AWS CDN (prod role)'
                     }
                 }
-
             }
         }
 
@@ -185,7 +184,7 @@ pipeline {
                     sh "git checkout ${BRANCH_NAME}"
                     sh "git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/clarivate-prod/cdx-next.git"
                     sh 'git fetch --tags --force'
-                    sh 'npx nx run workspace:version --releaseAs=prerelease --preid=alpha --skip-nx-cache'
+                    sh 'npx nx release prerelease --preid=alpha'
                     sh 'npx nx run workspace:bumpDependencies --skip-nx-cache'
                     sh '''
                         OLD_TAG=$(git tag --points-at HEAD)
@@ -269,7 +268,7 @@ pipeline {
                     sh "git checkout ${BRANCH_NAME}"
                     sh "git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/clarivate-prod/cdx-next.git"
                     sh 'git fetch --tags --force'
-                    sh "npx nx run workspace:version --releaseAs=${params.Level} --skip-nx-cache"
+                    sh "npx nx release ${params.Level}"
                     sh 'npx nx run workspace:bumpDependencies --skip-nx-cache'
                     sh '''
                         OLD_TAG=$(git tag --points-at HEAD)
@@ -310,8 +309,8 @@ pipeline {
                             sh 'VERSION=$(git tag --points-at HEAD) npm run deploy:cdn'
                         }
                     } else {
-                        echo "[DryRun] Would authenticate and run: npm run publish:release"
-                        echo "[DryRun] Would deploy release to AWS CDN"
+                        echo '[DryRun] Would authenticate and run: npm run publish:release'
+                        echo '[DryRun] Would deploy release to AWS CDN'
                     }
                 }
             }
