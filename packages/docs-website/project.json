@@ -43,7 +43,6 @@
         "inlineStyleLanguage": "scss",
         "main": "packages/docs-website/src/main.ts",
         "outputPath": "dist/packages/docs-website",
-        "polyfills": ["zone.js"],
         "scripts": [],
         "styles": [
           "packages/docs-website/src/styles.scss",

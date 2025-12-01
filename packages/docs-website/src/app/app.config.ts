@@ -3,7 +3,7 @@ import {
   ApplicationConfig,
   importProvidersFrom,
   provideBrowserGlobalErrorListeners,
-  provideZoneChangeDetection,
+  provideZonelessChangeDetection,
 } from '@angular/core';
 import {
   provideRouter,
@@ -20,7 +20,7 @@ import { routes } from './app.routes';
 export const appConfig: ApplicationConfig = {
   providers: [
     provideBrowserGlobalErrorListeners(),
-    provideZoneChangeDetection({ eventCoalescing: true }),
+    provideZonelessChangeDetection(),
     provideHttpClient(withFetch()),
     provideHighcharts({
       modules: () => [import('highcharts/modules/accessibility')],

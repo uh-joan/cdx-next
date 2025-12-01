@@ -50,7 +50,6 @@
         "inlineStyleLanguage": "scss",
         "main": "packages/ngx-demo-app/src/main.ts",
         "outputPath": "dist/packages/ngx-demo-app",
-        "polyfills": ["zone.js"],
         "scripts": [],
         "styles": ["packages/ngx-demo-app/src/styles.scss"],
         "tsConfig": "packages/ngx-demo-app/tsconfig.app.json"

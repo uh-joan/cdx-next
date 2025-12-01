@@ -59,8 +59,7 @@
     "rxjs": "^7.8.2",
     "storybook": "9.1.8",
     "tslib": "^2.8.1",
-    "xng-breadcrumb": "^14.0.0",
-    "zone.js": "0.15.0"
+    "xng-breadcrumb": "^14.0.0"
   },
   "devDependencies": {
     "@angular-devkit/architect": "0.2003.3",
