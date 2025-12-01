@@ -1,5 +1,5 @@
 import { NgTemplateOutlet } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, Input, TemplateRef } from '@angular/core';
 
 @Component({
   selector: 'hlx-rich-tooltip',
@@ -9,5 +9,5 @@ import { Component, Input } from '@angular/core';
   imports: [NgTemplateOutlet],
 })
 export class RichTooltipComponent {
-  @Input() content!: any;
+  @Input() content!: TemplateRef<unknown>;
 }

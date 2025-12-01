@@ -1,8 +1,5 @@
 import { MatExpansionModule } from '@angular/material/expansion';
-import {
-  BrowserAnimationsModule,
-  provideAnimations,
-} from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ThemeModule } from '@cdx/theme-angular-material';
 import { Meta, moduleMetadata, StoryFn } from '@storybook/angular';
 import { html } from 'common-tags';

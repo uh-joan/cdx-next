@@ -4,7 +4,7 @@
   "private": true,
   "repository": {
     "type": "git",
-    "url": "ssh://git@github.com:clarivate-prod/cdx-next.git"
+    "url": "ssh://git@github.com/clarivate-prod/cdx-next.git"
   },
   "workspaces": [
     "packages/**"

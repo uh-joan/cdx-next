@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { JsonPipe } from '@angular/common';
+import { Component, inject } from '@angular/core';
 import {
   FormBuilder,
   FormGroup,
@@ -102,6 +103,7 @@ const styleCode = `.story {
     FormsModule,
     ReactiveFormsModule,
     MatIconModule,
+    JsonPipe,
   ],
   styles: styleCode,
 })

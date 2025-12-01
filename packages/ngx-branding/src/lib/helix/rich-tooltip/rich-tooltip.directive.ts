@@ -9,6 +9,7 @@ import {
   TemplateRef,
   ViewContainerRef,
 } from '@angular/core';
+import { SafeHtml } from '@angular/platform-browser';
 
 import { RichTooltipComponent } from './rich-tooltip.component';
 
@@ -17,9 +18,9 @@ import { RichTooltipComponent } from './rich-tooltip.component';
   selector: '[hlxTooltip]',
 })
 export class RichTooltipDirective {
-  @Input('hlxTooltip') content!: TemplateRef<any>;
+  @Input('hlxTooltip') content!: TemplateRef<SafeHtml>;
 
-  private overlayRef!: OverlayRef;
+  private overlayRef!: OverlayRef | null;
 
   private overlay = inject(Overlay);
   private elementRef = inject(ElementRef);
@@ -79,6 +80,6 @@ export class RichTooltipDirective {
   @HostListener('mouseleave')
   hide() {
     this.overlayRef?.dispose();
-    this.overlayRef = null!;
+    this.overlayRef = null;
   }
 }

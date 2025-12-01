@@ -1,3 +1,4 @@
+import { MatDialog } from '@angular/material/dialog';
 import { createServiceFactory, SpectatorService } from '@ngneat/spectator/jest';
 import { TranslateService } from '@ngx-translate/core';
 import { of } from 'rxjs';
@@ -8,6 +9,11 @@ import { LOGOUT_TYPE, SessionActivitySettings } from './session-activity.model';
 import { SessionActivityModule } from './session-activity.module';
 import { SessionActivityService } from './session-activity.service';
 
+const matDialogMock = {
+  open: jest.fn().mockReturnValue({ afterClosed: () => of(null) }),
+  closeAll: jest.fn(),
+};
+
 describe('SessionActivityService', () => {
   let spectator: SpectatorService<SessionActivityService>;
   const createService = createServiceFactory({
@@ -16,9 +22,11 @@ describe('SessionActivityService', () => {
     providers: [
       {
         provide: TranslateService,
-        useValue: {
-          get: (key: unknown) => of(key),
-        },
+        useValue: { instant: jest.fn() },
+      },
+      {
+        provide: MatDialog,
+        useValue: matDialogMock,
       },
     ],
   });

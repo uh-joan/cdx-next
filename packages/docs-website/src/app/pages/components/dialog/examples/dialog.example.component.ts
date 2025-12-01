@@ -92,7 +92,6 @@ const styleCode = `.close-btn{
   imports: [MatDialogModule, MatButtonModule, MatIconModule],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-// eslint-disable-next-line @angular-eslint/component-class-suffix
 class DialogContentExampleDialog {}
 
 @Component({

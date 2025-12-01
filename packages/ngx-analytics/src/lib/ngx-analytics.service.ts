@@ -21,7 +21,6 @@ import {
 import {
   AnalyticsContextData,
   AnalyticsContextSchema,
-  AnalyticsSettings,
   DEFAULT_SETTINGS,
 } from './ngx-analytics.model';
 

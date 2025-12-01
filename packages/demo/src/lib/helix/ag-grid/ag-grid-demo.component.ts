@@ -8,7 +8,7 @@ import { ColDef } from 'ag-grid-community';
   encapsulation: ViewEncapsulation.None,
 })
 export class AgGridDemoComponent {
-  public rowData: any[] | null = [
+  public rowData: unknown[] | null = [
     { make: 'Tesla', model: 'Model Y', price: 64950, electric: true },
     { make: 'Ford', model: 'F-Series', price: 33850, electric: false },
     { make: 'Toyota', model: 'Corolla', price: 29600, electric: false },

@@ -92,7 +92,7 @@ export class AuthenticationService {
         );
       }
       return true;
-    } catch (error) {
+    } catch {
       this.logout();
       return false;
     }
