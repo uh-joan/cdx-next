@@ -1,0 +1,21 @@
+:host {
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+
+  .routing-loader {
+    position: absolute;
+    top: 56px;
+  }
+
+  .content {
+    overflow: auto;
+    height: 100%;
+    background: linear-gradient(
+        0deg,
+        rgb(255 255 255 / 50%) 0%,
+        rgb(255 255 255 / 50%) 100%
+      ),
+      var(--surface-minimal, #f2f2f2);
+  }
+}

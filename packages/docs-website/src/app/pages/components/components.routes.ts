@@ -1,6 +1,9 @@
 import { Routes } from '@angular/router';
+import { ExamplesComponent } from 'src/app/core/example-page/example-page';
 
 import { ComponentsComponent } from './components.component';
+import { ExampleItemResolver } from './examples-item-resolver';
+import { ExamplesResolver } from './examples-resolver';
 
 export const componentsRoutes: Routes = [
   {
@@ -264,6 +267,24 @@ export const componentsRoutes: Routes = [
           import('./tree/tree.component').then((m) => m.TreeComponent),
       },
       { path: '', redirectTo: 'components-overview', pathMatch: 'full' },
+    ],
+  },
+];
+
+export const examplesRoutes: Routes = [
+  {
+    path: ':component',
+    resolve: { examples: ExamplesResolver },
+    children: [
+      {
+        path: '',
+        component: ExamplesComponent,
+      },
+      {
+        path: ':exampleName',
+        component: ExamplesComponent,
+        resolve: { examples: ExampleItemResolver },
+      },
     ],
   },
 ];

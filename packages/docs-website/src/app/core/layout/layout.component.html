@@ -1,0 +1,12 @@
+<web-hlx-header></web-hlx-header>
+
+@if (isLoading$ | async) {
+<mat-progress-bar
+  mode="indeterminate"
+  class="routing-loader"
+></mat-progress-bar>
+}
+
+<div class="content">
+  <router-outlet></router-outlet>
+</div>
