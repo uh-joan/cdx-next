@@ -1,4 +1,6 @@
+import { importProvidersFrom } from '@angular/core';
 import { Routes } from '@angular/router';
+import { OneTrustModule } from '@cdx/ngx-branding';
 
 import { LayoutComponent } from './core/layout/layout.component';
 
@@ -6,6 +8,13 @@ export const routes: Routes = [
   {
     path: '',
     component: LayoutComponent,
+    providers: [
+      importProvidersFrom(
+        OneTrustModule.forRoot({
+          domainId: '1c592d3f-d63c-42d7-9871-1b022f316498',
+        }),
+      ),
+    ],
     children: [
       {
         path: 'home',

@@ -12,7 +12,7 @@ import { Component } from '@angular/core';
  */
 @Component({
   selector: 'demo-table-expandable-rows',
-  standalone: false,
+
   templateUrl: 'table-expandable-rows-demo.component.html',
   animations: [
     trigger('detailExpand', [

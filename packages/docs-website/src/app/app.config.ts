@@ -10,7 +10,6 @@ import {
   withComponentInputBinding,
   withViewTransitions,
 } from '@angular/router';
-import { OneTrustModule } from '@cdx/ngx-branding';
 import { TranslateModule } from '@ngx-translate/core';
 import { HIGHLIGHT_OPTIONS } from 'ngx-highlightjs';
 
@@ -29,9 +28,6 @@ export const appConfig: ApplicationConfig = {
     ),
     importProvidersFrom(
       BrowserAnimationsModule,
-      OneTrustModule.forRoot({
-        domainId: '1c592d3f-d63c-42d7-9871-1b022f316498',
-      }),
       TranslateModule.forRoot({
         defaultLanguage: 'en',
       }),

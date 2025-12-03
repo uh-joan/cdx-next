@@ -42,7 +42,6 @@ describe('AnalyticsService', () => {
     });
     it('should check OneTrust before tracking events', () => {
       const service: AnalyticsService = TestBed.inject(AnalyticsService);
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       const oneTrustCheckSpy = jest.spyOn<AnalyticsService, any>(
         service,
         'isOneTrustEnabled',

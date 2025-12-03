@@ -58,7 +58,6 @@ describe('OneTrustService', () => {
 
     describe('.openInfoDisplay()', () => {
       beforeEach(() => {
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         (window as any).OneTrust = { ToggleInfoDisplay: jest.fn() };
         spectator.service.openInfoDisplay();
       });

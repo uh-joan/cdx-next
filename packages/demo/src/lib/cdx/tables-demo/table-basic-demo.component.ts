@@ -64,7 +64,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
  */
 @Component({
   selector: 'demo-table-basic',
-  standalone: false,
+
   template: basicTableTemplate,
 })
 export class TableBasicDemoComponent {

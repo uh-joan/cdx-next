@@ -1,7 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 // @ts-expect-error no type is defined here
-// eslint-disable-next-line @nx/enforce-module-boundaries
 import { HIGHCHARTS_HLX_THEME } from '@cdx/theme-highcharts';
 import * as Highcharts from 'highcharts';
 import HighchartsAccessibilityModule from 'highcharts/modules/accessibility';

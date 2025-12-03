@@ -48,7 +48,7 @@ const NAMES: string[] = [
  */
 @Component({
   selector: 'demo-table-filter-sort-pagination',
-  standalone: false,
+
   templateUrl: 'table-with-filter-sort-pagination-demo.component.html',
 })
 export class TableWithFilterSortingPaginationDemoComponent

@@ -8,7 +8,7 @@ import { DialogExampleComponent } from './dialog-example.component';
  */
 @Component({
   selector: 'demo-dialog',
-  standalone: false,
+
   templateUrl: 'dialog-demo.component.html',
 })
 export class DialogDemoComponent {
