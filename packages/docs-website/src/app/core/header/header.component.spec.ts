@@ -19,7 +19,7 @@ describe('HeaderComponent', () => {
   let fixture: ComponentFixture<HeaderComponent>;
 
   beforeAll(() => {
-    jest.spyOn(window.history, 'pushState').mockImplementation(() => {});
+    jest.spyOn(window.history, 'pushState').mockImplementation();
   });
 
   beforeEach(() => {
