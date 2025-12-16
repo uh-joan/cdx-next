@@ -203,44 +203,75 @@
   .hlx-btn-accent {
     @include mat.button-color(hlx.$helix-theme, $color-variant: tertiary);
     @include mat.fab-color(hlx.$helix-theme, $color-variant: tertiary);
+    @include mat.button-overrides(
+      (
+        outlined-outline-color: #{tokens.$components-accent-outline},
+        filled-state-layer-color: #{tokens.$components-button-hover-background},
+        filled-hover-state-layer-opacity: 0.16,
+        text-state-layer-color: #{tokens.$components-accent-filled},
+        text-hover-state-layer-opacity: 0.04,
+        outlined-state-layer-color: #{tokens.$components-accent-filled},
+        outlined-hover-state-layer-opacity: 0.04,
+      )
+    );
 
-    --mdc-outlined-button-outline-color: #{tokens.$components-accent-outline};
-    --mdc-fab-container-color: #{primitives.$color-purple-600};
-    --mat-fab-foreground-color: #{tokens.$text-invert};
-    --mdc-fab-small-container-color: #{tokens.$components-accent-outline};
-    --mat-fab-small-foreground-color: #{tokens.$text-invert};
-    --mat-filled-button-state-layer-color: #{tokens.$components-button-hover-background} !important;
-    --mat-filled-button-hover-state-layer-opacity: 0.16 !important;
-    --mat-text-button-state-layer-color: #{tokens.$components-accent-filled} !important;
-    --mat-text-button-hover-state-layer-opacity: 0.04 !important;
-    --mat-outlined-button-state-layer-color: #{tokens.$components-accent-filled} !important;
-    --mat-outlined-button-hover-state-layer-opacity: 0.04 !important;
+    @include mat.fab-overrides(
+      (
+        container-color: #{primitives.$color-purple-600},
+        foreground-color: #{tokens.$text-invert},
+        small-container-color: #{tokens.$components-accent-outline},
+        small-foreground-color: #{tokens.$text-invert},
+      )
+    );
   }
 
   .hlx-btn-negative {
     @include mat.button-color(hlx.$helix-error-theme);
+    @include mat.fab-color(hlx.$helix-error-theme);
 
-    --mdc-outlined-button-outline-color: #{tokens.$components-negative-filled};
-    --mdc-fab-container-color: #{tokens.$components-negative-filled};
-    --mdc-fab-small-container-color: #{tokens.$components-negative-filled};
-    --mat-filled-button-state-layer-color: #{tokens.$components-button-hover-background} !important;
-    --mat-filled-button-hover-state-layer-opacity: 0.04 !important;
-    --mat-text-button-state-layer-color: #{tokens.$text-negative} !important;
-    --mat-text-button-hover-state-layer-opacity: 0.16 !important;
-    --mat-outlined-button-state-layer-color: #{tokens.$text-negative} !important;
-    --mat-outlined-button-hover-state-layer-opacity: 0.16 !important;
+    @include mat.button-overrides(
+      (
+        outlined-outline-color: #{tokens.$components-negative-filled},
+        filled-state-layer-color: #{tokens.$components-button-hover-background},
+        filled-hover-state-layer-opacity: 0.04,
+        text-state-layer-color: #{tokens.$text-negative},
+        text-hover-state-layer-opacity: 0.16,
+        outlined-state-layer-color: #{tokens.$text-negative},
+        outlined-hover-state-layer-opacity: 0.16,
+      )
+    );
+
+    @include mat.fab-overrides(
+      (
+        container-color: #{tokens.$components-negative-filled},
+        foreground-color: inherit,
+        // keep default unless specified
+        small-container-color: #{tokens.$components-negative-filled},
+        small-foreground-color: inherit,
+      )
+    );
   }
 
   .hlx-btn-invert {
     @include mat.button-color(hlx.$helix-invert-theme, $color-variant: primary);
+    @include mat.fab-color(hlx.$helix-invert-theme, $color-variant: primary);
 
-    --mdc-outlined-button-outline-color: #{tokens.$text-invert};
-    --mdc-fab-container-color: #{tokens.$surface-primary};
-    --mat-fab-foreground-color: #{tokens.$icon-primary};
-    --mdc-fab-small-container-color: #{tokens.$surface-primary};
-    --mat-fab-small-foreground-color: #{tokens.$icon-primary};
-    --mat-filled-button-state-layer-color: #{tokens.$components-button-hover-background} !important;
-    --mat-filled-button-hover-state-layer-opacity: 0.04 !important;
+    @include mat.button-overrides(
+      (
+        outlined-outline-color: #{tokens.$text-invert},
+        filled-state-layer-color: #{tokens.$components-button-hover-background},
+        filled-hover-state-layer-opacity: 0.04,
+      )
+    );
+
+    @include mat.fab-overrides(
+      (
+        container-color: #{tokens.$surface-primary},
+        foreground-color: #{tokens.$icon-primary},
+        small-container-color: #{tokens.$surface-primary},
+        small-foreground-color: #{tokens.$icon-primary},
+      )
+    );
   }
 
   .hlx-tab-invert {
@@ -301,77 +332,102 @@
   .hlx-neutral-chip {
     @include mat.chips-color(hlx.$helix-theme, $color-variant: secondary);
     @include hlx-chip-text-color(tokens.$text-primary);
-
-    --mdc-chip-outline-color: transparent;
-    --mdc-chip-elevated-container-color: #{tokens.$components-secondary-filled};
+    @include mat.chips-overrides(
+      (
+        outline-color: transparent,
+        elevated-container-color: #{tokens.$components-secondary-filled},
+      )
+    );
   }
 
   .hlx-primary-chip {
     @include mat.chips-color(hlx.$helix-theme, $color-variant: primary);
     @include hlx-chip-text-color(tokens.$text-invert);
 
-    --mdc-chip-outline-color: transparent;
-    --mdc-chip-elevated-container-color: #{tokens.$components-primary-filled};
-    --mdc-chip-hover-state-layer-color: #000;
-    --mdc-chip-hover-state-layer-opacity: 1;
+    @include mat.chips-overrides(
+      (
+        outline-color: transparent,
+        elevated-container-color: #{tokens.$components-primary-filled},
+        hover-state-layer-color: #000,
+        hover-state-layer-opacity: 1,
+      )
+    );
   }
 
   .hlx-accent-chip {
     @include mat.chips-color(hlx.$helix-theme, $color-variant: tertiary);
     @include hlx-chip-text-color(tokens.$text-invert);
-
-    --mdc-chip-outline-color: transparent;
-    --mdc-chip-elevated-container-color: #{tokens.$components-accent-filled};
-    --mdc-chip-hover-state-layer-color: #000;
-    --mdc-chip-hover-state-layer-opacity: 0.16;
+    @include mat.chips-overrides(
+      (
+        outline-color: transparent,
+        elevated-container-color: #{tokens.$components-accent-filled},
+        hover-state-layer-color: #000,
+        hover-state-layer-opacity: 0.16,
+      )
+    );
   }
 
   .hlx-negative-chip {
     @include mat.chips-color(hlx.$helix-theme, $color-variant: error);
     @include hlx-chip-text-color(primitives.$color-red-900);
-
-    --mdc-chip-outline-color: transparent;
-    --mdc-chip-elevated-container-color: #{tokens.$components-negative-filled-light};
-    --mdc-chip-hover-state-layer-color: #000;
-    --mdc-chip-hover-state-layer-opacity: 0.04;
+    @include mat.chips-overrides(
+      (
+        outline-color: transparent,
+        elevated-container-color: #{tokens.$components-negative-filled-light},
+        hover-state-layer-color: #000,
+        hover-state-layer-opacity: 0.04,
+      )
+    );
   }
 
   .hlx-warn-chip {
     @include mat.chips-color(hlx.$helix-theme, $color-variant: error);
     @include hlx-chip-text-color(tokens.$text-warn);
-
-    --mdc-chip-outline-color: transparent;
-    --mdc-chip-elevated-container-color: #{tokens.$components-warn-filled};
-    --mdc-chip-hover-state-layer-color: #000;
-    --mdc-chip-hover-state-layer-opacity: 0.04;
+    @include mat.chips-overrides(
+      (
+        outline-color: transparent,
+        elevated-container-color: #{tokens.$components-warn-filled},
+        hover-state-layer-color: #000,
+        hover-state-layer-opacity: 0.04,
+      )
+    );
   }
 
   .hlx-positive-chip {
     @include mat.chips-color(hlx.$helix-theme, $color-variant: error);
     @include hlx-chip-text-color(tokens.$text-positive);
-
-    --mdc-chip-outline-color: transparent;
-    --mdc-chip-elevated-container-color: #{tokens.$components-positive-filled};
-    --mdc-chip-hover-state-layer-color: #000;
-    --mdc-chip-hover-state-layer-opacity: 0.04;
+    @include mat.chips-overrides(
+      (
+        outline-color: transparent,
+        elevated-container-color: #{tokens.$components-positive-filled},
+        hover-state-layer-color: #000,
+        hover-state-layer-opacity: 0.04,
+      )
+    );
   }
 
   .hlx-info-chip {
     @include mat.chips-color(hlx.$helix-theme, $color-variant: error);
     @include hlx-chip-text-color(tokens.$text-info);
-
-    --mdc-chip-outline-color: transparent;
-    --mdc-chip-elevated-container-color: #{tokens.$components-info-filled};
-    --mdc-chip-hover-state-layer-color: #000;
-    --mdc-chip-hover-state-layer-opacity: 0.04;
+    @include mat.chips-overrides(
+      (
+        outline-color: transparent,
+        elevated-container-color: #{tokens.$components-info-filled},
+        hover-state-layer-color: #000,
+        hover-state-layer-opacity: 0.04,
+      )
+    );
   }
 
   .hlx-outlined-chip {
     @include mat.chips-color(hlx.$helix-theme, $color-variant: error);
     @include hlx-chip-text-color(tokens.$text-primary);
-
-    --mdc-chip-outline-color: #{tokens.$components-primary-outline};
-    --mdc-chip-elevated-container-color: white;
+    @include mat.chips-overrides(
+      (
+        outline-color: #{tokens.$components-primary-outline},
+        elevated-container-color: white,
+      )
+    );
   }
 
   .hlx-chip-small {
@@ -384,9 +440,13 @@
 }
 
 @mixin hlx-chip-text-color($color) {
-  --mdc-chip-label-text-color: #{$color};
-  --mdc-chip-with-icon-icon-color: #{$color};
-  --mdc-chip-with-trailing-icon-trailing-icon-color: #{$color};
+  @include mat.chips-overrides(
+    (
+      label-text-color: #{$color},
+      with-icon-icon-color: #{$color},
+      with-trailing-icon-trailing-icon-color: #{$color},
+    )
+  );
 }
 
 @mixin theme-helix-icons() {
