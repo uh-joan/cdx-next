@@ -197,6 +197,62 @@
   .hlx-elevation-lg {
     @include mat.elevation(18);
   }
+
+  .mdc-switch--unselected .mdc-switch__icon--off {
+    opacity: 0;
+  }
+
+  .mdc-switch__icons {
+    position: relative;
+  }
+
+  .mdc-switch--unselected .mdc-switch__icons::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+
+    background-color: #f2f2f2;
+
+    -webkit-mask-image: url("data:image/svg+xml;utf8,\
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'>\
+<path d='\
+M7.335 6.8 \
+L12 11.465 \
+L16.665 6.8 \
+L17.2 7.335 \
+L12.535 12 \
+L17.2 16.665 \
+L16.665 17.2 \
+L12 12.535 \
+L7.335 17.2 \
+L6.8 16.665 \
+L11.465 12 \
+L6.8 7.335 \
+Z'/>\
+</svg>");
+
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    -webkit-mask-size: contain;
+
+    mask-image: url("data:image/svg+xml;utf8,\
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'>\
+<path d='\
+M7.335 6.8 \
+L12 11.465 \
+L16.665 6.8 \
+L17.2 7.335 \
+L12.535 12 \
+L17.2 16.665 \
+L16.665 17.2 \
+L12 12.535 \
+L7.335 17.2 \
+L6.8 16.665 \
+L11.465 12 \
+L6.8 7.335 \
+Z'/>\
+</svg>");
+  }
 }
 
 @mixin theme-helix-buttons() {
