@@ -1,6 +1,6 @@
 {
   "name": "@cdx/theme-highcharts",
-  "version": "19.1.5",
+  "version": "19.1.6",
   "type": "module",
   "exports": {
     "import": "./dist/theme-highcharts.mjs",
