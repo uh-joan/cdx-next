@@ -1,3 +1,28 @@
+## 20.0.0-alpha.0 (2026-01-14)
+
+### 🚀 Features
+
+- **theme-angular-material:** use button overrides
+  ([a8d0751e](https://github.com/clarivate-prod/cdx-next/commit/a8d0751e))
+- **theme-angular-material:** use chips overrides
+  ([15544742](https://github.com/clarivate-prod/cdx-next/commit/15544742))
+- **theme-highcharts:** update to v12
+  ([c094f138](https://github.com/clarivate-prod/cdx-next/commit/c094f138))
+- **workspace:** add option for major prerelease
+  ([453370ec](https://github.com/clarivate-prod/cdx-next/commit/453370ec))
+
+### 🩹 Fixes
+
+- **ngx-branding:** fix lint imports
+  ([acfe7f77](https://github.com/clarivate-prod/cdx-next/commit/acfe7f77))
+- **workspace:** fixing autocomplete example
+  ([a630e6c5](https://github.com/clarivate-prod/cdx-next/commit/a630e6c5))
+
+### ❤️ Thank You
+
+- Alejandro Chacon
+- Fran Casternao
+
 # Changelog
 
 ## [NEXT](https://git.clarivate.io/projects/CDXN/repos/cdx-next/compare/diff?sourceBranch=refs%2Fheads%2Fmain&targetRepoId=17352&targetBranch=refs%2Ftags%2Fv2.1.10)
