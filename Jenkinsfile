@@ -4,7 +4,7 @@ pipeline {
     agent {
         docker {
             label 'docker-slave'
-            image 'platform-docker.repo.clarivate.io/node22-jdk8'
+            image 'platform-docker.repo.clarivate.io/jenkins-base-node:24'
         }
     }
     environment {
