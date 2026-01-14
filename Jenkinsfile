@@ -97,6 +97,74 @@ pipeline {
             }
         }
 
+        stage('Publish Major Prerelease') {
+            when {
+                expression { params.Publish && params.ReleaseAsAlpha && params.Level == 'major' }
+            }
+            environment {
+                ARTIFACTORY = credentials('repo-clarivate-io')
+                GIT_AUTHOR_EMAIL = 'platform-jenkins-noreply@clarivate.com'
+                GIT_AUTHOR_NAME = 'Platform Jenkins'
+                GIT_COMMITTER_EMAIL = "${GIT_AUTHOR_EMAIL}"
+                GIT_COMMITTER_NAME = "${GIT_AUTHOR_NAME}"
+            }
+            steps {
+                echo "=== Stage: Publish Major Prerelease | DryRun=${params.DryRun} ==="
+                withCredentials([
+                    usernamePassword(credentialsId: 'github-app-private-key', usernameVariable: 'GITHUB_APP', passwordVariable: 'GITHUB_TOKEN')
+                ]) {
+                    sh "git checkout ${BRANCH_NAME}"
+                    sh "git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/clarivate-prod/cdx-next.git"
+                    sh 'git fetch --tags --force'
+                    sh 'npx nx release premajor --preid=alpha'
+                    sh 'npx nx run workspace:bumpDependencies --skip-nx-cache'
+                    sh '''
+                        OLD_TAG=$(git tag --points-at HEAD)
+                        npm install
+                        git add ./package-lock.json
+                        git add packages/**/package.json
+                        git commit --amend --no-edit
+                        git tag -f $OLD_TAG
+                    '''
+                    script {
+                        if (!params.DryRun) {
+                            sh 'git fetch --all --tags'
+                            sh "git push --force-with-lease --follow-tags origin ${BRANCH_NAME}"
+                            sh 'git push --force-with-lease --tags'
+                        } else {
+                            echo '[DryRun] Would push major prerelease tag and commits to GitHub'
+                        }
+                    }
+                }
+
+                script {
+                    if (!params.DryRun) {
+                        sh """
+                            npx npm-cli-login \
+                                -u ${ARTIFACTORY_USR} \
+                                -e ${ARTIFACTORY_USR}@clarivate.com \
+                                -p ${ARTIFACTORY_PSW} \
+                                -r https://repo.clarivate.io/artifactory/api/npm/npm-cdx \
+                                -s @cdx \
+                                --config-path=.
+                        """
+                        sh 'find packages -maxdepth 1 -mindepth 1 -type d -exec cp ./.npmrc {} \\;'
+                        sh 'npm run publish:prerelease'
+                        withAWS(
+                            role: 'arn:aws:iam::809146824789:role/cl/app/cdx/jenkins-cdx-prod_role',
+                            roleSessionName: 'jenkins',
+                            useNode: true
+                        ) {
+                            sh 'VERSION=$(git tag --points-at HEAD) npm run deploy:cdn'
+                        }
+                    } else {
+                        echo '[DryRun] Would authenticate with Artifactory and run: npm run publish:prerelease'
+                        echo '[DryRun] Would deploy assets to AWS CDN (prod role)'
+                    }
+                }
+            }
+        }
+
         stage('Publish Minor Prerelease') {
             when {
                 expression { params.Publish && params.ReleaseAsAlpha && params.Level == 'minor' }
