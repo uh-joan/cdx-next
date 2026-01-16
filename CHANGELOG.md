@@ -1,3 +1,7 @@
+## 20.0.0-alpha.2 (2026-01-16)
+
+This was a version bump only, there were no code changes.
+
 ## 20.0.0-alpha.1 (2026-01-15)
 
 This was a version bump only, there were no code changes.
