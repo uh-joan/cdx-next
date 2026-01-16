@@ -146,7 +146,24 @@
   "release": {
     "git": {
       "commitMessage": "chore(workspace): release {version} [skip ci]"
-    }
+    },
+    "projects": [
+      "packages/clarivate-font",
+      "packages/colors",
+      "packages/ngx-analytics",
+      "packages/ngx-authentication",
+      "packages/ngx-branding",
+      "packages/ngx-session-activity",
+      "packages/ngx-translations",
+      "packages/oti-snippet",
+      "packages/shared-branding",
+      "packages/theme-ag-grid",
+      "packages/theme-angular-material",
+      "packages/theme-highcharts",
+      "packages/theme-snackbar",
+      "packages/theme-xng-breadcrumb",
+      "."
+    ]
   },
   "targetDefaults": {
     "@angular/build:application": {
