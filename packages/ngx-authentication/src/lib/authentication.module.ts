@@ -9,7 +9,7 @@ import {
   Optional,
   SkipSelf,
 } from '@angular/core';
-import { provideRoutes, RouterModule } from '@angular/router';
+import { RouterModule, ROUTES } from '@angular/router';
 import { JWT_OPTIONS, JwtModule } from '@auth0/angular-jwt';
 
 import { AUTHENTICATION_SETTINGS } from './authentication.injectors';
@@ -61,13 +61,16 @@ export class AuthenticationModule {
           useValue: settings,
         },
         { provide: APP_BASE_HREF, useValue: '' },
-        provideRoutes([
-          {
-            path: settings.brokerRoute || 'broker/:authCode',
-            pathMatch: 'full',
-            component: BrokerComponent,
-          },
-        ]),
+        {
+          provide: ROUTES,
+          useValue: [
+            {
+              path: settings.brokerRoute || 'broker/:authCode',
+              pathMatch: 'full',
+              component: BrokerComponent,
+            },
+          ],
+        },
       ],
     };
   }

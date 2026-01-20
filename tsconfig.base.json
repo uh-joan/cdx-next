@@ -7,9 +7,9 @@
     "esModuleInterop": true,
     "experimentalDecorators": true,
     "importHelpers": true,
-    "lib": ["es2017", "dom"],
+    "lib": ["es2020", "dom"],
     "module": "esnext",
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "paths": {
       "@cdx/demo": ["packages/demo/src/index.ts"],
       "@cdx/ngx-analytics": ["packages/ngx-analytics/src/index.ts"],
@@ -33,7 +33,7 @@
     "skipDefaultLibCheck": true,
     "skipLibCheck": true,
     "sourceMap": true,
-    "target": "es2015"
+    "target": "es2020"
   },
   "exclude": ["node_modules", "tmp"]
 }

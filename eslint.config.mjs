@@ -68,6 +68,14 @@ export default defineConfig([
 
     rules: {
       '@angular-eslint/prefer-standalone': 'off',
+      '@angular-eslint/component-selector': [
+        'error',
+        { type: 'element', prefix: 'cdx', style: 'kebab-case' },
+      ],
+      '@angular-eslint/directive-selector': [
+        'error',
+        { type: 'attribute', prefix: 'cdx', style: 'kebab-case' },
+      ],
     },
   },
 ]);
