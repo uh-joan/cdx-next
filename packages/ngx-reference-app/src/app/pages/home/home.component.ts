@@ -87,7 +87,7 @@ const COMPONENTS = [
 
 /** Custom header component for datepicker. */
 @Component({
-  selector: 'example-header',
+  selector: 'cdx-example-header',
   styles: `
     .example-header {
       display: flex;

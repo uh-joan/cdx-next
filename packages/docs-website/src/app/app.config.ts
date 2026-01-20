@@ -1,4 +1,3 @@
-import { provideHttpClient, withFetch } from '@angular/common/http';
 import {
   ApplicationConfig,
   importProvidersFrom,
@@ -21,7 +20,6 @@ export const appConfig: ApplicationConfig = {
   providers: [
     provideBrowserGlobalErrorListeners(),
     provideZonelessChangeDetection(),
-    provideHttpClient(withFetch()),
     provideHighcharts({
       modules: () => [import('highcharts/modules/accessibility')],
     }),

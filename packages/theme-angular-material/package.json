@@ -10,7 +10,7 @@
     "tslib": "^2.3.0"
   },
   "peerDependencies": {
-    "@angular/material": "^20",
+    "@angular/material": "^21",
     "@cdx/colors": "20.0.0"
   }
 }

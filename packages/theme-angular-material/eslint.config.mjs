@@ -29,7 +29,7 @@ export default [
         '@angular-eslint/component-selector': [
           'error',
           {
-            prefix: 'cdx',
+            prefix: ['cdx', 'web'],
             style: 'kebab-case',
             type: 'element',
           },
@@ -37,7 +37,7 @@ export default [
         '@angular-eslint/directive-selector': [
           'error',
           {
-            prefix: 'cdx',
+            prefix: ['cdx', 'web'],
             style: 'camelCase',
             type: 'attribute',
           },

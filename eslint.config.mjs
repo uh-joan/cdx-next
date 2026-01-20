@@ -74,7 +74,7 @@ export default defineConfig([
       ],
       '@angular-eslint/directive-selector': [
         'error',
-        { type: 'attribute', prefix: 'cdx', style: 'kebab-case' },
+        { type: 'attribute', prefix: ['cdx', 'hlx'], style: 'kebab-case' },
       ],
     },
   },

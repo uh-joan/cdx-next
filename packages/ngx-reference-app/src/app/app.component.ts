@@ -1,7 +1,12 @@
-import { Component, inject, ViewEncapsulation } from '@angular/core';
+import {
+  Component,
+  CUSTOM_ELEMENTS_SCHEMA,
+  inject,
+  ViewEncapsulation,
+} from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTabsModule } from '@angular/material/tabs';
-import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
+import { NavigationEnd, Router, RouterModule } from '@angular/router';
 import {
   AnalyticsContextData,
   AnalyticsContextSchema,
@@ -9,11 +14,15 @@ import {
   CLARIVATE_IGLU_SCHEMA,
 } from '@cdx/ngx-analytics';
 import {
+  FooterModule,
   HelixFooterComponent,
+  HelixFooterLinkDirective,
   HelixHeaderComponent,
   HelixHeaderGlobalComponent,
   HelixHeaderProductNameOrLogoComponent,
 } from '@cdx/ngx-branding';
+import { NgxTranslationsModule } from '@cdx/ngx-translations';
+import { TranslateModule } from '@ngx-translate/core';
 import { filter, map } from 'rxjs';
 
 import { LanguageSelectorComponent } from './components/language-selector/language-selector.component';
@@ -27,9 +36,12 @@ import { ThemeService } from './services/theme.service';
   styleUrls: ['./app.component.scss'],
   encapsulation: ViewEncapsulation.None,
   imports: [
-    RouterOutlet,
+    RouterModule,
+    FooterModule,
     MatIconModule,
     MatTabsModule,
+    TranslateModule,
+    NgxTranslationsModule,
     ModeSelectorComponent,
     ThemeSelectorComponent,
     LanguageSelectorComponent,
@@ -37,7 +49,9 @@ import { ThemeService } from './services/theme.service';
     HelixHeaderProductNameOrLogoComponent,
     HelixHeaderGlobalComponent,
     HelixFooterComponent,
+    HelixFooterLinkDirective,
   ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class AppComponent {
   routerEvents$;

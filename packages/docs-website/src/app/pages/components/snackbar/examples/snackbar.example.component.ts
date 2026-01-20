@@ -49,7 +49,7 @@ const styleCode = `.story {
 }`;
 
 @Component({
-  selector: 'snack-bar-annotated-component-example-snack',
+  selector: 'app-snack-bar-annotated-component-example-snack',
   template: htmlCode2,
   styles: `
     :host {
@@ -98,7 +98,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 
 @Component({
-    selector: 'dialog-content-example-dialog',
+    selector: 'app-content-example-dialog',
     template: htmlCode2,
     imports: [MatDialogModule, MatButtonModule],
     changeDetection: ChangeDetectionStrategy.OnPush,

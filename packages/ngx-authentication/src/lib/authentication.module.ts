@@ -1,4 +1,3 @@
-import { APP_BASE_HREF } from '@angular/common';
 import {
   provideHttpClient,
   withInterceptorsFromDi,
@@ -60,9 +59,9 @@ export class AuthenticationModule {
           provide: AUTHENTICATION_SETTINGS,
           useValue: settings,
         },
-        { provide: APP_BASE_HREF, useValue: '' },
         {
           provide: ROUTES,
+          multi: true,
           useValue: [
             {
               path: settings.brokerRoute || 'broker/:authCode',
