@@ -31,7 +31,7 @@ const COLLECTOR_URL =
 export class AnalyticsService {
   private trackerId = 'cdxNgTracker';
 
-  tracker: BrowserTracker;
+  tracker: BrowserTracker | null | undefined;
 
   readonly settings = inject(ANALYTICS_SETTINGS) || DEFAULT_SETTINGS;
   context: AnalyticsContextSchema | null = (() => {
@@ -70,16 +70,16 @@ export class AnalyticsService {
       const user =
         (JSON.parse(localStorage.getItem('analytics') || '') || {}).visitor ||
         '';
-      this.tracker.setUserId(user);
-      this.tracker.clearUserData();
-      this.tracker.disableAnonymousTracking();
+      this.tracker?.setUserId(user);
+      this.tracker?.clearUserData();
+      this.tracker?.disableAnonymousTracking();
       this.cookiesAccepted = true;
     }),
   );
   private cookiesAccepted = false;
 
   setUserId(userId: string): void {
-    this.tracker.setUserId(userId);
+    this.tracker?.setUserId(userId);
 
     localStorage.setItem(
       'analytics',
@@ -87,7 +87,7 @@ export class AnalyticsService {
         visitor: userId,
       }),
     );
-    this.tracker.disableAnonymousTracking();
+    this.tracker?.disableAnonymousTracking();
   }
 
   trackPageView(pageViewEvent: PageViewEvent & CommonEventProperties): void {

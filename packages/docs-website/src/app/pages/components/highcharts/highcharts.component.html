@@ -1,8 +1,6 @@
 <hlx-page
   [title]="'Highcharts'"
-  [subtitle]="
-    'Highcharts is a modern, full-featured SVG-based charting and visualization library. It offers a wide variety of different charts and maps, that can easily be implemented into our products.'
-  "
+  [subtitle]="'Highcharts is a modern, full-featured SVG-based charting and visualization library. It offers a wide variety of different charts and maps, that can easily be implemented into our products.'"
   [section]="'Components'"
 >
   <h2>Installation</h2>
@@ -25,9 +23,7 @@
     Always include the
     <cdx-external-link
       [text]="'Accessibility Module'"
-      [url]="
-        'https://www.highcharts.com/docs/accessibility/accessibility-module'
-      "
+      [url]="'https://www.highcharts.com/docs/accessibility/accessibility-module'"
     ></cdx-external-link
     >, unless there is an explicit reason not to do so. Including this module
     will make your charts compatible with assistive technologies used by people
@@ -60,7 +56,6 @@
 
   <h2>Examples</h2>
   @for (sample of sampleList; track sample.exampleName) {
-  <hlx-example-viewer [inputViewerComponent]="sample"></hlx-example-viewer>
-
+    <hlx-example-viewer [inputViewerComponent]="sample"></hlx-example-viewer>
   }
 </hlx-page>

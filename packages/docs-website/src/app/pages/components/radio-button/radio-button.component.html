@@ -1,14 +1,11 @@
 <hlx-page
   [title]="'Radio Button'"
-  [subtitle]="
-    'A radio button allows the user to make one selection from a list of choices. A radio button should always appear in a group with 2 or more options.'
-  "
+  [subtitle]="'A radio button allows the user to make one selection from a list of choices. A radio button should always appear in a group with 2 or more options.'"
   [section]="'Components'"
   componentName="radio"
 >
   <h2>Examples</h2>
   @for (sample of sampleList; track sample.exampleName) {
-  <hlx-example-viewer [inputViewerComponent]="sample"></hlx-example-viewer>
-
+    <hlx-example-viewer [inputViewerComponent]="sample"></hlx-example-viewer>
   }
 </hlx-page>

@@ -1,16 +1,20 @@
 import { HttpClient } from '@angular/common/http';
-import { inject, Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { inject, Injectable, signal } from '@angular/core';
 
 @Injectable({
   providedIn: 'root',
 })
 export class HeaderService {
   private http: HttpClient = inject(HttpClient);
+  readonly versions = signal<string[]>([]);
 
-  getAllHelixVersions(): Observable<string[]> {
-    return this.http.get<string[]>(
-      'https://design-lsh.clarivate.io/assets/helix-versions.json',
-    );
+  getAllHelixVersions(): void {
+    this.http
+      .get<
+        string[]
+      >('https://latest-helix-website.dev.sp.aws.clarivate.net/assets/helix-versions.json')
+      .subscribe((versions) => {
+        this.versions.set(versions);
+      });
   }
 }

@@ -1,6 +1,5 @@
 import { inject, Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, Resolve, Router } from '@angular/router';
-import { EMPTY, of } from 'rxjs';
 import { InputViewerComponent } from 'src/app/core/example-viewer/example-viewer.model';
 
 import { examplesMap } from './examples-map';
@@ -19,17 +18,17 @@ export class ExampleItemResolver implements Resolve<unknown[] | null> {
       .join(' ');
   }
 
-  resolve(route: ActivatedRouteSnapshot) {
+  resolve(route: ActivatedRouteSnapshot): unknown[] | null {
     const component = route.parent?.paramMap.get('component');
     const exampleName = route.paramMap.get('exampleName');
 
-    if (!component || !exampleName) return of(null);
+    if (!component || !exampleName) return null;
 
     const samples = examplesMap[component];
     if (!samples) {
       console.warn(`No samples  found for component "${component}"`);
       this.router.navigate([`/examples/${component}`]);
-      return EMPTY;
+      return null;
     }
 
     const normalized = this.normalizeExampleName(exampleName);
@@ -43,9 +42,9 @@ export class ExampleItemResolver implements Resolve<unknown[] | null> {
         `No example "${normalized}" found for component "${component}"`,
       );
       this.router.navigate([`/examples/${component}`]);
-      return EMPTY;
+      return null;
     }
 
-    return of([match]);
+    return [match];
   }
 }

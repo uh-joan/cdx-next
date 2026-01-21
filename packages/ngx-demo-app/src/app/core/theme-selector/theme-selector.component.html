@@ -12,12 +12,12 @@
 </button>
 <mat-menu #menu="matMenu">
   @for (theme of themes; track theme) {
-  <button mat-menu-item (click)="selectTheme(theme)">
-    <div
-      class="cdx-circle cdx-circle--{{ theme }}"
-      [class.cdx-circle-dark]="(currentMode$ | async) === 'dark'"
-    ></div>
-    {{ theme | titlecase }}
-  </button>
+    <button mat-menu-item (click)="selectTheme(theme)">
+      <div
+        class="cdx-circle cdx-circle--{{ theme }}"
+        [class.cdx-circle-dark]="(currentMode$ | async) === 'dark'"
+      ></div>
+      {{ theme | titlecase }}
+    </button>
   }
 </mat-menu>

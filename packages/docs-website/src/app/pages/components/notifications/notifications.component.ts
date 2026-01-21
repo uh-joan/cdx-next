@@ -1,7 +1,10 @@
 import { Component, HostBinding } from '@angular/core';
-import { MatTableDataSource } from '@angular/material/table';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatTableDataSource, MatTableModule } from '@angular/material/table';
+import { HighlightComponent } from 'src/app/components/highlight/highlight.component';
+import { ExampleViewerComponent } from 'src/app/core/example-viewer/example-viewer.component';
+import { PageComponent } from 'src/app/core/page/page.component';
 
-import { PagesCommonModule } from '../../pages-common.module';
 import * as samples from './examples';
 
 interface ElTable {
@@ -54,7 +57,13 @@ const ELEMENT_APIS: ElementApis[] = [
   selector: 'app-notifications',
   templateUrl: './notifications.component.html',
   styleUrls: ['./notifications.component.scss'],
-  imports: [PagesCommonModule],
+  imports: [
+    PageComponent,
+    ExampleViewerComponent,
+    HighlightComponent,
+    MatDividerModule,
+    MatTableModule,
+  ],
 })
 export class NotificationsComponent {
   @HostBinding('class') hostClass = 'cdx-section';

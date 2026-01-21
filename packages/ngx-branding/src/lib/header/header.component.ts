@@ -4,13 +4,14 @@ import {
   Component,
   ElementRef,
   HostBinding,
-  Input,
+  input,
   ViewChild,
   ViewEncapsulation,
 } from '@angular/core';
 import { ThemeOptionsBranding } from '@cdx/theme-angular-material';
 
 @Component({
+  // eslint-disable-next-line @angular-eslint/component-selector
   selector: 'header[cdx-header]',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
@@ -23,9 +24,9 @@ export class HeaderComponent implements AfterViewInit {
   @ViewChild('productIdentification')
   productIdentification?: ElementRef;
 
-  @Input() theme?: ThemeOptionsBranding;
+  theme = input<ThemeOptionsBranding>();
 
-  @Input() openExternalLink = false;
+  openExternalLink = input<boolean>(false);
 
   ngAfterViewInit(): void {
     if (!this.productIdentification?.nativeElement.children.length) {
@@ -36,7 +37,7 @@ export class HeaderComponent implements AfterViewInit {
   goToMainPage(): void {
     window.open(
       'http://www.clarivate.com',
-      this.openExternalLink ? '_blank' : '_self',
+      this.openExternalLink() ? '_blank' : '_self',
     );
   }
 }

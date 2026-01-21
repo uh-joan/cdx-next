@@ -1,8 +1,9 @@
 <pre>
     <code 
-        class="dark-theme" 
-        [highlight]="text" 
-        [language]="language">
+        [class.dark-theme]="theme() === 'dark'"
+        [class.light-theme]="theme() === 'light'"
+        [highlight]="text()" 
+        [language]="language()">
     </code>
 
     <mat-icon class="copy-button" (click)="copyText()"  >content_copy</mat-icon>

@@ -5,7 +5,7 @@ import {
   ElementRef,
   HostListener,
   inject,
-  Input,
+  input,
   TemplateRef,
   ViewContainerRef,
 } from '@angular/core';
@@ -14,11 +14,10 @@ import { SafeHtml } from '@angular/platform-browser';
 import { RichTooltipComponent } from './rich-tooltip.component';
 
 @Directive({
-  standalone: true,
   selector: '[hlxTooltip]',
 })
 export class RichTooltipDirective {
-  @Input('hlxTooltip') content!: TemplateRef<SafeHtml>;
+  content = input.required<TemplateRef<SafeHtml>>({ alias: 'hlxTooltip' });
 
   private overlayRef!: OverlayRef | null;
 
@@ -74,7 +73,7 @@ export class RichTooltipDirective {
       this.viewContainerRef,
     );
     const tooltipInstance = this.overlayRef.attach(tooltipPortal);
-    tooltipInstance.instance.content = this.content;
+    tooltipInstance.setInput('content', this.content());
   }
 
   @HostListener('mouseleave')

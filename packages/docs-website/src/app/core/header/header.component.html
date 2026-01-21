@@ -1,17 +1,17 @@
-<header hlx-header class="header" [branded]="false">
+<header hlx-header class="header">
   <hlx-header-product-name [routerLink]="['/home']">
     Helix Design System
   </hlx-header-product-name>
   <nav class="header__navigation">
     @for (link of links; track link.path) {
-    <a
-      mat-button
-      class="header__link"
-      [routerLink]="[link.path]"
-      routerLinkActive="header__link--active"
-    >
-      {{ link.label }}
-    </a>
+      <a
+        mat-button
+        class="header__link"
+        [routerLink]="[link.path]"
+        routerLinkActive="header__link--active"
+      >
+        {{ link.label }}
+      </a>
     }
   </nav>
   <hlx-header-global>
@@ -19,10 +19,10 @@
       Version: {{ currentVersion }}
     </button>
     <mat-menu #versionMenu="matMenu">
-      @for (version of versions; track version) {
-      <button mat-menu-item (click)="onVersionSelected(version)">
-        {{ version }}
-      </button>
+      @for (version of versions(); track version) {
+        <button mat-menu-item (click)="onVersionSelected(version)">
+          {{ version }}
+        </button>
       }
     </mat-menu>
     <cdx-search></cdx-search>

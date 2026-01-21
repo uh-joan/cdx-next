@@ -1,13 +1,23 @@
 import { Component, HostBinding } from '@angular/core';
+import { MatDividerModule } from '@angular/material/divider';
+import { ExternalLinkComponent } from 'src/app/components/external-link/external-link.component';
+import { HighlightComponent } from 'src/app/components/highlight/highlight.component';
+import { ExampleViewerComponent } from 'src/app/core/example-viewer/example-viewer.component';
+import { PageComponent } from 'src/app/core/page/page.component';
 
-import { PagesCommonModule } from '../../pages-common.module';
 import * as samples from './examples';
 
 @Component({
   selector: 'app-skeleton-loader',
   templateUrl: './skeleton-loader.component.html',
   styleUrls: ['./skeleton-loader.component.scss'],
-  imports: [PagesCommonModule],
+  imports: [
+    PageComponent,
+    ExternalLinkComponent,
+    ExampleViewerComponent,
+    MatDividerModule,
+    HighlightComponent,
+  ],
 })
 export class SkeletonLoaderComponent {
   @HostBinding('class') hostClass = 'cdx-section';

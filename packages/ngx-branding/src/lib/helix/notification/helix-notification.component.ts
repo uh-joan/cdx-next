@@ -4,10 +4,9 @@ import {
   Component,
   ContentChild,
   ElementRef,
-  EventEmitter,
   HostBinding,
-  Input,
-  Output,
+  input,
+  output,
   ViewEncapsulation,
 } from '@angular/core';
 import { MatButton } from '@angular/material/button';
@@ -41,22 +40,17 @@ export class HelixNotificationComponent {
 
   @ContentChild('customIconWrapper') customIconWrapper!: ElementRef;
 
-  @Input() title?: string;
+  title = input<string>();
+  presentation = input<'inline' | 'banner'>('inline');
+  dismissable = input<boolean | string>(false);
+  action = input<string>();
+  severity = input<'info' | 'success' | 'warn'>('info');
 
-  @Input() presentation?: 'inline' | 'banner' = 'inline';
-
-  @Input() dismissable?: boolean | string = false;
-
-  @Input() action?: string;
-
-  @Input() severity: 'info' | 'success' | 'warn' = 'info';
-
-  @Output() actionEvent: EventEmitter<string> = new EventEmitter<string>();
-
-  @Output() dismissEvent: EventEmitter<void> = new EventEmitter<void>();
+  actionEvent = output<string>();
+  dismissEvent = output<void>();
 
   onAction(): void {
-    this.actionEvent.emit(this.action);
+    this.actionEvent.emit(this.action() ?? '');
   }
 
   onDismiss(): void {

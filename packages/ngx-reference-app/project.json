@@ -28,7 +28,6 @@
         "inlineStyleLanguage": "scss",
         "main": "packages/ngx-reference-app/src/main.ts",
         "outputPath": "dist/packages/ngx-reference-app",
-        "polyfills": "packages/ngx-reference-app/src/polyfills.ts",
         "scripts": [],
         "styles": ["packages/ngx-reference-app/src/styles.scss"],
         "tsConfig": "packages/ngx-reference-app/tsconfig.app.json"

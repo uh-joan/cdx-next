@@ -24,6 +24,6 @@
   "peerDependencies": {
     "@cdx/shared-branding": "20.0.0-alpha.2",
     "@cdx/theme-angular-material": "20.0.0-alpha.2",
-    "@ngx-translate/core": ">=14.0.0"
+    "@ngx-translate/core": ">=17.0.0"
   }
 }

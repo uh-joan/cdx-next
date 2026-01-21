@@ -6,10 +6,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatSelectModule } from '@angular/material/select';
-import {
-  NgxTranslationsModule,
-  NgxTranslationsService,
-} from '@cdx/ngx-translations';
+import { NgxTranslationsService } from '@cdx/ngx-translations';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 import * as ar_SA from '../../../assets/i18n/ar_SA.json';
@@ -23,7 +20,7 @@ import * as zh_CN from '../../../assets/i18n/zh_CN.json';
 import * as zh_TW from '../../../assets/i18n/zh_TW.json';
 
 @Component({
-  selector: 'language-selector',
+  selector: 'cdx-language-selector',
   templateUrl: './language-selector.component.html',
   styleUrls: ['./language-selector.component.scss'],
   imports: [
@@ -34,7 +31,6 @@ import * as zh_TW from '../../../assets/i18n/zh_TW.json';
     MatIconModule,
     MatButtonModule,
     MatMenuModule,
-    NgxTranslationsModule,
     TranslateModule,
   ],
 })
@@ -83,10 +79,20 @@ export class LanguageSelectorComponent implements OnInit {
   private translateService = inject(TranslateService);
 
   ngOnInit(): void {
-    this.translateService.translations = this.APP_TRANSLATIONS;
+    this.translateService.setTranslation('en', this.APP_TRANSLATIONS.en);
     this.ngxTranslationsService.mergeTranslationsLabels(
       Object.keys(this.APP_TRANSLATIONS),
     );
+
+    const initialLang = localStorage.getItem('language');
+
+    // Set the initial language - either from storage or default to 'en'
+    const languageToUse = initialLang || 'en';
+    this.translateService.use(languageToUse);
+    this.formLanguage
+      .get('language')
+      ?.setValue(languageToUse, { emitEvent: false });
+
     this.formLanguage.valueChanges.subscribe((formLanguageSelected) => {
       if (formLanguageSelected.language) {
         this.translateService.use(formLanguageSelected.language);
@@ -97,11 +103,6 @@ export class LanguageSelectorComponent implements OnInit {
         );
       }
     });
-    const initialLang = localStorage.getItem('language');
-
-    if (initialLang) {
-      this.selectLanguage(initialLang);
-    }
   }
 
   getLanguageFlag(langCode: string): string {

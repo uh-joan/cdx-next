@@ -1,13 +1,14 @@
 import { Component, HostBinding } from '@angular/core';
+import { ExampleViewerComponent } from 'src/app/core/example-viewer/example-viewer.component';
+import { PageComponent } from 'src/app/core/page/page.component';
 
-import { PagesCommonModule } from '../../pages-common.module';
 import * as samples from './examples';
 
 @Component({
   selector: 'app-select',
   templateUrl: './select.component.html',
   styleUrls: ['./select.component.scss'],
-  imports: [PagesCommonModule],
+  imports: [PageComponent, ExampleViewerComponent],
 })
 export class SelectComponent {
   @HostBinding('class') hostClass = 'cdx-section';

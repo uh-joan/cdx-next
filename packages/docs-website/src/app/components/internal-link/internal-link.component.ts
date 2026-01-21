@@ -1,14 +1,14 @@
-import { Component, Input } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { Component, input } from '@angular/core';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'cdx-internal-link',
   templateUrl: './internal-link.component.html',
   styleUrls: ['./internal-link.component.scss'],
-  imports: [RouterModule],
+  imports: [RouterLink],
 })
 export class InternalLinkComponent {
-  @Input() url = '';
-  @Input() inline = true;
-  @Input() text = '';
+  url = input.required<string>();
+  inline = input<boolean>(false);
+  text = input.required<string>();
 }

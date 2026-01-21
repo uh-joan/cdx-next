@@ -1,15 +1,12 @@
 <hlx-page
   [title]="'List'"
-  [subtitle]="
-    'Lists consist of related content grouped together and organized vertically.'
-  "
+  [subtitle]="'Lists consist of related content grouped together and organized vertically.'"
   [section]="'Components'"
   componentName="list"
 >
   <h2>Examples</h2>
 
   @for (sample of sampleList; track sample.exampleName) {
-  <hlx-example-viewer [inputViewerComponent]="sample"></hlx-example-viewer>
-
+    <hlx-example-viewer [inputViewerComponent]="sample"></hlx-example-viewer>
   }
 </hlx-page>

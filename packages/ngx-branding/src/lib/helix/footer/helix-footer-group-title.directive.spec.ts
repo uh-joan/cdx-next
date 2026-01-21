@@ -7,10 +7,7 @@ describe('HelixFooterGroupTitleDirective', () => {
   const createHost = createHostFactory(HelixFooterGroupTitleDirective);
 
   beforeEach(
-    () =>
-      (host = createHost(
-        '<hlx-footer-group-title>A Title</hlx-footer-group-title>',
-      )),
+    () => (host = createHost('<div hlx-footer-group-title>A Title</div>')),
   );
 
   it('should set group title class', () => {

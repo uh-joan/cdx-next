@@ -14,24 +14,6 @@
   @include cdx.theme-helix-overrides;
 }
 
-@include cdx.default(cdx.$innography-light-theme, 'innography-theme-material');
-
-.innography-theme-material {
-  @include cdx.theme-innography-overrides;
-}
-
-@include cdx.default(cdx.$avalon-light-theme, 'avalon-theme-material');
-
-.avalon-theme-material {
-  @include cdx.theme-avalon-overrides;
-}
-
-@include cdx.default(cdx.$derwent-light-theme, 'derwent-theme-material');
-
-.derwent-theme-material {
-  @include cdx.theme-derwent-overrides;
-}
-
 :root {
   --light-text: rgba(#000, 0.87);
   --light-background: #fff;

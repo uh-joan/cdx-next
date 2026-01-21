@@ -1,31 +1,29 @@
 <hlx-page
   [title]="'Components Overview'"
   [section]="'Components'"
-  [subtitle]="
-    'Angular Material components, Helix components, and external third party libraries.'
-  "
+  [subtitle]="'Angular Material components, Helix components, and external third party libraries.'"
 >
   <div class="component-list">
     @for (component of components; track component) {
-    <mat-card
-      matRipple
-      class="component-list__item"
-      let
-      i="index"
-      [routerLink]="component.route"
-    >
-      <mat-card-header
-        class="item-header"
-        [ngStyle]="{
-          'background-image': 'url(' + basePath + component.imageName + ')'
-        }"
+      <mat-card
+        matRipple
+        class="component-list__item"
+        let
+        i="index"
+        [routerLink]="component.route"
       >
-      </mat-card-header>
-      <mat-card-content class="item-content">
-        <div class="title mat-headline-small">{{ component.title }}</div>
-        <div class="text">{{ component.text }}</div>
-      </mat-card-content>
-    </mat-card>
+        <mat-card-header
+          class="item-header"
+          [ngStyle]="{
+            'background-image': 'url(' + basePath + component.imageName + ')',
+          }"
+        >
+        </mat-card-header>
+        <mat-card-content class="item-content">
+          <div class="title mat-headline-small">{{ component.title }}</div>
+          <div class="text">{{ component.text }}</div>
+        </mat-card-content>
+      </mat-card>
     }
   </div>
 </hlx-page>

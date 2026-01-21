@@ -1,7 +1,5 @@
 <hlx-page
-  [subtitle]="
-    'Breadcrumbs are a secondary type of navigation system that shows a user’s location within a site or web application. They serve as an effective visual aid, indicating where a user is relative to the site’s hierarchy.'
-  "
+  [subtitle]="'Breadcrumbs are a secondary type of navigation system that shows a user’s location within a site or web application. They serve as an effective visual aid, indicating where a user is relative to the site’s hierarchy.'"
   [title]="'Breadcrumbs'"
   [section]="'Components'"
 >
@@ -54,7 +52,6 @@
   <h2>Examples</h2>
 
   @for (sample of sampleList; track sample.exampleName) {
-  <hlx-example-viewer [inputViewerComponent]="sample"></hlx-example-viewer>
-
+    <hlx-example-viewer [inputViewerComponent]="sample"></hlx-example-viewer>
   }
 </hlx-page>

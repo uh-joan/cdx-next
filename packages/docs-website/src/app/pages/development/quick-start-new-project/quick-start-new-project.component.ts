@@ -120,19 +120,19 @@ footer {
       name: '@cdx/ngx-session-activity',
       description: 'Session Activity service',
       dependencies: [
-        `"@ng-idle/keepalive": "^15.0.0"`,
-        `"@ngx-translate/core": ">=14.0.0"`,
+        `"@ng-idle/keepalive": "^16.0.0"`,
+        `"@ngx-translate/core": ">=17.0.0"`,
       ],
     },
     {
       name: '@cdx/ngx-translations',
       description: 'Translation service',
-      dependencies: [`"@ngx-translate/core": ">=14.0.0"`],
+      dependencies: [`"@ngx-translate/core": ">=17.0.0"`],
     },
     {
       name: '@cdx/ngx-analytics',
       description: 'Analytics service',
-      dependencies: [`"@snowplow/browser-tracker": "^3.7.0"`],
+      dependencies: [`"@snowplow/browser-tracker": "^4.6.8"`],
     },
     {
       name: '@cdx/ngx-authentication',
@@ -141,7 +141,7 @@ footer {
     {
       name: '@cdx/theme-ag-grid',
       description: 'AG Grid theme',
-      dependencies: [`"ag-grid-community": ">=28"`],
+      dependencies: [`"ag-grid-community": ">=35"`],
     },
     {
       name: '@cdx/theme-badge',
@@ -158,7 +158,7 @@ footer {
     {
       name: '@cdx/theme-highcharts',
       description: 'Highcharts theme',
-      dependencies: [`"highcharts": "^11.3.0"`],
+      dependencies: [`"highcharts": "^12.4.0"`],
     },
     {
       name: '@cdx/theme-snackbar',

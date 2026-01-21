@@ -1,13 +1,12 @@
 import { NgTemplateOutlet } from '@angular/common';
-import { Component, Input, TemplateRef } from '@angular/core';
+import { Component, input, TemplateRef } from '@angular/core';
 
 @Component({
   selector: 'hlx-rich-tooltip',
   templateUrl: './rich-tooltip.component.html',
   styleUrl: './rich-tooltip.component.scss',
-  standalone: true,
   imports: [NgTemplateOutlet],
 })
 export class RichTooltipComponent {
-  @Input() content!: TemplateRef<unknown>;
+  readonly content = input.required<TemplateRef<unknown>>();
 }

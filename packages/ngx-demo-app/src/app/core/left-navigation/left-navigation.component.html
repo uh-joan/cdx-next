@@ -1,13 +1,13 @@
 <nav class="nav-container mat-elevation-z3 mat-mdc-card">
   @for (link of links; track link) {
-  <button
-    mat-button
-    color="primary"
-    [routerLink]="link.path"
-    [class.active]="isActive(link.path)"
-  >
-    {{ link.name | translate | titlecase }}
-  </button>
-  <mat-divider></mat-divider>
+    <button
+      mat-button
+      color="primary"
+      [routerLink]="link.path"
+      [class.active]="isActive(link.path)"
+    >
+      {{ link.name | translate | titlecase }}
+    </button>
+    <mat-divider></mat-divider>
   }
 </nav>

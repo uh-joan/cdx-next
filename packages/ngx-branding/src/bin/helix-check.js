@@ -173,7 +173,7 @@ function checkPackageVersion(packageName, hlxVersion) {
 }
 
 const allPackagesValid = requiredPackages
-  .map((pkg) => checkPackageVersion(pkg, 19))
+  .map((pkg) => checkPackageVersion(pkg, 20))
   .every((valid) => valid);
 
 console.log(chalk.blue('\n---------------------------------\n'));

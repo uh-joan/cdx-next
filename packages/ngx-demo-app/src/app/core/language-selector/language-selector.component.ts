@@ -24,7 +24,7 @@ import * as zh_CN from '../../../assets/i18n/zh_CN.json';
 import * as zh_TW from '../../../assets/i18n/zh_TW.json';
 
 @Component({
-  selector: 'demo-language-selector',
+  selector: 'cdx-language-selector',
   templateUrl: './language-selector.component.html',
   styleUrls: ['./language-selector.component.scss'],
   imports: [

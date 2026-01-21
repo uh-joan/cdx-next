@@ -23,7 +23,7 @@
       "@cdx/theme-angular-material": [
         "packages/theme-angular-material/src/index.ts"
       ],
-      "@cdx/theme-highcharts": ["packages/theme-highcharts/index.ts"],
+      "@cdx/theme-highcharts": ["packages/theme-highcharts/src/index.ts"],
       "@cdx/theme-xng-breadcrumb": [
         "packages/theme-xng-breadcrumb/src/index.ts"
       ]

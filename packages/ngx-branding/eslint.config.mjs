@@ -11,6 +11,17 @@ const compat = new FlatCompat({
 
 export default [
   {
+    files: [
+      'src/lib/header/header.component.ts',
+      'src/lib/footer/footer.component.ts',
+      'src/lib/helix/header/helix-header.component.ts',
+      'src/lib/helix/footer/helix-footer.component.ts',
+    ],
+    rules: {
+      '@angular-eslint/component-selector': 'off',
+    },
+  },
+  {
     ignores: ['**/dist'],
   },
   ...baseConfig,
@@ -29,15 +40,17 @@ export default [
         '@angular-eslint/component-selector': [
           'error',
           {
-            prefix: 'cdx',
+            prefix: ['cdx', 'web', 'app', 'hlx'],
             style: 'kebab-case',
+            type: 'element',
           },
         ],
         '@angular-eslint/directive-selector': [
           'error',
           {
-            prefix: 'cdx',
-            style: 'kebab-case',
+            prefix: ['cdx', 'web', 'app', 'hlx'],
+            style: 'camelCase',
+            type: 'attribute',
           },
         ],
         '@angular-eslint/prefer-standalone': 'off',

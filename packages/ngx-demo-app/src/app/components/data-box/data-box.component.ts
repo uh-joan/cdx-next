@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component, HostBinding } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 
 @Component({
-  selector: 'demo-data-box',
+  selector: 'cdx-data-box',
   imports: [MatIconModule],
   templateUrl: './data-box.component.html',
   styleUrl: './data-box.component.scss',

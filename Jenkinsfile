@@ -37,10 +37,10 @@ pipeline {
             choices: ['patch', 'minor', 'major'],
             description: 'If Publish is true, the level of the release'
         )
-        choice(
+        booleanParam(
             name: 'Website',
-            choices: ['nowhere', 'pre', 'prod'],
-            description: 'Environment where Storybooks should be deployed'
+            defaultValue: false,
+            description: 'Whether to deploy the Website'
         )
     }
 
@@ -49,7 +49,7 @@ pipeline {
             when {
                 allOf {
                     expression { params.Publish == false }
-                    expression { params.Website == 'nowhere' }
+                    expression { params.Website == false }
                     expression { params.DisableSkipCI == false }
                 }
             }
@@ -68,11 +68,6 @@ pipeline {
             steps {
                 sh 'node --version'
                 sh 'npm ci'
-            }
-        }
-        stage('Check code style') {
-            steps {
-                sh 'npm run lint'
             }
         }
 
@@ -115,15 +110,24 @@ pipeline {
             }
         }
 
-        stage('Run tests') {
-            steps {
-                sh 'npm run test'
+        stage('Quality Checks') {
+            parallel {
+                stage('Lint') {
+                    steps {
+                        sh 'npm run lint'
+                    }
+                }
+                stage('Test') {
+                    steps {
+                        sh 'npm run test'
+                    }
+                }
             }
         }
 
         stage('Build Website') {
             when {
-                expression { params.Website != 'nowhere' }
+                expression { params.Website == true }
             }
             steps {
                 sh 'npm run build:website -- --configuration=ci'
@@ -134,7 +138,7 @@ pipeline {
             when {
                 allOf {
                     expression { BRANCH_NAME ==~ /(^main)|(^version\/.*)/ }
-                    expression { params.Publish }
+                    expression { params.Publish == true }
                 }
             }
             environment {
@@ -199,9 +203,9 @@ pipeline {
             }
         }
 
-        stage('Deploy Website to pre-prod') {
+        stage('Deploy Website') {
             when {
-                expression { params.Website == 'pre' }
+                expression { params.Website == true }
             }
             steps {
                 script {
@@ -213,40 +217,12 @@ pipeline {
                         ) {
                             sh '''
                                 npm run deploy:website -- \
-                                    --bucket helix-v19.dev.sp.aws.clarivate.net \
-                                    --distribution E3384JA1YITDIC
+                                    --bucket helix-v20.dev.sp.aws.clarivate.net \
+                                    --distribution E2PI3YSRXZPFVQ
                             '''
                         }
                     } else {
-                        echo '[DryRun] Would deploy Storybook website to pre-prod (helix-v19.dev.sp.aws.clarivate.net)'
-                    }
-                }
-            }
-        }
-
-        stage('Deploy Website to prod') {
-            when {
-                allOf {
-                    expression { BRANCH_NAME ==~ /(^main)/ }
-                    expression { params.Website == 'prod' }
-                }
-            }
-            steps {
-                script {
-                    if (!params.DryRun) {
-                        withAWS(
-                            role: 'arn:aws:iam::809146824789:role/cl/app/cdx/jenkins-cdx-prod_role',
-                            roleSessionName: 'jenkins',
-                            useNode: true
-                        ) {
-                            sh '''
-                                npm run deploy:website -- \
-                                    --bucket cdx-stories.prod.sp.aws.clarivate.net \
-                                    --distribution E2D5B9JW4EDZO5
-                            '''
-                        }
-                    } else {
-                        echo '[DryRun] Would deploy Storybook website to PROD (cdx-stories.prod.sp.aws.clarivate.net)'
+                        echo '[DryRun] Would deploy website to (helix-v20.dev.sp.aws.clarivate.net)'
                     }
                 }
             }

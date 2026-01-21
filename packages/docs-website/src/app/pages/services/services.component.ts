@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { RouterOutlet } from '@angular/router';
 import { LeftNavigationComponent } from 'src/app/core/left-navigation/left-navigation.component';
 import { NavbarSection } from 'src/app/core/left-navigation/left-navigation.interface';
 
@@ -7,7 +7,7 @@ import { NavbarSection } from 'src/app/core/left-navigation/left-navigation.inte
   selector: 'cdx-services',
   templateUrl: './services.component.html',
   styleUrls: ['./services.component.scss'],
-  imports: [RouterModule, LeftNavigationComponent],
+  imports: [RouterOutlet, LeftNavigationComponent],
 })
 export class ServicesComponent {
   leftNavbarConfig: NavbarSection[] = [

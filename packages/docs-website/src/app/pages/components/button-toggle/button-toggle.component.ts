@@ -1,6 +1,7 @@
 import { Component, HostBinding } from '@angular/core';
+import { ExampleViewerComponent } from 'src/app/core/example-viewer/example-viewer.component';
+import { PageComponent } from 'src/app/core/page/page.component';
 
-import { PagesCommonModule } from '../../pages-common.module';
 import * as samples from './examples';
 
 @Component({
@@ -8,7 +9,7 @@ import * as samples from './examples';
   templateUrl: './button-toggle.component.html',
   styleUrls: ['./button-toggle.component.scss'],
 
-  imports: [PagesCommonModule],
+  imports: [PageComponent, ExampleViewerComponent],
 })
 export class ButtonToggleComponent {
   @HostBinding('class') hostClass = 'cdx-section';

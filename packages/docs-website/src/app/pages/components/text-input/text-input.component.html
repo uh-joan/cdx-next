@@ -1,14 +1,11 @@
 <hlx-page
   [title]="'Text Input'"
-  [subtitle]="
-    'Text inputs allow users to input and edit content and data, and typically appear in forms or dialogs.'
-  "
+  [subtitle]="'Text inputs allow users to input and edit content and data, and typically appear in forms or dialogs.'"
   [section]="'Components'"
   componentName="input"
 >
   <h2>Examples</h2>
   @for (sample of sampleList; track sample.exampleName) {
-  <hlx-example-viewer [inputViewerComponent]="sample"></hlx-example-viewer>
-
+    <hlx-example-viewer [inputViewerComponent]="sample"></hlx-example-viewer>
   }
 </hlx-page>

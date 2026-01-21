@@ -8,7 +8,7 @@ import {
 } from '@angular/material/form-field';
 import { MatSelect, MatSelectModule } from '@angular/material/select';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
-import { ActivatedRoute, Router, RouterModule } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { marked } from 'marked';
 import { forkJoin } from 'rxjs';
 
@@ -26,7 +26,6 @@ import { ReleaseNotesService } from './release-notes.service';
     MatSelect,
     ReactiveFormsModule,
     MatOption,
-    RouterModule,
     PageComponent,
     ReactiveFormsModule,
     MatFormFieldModule,

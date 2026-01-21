@@ -17,11 +17,11 @@
     [class.visible]="isSearchVisible"
   />
   @if (isSearchVisible) {
-  <mat-icon
-    class="search-wrapper__close-icon"
-    (click)="onCloseSearchClick($event)"
-    >close</mat-icon
-  >
+    <mat-icon
+      class="search-wrapper__close-icon"
+      (click)="onCloseSearchClick($event)"
+      >close</mat-icon
+    >
   }
 
   <mat-autocomplete
@@ -30,9 +30,9 @@
     (optionSelected)="onSelectRoute($event.option.value.route)"
   >
     @for (option of filteredOptions; track option) {
-    <mat-option [value]="option">
-      {{ option.title }}
-    </mat-option>
+      <mat-option [value]="option">
+        {{ option.title }}
+      </mat-option>
     }
   </mat-autocomplete>
 </form>

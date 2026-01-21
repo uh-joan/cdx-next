@@ -1,7 +1,7 @@
 import { DOCUMENT, inject, Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 
-export const THEMES = ['cdx', 'helix', 'avalon', 'innography', 'derwent'];
+export const THEMES = ['cdx', 'helix'];
 
 @Injectable({
   providedIn: 'root',

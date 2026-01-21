@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import {
   AfterViewInit,
+  booleanAttribute,
   ChangeDetectionStrategy,
   ChangeDetectorRef,
   Component,
@@ -8,7 +9,7 @@ import {
   ElementRef,
   HostBinding,
   inject,
-  Input,
+  input,
   QueryList,
   ViewChild,
   ViewEncapsulation,
@@ -20,6 +21,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { ThemeOptionsBranding } from '@cdx/theme-angular-material';
 
 @Component({
+  // eslint-disable-next-line @angular-eslint/component-selector
   selector: 'header[hlx-header]',
   templateUrl: './helix-header.component.html',
   styleUrls: ['./helix-header.component.scss'],
@@ -54,20 +56,26 @@ export class HelixHeaderComponent implements AfterViewInit {
   showDivider = false;
   showHeaderGlobalDivider = false;
 
-  @Input() theme?: ThemeOptionsBranding;
-
-  @Input() branded?: boolean = true;
-
-  @Input() openExternalLink = false;
+  theme = input<ThemeOptionsBranding>();
+  branded = input(true, { transform: booleanAttribute });
+  openExternalLink = input({
+    transform: Boolean,
+    required: false,
+    default: false,
+  });
 
   private cdr = inject(ChangeDetectorRef);
 
   ngAfterViewInit() {
     const hasChildren =
-      this.productIdentification?.nativeElement.children.length > 0;
-    const hasGloalHeaderChildren =
-      this.headerGlobal?.nativeElement.querySelector('.hlx-header__global')
-        .children.length > 0;
+      this.productIdentification?.nativeElement?.children?.length > 0;
+
+    const globalEl = this.headerGlobal?.nativeElement?.querySelector(
+      '.hlx-header__global',
+    );
+    const hasGloalHeaderChildren = globalEl
+      ? globalEl.children.length > 0
+      : false;
 
     this.showDivider = hasChildren;
     this.showHeaderGlobalDivider = hasGloalHeaderChildren;
@@ -78,7 +86,7 @@ export class HelixHeaderComponent implements AfterViewInit {
   goToMainPage(): void {
     window.open(
       'http://www.clarivate.com',
-      this.openExternalLink ? '_blank' : '_self',
+      this.openExternalLink() ? '_blank' : '_self',
     );
   }
 }

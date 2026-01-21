@@ -1,8 +1,6 @@
 <hlx-page
   [title]="'Notifications'"
-  [subtitle]="
-    'Notifications provide information about the application where an action may be required from the user.'
-  "
+  [subtitle]="'Notifications provide information about the application where an action may be required from the user.'"
   [section]="'Components'"
 >
   <h2>Installation</h2>
@@ -111,7 +109,6 @@
 
   <h2>Examples</h2>
   @for (sample of sampleList; track sample.exampleName) {
-  <hlx-example-viewer [inputViewerComponent]="sample"></hlx-example-viewer>
-
+    <hlx-example-viewer [inputViewerComponent]="sample"></hlx-example-viewer>
   }
 </hlx-page>

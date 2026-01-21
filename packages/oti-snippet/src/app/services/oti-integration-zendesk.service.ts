@@ -4,9 +4,7 @@ import { HttpService } from './http.service';
 import { JwtExtractorService } from './jwt-extractor.service';
 import { OtiIntegrationInterfaceService } from './oti-integration-interface.service';
 
-export class OtiIntegrationZendeskService
-  implements OtiIntegrationInterfaceService
-{
+export class OtiIntegrationZendeskService implements OtiIntegrationInterfaceService {
   private zendeskDomain = 'https://clarivate8549.zendesk.com';
   private zendeskAppName?: string;
   private zendeskLibraryUrl?: string;

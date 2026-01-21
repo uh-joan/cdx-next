@@ -11,7 +11,8 @@
     "noImplicitReturns": true,
     "noPropertyAccessFromIndexSignature": true,
     "resolveJsonModule": true,
-    "strict": true
+    "strict": true,
+    "target": "es2020"
   },
   "extends": "../../tsconfig.base.json",
   "files": [],
@@ -19,6 +20,9 @@
   "references": [
     {
       "path": "./tsconfig.lib.json"
+    },
+    {
+      "path": "./tsconfig.lib.prod.json"
     },
     {
       "path": "./tsconfig.spec.json"

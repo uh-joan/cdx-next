@@ -122,7 +122,7 @@
         (optionSelected)="goToComponent($event)"
       >
         @for (option of filteredOptions | async; track option) {
-        <mat-option [value]="option">{{ option }}</mat-option>
+          <mat-option [value]="option">{{ option }}</mat-option>
         }
       </mat-autocomplete>
     </mat-form-field>

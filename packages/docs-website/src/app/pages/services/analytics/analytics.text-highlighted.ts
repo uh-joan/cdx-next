@@ -10,8 +10,6 @@ import {
 @NgModule({
   declarations: [],
   imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
     ...,
     AnalyticsModule.forRoot(APP_ANALYTICS_SETTINGS, APP_ANALYTICS_CONTEXT)
   ],

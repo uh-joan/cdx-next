@@ -7,7 +7,7 @@ import { RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
-  selector: 'demo-left-navigation',
+  selector: 'cdx-left-navigation',
   imports: [
     CommonModule,
     MatButtonModule,

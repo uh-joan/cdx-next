@@ -29,52 +29,60 @@ describe('FooterComponent', () => {
     shallow: true,
   });
 
-  beforeEach(() => {
-    host = createHost('<footer cdx-footer><div>stuff</div></footer>');
-    oneTrust = host.inject<OneTrustService>(OneTrustService);
-    jest.spyOn(oneTrust, 'isReady').mockReturnValue(true);
-  });
-
   it('should set footer class', () => {
+    host = createHost('<footer cdx-footer><div>stuff</div></footer>');
     expect(host.query('div.cdx-footer')).toBeTruthy();
   });
 
   it('should include copyright statement', () => {
+    host = createHost('<footer cdx-footer><div>stuff</div></footer>');
     expect(host.query('.cdx-footer__copyright')).toContainText(
       `© ${new Date().getFullYear()} Clarivate`,
     );
   });
 
   it('should project child content in content container', () => {
+    host = createHost('<footer cdx-footer><div>stuff</div></footer>');
     expect(host.element).toContainText('stuff');
   });
 
-  describe('when Company links', () => {
-    describe('are grouped', () => {
-      beforeEach(() => {
-        host.component.groupCompanyLinks = true;
-        host.detectComponentChanges();
-      });
-
-      it('should show company group first', () => {
-        expect(host.query('cdx-footer-group:first-child')).toExist();
-      });
+  describe('when Company links are grouped', () => {
+    beforeEach(() => {
+      host = createHost(
+        '<footer cdx-footer [groupCompanyLinks]="true"><div>stuff</div></footer>',
+      );
+      oneTrust = host.inject<OneTrustService>(OneTrustService);
+      jest.spyOn(oneTrust, 'isReady').mockReturnValue(true);
+      host.detectComponentChanges();
     });
 
-    describe('are not grouped', () => {
-      beforeEach(() => {
-        host.component.groupCompanyLinks = false;
-        host.detectComponentChanges();
-      });
+    it('should show company group first', () => {
+      expect(host.query('cdx-footer-group')).toExist();
+    });
+  });
 
-      it('should show a Company link first', () => {
-        expect(host.query('a[cdx-footer-link]:first-child')).toExist();
-      });
+  describe('when Company links are not grouped', () => {
+    beforeEach(() => {
+      host = createHost(
+        '<footer cdx-footer [groupCompanyLinks]="false"><div>stuff</div></footer>',
+      );
+      oneTrust = host.inject<OneTrustService>(OneTrustService);
+      jest.spyOn(oneTrust, 'isReady').mockReturnValue(true);
+      host.detectComponentChanges();
+    });
+
+    it('should show a Company link first', () => {
+      expect(host.query('a[cdx-footer-link]:first-child')).toExist();
     });
   });
 
   describe('with Cookie management', () => {
     const manageCookiePreferencesLinkText = 'Manage cookie preferences';
+
+    beforeEach(() => {
+      host = createHost('<footer cdx-footer><div>stuff</div></footer>');
+      oneTrust = host.inject<OneTrustService>(OneTrustService);
+    });
 
     describe('configured and available', () => {
       beforeEach(() => {

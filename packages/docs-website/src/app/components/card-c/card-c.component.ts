@@ -1,6 +1,6 @@
-import { Component, Input } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
-import { RouterModule } from '@angular/router';
+import { RouterLink } from '@angular/router';
 
 export interface CardCInput {
   title: string;
@@ -12,16 +12,10 @@ export interface CardCInput {
 
 @Component({
   selector: 'app-card-c',
-  imports: [MatButtonModule, RouterModule],
+  imports: [MatButtonModule, RouterLink],
   templateUrl: './card-c.component.html',
   styleUrl: './card-c.component.scss',
 })
 export class CardCComponent {
-  @Input() cardData: CardCInput = {
-    title: '',
-    text: '',
-    imageUrl: '',
-    buttonName: '',
-    url: '',
-  };
+  cardData = input.required<CardCInput>();
 }

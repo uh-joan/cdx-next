@@ -52,10 +52,10 @@ const styleCode = `.story {
   selector: 'snack-bar-annotated-component-example-snack',
   template: htmlCode2,
   styles: `
-      :host {
-        display: flex;
-      }
-    `,
+    :host {
+      display: flex;
+    }
+  `,
   imports: [
     MatButtonModule,
     MatIconModule,

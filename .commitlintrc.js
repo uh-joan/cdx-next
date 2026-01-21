@@ -21,6 +21,7 @@ async function getConfig() {
     'theme-material-components-web',
     'theme-react-mui',
     'theme-highcharts',
+    'demo',
   ];
 
   return {

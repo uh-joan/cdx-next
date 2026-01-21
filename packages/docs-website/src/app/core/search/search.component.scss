@@ -14,7 +14,9 @@
   &__input {
     width: 0;
     opacity: 0;
-    transition: width 0.25s ease, opacity 0.1s ease;
+    transition:
+      width 0.25s ease,
+      opacity 0.1s ease;
     color: white;
     background: transparent;
     border: none;

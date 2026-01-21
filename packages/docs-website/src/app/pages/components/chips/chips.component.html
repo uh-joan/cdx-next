@@ -1,15 +1,12 @@
 <hlx-page
   [title]="'Chips'"
-  [subtitle]="
-    'Chips are compact elements that represent an input, attribute, or action. A group of chips can be added, removed, and reordered within that group.'
-  "
+  [subtitle]="'Chips are compact elements that represent an input, attribute, or action. A group of chips can be added, removed, and reordered within that group.'"
   [section]="'Components'"
   componentName="chips"
 >
   <h2>Examples</h2>
 
   @for (sample of sampleList; track sample.exampleName) {
-  <hlx-example-viewer [inputViewerComponent]="sample"></hlx-example-viewer>
-
+    <hlx-example-viewer [inputViewerComponent]="sample"></hlx-example-viewer>
   }
 </hlx-page>

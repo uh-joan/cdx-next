@@ -1,14 +1,11 @@
 <hlx-page
   [title]="'Toolbar'"
-  [subtitle]="
-    'The Toolbar is a container for titles, navigation, icons, or actions.'
-  "
+  [subtitle]="'The Toolbar is a container for titles, navigation, icons, or actions.'"
   [section]="'Components'"
   componentName="toolbar"
 >
   <h2>Examples</h2>
   @for (sample of sampleList; track sample.exampleName) {
-  <hlx-example-viewer [inputViewerComponent]="sample"></hlx-example-viewer>
-
+    <hlx-example-viewer [inputViewerComponent]="sample"></hlx-example-viewer>
   }
 </hlx-page>

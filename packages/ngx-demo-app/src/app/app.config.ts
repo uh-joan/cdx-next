@@ -1,4 +1,8 @@
-import { ApplicationConfig, importProvidersFrom } from '@angular/core';
+import {
+  ApplicationConfig,
+  importProvidersFrom,
+  provideZonelessChangeDetection,
+} from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { provideRouter } from '@angular/router';
 import { AuthenticationModule } from '@cdx/ngx-authentication';
@@ -9,6 +13,7 @@ import { appRoutes } from './app.routes';
 
 export const appConfig: ApplicationConfig = {
   providers: [
+    provideZonelessChangeDetection(),
     importProvidersFrom(
       BrowserAnimationsModule,
       AuthenticationModule.forRoot({
@@ -17,7 +22,7 @@ export const appConfig: ApplicationConfig = {
       }),
       SessionActivityModule.forRoot(),
       TranslateModule.forRoot({
-        defaultLanguage: 'en',
+        fallbackLang: 'en',
       }),
     ),
     provideRouter(appRoutes),

@@ -8,12 +8,12 @@
   },
   "main": "./dist/theme-highcharts.mjs",
   "scripts": {
-    "build": "webpack",
+    "build": "vite build",
     "deploy": "npm publish",
     "deploy:cdn": "deploy-aws-s3-cloudfront --bucket cdx-cdn.digital-experience.clarivate.io --distribution EF022SLU13YUI --source dist --destination @cdx/theme-highcharts/${VERSION:-latest} --non-interactive"
   },
   "dependencies": {
-    "highcharts": "^11.3.0"
+    "highcharts": "^12.4.0"
   },
   "baseUrl": "."
 }

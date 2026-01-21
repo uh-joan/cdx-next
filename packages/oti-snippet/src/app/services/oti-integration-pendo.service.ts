@@ -16,9 +16,7 @@ import { LogService } from './log.service';
 import { OtiIntegrationInterfaceService } from './oti-integration-interface.service';
 import { PubSubService } from './pub-sub.service';
 
-export class OtiIntegrationPendoService
-  implements OtiIntegrationInterfaceService
-{
+export class OtiIntegrationPendoService implements OtiIntegrationInterfaceService {
   private pendoCNameContent?: string;
   private pendoCNameData?: string;
   private pendoKey?: string;

@@ -1,11 +1,11 @@
-@if (inline) {
-<a underline [routerLink]="url">
-  {{ text || url }}
-</a>
-} @else {
-<p>
-  <a underline [routerLink]="url">
+@if (inline()) {
+  <a underline [routerLink]="url()">
     {{ text || url }}
   </a>
-</p>
+} @else {
+  <p>
+    <a underline [routerLink]="url()">
+      {{ text || url }}
+    </a>
+  </p>
 }

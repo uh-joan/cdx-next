@@ -13,13 +13,11 @@ describe('FooterGroupComponent', () => {
   describe('without a title', () => {
     beforeEach(
       () =>
-        (host = createHost(
-          html`
-            <hlx-footer-group>
-              <div class="item">Item</div>
-            </hlx-footer-group>
-          `,
-        )),
+        (host = createHost(html`
+          <hlx-footer-group>
+            <div class="item">Item</div>
+          </hlx-footer-group>
+        `)),
     );
 
     it('should add group class', () => {
@@ -34,16 +32,14 @@ describe('FooterGroupComponent', () => {
   describe('when a title is present', () => {
     beforeEach(
       () =>
-        (host = createHost(
-          html`
-            <hlx-footer-group>
-              <div class="item">Item</div>
-              stuff
-              <hlx-footer-group-title>The Title</hlx-footer-group-title>
-              things
-            </hlx-footer-group>
-          `,
-        )),
+        (host = createHost(html`
+          <hlx-footer-group>
+            <div class="item">Item</div>
+            stuff
+            <hlx-footer-group-title>The Title</hlx-footer-group-title>
+            things
+          </hlx-footer-group>
+        `)),
     );
 
     it('should project the title first', () => {

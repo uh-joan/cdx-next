@@ -7,10 +7,10 @@
     "directory": "packages/ngx-analytics"
   },
   "dependencies": {
+    "@snowplow/browser-tracker": "^4.6.8",
     "tslib": "^2.3.0"
   },
   "peerDependencies": {
-    "@cdx/ngx-branding": "20.0.0-alpha.2",
-    "@snowplow/browser-tracker": "^3.7.0"
+    "@cdx/ngx-branding": "20.0.0-alpha.2"
   }
 }

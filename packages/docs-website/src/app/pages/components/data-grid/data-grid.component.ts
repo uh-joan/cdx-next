@@ -1,6 +1,10 @@
 import { Component, HostBinding } from '@angular/core';
+import { MatDividerModule } from '@angular/material/divider';
+import { ExternalLinkComponent } from 'src/app/components/external-link/external-link.component';
+import { InternalLinkComponent } from 'src/app/components/internal-link/internal-link.component';
+import { ExampleViewerComponent } from 'src/app/core/example-viewer/example-viewer.component';
+import { PageComponent } from 'src/app/core/page/page.component';
 
-import { PagesCommonModule } from '../../pages-common.module';
 import * as samples from './examples';
 
 @Component({
@@ -8,7 +12,13 @@ import * as samples from './examples';
 
   templateUrl: './data-grid.component.html',
   styleUrls: ['./data-grid.component.scss'],
-  imports: [PagesCommonModule],
+  imports: [
+    PageComponent,
+    ExampleViewerComponent,
+    MatDividerModule,
+    ExternalLinkComponent,
+    InternalLinkComponent,
+  ],
 })
 export class DataGridComponent {
   @HostBinding('class') hostClass = 'cdx-section';

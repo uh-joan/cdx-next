@@ -7,7 +7,7 @@ import {
 import { InputViewerComponent } from 'src/app/core/example-viewer/example-viewer.model';
 
 const htmlCode = `<div class="story">
-    <header hlx-header [branded]="false">
+    <header hlx-header branded(false)>
           <hlx-header-product-name>Product name</hlx-header-product-name>
     </header>
 </div>`;

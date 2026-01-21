@@ -1,14 +1,12 @@
 <hlx-page
   [title]="'Autocomplete'"
-  [subtitle]="
-    'A normal input field that provides selectable suggestions as a user types into it, allowing the scope of the search to be narrowed down.'
-  "
+  [subtitle]="'A normal input field that provides selectable suggestions as a user types into it, allowing the scope of the search to be narrowed down.'"
   [section]="'Components'"
   componentName="autocomplete"
 >
   <h2>Examples</h2>
 
   @for (sample of sampleList; track sample.exampleName) {
-  <hlx-example-viewer [inputViewerComponent]="sample"></hlx-example-viewer>
+    <hlx-example-viewer [inputViewerComponent]="sample"></hlx-example-viewer>
   }
 </hlx-page>

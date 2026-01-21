@@ -58,7 +58,9 @@ describe('OneTrustService', () => {
 
     describe('.openInfoDisplay()', () => {
       beforeEach(() => {
-        (window as any).OneTrust = { ToggleInfoDisplay: jest.fn() };
+        (
+          window as unknown as { OneTrust: { ToggleInfoDisplay: jest.Mock } }
+        ).OneTrust = { ToggleInfoDisplay: jest.fn() };
         spectator.service.openInfoDisplay();
       });
 

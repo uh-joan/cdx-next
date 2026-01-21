@@ -3,7 +3,7 @@ import { Component, HostBinding } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatRippleModule } from '@angular/material/core';
-import { RouterModule } from '@angular/router';
+import { RouterLink } from '@angular/router';
 import { PageComponent } from 'src/app/core/page/page.component';
 
 interface ComponentExample {
@@ -19,7 +19,7 @@ interface ComponentExample {
   styleUrls: ['./components-overview.component.scss'],
   imports: [
     CommonModule,
-    RouterModule,
+    RouterLink,
     MatCardModule,
     MatButtonModule,
     MatRippleModule,

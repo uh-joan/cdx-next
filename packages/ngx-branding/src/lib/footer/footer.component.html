@@ -1,67 +1,27 @@
 <div
   class="cdx-footer"
-  [style.background-color]="theme?.footer?.background"
-  [style.color]="theme?.footer?.color"
-  [class.cdx-footer--slim]="slim"
+  [style.background-color]="theme()?.footer?.background"
+  [style.color]="theme()?.footer?.color"
+  [class.cdx-footer--slim]="slim()"
 >
   <div class="cdx-footer__copyright">© {{ currentYear }} Clarivate</div>
 
   <div class="cdx-footer__content">
-    @if (groupCompanyLinks) {
-    <cdx-footer-group>
-      <cdx-footer-group-title>
-        {{
-          shouldShowTranslations ? ('FOOTER.COMPANY' | translate) : 'Company'
-        }}
-      </cdx-footer-group-title>
-      <ng-container *ngTemplateOutlet="companyLinks"></ng-container>
-    </cdx-footer-group>
+    @if (groupCompanyLinks()) {
+      <cdx-footer-group>
+        <div cdx-footer-group-title>
+          {{
+            shouldShowTranslations()
+              ? ('FOOTER.COMPANY' | translate)
+              : 'Company'
+          }}
+        </div>
+        <ng-container *ngTemplateOutlet="companyLinks"></ng-container>
+      </cdx-footer-group>
     } @else {
-    <a cdx-footer-link href="https://clarivate.com/legal-center/">
-      {{
-        shouldShowTranslations
-          ? ('FOOTER.LEGAL_CENTER' | translate)
-          : 'Legal center'
-      }}
-    </a>
-    <a
-      cdx-footer-link
-      href="https://clarivate.com/privacy-center/notices-policies/privacy-policy/"
-    >
-      {{
-        shouldShowTranslations
-          ? ('FOOTER.PRIVACY_NOTICE' | translate)
-          : 'Privacy notice'
-      }}
-    </a>
-    <a
-      cdx-footer-link
-      href="https://clarivate.com/privacy-center/notices-policies/cookie-policy/"
-    >
-      {{
-        shouldShowTranslations
-          ? ('FOOTER.COOKIE_POLICY' | translate)
-          : 'Cookie policy'
-      }}
-    </a>
-    @if (isCookieManagementEnabled()) {
-    <a
-      (click)="manageCookiePreferences()"
-      (keydown.enter)="manageCookiePreferences()"
-      cdx-footer-link
-      tabindex="0"
-    >
-      {{
-        shouldShowTranslations
-          ? ('FOOTER.MANAGE_COOKIE_PREFERENCES' | translate)
-          : 'Manage cookie preferences'
-      }}
-    </a>
-    } }
-    <ng-template #companyLinks>
       <a cdx-footer-link href="https://clarivate.com/legal-center/">
         {{
-          shouldShowTranslations
+          shouldShowTranslations()
             ? ('FOOTER.LEGAL_CENTER' | translate)
             : 'Legal center'
         }}
@@ -71,7 +31,7 @@
         href="https://clarivate.com/privacy-center/notices-policies/privacy-policy/"
       >
         {{
-          shouldShowTranslations
+          shouldShowTranslations()
             ? ('FOOTER.PRIVACY_NOTICE' | translate)
             : 'Privacy notice'
         }}
@@ -81,24 +41,67 @@
         href="https://clarivate.com/privacy-center/notices-policies/cookie-policy/"
       >
         {{
-          shouldShowTranslations
+          shouldShowTranslations()
             ? ('FOOTER.COOKIE_POLICY' | translate)
             : 'Cookie policy'
         }}
       </a>
       @if (isCookieManagementEnabled()) {
-      <a
-        (click)="manageCookiePreferences()"
-        (keydown.enter)="manageCookiePreferences()"
-        cdx-footer-link
-        tabindex="0"
-      >
+        <a
+          (click)="manageCookiePreferences()"
+          (keydown.enter)="manageCookiePreferences()"
+          cdx-footer-link
+          tabindex="0"
+        >
+          {{
+            shouldShowTranslations()
+              ? ('FOOTER.MANAGE_COOKIE_PREFERENCES' | translate)
+              : 'Manage cookie preferences'
+          }}
+        </a>
+      }
+    }
+    <ng-template #companyLinks>
+      <a cdx-footer-link href="https://clarivate.com/legal-center/">
         {{
-          shouldShowTranslations
-            ? ('FOOTER.MANAGE_COOKIE_PREFERENCES' | translate)
-            : 'Manage cookie preferences'
+          shouldShowTranslations()
+            ? ('FOOTER.LEGAL_CENTER' | translate)
+            : 'Legal center'
         }}
       </a>
+      <a
+        cdx-footer-link
+        href="https://clarivate.com/privacy-center/notices-policies/privacy-policy/"
+      >
+        {{
+          shouldShowTranslations()
+            ? ('FOOTER.PRIVACY_NOTICE' | translate)
+            : 'Privacy notice'
+        }}
+      </a>
+      <a
+        cdx-footer-link
+        href="https://clarivate.com/privacy-center/notices-policies/cookie-policy/"
+      >
+        {{
+          shouldShowTranslations()
+            ? ('FOOTER.COOKIE_POLICY' | translate)
+            : 'Cookie policy'
+        }}
+      </a>
+      @if (isCookieManagementEnabled()) {
+        <a
+          (click)="manageCookiePreferences()"
+          (keydown.enter)="manageCookiePreferences()"
+          cdx-footer-link
+          tabindex="0"
+        >
+          {{
+            shouldShowTranslations()
+              ? ('FOOTER.MANAGE_COOKIE_PREFERENCES' | translate)
+              : 'Manage cookie preferences'
+          }}
+        </a>
       }
     </ng-template>
 

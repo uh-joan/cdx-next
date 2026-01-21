@@ -1,5 +1,5 @@
-import { CommonModule, UpperCasePipe } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { UpperCasePipe } from '@angular/common';
+import { Component, input } from '@angular/core';
 import { MatDividerModule } from '@angular/material/divider';
 import { HelixFooterComponent } from '@cdx/ngx-branding';
 
@@ -11,15 +11,15 @@ import { MaterialDocComponent } from '../material-doc/material-doc.component';
   styleUrls: ['./page.component.scss'],
   imports: [
     MatDividerModule,
-    CommonModule,
     HelixFooterComponent,
     MaterialDocComponent,
+    UpperCasePipe,
   ],
   providers: [UpperCasePipe],
 })
 export class PageComponent {
-  @Input() title?: string;
-  @Input() subtitle?: string;
-  @Input() section?: string;
-  @Input() componentName?: string;
+  title = input<string>();
+  subtitle = input<string>();
+  section = input<string>();
+  componentName = input<string>();
 }

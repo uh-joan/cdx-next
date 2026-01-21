@@ -2,15 +2,14 @@ import { Component } from '@angular/core';
 import {
   HelixFooterComponent,
   HelixFooterGroupComponent,
-  HelixFooterGroupTitleDirective,
 } from '@cdx/ngx-branding';
 import { InputViewerComponent } from 'src/app/core/example-viewer/example-viewer.model';
 
 const htmlCode = `<div class="story">
-  <footer hlx-footer groupCompanyLinks>
+  <footer hlx-footer groupCompanyLinks()>
     <hlx-footer-group>
-      <hlx-footer-group-title>
-        Company</hlx-footer-group-title>
+      <div hlx-footer-group-title>
+        Company</div>
       <a hlx-footer-link 
         href="#">Legal center</a>
       <a hlx-footer-link 
@@ -21,8 +20,8 @@ const htmlCode = `<div class="story">
         href="#">Manage cookie preferences</a>
     </hlx-footer-group>
     <hlx-footer-group>
-      <hlx-footer-group-title>
-        Title</hlx-footer-group-title>
+      <div hlx-footer-group-title>
+        Title</div>
       <a hlx-footer-link 
         href="#">link-item-1</a>
       <a hlx-footer-link 
@@ -37,8 +36,8 @@ const htmlCode = `<div class="story">
         href="#">link-item-6</a>
     </hlx-footer-group>
     <hlx-footer-group>
-      <hlx-footer-group-title>
-        Title</hlx-footer-group-title>
+      <div hlx-footer-group-title>
+        Title</div>
       <a hlx-footer-link 
         href="#">link-item-1</a>
       <a hlx-footer-link 
@@ -61,11 +60,7 @@ const styleCode = `.story {
 
 @Component({
   template: htmlCode,
-  imports: [
-    HelixFooterComponent,
-    HelixFooterGroupComponent,
-    HelixFooterGroupTitleDirective,
-  ],
+  imports: [HelixFooterComponent, HelixFooterGroupComponent],
   styles: styleCode,
 })
 class SampleComponent {}

@@ -1,7 +1,7 @@
 /* stylelint-disable plugin/stylelint-bem-namics */
 @use 'sass:map';
 
-@use 'colors' as colors;
+@use '../colors/index' as colors;
 
 .mat-snack-bar-container {
   padding: 0 !important;

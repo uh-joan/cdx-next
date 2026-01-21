@@ -1,15 +1,12 @@
 <hlx-page
   [title]="'Dialog'"
-  [subtitle]="
-    'Dialogs are purposefully interruptive windows that inform users about a task and can contain critical information, require decisions, or involve multiple tasks.'
-  "
+  [subtitle]="'Dialogs are purposefully interruptive windows that inform users about a task and can contain critical information, require decisions, or involve multiple tasks.'"
   [section]="'Components'"
   componentName="dialog"
 >
   <h2>Examples</h2>
 
   @for (sample of sampleList; track sample.exampleName) {
-  <hlx-example-viewer [inputViewerComponent]="sample"></hlx-example-viewer>
-
+    <hlx-example-viewer [inputViewerComponent]="sample"></hlx-example-viewer>
   }
 </hlx-page>

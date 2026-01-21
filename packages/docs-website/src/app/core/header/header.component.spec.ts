@@ -1,17 +1,15 @@
-import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { provideHttpClient } from '@angular/common/http';
+import { signal } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ReactiveFormsModule } from '@angular/forms';
-import { RouterTestingModule } from '@angular/router/testing';
-import { of } from 'rxjs';
+import { provideRouter } from '@angular/router';
 
 import { HeaderComponent } from './header.component';
 import { HeaderService } from './header.service';
 
 class MockHeaderService {
-  getAllHelixVersions = jest
-    .fn()
-    .mockReturnValue(of(['18.0.0', '20.0.0', '30.0.0']));
-  http = { get: jest.fn() };
+  versions = signal(['18.0.0', '20.0.0', '30.0.0']);
+  fetchAllHelixVersions = jest.fn();
 }
 
 describe('HeaderComponent', () => {
@@ -24,12 +22,12 @@ describe('HeaderComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [
-        RouterTestingModule,
-        ReactiveFormsModule,
-        HttpClientTestingModule,
+      imports: [ReactiveFormsModule],
+      providers: [
+        provideRouter([]),
+        provideHttpClient(),
+        { provide: HeaderService, useClass: MockHeaderService },
       ],
-      providers: [{ provide: HeaderService, useClass: MockHeaderService }],
     }).compileComponents();
 
     fixture = TestBed.createComponent(HeaderComponent);

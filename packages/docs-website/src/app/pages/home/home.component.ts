@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { HelixFooterComponent } from '@cdx/ngx-branding';
 import {
   CardCComponent,
   CardCInput,
@@ -8,7 +7,7 @@ import {
 @Component({
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
-  imports: [CardCComponent, HelixFooterComponent],
+  imports: [CardCComponent],
 })
 export class HomeComponent {
   cardConfigs: CardCInput[] = [

@@ -10,7 +10,7 @@ describe('FooterLinkComponent', () => {
   const createDirective = createDirectiveFactory(HelixFooterLinkDirective);
 
   beforeEach(() => {
-    spectator = createDirective('<a cdx-footer-link>Foo</a>');
+    spectator = createDirective('<a hlx-footer-link>Foo</a>');
   });
 
   it('should set target to _blank', () => {

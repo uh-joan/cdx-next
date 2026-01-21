@@ -32,9 +32,9 @@
   --mat-datepicker-calendar-container-background-color: #{$helix-default-container-background};
   --mat-menu-container-color: #{$helix-default-container-background};
   /* stylelint-disable-next-line scss/operator-no-newline-after */
-  --mat-datepicker-calendar-container-elevation-shadow: 0 3px 1px -2px rgb(0 0 0 /
-          20%),
-    0 2px 2px 0 rgb(0 0 0 / 14%), 0 1px 5px 0 rgb(0 0 0 / 12%);
+  --mat-datepicker-calendar-container-elevation-shadow:
+    0 3px 1px -2px rgb(0 0 0 / 20%), 0 2px 2px 0 rgb(0 0 0 / 14%),
+    0 1px 5px 0 rgb(0 0 0 / 12%);
   --mat-divider-color: #{tokens.$surface-contrast};
   --mat-progress-bar-track-color: #{tokens.$surface-contrast};
   --mat-chip-container-shape-radius: 16px;

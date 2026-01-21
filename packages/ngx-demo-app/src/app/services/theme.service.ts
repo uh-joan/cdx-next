@@ -4,11 +4,6 @@ import { BehaviorSubject } from 'rxjs';
 export const THEMES = [
   'purple',
   'helix',
-  'avalon',
-  'innography',
-  'derwent',
-  'purple-legacy',
-  'helix-legacy',
   'teal-legacy',
   'blue-legacy',
   'custom',

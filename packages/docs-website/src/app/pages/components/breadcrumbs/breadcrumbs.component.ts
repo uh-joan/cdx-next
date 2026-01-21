@@ -1,14 +1,23 @@
 import { Component, HostBinding } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { MatDividerModule } from '@angular/material/divider';
+import { ExternalLinkComponent } from 'src/app/components/external-link/external-link.component';
+import { HighlightComponent } from 'src/app/components/highlight/highlight.component';
+import { ExampleViewerComponent } from 'src/app/core/example-viewer/example-viewer.component';
+import { PageComponent } from 'src/app/core/page/page.component';
 
-import { PagesCommonModule } from '../../pages-common.module';
 import * as samples from './examples';
 
 @Component({
   selector: 'cdx-breadcrumbs',
   templateUrl: './breadcrumbs.component.html',
   styleUrls: ['./breadcrumbs.component.scss'],
-  imports: [RouterModule, PagesCommonModule],
+  imports: [
+    PageComponent,
+    ExampleViewerComponent,
+    HighlightComponent,
+    ExternalLinkComponent,
+    MatDividerModule,
+  ],
 })
 export class BreadcrumbsComponent {
   @HostBinding('class') hostClass = 'cdx-section';

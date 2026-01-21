@@ -2,7 +2,7 @@ import {
   AfterViewInit,
   Component,
   HostBinding,
-  Input,
+  input,
   Type,
   ViewChild,
   ViewContainerRef,
@@ -20,16 +20,17 @@ import { InputViewerComponent } from './example-viewer.model';
 })
 export class ExampleViewerComponent implements AfterViewInit {
   @HostBinding('class.vertical') get isVertical() {
-    return this.inputViewerComponent?.verticalView;
+    return this.inputViewerComponent()?.verticalView;
   }
   @ViewChild('dynamicContainer', { read: ViewContainerRef, static: true })
   container!: ViewContainerRef;
 
-  @Input() inputViewerComponent?: InputViewerComponent;
+  inputViewerComponent = input<InputViewerComponent | undefined>();
 
   ngAfterViewInit() {
-    if (this.inputViewerComponent?.dynamicComponent) {
-      this.loadComponent(this.inputViewerComponent.dynamicComponent);
+    const dynamicComponent = this.inputViewerComponent()?.dynamicComponent;
+    if (dynamicComponent) {
+      this.loadComponent(dynamicComponent);
     }
   }
 

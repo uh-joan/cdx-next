@@ -7,10 +7,7 @@ describe('FooterGroupTitleDirective', () => {
   const createHost = createHostFactory(FooterGroupTitleDirective);
 
   beforeEach(
-    () =>
-      (host = createHost(
-        '<cdx-footer-group-title>A Title</cdx-footer-group-title>',
-      )),
+    () => (host = createHost('<div cdx-footer-group-title>A Title</div>')),
   );
 
   it('should set group title class', () => {

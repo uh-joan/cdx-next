@@ -37,7 +37,7 @@
       <mat-label>Legacy Helix version</mat-label>
       <mat-select [formControl]="versionControl1">
         @for (version of helixVersions.slice(0, -1); track version) {
-        <mat-option [value]="version"> Helix {{ version }} </mat-option>
+          <mat-option [value]="version"> Helix {{ version }} </mat-option>
         }
       </mat-select>
     </mat-form-field>
@@ -50,7 +50,7 @@
       <mat-label>New Helix version</mat-label>
       <mat-select [formControl]="versionControl2">
         @for (version of helixVersions.slice(1); track version) {
-        <mat-option [value]="version"> Helix {{ version }} </mat-option>
+          <mat-option [value]="version"> Helix {{ version }} </mat-option>
         }
       </mat-select>
     </mat-form-field>

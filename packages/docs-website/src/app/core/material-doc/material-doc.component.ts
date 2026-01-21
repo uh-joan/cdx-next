@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, computed, input } from '@angular/core';
 import { MatDividerModule } from '@angular/material/divider';
 import { ExternalLinkComponent } from 'src/app/components/external-link/external-link.component';
 
@@ -11,14 +11,12 @@ import packageJson from '../../../../../../package.json';
   styleUrls: ['./material-doc.component.scss'],
   imports: [ExternalLinkComponent, MatDividerModule],
 })
-export class MaterialDocComponent implements OnInit {
-  @Input() title?: string;
-
-  url = '';
-
-  ngOnInit(): void {
-    const versionNumber = packageJson.version;
-    const majorVersion = versionNumber.split('.')[0];
-    this.url = `https://v${majorVersion}.material.angular.io/components/${this.title}/api`;
-  }
+export class MaterialDocComponent {
+  title = input<string>();
+  versionNumber = packageJson.version;
+  majorVersion = this.versionNumber.split('.')[0];
+  url = computed(
+    () =>
+      `https://v${this.majorVersion}.material.angular.io/components/${this.title()}/api`,
+  );
 }

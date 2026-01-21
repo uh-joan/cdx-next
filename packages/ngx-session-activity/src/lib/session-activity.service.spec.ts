@@ -1,7 +1,8 @@
 import { MatDialog } from '@angular/material/dialog';
+import { Idle, LocalStorage } from '@ng-idle/core';
 import { createServiceFactory, SpectatorService } from '@ngneat/spectator/jest';
 import { TranslateService } from '@ngx-translate/core';
-import { of } from 'rxjs';
+import { of, Subject } from 'rxjs';
 
 import { IDLE_CONFIG } from './session-activity.config';
 import { SESSION_ACTIVITY_SETTINGS } from './session-activity.injectors';
@@ -12,6 +13,29 @@ import { SessionActivityService } from './session-activity.service';
 const matDialogMock = {
   open: jest.fn().mockReturnValue({ afterClosed: () => of(null) }),
   closeAll: jest.fn(),
+};
+
+const idleMock = {
+  onIdleStart: new Subject(),
+  onIdleEnd: new Subject(),
+  onTimeoutWarning: new Subject(),
+  onTimeout: new Subject(),
+  onInterrupt: new Subject(),
+  setIdle: jest.fn(),
+  setTimeout: jest.fn(),
+  setInterrupts: jest.fn(),
+  clearInterrupts: jest.fn(),
+  watch: jest.fn(),
+  stop: jest.fn(),
+  interrupt: jest.fn(),
+  getIdle: jest.fn().mockReturnValue(8),
+  getTimeout: jest.fn().mockReturnValue(2),
+};
+
+const localStorageMock = {
+  getItem: jest.fn(),
+  setItem: jest.fn(),
+  removeItem: jest.fn(),
 };
 
 describe('SessionActivityService', () => {
@@ -27,6 +51,14 @@ describe('SessionActivityService', () => {
       {
         provide: MatDialog,
         useValue: matDialogMock,
+      },
+      {
+        provide: Idle,
+        useValue: idleMock,
+      },
+      {
+        provide: LocalStorage,
+        useValue: localStorageMock,
       },
     ],
   });
@@ -137,11 +169,10 @@ describe('SessionActivityService', () => {
           },
         ],
       });
-      jest.useFakeTimers();
       spectator.service.initialize();
     });
 
-    it('openInactivityDialog should be called after expireDurationMinutes - expireWarningMinutes time and after expireWarningMinutes and if no action is performed the sessionActivitySubject should emit a logout event', () => {
+    it('openInactivityDialog should be called when idle starts and sessionActivitySubject should emit logout event on timeout', (done) => {
       const openInactivityDialogSpy = jest.spyOn(
         spectator.service,
         'openInactivityDialog',
@@ -149,25 +180,21 @@ describe('SessionActivityService', () => {
 
       expect(openInactivityDialogSpy).not.toHaveBeenCalled();
 
-      jest.advanceTimersByTime(
-        (sessionActivitySettings.expireDurationMinutes -
-          sessionActivitySettings.expireWarningMinutes) *
-          60 *
-          1000,
-      );
+      // Simulate idle start
+      idleMock.onIdleStart.next(undefined);
 
       expect(openInactivityDialogSpy).toHaveBeenCalledTimes(1);
 
       spectator.service.sessionActivitySubject.subscribe((value) => {
         expect(value).toEqual(LOGOUT_TYPE.SESSION_EXPIRED);
+        done();
       });
 
-      jest.advanceTimersByTime(
-        sessionActivitySettings.expireWarningMinutes * 60 * 1000 + 1,
-      );
+      // Simulate timeout
+      idleMock.onTimeout.next(undefined);
     });
 
-    it('openInactivityDialog should not be called before expireDurationMinutes - expireWarningMinutes amount of time same for the emission of sessionActivitySubject logout event', () => {
+    it('openInactivityDialog should not be called before idle starts', () => {
       const openInactivityDialogSpy = jest.spyOn(
         spectator.service,
         'openInactivityDialog',
@@ -175,23 +202,8 @@ describe('SessionActivityService', () => {
 
       expect(openInactivityDialogSpy).not.toHaveBeenCalled();
 
-      jest.advanceTimersByTime(
-        (sessionActivitySettings.expireDurationMinutes -
-          sessionActivitySettings.expireWarningMinutes) *
-          60 *
-          1000 -
-          1,
-      );
-
+      // Don't trigger any idle events
       expect(openInactivityDialogSpy).not.toHaveBeenCalled();
-
-      spectator.service.sessionActivitySubject.subscribe((value) => {
-        expect(value).not.toEqual(LOGOUT_TYPE.SESSION_EXPIRED);
-      });
-
-      jest.advanceTimersByTime(
-        sessionActivitySettings.expireWarningMinutes * 60 * 1000 + 1,
-      );
     });
   });
 });

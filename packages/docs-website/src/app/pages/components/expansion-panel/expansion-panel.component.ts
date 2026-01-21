@@ -1,13 +1,14 @@
 import { Component, HostBinding } from '@angular/core';
+import { ExampleViewerComponent } from 'src/app/core/example-viewer/example-viewer.component';
+import { PageComponent } from 'src/app/core/page/page.component';
 
-import { PagesCommonModule } from '../../pages-common.module';
 import * as samples from './examples';
 
 @Component({
   selector: 'app-expansion-panel',
   templateUrl: './expansion-panel.component.html',
   styleUrls: ['./expansion-panel.component.scss'],
-  imports: [PagesCommonModule],
+  imports: [PageComponent, ExampleViewerComponent],
 })
 export class ExpansionPanelComponent {
   @HostBinding('class') hostClass = 'cdx-section';

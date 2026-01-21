@@ -4,7 +4,7 @@ import { TranslateModule } from '@ngx-translate/core';
 @NgModule({
   imports: [
         TranslateModule.forRoot({
-            defaultLanguage: 'en',
+            fallbackLang: 'en',
         }),
         NgxTranslationsModule
     ]

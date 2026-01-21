@@ -1,14 +1,14 @@
-import { Component, Input } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { Component, input } from '@angular/core';
+import { RouterLink } from '@angular/router';
 
 import { NavbarSection } from './left-navigation.interface';
 
 @Component({
-  selector: 'left-navigation',
+  selector: 'web-left-navigation',
   templateUrl: './left-navigation.component.html',
   styleUrls: ['./left-navigation.component.scss'],
-  imports: [RouterModule],
+  imports: [RouterLink],
 })
 export class LeftNavigationComponent {
-  @Input() config?: NavbarSection[];
+  readonly config = input<NavbarSection[] | undefined>();
 }

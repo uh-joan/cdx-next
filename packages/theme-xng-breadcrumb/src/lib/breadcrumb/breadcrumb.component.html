@@ -1,9 +1,10 @@
 <xng-breadcrumb [separator]="separatorIcon" class="cdx-xng-breadcrumb-theme">
   <ng-container *xngBreadcrumbItem="let breadcrumb; let info = info">
     @if (info) {
-    <mat-icon inline>{{ info }}</mat-icon>
-    } @if (!info) {
-    {{ breadcrumb }}
+      <mat-icon inline>{{ info }}</mat-icon>
+    }
+    @if (!info) {
+      {{ breadcrumb }}
     }
   </ng-container>
 </xng-breadcrumb>

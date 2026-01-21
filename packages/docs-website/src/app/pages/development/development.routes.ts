@@ -42,23 +42,23 @@ export const developmentRoutes: Routes = [
       {
         path: 'getting-started-overview',
         loadComponent: () =>
-          import(
-            './getting-started-overview/getting-started-overview.component'
-          ).then((m) => m.GettingStartedOverviewComponent),
+          import('./getting-started-overview/getting-started-overview.component').then(
+            (m) => m.GettingStartedOverviewComponent,
+          ),
       },
       {
         path: 'quick-start-new-project',
         loadComponent: () =>
-          import(
-            './quick-start-new-project/quick-start-new-project.component'
-          ).then((m) => m.QuickStartNewProjectComponent),
+          import('./quick-start-new-project/quick-start-new-project.component').then(
+            (m) => m.QuickStartNewProjectComponent,
+          ),
       },
       {
         path: 'responsive-development',
         loadComponent: () =>
-          import(
-            './responsive-development/responsive-development.component'
-          ).then((m) => m.ResponsiveDevelopmentComponent),
+          import('./responsive-development/responsive-development.component').then(
+            (m) => m.ResponsiveDevelopmentComponent,
+          ),
       },
       {
         path: 'migration-guide',

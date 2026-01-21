@@ -36,7 +36,7 @@ describe('AppComponent', () => {
         }),
         RouterTestingModule,
         TranslateModule.forRoot({
-          defaultLanguage: 'en',
+          fallbackLang: 'en',
         }),
         HeaderGlobalUserProfileComponent,
         HeaderGlobalSessionManagementDirective,

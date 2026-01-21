@@ -1,12 +1,11 @@
-@if(isHelix$ | async) {
 <header hlx-header>
   <hlx-header-product-name
     >Clarivate Digital Experience
   </hlx-header-product-name>
   <div class="hlx-selectors">
-    <language-selector></language-selector>
-    <theme-selector></theme-selector>
-    <mode-selector></mode-selector>
+    <cdx-language-selector></cdx-language-selector>
+    <cdx-theme-selector></cdx-theme-selector>
+    <cdx-mode-selector></cdx-mode-selector>
   </div>
   <hlx-header-global>
     <div
@@ -27,70 +26,10 @@
     </div>
   </hlx-header-global>
 </header>
-} @else if(isAvalon$ | async) {
-<header ava-header>
-  <ava-header-product-name
-    >Clarivate Digital Experience
-  </ava-header-product-name>
-  <div class="ava-selectors">
-    <language-selector></language-selector>
-    <theme-selector></theme-selector>
-    <mode-selector></mode-selector>
-  </div>
-  <ava-header-global>
-    <div
-      style="
-        display: flex;
-        align-items: center;
-        justify-content: flex-end;
-        gap: 10px;
-        width: 100%;
-        height: 100%;
-      "
-    >
-      <mat-icon>language</mat-icon>
-      <mat-icon>apps</mat-icon>
-      <mat-icon class="material-icons-outlined">account_circle</mat-icon>
-    </div>
-  </ava-header-global>
-  <ava-subheader>
-    <mat-tab-group mat-stretch-tabs="false" mat-align-tabs="start">
-      <mat-tab label="First"></mat-tab>
-      <mat-tab label="Second"></mat-tab>
-      <mat-tab label="Third"></mat-tab>
-    </mat-tab-group>
-  </ava-subheader>
-</header>
-} @else {
-<header cdx-header>
-  <cdx-header-global>
-    <cdx-header-global-user-profile
-      withSessionManagement
-      [shouldShowTranslations]="true"
-    >
-    </cdx-header-global-user-profile>
-  </cdx-header-global>
-  <cdx-header-product-name
-    >Clarivate Digital Experience
-  </cdx-header-product-name>
-  <div class="cdx-selectors">
-    <language-selector></language-selector>
-    <theme-selector></theme-selector>
-    <mode-selector></mode-selector>
-  </div>
-</header>
-}
 
 <router-outlet></router-outlet>
 
-@if(isHelix$ | async) {
 <footer hlx-footer>
   <a hlx-footer-link href="https://stackoverflow.com/">Stack Overflow</a>
   <a hlx-footer-link href="https://www.powerlanguage.co.uk/wordle/"> Wordle </a>
 </footer>
-} @else {
-<footer cdx-footer [shouldShowTranslations]="true">
-  <a cdx-footer-link href="https://stackoverflow.com/">Stack Overflow</a>
-  <a cdx-footer-link href="https://www.powerlanguage.co.uk/wordle/"> Wordle </a>
-</footer>
-}

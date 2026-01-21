@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
-  imports: [RouterModule],
-  selector: 'demo-root',
+  imports: [RouterOutlet],
+  selector: 'cdx-root',
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })

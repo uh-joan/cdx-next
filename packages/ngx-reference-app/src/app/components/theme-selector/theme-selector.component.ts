@@ -9,7 +9,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { ThemeService } from '../../services/theme.service';
 
 @Component({
-  selector: 'theme-selector',
+  selector: 'cdx-theme-selector',
   templateUrl: './theme-selector.component.html',
   styleUrls: ['./theme-selector.component.scss'],
   imports: [

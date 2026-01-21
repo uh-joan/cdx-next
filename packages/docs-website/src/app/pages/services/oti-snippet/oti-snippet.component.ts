@@ -5,7 +5,6 @@ import { MatTableModule } from '@angular/material/table';
 import { ExternalLinkComponent } from '../../../components/external-link/external-link.component';
 import { HighlightComponent } from '../../../components/highlight/highlight.component';
 import { PageComponent } from '../../../core/page/page.component';
-import { PagesCommonModule } from '../../pages-common.module';
 
 @Component({
   selector: 'cdx-oti-snippet',
@@ -15,7 +14,6 @@ import { PagesCommonModule } from '../../pages-common.module';
     MatDivider,
     HighlightComponent,
     MatTableModule,
-    PagesCommonModule,
     ExternalLinkComponent,
   ],
 })

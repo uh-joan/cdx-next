@@ -27,33 +27,6 @@ body {
     }
   }
 
-  &.cdx-theme-avalon {
-    // @include cdx.theme(cdx.$avalon-light-theme);
-    @include cdx.theme-avalon-overrides;
-
-    &.cdx-dark-mode {
-      // @include cdx.theme(cdx.$avalon-dark-theme);
-    }
-  }
-
-  &.cdx-theme-innography {
-    // @include cdx.theme(cdx.$innography-light-theme);
-    @include cdx.theme-innography-overrides;
-
-    &.cdx-dark-mode {
-      // @include cdx.theme(cdx.$innography-dark-theme);
-    }
-  }
-
-  &.cdx-theme-derwent {
-    // @include cdx.theme(cdx.$derwent-light-theme);
-    @include cdx.theme-derwent-overrides;
-
-    &.cdx-dark-mode {
-      // @include cdx.theme(cdx.$derwent-dark-theme);
-    }
-  }
-
   .mat-mdc-form-field--no-bottom-space {
     .mat-mdc-form-field-subscript-wrapper {
       display: none;

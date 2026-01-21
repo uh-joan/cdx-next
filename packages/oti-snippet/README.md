@@ -277,7 +277,6 @@ user Cookies acceptance and Pendo configuration.
 User information is stored in pendo application using three request calls:
 
 - Visitor creation
-
   - ```
     curl 'https://app.pendo.io/api/v1/metadata/visitor/agent/value?create=true' \
     -H 'x-pendo-integration-key: pppppp-ppppp-ppppp-pppppp' \

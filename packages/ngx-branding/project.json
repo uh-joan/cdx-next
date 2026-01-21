@@ -22,22 +22,6 @@
       },
       "outputs": ["{workspaceRoot}/dist/packages/ngx-branding"]
     },
-    "build-storybook": {
-      "configurations": {
-        "ci": {
-          "quiet": true
-        }
-      },
-      "executor": "@storybook/angular:build-storybook",
-      "options": {
-        "browserTarget": "ngx-branding:build-storybook",
-        "compodoc": false,
-        "configDir": "packages/ngx-branding/.storybook",
-        "outputDir": "dist/storybook/ngx-branding",
-        "styles": [".storybook/theme-setup.scss"]
-      },
-      "outputs": ["{options.outputPath}"]
-    },
     "deploy": {
       "executor": "ngx-deploy-npm:deploy",
       "options": {
@@ -51,21 +35,6 @@
           "packages/ngx-branding/src/**/*.ts",
           "packages/ngx-branding/src/**/*.html"
         ]
-      }
-    },
-    "storybook": {
-      "configurations": {
-        "ci": {
-          "quiet": true
-        }
-      },
-      "executor": "@storybook/angular:start-storybook",
-      "options": {
-        "browserTarget": "ngx-branding:build-storybook",
-        "compodoc": false,
-        "configDir": "packages/ngx-branding/.storybook",
-        "port": 4400,
-        "styles": [".storybook/theme-setup.scss"]
       }
     },
     "stylelint": {

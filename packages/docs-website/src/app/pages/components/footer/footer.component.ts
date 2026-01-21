@@ -1,13 +1,21 @@
 import { Component, HostBinding } from '@angular/core';
+import { MatDivider } from '@angular/material/divider';
+import { HighlightComponent } from 'src/app/components/highlight/highlight.component';
+import { ExampleViewerComponent } from 'src/app/core/example-viewer/example-viewer.component';
+import { PageComponent } from 'src/app/core/page/page.component';
 
-import { PagesCommonModule } from '../../pages-common.module';
 import * as samples from './examples';
 
 @Component({
   selector: 'app-footer',
   templateUrl: './footer.component.html',
   styleUrls: ['./footer.component.scss'],
-  imports: [PagesCommonModule],
+  imports: [
+    PageComponent,
+    ExampleViewerComponent,
+    MatDivider,
+    HighlightComponent,
+  ],
 })
 export class FooterComponent {
   @HostBinding('class') hostClass = 'cdx-section';

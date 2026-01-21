@@ -2,7 +2,7 @@ import {
   ChangeDetectionStrategy,
   Component,
   HostBinding,
-  Input,
+  input,
 } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
 import { MatCheckboxModule } from '@angular/material/checkbox';
@@ -12,7 +12,7 @@ import { RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
-  selector: 'demo-paper-search',
+  selector: 'cdx-paper-search',
   imports: [
     MatCheckboxModule,
     MatDividerModule,
@@ -27,6 +27,5 @@ import { TranslateModule } from '@ngx-translate/core';
 })
 export class PaperSearchComponent {
   @HostBinding('class') classes = 'mat-elevation-z3';
-
-  @Input() index = 1;
+  index = input(1);
 }

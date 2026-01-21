@@ -11,9 +11,7 @@ import { LogService } from './log.service';
 import { OtiIntegrationInterfaceService } from './oti-integration-interface.service';
 import { PubSubService } from './pub-sub.service';
 
-export class OtiIntegrationOneTrustService
-  implements OtiIntegrationInterfaceService
-{
+export class OtiIntegrationOneTrustService implements OtiIntegrationInterfaceService {
   private otKey?: string;
   private isOnProduction!: boolean;
   private otLanguage?: string;

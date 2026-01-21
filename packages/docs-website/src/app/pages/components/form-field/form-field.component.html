@@ -1,15 +1,12 @@
 <hlx-page
   [title]="'Form Field'"
-  [subtitle]="
-    'Form field is a component used to wrap several Angular Material components and apply common text field styles such as the underline, floating label, and hint messages.'
-  "
+  [subtitle]="'Form field is a component used to wrap several Angular Material components and apply common text field styles such as the underline, floating label, and hint messages.'"
   [section]="'Components'"
   componentName="form-field"
 >
   <h2>Examples</h2>
 
   @for (sample of sampleList; track sample.exampleName) {
-  <hlx-example-viewer [inputViewerComponent]="sample"></hlx-example-viewer>
-
+    <hlx-example-viewer [inputViewerComponent]="sample"></hlx-example-viewer>
   }
 </hlx-page>

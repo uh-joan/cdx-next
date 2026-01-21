@@ -1,13 +1,24 @@
 import { Component, inject, ViewEncapsulation } from '@angular/core';
-import { NavigationEnd, Router } from '@angular/router';
+import { MatIconModule } from '@angular/material/icon';
+import { MatTabsModule } from '@angular/material/tabs';
+import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
 import {
   AnalyticsContextData,
   AnalyticsContextSchema,
   AnalyticsService,
   CLARIVATE_IGLU_SCHEMA,
 } from '@cdx/ngx-analytics';
+import {
+  HelixFooterComponent,
+  HelixHeaderComponent,
+  HelixHeaderGlobalComponent,
+  HelixHeaderProductNameOrLogoComponent,
+} from '@cdx/ngx-branding';
 import { filter, map } from 'rxjs';
 
+import { LanguageSelectorComponent } from './components/language-selector/language-selector.component';
+import { ModeSelectorComponent } from './components/mode-selector/mode-selector.component';
+import { ThemeSelectorComponent } from './components/theme-selector/theme-selector.component';
 import { ThemeService } from './services/theme.service';
 
 @Component({
@@ -15,12 +26,21 @@ import { ThemeService } from './services/theme.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
   encapsulation: ViewEncapsulation.None,
+  imports: [
+    RouterOutlet,
+    MatIconModule,
+    MatTabsModule,
+    ModeSelectorComponent,
+    ThemeSelectorComponent,
+    LanguageSelectorComponent,
+    HelixHeaderComponent,
+    HelixHeaderProductNameOrLogoComponent,
+    HelixHeaderGlobalComponent,
+    HelixFooterComponent,
+  ],
 })
 export class AppComponent {
   routerEvents$;
-
-  isHelix$;
-  isAvalon$;
 
   themeService: ThemeService = inject(ThemeService);
   private analyticsService: AnalyticsService = inject(AnalyticsService);
@@ -33,18 +53,6 @@ export class AppComponent {
         map((ev) => this.trackPageView((ev as NavigationEnd).url)),
       )
       .subscribe();
-
-    this.isHelix$ = this.themeService.currentTheme$.pipe(
-      map((theme) => {
-        return theme === 'helix';
-      }),
-    );
-
-    this.isAvalon$ = this.themeService.currentTheme$.pipe(
-      map((theme) => {
-        return ['avalon', 'innography', 'derwent'].includes(theme);
-      }),
-    );
   }
 
   onClickLogo(): void {

@@ -31,9 +31,9 @@ export const servicesRoutes: Routes = [
       {
         path: 'session-activity-management',
         loadComponent: () =>
-          import(
-            './session-activity-management/session-activity-management.component'
-          ).then((m) => m.SessionActivityManagementComponent),
+          import('./session-activity-management/session-activity-management.component').then(
+            (m) => m.SessionActivityManagementComponent,
+          ),
       },
       {
         path: 'oti-snippet',
