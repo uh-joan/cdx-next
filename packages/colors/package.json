@@ -1,6 +1,6 @@
 {
   "name": "@cdx/colors",
-  "version": "20.0.0-alpha.2",
+  "version": "20.0.0-alpha.3",
   "repository": {
     "type": "git",
     "url": "ssh://git@github.com/clarivate-prod/cdx-next.git",
