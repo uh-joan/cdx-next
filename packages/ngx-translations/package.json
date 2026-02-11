@@ -1,6 +1,6 @@
 {
   "name": "@cdx/ngx-translations",
-  "version": "20.0.0-alpha.3",
+  "version": "20.0.0-alpha.4",
   "repository": {
     "type": "git",
     "url": "ssh://git@github.com/clarivate-prod/cdx-next.git",

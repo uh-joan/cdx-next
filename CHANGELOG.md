@@ -1,3 +1,14 @@
+## 20.0.0-alpha.4 (2026-02-11)
+
+### 🩹 Fixes
+
+- **docs-website:** fix internal link signal ([e4ca48e3](https://github.com/clarivate-prod/cdx-next/commit/e4ca48e3))
+- **theme-angular-material:** fix helix aggrid build ([7a707731](https://github.com/clarivate-prod/cdx-next/commit/7a707731))
+
+### ❤️ Thank You
+
+- Alejandro Chacon
+
 ## 20.0.0-alpha.3 (2026-02-09)
 
 This was a version bump only, there were no code changes.
