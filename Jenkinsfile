@@ -71,6 +71,21 @@ pipeline {
             }
         }
 
+        stage('Quality Checks') {
+            parallel {
+                stage('Lint') {
+                    steps {
+                        sh 'npm run lint'
+                    }
+                }
+                stage('Test') {
+                    steps {
+                        sh 'npm run test'
+                    }
+                }
+            }
+        }
+
         stage('Generate version code') {
             when {
                 expression { params.Publish }
@@ -107,21 +122,6 @@ pipeline {
         stage('Build') {
             steps {
                 sh 'npm run build'
-            }
-        }
-
-        stage('Quality Checks') {
-            parallel {
-                stage('Lint') {
-                    steps {
-                        sh 'npm run lint'
-                    }
-                }
-                stage('Test') {
-                    steps {
-                        sh 'npm run test'
-                    }
-                }
             }
         }
 
