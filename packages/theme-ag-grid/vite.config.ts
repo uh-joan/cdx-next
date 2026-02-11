@@ -1,4 +1,4 @@
-import { copyFileSync } from 'fs';
+import { copyFileSync, mkdirSync } from 'fs';
 import { dirname, resolve } from 'path';
 import { fileURLToPath } from 'url';
 import { defineConfig } from 'vite';
@@ -40,9 +40,12 @@ export default defineConfig({
       apply: 'build',
       enforce: 'post',
       generateBundle() {
-        const src = './ag-theme-helix.css';
-        const dest = './dist/ag-theme-helix.css';
+        const src = resolve(__dirname, 'ag-theme-helix.css');
+        const outDir = resolve(__dirname, 'dist');
+        const dest = resolve(outDir, 'ag-theme-helix.css');
+
         try {
+          mkdirSync(outDir, { recursive: true });
           copyFileSync(src, dest);
         } catch (err) {
           console.warn(`Could not copy ${src} to ${dest}:`, err);

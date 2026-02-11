@@ -9,11 +9,12 @@
   "exports": {
     ".": {
       "sass": "./theme-ag-grid.scss",
-      "/dist/theme-ag-grid.min.css": "./dist/theme-ag-grid.min.css"
+      "css": "./dist/theme-ag-grid.min.css"
     }
   },
   "files": [
     "dist",
+    "*.css",
     "*.scss"
   ],
   "scripts": {
