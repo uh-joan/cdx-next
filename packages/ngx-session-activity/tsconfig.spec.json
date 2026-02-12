@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "module": "commonjs",
+    "module": "es2020",
     "outDir": "../../dist/out-tsc",
     "target": "es2016",
     "types": ["jest", "node"]
