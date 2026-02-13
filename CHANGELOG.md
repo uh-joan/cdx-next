@@ -1,3 +1,25 @@
+# 20.0.0 (2026-02-13)
+
+### 🚀 Features
+
+- **theme-angular-material:** use button overrides ([a8d0751e](https://github.com/clarivate-prod/cdx-next/commit/a8d0751e))
+- **theme-angular-material:** use chips overrides ([15544742](https://github.com/clarivate-prod/cdx-next/commit/15544742))
+- **theme-highcharts:** update to v12 ([c094f138](https://github.com/clarivate-prod/cdx-next/commit/c094f138))
+- **workspace:** add option for major prerelease ([453370ec](https://github.com/clarivate-prod/cdx-next/commit/453370ec))
+
+### 🩹 Fixes
+
+- **docs-website:** fix internal link signal ([e4ca48e3](https://github.com/clarivate-prod/cdx-next/commit/e4ca48e3))
+- **ngx-branding:** fix lint imports ([acfe7f77](https://github.com/clarivate-prod/cdx-next/commit/acfe7f77))
+- **theme-angular-material:** fix helix aggrid build ([7a707731](https://github.com/clarivate-prod/cdx-next/commit/7a707731))
+- **workspace:** fixing autocomplete example ([a630e6c5](https://github.com/clarivate-prod/cdx-next/commit/a630e6c5))
+- **workspace:** fix tsconfig ([52f79f51](https://github.com/clarivate-prod/cdx-next/commit/52f79f51))
+
+### ❤️ Thank You
+
+- Alejandro Chacon
+- Fran Casternao
+
 ## 20.0.0-alpha.4 (2026-02-11)
 
 ### 🩹 Fixes

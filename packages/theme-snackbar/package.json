@@ -1,6 +1,6 @@
 {
   "name": "@cdx/theme-snackbar",
-  "version": "20.0.0-alpha.4",
+  "version": "20.0.0",
   "type": "commonjs",
   "scripts": {
     "build": "vite build",
