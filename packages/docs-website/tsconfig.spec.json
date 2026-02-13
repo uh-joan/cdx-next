@@ -1,9 +1,12 @@
 {
   "compilerOptions": {
-    "module": "commonjs",
+    "module": "es2020",
     "outDir": "../dist/out-tsc",
-    "target": "es2016",
-    "types": ["jest", "node"]
+    "target": "es2020",
+    "types": ["jest", "node"],
+    "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true
   },
   "extends": "./tsconfig.json",
   "include": [

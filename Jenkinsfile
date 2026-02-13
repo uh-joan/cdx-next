@@ -217,8 +217,8 @@ pipeline {
                         ) {
                             sh '''
                                 npm run deploy:website -- \
-                                    --bucket helix-v20.dev.sp.aws.clarivate.net \
-                                    --distribution E2PI3YSRXZPFVQ
+                                    --bucket helix-v21.dev.sp.aws.clarivate.net \
+                                    --distribution E1HX12ZBCPOKAJ
                             '''
                         }
                     } else {

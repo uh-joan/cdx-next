@@ -3,7 +3,7 @@
   "version": "20.0.0-alpha.2",
   "private": true,
   "dependencies": {
-    "highcharts": "^12.4.0",
-    "highcharts-angular": "5.2.0"
+    "highcharts": "^12.5.0",
+    "highcharts-angular": "5.4.0"
   }
 }

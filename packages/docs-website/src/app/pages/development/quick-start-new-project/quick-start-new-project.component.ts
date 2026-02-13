@@ -158,7 +158,7 @@ footer {
     {
       name: '@cdx/theme-highcharts',
       description: 'Highcharts theme',
-      dependencies: [`"highcharts": "^12.4.0"`],
+      dependencies: [`"highcharts": "^12.5.0"`],
     },
     {
       name: '@cdx/theme-snackbar',
