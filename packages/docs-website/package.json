@@ -3,6 +3,9 @@
   "version": "20.0.0-alpha.2",
   "private": true,
   "dependencies": {
+    "@cdx/ngx-branding": "^20.0.0",
+    "@cdx/theme-angular-material": "^20.0.0",
+    "@cdx/theme-highcharts": "^20.0.0",
     "highcharts": "^12.5.0",
     "highcharts-angular": "5.4.0",
     "marked": "^17.0.1",

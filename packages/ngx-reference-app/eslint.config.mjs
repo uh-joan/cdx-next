@@ -30,7 +30,7 @@ export default [
           'error',
           {
             type: 'element',
-            prefix: 'cdx',
+            prefix: 'app',
             style: 'kebab-case',
           },
         ],
@@ -38,7 +38,7 @@ export default [
           'error',
           {
             type: 'attribute',
-            prefix: 'cdx',
+            prefix: 'app',
             style: 'kebab-case',
           },
         ],

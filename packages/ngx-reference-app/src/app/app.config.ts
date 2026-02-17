@@ -1,9 +1,8 @@
 import {
   ApplicationConfig,
   importProvidersFrom,
-  provideZoneChangeDetection,
+  provideZonelessChangeDetection,
 } from '@angular/core';
-import { provideAnimations } from '@angular/platform-browser/animations';
 import { provideRouter, withComponentInputBinding } from '@angular/router';
 import {
   AnalyticsContextSchema,
@@ -30,8 +29,7 @@ const ANALYTICS_CONTEXT: AnalyticsContextSchema = {
 
 export const appConfig: ApplicationConfig = {
   providers: [
-    provideZoneChangeDetection({ eventCoalescing: true }),
-    provideAnimations(),
+    provideZonelessChangeDetection(),
     provideRouter(routes, withComponentInputBinding()),
     importProvidersFrom(
       OneTrustModule.forRoot(ONE_TRUST_SETTINGS),
@@ -51,7 +49,7 @@ export const appConfig: ApplicationConfig = {
       }),
       SessionActivityModule.forRoot(),
       TranslateModule.forRoot({
-        defaultLanguage: 'en',
+        fallbackLang: 'en',
       }),
     ),
   ],

@@ -1,19 +1,26 @@
 import { Routes } from '@angular/router';
 
+import { Layout } from '../core/layout/layout';
+
 export const routes: Routes = [
   {
-    path: 'home',
-    loadChildren: () =>
-      import('./pages/home/home.module').then((m) => m.HomeModule),
-  },
-  {
-    path: 'sandwich',
-    loadChildren: () =>
-      import('./pages/sandwich/sandwich.module').then((m) => m.SandwichModule),
-  },
-  {
     path: '',
-    redirectTo: 'home',
-    pathMatch: 'full',
+    component: Layout,
+    children: [
+      {
+        path: 'home',
+        loadComponent: () => import('./pages/home/home').then((m) => m.Home),
+      },
+      {
+        path: 'sandwich',
+        loadComponent: () =>
+          import('./pages/sandwich/sandwich').then((m) => m.Sandwitch),
+      },
+      {
+        path: '',
+        redirectTo: 'home',
+        pathMatch: 'full',
+      },
+    ],
   },
 ];

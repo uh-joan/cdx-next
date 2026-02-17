@@ -1,7 +1,7 @@
 {
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "name": "ngx-reference-app",
-  "prefix": "cdx",
+  "prefix": "app",
   "projectType": "application",
   "sourceRoot": "packages/ngx-reference-app/src",
   "tags": ["exclude-from-build"],
@@ -18,7 +18,7 @@
           "vendorChunk": true
         }
       },
-      "executor": "@angular-devkit/build-angular:browser",
+      "executor": "@angular-devkit/build-angular:browser-esbuild",
       "options": {
         "assets": [
           "packages/ngx-reference-app/src/favicon.ico",

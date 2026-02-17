@@ -3,15 +3,15 @@ import { FormsModule } from '@angular/forms';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { TranslateModule } from '@ngx-translate/core';
 
-import { ThemeService } from '../../services/theme.service';
+import { ThemeService } from '../theme-selector/theme.service';
 
 @Component({
-  selector: 'cdx-mode-selector',
-  templateUrl: './mode-selector.component.html',
-  styleUrls: ['./mode-selector.component.scss'],
+  selector: 'app-mode-selector',
+  templateUrl: './mode-selector.html',
+  styleUrls: ['./mode-selector.scss'],
   imports: [FormsModule, MatSlideToggleModule, TranslateModule],
 })
-export class ModeSelectorComponent implements OnInit {
+export class ModeSelector implements OnInit {
   private themeService: ThemeService = inject(ThemeService);
 
   isDarkMode = false;

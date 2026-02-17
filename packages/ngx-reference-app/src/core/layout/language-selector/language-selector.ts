@@ -20,9 +20,9 @@ import * as zh_CN from '../../../assets/i18n/zh_CN.json';
 import * as zh_TW from '../../../assets/i18n/zh_TW.json';
 
 @Component({
-  selector: 'cdx-language-selector',
-  templateUrl: './language-selector.component.html',
-  styleUrls: ['./language-selector.component.scss'],
+  selector: 'app-language-selector',
+  templateUrl: './language-selector.html',
+  styleUrls: ['./language-selector.scss'],
   imports: [
     CommonModule,
     MatSelectModule,
@@ -34,7 +34,7 @@ import * as zh_TW from '../../../assets/i18n/zh_TW.json';
     TranslateModule,
   ],
 })
-export class LanguageSelectorComponent implements OnInit {
+export class LanguageSelector implements OnInit {
   MAP_LANGUAGE_NAME = {
     en: 'English',
     ar_SA: 'عربي',

@@ -3,9 +3,9 @@
     >Clarivate Digital Experience
   </hlx-header-product-name>
   <div class="hlx-selectors">
-    <cdx-language-selector></cdx-language-selector>
-    <cdx-theme-selector></cdx-theme-selector>
-    <cdx-mode-selector></cdx-mode-selector>
+    <app-language-selector></app-language-selector>
+    <app-theme-selector></app-theme-selector>
+    <app-mode-selector></app-mode-selector>
   </div>
   <hlx-header-global>
     <div
@@ -27,7 +27,7 @@
   </hlx-header-global>
 </header>
 
-<router-outlet></router-outlet>
+<ng-content> </ng-content>
 
 <footer hlx-footer>
   <a hlx-footer-link href="https://stackoverflow.com/">Stack Overflow</a>

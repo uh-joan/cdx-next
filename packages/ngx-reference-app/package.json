@@ -4,6 +4,8 @@
   "private": true,
   "dependencies": {
     "highcharts": "^12.5.0",
-    "highcharts-angular": "5.4.0"
+    "highcharts-angular": "5.4.0",
+    "@cdx/theme-angular-material": "^20.0.0",
+    "@cdx/ngx-branding": "^20.0.0"
   }
 }

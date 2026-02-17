@@ -6,7 +6,6 @@ import {
   OnDestroy,
   OnInit,
   signal,
-  ViewEncapsulation,
 } from '@angular/core';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import {
@@ -21,15 +20,7 @@ import {
   MAT_DATE_FORMATS,
   MatOption,
 } from '@angular/material/core';
-import {
-  MatCalendar,
-  MatDatepicker,
-  MatDatepickerActions,
-  MatDatepickerApply,
-  MatDatepickerCancel,
-  MatDatepickerInput,
-  MatDatepickerToggle,
-} from '@angular/material/datepicker';
+import { MatCalendar, MatDatepickerModule } from '@angular/material/datepicker';
 import {
   MatFormField,
   MatHint,
@@ -87,7 +78,7 @@ const COMPONENTS = [
 
 /** Custom header component for datepicker. */
 @Component({
-  selector: 'cdx-example-header',
+  selector: 'app-example-header',
   styles: `
     .example-header {
       display: flex;
@@ -166,9 +157,8 @@ export class ExampleHeaderComponent<D> implements OnDestroy {
   }
 }
 @Component({
-  templateUrl: './home.component.html',
-  styleUrl: './home.component.scss',
-  encapsulation: ViewEncapsulation.None,
+  templateUrl: './home.html',
+  styleUrl: './home.scss',
   imports: [
     MatButton,
     MatIcon,
@@ -176,14 +166,9 @@ export class ExampleHeaderComponent<D> implements OnDestroy {
     MatFormField,
     MatLabel,
     MatInput,
-    MatDatepickerInput,
     MatHint,
-    MatDatepickerToggle,
+    MatDatepickerModule,
     MatSuffix,
-    MatDatepicker,
-    MatDatepickerActions,
-    MatDatepickerCancel,
-    MatDatepickerApply,
     MatSlideToggle,
     MatCheckbox,
     MatRadioGroup,
@@ -192,10 +177,12 @@ export class ExampleHeaderComponent<D> implements OnDestroy {
     MatAutocomplete,
     MatOption,
     TranslateModule,
+
     AsyncPipe,
   ],
+  providers: [MatDatepickerModule],
 })
-export class HomeComponent implements OnInit {
+export class Home implements OnInit {
   searchControl = new FormControl('');
   readonly exampleHeader = ExampleHeaderComponent;
 

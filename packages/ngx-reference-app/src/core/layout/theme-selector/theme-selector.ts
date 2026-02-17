@@ -6,12 +6,12 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatSelectModule } from '@angular/material/select';
 import { TranslateModule } from '@ngx-translate/core';
 
-import { ThemeService } from '../../services/theme.service';
+import { ThemeService } from './theme.service';
 
 @Component({
-  selector: 'cdx-theme-selector',
-  templateUrl: './theme-selector.component.html',
-  styleUrls: ['./theme-selector.component.scss'],
+  selector: 'app-theme-selector',
+  templateUrl: './theme-selector.html',
+  styleUrls: ['./theme-selector.scss'],
   imports: [
     MatIconModule,
     MatButtonModule,
@@ -21,7 +21,7 @@ import { ThemeService } from '../../services/theme.service';
     TranslateModule,
   ],
 })
-export class ThemeSelectorComponent {
+export class ThemeSelector {
   currentTheme = '';
   themes;
   currentMode$;

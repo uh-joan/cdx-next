@@ -1,5 +1,4 @@
 import { TestBed } from '@angular/core/testing';
-import { RouterTestingModule } from '@angular/router/testing';
 import { AnalyticsModule, AnalyticsService } from '@cdx/ngx-analytics';
 import {
   AuthenticationModule,
@@ -12,7 +11,7 @@ import {
 } from '@cdx/ngx-session-activity';
 import { TranslateModule } from '@ngx-translate/core';
 
-import { AppComponent } from './app.component';
+import { AppComponent } from './app';
 import { LanguageSelectorComponent } from './components/language-selector/language-selector.component';
 import { ModeSelectorComponent } from './components/mode-selector/mode-selector.component';
 import { ThemeSelectorComponent } from './components/theme-selector/theme-selector.component';
@@ -34,7 +33,6 @@ describe('AppComponent', () => {
         AnalyticsModule.forRoot({
           appId: 'reference-app',
         }),
-        RouterTestingModule,
         TranslateModule.forRoot({
           fallbackLang: 'en',
         }),
