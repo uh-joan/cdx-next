@@ -1,12 +1,10 @@
-import { CommonModule } from '@angular/common';
-import { Component, inject, OnInit } from '@angular/core';
-import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { KeyValuePipe } from '@angular/common';
+import { Component, effect, inject, signal } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatSelectModule } from '@angular/material/select';
-import { NgxTranslationsService } from '@cdx/ngx-translations';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 import * as ar_SA from '../../../assets/i18n/ar_SA.json';
@@ -24,18 +22,17 @@ import * as zh_TW from '../../../assets/i18n/zh_TW.json';
   templateUrl: './language-selector.html',
   styleUrls: ['./language-selector.scss'],
   imports: [
-    CommonModule,
     MatSelectModule,
     MatFormFieldModule,
-    ReactiveFormsModule,
     MatIconModule,
     MatButtonModule,
     MatMenuModule,
     TranslateModule,
+    KeyValuePipe,
   ],
 })
-export class LanguageSelector implements OnInit {
-  MAP_LANGUAGE_NAME = {
+export class LanguageSelector {
+  readonly MAP_LANGUAGE_NAME = {
     en: 'English',
     ar_SA: 'عربي',
     es_ES: 'Español',
@@ -47,7 +44,7 @@ export class LanguageSelector implements OnInit {
     zh_TW: '中國傳統的',
   };
 
-  MAP_LANGUAGE_FLAG = {
+  readonly MAP_LANGUAGE_FLAG = {
     en: '🇺🇸',
     ar_SA: '🇸🇦',
     es_ES: '🇪🇸',
@@ -59,7 +56,7 @@ export class LanguageSelector implements OnInit {
     zh_TW: '🇹🇼',
   };
 
-  APP_TRANSLATIONS = {
+  readonly APP_TRANSLATIONS = {
     en,
     es_ES,
     ar_SA,
@@ -71,37 +68,25 @@ export class LanguageSelector implements OnInit {
     zh_TW,
   };
 
-  formLanguage = new FormGroup({
-    language: new FormControl('en'),
-  });
+  readonly currentLanguage = signal<string>(
+    localStorage.getItem('language') || 'en',
+  );
 
-  private ngxTranslationsService = inject(NgxTranslationsService);
   private translateService = inject(TranslateService);
 
-  ngOnInit(): void {
+  constructor() {
     this.translateService.setTranslation('en', this.APP_TRANSLATIONS.en);
-    this.ngxTranslationsService.mergeTranslationsLabels(
-      Object.keys(this.APP_TRANSLATIONS),
-    );
 
-    const initialLang = localStorage.getItem('language');
+    const initialLang = localStorage.getItem('language') || 'en';
+    this.currentLanguage.set(initialLang);
+    this.translateService.use(initialLang);
+    this.updateDirection(initialLang);
 
-    // Set the initial language - either from storage or default to 'en'
-    const languageToUse = initialLang || 'en';
-    this.translateService.use(languageToUse);
-    this.formLanguage
-      .get('language')
-      ?.setValue(languageToUse, { emitEvent: false });
-
-    this.formLanguage.valueChanges.subscribe((formLanguageSelected) => {
-      if (formLanguageSelected.language) {
-        this.translateService.use(formLanguageSelected.language);
-        localStorage.setItem('language', formLanguageSelected.language);
-        document.documentElement.setAttribute(
-          'dir',
-          formLanguageSelected.language === 'ar_SA' ? 'rtl' : 'ltr',
-        );
-      }
+    effect(() => {
+      const lang = this.currentLanguage();
+      this.translateService.use(lang);
+      localStorage.setItem('language', lang);
+      this.updateDirection(lang);
     });
   }
 
@@ -110,12 +95,13 @@ export class LanguageSelector implements OnInit {
   }
 
   selectLanguage(languageValue: string): void {
-    this.formLanguage.get('language')?.setValue(languageValue);
-    localStorage.setItem('language', languageValue);
-    console.log(`language`, languageValue);
+    this.currentLanguage.set(languageValue);
+  }
+
+  private updateDirection(lang: string): void {
     document.documentElement.setAttribute(
       'dir',
-      languageValue === 'ar_SA' ? 'rtl' : 'ltr',
+      lang === 'ar_SA' ? 'rtl' : 'ltr',
     );
   }
 }

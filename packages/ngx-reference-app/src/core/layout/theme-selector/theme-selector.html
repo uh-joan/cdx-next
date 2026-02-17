@@ -3,23 +3,22 @@
   <mat-select
     placeholder="Choose an option"
     panelClass="common-panel"
-    formControlName="theme"
-    [(value)]="currentTheme"
-    (selectionChange)="selectTheme(currentTheme)"
+    [value]="themeService.currentTheme()"
+    (selectionChange)="selectTheme($event.value)"
   >
     <mat-select-trigger>
       <div
-        class="cdx-circle cdx-circle--{{ currentTheme }}"
-        [class.cdx-circle-dark]="(currentMode$ | async) === 'dark'"
+        class="cdx-circle cdx-circle--{{ themeService.currentTheme() }}"
+        [class.cdx-circle-dark]="themeService.currentThemeMode() === 'dark'"
       ></div>
-      {{ currentTheme | titlecase }}
+      {{ themeService.currentTheme() | titlecase }}
     </mat-select-trigger>
 
-    @for (theme of themes; track theme) {
+    @for (theme of themeService.themes; track theme) {
     <mat-option [value]="theme">
       <div
         class="cdx-circle cdx-circle--{{ theme }}"
-        [class.cdx-circle-dark]="(currentMode$ | async) === 'dark'"
+        [class.cdx-circle-dark]="themeService.currentThemeMode() === 'dark'"
       ></div>
       {{ theme | titlecase }}
     </mat-option>
@@ -32,16 +31,16 @@
   aria-label="Example icon-button with a menu"
 >
   <div
-    class="cdx-circle cdx-circle--{{ currentTheme }}"
-    [class.cdx-circle-dark]="(currentMode$ | async) === 'dark'"
+    class="cdx-circle cdx-circle--{{ themeService.currentTheme() }}"
+    [class.cdx-circle-dark]="themeService.currentThemeMode() === 'dark'"
   ></div>
 </button>
 <mat-menu #menu="matMenu">
-  @for (theme of themes; track theme) {
+  @for (theme of themeService.themes; track theme) {
   <button mat-menu-item (click)="selectTheme(theme)">
     <div
       class="cdx-circle cdx-circle--{{ theme }}"
-      [class.cdx-circle-dark]="(currentMode$ | async) === 'dark'"
+      [class.cdx-circle-dark]="themeService.currentThemeMode() === 'dark'"
     ></div>
     {{ theme | titlecase }}
   </button>

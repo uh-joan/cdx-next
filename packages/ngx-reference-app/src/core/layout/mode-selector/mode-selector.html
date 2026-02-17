@@ -1,7 +1,7 @@
 <mat-slide-toggle
   (toggleChange)="toggleMode()"
-  [(ngModel)]="isDarkMode"
+  [checked]="isDarkMode()"
   color="primary"
   hideIcon
-  >{{ isDarkMode ? ('APP.DARK' | translate) : ('APP.LIGHT' | translate) }}
+  >{{ isDarkMode() ? ('APP.DARK' | translate) : ('APP.LIGHT' | translate) }}
 </mat-slide-toggle>

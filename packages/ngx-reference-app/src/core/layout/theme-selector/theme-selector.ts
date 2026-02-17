@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+import { TitleCasePipe } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
@@ -16,23 +16,13 @@ import { ThemeService } from './theme.service';
     MatIconModule,
     MatButtonModule,
     MatMenuModule,
-    CommonModule,
     MatSelectModule,
     TranslateModule,
+    TitleCasePipe,
   ],
 })
 export class ThemeSelector {
-  currentTheme = '';
-  themes;
-  currentMode$;
-
-  private themeService: ThemeService = inject(ThemeService);
-
-  constructor() {
-    this.currentTheme = this.themeService.currentTheme$.getValue();
-    this.themes = this.themeService.themes;
-    this.currentMode$ = this.themeService.currentThemeMode$;
-  }
+  readonly themeService = inject(ThemeService);
 
   selectTheme(theme: string) {
     this.themeService.selectTheme(theme);

@@ -1,13 +1,13 @@
-import { AsyncPipe } from '@angular/common';
+import { Component, effect, inject, signal } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
 import {
-  ChangeDetectionStrategy,
-  Component,
-  inject,
-  OnDestroy,
-  OnInit,
-  signal,
-} from '@angular/core';
-import { FormControl, ReactiveFormsModule } from '@angular/forms';
+  email,
+  form,
+  FormField,
+  maxLength,
+  minLength,
+  required,
+} from '@angular/forms/signals';
 import {
   MatAutocomplete,
   MatAutocompleteSelectedEvent,
@@ -31,8 +31,8 @@ import { MatIcon, MatIconModule } from '@angular/material/icon';
 import { MatInput } from '@angular/material/input';
 import { MatRadioButton, MatRadioGroup } from '@angular/material/radio';
 import { MatSlideToggle } from '@angular/material/slide-toggle';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { TranslateModule } from '@ngx-translate/core';
-import { map, Observable, startWith, Subject, takeUntil } from 'rxjs';
 
 const COMPONENTS = [
   'autocomplete',
@@ -111,35 +111,25 @@ const COMPONENTS = [
     </div>
   `,
   imports: [MatButtonModule, MatIconModule],
-  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ExampleHeaderComponent<D> implements OnDestroy {
+export class ExampleHeaderComponent<D> {
   private _calendar = inject<MatCalendar<D>>(MatCalendar);
   private _dateAdapter = inject<DateAdapter<D>>(DateAdapter);
   private _dateFormats = inject(MAT_DATE_FORMATS);
 
-  private _destroyed = new Subject<void>();
-
   readonly periodLabel = signal('');
 
   constructor() {
-    this._calendar.stateChanges
-      .pipe(startWith(null), takeUntil(this._destroyed))
-      .subscribe(() => {
-        this.periodLabel.set(
-          this._dateAdapter
-            .format(
-              this._calendar.activeDate,
-              this._dateFormats.display.monthYearLabel,
-            )
-            .toLocaleUpperCase(),
-        );
-      });
-  }
-
-  ngOnDestroy() {
-    this._destroyed.next();
-    this._destroyed.complete();
+    this._calendar.stateChanges.subscribe(() => {
+      this.periodLabel.set(
+        this._dateAdapter
+          .format(
+            this._calendar.activeDate,
+            this._dateFormats.display.monthYearLabel,
+          )
+          .toLocaleUpperCase(),
+      );
+    });
   }
 
   previousClicked(mode: 'month' | 'year') {
@@ -156,6 +146,7 @@ export class ExampleHeaderComponent<D> implements OnDestroy {
         : this._dateAdapter.addCalendarYears(this._calendar.activeDate, 1);
   }
 }
+
 @Component({
   templateUrl: './home.html',
   styleUrl: './home.scss',
@@ -163,6 +154,7 @@ export class ExampleHeaderComponent<D> implements OnDestroy {
     MatButton,
     MatIcon,
     ReactiveFormsModule,
+    FormField,
     MatFormField,
     MatLabel,
     MatInput,
@@ -177,16 +169,74 @@ export class ExampleHeaderComponent<D> implements OnDestroy {
     MatAutocomplete,
     MatOption,
     TranslateModule,
-
-    AsyncPipe,
   ],
   providers: [MatDatepickerModule],
 })
-export class Home implements OnInit {
-  searchControl = new FormControl('');
-  readonly exampleHeader = ExampleHeaderComponent;
+export class Home {
+  readonly searchData = signal({
+    search: '',
+  });
 
-  filteredOptions?: Observable<string[]>;
+  readonly searchForm = form(this.searchData, (schemaPath) => {
+    required(schemaPath.search, { message: 'Search term is required' });
+  });
+
+  readonly contactData = signal({
+    name: '',
+    email: '',
+    birthDate: '',
+    message: '',
+    subscribe: false,
+    agreeTerms: false,
+    contactMethod: 'email',
+  });
+
+  readonly contactForm = form(this.contactData, (schemaPath) => {
+    required(schemaPath.name, { message: 'Name is required' });
+    minLength(schemaPath.name, 2, {
+      message: 'Name must be at least 2 characters',
+    });
+    required(schemaPath.email, { message: 'Email is required' });
+    email(schemaPath.email, { message: 'Please enter a valid email' });
+    required(schemaPath.message, { message: 'Message is required' });
+    maxLength(schemaPath.message, 500, {
+      message: 'Message cannot exceed 500 characters',
+    });
+    required(schemaPath.agreeTerms, {
+      message: 'You must agree to the terms and conditions',
+    });
+  });
+
+  readonly exampleHeader = ExampleHeaderComponent;
+  readonly filteredOptions = signal<string[]>([]);
+  readonly submitted = signal(false);
+  private snackBar = inject(MatSnackBar);
+
+  constructor() {
+    effect(() => {
+      const searchValue = this.searchForm.search().value() || '';
+      this.filteredOptions.set(this._filter(searchValue));
+    });
+  }
+  onClickLogo(): void {
+    this.submitted.set(true);
+    if (this.contactForm().valid()) {
+      console.log('Form submitted:', this.contactData());
+      this.snackBar.open('Thank you for contacting us!', 'Close', {
+        duration: 5000,
+      });
+      this.contactData.set({
+        name: '',
+        email: '',
+        birthDate: '',
+        message: '',
+        subscribe: false,
+        agreeTerms: false,
+        contactMethod: 'email',
+      });
+      this.submitted.set(false);
+    }
+  }
 
   goToUrl(link: string): void {
     window.open(link, '_blank');
@@ -196,14 +246,7 @@ export class Home implements OnInit {
     this.goToUrl(
       `https://digital-experience.clarivate.io/components/${component.option.value}/index.html?tab=angular`,
     );
-    this.searchControl.reset();
-  }
-
-  ngOnInit() {
-    this.filteredOptions = this.searchControl.valueChanges.pipe(
-      startWith(''),
-      map((value) => this._filter(value || '')),
-    );
+    this.searchData.set({ search: '' });
   }
 
   private _filter(value: string): string[] {

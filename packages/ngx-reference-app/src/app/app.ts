@@ -1,12 +1,11 @@
-import { Component, inject } from '@angular/core';
-import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
+import { Component, computed, effect, inject } from '@angular/core';
+import { Router, RouterOutlet } from '@angular/router';
 import {
   AnalyticsContextData,
   AnalyticsContextSchema,
   AnalyticsService,
   CLARIVATE_IGLU_SCHEMA,
 } from '@cdx/ngx-analytics';
-import { filter, map } from 'rxjs';
 
 import { ThemeService } from '../core/layout/theme-selector/theme.service';
 
@@ -17,18 +16,21 @@ import { ThemeService } from '../core/layout/theme-selector/theme.service';
   imports: [RouterOutlet],
 })
 export class App {
-  routerEvents$;
-  themeService: ThemeService = inject(ThemeService);
-  private analyticsService: AnalyticsService = inject(AnalyticsService);
-  private router: Router = inject(Router);
+  readonly themeService = inject(ThemeService);
+  private analyticsService = inject(AnalyticsService);
+  private router = inject(Router);
+
+  readonly isNavigating = computed(() => !!this.router.currentNavigation());
 
   constructor() {
-    this.routerEvents$ = this.router.events
-      .pipe(
-        filter((ev) => ev instanceof NavigationEnd),
-        map((ev) => this.trackPageView((ev as NavigationEnd).url)),
-      )
-      .subscribe();
+    effect(() => {
+      if (!this.isNavigating()) {
+        const url = this.router.routerState.root.component;
+        if (url) {
+          this.trackPageView(this.router.url);
+        }
+      }
+    });
   }
 
   onClickLogo(): void {

@@ -1,5 +1,4 @@
-import { DOCUMENT, inject, Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { DOCUMENT, inject, Injectable, signal } from '@angular/core';
 
 export const THEMES = ['cdx', 'helix'];
 
@@ -7,23 +6,21 @@ export const THEMES = ['cdx', 'helix'];
   providedIn: 'root',
 })
 export class ThemeService {
-  currentThemeMode$: BehaviorSubject<string> = new BehaviorSubject('light');
-  currentTheme$: BehaviorSubject<string> = new BehaviorSubject('');
-  themes = THEMES;
+  readonly currentThemeMode = signal<string>('light');
+  readonly currentTheme = signal<string>('');
+  readonly themes = THEMES;
 
-  private document: Document = inject(DOCUMENT);
+  private document = inject(DOCUMENT);
 
   constructor() {
     const initialThemeValue = this.getThemeMode();
     if (initialThemeValue) {
       this.setThemeMode(initialThemeValue);
-      this.currentThemeMode$.next(initialThemeValue);
+      this.currentThemeMode.set(initialThemeValue);
     }
     const themeColor = localStorage.getItem('themeColor');
-    if (themeColor) {
-      if (themeColor && THEMES.includes(themeColor)) {
-        this.selectTheme(themeColor);
-      }
+    if (themeColor && THEMES.includes(themeColor)) {
+      this.selectTheme(themeColor);
     }
   }
 
@@ -49,7 +46,7 @@ export class ThemeService {
     if (themeMode && themeClasses.includes(`cdx-${themeMode}-mode`)) {
       const themeClass = `cdx-${themeMode}-mode`;
       body.classList.add(themeClass);
-      this.currentThemeMode$.next(themeMode);
+      this.currentThemeMode.set(themeMode);
       localStorage.setItem('themeMode', themeMode);
     } else {
       localStorage.removeItem('themeMode');
@@ -66,6 +63,6 @@ export class ThemeService {
     });
     document.body.classList.add(`${theme}-theme-material`);
 
-    this.currentTheme$.next(theme);
+    this.currentTheme.set(theme);
   }
 }

@@ -57,16 +57,44 @@
   <form>
     <mat-form-field appearance="outline">
       <mat-label>Name</mat-label>
-      <input matInput type="text" placeholder="Enter your name" />
+      <input
+        matInput
+        type="text"
+        placeholder="Enter your name"
+        [formField]="contactForm.name"
+      />
     </mat-form-field>
+    @if (contactForm.name().invalid() && submitted()) {
+    <div class="error-messages">
+      @for (error of contactForm.name().errors(); track error.kind) {
+      <p class="error-text">{{ error.message }}</p>
+      }
+    </div>
+    }
     <mat-form-field appearance="outline">
       <mat-label>Email</mat-label>
-      <input matInput type="email" placeholder="Enter your email" />
+      <input
+        matInput
+        type="email"
+        placeholder="Enter your email"
+        [formField]="contactForm.email"
+      />
     </mat-form-field>
+    @if (contactForm.email().invalid() && submitted()) {
+    <div class="error-messages">
+      @for (error of contactForm.email().errors(); track error.kind) {
+      <p class="error-text">{{ error.message }}</p>
+      }
+    </div>
+    }
 
     <mat-form-field appearance="outline">
       <mat-label>Birth Date</mat-label>
-      <input matInput [matDatepicker]="picker" />
+      <input
+        matInput
+        [matDatepicker]="picker"
+        [formField]="contactForm.birthDate"
+      />
       <mat-hint>MM/DD/YYYY</mat-hint>
       <mat-datepicker-toggle
         matIconSuffix
@@ -78,26 +106,52 @@
           <button mat-raised-button matDatepickerApply>Apply</button>
         </mat-datepicker-actions>
       </mat-datepicker>
-      <mat-datepicker
-        #picker
-        [calendarHeaderComponent]="exampleHeader"
-      ></mat-datepicker>
     </mat-form-field>
 
     <mat-form-field appearance="outline">
       <mat-label>Message</mat-label>
-      <textarea matInput rows="4" placeholder="Enter your message"></textarea>
+      <textarea
+        matInput
+        rows="4"
+        placeholder="Enter your message"
+        [formField]="contactForm.message"
+      ></textarea>
     </mat-form-field>
-    <mat-slide-toggle>Subscribe to our newsletter</mat-slide-toggle>
-    <mat-checkbox>I agree to the terms and conditions</mat-checkbox>
-    <mat-radio-group>
+    @if (contactForm.message().invalid() && submitted()) {
+    <div class="error-messages">
+      @for (error of contactForm.message().errors(); track error.kind) {
+      <p class="error-text">{{ error.message }}</p>
+      }
+    </div>
+    }
+    <mat-slide-toggle [formField]="contactForm.subscribe"
+      >Subscribe to our newsletter
+    </mat-slide-toggle>
+    <mat-checkbox [formField]="contactForm.agreeTerms"
+      >I agree to the terms and conditions
+    </mat-checkbox>
+    @if (contactForm.agreeTerms().invalid() && submitted()) {
+    <div class="error-messages">
+      @for (error of contactForm.agreeTerms().errors(); track error.kind) {
+      <p class="error-text">{{ error.message }}</p>
+      }
+    </div>
+    }
+    <mat-radio-group [formField]="contactForm.contactMethod">
       <mat-radio-button value="email">Contact me via Email</mat-radio-button>
       <mat-radio-button value="phone">Contact me via Phone</mat-radio-button>
     </mat-radio-group>
 
     <!-- Submit Button -->
     <div class="button-group">
-      <button mat-raised-button color="primary" type="button">Submit</button>
+      <button
+        mat-raised-button
+        color="primary"
+        type="button"
+        (click)="onClickLogo()"
+      >
+        Submit
+      </button>
     </div>
   </form>
 </section>
@@ -114,7 +168,7 @@
         placeholder="Search"
         aria-label="Search"
         matInput
-        [formControl]="searchControl"
+        [formField]="searchForm.search"
         [matAutocomplete]="auto"
       />
       <mat-icon matSuffix class="my-icon">search</mat-icon>
@@ -123,7 +177,7 @@
         #auto="matAutocomplete"
         (optionSelected)="goToComponent($event)"
       >
-        @for (option of filteredOptions | async; track option) {
+        @for (option of filteredOptions(); track option) {
         <mat-option [value]="option">{{ option }}</mat-option>
         }
       </mat-autocomplete>
