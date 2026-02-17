@@ -1,53 +1,47 @@
 import { Routes } from '@angular/router';
 
-import { ServicesComponent } from './services.component';
+import { Services } from './services';
 
 export const servicesRoutes: Routes = [
   {
     path: '',
-    component: ServicesComponent,
+    component: Services,
     children: [
       {
         path: 'analytics',
         loadComponent: () =>
-          import('./analytics/analytics.component').then(
-            (m) => m.AnalyticsComponent,
-          ),
+          import('./analytics/analytics').then((m) => m.Analytics),
       },
       {
         path: 'authentication',
         loadComponent: () =>
-          import('./authentication/authentication.component').then(
-            (m) => m.AuthenticationComponent,
+          import('./authentication/authentication').then(
+            (m) => m.Authentication,
           ),
       },
       {
         path: 'services-overview',
         loadComponent: () =>
-          import('./services-overview/services-overview.component').then(
-            (m) => m.ServicesOverviewComponent,
+          import('./services-overview/services-overview').then(
+            (m) => m.ServicesOverview,
           ),
       },
       {
         path: 'session-activity-management',
         loadComponent: () =>
-          import('./session-activity-management/session-activity-management.component').then(
-            (m) => m.SessionActivityManagementComponent,
+          import('./session-activity-management/session-activity-management').then(
+            (m) => m.SessionActivityManagement,
           ),
       },
       {
         path: 'oti-snippet',
         loadComponent: () =>
-          import('./oti-snippet/oti-snippet.component').then(
-            (c) => c.OtiSnippetComponent,
-          ),
+          import('./oti-snippet/oti-snippet').then((c) => c.OtiSnippet),
       },
       {
         path: 'translations',
         loadComponent: () =>
-          import('./translations/translations.component').then(
-            (m) => m.TranslationsComponent,
-          ),
+          import('./translations/translations').then((m) => m.Translations),
       },
       { path: '', redirectTo: 'services-overview', pathMatch: 'full' },
     ],

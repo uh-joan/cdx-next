@@ -1,2 +1,2 @@
-export * from './rich-tooltip.example.component';
-export * from './tooltip.example.component';
+export * from './rich-tooltip.example';
+export * from './tooltip.example';

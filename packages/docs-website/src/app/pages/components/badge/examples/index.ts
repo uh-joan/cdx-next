@@ -1,1 +1,1 @@
-export * from './badges-color.example.component';
+export * from './badges-color.example';

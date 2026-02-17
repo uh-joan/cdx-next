@@ -1,0 +1,16 @@
+<div class="page">
+  <div class="heading">
+    <div class="heading__section">{{ section() | uppercase }}</div>
+    <h1>{{ title() }}</h1>
+    <div class="mat-title-medium">{{ subtitle() }}</div>
+    <mat-divider></mat-divider>
+  </div>
+  <div class="content">
+    @if (componentName()) {
+    <hlx-material-doc [title]="componentName()"></hlx-material-doc>
+    }
+    <ng-content></ng-content>
+  </div>
+</div>
+
+<footer hlx-footer slim branded></footer>

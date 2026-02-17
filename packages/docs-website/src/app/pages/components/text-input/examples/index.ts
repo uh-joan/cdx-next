@@ -1,1 +1,1 @@
-export * from './text-area-simple.example.component';
+export * from './text-area-simple.example';

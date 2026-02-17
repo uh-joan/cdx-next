@@ -1,18 +1,16 @@
 import { Routes } from '@angular/router';
 
-import { FoundationsComponent } from './foundations.component';
+import { Foundations } from './foundations';
 
 export const foundationsRoutes: Routes = [
   {
     path: '',
-    component: FoundationsComponent,
+    component: Foundations,
     children: [
       {
         path: 'about-helix',
         loadComponent: () =>
-          import('./about-helix/about-helix.component').then(
-            (m) => m.AboutHelixComponent,
-          ),
+          import('./about-helix/about-helix').then((m) => m.AboutHelix),
       },
       { path: '', redirectTo: 'about-helix', pathMatch: 'full' },
     ],

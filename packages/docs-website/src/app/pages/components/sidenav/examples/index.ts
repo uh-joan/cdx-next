@@ -1,1 +1,1 @@
-export * from './sidenav-basic.example.component';
+export * from './sidenav-basic.example';

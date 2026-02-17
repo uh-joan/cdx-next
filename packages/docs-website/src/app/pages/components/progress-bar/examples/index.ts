@@ -1,1 +1,1 @@
-export * from './progress-bar-basic.example.component';
+export * from './progress-bar-basic.example';

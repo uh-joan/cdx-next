@@ -1,2 +1,2 @@
-export * from './tabs-inverted.color.example.component';
-export * from './tabs-simple.example.component';
+export * from './tabs-inverted.color.example';
+export * from './tabs-simple.example';

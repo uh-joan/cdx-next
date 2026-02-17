@@ -1,0 +1,11 @@
+<hlx-page
+  [title]="'Text Area'"
+  [subtitle]="'Text Area defines a multi-line text input control, which can hold an unlimited number of characters.'"
+  [section]="'Components'"
+  componentName="input"
+>
+  <h2>Examples</h2>
+  @for (sample of sampleList; track sample.exampleName) {
+  <hlx-example-viewer [inputViewerComponent]="sample"></hlx-example-viewer>
+  }
+</hlx-page>

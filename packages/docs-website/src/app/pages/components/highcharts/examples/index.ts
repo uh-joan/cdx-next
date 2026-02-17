@@ -1,2 +1,2 @@
-export * from './highchart-styled.example.component';
-export * from './highchart-themed.example.component';
+export * from './highchart-styled.example';
+export * from './highchart-themed.example';

@@ -1,1 +1,1 @@
-export * from './table-simple.example.component';
+export * from './table-simple.example';

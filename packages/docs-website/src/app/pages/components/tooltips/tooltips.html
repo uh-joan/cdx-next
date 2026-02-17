@@ -1,0 +1,11 @@
+<hlx-page
+  [title]="'Tooltips'"
+  [subtitle]="'Tooltips are floating labels that briefly explain the function of an unknown or unfamiliar user interface element that isn`t directly described within the interface.'"
+  [section]="'Components'"
+  componentName="tooltip"
+>
+  <h2>Examples</h2>
+  @for (sample of sampleList; track sample.exampleName) {
+  <hlx-example-viewer [inputViewerComponent]="sample"></hlx-example-viewer>
+  }
+</hlx-page>

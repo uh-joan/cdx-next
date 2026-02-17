@@ -1,1 +1,1 @@
-export * from './sort-header.example.component';
+export * from './sort-header.example';

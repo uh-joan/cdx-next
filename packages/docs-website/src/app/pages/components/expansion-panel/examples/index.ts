@@ -1,1 +1,1 @@
-export * from './expansion-panel.example.component';
+export * from './expansion-panel.example';

@@ -1,7 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
-import { ExampleViewerComponent } from '../example-viewer/example-viewer.component';
+import { ExampleViewer } from '../example-viewer/example-viewer';
 import { InputViewerComponent } from '../example-viewer/example-viewer.model';
 
 @Component({
@@ -9,9 +9,9 @@ import { InputViewerComponent } from '../example-viewer/example-viewer.model';
   template: `@for (example of examples; track example) {
     <hlx-example-viewer [inputViewerComponent]="example"></hlx-example-viewer>
   }`,
-  imports: [ExampleViewerComponent],
+  imports: [ExampleViewer],
 })
-export class ExamplesComponent {
+export class Examples {
   examples: InputViewerComponent[] = [];
   route = inject(ActivatedRoute);
 

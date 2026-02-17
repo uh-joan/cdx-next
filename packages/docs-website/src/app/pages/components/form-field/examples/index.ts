@@ -1,2 +1,2 @@
-export * from './form-field-appearences.component';
-export * from './form-field-basic.example.component';
+export * from './form-field-appearences';
+export * from './form-field-basic.example';

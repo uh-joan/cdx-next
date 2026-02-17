@@ -1,1 +1,1 @@
-export * from './progress-spinner-basic.example.component';
+export * from './progress-spinner-basic.example';

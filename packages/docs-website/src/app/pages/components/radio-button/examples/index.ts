@@ -1,1 +1,1 @@
-export * from './radio-button-basic.example.component';
+export * from './radio-button-basic.example';

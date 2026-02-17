@@ -1,1 +1,1 @@
-export * from './data-grid.example.component';
+export * from './data-grid.example';

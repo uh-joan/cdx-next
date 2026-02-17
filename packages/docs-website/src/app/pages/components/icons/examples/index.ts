@@ -1,2 +1,2 @@
-export * from './icon-colors.example.component';
-export * from './icon-sizes.example.component';
+export * from './icon-colors.example';
+export * from './icon-sizes.example';

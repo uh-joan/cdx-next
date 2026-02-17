@@ -1,0 +1,11 @@
+<hlx-page
+  [title]="'Tabs'"
+  [subtitle]="'Tabs organize related content and separate it into different views, one view per a tab.'"
+  [section]="'Components'"
+  componentName="tabs"
+>
+  <h2>Examples</h2>
+  @for (sample of sampleList; track sample.exampleName) {
+  <hlx-example-viewer [inputViewerComponent]="sample"></hlx-example-viewer>
+  }
+</hlx-page>

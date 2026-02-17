@@ -1,2 +1,2 @@
-export * from './stepper-horizontal.example.component';
-export * from './stepper-vertical.example.component';
+export * from './stepper-horizontal.example';
+export * from './stepper-vertical.example';

@@ -1,2 +1,2 @@
-export * from './basic-card.example.component';
-export * from './featured-card.example.component';
+export * from './basic-card.example';
+export * from './featured-card.example';

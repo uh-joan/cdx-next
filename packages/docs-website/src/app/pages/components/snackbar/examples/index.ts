@@ -1,1 +1,1 @@
-export * from './snackbar.example.component';
+export * from './snackbar.example';

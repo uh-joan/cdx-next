@@ -1,0 +1,11 @@
+<hlx-page
+  [title]="'Table'"
+  [subtitle]="'Data tables display information in a way thats easy to scan, so that users can look for patterns and insights.'"
+  [section]="'Components'"
+  componentName="table"
+>
+  <h2>Examples</h2>
+  @for (sample of sampleList; track sample.exampleName) {
+  <hlx-example-viewer [inputViewerComponent]="sample"></hlx-example-viewer>
+  }
+</hlx-page>

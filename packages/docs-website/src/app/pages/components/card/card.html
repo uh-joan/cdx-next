@@ -1,0 +1,12 @@
+<hlx-page
+  [title]="'Card'"
+  [subtitle]="'Cards are used to group similar concepts and tasks together to make it easier for users to scan, read, and get things done.'"
+  [section]="'Components'"
+  componentName="card"
+>
+  <h2>Examples</h2>
+
+  @for (sample of sampleList; track sample.exampleName) {
+  <hlx-example-viewer [inputViewerComponent]="sample"></hlx-example-viewer>
+  }
+</hlx-page>

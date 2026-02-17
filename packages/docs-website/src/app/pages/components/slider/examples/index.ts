@@ -1,1 +1,1 @@
-export * from './slider-simple.example.component';
+export * from './slider-simple.example';

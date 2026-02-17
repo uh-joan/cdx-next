@@ -1,0 +1,7 @@
+@if (inline()) {
+<a underline [href]="url()" target="_blank"> {{ text() || url() }} </a>
+} @else {
+<p>
+  <a underline [href]="url()" target="_blank"> {{ text() || url() }} </a>
+</p>
+}

@@ -1,0 +1,17 @@
+<hlx-page
+  [title]="'Header'"
+  [subtitle]="'The product UI header displays primary navigation within applications.'"
+  [section]="'Components'"
+>
+  <h2>Module Import for HLX Header</h2>
+
+  <cdx-highlight [text]="moduleText"></cdx-highlight>
+
+  <mat-divider></mat-divider>
+
+  <h2>Examples</h2>
+
+  @for (sample of sampleList; track sample.exampleName) {
+  <hlx-example-viewer [inputViewerComponent]="sample"></hlx-example-viewer>
+  }
+</hlx-page>

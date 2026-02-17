@@ -1,0 +1,61 @@
+<hlx-page
+  [title]="'Highcharts'"
+  [subtitle]="'Highcharts is a modern, full-featured SVG-based charting and visualization library. It offers a wide variety of different charts and maps, that can easily be implemented into our products.'"
+  [section]="'Components'"
+>
+  <h2>Installation</h2>
+
+  <cdx-highlight [text]="'npm install highcharts --save'"></cdx-highlight>
+
+  <mat-divider></mat-divider>
+  <h2>Usage</h2>
+  <p>
+    Use Highcharts.setOptions to apply the HLX theme globally. The same options
+    can be referenced later with Highcharts.getOptions(). Although its usage is
+    optional, Highcharts does provide an official wrapper for Angular that helps
+    with container management among other features. For extensive information on
+    Highcharts options and functions, visit the official Highcharts API pages.
+  </p>
+  <cdx-highlight [text]="moduleText"></cdx-highlight>
+  <mat-divider></mat-divider>
+  <h2>Accessibility</h2>
+  <p>
+    Always include the
+    <cdx-external-link
+      [text]="'Accessibility Module'"
+      [url]="'https://www.highcharts.com/docs/accessibility/accessibility-module'"
+    ></cdx-external-link
+    >, unless there is an explicit reason not to do so. Including this module
+    will make your charts compatible with assistive technologies used by people
+    with disabilities, and also improve the usability of your charts, helping
+    you reach a broader audience.
+  </p>
+  <p>
+    To include the module, import and initialize it on the core Highcharts
+    library. Other modules should be initalized before the Accessibility module.
+  </p>
+  <cdx-highlight [text]="stylesText"></cdx-highlight>
+  <mat-divider></mat-divider>
+  <h2>Styled Mode</h2>
+  <p>
+    For styledMode to work you need to import the default style sheet
+    <cdx-external-link
+      [text]="'highcharts.scss'"
+      [url]="'https://code.highcharts.com/css/highcharts.css'"
+    ></cdx-external-link>
+    . For HLX colors you also need to import theme-highcharts.scss.
+  </p>
+  <p>
+    With styledMode enabled you have full control over CSS overrides. There's
+    just one caveat: After enabling styled mode you can no longer style with
+    chart options. Some rare cases require styledMode. E.g. increasing the chart
+    colorCount above the limit of 10 can only be done with styledMode disabled.
+  </p>
+
+  <mat-divider></mat-divider>
+
+  <h2>Examples</h2>
+  @for (sample of sampleList; track sample.exampleName) {
+  <hlx-example-viewer [inputViewerComponent]="sample"></hlx-example-viewer>
+  }
+</hlx-page>

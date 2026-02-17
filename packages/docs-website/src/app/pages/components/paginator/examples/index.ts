@@ -1,1 +1,1 @@
-export * from './paginator-basic.example.component';
+export * from './paginator-basic.example';

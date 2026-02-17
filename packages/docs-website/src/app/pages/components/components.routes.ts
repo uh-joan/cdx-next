@@ -1,290 +1,212 @@
 import { Routes } from '@angular/router';
 
-import { ExamplesComponent } from '../../core/example-page/example-page';
-import { ComponentsComponent } from './components.component';
-import { ExampleItemResolver } from './examples-item-resolver';
-import { ExamplesResolver } from './examples-resolver';
+import { Components } from './components';
 
 export const componentsRoutes: Routes = [
   {
     path: '',
-    component: ComponentsComponent,
+    component: Components,
     children: [
       {
         path: 'components-overview',
         loadComponent: () =>
-          import('./components-overview/components-overview.component').then(
-            (m) => m.ComponentsOverviewComponent,
+          import('./components-overview/components-overview').then(
+            (m) => m.ComponentsOverview,
           ),
       },
       {
         path: 'autocomplete',
         loadComponent: () =>
-          import('./autocomplete/autocomplete.component').then(
-            (m) => m.AutocompleteComponent,
-          ),
+          import('./autocomplete/autocomplete').then((m) => m.Autocomplete),
       },
       {
         path: 'badge',
-        loadComponent: () =>
-          import('./badge/badge.component').then((m) => m.BadgeComponent),
+        loadComponent: () => import('./badge/badge').then((m) => m.Badge),
       },
       {
         path: 'breadcrumbs',
         loadComponent: () =>
-          import('./breadcrumbs/breadcrumbs.component').then(
-            (m) => m.BreadcrumbsComponent,
-          ),
+          import('./breadcrumbs/breadcrumbs').then((m) => m.Breadcrumbs),
       },
       {
         path: 'buttons',
-        loadComponent: () =>
-          import('./buttons/buttons.component').then((m) => m.ButtonsComponent),
+        loadComponent: () => import('./buttons/buttons').then((m) => m.Buttons),
       },
       {
         path: 'button-toggle',
         loadComponent: () =>
-          import('./button-toggle/button-toggle.component').then(
-            (m) => m.ButtonToggleComponent,
-          ),
+          import('./button-toggle/button-toggle').then((m) => m.ButtonToggle),
       },
       {
         path: 'card',
-        loadComponent: () =>
-          import('./card/card.component').then((m) => m.CardComponent),
+        loadComponent: () => import('./card/card').then((m) => m.Card),
       },
       {
         path: 'checkbox',
         loadComponent: () =>
-          import('./checkbox/checkbox.component').then(
-            (m) => m.CheckboxComponent,
-          ),
+          import('./checkbox/checkbox').then((m) => m.Checkbox),
       },
       {
         path: 'chips',
-        loadComponent: () =>
-          import('./chips/chips.component').then((m) => m.ChipsComponent),
+        loadComponent: () => import('./chips/chips').then((m) => m.Chips),
       },
       {
         path: 'data-grid',
         loadComponent: () =>
-          import('./data-grid/data-grid.component').then(
-            (m) => m.DataGridComponent,
-          ),
+          import('./data-grid/data-grid').then((m) => m.DataGrid),
       },
       {
         path: 'date-picker',
         loadComponent: () =>
-          import('./date-picker/date-picker.component').then(
-            (m) => m.DatePickerComponent,
-          ),
+          import('./date-picker/date-picker').then((m) => m.DatePicker),
       },
       {
         path: 'dialog',
-        loadComponent: () =>
-          import('./dialog/dialog.component').then((m) => m.DialogComponent),
+        loadComponent: () => import('./dialog/dialog').then((m) => m.Dialog),
       },
       {
         path: 'divider',
-        loadComponent: () =>
-          import('./divider/divider.component').then((m) => m.DividerComponent),
+        loadComponent: () => import('./divider/divider').then((m) => m.Divider),
       },
       {
         path: 'expansion-panel',
         loadComponent: () =>
-          import('./expansion-panel/expansion-panel.component').then(
-            (m) => m.ExpansionPanelComponent,
+          import('./expansion-panel/expansion-panel').then(
+            (m) => m.ExpansionPanel,
           ),
       },
       {
         path: 'footer',
-        loadComponent: () =>
-          import('./footer/footer.component').then((m) => m.FooterComponent),
+        loadComponent: () => import('./footer/footer').then((m) => m.Footer),
       },
       {
         path: 'form-field',
         loadComponent: () =>
-          import('./form-field/form-field.component').then(
-            (m) => m.FormFieldComponent,
-          ),
+          import('./form-field/form-field').then((m) => m.FormField),
       },
       {
         path: 'header',
-        loadComponent: () =>
-          import('./header/header.component').then((m) => m.HeaderComponent),
+        loadComponent: () => import('./header/header').then((m) => m.Header),
       },
       {
         path: 'highcharts',
         loadComponent: () =>
-          import('./highcharts/highcharts.component').then(
-            (m) => m.HighchartsComponent,
-          ),
+          import('./highcharts/highcharts').then((m) => m.Highcharts),
       },
       {
         path: 'icons',
-        loadComponent: () =>
-          import('./icons/icons.component').then((m) => m.IconsComponent),
+        loadComponent: () => import('./icons/icons').then((m) => m.Icons),
       },
       {
         path: 'list',
-        loadComponent: () =>
-          import('./list/list.component').then((m) => m.ListComponent),
+        loadComponent: () => import('./list/list').then((m) => m.List),
       },
       {
         path: 'menu',
-        loadComponent: () =>
-          import('./menu/menu.component').then((m) => m.MenuComponent),
+        loadComponent: () => import('./menu/menu').then((m) => m.Menu),
       },
       {
         path: 'notifications',
         loadComponent: () =>
-          import('./notifications/notifications.component').then(
-            (m) => m.NotificationsComponent,
-          ),
+          import('./notifications/notifications').then((m) => m.Notifications),
       },
       {
         path: 'paginator',
         loadComponent: () =>
-          import('./paginator/paginator.component').then(
-            (m) => m.PaginatorComponent,
-          ),
+          import('./paginator/paginator').then((m) => m.Paginator),
       },
       {
         path: 'progress-bar',
         loadComponent: () =>
-          import('./progress-bar/progress-bar.component').then(
-            (m) => m.ProgressBarComponent,
-          ),
+          import('./progress-bar/progress-bar').then((m) => m.ProgressBar),
       },
       {
         path: 'progress-spinner',
         loadComponent: () =>
-          import('./progress-spinner/progress-spinner.component').then(
-            (m) => m.ProgressSpinnerComponent,
+          import('./progress-spinner/progress-spinner').then(
+            (m) => m.ProgressSpinner,
           ),
       },
       {
         path: 'radio-button',
         loadComponent: () =>
-          import('./radio-button/radio-button.component').then(
-            (m) => m.RadioButtonComponent,
-          ),
+          import('./radio-button/radio-button').then((m) => m.RadioButton),
       },
       {
         path: 'select',
-        loadComponent: () =>
-          import('./select/select.component').then((m) => m.SelectComponent),
+        loadComponent: () => import('./select/select').then((m) => m.Select),
       },
       {
         path: 'sidenav',
-        loadComponent: () =>
-          import('./sidenav/sidenav.component').then((m) => m.SidenavComponent),
+        loadComponent: () => import('./sidenav/sidenav').then((m) => m.Sidenav),
       },
       {
         path: 'skeleton-loader',
         loadComponent: () =>
-          import('./skeleton-loader/skeleton-loader.component').then(
-            (m) => m.SkeletonLoaderComponent,
+          import('./skeleton-loader/skeleton-loader').then(
+            (m) => m.SkeletonLoader,
           ),
       },
       {
         path: 'slide-toggle',
         loadComponent: () =>
-          import('./slide-toggle/slide-toggle.component').then(
-            (m) => m.SlideToggleComponent,
-          ),
+          import('./slide-toggle/slide-toggle').then((m) => m.SlideToggle),
       },
       {
         path: 'slider',
-        loadComponent: () =>
-          import('./slider/slider.component').then((m) => m.SliderComponent),
+        loadComponent: () => import('./slider/slider').then((m) => m.Slider),
       },
       {
         path: 'snackbar',
         loadComponent: () =>
-          import('./snackbar/snackbar.component').then(
-            (m) => m.SnackbarComponent,
-          ),
+          import('./snackbar/snackbar').then((m) => m.Snackbar),
       },
       {
         path: 'sort-header',
         loadComponent: () =>
-          import('./sort-header/sort-header.component').then(
-            (m) => m.SortHeaderComponent,
-          ),
+          import('./sort-header/sort-header').then((m) => m.SortHeader),
       },
       {
         path: 'stepper',
-        loadComponent: () =>
-          import('./stepper/stepper.component').then((m) => m.StepperComponent),
+        loadComponent: () => import('./stepper/stepper').then((m) => m.Stepper),
       },
       {
         path: 'table',
-        loadComponent: () =>
-          import('./table/table.component').then((m) => m.TableComponent),
+        loadComponent: () => import('./table/table').then((m) => m.Table),
       },
       {
         path: 'tabs',
-        loadComponent: () =>
-          import('./tabs/tabs.component').then((m) => m.TabsComponent),
+        loadComponent: () => import('./tabs/tabs').then((m) => m.Tabs),
       },
       {
         path: 'text-area',
         loadComponent: () =>
-          import('./text-area/text-area.component').then(
-            (m) => m.TextAreaComponent,
-          ),
+          import('./text-area/text-area').then((m) => m.TextArea),
       },
       {
         path: 'text-input',
         loadComponent: () =>
-          import('./text-input/text-input.component').then(
-            (m) => m.TextInputComponent,
-          ),
+          import('./text-input/text-input').then((m) => m.TextInput),
       },
       {
         path: 'time-picker',
         loadComponent: () =>
-          import('./time-picker/time-picker.component').then(
-            (c) => c.TimePickerComponent,
-          ),
+          import('./time-picker/time-picker').then((m) => m.TimePicker),
       },
       {
         path: 'toolbar',
-        loadComponent: () =>
-          import('./toolbar/toolbar.component').then((m) => m.ToolbarComponent),
+        loadComponent: () => import('./toolbar/toolbar').then((m) => m.Toolbar),
       },
       {
         path: 'tooltips',
         loadComponent: () =>
-          import('./tooltips/tooltips.component').then(
-            (m) => m.TooltipsComponent,
-          ),
+          import('./tooltips/tooltips').then((m) => m.Tooltips),
       },
       {
         path: 'tree',
-        loadComponent: () =>
-          import('./tree/tree.component').then((m) => m.TreeComponent),
+        loadComponent: () => import('./tree/tree').then((m) => m.Tree),
       },
       { path: '', redirectTo: 'components-overview', pathMatch: 'full' },
-    ],
-  },
-];
-
-export const examplesRoutes: Routes = [
-  {
-    path: ':component',
-    resolve: { examples: ExamplesResolver },
-    children: [
-      {
-        path: '',
-        component: ExamplesComponent,
-      },
-      {
-        path: ':exampleName',
-        component: ExamplesComponent,
-        resolve: { examples: ExampleItemResolver },
-      },
     ],
   },
 ];

@@ -18,5 +18,8 @@
   "prettier.useEditorConfig": false,
   "scss.validate": false,
   "stylelint.enable": true,
-  "stylelint.validate": ["css", "postcss", "scss"]
+  "stylelint.validate": ["css", "postcss", "scss"],
+  "[typescript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  }
 }

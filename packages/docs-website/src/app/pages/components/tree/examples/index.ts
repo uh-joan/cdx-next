@@ -1,1 +1,1 @@
-export * from './tree-simple.example.component';
+export * from './tree-simple.example';

@@ -1,7 +1,6 @@
 import { inject, Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, Resolve, Router } from '@angular/router';
 
-import { InputViewerComponent } from '../../../core/example-viewer/example-viewer.model';
 import { examplesMap } from './examples-map';
 
 @Injectable({ providedIn: 'root' })
@@ -34,7 +33,7 @@ export class ExampleItemResolver implements Resolve<unknown[] | null> {
     const normalized = this.normalizeExampleName(exampleName);
 
     const match = Object.values(samples).find(
-      (s: InputViewerComponent) => s.exampleName === normalized,
+      (s) => s.exampleName === normalized,
     );
 
     if (!match) {

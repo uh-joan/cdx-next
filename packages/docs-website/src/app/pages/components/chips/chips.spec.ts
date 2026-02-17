@@ -1,0 +1,21 @@
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+
+import { Chips } from './chips';
+
+describe('Chips', () => {
+  let component: Chips;
+  let fixture: ComponentFixture<Chips>;
+
+  beforeEach(() => {
+    TestBed.configureTestingModule({
+      imports: [Chips],
+    });
+    fixture = TestBed.createComponent(Chips);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+});

@@ -2,12 +2,12 @@ import { importProvidersFrom } from '@angular/core';
 import { Routes } from '@angular/router';
 import { OneTrustModule } from '@cdx/ngx-branding';
 
-import { LayoutComponent } from './core/layout/layout.component';
+import { Layout } from './core/layout/layout';
 
 export const routes: Routes = [
   {
     path: '',
-    component: LayoutComponent,
+    component: Layout,
     providers: [
       importProvidersFrom(
         OneTrustModule.forRoot({
@@ -18,8 +18,7 @@ export const routes: Routes = [
     children: [
       {
         path: 'home',
-        loadComponent: () =>
-          import('./pages/home/home.component').then((c) => c.HomeComponent),
+        loadComponent: () => import('./pages/home/home').then((c) => c.Home),
         data: {
           breadcrumb: {
             info: 'home',
@@ -71,7 +70,7 @@ export const routes: Routes = [
   {
     path: 'examples',
     loadChildren: () =>
-      import('./pages/components/components.routes').then(
+      import('./pages/components/examples.routes').then(
         (m) => m.examplesRoutes,
       ),
   },

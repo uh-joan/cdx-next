@@ -1,0 +1,12 @@
+<hlx-page
+  [title]="'Menu'"
+  [subtitle]="'A menu is a floating panel containing a list of options that allow users to make a selection from multiple options. They appear when users interact with a button, action, or other control. They are less prominent and take up less space than selection controls, such as a set of radio buttons.'"
+  [section]="'Components'"
+  componentName="menu"
+>
+  <h2>Examples</h2>
+
+  @for (sample of sampleList; track sample.exampleName) {
+  <hlx-example-viewer [inputViewerComponent]="sample"></hlx-example-viewer>
+  }
+</hlx-page>

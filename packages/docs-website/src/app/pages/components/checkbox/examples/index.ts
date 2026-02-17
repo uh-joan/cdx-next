@@ -1,1 +1,1 @@
-export * from './checkbox-states.example.component';
+export * from './checkbox-states.example';
