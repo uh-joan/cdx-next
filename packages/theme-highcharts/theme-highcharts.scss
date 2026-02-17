@@ -1,3 +1,5 @@
+@use 'sass:list';
+
 /* stylelint-disable color-hex-length */
 $cdx-brand-primary-colors:
   #5e33bf, #16ab03, #cf005b, #5693f5, #ff4e3e, #9c27b0, #cddc39, #00bcd4,
@@ -16,8 +18,8 @@ $cdx-font-family: 'Source Sans Pro', sans-serif;
 @mixin cdx-highcharts-styled-mode-theme(
   $color-palette: $cdx-brand-primary-colors
 ) {
-  @for $i from 1 through length($color-palette) {
-    $color: nth($color-palette, $i);
+  @for $i from 1 through list.length($color-palette) {
+    $color: list.nth($color-palette, $i);
     .highcharts-color-#{$i - 1} {
       fill: $color;
       stroke: $color;
@@ -40,8 +42,8 @@ $hlx-highcharts-colors:
 @mixin hlx-highcharts-styled-mode-theme(
   $color-palette: $hlx-highcharts-colors
 ) {
-  @for $i from 1 through length($color-palette) {
-    $color: nth($color-palette, $i);
+  @for $i from 1 through list.length($color-palette) {
+    $color: list.nth($color-palette, $i);
     .highcharts-color-#{$i - 1} {
       fill: $color;
       stroke: $color;
