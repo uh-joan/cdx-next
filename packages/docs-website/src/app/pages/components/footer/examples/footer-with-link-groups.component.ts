@@ -3,7 +3,8 @@ import {
   HelixFooterComponent,
   HelixFooterGroupComponent,
 } from '@cdx/ngx-branding';
-import { InputViewerComponent } from 'src/app/core/example-viewer/example-viewer.model';
+
+import { InputViewerComponent } from '../../../../core/example-viewer/example-viewer.model';
 
 const htmlCode = `<div class="story">
   <footer hlx-footer groupCompanyLinks()>

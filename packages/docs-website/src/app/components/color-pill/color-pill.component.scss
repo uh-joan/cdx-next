@@ -4,13 +4,13 @@
 :host {
   .color-pill {
     display: flex;
-    align-items: center;
-    border: 1px solid hlx.$border-secondary;
-    background-color: hlx.$surface-minimal;
-    justify-content: space-between;
-    border-radius: 2px;
-    padding: 4px;
     width: 140px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 4px;
+    border: 1px solid hlx.$border-secondary;
+    border-radius: 2px;
+    background-color: hlx.$surface-minimal;
     cursor: pointer;
     text-transform: uppercase;
     transition: box-shadow 0.2s ease-in-out;
@@ -22,9 +22,9 @@
     &__box {
       width: 42px;
       height: 24px;
+      border: 1px solid hlx.$border-invert;
       border-radius: 2px;
       margin-right: 8px;
-      border: 1px solid hlx.$border-invert;
     }
   }
 }

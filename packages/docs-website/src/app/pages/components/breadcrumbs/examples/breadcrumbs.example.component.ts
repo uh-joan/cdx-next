@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
-import { InputViewerComponent } from 'src/app/core/example-viewer/example-viewer.model';
 import { BreadcrumbComponent, BreadcrumbItemDirective } from 'xng-breadcrumb';
+
+import { InputViewerComponent } from '../../../../core/example-viewer/example-viewer.model';
 
 const htmlCode = `<xng-breadcrumb separator=">" class="mat-body-medium">
   <ng-container *xngBreadcrumbItem="let breadcrumb; 

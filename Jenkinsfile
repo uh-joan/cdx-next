@@ -222,7 +222,7 @@ pipeline {
                             '''
                         }
                     } else {
-                        echo '[DryRun] Would deploy website to (helix-v20.dev.sp.aws.clarivate.net)'
+                        echo '[DryRun] Would deploy website to (helix-v21.dev.sp.aws.clarivate.net)'
                     }
                 }
             }

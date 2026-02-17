@@ -4,7 +4,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatRippleModule } from '@angular/material/core';
 import { RouterLink } from '@angular/router';
-import { PageComponent } from 'src/app/core/page/page.component';
+
+import { PageComponent } from '../../../core/page/page.component';
 
 interface ComponentExample {
   title: string;

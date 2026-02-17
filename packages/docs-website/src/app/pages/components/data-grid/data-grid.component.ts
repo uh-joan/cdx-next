@@ -1,10 +1,10 @@
 import { Component, HostBinding } from '@angular/core';
 import { MatDividerModule } from '@angular/material/divider';
-import { ExternalLinkComponent } from 'src/app/components/external-link/external-link.component';
-import { InternalLinkComponent } from 'src/app/components/internal-link/internal-link.component';
-import { ExampleViewerComponent } from 'src/app/core/example-viewer/example-viewer.component';
-import { PageComponent } from 'src/app/core/page/page.component';
 
+import { ExternalLinkComponent } from '../../../components/external-link/external-link.component';
+import { InternalLinkComponent } from '../../../components/internal-link/internal-link.component';
+import { ExampleViewerComponent } from '../../../core/example-viewer/example-viewer.component';
+import { PageComponent } from '../../../core/page/page.component';
 import * as samples from './examples';
 
 @Component({

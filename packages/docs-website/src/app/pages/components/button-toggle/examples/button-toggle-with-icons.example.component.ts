@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatIconModule } from '@angular/material/icon';
-import { InputViewerComponent } from 'src/app/core/example-viewer/example-viewer.model';
+
+import { InputViewerComponent } from '../../../../core/example-viewer/example-viewer.model';
 
 const htmlCode = `<div class="story">
   <mat-button-toggle-group 

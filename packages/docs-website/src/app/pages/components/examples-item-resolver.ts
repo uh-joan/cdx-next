@@ -1,7 +1,7 @@
 import { inject, Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, Resolve, Router } from '@angular/router';
-import { InputViewerComponent } from 'src/app/core/example-viewer/example-viewer.model';
 
+import { InputViewerComponent } from '../../../core/example-viewer/example-viewer.model';
 import { examplesMap } from './examples-map';
 
 @Injectable({ providedIn: 'root' })

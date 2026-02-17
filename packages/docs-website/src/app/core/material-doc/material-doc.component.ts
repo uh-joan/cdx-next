@@ -1,9 +1,9 @@
 import { Component, computed, input } from '@angular/core';
 import { MatDividerModule } from '@angular/material/divider';
-import { ExternalLinkComponent } from 'src/app/components/external-link/external-link.component';
 
 // eslint-disable-next-line @nx/enforce-module-boundaries
 import packageJson from '../../../../../../package.json';
+import { ExternalLinkComponent } from '../../components/external-link/external-link.component';
 
 @Component({
   selector: 'hlx-material-doc',

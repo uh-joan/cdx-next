@@ -1,7 +1,8 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import * as Highcharts from 'highcharts';
 import { HighchartsChartComponent } from 'highcharts-angular';
-import { InputViewerComponent } from 'src/app/core/example-viewer/example-viewer.model';
+
+import { InputViewerComponent } from '../../../../core/example-viewer/example-viewer.model';
 
 const htmlCode = `<div class="story">
     <highcharts-chart
@@ -11,8 +12,8 @@ const htmlCode = `<div class="story">
 </div>`;
 
 const styleCode = `
-@use '@cdx/theme-highcharts' as highcharts;
 @import 'highcharts/css/highcharts.css';
+@use '@cdx/theme-highcharts' as highcharts;
 
 .highcharts-styled-container {
   @include highcharts.hlx-highcharts-styled-mode-theme;

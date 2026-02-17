@@ -18,7 +18,7 @@
           "vendorChunk": true
         }
       },
-      "executor": "@angular-devkit/build-angular:browser-esbuild",
+      "executor": "@nx/vite:build",
       "options": {
         "assets": [
           "packages/ngx-reference-app/src/favicon.ico",
@@ -30,7 +30,10 @@
         "outputPath": "dist/packages/ngx-reference-app",
         "scripts": [],
         "styles": ["packages/ngx-reference-app/src/styles.scss"],
-        "tsConfig": "packages/ngx-reference-app/tsconfig.app.json"
+        "tsConfig": "packages/ngx-reference-app/tsconfig.app.json",
+        "stylePreprocessorOptions": {
+          "includePaths": ["packages"]
+        }
       },
       "outputs": ["{options.outputPath}"]
     },
@@ -57,7 +60,7 @@
       },
       "continuous": true,
       "defaultConfiguration": "development",
-      "executor": "@angular-devkit/build-angular:dev-server"
+      "executor": "@nx/vite:dev-server"
     }
   }
 }

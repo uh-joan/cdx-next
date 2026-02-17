@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatListModule } from '@angular/material/list';
-import { InputViewerComponent } from 'src/app/core/example-viewer/example-viewer.model';
+
+import { InputViewerComponent } from '../../../../core/example-viewer/example-viewer.model';
 
 const htmlCode = `<div class="story">
     <mat-list style="width: 100%;">

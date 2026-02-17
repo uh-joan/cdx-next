@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { InputViewerComponent } from 'src/app/core/example-viewer/example-viewer.model';
+
+import { InputViewerComponent } from '../../../../core/example-viewer/example-viewer.model';
 
 const htmlCode = `<div class="story">
   <mat-form-field appearance="fill">

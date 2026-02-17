@@ -8,7 +8,8 @@ import {
   MatTreeFlattener,
   MatTreeModule,
 } from '@angular/material/tree';
-import { InputViewerComponent } from 'src/app/core/example-viewer/example-viewer.model';
+
+import { InputViewerComponent } from '../../../../core/example-viewer/example-viewer.model';
 
 const htmlCode = `<div class="story">
   <mat-tree [dataSource]="dataSource" 

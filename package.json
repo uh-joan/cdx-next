@@ -43,6 +43,7 @@
     "xng-breadcrumb": "^14.1.0"
   },
   "devDependencies": {
+    "@analogjs/vite-plugin-angular": "^2.2.3",
     "@angular-devkit/architect": "^0.2101.4",
     "@angular-devkit/build-angular": "21.1.4",
     "@angular-eslint/eslint-plugin": "21.2.0",
@@ -60,12 +61,13 @@
     "@eslint/js": "^9.39.2",
     "@namics/stylelint-bem": "^10.1.0",
     "@ngneat/spectator": "^19.4.1",
-    "@nx/angular": "^22.5.0",
-    "@nx/eslint": "22.5.0",
-    "@nx/eslint-plugin": "^22.5.0",
-    "@nx/jest": "22.5.0",
-    "@nx/js": "22.5.0",
-    "@nx/web": "22.5.0",
+    "@nx/angular": "^22.5.1",
+    "@nx/eslint": "22.5.1",
+    "@nx/eslint-plugin": "^22.5.1",
+    "@nx/jest": "22.5.1",
+    "@nx/js": "22.5.1",
+    "@nx/vite": "^22.5.1",
+    "@nx/web": "22.5.1",
     "@testing-library/jest-dom": "^6.9.1",
     "@types/common-tags": "^1.8.4",
     "@types/jest": "^30.0.0",
@@ -111,6 +113,6 @@
     "stylelint-config-standard": "^24.0.0",
     "stylelint-config-standard-scss": "^3.0.0",
     "typescript-eslint": "^8.40.0",
-    "vite": "^6.0.7"
+    "vite": "^7.3.1"
   }
 }

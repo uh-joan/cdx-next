@@ -8,8 +8,8 @@ import {
   ViewContainerRef,
 } from '@angular/core';
 import { MatTabsModule } from '@angular/material/tabs';
-import { HighlightComponent } from 'src/app/components/highlight/highlight.component';
 
+import { HighlightComponent } from '../../components/highlight/highlight.component';
 import { InputViewerComponent } from './example-viewer.model';
 
 @Component({

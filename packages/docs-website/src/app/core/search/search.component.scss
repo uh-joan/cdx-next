@@ -1,29 +1,29 @@
 .search-wrapper {
-  display: flex;
-  align-items: center;
   position: relative;
+  display: flex;
   height: 100%;
+  align-items: center;
 
   &__search-icon {
-    font-size: 24px;
     color: white;
     cursor: pointer;
+    font-size: 24px;
     transition: transform 1s ease;
   }
 
   &__input {
     width: 0;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 8px 16px;
+    border: none;
+    background: transparent;
+    color: white;
+    font-size: 16px;
     opacity: 0;
     transition:
       width 0.25s ease,
       opacity 0.1s ease;
-    color: white;
-    background: transparent;
-    border: none;
-    padding: 8px 16px;
-    font-size: 16px;
-    max-width: 100%;
-    box-sizing: border-box;
   }
 
   &__input.visible {
@@ -36,7 +36,7 @@
   }
 
   &__close-icon {
-    cursor: pointer;
     margin-left: 8px;
+    cursor: pointer;
   }
 }

@@ -1,9 +1,9 @@
 import { Component, HostBinding } from '@angular/core';
 import { MatDividerModule } from '@angular/material/divider';
-import { HighlightComponent } from 'src/app/components/highlight/highlight.component';
-import { ExampleViewerComponent } from 'src/app/core/example-viewer/example-viewer.component';
-import { PageComponent } from 'src/app/core/page/page.component';
 
+import { HighlightComponent } from '../../../components/highlight/highlight.component';
+import { ExampleViewerComponent } from '../../../core/example-viewer/example-viewer.component';
+import { PageComponent } from '../../../core/page/page.component';
 import * as samples from './examples';
 
 @Component({

@@ -3,30 +3,31 @@
 .component-list {
   display: flex;
   flex-wrap: wrap;
-  padding: 30px 30px 100px;
   justify-content: center;
+  padding: 30px 30px 100px;
 
   &__item {
-    cursor: pointer;
-    margin: 20px;
     width: 300px;
+    margin: 20px;
+    cursor: pointer;
     transition: all 0.2s;
+
     &:hover {
       transform: scale(1.05);
     }
 
     .item-header {
       height: 170px;
+      padding: 0;
       background-color: hlx.$surface-contrast;
-      background-size: 50%;
       background-position: center;
       background-repeat: no-repeat;
-      padding: 0;
+      background-size: 50%;
     }
 
     .item-content {
-      margin-top: 8px;
       min-height: 100px;
+      margin-top: 8px;
     }
   }
 }

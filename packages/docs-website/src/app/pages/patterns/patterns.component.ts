@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { LeftNavigationComponent } from 'src/app/core/left-navigation/left-navigation.component';
-import { NavbarSection } from 'src/app/core/left-navigation/left-navigation.interface';
+
+import { LeftNavigationComponent } from '../../core/left-navigation/left-navigation.component';
+import { NavbarSection } from '../../core/left-navigation/left-navigation.interface';
 
 @Component({
   selector: 'cdx-patterns',

@@ -6,7 +6,8 @@ import {
   MatTimepickerModule,
   MatTimepickerOption,
 } from '@angular/material/timepicker';
-import { InputViewerComponent } from 'src/app/core/example-viewer/example-viewer.model';
+
+import { InputViewerComponent } from '../../../../core/example-viewer/example-viewer.model';
 
 const htmlCode = `<div class="story">
     <div>

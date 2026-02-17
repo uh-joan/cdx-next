@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router';
-import { ExamplesComponent } from 'src/app/core/example-page/example-page';
 
+import { ExamplesComponent } from '../../core/example-page/example-page';
 import { ComponentsComponent } from './components.component';
 import { ExampleItemResolver } from './examples-item-resolver';
 import { ExamplesResolver } from './examples-resolver';

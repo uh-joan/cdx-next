@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-// @ts-expect-error no type is defined here
 import { HIGHCHARTS_HLX_THEME } from '@cdx/theme-highcharts';
 import * as Highcharts from 'highcharts';
 import { HighchartsChartComponent } from 'highcharts-angular';
-import { InputViewerComponent } from 'src/app/core/example-viewer/example-viewer.model';
+
+import { InputViewerComponent } from '../../../../core/example-viewer/example-viewer.model';
 
 const htmlCode = `<div class="story">
     <highcharts-chart

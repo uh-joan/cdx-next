@@ -1,17 +1,17 @@
 /* stylelint-disable plugin/stylelint-bem-namics */
 @use '@angular/material' as mat;
-@use '@cdx/theme-angular-material' as cdx;
+@use '@cdx/theme-angular-material' as hlx;
 @use '@cdx/ngx-branding/header/theme' as header;
 @use '@cdx/ngx-branding/footer/theme' as footer;
 
-@include cdx.default;
-@include header.theme(cdx.$light-theme);
-@include footer.theme(cdx.$light-theme);
+@include hlx.default;
+@include header.theme(hlx.$light-theme);
+@include footer.theme(hlx.$light-theme);
 
-@include cdx.default(cdx.$helix-theme, 'helix-theme-material');
+@include hlx.default(hlx.$helix-theme, 'helix-theme-material');
 
 .helix-theme-material {
-  @include cdx.theme-helix-overrides;
+  @include hlx.theme-helix-overrides;
 }
 
 :root {

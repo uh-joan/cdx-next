@@ -4,9 +4,11 @@
   "type": "module",
   "exports": {
     "import": "./dist/theme-highcharts.mjs",
-    "sass": "./theme-highcharts.scss"
+    "types": "./dist/theme-highcharts.d.mts",
+    "sass": "./_index.scss"
   },
   "main": "./dist/theme-highcharts.mjs",
+  "types": "./dist/theme-highcharts.d.mts",
   "scripts": {
     "build": "vite build",
     "deploy": "npm publish",
@@ -15,5 +17,8 @@
   "dependencies": {
     "highcharts": "^12.5.0"
   },
-  "baseUrl": "."
+  "baseUrl": ".",
+  "devDependencies": {
+    "vite-plugin-dts": "^4.5.4"
+  }
 }

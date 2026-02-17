@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { MatCheckboxModule } from '@angular/material/checkbox';
-import { InputViewerComponent } from 'src/app/core/example-viewer/example-viewer.model';
+
+import { InputViewerComponent } from '../../../../core/example-viewer/example-viewer.model';
 
 const htmlCode = `<div class="story">
     <mat-checkbox 

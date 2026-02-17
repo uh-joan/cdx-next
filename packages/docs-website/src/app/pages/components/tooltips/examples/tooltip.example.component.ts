@@ -7,7 +7,8 @@ import {
   MAT_TOOLTIP_SCROLL_STRATEGY,
   MatTooltipModule,
 } from '@angular/material/tooltip';
-import { InputViewerComponent } from 'src/app/core/example-viewer/example-viewer.model';
+
+import { InputViewerComponent } from '../../../../core/example-viewer/example-viewer.model';
 
 const htmlCode = `<div class="story">
   <button

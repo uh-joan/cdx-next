@@ -174,7 +174,6 @@
       "inputs": ["production", "^production"]
     },
     "build": {
-      "cache": true,
       "dependsOn": ["^build"],
       "inputs": ["production", "^production"]
     },

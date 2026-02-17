@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
+
 import {
   CardCComponent,
   CardCInput,
-} from 'src/app/components/card-c/card-c.component';
+} from '../../components/card-c/card-c.component';
 
 @Component({
   templateUrl: './home.component.html',

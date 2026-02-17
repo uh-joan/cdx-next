@@ -1,7 +1,8 @@
 // TODO ADJUST THE HEADER TO REMOVE THE ERROR IN CONSOLE
 import { Component } from '@angular/core';
 import { HelixHeaderComponent } from '@cdx/ngx-branding';
-import { InputViewerComponent } from 'src/app/core/example-viewer/example-viewer.model';
+
+import { InputViewerComponent } from '../../../../core/example-viewer/example-viewer.model';
 
 const htmlCode = `<div class="story">
     <header hlx-header></header>

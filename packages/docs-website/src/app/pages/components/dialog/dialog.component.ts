@@ -1,8 +1,8 @@
 import { Component, HostBinding } from '@angular/core';
-import { ExampleViewerComponent } from 'src/app/core/example-viewer/example-viewer.component';
-import { InputViewerComponent } from 'src/app/core/example-viewer/example-viewer.model';
-import { PageComponent } from 'src/app/core/page/page.component';
 
+import { ExampleViewerComponent } from '../../../core/example-viewer/example-viewer.component';
+import { InputViewerComponent } from '../../../core/example-viewer/example-viewer.model';
+import { PageComponent } from '../../../core/page/page.component';
 import * as samples from './examples';
 
 @Component({

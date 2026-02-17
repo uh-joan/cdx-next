@@ -3,39 +3,39 @@
 
   .header {
     &__navigation {
-      height: 100%;
       display: flex;
-      justify-content: space-between;
+      height: 100%;
       align-items: center;
+      justify-content: space-between;
       gap: 2px;
     }
 
     &__link {
       height: 2.5rem;
-      text-transform: capitalize;
       border-radius: 2px;
-      text-decoration: none;
       color: white;
+      text-decoration: none;
+      text-transform: capitalize;
 
       &--active {
-        background: var(--components-invert-hover, rgba(255, 255, 255, 0.08));
+        background: var(--components-invert-hover, rgb(255 255 255 / 8%));
         cursor: default;
         pointer-events: none;
       }
     }
 
     &__menu {
+      display: inline-flex;
       height: 2.5rem;
+      align-items: center;
       border-radius: 2px;
       color: white;
-      display: inline-flex;
-      align-items: center;
       white-space: nowrap;
     }
 
     .hlx-header__global {
-      column-gap: 2rem;
       align-items: center;
+      column-gap: 2rem;
     }
 
     .hlx-header__product-name-or-logo {
