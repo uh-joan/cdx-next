@@ -14,7 +14,7 @@ export const routes: Routes = [
       {
         path: 'sandwich',
         loadComponent: () =>
-          import('./pages/sandwich/sandwich').then((m) => m.Sandwitch),
+          import('./pages/sandwich/sandwich').then((m) => m.Sandwich),
       },
       {
         path: '',

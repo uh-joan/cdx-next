@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTabsModule } from '@angular/material/tabs';
-import { AuthenticationModule } from '@cdx/ngx-authentication';
+import { RouterModule } from '@angular/router';
 import {
   FooterModule,
   HelixFooterComponent,
@@ -22,6 +22,7 @@ import { ThemeSelector } from './theme-selector/theme-selector';
   templateUrl: './layout.html',
   styleUrls: ['./layout.scss'],
   imports: [
+    RouterModule,
     FooterModule,
     MatIconModule,
     MatTabsModule,
@@ -35,7 +36,6 @@ import { ThemeSelector } from './theme-selector/theme-selector';
     HelixHeaderGlobalComponent,
     HelixFooterComponent,
     HelixFooterLinkDirective,
-    AuthenticationModule,
   ],
 })
 export class Layout {}

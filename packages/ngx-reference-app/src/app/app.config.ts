@@ -3,6 +3,7 @@ import {
   importProvidersFrom,
   provideZonelessChangeDetection,
 } from '@angular/core';
+import { provideNativeDateAdapter } from '@angular/material/core';
 import { provideRouter, withComponentInputBinding } from '@angular/router';
 import {
   AnalyticsContextSchema,
@@ -30,6 +31,7 @@ const ANALYTICS_CONTEXT: AnalyticsContextSchema = {
 export const appConfig: ApplicationConfig = {
   providers: [
     provideZonelessChangeDetection(),
+    provideNativeDateAdapter(),
     provideRouter(routes, withComponentInputBinding()),
     importProvidersFrom(
       OneTrustModule.forRoot(ONE_TRUST_SETTINGS),
