@@ -42,7 +42,7 @@
         "index": "packages/docs-website/src/index.html",
         "inlineStyleLanguage": "scss",
         "main": "packages/docs-website/src/main.ts",
-        "outputPath": "dist/packages/docs-website",
+        "outputPath": "../dist/packages/docs-website",
         "scripts": [],
         "styles": [
           "packages/docs-website/src/styles.scss",
