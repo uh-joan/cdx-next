@@ -30,7 +30,7 @@ interface ComponentExample {
 export class ComponentsOverview {
   @HostBinding('class') hostClass = 'cdx-section';
 
-  basePath = '../assets/components/scenes/';
+  basePath = '/components/scenes/';
   extension = '.png';
 
   components: ComponentExample[] = [

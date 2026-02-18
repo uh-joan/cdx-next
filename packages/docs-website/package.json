@@ -10,6 +10,6 @@
     "highcharts-angular": "5.4.0",
     "marked": "^17.0.1",
     "ngx-highlightjs": "^14.0.0",
-    "ngx-skeleton-loader": "^11.0.0"
+    "ngx-skeleton-loader": "^12.0.0"
   }
 }

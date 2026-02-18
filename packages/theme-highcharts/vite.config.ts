@@ -1,10 +1,16 @@
+import { createRequire } from 'node:module';
+
 import { resolve } from 'path';
 import { defineConfig } from 'vite';
-import dts from 'vite-plugin-dts';
+
+const require = createRequire(import.meta.url);
+const dts = require('vite-plugin-dts');
+
+const dtsPlugin = dts.default ?? dts;
 
 export default defineConfig({
   plugins: [
-    dts({
+    dtsPlugin({
       insertTypesEntry: true,
       rollupTypes: false,
     }),

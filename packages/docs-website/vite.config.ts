@@ -8,6 +8,12 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 
 export default defineConfig({
   root: resolve(__dirname, 'src'),
+  base: '/',
+  publicDir: resolve(__dirname, 'src/assets'),
+  build: {
+    outDir: resolve(__dirname, '../../dist/packages/docs-website'),
+    emptyOutDir: true,
+  },
   plugins: [
     angular({
       tsconfig: resolve(__dirname, 'tsconfig.app.json'),

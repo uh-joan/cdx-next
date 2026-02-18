@@ -85,7 +85,7 @@
         "buildTarget": "docs-website:build",
         "port": 4200,
         "spa": true,
-        "staticFilePath": "dist/packages/docs-website/browser"
+        "staticFilePath": "dist/packages/docs-website"
       }
     },
     "test": {
