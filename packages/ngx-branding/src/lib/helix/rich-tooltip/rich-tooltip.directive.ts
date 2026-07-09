@@ -18,6 +18,7 @@ import { RichTooltipComponent } from './rich-tooltip.component';
 })
 export class RichTooltipDirective {
   content = input.required<TemplateRef<SafeHtml>>({ alias: 'hlxTooltip' });
+  tooltipTrigger = input<'hover' | 'click'>('hover');
 
   private overlayRef!: OverlayRef | null;
 
@@ -26,6 +27,31 @@ export class RichTooltipDirective {
   private viewContainerRef = inject(ViewContainerRef);
 
   @HostListener('mouseenter')
+  onMouseEnter() {
+    if (this.tooltipTrigger() === 'hover') {
+      this.show();
+    }
+  }
+
+  @HostListener('mouseleave')
+  onMouseLeave() {
+    if (this.tooltipTrigger() === 'hover') {
+      this.hide();
+    }
+  }
+
+  @HostListener('click', ['$event'])
+  onClick(event: MouseEvent) {
+    if (this.tooltipTrigger() === 'click') {
+      event.stopPropagation();
+      if (this.overlayRef) {
+        this.hide();
+      } else {
+        this.show();
+      }
+    }
+  }
+
   show() {
     if (this.overlayRef) return;
 
@@ -74,9 +100,18 @@ export class RichTooltipDirective {
     );
     const tooltipInstance = this.overlayRef.attach(tooltipPortal);
     tooltipInstance.setInput('content', this.content());
+
+    // Handle outside clicks for click-triggered tooltips
+    if (this.tooltipTrigger() === 'click') {
+      const outsideClicksSubscription = this.overlayRef
+        .outsidePointerEvents()
+        .subscribe(() => {
+          this.hide();
+          outsideClicksSubscription.unsubscribe();
+        });
+    }
   }
 
-  @HostListener('mouseleave')
   hide() {
     this.overlayRef?.dispose();
     this.overlayRef = null;

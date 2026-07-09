@@ -7,6 +7,9 @@ const htmlCode = `<div class="story">
   <button mat-flat-button [hlxTooltip]="tooltipTemplate">
     Hover me
   </button>
+  <button mat-flat-button [hlxTooltip]="tooltipTemplate" [tooltipTrigger]="'click'">
+    Click me
+  </button>
   <ng-template #tooltipTemplate>
   <div class="tooltip-content">
     <h6 >Rich tooltip</h6>
@@ -17,6 +20,8 @@ const htmlCode = `<div class="story">
 
 const styleCode = `.story {
   padding: 1rem;
+  display: flex;
+  gap: 1rem;
 }
 .tooltip-content {
   width: 280px;
