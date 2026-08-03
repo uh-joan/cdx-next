@@ -133,6 +133,24 @@
         }
       },
       "plugin": "@nx/js/typescript"
+    },
+    {
+      "plugin": "@nx/eslint/plugin",
+      "options": {
+        "targetName": "lint"
+      },
+      "include": [
+        "packages/docs-website/**/*",
+        "packages/ngx-analytics/**/*",
+        "packages/ngx-authentication/**/*",
+        "packages/ngx-branding/**/*",
+        "packages/ngx-demo-app/**/*",
+        "packages/ngx-reference-app/**/*",
+        "packages/ngx-session-activity/**/*",
+        "packages/ngx-translations/**/*",
+        "packages/theme-angular-material/**/*",
+        "packages/theme-xng-breadcrumb/**/*"
+      ]
     }
   ],
   "pluginsConfig": {

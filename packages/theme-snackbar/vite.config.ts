@@ -8,7 +8,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 export default defineConfig({
   build: {
     lib: {
-      entry: './theme-snackbar.scss',
+      entry: './theme-snackbar.ts',
       name: 'theme-snackbar',
       formats: ['es'],
       fileName: () => 'theme-snackbar.js',
@@ -16,7 +16,7 @@ export default defineConfig({
     outDir: 'dist',
     minify: 'terser',
     sourcemap: true,
-    rollupOptions: {
+    rolldownOptions: {
       output: {
         assetFileNames: (assetInfo) => {
           if (assetInfo.name?.endsWith('.css')) {

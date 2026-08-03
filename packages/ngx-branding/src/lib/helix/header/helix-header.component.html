@@ -7,10 +7,12 @@
     aria-label="Clarivate"
     role="button"
     tabindex="0"
+    (click)="goToMainPage()"
+    (keydown.enter)="goToMainPage()"
+    (keydown.space)="goToMainPage()"
   >
     @if (branded()) {
       <svg
-        (click)="goToMainPage()"
         width="110"
         height="20"
         xmlns="http://www.w3.org/2000/svg"

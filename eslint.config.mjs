@@ -1,27 +1,16 @@
-import path from 'node:path';
-import { fileURLToPath } from 'node:url';
-
 import { fixupPluginRules } from '@eslint/compat';
-import { FlatCompat } from '@eslint/eslintrc';
-import js from '@eslint/js';
+import angularEslint from '@angular-eslint/eslint-plugin';
 import nx from '@nx/eslint-plugin';
 import { defineConfig, globalIgnores } from 'eslint/config';
 import _import from 'eslint-plugin-import';
 import simpleImportSort from 'eslint-plugin-simple-import-sort';
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-const compat = new FlatCompat({
-  baseDirectory: __dirname,
-  recommendedConfig: js.configs.recommended,
-  allConfig: js.configs.all,
-});
 
 export default defineConfig([
   globalIgnores(['**/node_modules']),
   {
     plugins: {
       '@nx': nx,
+      '@angular-eslint': angularEslint,
       import: fixupPluginRules(_import),
       'simple-import-sort': simpleImportSort,
     },
@@ -53,16 +42,8 @@ export default defineConfig([
       'simple-import-sort/imports': 'error',
     },
   },
-  {
-    files: ['**/*.ts', '**/*.tsx'],
-    extends: compat.extends('plugin:@nx/typescript'),
-    rules: {},
-  },
-  {
-    files: ['**/*.js', '**/*.jsx'],
-    extends: compat.extends('plugin:@nx/javascript'),
-    rules: {},
-  },
+  ...nx.configs['flat/typescript'],
+  ...nx.configs['flat/javascript'],
   {
     files: ['**/*.ts'],
 

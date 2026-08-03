@@ -1,12 +1,18 @@
 {
-  "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "name": "theme-angular-material",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "prefix": "cdx",
   "projectType": "library",
   "sourceRoot": "packages/theme-angular-material/src",
   "tags": [],
   "targets": {
     "build": {
+      "defaultConfiguration": "production",
+      "executor": "@nx/angular:package",
+      "outputs": ["{workspaceRoot}/dist/packages/theme-angular-material"],
+      "options": {
+        "project": "packages/theme-angular-material/ng-package.json"
+      },
       "configurations": {
         "development": {
           "tsConfig": "packages/theme-angular-material/tsconfig.lib.json"
@@ -14,13 +20,7 @@
         "production": {
           "tsConfig": "packages/theme-angular-material/tsconfig.lib.prod.json"
         }
-      },
-      "defaultConfiguration": "production",
-      "executor": "@nx/angular:package",
-      "options": {
-        "project": "packages/theme-angular-material/ng-package.json"
-      },
-      "outputs": ["{workspaceRoot}/dist/packages/theme-angular-material"]
+      }
     },
     "deploy": {
       "executor": "ngx-deploy-npm:deploy",
@@ -29,31 +29,27 @@
       }
     },
     "lint": {
-      "executor": "@nx/eslint:lint",
       "options": {
-        "lintFilePatterns": [
-          "packages/theme-angular-material/src/**/*.ts",
-          "packages/theme-angular-material/src/**/*.html"
-        ]
+        "args": ["**/*.ts"]
       }
     },
     "stylelint": {
       "executor": "nx-stylelint:lint",
+      "outputs": ["{options.outputFile}"],
       "options": {
         "lintFilePatterns": [
           "packages/theme-angular-material/**/*.css",
           "packages/theme-angular-material/**/*.scss"
         ]
-      },
-      "outputs": ["{options.outputFile}"]
+      }
     },
     "test": {
       "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/packages/theme-angular-material"],
       "options": {
         "jestConfig": "packages/theme-angular-material/jest.config.ts",
         "passWithNoTests": true
-      },
-      "outputs": ["{workspaceRoot}/coverage/packages/theme-angular-material"]
+      }
     }
   }
 }

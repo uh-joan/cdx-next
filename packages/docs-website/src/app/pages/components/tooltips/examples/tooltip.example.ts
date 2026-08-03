@@ -1,5 +1,4 @@
 import { Overlay, OverlayContainer } from '@angular/cdk/overlay';
-import { Platform } from '@angular/cdk/platform';
 import { Component } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
@@ -68,8 +67,7 @@ class AppOverlayContainer extends OverlayContainer {
   providers: [
     {
       provide: OverlayContainer,
-      useFactory: (doc: Document, platform: Platform) =>
-        new AppOverlayContainer(doc, platform),
+      useFactory: () => new AppOverlayContainer(),
     },
     {
       provide: MAT_TOOLTIP_SCROLL_STRATEGY,

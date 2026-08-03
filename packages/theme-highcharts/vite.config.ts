@@ -25,7 +25,7 @@ export default defineConfig({
     outDir: 'dist',
     minify: false,
     sourcemap: true,
-    rollupOptions: {
+    rolldownOptions: {
       external: ['highcharts'],
       output: {
         globals: {

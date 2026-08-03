@@ -2,6 +2,7 @@
   [formGroup]="searchForm"
   class="search-wrapper"
   (click)="onSearchIconClick()"
+  (keydown.enter)="onSearchIconClick()"
 >
   <mat-icon matPrefix class="search-wrapper__search-icon">search</mat-icon>
 
@@ -19,7 +20,11 @@
   @if (isSearchVisible) {
   <mat-icon
     class="search-wrapper__close-icon"
+    role="button"
+    tabindex="0"
     (click)="onCloseSearchClick($event)"
+    (keydown.enter)="onCloseSearchClick($event)"
+    (keydown.space)="onCloseSearchClick($event)"
     >close</mat-icon
   >
   }

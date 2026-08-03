@@ -1,12 +1,18 @@
 {
-  "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "name": "ngx-analytics",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "prefix": "cdx",
   "projectType": "library",
   "sourceRoot": "packages/ngx-analytics/src",
   "tags": [],
   "targets": {
     "build": {
+      "defaultConfiguration": "production",
+      "executor": "@nx/angular:package",
+      "outputs": ["{workspaceRoot}/dist/packages/ngx-analytics"],
+      "options": {
+        "project": "packages/ngx-analytics/ng-package.json"
+      },
       "configurations": {
         "development": {
           "tsConfig": "packages/ngx-analytics/tsconfig.lib.json"
@@ -14,13 +20,7 @@
         "production": {
           "tsConfig": "packages/ngx-analytics/tsconfig.lib.prod.json"
         }
-      },
-      "defaultConfiguration": "production",
-      "executor": "@nx/angular:package",
-      "options": {
-        "project": "packages/ngx-analytics/ng-package.json"
-      },
-      "outputs": ["{workspaceRoot}/dist/packages/ngx-analytics"]
+      }
     },
     "deploy": {
       "executor": "ngx-deploy-npm:deploy",
@@ -29,21 +29,17 @@
       }
     },
     "lint": {
-      "executor": "@nx/eslint:lint",
       "options": {
-        "lintFilePatterns": [
-          "packages/ngx-analytics/src/**/*.ts",
-          "packages/ngx-analytics/src/**/*.html"
-        ]
+        "args": ["**/*.ts"]
       }
     },
     "test": {
       "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/packages/ngx-analytics"],
       "options": {
         "jestConfig": "packages/ngx-analytics/jest.config.js",
         "passWithNoTests": true
-      },
-      "outputs": ["{workspaceRoot}/coverage/packages/ngx-analytics"]
+      }
     }
   }
 }

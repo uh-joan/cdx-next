@@ -1,4 +1,12 @@
-<div class="color-pill" matRipple (click)="copyToClipboard()">
+<div
+  class="color-pill"
+  matRipple
+  role="button"
+  tabindex="0"
+  (click)="copyToClipboard()"
+  (keydown.enter)="copyToClipboard()"
+  (keydown.space)="copyToClipboard()"
+>
   <div
     class="color-pill__box"
     [ngStyle]="{ 'background-color': value() }"

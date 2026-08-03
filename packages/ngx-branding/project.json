@@ -1,12 +1,18 @@
 {
-  "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "name": "ngx-branding",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "prefix": "cdx",
   "projectType": "library",
   "sourceRoot": "packages/ngx-branding/src",
   "tags": [],
   "targets": {
     "build": {
+      "defaultConfiguration": "production",
+      "executor": "@nx/angular:package",
+      "outputs": ["{workspaceRoot}/dist/packages/ngx-branding"],
+      "options": {
+        "project": "packages/ngx-branding/ng-package.json"
+      },
       "configurations": {
         "development": {
           "tsConfig": "packages/ngx-branding/tsconfig.lib.json"
@@ -14,13 +20,7 @@
         "production": {
           "tsConfig": "packages/ngx-branding/tsconfig.lib.prod.json"
         }
-      },
-      "defaultConfiguration": "production",
-      "executor": "@nx/angular:package",
-      "options": {
-        "project": "packages/ngx-branding/ng-package.json"
-      },
-      "outputs": ["{workspaceRoot}/dist/packages/ngx-branding"]
+      }
     },
     "deploy": {
       "executor": "ngx-deploy-npm:deploy",
@@ -29,31 +29,27 @@
       }
     },
     "lint": {
-      "executor": "@nx/eslint:lint",
       "options": {
-        "lintFilePatterns": [
-          "packages/ngx-branding/src/**/*.ts",
-          "packages/ngx-branding/src/**/*.html"
-        ]
+        "args": ["src/**/*.ts", "src/**/*.html"]
       }
     },
     "stylelint": {
       "executor": "nx-stylelint:lint",
+      "outputs": ["{options.outputFile}"],
       "options": {
         "lintFilePatterns": [
           "packages/ngx-branding/**/*.css",
           "packages/ngx-branding/**/*.scss"
         ]
-      },
-      "outputs": ["{options.outputFile}"]
+      }
     },
     "test": {
       "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/packages/ngx-branding"],
       "options": {
         "jestConfig": "packages/ngx-branding/jest.config.ts",
         "passWithNoTests": true
-      },
-      "outputs": ["{workspaceRoot}/coverage/packages/ngx-branding"]
+      }
     }
   }
 }

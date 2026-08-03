@@ -1,11 +1,17 @@
 {
-  "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "name": "ngx-session-activity",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "library",
   "sourceRoot": "packages/ngx-session-activity/src",
   "tags": [],
   "targets": {
     "build": {
+      "defaultConfiguration": "production",
+      "executor": "@nx/angular:package",
+      "outputs": ["{workspaceRoot}/dist/packages/ngx-session-activity"],
+      "options": {
+        "project": "packages/ngx-session-activity/ng-package.json"
+      },
       "configurations": {
         "development": {
           "tsConfig": "packages/ngx-session-activity/tsconfig.lib.json"
@@ -13,13 +19,7 @@
         "production": {
           "tsConfig": "packages/ngx-session-activity/tsconfig.lib.prod.json"
         }
-      },
-      "defaultConfiguration": "production",
-      "executor": "@nx/angular:package",
-      "options": {
-        "project": "packages/ngx-session-activity/ng-package.json"
-      },
-      "outputs": ["{workspaceRoot}/dist/packages/ngx-session-activity"]
+      }
     },
     "deploy": {
       "executor": "ngx-deploy-npm:deploy",
@@ -29,19 +29,17 @@
       }
     },
     "lint": {
-      "executor": "@nx/eslint:lint",
       "options": {
-        "lintFilePatterns": ["packages/ngx-session-activity/**/*.ts"]
-      },
-      "outputs": ["{options.outputFile}"]
+        "args": ["**/*.ts"]
+      }
     },
     "test": {
       "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/packages/ngx-session-activity"],
       "options": {
         "jestConfig": "packages/ngx-session-activity/jest.config.ts",
         "passWithNoTests": true
-      },
-      "outputs": ["{workspaceRoot}/coverage/packages/ngx-session-activity"]
+      }
     }
   }
 }

@@ -47,7 +47,7 @@
       </mat-header-cell>
       <mat-cell *matCellDef="let row">
         <div class="name-avatar">
-          <img width="30" height="30" [src]="row.avatarUrl" />
+          <img width="30" height="30" [src]="row.avatarUrl" [alt]="row.name" />
           <span>
             {{ row.name }}
           </span>

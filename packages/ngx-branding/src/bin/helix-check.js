@@ -183,7 +183,7 @@ console.log(chalk.blue('\n---------------------------------\n'));
 // ============================
 console.log(chalk.magenta.bold('🎨 THEME CHECK (styles.scss)\n'));
 
-let allStylesValid = true;
+const allStylesValid = true;
 
 function getFilesRecursive(dir, ext) {
   let results = [];
@@ -220,7 +220,7 @@ function checkThemeClass(scssFiles, htmlFiles) {
 
   scssFiles.some((file) => {
     try {
-      let content = fs
+      const content = fs
         .readFileSync(file, 'utf8')
         .replace(/\/\/.*|\/\*[\s\S]*?\*\//g, '');
       const match = content.match(themeRegex);
@@ -250,7 +250,7 @@ function checkThemeClass(scssFiles, htmlFiles) {
 
   scssFiles.forEach((file) => {
     try {
-      let content = fs
+      const content = fs
         .readFileSync(file, 'utf8')
         .replace(/\/\/.*|\/\*[\s\S]*?\*\//g, '');
       const classMatch = content.match(classRegex);
@@ -274,7 +274,7 @@ function checkThemeClass(scssFiles, htmlFiles) {
 
   htmlFiles.some((file) => {
     try {
-      let content = fs.readFileSync(file, 'utf8');
+      const content = fs.readFileSync(file, 'utf8');
       const match = content.match(bodyRegex);
 
       if (match) {
@@ -347,7 +347,7 @@ function checkIndexHtml() {
 
   if (fs.existsSync(indexPath)) {
     try {
-      let indexContent = fs
+      const indexContent = fs
         .readFileSync(indexPath, 'utf8')
         .replace(/\s+/g, ' ');
 
@@ -397,7 +397,7 @@ let themeClass = null;
 
 if (stylesValid) {
   const stylesPath = path.join(projectRoot, 'src', 'styles.scss');
-  let stylesContent = fs
+  const stylesContent = fs
     .readFileSync(stylesPath, 'utf8')
     .replace(/\/\/.*|\/\*[\s\S]*?\*\//g, '');
 

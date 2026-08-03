@@ -1,12 +1,18 @@
 {
-  "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "name": "ngx-translations",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "prefix": "cdx",
   "projectType": "library",
   "sourceRoot": "packages/ngx-translations/src",
   "tags": [],
   "targets": {
     "build": {
+      "defaultConfiguration": "production",
+      "executor": "@nx/angular:package",
+      "outputs": ["{workspaceRoot}/dist/packages/ngx-translations"],
+      "options": {
+        "project": "packages/ngx-translations/ng-package.json"
+      },
       "configurations": {
         "development": {
           "tsConfig": "packages/ngx-translations/tsconfig.lib.json"
@@ -14,13 +20,7 @@
         "production": {
           "tsConfig": "packages/ngx-translations/tsconfig.lib.prod.json"
         }
-      },
-      "defaultConfiguration": "production",
-      "executor": "@nx/angular:package",
-      "options": {
-        "project": "packages/ngx-translations/ng-package.json"
-      },
-      "outputs": ["{workspaceRoot}/dist/packages/ngx-translations"]
+      }
     },
     "deploy": {
       "executor": "ngx-deploy-npm:deploy",
@@ -30,21 +30,17 @@
       }
     },
     "lint": {
-      "executor": "@nx/eslint:lint",
       "options": {
-        "lintFilePatterns": [
-          "packages/ngx-translations/src/**/*.ts",
-          "packages/ngx-translations/src/**/*.html"
-        ]
+        "args": ["**/*.ts"]
       }
     },
     "test": {
       "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/packages/ngx-translations"],
       "options": {
         "jestConfig": "packages/ngx-translations/jest.config.ts",
         "passWithNoTests": true
-      },
-      "outputs": ["{workspaceRoot}/coverage/packages/ngx-translations"]
+      }
     }
   }
 }
