@@ -1,4 +1,4 @@
-import { DOCUMENT, inject, Injectable, signal } from '@angular/core';
+import { DOCUMENT, inject, Service, signal } from '@angular/core';
 
 export const THEMES = [
   'purple',
@@ -8,9 +8,7 @@ export const THEMES = [
   'custom',
 ];
 
-@Injectable({
-  providedIn: 'root',
-})
+@Service()
 export class ThemeService {
   currentThemeMode = signal('light');
   currentTheme = signal('');

@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { inject, Injectable } from '@angular/core';
+import { inject, Service } from '@angular/core';
 import { ActivatedRouteSnapshot, ParamMap, Router } from '@angular/router';
 import { JwtHelperService } from '@auth0/angular-jwt';
 
@@ -7,9 +7,7 @@ import { AUTHENTICATION_SETTINGS } from './authentication.injectors';
 import { JwtToken } from './authentication.types';
 import { TokenService } from './token.service';
 
-@Injectable({
-  providedIn: 'root',
-})
+@Service()
 export class AuthenticationService {
   environment?: string;
   private jwtHelper = inject(JwtHelperService);

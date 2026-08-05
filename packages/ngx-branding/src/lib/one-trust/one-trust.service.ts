@@ -1,11 +1,11 @@
-import { DOCUMENT, inject, Injectable } from '@angular/core';
+import { DOCUMENT, inject, Service } from '@angular/core';
 
 import { ONE_TRUST_SETTINGS } from './one-trust.injectors';
 import { OneTrust, OneTrustSettings } from './one-trust.types';
 
 declare let OneTrust: OneTrust;
 
-@Injectable()
+@Service()
 export class OneTrustService {
   private settings: OneTrustSettings | null = inject(ONE_TRUST_SETTINGS, {
     optional: true,

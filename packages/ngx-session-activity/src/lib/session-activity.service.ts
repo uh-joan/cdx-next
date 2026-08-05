@@ -2,9 +2,9 @@ import { HttpClient } from '@angular/common/http';
 import {
   DestroyRef,
   inject,
-  Injectable,
   OnDestroy,
   Renderer2,
+  Service,
   signal,
 } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
@@ -26,9 +26,7 @@ import {
   SessionActivitySettings,
 } from './session-activity.model';
 
-@Injectable({
-  providedIn: 'root',
-})
+@Service()
 export class SessionActivityService implements OnDestroy {
   pingIntervalMinutes = IDLE_CONFIG.PING_INTERVAL_MINUTES_DEFAULT;
   idleMinutes?: number;

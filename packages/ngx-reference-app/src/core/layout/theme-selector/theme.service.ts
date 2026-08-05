@@ -1,10 +1,8 @@
-import { DOCUMENT, inject, Injectable, signal } from '@angular/core';
+import { DOCUMENT, inject, Service, signal } from '@angular/core';
 
 export const THEMES = ['cdx', 'helix'];
 
-@Injectable({
-  providedIn: 'root',
-})
+@Service()
 export class ThemeService {
   readonly currentThemeMode = signal<string>('light');
   readonly currentTheme = signal<string>('');

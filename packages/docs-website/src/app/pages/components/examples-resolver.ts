@@ -1,9 +1,9 @@
-import { Injectable } from '@angular/core';
+import { Service } from '@angular/core';
 import { ActivatedRouteSnapshot, Resolve } from '@angular/router';
 
 import { examplesMap } from './examples-map';
 
-@Injectable({ providedIn: 'root' })
+@Service()
 export class ExamplesResolver implements Resolve<unknown[]> {
   resolve(route: ActivatedRouteSnapshot) {
     const component = route.paramMap.get('component');

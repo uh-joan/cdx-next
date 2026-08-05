@@ -1,4 +1,4 @@
-import { inject, Injectable, signal } from '@angular/core';
+import { inject, Service, signal } from '@angular/core';
 import { OneTrustService } from '@cdx/ngx-branding';
 import {
   addGlobalContexts,
@@ -25,7 +25,7 @@ import {
 const COLLECTOR_URL =
   'snowplow-collector.staging.userintel.dev.sp.aws.clarivate.net';
 
-@Injectable()
+@Service()
 export class AnalyticsService {
   private trackerId = 'cdxNgTracker';
 

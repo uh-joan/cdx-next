@@ -1,11 +1,9 @@
-import { inject, Injectable } from '@angular/core';
+import { inject, Service } from '@angular/core';
 
 import { AUTHENTICATION_SETTINGS } from './authentication.injectors';
 import { LS_TOKEN } from './authentication.types';
 
-@Injectable({
-  providedIn: 'root',
-})
+@Service()
 export class TokenService {
   tokenLabel: string;
   private settings = inject(AUTHENTICATION_SETTINGS, { optional: true });

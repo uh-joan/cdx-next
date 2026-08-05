@@ -53,7 +53,7 @@ Do not use when:
 ### 3.2 Basic Example
 
 ```ts
-@Injectable({ providedIn: 'root' })
+@Service()
 export class UsersApi {
   private http = inject(HttpClient);
 
@@ -64,7 +64,7 @@ export class UsersApi {
 ```
 
 ```ts
-@Injectable()
+@Service()
 export class UsersStore {
   private api = inject(UsersApi);
 
@@ -84,7 +84,7 @@ export class UsersStore {
 ### 4.1 Simple Store
 
 ```ts
-@Injectable()
+@Service()
 export class UsersStore {
   users = signal<User[]>([]);
   loading = signal(false);
@@ -102,7 +102,7 @@ export class UsersStore {
 ### 4.2 Store + HttpResource
 
 ```ts
-@Injectable()
+@Service()
 export class UsersStore {
   resource = httpResource(() => this.api.getUsers());
 

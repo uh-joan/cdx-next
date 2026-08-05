@@ -1,9 +1,9 @@
-import { inject, Injectable } from '@angular/core';
+import { inject, Service } from '@angular/core';
 import { ActivatedRouteSnapshot, Resolve, Router } from '@angular/router';
 
 import { examplesMap } from './examples-map';
 
-@Injectable({ providedIn: 'root' })
+@Service()
 export class ExampleItemResolver implements Resolve<unknown[] | null> {
   private router = inject(Router);
 

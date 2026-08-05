@@ -1,9 +1,7 @@
 import { HttpClient } from '@angular/common/http';
-import { inject, Injectable, signal } from '@angular/core';
+import { inject, Service, signal } from '@angular/core';
 
-@Injectable({
-  providedIn: 'root',
-})
+@Service()
 export class HeaderService {
   private http: HttpClient = inject(HttpClient);
   readonly versions = signal<string[]>([]);

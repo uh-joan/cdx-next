@@ -1,4 +1,4 @@
-import { inject, Injectable } from '@angular/core';
+import { inject, Service } from '@angular/core';
 import type { TranslationObject } from '@ngx-translate/core';
 import { TranslateService } from '@ngx-translate/core';
 
@@ -24,9 +24,7 @@ const CDX_TRANSLATIONS: Record<string, TranslationObject> = {
   zh_TW,
 };
 
-@Injectable({
-  providedIn: 'root',
-})
+@Service()
 export class NgxTranslationsService {
   private translateService = inject(TranslateService);
 
