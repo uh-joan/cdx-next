@@ -217,12 +217,12 @@ pipeline {
                         ) {
                             sh '''
                                 npm run deploy:website -- \
-                                    --bucket helix-v21.dev.sp.aws.clarivate.net \
-                                    --distribution E1HX12ZBCPOKAJ
+                                    --bucket helix-v22.dev.sp.aws.clarivate.net \
+                                    --distribution E1ZNLOIH8WSC2X
                             '''
                         }
                     } else {
-                        echo '[DryRun] Would deploy website to (helix-v21.dev.sp.aws.clarivate.net)'
+                        echo '[DryRun] Would deploy website to (helix-v22.dev.sp.aws.clarivate.net)'
                     }
                 }
             }
