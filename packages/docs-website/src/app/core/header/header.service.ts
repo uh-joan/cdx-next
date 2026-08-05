@@ -10,9 +10,9 @@ export class HeaderService {
 
   getAllHelixVersions(): void {
     this.http
-      .get<
-        string[]
-      >('https://latest-helix-website.dev.sp.aws.clarivate.net/assets/helix-versions.json')
+      .get<string[]>(
+        'https://latest-helix-website.dev.sp.aws.clarivate.net/assets/helix-versions.json',
+      )
       .subscribe((versions) => {
         this.versions.set(versions);
       });
