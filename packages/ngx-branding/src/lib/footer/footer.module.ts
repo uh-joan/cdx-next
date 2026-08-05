@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { TranslateModule } from '@ngx-translate/core';
+import { TranslatePipe } from '@ngx-translate/core';
 
 import { OneTrustModule } from '../one-trust/one-trust.module';
 import { FooterComponent } from './footer.component';
@@ -12,7 +12,7 @@ import { FooterLinkDirective } from './footer-link.directive';
   imports: [
     CommonModule,
     OneTrustModule.forChild(),
-    TranslateModule.forChild(),
+    TranslatePipe,
     FooterComponent,
     FooterLinkDirective,
     FooterGroupComponent,

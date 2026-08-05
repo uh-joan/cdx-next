@@ -1,7 +1,11 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { MAT_DIALOG_DATA, MatDialogModule } from '@angular/material/dialog';
 import { Idle, IdleExpiry } from '@ng-idle/core';
-import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import {
+  provideTranslateService,
+  TranslatePipe,
+  TranslateService,
+} from '@ngx-translate/core';
 
 import { InactivityDialogComponent } from './inactivity-dialog.component';
 
@@ -35,11 +39,12 @@ describe('InactivityDialogComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [MatDialogModule, TranslateModule.forChild()],
+      imports: [MatDialogModule, TranslatePipe],
       providers: [
         Idle,
         { provide: IdleExpiry, useClass: MockExpiry },
         { provide: MAT_DIALOG_DATA, useValue: {} },
+        provideTranslateService(),
         {
           provide: TranslateService,
           useValue: {

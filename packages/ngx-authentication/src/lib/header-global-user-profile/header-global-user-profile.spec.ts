@@ -3,7 +3,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
-import { TranslateModule } from '@ngx-translate/core';
+import { provideTranslateService, TranslatePipe } from '@ngx-translate/core';
 
 import { AuthenticationService } from '../authentication.service';
 import { JwtToken } from '../authentication.types';
@@ -29,10 +29,11 @@ describe('HeaderGlobalUserProfileComponent', () => {
         MatButtonModule,
         MatIconModule,
         MatMenuModule,
-        TranslateModule.forRoot(),
+        TranslatePipe,
       ],
       providers: [
         { provide: AuthenticationService, useValue: authServiceMock },
+        provideTranslateService(),
       ],
     }).compileComponents();
   });

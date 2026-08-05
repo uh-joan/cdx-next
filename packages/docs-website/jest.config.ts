@@ -1,9 +1,9 @@
 export default {
-  displayName: 'ngx-reference-app',
+  displayName: 'docs-website',
   preset: '../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
   globals: {},
-  coverageDirectory: '../../coverage/packages/ngx-reference-app',
+  coverageDirectory: '../../coverage/packages/docs-website',
   transform: {
     '^.+\\.(ts|mjs|js|html)$': [
       'jest-preset-angular',

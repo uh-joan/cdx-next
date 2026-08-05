@@ -13,7 +13,7 @@ import {
   HelixHeaderGlobalComponent,
   HelixHeaderProductNameOrLogoComponent,
 } from '@cdx/ngx-branding';
-import { TranslateModule } from '@ngx-translate/core';
+import { TranslatePipe } from '@ngx-translate/core';
 
 import { ThemeService } from '../../services/theme.service';
 import { LanguageSelectorComponent } from '../language-selector/language-selector.component';
@@ -30,7 +30,7 @@ import { ThemeSelectorComponent } from '../theme-selector/theme-selector.compone
     RouterModule,
     HeaderComponent,
     FooterModule,
-    TranslateModule,
+    TranslatePipe,
     HeaderGlobalUserProfileComponent,
     HeaderGlobalUserProfileComponent,
     MatTabsModule,

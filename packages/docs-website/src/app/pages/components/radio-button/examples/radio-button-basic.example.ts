@@ -56,7 +56,7 @@ export const RadioButtonBasicComponent: InputViewerComponent = {
   height: 62,
   hideCss: true,
   htmlCode: htmlCode,
-  cssCode: styleCode,
+  cssCode: [styleCode],
   tsCode: `import { Component } from '@angular/core';
 import { MatRadioModule } from '@angular/material/radio';
 

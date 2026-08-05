@@ -31,7 +31,7 @@ export const HeaderUnbrandedComponent: InputViewerComponent = {
   hideCss: true,
   verticalView: true,
   htmlCode: htmlCode,
-  cssCode: styleCode,
+  cssCode: [styleCode],
   tsCode: `import { Component } from '@angular/core';
 import {
   HelixHeaderComponent,

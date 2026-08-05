@@ -107,7 +107,7 @@ export const PaginatorBasicComponent: InputViewerComponent = {
   hideCss: true,
   verticalView: true,
   htmlCode: htmlCode,
-  cssCode: styleCode,
+  cssCode: [styleCode],
   tsCode: `import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';

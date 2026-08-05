@@ -98,7 +98,7 @@ export const HighchartThemedComponent: InputViewerComponent = {
   height: 45,
   verticalView: true,
   htmlCode: htmlCode,
-  cssCode: styleCode,
+  cssCode: [styleCode],
   tsCode: `import { Component } from '@angular/core';
 import { HighchartsChartComponent, providePartialHighcharts} from 'highcharts-angular';
 // import { HIGHCHARTS_CDX_THEME } from '@cdx/theme-highcharts';

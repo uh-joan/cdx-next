@@ -8,7 +8,7 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
-import { TranslateModule } from '@ngx-translate/core';
+import { TranslatePipe } from '@ngx-translate/core';
 
 import { PaperSearchComponent } from '../../components/paper-search/paper-search.component';
 
@@ -24,7 +24,7 @@ import { PaperSearchComponent } from '../../components/paper-search/paper-search
     MatNativeDateModule,
     MatIconModule,
     MatCardModule,
-    TranslateModule,
+    TranslatePipe,
   ],
   templateUrl: './search.component.html',
   styleUrl: './search.component.scss',

@@ -45,7 +45,7 @@ export const ExpansionPanelComponent: InputViewerComponent = {
   height: 45,
   hideCss: true,
   htmlCode: htmlCode,
-  cssCode: styleCode,
+  cssCode: [styleCode],
   tsCode: `import { Component } from '@angular/core';
 import { MatExpansionModule } from '@angular/material/expansion';
 

@@ -34,10 +34,7 @@
       }
     },
     "test": {
-      "executor": "@nx/jest:jest",
-      "outputs": ["{workspaceRoot}/coverage/packages/ngx-analytics"],
       "options": {
-        "jestConfig": "packages/ngx-analytics/jest.config.js",
         "passWithNoTests": true
       }
     }

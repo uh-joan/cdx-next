@@ -84,7 +84,7 @@ export const TableSimpleComponent: InputViewerComponent = {
   height: 70,
   hideCss: true,
   htmlCode: htmlCode,
-  cssCode: styleCode,
+  cssCode: [styleCode],
   tsCode: `export interface PeriodicElement {
   name: string;
   position: number;

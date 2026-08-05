@@ -5,9 +5,8 @@ import { MatCardModule } from '@angular/material/card';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatIconModule } from '@angular/material/icon';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
-import { TranslateModule } from '@ngx-translate/core';
-import * as Highcharts from 'highcharts/highcharts';
-import { HighchartsChartModule } from 'highcharts-angular';
+import { TranslatePipe } from '@ngx-translate/core';
+import { HighchartsChartComponent } from 'highcharts-angular';
 
 import { DataBoxComponent } from '../../components/data-box/data-box.component';
 import { devices, enrollmentOptions, options } from './dashboard.data';
@@ -16,19 +15,18 @@ import { devices, enrollmentOptions, options } from './dashboard.data';
   imports: [
     CommonModule,
     DataBoxComponent,
-    HighchartsChartModule,
+    HighchartsChartComponent,
     MatIconModule,
     MatDividerModule,
     MatButtonModule,
     MatProgressBarModule,
     MatCardModule,
-    TranslateModule,
+    TranslatePipe,
   ],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.scss',
 })
 export class DashboardComponent {
-  Highcharts = Highcharts;
   devices = devices;
   options = options;
   enrollmentOptions = enrollmentOptions;

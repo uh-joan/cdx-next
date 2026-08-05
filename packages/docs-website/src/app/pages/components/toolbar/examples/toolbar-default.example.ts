@@ -31,7 +31,7 @@ export const ToolbarDefaultComponent: InputViewerComponent = {
   height: 27,
   hideCss: true,
   htmlCode: htmlCode,
-  cssCode: styleCode,
+  cssCode: [styleCode],
   tsCode: `import { Component } from '@angular/core';
 import { MatToolbarModule } from '@angular/material/toolbar';
 

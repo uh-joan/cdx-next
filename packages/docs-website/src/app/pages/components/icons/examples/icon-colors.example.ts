@@ -67,33 +67,30 @@ const htmlCode = `<div class="story">
     </div>
 </div>`;
 
-const styleCode = `@use "@cdx/theme-angular-material" as hlx;
-
-.story {
+const styleCode = `.story {
     padding: 1rem;
+}
 
-    &__section {
-        display: flex;
-        justify-content: space-between;
-        padding: .5rem;
-    }
+.story__section {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem;
+}
 
-    .background-primary {
-        background-color: hlx.$surface-primary;
-    }
+.background-primary {
+    background-color: var(--hlx-surface-primary, #0077cc);
+}
 
-    .background-warn {
-        background-color: hlx.$surface-warn;
-    }
+.background-warn {
+    background-color: var(--hlx-surface-warn, #ffefd1);
+}
 
-    .background-info {
-        background-color: hlx.$surface-info;
-    }
+.background-info {
+    background-color: var(--hlx-surface-info, #d7e8f7);
+}
 
-    .background-invert {
-        background-color: hlx.$surface-invert;
-    }
-
+.background-invert {
+    background-color: var(--mat-sys-inverse-surface);
 }`;
 
 @Component({
@@ -108,7 +105,7 @@ export const IconsColorsComponent: InputViewerComponent = {
   dynamicComponent: SampleComponent,
   height: 70,
   htmlCode: htmlCode,
-  cssCode: styleCode,
+  cssCode: [styleCode],
   tsCode: `import { Component } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 

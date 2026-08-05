@@ -34,10 +34,7 @@
       }
     },
     "test": {
-      "executor": "@nx/jest:jest",
-      "outputs": ["{workspaceRoot}/coverage/packages/ngx-authentication"],
       "options": {
-        "jestConfig": "packages/ngx-authentication/jest.config.ts",
         "passWithNoTests": true
       }
     }

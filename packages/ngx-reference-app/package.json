@@ -3,8 +3,8 @@
   "version": "20.0.0-alpha.2",
   "private": true,
   "dependencies": {
-    "highcharts": "^12.5.0",
-    "highcharts-angular": "5.4.0",
+    "highcharts": "^13.0.0",
+    "highcharts-angular": "5.4.1",
     "@cdx/theme-angular-material": "^20.0.0",
     "@cdx/ngx-branding": "^20.0.0"
   }

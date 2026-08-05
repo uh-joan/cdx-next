@@ -34,7 +34,7 @@ export const ChipsListComponent: InputViewerComponent = {
   dynamicComponent: SampleComponent,
   height: 28,
   htmlCode: htmlCode,
-  cssCode: styleCode,
+  cssCode: [styleCode],
   tsCode: `import { Component } from '@angular/core';
 import { MatChipsModule } from '@angular/material/chips';
 

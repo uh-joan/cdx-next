@@ -1,5 +1,5 @@
 <div class="top-container">
-  <demo-data-box class="first-box mat-mdc-card">
+  <cdx-data-box class="first-box mat-mdc-card">
     <ng-container ngProjectAs="[top-left]">
       <div class="mat-subtitle-2">
         {{ 'DASHBOARD.TOTAL_VIEWS' | translate | uppercase }}
@@ -18,8 +18,8 @@
         {{ 'DASHBOARD.SINCE_LAST_MONTH' | translate }}
       </div>
     </ng-container>
-  </demo-data-box>
-  <demo-data-box class="second-box mat-mdc-card">
+  </cdx-data-box>
+  <cdx-data-box class="second-box mat-mdc-card">
     <ng-container ngProjectAs="[top-left]">
       <div class="mat-subtitle-2">
         {{ 'DASHBOARD.PRODUCTS_SOLD' | translate | uppercase }}
@@ -38,8 +38,8 @@
         {{ 'DASHBOARD.SINCE_LAST_MONTH' | translate }}
       </div>
     </ng-container>
-  </demo-data-box>
-  <demo-data-box class="third-box mat-mdc-card">
+  </cdx-data-box>
+  <cdx-data-box class="third-box mat-mdc-card">
     <ng-container ngProjectAs="[top-left]">
       <div class="mat-subtitle-2">
         {{ 'DASHBOARD.SATISFACTION_INDEX' | translate | uppercase }}
@@ -54,8 +54,8 @@
     <ng-container ngProjectAs="[bottom]">
       <mat-progress-bar color="priamry" [value]="'85.5'"></mat-progress-bar>
     </ng-container>
-  </demo-data-box>
-  <demo-data-box class="fourth-box mat-mdc-card">
+  </cdx-data-box>
+  <cdx-data-box class="fourth-box mat-mdc-card">
     <ng-container ngProjectAs="[top-left]">
       <div class="mat-subtitle-2">
         {{ 'DASHBOARD.TOTAL_PROFIT' | translate | uppercase }}
@@ -67,7 +67,7 @@
         <mat-icon>attach_money</mat-icon>
       </div>
     </ng-container>
-  </demo-data-box>
+  </cdx-data-box>
 </div>
 <div class="bottom-container">
   <mat-card class="left-block mat-elevation-z3">
@@ -75,10 +75,7 @@
       {{ 'DASHBOARD.LATEST_INSCRIPTION' | translate }}
     </h2>
     <div class="high-chart">
-      <highcharts-chart
-        [Highcharts]="Highcharts"
-        [options]="enrollmentOptions"
-      ></highcharts-chart>
+      <highcharts-chart [options]="enrollmentOptions"></highcharts-chart>
     </div>
     <button mat-button color="primary" size="small">
       <mat-icon>arrow_forward</mat-icon>
@@ -91,10 +88,7 @@
       {{ 'DASHBOARD.TRAFFIC_BY_DEVICE' | translate | titlecase }}
     </h2>
     <div class="pie-chart">
-      <highcharts-chart
-        [Highcharts]="Highcharts"
-        [options]="options"
-      ></highcharts-chart>
+      <highcharts-chart [options]="options"></highcharts-chart>
     </div>
     <div class="device-details">
       @for (device of devices; track device) {

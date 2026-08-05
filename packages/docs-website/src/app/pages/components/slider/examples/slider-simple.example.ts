@@ -67,7 +67,7 @@ export const SliderSimpleComponent: InputViewerComponent = {
   dynamicComponent: SampleComponent,
   height: 74,
   htmlCode: htmlCode,
-  cssCode: styleCode,
+  cssCode: [styleCode],
   tsCode: `import { Component } from '@angular/core';
 import { MatSliderModule } from '@angular/material/slider';
 

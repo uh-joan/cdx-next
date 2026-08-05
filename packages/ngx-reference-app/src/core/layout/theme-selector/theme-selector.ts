@@ -4,7 +4,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatSelectModule } from '@angular/material/select';
-import { TranslateModule } from '@ngx-translate/core';
+import { TranslatePipe } from '@ngx-translate/core';
 
 import { ThemeService } from './theme.service';
 
@@ -17,7 +17,7 @@ import { ThemeService } from './theme.service';
     MatButtonModule,
     MatMenuModule,
     MatSelectModule,
-    TranslateModule,
+    TranslatePipe,
     TitleCasePipe,
   ],
 })

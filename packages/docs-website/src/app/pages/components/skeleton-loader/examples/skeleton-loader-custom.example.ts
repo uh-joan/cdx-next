@@ -50,7 +50,7 @@ export const SkeletonLoaderCustom: InputViewerComponent = {
   height: 38,
   htmlCode: htmlCode,
   verticalView: true,
-  cssCode: styleCode,
+  cssCode: [styleCode],
   tsCode: `import { Component } from '@angular/core';
 import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 

@@ -4,7 +4,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatInputModule } from '@angular/material/input';
-import { TranslateModule } from '@ngx-translate/core';
+import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
   imports: [
@@ -13,7 +13,7 @@ import { TranslateModule } from '@ngx-translate/core';
     MatCheckboxModule,
     MatInputModule,
     MatCardModule,
-    TranslateModule,
+    TranslatePipe,
   ],
   templateUrl: './settings.component.html',
   styleUrl: './settings.component.scss',

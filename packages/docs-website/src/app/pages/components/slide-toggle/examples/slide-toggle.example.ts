@@ -41,7 +41,7 @@ export const SidenavComponent: InputViewerComponent = {
   dynamicComponent: SampleComponent,
   height: 35,
   htmlCode: htmlCode,
-  cssCode: styleCode,
+  cssCode: [styleCode],
   tsCode: `import { Component } from '@angular/core';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 

@@ -41,7 +41,7 @@ export const ButtonsBasicdDefaultComponent: InputViewerComponent = {
   dynamicComponent: SampleComponent,
   height: 34,
   htmlCode: htmlCode,
-  cssCode: styleCode,
+  cssCode: [styleCode],
   tsCode: `import { Component } from '@angular/core';
 import { BreadcrumbComponent, 
   BreadcrumbItemDirective } from "xng-breadcrumb";

@@ -12,7 +12,7 @@ import {
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
 import { NgIdleKeepaliveModule } from '@ng-idle/keepalive';
-import { TranslateModule } from '@ngx-translate/core';
+import { TranslatePipe } from '@ngx-translate/core';
 
 import { InactivityDialogComponent } from './inactivity-dialog/inactivity-dialog.component';
 import { SESSION_ACTIVITY_SETTINGS } from './session-activity.injectors';
@@ -24,7 +24,7 @@ import { SessionActivitySettings } from './session-activity.model';
     MatDialogModule,
     MatButtonModule,
     NgIdleKeepaliveModule.forRoot(),
-    TranslateModule.forChild(),
+    TranslatePipe,
     InactivityDialogComponent,
   ],
   providers: [provideHttpClient(withInterceptorsFromDi())],

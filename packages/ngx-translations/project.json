@@ -35,10 +35,7 @@
       }
     },
     "test": {
-      "executor": "@nx/jest:jest",
-      "outputs": ["{workspaceRoot}/coverage/packages/ngx-translations"],
       "options": {
-        "jestConfig": "packages/ngx-translations/jest.config.ts",
         "passWithNoTests": true
       }
     }

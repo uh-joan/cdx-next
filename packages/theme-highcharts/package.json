@@ -15,10 +15,10 @@
     "deploy:cdn": "deploy-aws-s3-cloudfront --bucket cdx-cdn.digital-experience.clarivate.io --distribution EF022SLU13YUI --source dist --destination @cdx/theme-highcharts/${VERSION:-latest} --non-interactive"
   },
   "dependencies": {
-    "highcharts": "^12.5.0"
+    "highcharts": "^13.0.0"
   },
   "baseUrl": ".",
   "devDependencies": {
-    "vite-plugin-dts": "^4.5.4"
+    "vite-plugin-dts": "^5.0.3"
   }
 }

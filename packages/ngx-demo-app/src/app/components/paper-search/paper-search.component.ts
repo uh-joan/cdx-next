@@ -9,7 +9,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatIconModule } from '@angular/material/icon';
 import { RouterModule } from '@angular/router';
-import { TranslateModule } from '@ngx-translate/core';
+import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
   selector: 'cdx-paper-search',
@@ -19,7 +19,7 @@ import { TranslateModule } from '@ngx-translate/core';
     MatIconModule,
     RouterModule,
     MatCardModule,
-    TranslateModule,
+    TranslatePipe,
   ],
   templateUrl: './paper-search.component.html',
   styleUrl: './paper-search.component.scss',

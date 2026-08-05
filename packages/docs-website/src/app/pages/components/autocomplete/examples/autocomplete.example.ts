@@ -63,7 +63,7 @@ export const AutocompleteComponent: InputViewerComponent = {
   height: 50,
   hideCss: true,
   htmlCode: htmlCode,
-  cssCode: styleCode,
+  cssCode: [styleCode],
   tsCode: `import {Component, OnInit} from '@angular/core';
 import {computed} from '@angular/core';
 import {toSignal} from '@angular/core/rxjs-interop';

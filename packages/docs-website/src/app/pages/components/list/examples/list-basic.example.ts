@@ -34,7 +34,7 @@ export const ListBasicComponent: InputViewerComponent = {
   height: 28,
   hideCss: true,
   htmlCode: htmlCode,
-  cssCode: styleCode,
+  cssCode: [styleCode],
   tsCode: `import { Component } from '@angular/core';
 import { MatListModule } from '@angular/material/list';
 

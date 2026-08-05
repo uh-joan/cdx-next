@@ -85,7 +85,7 @@ export const TooltipComponent: InputViewerComponent = {
   height: 48,
   hideCss: true,
   htmlCode: htmlCode,
-  cssCode: styleCode,
+  cssCode: [styleCode],
   tsCode: `import { Overlay, OverlayContainer } from '@angular/cdk/overlay';
 import { Platform } from '@angular/cdk/platform';
 import { Component } from '@angular/core';

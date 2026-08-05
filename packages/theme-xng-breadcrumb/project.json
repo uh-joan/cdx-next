@@ -44,10 +44,7 @@
       }
     },
     "test": {
-      "executor": "@nx/jest:jest",
-      "outputs": ["{workspaceRoot}/coverage/packages/theme-xng-breadcrumb"],
       "options": {
-        "jestConfig": "packages/theme-xng-breadcrumb/jest.config.ts",
         "passWithNoTests": true
       }
     }

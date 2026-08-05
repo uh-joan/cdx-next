@@ -13,7 +13,7 @@ import {
 import { AuthenticationModule } from '@cdx/ngx-authentication';
 import { OneTrustModule, OneTrustSettings } from '@cdx/ngx-branding';
 import { SessionActivityModule } from '@cdx/ngx-session-activity';
-import { TranslateModule } from '@ngx-translate/core';
+import { provideTranslateService } from '@ngx-translate/core';
 
 import { routes } from './app.routes';
 
@@ -50,9 +50,9 @@ export const appConfig: ApplicationConfig = {
         environment: 'dev-stable',
       }),
       SessionActivityModule.forRoot(),
-      TranslateModule.forRoot({
-        fallbackLang: 'en',
-      }),
     ),
+    provideTranslateService({
+      fallbackLang: 'en',
+    }),
   ],
 };

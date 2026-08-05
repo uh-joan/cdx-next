@@ -5,7 +5,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatSelectModule } from '@angular/material/select';
-import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { NgxTranslationsService } from '@cdx/ngx-translations';
+import { TranslatePipe, TranslateService } from '@ngx-translate/core';
 
 import * as ar_SA from '../../../assets/i18n/ar_SA.json';
 import * as en from '../../../assets/i18n/en.json';
@@ -27,7 +28,7 @@ import * as zh_TW from '../../../assets/i18n/zh_TW.json';
     MatIconModule,
     MatButtonModule,
     MatMenuModule,
-    TranslateModule,
+    TranslatePipe,
     KeyValuePipe,
   ],
 })
@@ -72,10 +73,21 @@ export class LanguageSelector {
     localStorage.getItem('language') || 'en',
   );
 
+  private ngxTranslationsService = inject(NgxTranslationsService);
   private translateService = inject(TranslateService);
 
   constructor() {
-    this.translateService.setTranslation('en', this.APP_TRANSLATIONS.en);
+    const appLanguages = Object.keys(this.APP_TRANSLATIONS);
+    this.translateService.addLangs(appLanguages);
+
+    for (const lang of appLanguages) {
+      this.translateService.setTranslation(
+        lang,
+        this.APP_TRANSLATIONS[lang as keyof typeof this.APP_TRANSLATIONS],
+      );
+    }
+
+    this.ngxTranslationsService.mergeTranslationsLabels(appLanguages);
 
     const initialLang = localStorage.getItem('language') || 'en';
     this.currentLanguage.set(initialLang);

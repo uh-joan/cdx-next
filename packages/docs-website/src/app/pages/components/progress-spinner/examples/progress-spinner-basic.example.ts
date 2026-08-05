@@ -38,7 +38,7 @@ export const ProgressSpinnerBasicComponent: InputViewerComponent = {
   dynamicComponent: SampleComponent,
   height: 35,
   htmlCode: htmlCode,
-  cssCode: styleCode,
+  cssCode: [styleCode],
   tsCode: `import { Component } from '@angular/core';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 

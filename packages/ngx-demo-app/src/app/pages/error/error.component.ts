@@ -1,9 +1,9 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
-import { TranslateModule } from '@ngx-translate/core';
+import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
-  imports: [MatCardModule, TranslateModule],
+  imports: [MatCardModule, TranslatePipe],
   templateUrl: './error.component.html',
   styleUrl: './error.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

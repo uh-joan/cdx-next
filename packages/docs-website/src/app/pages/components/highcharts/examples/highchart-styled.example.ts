@@ -131,7 +131,7 @@ export const HighchartStyledComponent: InputViewerComponent = {
   height: 45,
   verticalView: true,
   htmlCode: htmlCode,
-  cssCode: styleCode,
+  cssCode: [styleCode],
   tsCode: `import { Component } from '@angular/core';
 import * as Highcharts from 'highcharts';
 import { HighchartsChartComponent } from 'highcharts-angular';

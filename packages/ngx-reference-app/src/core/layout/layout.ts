@@ -11,7 +11,6 @@ import {
   HelixHeaderProductNameOrLogoComponent,
 } from '@cdx/ngx-branding';
 import { NgxTranslationsModule } from '@cdx/ngx-translations';
-import { TranslateModule } from '@ngx-translate/core';
 
 import { LanguageSelector } from './language-selector/language-selector';
 import { ModeSelector } from './mode-selector/mode-selector';
@@ -26,7 +25,6 @@ import { ThemeSelector } from './theme-selector/theme-selector';
     FooterModule,
     MatIconModule,
     MatTabsModule,
-    TranslateModule,
     NgxTranslationsModule,
     ModeSelector,
     ThemeSelector,

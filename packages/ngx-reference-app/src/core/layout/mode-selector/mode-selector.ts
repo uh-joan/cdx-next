@@ -1,6 +1,6 @@
 import { Component, computed, inject } from '@angular/core';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
-import { TranslateModule } from '@ngx-translate/core';
+import { TranslatePipe } from '@ngx-translate/core';
 
 import { ThemeService } from '../theme-selector/theme.service';
 
@@ -8,7 +8,7 @@ import { ThemeService } from '../theme-selector/theme.service';
   selector: 'app-mode-selector',
   templateUrl: './mode-selector.html',
   styleUrls: ['./mode-selector.scss'],
-  imports: [MatSlideToggleModule, TranslateModule],
+  imports: [MatSlideToggleModule, TranslatePipe],
 })
 export class ModeSelector {
   private themeService = inject(ThemeService);

@@ -44,10 +44,7 @@
       }
     },
     "test": {
-      "executor": "@nx/jest:jest",
-      "outputs": ["{workspaceRoot}/coverage/packages/ngx-branding"],
       "options": {
-        "jestConfig": "packages/ngx-branding/jest.config.ts",
         "passWithNoTests": true
       }
     }

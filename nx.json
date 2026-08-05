@@ -112,7 +112,6 @@
       "{workspaceRoot}/.stylelintrc.json"
     ]
   },
-  "nxCloudId": "6787d1239a68ee28b89d6d2a",
   "plugins": [
     {
       "options": {
@@ -150,6 +149,36 @@
         "packages/ngx-translations/**/*",
         "packages/theme-angular-material/**/*",
         "packages/theme-xng-breadcrumb/**/*"
+      ]
+    },
+    {
+      "plugin": "@nx/jest/plugin",
+      "options": {
+        "targetName": "test"
+      },
+      "include": [
+        "packages/docs-website/**/*",
+        "packages/ngx-analytics/**/*",
+        "packages/ngx-authentication/**/*",
+        "packages/ngx-branding/**/*",
+        "packages/ngx-session-activity/**/*",
+        "packages/ngx-translations/**/*",
+        "packages/theme-angular-material/**/*",
+        "packages/theme-xng-breadcrumb/**/*"
+      ]
+    },
+    {
+      "plugin": "@nx/vite/plugin",
+      "options": {
+        "buildTargetName": "build",
+        "serveTargetName": "serve",
+        "previewTargetName": "preview",
+        "testTargetName": "test",
+        "serveStaticTargetName": "serve-static"
+      },
+      "include": [
+        "packages/docs-website/**/*",
+        "packages/ngx-reference-app/**/*"
       ]
     }
   ],
@@ -212,13 +241,6 @@
     "test": {
       "cache": true,
       "inputs": ["default", "^production", "{workspaceRoot}/jest.preset.js"]
-    }
-  },
-  "tasksRunnerOptions": {
-    "default": {
-      "options": {
-        "accessToken": "N2NkM2VlNTgtZmEzYS00ZmZjLWI1MjYtMDQ5MDVhMDg2ZDE3fHJlYWQtd3JpdGU="
-      }
     }
   },
   "workspaceLayout": {

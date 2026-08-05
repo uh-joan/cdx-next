@@ -9,7 +9,7 @@ import {
   HeaderGlobalSessionManagementDirective,
   SessionActivityModule,
 } from '@cdx/ngx-session-activity';
-import { TranslateModule } from '@ngx-translate/core';
+import { provideTranslateService } from '@ngx-translate/core';
 
 import { AppComponent } from './app';
 import { LanguageSelectorComponent } from './components/language-selector/language-selector.component';
@@ -33,16 +33,18 @@ describe('AppComponent', () => {
         AnalyticsModule.forRoot({
           appId: 'reference-app',
         }),
-        TranslateModule.forRoot({
-          fallbackLang: 'en',
-        }),
         HeaderGlobalUserProfileComponent,
         HeaderGlobalSessionManagementDirective,
         ModeSelectorComponent,
         ThemeSelectorComponent,
         LanguageSelectorComponent,
       ],
-      providers: [AnalyticsService],
+      providers: [
+        AnalyticsService,
+        provideTranslateService({
+          fallbackLang: 'en',
+        }),
+      ],
     }).compileComponents();
   });
 

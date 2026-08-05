@@ -8,7 +8,7 @@ import {
   ViewEncapsulation,
 } from '@angular/core';
 import { ThemeOptionsBranding } from '@cdx/theme-angular-material';
-import { TranslateModule } from '@ngx-translate/core';
+import { TranslatePipe } from '@ngx-translate/core';
 
 import { OneTrustModule } from '../../one-trust/one-trust.module';
 import { OneTrustService } from '../../one-trust/one-trust.service';
@@ -22,7 +22,7 @@ import { HelixFooterGroupComponent } from './helix-footer-group.component';
   imports: [
     CommonModule,
     OneTrustModule,
-    TranslateModule,
+    TranslatePipe,
     HelixFooterGroupComponent,
   ],
   encapsulation: ViewEncapsulation.None,

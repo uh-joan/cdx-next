@@ -44,10 +44,7 @@
       }
     },
     "test": {
-      "executor": "@nx/jest:jest",
-      "outputs": ["{workspaceRoot}/coverage/packages/theme-angular-material"],
       "options": {
-        "jestConfig": "packages/theme-angular-material/jest.config.ts",
         "passWithNoTests": true
       }
     }

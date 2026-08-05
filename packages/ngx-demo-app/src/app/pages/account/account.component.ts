@@ -6,7 +6,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
-import { TranslateModule } from '@ngx-translate/core';
+import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
   imports: [
@@ -17,7 +17,7 @@ import { TranslateModule } from '@ngx-translate/core';
     MatSelectModule,
     FormsModule,
     MatCardModule,
-    TranslateModule,
+    TranslatePipe,
   ],
   templateUrl: './account.component.html',
   styleUrl: './account.component.scss',

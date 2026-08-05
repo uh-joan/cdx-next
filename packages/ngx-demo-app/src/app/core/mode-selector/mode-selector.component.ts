@@ -2,7 +2,6 @@ import { Component, inject, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
-import { TranslateModule } from '@ngx-translate/core';
 
 import { ThemeService } from '../../services/theme.service';
 
@@ -10,7 +9,7 @@ import { ThemeService } from '../../services/theme.service';
   selector: 'cdx-mode-selector',
   templateUrl: './mode-selector.component.html',
   styleUrls: ['./mode-selector.component.scss'],
-  imports: [FormsModule, MatSlideToggleModule, MatIconModule, TranslateModule],
+  imports: [FormsModule, MatSlideToggleModule, MatIconModule],
 })
 export class ModeSelectorComponent implements OnInit {
   private themeService = inject(ThemeService);

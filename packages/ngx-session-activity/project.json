@@ -34,10 +34,7 @@
       }
     },
     "test": {
-      "executor": "@nx/jest:jest",
-      "outputs": ["{workspaceRoot}/coverage/packages/ngx-session-activity"],
       "options": {
-        "jestConfig": "packages/ngx-session-activity/jest.config.ts",
         "passWithNoTests": true
       }
     }

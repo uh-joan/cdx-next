@@ -43,7 +43,7 @@ export const RichTooltipComponent: InputViewerComponent = {
   height: 36,
   hideCss: false,
   htmlCode: htmlCode,
-  cssCode: styleCode,
+  cssCode: [styleCode],
   tsCode: `import { Component } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { RichTooltipDirective } from '@cdx/ngx-branding';

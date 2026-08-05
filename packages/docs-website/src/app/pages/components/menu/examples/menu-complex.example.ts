@@ -129,7 +129,7 @@ export const MenuComplexComponent: InputViewerComponent = {
   dynamicComponent: SampleComponent,
   height: 70,
   htmlCode: htmlCode,
-  cssCode: styleCode,
+  cssCode: [styleCode],
   tsCode: `import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';

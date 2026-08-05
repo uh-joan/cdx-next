@@ -41,7 +41,7 @@ export const CheckboxStatesComponent: InputViewerComponent = {
   dynamicComponent: SampleComponent,
   height: 35,
   htmlCode: htmlCode,
-  cssCode: styleCode,
+  cssCode: [styleCode],
   tsCode: `import { Component } from '@angular/core';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 

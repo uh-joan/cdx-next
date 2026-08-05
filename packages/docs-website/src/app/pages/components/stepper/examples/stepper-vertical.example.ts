@@ -93,7 +93,7 @@ export const StepperVerticalComponent: InputViewerComponent = {
   height: 80,
   hideCss: true,
   htmlCode: htmlCode,
-  cssCode: styleCode,
+  cssCode: [styleCode],
   tsCode: `import { Component, inject } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, 
   Validators } from '@angular/forms';

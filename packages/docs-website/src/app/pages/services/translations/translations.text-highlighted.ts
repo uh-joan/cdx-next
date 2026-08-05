@@ -1,14 +1,13 @@
 export const modulesTranslationsAngular = `import { NgxTranslationsModule } from '@cdx/ngx-translations';
-import { TranslateModule } from '@ngx-translate/core';
+import { provideTranslateService } from '@ngx-translate/core';
 
-@NgModule({
-  imports: [
-        TranslateModule.forRoot({
-            fallbackLang: 'en',
-        }),
-        NgxTranslationsModule
-    ]
-})`;
+bootstrapApplication(AppComponent, {
+  providers: [
+    provideTranslateService({
+      fallbackLang: 'en',
+    }),
+  ],
+});`;
 
 export const translationsTemplateAngular = `<header cdx-header>
     <cdx-header-global>

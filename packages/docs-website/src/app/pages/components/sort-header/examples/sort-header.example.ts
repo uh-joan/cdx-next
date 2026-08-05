@@ -100,7 +100,7 @@ export const SortHeaderComponent: InputViewerComponent = {
   height: 40,
   htmlCode: htmlCode,
   hideCss: true,
-  cssCode: styleCode,
+  cssCode: [styleCode],
   tsCode: `import { Component } from '@angular/core';
 import { MatSortModule, Sort } from '@angular/material/sort';
 

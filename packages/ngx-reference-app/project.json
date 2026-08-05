@@ -6,37 +6,6 @@
   "sourceRoot": "packages/ngx-reference-app/src",
   "tags": ["exclude-from-build"],
   "targets": {
-    "build": {
-      "executor": "@nx/vite:build",
-      "outputs": ["{options.outputPath}"],
-      "options": {
-        "assets": [
-          "packages/ngx-reference-app/src/favicon.ico",
-          "packages/ngx-reference-app/src/assets"
-        ],
-        "index": "packages/ngx-reference-app/src/index.html",
-        "inlineStyleLanguage": "scss",
-        "main": "packages/ngx-reference-app/src/main.ts",
-        "outputPath": "dist/packages/ngx-reference-app",
-        "scripts": [],
-        "styles": ["packages/ngx-reference-app/src/styles.scss"],
-        "tsConfig": "packages/ngx-reference-app/tsconfig.app.json",
-        "stylePreprocessorOptions": {
-          "includePaths": ["packages"]
-        }
-      },
-      "configurations": {
-        "development": {
-          "allowedCommonJsDependencies": ["sha1", "uuid"],
-          "buildOptimizer": false,
-          "extractLicenses": false,
-          "namedChunks": true,
-          "optimization": false,
-          "sourceMap": true,
-          "vendorChunk": true
-        }
-      }
-    },
     "extract-i18n": {
       "executor": "@angular-devkit/build-angular:extract-i18n",
       "options": {
@@ -46,16 +15,6 @@
     "lint": {
       "options": {
         "args": ["src/**/*.ts", "src/**/*.html"]
-      }
-    },
-    "serve": {
-      "continuous": true,
-      "defaultConfiguration": "development",
-      "executor": "@nx/vite:dev-server",
-      "configurations": {
-        "development": {
-          "buildTarget": "ngx-reference-app:build:development"
-        }
       }
     }
   }

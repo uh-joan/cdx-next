@@ -32,7 +32,7 @@ import { MatInput } from '@angular/material/input';
 import { MatRadioButton, MatRadioGroup } from '@angular/material/radio';
 import { MatSlideToggle } from '@angular/material/slide-toggle';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { TranslateModule } from '@ngx-translate/core';
+import { TranslatePipe } from '@ngx-translate/core';
 
 const COMPONENTS = [
   'autocomplete',
@@ -168,7 +168,7 @@ export class ExampleHeaderComponent<D> {
     MatAutocompleteTrigger,
     MatAutocomplete,
     MatOption,
-    TranslateModule,
+    TranslatePipe,
   ],
   providers: [MatDatepickerModule],
 })

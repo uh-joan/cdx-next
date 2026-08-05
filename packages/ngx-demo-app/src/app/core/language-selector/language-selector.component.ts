@@ -11,7 +11,7 @@ import {
   NgxTranslationsModule,
   NgxTranslationsService,
 } from '@cdx/ngx-translations';
-import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { TranslateService } from '@ngx-translate/core';
 
 import * as ar_SA from '../../../assets/i18n/ar_SA.json';
 import * as en from '../../../assets/i18n/en.json';
@@ -37,7 +37,6 @@ import * as zh_TW from '../../../assets/i18n/zh_TW.json';
     MatMenuModule,
     MatTooltipModule,
     NgxTranslationsModule,
-    TranslateModule,
   ],
 })
 export class LanguageSelectorComponent implements OnInit {

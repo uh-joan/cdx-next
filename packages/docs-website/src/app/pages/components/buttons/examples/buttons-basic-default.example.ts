@@ -102,30 +102,28 @@ const htmlCode = `<div class="story">
 </div>
 `;
 
-const styleCode = `@use "@cdx/theme-angular-material" as hlx;
+const styleCode = `.story {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
 
-.story {
-    padding: 1rem;
-    display: flex;
-    flex-direction: column;
-    gap: 3rem;
+.story__box {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
 
-    &__box {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
+.story__row {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.5rem;
+}
 
-    &__row {
-      display: flex;
-      justify-content: space-between;
-      gap: 1rem;
-      padding: .5rem;
-    }
-
-    .background-invert {
-      background-color: hlx.$surface-invert;
-    }
+.background-invert {
+  background-color: var(--mat-sys-inverse-surface);
 }`;
 
 @Component({
@@ -140,7 +138,7 @@ export const ButtonsBasicdDefaultComponent: InputViewerComponent = {
   dynamicComponent: SampleComponent,
   height: 50,
   htmlCode: htmlCode,
-  cssCode: styleCode,
+  cssCode: [styleCode],
   tsCode: `import { Component } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';

@@ -4,7 +4,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatTabsModule } from '@angular/material/tabs';
 import { RouterModule } from '@angular/router';
-import { TranslateModule } from '@ngx-translate/core';
+import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
   selector: 'cdx-left-navigation',
@@ -13,7 +13,7 @@ import { TranslateModule } from '@ngx-translate/core';
     MatButtonModule,
     MatDividerModule,
     RouterModule,
-    TranslateModule,
+    TranslatePipe,
     MatTabsModule,
   ],
   templateUrl: './left-navigation.component.html',

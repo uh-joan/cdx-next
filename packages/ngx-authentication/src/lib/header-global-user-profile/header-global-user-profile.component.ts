@@ -11,7 +11,7 @@ import {
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
-import { TranslateModule } from '@ngx-translate/core';
+import { TranslatePipe } from '@ngx-translate/core';
 
 import { AuthenticationService } from '../authentication.service';
 import { JwtToken } from '../authentication.types';
@@ -20,7 +20,7 @@ import { JwtToken } from '../authentication.types';
   selector: 'cdx-header-global-user-profile',
   templateUrl: './header-global-user-profile.component.html',
   styleUrls: ['./header-global-user-profile.component.scss'],
-  imports: [MatButtonModule, MatIconModule, MatMenuModule, TranslateModule],
+  imports: [MatButtonModule, MatIconModule, MatMenuModule, TranslatePipe],
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })

@@ -31,7 +31,7 @@ export const TimePickerSimpleComponent: InputViewerComponent = {
   height: 30,
   htmlCode: htmlCode,
   hideCss: true,
-  cssCode: styleCode,
+  cssCode: [styleCode],
   tsCode: `import {Component} from '@angular/core';
 import {MatTimepickerModule} from '@angular/material/timepicker';
 import {MatInputModule} from '@angular/material/input';

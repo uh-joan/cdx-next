@@ -89,9 +89,9 @@
     <br /><br />
     <li>
       <p>
-        Import and configure <strong>TranslateModule</strong> and
-        <strong>NgxTranslationsModule</strong> in your root module's imports
-        list.
+        Configure <strong>provideTranslateService</strong> in your root
+        providers and include <strong>NgxTranslationsModule</strong> where
+        needed.
       </p>
     </li>
 
@@ -114,8 +114,8 @@
 
     <li>
       <p>
-        From the root component (the same where TranslateModule and
-        NgxTranslationsModule are imported) the
+        From the root component (the same where
+        provideTranslateService/NgxTranslationsModule are configured) the
         <strong>mergeTranslationsLabels</strong> function from
         NgxTranslationsService should be called and ought to get as input the
         list of the languages (in language code / locale code) to merge the

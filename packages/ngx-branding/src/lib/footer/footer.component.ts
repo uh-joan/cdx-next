@@ -8,7 +8,7 @@ import {
   ViewEncapsulation,
 } from '@angular/core';
 import { ThemeOptionsBranding } from '@cdx/theme-angular-material';
-import { TranslateModule } from '@ngx-translate/core';
+import { TranslatePipe } from '@ngx-translate/core';
 
 import { OneTrustService } from '../one-trust/one-trust.service';
 import { FooterGroupComponent } from './footer-group.component';
@@ -20,7 +20,7 @@ import { FooterGroupComponent } from './footer-group.component';
   styleUrls: ['./footer.component.scss'],
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [FooterGroupComponent, NgTemplateOutlet, TranslateModule],
+  imports: [FooterGroupComponent, NgTemplateOutlet, TranslatePipe],
 })
 export class FooterComponent {
   shouldShowTranslations = input(false, { transform: booleanAttribute });

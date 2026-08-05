@@ -10,7 +10,7 @@ import {
   MatDialogTitle,
 } from '@angular/material/dialog';
 import { Idle } from '@ng-idle/core';
-import { TranslateModule } from '@ngx-translate/core';
+import { TranslatePipe } from '@ngx-translate/core';
 
 import { DIALOG_RESULTS } from '../session-activity.model';
 
@@ -25,7 +25,7 @@ import { DIALOG_RESULTS } from '../session-activity.model';
     MatDialogActions,
     MatButton,
     MatDialogClose,
-    TranslateModule,
+    TranslatePipe,
   ],
 })
 export class InactivityDialogComponent {

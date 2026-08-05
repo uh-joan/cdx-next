@@ -2,6 +2,9 @@ const nxPreset = require('@nx/jest/preset').default;
 
 module.exports = {
   ...nxPreset,
+  // Nx preset injects ts-jest by default; package-level jest configs already
+  // define jest-preset-angular transforms, so keep preset transform empty.
+  transform: {},
   /* TODO: Update to latest Jest snapshotFormat
    * By default Nx has kept the older style of Jest Snapshot formats
    * to prevent breaking of any existing tests with snapshots.

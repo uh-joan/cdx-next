@@ -47,23 +47,23 @@ const htmlCode = `<div class="story">
 
 const styleCode = `.story {
     padding: 1rem;
+}
 
-    &__section {
-        display: flex;
-        justify-content: space-between;
-    }
+.story__section {
+    display: flex;
+    justify-content: space-between;
+}
 
-    .font-sm {
-        font-size: 16px;
-    }
-    
-    .font-m {
-        font-size: 20px;
-    }
+.font-sm {
+    font-size: 16px;
+}
 
-    .font-xl {
-        font-size: 32px;
-    }
+.font-m {
+    font-size: 20px;
+}
+
+.font-xl {
+    font-size: 32px;
 }`;
 
 @Component({
@@ -78,7 +78,7 @@ export const IconsSizesComponent: InputViewerComponent = {
   dynamicComponent: SampleComponent,
   height: 70,
   htmlCode: htmlCode,
-  cssCode: styleCode,
+  cssCode: [styleCode],
   tsCode: `import { Component } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 

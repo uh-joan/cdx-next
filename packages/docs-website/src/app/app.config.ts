@@ -10,7 +10,7 @@ import {
   withViewTransitions,
 } from '@angular/router';
 import { OneTrustModule } from '@cdx/ngx-branding';
-import { TranslateModule } from '@ngx-translate/core';
+import { provideTranslateService } from '@ngx-translate/core';
 import { provideHighcharts } from 'highcharts-angular';
 import { HIGHLIGHT_OPTIONS } from 'ngx-highlightjs';
 
@@ -34,10 +34,10 @@ export const appConfig: ApplicationConfig = {
       OneTrustModule.forRoot({
         domainId: '1c592d3f-d63c-42d7-9871-1b022f316498',
       }),
-      TranslateModule.forRoot({
-        fallbackLang: 'en',
-      }),
     ),
+    provideTranslateService({
+      fallbackLang: 'en',
+    }),
     {
       provide: HIGHLIGHT_OPTIONS,
       useValue: {

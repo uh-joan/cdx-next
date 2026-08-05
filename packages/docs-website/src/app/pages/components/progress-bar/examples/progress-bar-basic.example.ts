@@ -41,7 +41,7 @@ export const PaginatorBasicComponent: InputViewerComponent = {
   dynamicComponent: SampleComponent,
   height: 35,
   htmlCode: htmlCode,
-  cssCode: styleCode,
+  cssCode: [styleCode],
   tsCode: `import { Component } from '@angular/core';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 
