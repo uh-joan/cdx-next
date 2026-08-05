@@ -23,6 +23,7 @@ import { SessionActivityModule } from '@cdx/ngx-session-activity';
 
 export const sessionActivityServiceComponentAngular = `
 import { AuthenticationService } from '@cdx/ngx-authentication';
+import { effect, inject } from '@angular/core';
 import {
   LOGOUT_TYPE,
   SessionActivityService,
@@ -30,29 +31,23 @@ import {
 
 export class AppComponent implements OnInit {
   authenticated = false;
-  sessionActivityServiceSubscription?: Subscription;
-  constructor(
-    private authenticationService: AuthenticationService,
-    private sessionActivityService: SessionActivityService,
-  ) {
+  private authenticationService: AuthenticationService = inject(AuthenticationService);
+  private sessionActivityService: SessionActivityService = inject(SessionActivityService);
+
+  constructor() {
     this.authenticated = this.authenticationService.isAuthenticated();
     if (this.authenticated) {
       this.sessionActivityService.initialize();
-      this.sessionActivityServiceSubscription =
-        this.sessionActivityService.sessionActivitySubject.subscribe(
-          (sessionActivitySubject) => {
-            if (
-              sessionActivitySubject === LOGOUT_TYPE.LOGOUT_SELECTED ||
-              sessionActivitySubject === LOGOUT_TYPE.SESSION_EXPIRED
-            ) {
-              this.authenticationService.logout();
-            }
-          },
-        );
+      effect(() => {
+        const sessionActivityEvent = this.sessionActivityService.sessionActivityEvent();
+        if (
+          sessionActivityEvent?.type === LOGOUT_TYPE.LOGOUT_SELECTED ||
+          sessionActivityEvent?.type === LOGOUT_TYPE.SESSION_EXPIRED
+        ) {
+          this.authenticationService.logout();
+        }
+      });
     }
-  }
-  ngOnDestroy(): void {
-    this.sessionActivityServiceSubscription?.unsubscribe();
   }
 }`;
 

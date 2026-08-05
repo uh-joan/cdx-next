@@ -2,9 +2,15 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { MAT_DIALOG_DATA, MatDialogModule } from '@angular/material/dialog';
 import { Idle, IdleExpiry } from '@ng-idle/core';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
-import { of } from 'rxjs';
 
 import { InactivityDialogComponent } from './inactivity-dialog.component';
+
+const subscribable = <T>(value: T) => ({
+  subscribe: (next: (result: T) => void) => {
+    next(value);
+    return { unsubscribe: () => undefined };
+  },
+});
 
 export class MockExpiry extends IdleExpiry {
   public lastDate = new Date();
@@ -37,7 +43,7 @@ describe('InactivityDialogComponent', () => {
         {
           provide: TranslateService,
           useValue: {
-            get: (key: string) => of(key),
+            get: (key: string) => subscribable(key),
           },
         },
       ],

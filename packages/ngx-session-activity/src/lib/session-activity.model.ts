@@ -11,6 +11,13 @@ export const LOGOUT_TYPE = {
   SESSION_EXPIRED: 'security-token-expired',
 };
 
+export type LogoutType = (typeof LOGOUT_TYPE)[keyof typeof LOGOUT_TYPE];
+
+export interface SessionActivityEvent {
+  type: LogoutType;
+  timestamp: number;
+}
+
 export const BROWSER_VISIBILITY = {
   DOCUMENT: 'document',
   VISIBILITY_CHANGE: 'visibilitychange',

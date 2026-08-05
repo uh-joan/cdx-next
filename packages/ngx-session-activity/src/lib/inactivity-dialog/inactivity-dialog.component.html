@@ -17,8 +17,8 @@
     {{
       data.shouldShowTranslations
         ? ('INACTIVITY_DIALOG.REDIRECTION_MESSAGE'
-          | translate: { countdown: countdown })
-        : "You'll be redirected in " + countdown + ' seconds'
+          | translate: { countdown: countdown() })
+        : "You'll be redirected in " + countdown() + ' seconds'
     }}
   </p>
 </div>

@@ -5,7 +5,6 @@ import {
   SpyObject,
 } from '@ngneat/spectator/jest';
 import { TranslateService } from '@ngx-translate/core';
-import { of } from 'rxjs';
 
 import { OneTrustService } from '../one-trust/one-trust.service';
 import { FooterComponent } from './footer.component';

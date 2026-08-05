@@ -1,5 +1,12 @@
-import { Component, HostBinding, inject, OnInit } from '@angular/core';
-import { FormControl, ReactiveFormsModule } from '@angular/forms';
+import {
+  Component,
+  HostBinding,
+  computed,
+  effect,
+  inject,
+  signal,
+} from '@angular/core';
+import { toSignal } from '@angular/core/rxjs-interop';
 import { MatOption } from '@angular/material/core';
 import {
   MatFormField,
@@ -10,7 +17,6 @@ import { MatSelect, MatSelectModule } from '@angular/material/select';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { ActivatedRoute, Router } from '@angular/router';
 import { marked } from 'marked';
-import { forkJoin } from 'rxjs';
 
 import { Page } from '../../../core/page/page';
 import { ReleaseNotesService } from './release-notes.service';
@@ -24,74 +30,96 @@ import { ReleaseNotesService } from './release-notes.service';
     MatFormField,
     MatLabel,
     MatSelect,
-    ReactiveFormsModule,
     MatOption,
     Page,
-    ReactiveFormsModule,
     MatFormFieldModule,
     MatSelectModule,
   ],
   providers: [ReleaseNotesService],
 })
-export class ReleaseNotes implements OnInit {
+export class ReleaseNotes {
   @HostBinding('class') hostClass = 'cdx-section';
 
-  versionControl: FormControl = new FormControl();
-  filesByVersion: { [key: string]: string[] } = {};
-  releaseNotesHtml: SafeHtml = '';
+  private readonly releaseNotesService = inject(ReleaseNotesService);
+  private readonly sanitizer = inject(DomSanitizer);
+  private readonly route = inject(ActivatedRoute);
+  private readonly router = inject(Router);
 
-  availableVersions: string[] = [];
+  readonly selectedVersion = signal('');
+  readonly releaseNotesHtml = signal<SafeHtml | string>('');
+  private readonly routeVersion = toSignal(this.route.paramMap, {
+    initialValue: this.route.snapshot.paramMap,
+  });
+  readonly allReleaseNoteFiles = toSignal(
+    this.releaseNotesService.getAllReleaseNotesFiles(),
+    {
+      initialValue: [] as string[],
+    },
+  );
+  readonly filesByVersion = computed(() =>
+    this.groupFilesByVersion(this.allReleaseNoteFiles()),
+  );
+  readonly availableVersions = computed(() =>
+    Object.keys(this.filesByVersion()).sort((a, b) =>
+      b.localeCompare(a, undefined, { numeric: true }),
+    ),
+  );
 
-  private releaseNotesService = inject(ReleaseNotesService);
-  private sanitizer = inject(DomSanitizer);
-  private route = inject(ActivatedRoute);
-  private router = inject(Router);
+  private syncVersionSelection = effect(() => {
+    const availableVersions = this.availableVersions();
+    if (!availableVersions.length) {
+      return;
+    }
 
-  ngOnInit(): void {
-    this.releaseNotesService.getAllReleaseNotesFiles().subscribe((files) => {
-      this.filesByVersion = {};
+    const versionFromUrl = this.routeVersion()?.get('version');
+    const version =
+      versionFromUrl && availableVersions.includes(versionFromUrl)
+        ? versionFromUrl
+        : availableVersions[0];
 
-      files.forEach((file) => {
-        const match = file.match(/RELEASE_NOTES_(v\d+)\.\d+\.\d+\.md/);
-        if (match && match[1]) {
-          const version = match[1];
-          if (!this.filesByVersion[version]) {
-            this.filesByVersion[version] = [];
-          }
-          this.filesByVersion[version].push(file);
+    if (versionFromUrl && !availableVersions.includes(versionFromUrl)) {
+      this.router.navigate(['development/release-notes', version]);
+      return;
+    }
+
+    if (this.selectedVersion() !== version) {
+      this.selectedVersion.set(version);
+    }
+
+    void this.loadAllReleaseNotes(version);
+  });
+
+  onVersionSelected(version: string): void {
+    if (!version || version === this.selectedVersion()) {
+      return;
+    }
+
+    this.router.navigate(['development/release-notes', version]);
+  }
+
+  private groupFilesByVersion(files: string[]): Record<string, string[]> {
+    const filesByVersion: Record<string, string[]> = {};
+
+    files.forEach((file) => {
+      const match = file.match(/RELEASE_NOTES_(v\d+)\.\d+\.\d+\.md/);
+      if (match && match[1]) {
+        const version = match[1];
+        if (!filesByVersion[version]) {
+          filesByVersion[version] = [];
         }
-      });
+        filesByVersion[version].push(file);
+      }
+    });
 
-      this.availableVersions = Object.keys(this.filesByVersion).sort((a, b) =>
-        b.localeCompare(a, undefined, { numeric: true }),
-      );
-
-      Object.keys(this.filesByVersion).forEach((version) => {
-        this.filesByVersion[version].sort((a, b) => {
-          const versionA = this.extractVersionNumber(a);
-          const versionB = this.extractVersionNumber(b);
-          return versionB.localeCompare(versionA, undefined, { numeric: true });
-        });
-      });
-
-      this.route.params.subscribe((params) => {
-        const versionFromUrl = params['version'] || this.availableVersions[0];
-        if (this.availableVersions.includes(versionFromUrl)) {
-          this.versionControl.setValue(versionFromUrl);
-          this.loadAllReleaseNotes(versionFromUrl);
-        } else {
-          this.router.navigate([
-            'development/release-notes',
-            this.availableVersions[0],
-          ]);
-        }
+    Object.keys(filesByVersion).forEach((version) => {
+      filesByVersion[version].sort((a, b) => {
+        const versionA = this.extractVersionNumber(a);
+        const versionB = this.extractVersionNumber(b);
+        return versionB.localeCompare(versionA, undefined, { numeric: true });
       });
     });
 
-    this.versionControl.valueChanges.subscribe((selectedVersion) => {
-      this.router.navigate(['development/release-notes', selectedVersion]);
-      this.loadAllReleaseNotes(selectedVersion);
-    });
+    return filesByVersion;
   }
 
   private extractVersionNumber(fileName: string): string {
@@ -99,23 +127,28 @@ export class ReleaseNotes implements OnInit {
     return match ? match[1] : '0.0.0';
   }
 
-  loadAllReleaseNotes(version: string): void {
-    const files = this.filesByVersion[version] || [];
+  async loadAllReleaseNotes(version: string): Promise<void> {
+    const files = this.filesByVersion()[version] || [];
 
-    const requests = files.map((file) =>
-      this.releaseNotesService.getReleaseNote(file),
+    const contents = await Promise.all(
+      files.map(
+        (file) =>
+          new Promise<string>((resolve, reject) => {
+            this.releaseNotesService.getReleaseNote(file).subscribe({
+              next: resolve,
+              error: reject,
+            });
+          }),
+      ),
     );
 
-    forkJoin(requests).subscribe((contents) => {
-      const combinedHtml = files
-        .map((file, index) => {
-          return marked(contents[index]);
-        })
-        .join('<hr>');
+    const combinedHtml = await Promise.all(
+      contents.map((content) => marked(content)),
+    );
 
-      this.releaseNotesHtml =
-        this.sanitizer.bypassSecurityTrustHtml(combinedHtml);
-    });
+    this.releaseNotesHtml.set(
+      this.sanitizer.bypassSecurityTrustHtml(combinedHtml.join('<hr>')),
+    );
   }
 
   getFileName(file: string): string {

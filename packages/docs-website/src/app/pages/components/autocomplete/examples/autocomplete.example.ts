@@ -1,11 +1,9 @@
-import { AsyncPipe } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, computed } from '@angular/core';
+import { toSignal } from '@angular/core/rxjs-interop';
 import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { Observable } from 'rxjs';
-import { map, startWith } from 'rxjs/operators';
 
 import { InputViewerComponent } from '../../../../core/example-viewer/example-viewer.model';
 
@@ -20,7 +18,7 @@ const htmlCode = `<div class="story">
            [formControl]="myControl"
            [matAutocomplete]="auto">
     <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
-      @for (option of filteredOptions | async; track option) {
+      @for (option of filteredOptions(); track option) {
         <mat-option [value]="option">{{option}}</mat-option>
       }
     </mat-autocomplete>
@@ -36,25 +34,19 @@ const styleCode = `.story {
   template: htmlCode,
   styles: [styleCode],
   imports: [
-    FormsModule,
     MatFormFieldModule,
     MatInputModule,
     MatAutocompleteModule,
     ReactiveFormsModule,
-    AsyncPipe,
   ],
 })
-class SampleComponent implements OnInit {
-  myControl = new FormControl('');
+class SampleComponent {
+  myControl = new FormControl<string>('');
   options: string[] = ['One', 'Two', 'Three'];
-  filteredOptions!: Observable<string[]>;
-
-  ngOnInit() {
-    this.filteredOptions = this.myControl.valueChanges.pipe(
-      startWith(''),
-      map((value) => this._filter(value || '')),
-    );
-  }
+  controlValue = toSignal(this.myControl.valueChanges, {
+    initialValue: this.myControl.value,
+  });
+  filteredOptions = computed(() => this._filter(this.controlValue() || ''));
 
   private _filter(value: string): string[] {
     const filterValue = value.toLowerCase();
@@ -73,10 +65,9 @@ export const AutocompleteComponent: InputViewerComponent = {
   htmlCode: htmlCode,
   cssCode: styleCode,
   tsCode: `import {Component, OnInit} from '@angular/core';
-import {FormControl, FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {Observable} from 'rxjs';
-import {map, startWith} from 'rxjs/operators';
-import {AsyncPipe} from '@angular/common';
+import {computed} from '@angular/core';
+import {toSignal} from '@angular/core/rxjs-interop';
+import {FormControl, ReactiveFormsModule} from '@angular/forms';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
@@ -89,25 +80,19 @@ import {MatFormFieldModule} from '@angular/material/form-field';
   templateUrl: 'autocomplete-auto-active-first-option-example.html',
   styleUrl: 'autocomplete-auto-active-first-option-example.css',
   imports: [
-    FormsModule,
     MatFormFieldModule,
     MatInputModule,
     MatAutocompleteModule,
     ReactiveFormsModule,
-    AsyncPipe,
   ],
 })
-export class AutocompleteAutoActiveFirstOptionExample implements OnInit {
-  myControl = new FormControl('');
+export class AutocompleteAutoActiveFirstOptionExample {
+  myControl = new FormControl<string>('');
   options: string[] = ['One', 'Two', 'Three'];
-  filteredOptions: Observable<string[]>;
-
-  ngOnInit() {
-    this.filteredOptions = this.myControl.valueChanges.pipe(
-      startWith(''),
-      map(value => this._filter(value || '')),
-    );
-  }
+  controlValue = toSignal(this.myControl.valueChanges, {
+    initialValue: this.myControl.value,
+  });
+  filteredOptions = computed(() => this._filter(this.controlValue() || ''));
 
   private _filter(value: string): string[] {
     const filterValue = value.toLowerCase();

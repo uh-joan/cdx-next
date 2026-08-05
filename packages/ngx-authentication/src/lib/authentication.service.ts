@@ -2,7 +2,6 @@ import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, ParamMap, Router } from '@angular/router';
 import { JwtHelperService } from '@auth0/angular-jwt';
-import { firstValueFrom } from 'rxjs';
 
 import { AUTHENTICATION_SETTINGS } from './authentication.injectors';
 import { JwtToken } from './authentication.types';
@@ -71,9 +70,17 @@ export class AuthenticationService {
 
   async createSession(code: string): Promise<boolean> {
     const url = this.accessAppActionWithReferrer(`api/session/user/${code}`);
-    let authResponse;
     try {
-      authResponse = (await firstValueFrom(this.http.get(url))) as {
+      const response = await fetch(url, {
+        method: 'GET',
+        credentials: 'include',
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to create session');
+      }
+
+      const authResponse = (await response.json()) as {
         token: string;
       };
       this.tokenService.setToken(authResponse.token);

@@ -1,7 +1,8 @@
-import { AfterViewInit, Component, HostBinding, inject } from '@angular/core';
+import { Component, effect, HostBinding, inject } from '@angular/core';
 import { MatDivider } from '@angular/material/divider';
 import { MatTableModule } from '@angular/material/table';
 import { ActivatedRoute } from '@angular/router';
+import { toSignal } from '@angular/core/rxjs-interop';
 
 import { ExternalLink } from '../../../components/external-link/external-link';
 import { Highlight } from '../../../components/highlight/highlight';
@@ -27,7 +28,7 @@ export interface DataRow {
     InternalLink,
   ],
 })
-export class QuickStartNewProject implements AfterViewInit {
+export class QuickStartNewProject {
   @HostBinding('class') hostClass = 'cdx-section';
 
   displayedColumns: string[] = [
@@ -121,13 +122,13 @@ footer {
       description: 'Session Activity service',
       dependencies: [
         `"@ng-idle/keepalive": "^16.0.0"`,
-        `"@ngx-translate/core": ">=17.0.0"`,
+        `"@ngx-translate/core": ">=18.0.0"`,
       ],
     },
     {
       name: '@cdx/ngx-translations',
       description: 'Translation service',
-      dependencies: [`"@ngx-translate/core": ">=17.0.0"`],
+      dependencies: [`"@ngx-translate/core": ">=18.0.0"`],
     },
     {
       name: '@cdx/ngx-analytics',
@@ -173,14 +174,17 @@ footer {
   columns: string[] = ['name', 'description', 'dependencies', 'code'];
 
   private route: ActivatedRoute = inject(ActivatedRoute);
-  ngAfterViewInit() {
-    this.route.fragment.subscribe((fragment) => {
-      if (fragment) {
-        const element = document.getElementById(fragment);
-        if (element) {
-          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-      }
-    });
-  }
+  private fragment = toSignal(this.route.fragment, { initialValue: null });
+
+  private scrollToFragment = effect(() => {
+    const fragment = this.fragment();
+    if (!fragment) {
+      return;
+    }
+
+    const element = document.getElementById(fragment);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
 }

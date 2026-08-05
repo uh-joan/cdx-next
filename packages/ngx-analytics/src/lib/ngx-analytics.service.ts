@@ -1,4 +1,4 @@
-import { inject, Injectable } from '@angular/core';
+import { inject, Injectable, signal } from '@angular/core';
 import { OneTrustService } from '@cdx/ngx-branding';
 import {
   addGlobalContexts,
@@ -11,9 +11,6 @@ import {
   trackStructEvent,
 } from '@snowplow/browser-tracker';
 import { BrowserTracker } from '@snowplow/browser-tracker-core';
-import { fromEvent, Observable } from 'rxjs';
-import { first, map } from 'rxjs/operators';
-
 import {
   ANALYTICS_CONTEXT_DATA,
   ANALYTICS_SETTINGS,
@@ -45,9 +42,12 @@ export class AnalyticsService {
     } as AnalyticsContextSchema;
   })();
   private oneTrustService = inject(OneTrustService, { optional: true });
+  private readonly cookiesAccepted = signal(false);
 
   constructor() {
-    this.cookiesAccepted$.subscribe();
+    window.addEventListener('cookiesAccepted', this.handleCookiesAccepted, {
+      once: true,
+    });
 
     this.tracker = newTracker(
       this.trackerId,
@@ -61,22 +61,14 @@ export class AnalyticsService {
     if (this.context) this.tracker?.core?.addGlobalContexts([this.context]);
   }
 
-  cookiesAccepted$: Observable<void> = fromEvent(
-    window,
-    'cookiesAccepted',
-  ).pipe(
-    first(),
-    map(() => {
-      const user =
-        (JSON.parse(localStorage.getItem('analytics') || '') || {}).visitor ||
-        '';
-      this.tracker?.setUserId(user);
-      this.tracker?.clearUserData();
-      this.tracker?.disableAnonymousTracking();
-      this.cookiesAccepted = true;
-    }),
-  );
-  private cookiesAccepted = false;
+  private handleCookiesAccepted = (): void => {
+    const user =
+      (JSON.parse(localStorage.getItem('analytics') || '') || {}).visitor || '';
+    this.tracker?.setUserId(user);
+    this.tracker?.clearUserData();
+    this.tracker?.disableAnonymousTracking();
+    this.cookiesAccepted.set(true);
+  };
 
   setUserId(userId: string): void {
     this.tracker?.setUserId(userId);
@@ -92,7 +84,7 @@ export class AnalyticsService {
 
   trackPageView(pageViewEvent: PageViewEvent & CommonEventProperties): void {
     if (this.isOneTrustEnabled()) {
-      if (!this.cookiesAccepted) {
+      if (!this.cookiesAccepted()) {
         return;
       }
     }
@@ -100,7 +92,7 @@ export class AnalyticsService {
   }
 
   trackEvent(event: StructuredEvent & CommonEventProperties): void {
-    if (this.isOneTrustEnabled() && !this.cookiesAccepted) return;
+    if (this.isOneTrustEnabled() && !this.cookiesAccepted()) return;
     trackStructEvent(event, [this.trackerId]);
   }
 

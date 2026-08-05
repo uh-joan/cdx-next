@@ -12,6 +12,6 @@
   "peerDependencies": {
     "@ng-idle/core": "^16.0.0",
     "@ng-idle/keepalive": "^16.0.0",
-    "@ngx-translate/core": ">=17.0.0"
+    "@ngx-translate/core": ">=18.0.0"
   }
 }

@@ -1,4 +1,4 @@
-@if (isHelix$ | async) {
+@if (isHelix()) {
   <header hlx-header>
     <hlx-header-product-name
       >Clarivate Digital Experience
@@ -57,7 +57,7 @@
   <cdx-left-navigation></cdx-left-navigation>
   <router-outlet></router-outlet>
 </mat-tab-nav-panel>
-@if (isHelix$ | async) {
+@if (isHelix()) {
   <footer hlx-footer>
     <a hlx-footer-link href="https://stackoverflow.com/">Stack Overflow</a>
     <a hlx-footer-link href="https://www.powerlanguage.co.uk/wordle/">

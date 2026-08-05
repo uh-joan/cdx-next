@@ -1,5 +1,6 @@
-import { CommonModule } from '@angular/common';
-import { Component, inject } from '@angular/core';
+import { Component, computed, inject } from '@angular/core';
+import { TitleCasePipe } from '@angular/common';
+import { toSignal } from '@angular/core/rxjs-interop';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTabsModule } from '@angular/material/tabs';
 import { RouterModule } from '@angular/router';
@@ -13,7 +14,6 @@ import {
   HelixHeaderProductNameOrLogoComponent,
 } from '@cdx/ngx-branding';
 import { TranslateModule } from '@ngx-translate/core';
-import { map } from 'rxjs';
 
 import { ThemeService } from '../../services/theme.service';
 import { LanguageSelectorComponent } from '../language-selector/language-selector.component';
@@ -27,7 +27,6 @@ import { ThemeSelectorComponent } from '../theme-selector/theme-selector.compone
     HelixHeaderGlobalComponent,
     HelixHeaderProductNameOrLogoComponent,
     HelixFooterComponent,
-    CommonModule,
     RouterModule,
     HeaderComponent,
     FooterModule,
@@ -40,6 +39,7 @@ import { ThemeSelectorComponent } from '../theme-selector/theme-selector.compone
     LanguageSelectorComponent,
     LeftNavigationComponent,
     MatIconModule,
+    TitleCasePipe,
     ModeSelectorComponent,
     ThemeSelectorComponent,
     LanguageSelectorComponent,
@@ -49,6 +49,10 @@ import { ThemeSelectorComponent } from '../theme-selector/theme-selector.compone
 })
 export class LayoutComponent {
   themeService = inject(ThemeService);
+  private currentTheme = toSignal(this.themeService.currentTheme$, {
+    initialValue: '',
+  });
+  isHelix = computed(() => this.currentTheme() === 'helix');
 
   links = [
     { name: 'APP.HOME', path: 'home' },
@@ -56,12 +60,6 @@ export class LayoutComponent {
     { name: 'RESULTS.TITLE', path: 'results' },
     { name: 'DASHBOARD.TITLE', path: 'dashboard' },
   ];
-
-  isHelix$ = this.themeService.currentTheme$.pipe(
-    map((theme) => {
-      return theme === 'helix';
-    }),
-  );
 
   isActive(path: string): boolean {
     return path == window.location.pathname.substring(1);

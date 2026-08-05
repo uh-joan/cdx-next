@@ -1,8 +1,8 @@
+import { EventEmitter } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Idle, LocalStorage } from '@ng-idle/core';
 import { createServiceFactory, SpectatorService } from '@ngneat/spectator/jest';
 import { TranslateService } from '@ngx-translate/core';
-import { of, Subject } from 'rxjs';
 
 import { IDLE_CONFIG } from './session-activity.config';
 import { SESSION_ACTIVITY_SETTINGS } from './session-activity.injectors';
@@ -10,17 +10,19 @@ import { LOGOUT_TYPE, SessionActivitySettings } from './session-activity.model';
 import { SessionActivityModule } from './session-activity.module';
 import { SessionActivityService } from './session-activity.service';
 
+const dialogClosed = new EventEmitter<null>();
+
 const matDialogMock = {
-  open: jest.fn().mockReturnValue({ afterClosed: () => of(null) }),
+  open: jest.fn().mockReturnValue({ afterClosed: () => dialogClosed }),
   closeAll: jest.fn(),
 };
 
 const idleMock = {
-  onIdleStart: new Subject(),
-  onIdleEnd: new Subject(),
-  onTimeoutWarning: new Subject(),
-  onTimeout: new Subject(),
-  onInterrupt: new Subject(),
+  onIdleStart: new EventEmitter<void>(),
+  onIdleEnd: new EventEmitter<void>(),
+  onTimeoutWarning: new EventEmitter<number>(),
+  onTimeout: new EventEmitter<void>(),
+  onInterrupt: new EventEmitter<void>(),
   setIdle: jest.fn(),
   setTimeout: jest.fn(),
   setInterrupts: jest.fn(),
@@ -70,7 +72,6 @@ describe('SessionActivityService', () => {
     });
 
     it('Default value from config file should be set', () => {
-      expect(spectator.service.isThisComponentAlive).toBeTruthy();
       expect(spectator.service.idleMinutes).toEqual(
         IDLE_CONFIG.IDLE_MINUTES_DEFAULT,
       );
@@ -172,7 +173,7 @@ describe('SessionActivityService', () => {
       spectator.service.initialize();
     });
 
-    it('openInactivityDialog should be called when idle starts and sessionActivitySubject should emit logout event on timeout', (done) => {
+    it('openInactivityDialog should be called when idle starts and sessionActivityEvent should contain logout event on timeout', () => {
       const openInactivityDialogSpy = jest.spyOn(
         spectator.service,
         'openInactivityDialog',
@@ -181,17 +182,16 @@ describe('SessionActivityService', () => {
       expect(openInactivityDialogSpy).not.toHaveBeenCalled();
 
       // Simulate idle start
-      idleMock.onIdleStart.next(undefined);
+      idleMock.onIdleStart.emit();
 
       expect(openInactivityDialogSpy).toHaveBeenCalledTimes(1);
 
-      spectator.service.sessionActivitySubject.subscribe((value) => {
-        expect(value).toEqual(LOGOUT_TYPE.SESSION_EXPIRED);
-        done();
-      });
-
       // Simulate timeout
-      idleMock.onTimeout.next(undefined);
+      idleMock.onTimeout.emit();
+
+      expect(spectator.service.sessionActivityEvent()?.type).toEqual(
+        LOGOUT_TYPE.SESSION_EXPIRED,
+      );
     });
 
     it('openInactivityDialog should not be called before idle starts', () => {

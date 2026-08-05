@@ -1,9 +1,15 @@
 import { HttpClient } from '@angular/common/http';
-import { inject, Injectable, OnDestroy, Renderer2 } from '@angular/core';
+import {
+  DestroyRef,
+  inject,
+  Injectable,
+  OnDestroy,
+  Renderer2,
+  signal,
+} from '@angular/core';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { DEFAULT_INTERRUPTSOURCES, Idle, LocalStorage } from '@ng-idle/core';
-import { Subject } from 'rxjs';
-import { take, takeWhile } from 'rxjs/operators';
 
 import { InactivityDialogComponent } from './inactivity-dialog/inactivity-dialog.component';
 import { IDLE_CONFIG } from './session-activity.config';
@@ -14,7 +20,9 @@ import {
   DialogResultsType,
   LAST_HYDRATE,
   LOGOUT_TYPE,
+  LogoutType,
   OUT_OF_PAGE_TIME,
+  SessionActivityEvent,
   SessionActivitySettings,
 } from './session-activity.model';
 
@@ -22,23 +30,24 @@ import {
   providedIn: 'root',
 })
 export class SessionActivityService implements OnDestroy {
-  isThisComponentAlive = true;
   pingIntervalMinutes = IDLE_CONFIG.PING_INTERVAL_MINUTES_DEFAULT;
   idleMinutes?: number;
   timeoutMinutes?: number;
-  sessionActivitySubject: Subject<string> = new Subject<string>();
+  sessionActivityEvent = signal<SessionActivityEvent | null>(null);
   dialogRef?: MatDialogRef<InactivityDialogComponent>;
   shouldNotRehydrate?: boolean;
 
+  private destroyRef: DestroyRef = inject(DestroyRef);
   private idle: Idle = inject(Idle);
   private http: HttpClient = inject(HttpClient);
   private dialog: MatDialog = inject(MatDialog);
   private localStorage: LocalStorage = inject(LocalStorage);
   private renderer: Renderer2 = inject(Renderer2);
   private settings = inject(SESSION_ACTIVITY_SETTINGS);
+  private removeVisibilityListener: VoidFunction = () => undefined;
 
   constructor() {
-    this.renderer.listen(
+    this.removeVisibilityListener = this.renderer.listen(
       BROWSER_VISIBILITY.DOCUMENT,
       BROWSER_VISIBILITY.VISIBILITY_CHANGE,
       (event: Event) => {
@@ -47,7 +56,7 @@ export class SessionActivityService implements OnDestroy {
     );
 
     this.idle.onIdleStart
-      .pipe(takeWhile(() => this.isThisComponentAlive))
+      .pipe(takeUntilDestroyed(this.destroyRef))
       .subscribe(() => {
         if (!this.dialogRef) {
           this.openInactivityDialog();
@@ -55,23 +64,23 @@ export class SessionActivityService implements OnDestroy {
       });
 
     this.idle.onIdleEnd
-      .pipe(takeWhile(() => this.isThisComponentAlive))
+      .pipe(takeUntilDestroyed(this.destroyRef))
       .subscribe(() => {
         this.resetIdle();
       });
 
     this.idle.onTimeout
-      .pipe(takeWhile(() => this.isThisComponentAlive))
+      .pipe(takeUntilDestroyed(this.destroyRef))
       .subscribe(() => {
         this.expireSession();
       });
 
     this.idle.onTimeoutWarning
-      .pipe(takeWhile(() => this.isThisComponentAlive))
+      .pipe(takeUntilDestroyed(this.destroyRef))
       .subscribe(() => this.idle.clearInterrupts());
 
     this.idle.onInterrupt
-      .pipe(takeWhile(() => this.isThisComponentAlive))
+      .pipe(takeUntilDestroyed(this.destroyRef))
       .subscribe(() => {
         const lastHydrateMilliSeconds =
           new Date().getTime() -
@@ -98,7 +107,7 @@ export class SessionActivityService implements OnDestroy {
   expireSession() {
     this.dialog.closeAll();
     this.localStorage.removeItem(LAST_HYDRATE);
-    this.sessionActivitySubject.next(LOGOUT_TYPE.SESSION_EXPIRED);
+    this.emitSessionActivity(LOGOUT_TYPE.SESSION_EXPIRED);
   }
 
   rehydrate() {
@@ -106,7 +115,6 @@ export class SessionActivityService implements OnDestroy {
       this.localStorage.setItem(LAST_HYDRATE, Date.now().toString());
       this.http
         .put<{ session: string }>('api/session/user/rehydrate', null)
-        .pipe(take(1))
         .subscribe((data) => {
           if (data?.session) {
             this.resetIdle();
@@ -154,13 +162,12 @@ export class SessionActivityService implements OnDestroy {
 
     this.dialogRef
       .afterClosed()
-      .pipe(take(1))
       .subscribe((result: DialogResultsType) => {
         this.dialogRef = undefined;
         if (result === DIALOG_RESULTS.LOGOUT) {
           this.idle.interrupt();
           this.localStorage.removeItem(LAST_HYDRATE);
-          this.sessionActivitySubject.next(LOGOUT_TYPE.LOGOUT_SELECTED);
+          this.emitSessionActivity(LOGOUT_TYPE.LOGOUT_SELECTED);
         } else if (result === DIALOG_RESULTS.EXTEND) {
           this.resetIdle();
           this.rehydrate();
@@ -175,7 +182,11 @@ export class SessionActivityService implements OnDestroy {
     this.idle.watch();
   }
 
+  private emitSessionActivity(type: LogoutType) {
+    this.sessionActivityEvent.set({ type, timestamp: Date.now() });
+  }
+
   ngOnDestroy(): void {
-    this.isThisComponentAlive = false;
+    this.removeVisibilityListener();
   }
 }

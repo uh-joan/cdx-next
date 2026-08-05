@@ -1,5 +1,6 @@
 import { CdkScrollable } from '@angular/cdk/scrolling';
-import { Component, inject, OnDestroy } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { toSignal } from '@angular/core/rxjs-interop';
 import { MatButton } from '@angular/material/button';
 import {
   MAT_DIALOG_DATA,
@@ -10,7 +11,6 @@ import {
 } from '@angular/material/dialog';
 import { Idle } from '@ng-idle/core';
 import { TranslateModule } from '@ngx-translate/core';
-import { Subscription } from 'rxjs';
 
 import { DIALOG_RESULTS } from '../session-activity.model';
 
@@ -28,24 +28,10 @@ import { DIALOG_RESULTS } from '../session-activity.model';
     TranslateModule,
   ],
 })
-export class InactivityDialogComponent implements OnDestroy {
+export class InactivityDialogComponent {
   public DIALOG_RESULTS = DIALOG_RESULTS;
-
-  countdown?: number;
-  timeoutSubscription: Subscription;
 
   public data: { shouldShowTranslations?: boolean } = inject(MAT_DIALOG_DATA);
   private idle: Idle = inject(Idle);
-
-  constructor() {
-    this.timeoutSubscription = this.idle.onTimeoutWarning.subscribe(
-      (seconds: number) => {
-        this.countdown = seconds;
-      },
-    );
-  }
-
-  ngOnDestroy(): void {
-    this.timeoutSubscription?.unsubscribe();
-  }
+  countdown = toSignal(this.idle.onTimeoutWarning, { initialValue: undefined });
 }
