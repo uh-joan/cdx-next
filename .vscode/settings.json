@@ -1,6 +1,18 @@
 {
-  "[html][javascript][javascriptreact][typescript][typescriptreact][json][markdown][scss][css][yaml]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  "[javascript][javascriptreact][typescript][typescriptreact]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "vscode.markdown-language-features"
+  },
+  "[css][scss]": {
+    "editor.defaultFormatter": "vscode.css-language-features"
   },
   "css.validate": false,
   "editor.codeActionsOnSave": {
@@ -10,6 +22,10 @@
   "editor.formatOnPaste": true,
   "editor.formatOnSave": true,
   "eslint.format.enable": true,
+  "eslint.useFlatConfig": true,
+  "eslint.options": {
+    "overrideConfigFile": "eslint.config.mjs"
+  },
   "groovyLint.fix.trigger": "onSave",
   "groovyLint.insight.enable": false,
   "jest.runMode": "watch",
@@ -18,8 +34,5 @@
   "prettier.useEditorConfig": false,
   "scss.validate": false,
   "stylelint.enable": true,
-  "stylelint.validate": ["css", "postcss", "scss"],
-  "[typescript]": {
-    "editor.defaultFormatter": "vscode.typescript-language-features"
-  }
+  "stylelint.validate": ["css", "postcss", "scss"]
 }

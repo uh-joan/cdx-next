@@ -160,19 +160,17 @@ export class SessionActivityService implements OnDestroy {
       },
     });
 
-    this.dialogRef
-      .afterClosed()
-      .subscribe((result: DialogResultsType) => {
-        this.dialogRef = undefined;
-        if (result === DIALOG_RESULTS.LOGOUT) {
-          this.idle.interrupt();
-          this.localStorage.removeItem(LAST_HYDRATE);
-          this.emitSessionActivity(LOGOUT_TYPE.LOGOUT_SELECTED);
-        } else if (result === DIALOG_RESULTS.EXTEND) {
-          this.resetIdle();
-          this.rehydrate();
-        }
-      });
+    this.dialogRef.afterClosed().subscribe((result: DialogResultsType) => {
+      this.dialogRef = undefined;
+      if (result === DIALOG_RESULTS.LOGOUT) {
+        this.idle.interrupt();
+        this.localStorage.removeItem(LAST_HYDRATE);
+        this.emitSessionActivity(LOGOUT_TYPE.LOGOUT_SELECTED);
+      } else if (result === DIALOG_RESULTS.EXTEND) {
+        this.resetIdle();
+        this.rehydrate();
+      }
+    });
   }
 
   resetIdle() {

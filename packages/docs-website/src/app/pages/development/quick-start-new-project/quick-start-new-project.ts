@@ -1,8 +1,8 @@
 import { Component, effect, HostBinding, inject } from '@angular/core';
+import { toSignal } from '@angular/core/rxjs-interop';
 import { MatDivider } from '@angular/material/divider';
 import { MatTableModule } from '@angular/material/table';
 import { ActivatedRoute } from '@angular/router';
-import { toSignal } from '@angular/core/rxjs-interop';
 
 import { ExternalLink } from '../../../components/external-link/external-link';
 import { Highlight } from '../../../components/highlight/highlight';

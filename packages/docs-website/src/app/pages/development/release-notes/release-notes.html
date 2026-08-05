@@ -1,7 +1,10 @@
 <hlx-page [title]="'Release Notes'" [section]="'Development'">
   <mat-form-field appearance="outline">
     <mat-label>Major Version</mat-label>
-    <mat-select [value]="selectedVersion()" (selectionChange)="onVersionSelected($event.value)">
+    <mat-select
+      [value]="selectedVersion()"
+      (selectionChange)="onVersionSelected($event.value)"
+    >
       @for (version of availableVersions(); track version) {
       <mat-option [value]="version"> {{ version }} </mat-option>
       }

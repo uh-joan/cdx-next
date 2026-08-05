@@ -11,6 +11,7 @@ import {
   trackStructEvent,
 } from '@snowplow/browser-tracker';
 import { BrowserTracker } from '@snowplow/browser-tracker-core';
+
 import {
   ANALYTICS_CONTEXT_DATA,
   ANALYTICS_SETTINGS,

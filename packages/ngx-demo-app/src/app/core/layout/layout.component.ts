@@ -1,5 +1,5 @@
-import { Component, computed, inject } from '@angular/core';
 import { TitleCasePipe } from '@angular/common';
+import { Component, computed, inject } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTabsModule } from '@angular/material/tabs';

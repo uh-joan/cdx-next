@@ -1,8 +1,8 @@
 import {
   Component,
-  HostBinding,
   computed,
   effect,
+  HostBinding,
   inject,
   signal,
 } from '@angular/core';
