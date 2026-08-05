@@ -49,7 +49,7 @@ const styleCode = `.story {
   template: htmlCode,
   imports: [MatFormFieldModule, MatInputModule, MatTimepickerModule],
   providers: [provideNativeDateAdapter()],
-  styles: styleCode,
+  styles: [styleCode],
 })
 class SampleComponent {
   customOptions: MatTimepickerOption<Date>[] = [
@@ -79,7 +79,7 @@ import {
   template: htmlCode,
   imports: [MatFormFieldModule, MatInputModule, MatTimepickerModule],
   providers: [provideNativeDateAdapter()],
-  styles: styleCode,
+  styles: [styleCode],
 })
 class SampleComponent {
   customOptions: MatTimepickerOption<Date>[] = [

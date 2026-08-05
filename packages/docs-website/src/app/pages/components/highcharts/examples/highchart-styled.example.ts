@@ -34,7 +34,7 @@ const styleCode = `
 @Component({
   template: htmlCode,
   imports: [HighchartsChartComponent],
-  styles: styleCode,
+  styles: [styleCode],
   encapsulation: ViewEncapsulation.None,
 })
 class SampleComponent {
@@ -143,7 +143,7 @@ import { HIGHCHARTS_HLX_THEME } from '@cdx/theme-highcharts';
     imports: [
         HighchartsChartComponent
     ],
-    styles: styleCode,
+    styles: [styleCode],
     providers: [providePartialHighcharts({})]
 })
 class SampleComponent {

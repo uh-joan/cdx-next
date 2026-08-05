@@ -32,7 +32,7 @@ const styleCode = `.hlx-breadcrumb-home {
 @Component({
   template: htmlCode,
   imports: [MatIconModule, BreadcrumbComponent, BreadcrumbItemDirective],
-  styles: styleCode,
+  styles: [styleCode],
 })
 class SampleComponent {}
 
@@ -56,7 +56,7 @@ import { MatIconModule } from "@angular/material/icon";
     BreadcrumbComponent,
     BreadcrumbItemDirective
   ],
-  styles: styleCode,
+  styles: [styleCode],
 })
 class SampleComponent {}`,
 };

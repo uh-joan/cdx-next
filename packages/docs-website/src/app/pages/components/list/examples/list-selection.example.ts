@@ -28,7 +28,7 @@ const styleCode = `.story {
 @Component({
   template: htmlCode,
   imports: [MatCheckboxModule, MatListModule],
-  styles: styleCode,
+  styles: [styleCode],
 })
 class SampleComponent {}
 
@@ -50,7 +50,7 @@ import { MatListModule } from '@angular/material/list';
         MatCheckboxModule,
         MatListModule
     ],
-    styles: styleCode,
+    styles: [styleCode],
 })
 class SampleComponent {}`,
 };

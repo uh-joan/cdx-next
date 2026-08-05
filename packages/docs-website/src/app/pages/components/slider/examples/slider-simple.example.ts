@@ -58,7 +58,7 @@ const styleCode = `.story {
 @Component({
   template: htmlCode,
   imports: [MatSliderModule],
-  styles: styleCode,
+  styles: [styleCode],
 })
 class SampleComponent {}
 
@@ -76,7 +76,7 @@ import { MatSliderModule } from '@angular/material/slider';
     imports: [
       MatSliderModule
     ],
-    styles: styleCode,
+    styles: [styleCode],
 })
 class SampleComponent {}`,
 };

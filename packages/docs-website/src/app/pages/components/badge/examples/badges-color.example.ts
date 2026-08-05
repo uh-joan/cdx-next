@@ -42,7 +42,7 @@ const styleCode = `:host {
 @Component({
   template: htmlCode,
   imports: [MatBadgeModule, MatDividerModule],
-  styles: styleCode,
+  styles: [styleCode],
 })
 class SampleComponent {}
 
@@ -60,7 +60,7 @@ import { MatBadgeModule } from '@angular/material/badge';
     imports: [
       MatBadgeModule
     ],
-    styles: styleCode,
+    styles: [styleCode],
 })
 class SampleComponent {}`,
 };

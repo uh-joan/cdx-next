@@ -99,7 +99,7 @@ const styleCode = `@use "@cdx/theme-angular-material" as hlx;
 @Component({
   template: htmlCode,
   imports: [MatIconModule],
-  styles: styleCode,
+  styles: [styleCode],
 })
 class SampleComponent {}
 
@@ -117,7 +117,7 @@ import { MatIconModule } from '@angular/material/icon';
     imports: [
         MatIconModule
     ],
-    styles: styleCode,
+    styles: [styleCode],
 })
 class SampleComponent {}`,
 };

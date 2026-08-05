@@ -52,7 +52,7 @@ const styleCode = `.story {
     HelixHeaderProductNameOrLogoComponent,
     MatIconModule,
   ],
-  styles: styleCode,
+  styles: [styleCode],
 })
 class SampleComponent {}
 
@@ -81,7 +81,7 @@ import {
     HelixHeaderProductNameOrLogoComponent,
     MatIconModule,
   ],
-  styles: styleCode,
+  styles: [styleCode],
 })
 class SampleComponent {}`,
 };

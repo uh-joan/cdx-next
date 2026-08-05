@@ -49,7 +49,7 @@ const styleCode = `.story {
 @Component({
   template: htmlCode,
   imports: [MatButtonToggleModule, MatDividerModule],
-  styles: styleCode,
+  styles: [styleCode],
 })
 class SampleComponent {}
 
@@ -68,7 +68,7 @@ import { MatButtonToggleModule } from '@angular/material/button-toggle';
     imports: [
         MatButtonToggleModule,
     ],
-    styles: styleCode,
+    styles: [styleCode],
 })
 class SampleComponent {}`,
 };

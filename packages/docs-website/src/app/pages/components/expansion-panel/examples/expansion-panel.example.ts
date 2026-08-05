@@ -35,7 +35,7 @@ const styleCode = `.story {
 @Component({
   template: htmlCode,
   imports: [MatExpansionModule],
-  styles: styleCode,
+  styles: [styleCode],
 })
 class SampleComponent {}
 
@@ -54,7 +54,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
     imports: [
         MatExpansionModule
     ],
-    styles: styleCode,
+    styles: [styleCode],
 })
 class SampleComponent {}`,
 };

@@ -82,7 +82,7 @@ const styleCode = `.story {
     MatSelectModule,
     MatInputModule,
   ],
-  styles: styleCode,
+  styles: [styleCode],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 class SampleComponent {
@@ -123,7 +123,7 @@ import { NotificationModule } from '@cdx/ngx-branding';
         MatSelectModule,
         MatInputModule
     ],
-    styles: styleCode,
+    styles: [styleCode],
     schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 class SampleComponent {

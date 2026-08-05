@@ -18,7 +18,7 @@ const styleCode = `.story {
 @Component({
   template: htmlCode,
   imports: [MatTabsModule],
-  styles: styleCode,
+  styles: [styleCode],
 })
 class SampleComponent {}
 
@@ -37,7 +37,7 @@ import { MatTabsModule } from '@angular/material/tabs';
     imports: [
       MatTabsModule
     ],
-    styles: styleCode,
+    styles: [styleCode],
 })
 class SampleComponent {}`,
 };

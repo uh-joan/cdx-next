@@ -39,7 +39,7 @@ const styleCode = `.story {
     MatIconModule,
     MatNativeDateModule,
   ],
-  styles: styleCode,
+  styles: [styleCode],
 })
 class SampleComponent {}
 
@@ -66,7 +66,7 @@ import { MatInputModule } from '@angular/material/input';
         MatIconModule,
         MatNativeDateModule
     ],
-    styles: styleCode,
+    styles: [styleCode],
 })
 class SampleComponent {}`,
 };

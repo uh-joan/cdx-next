@@ -21,7 +21,7 @@ const styleCode = `.story {
 @Component({
   template: htmlCode,
   imports: [MatDividerModule, MatListModule],
-  styles: styleCode,
+  styles: [styleCode],
 })
 class SampleComponent {}
 
@@ -42,7 +42,7 @@ import { MatListModule } from '@angular/material/list';
         MatDividerModule,
         MatListModule
     ],
-    styles: styleCode,
+    styles: [styleCode],
 })
 class SampleComponent {}`,
 };

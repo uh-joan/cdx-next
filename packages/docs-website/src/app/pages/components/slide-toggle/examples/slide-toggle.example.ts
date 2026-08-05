@@ -32,7 +32,7 @@ const styleCode = `.story {
 @Component({
   template: htmlCode,
   imports: [MatSlideToggleModule],
-  styles: styleCode,
+  styles: [styleCode],
 })
 class SampleComponent {}
 
@@ -50,7 +50,7 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
     imports: [
       MatSlideToggleModule
     ],
-    styles: styleCode,
+    styles: [styleCode],
 })
 class SampleComponent {}`,
 };

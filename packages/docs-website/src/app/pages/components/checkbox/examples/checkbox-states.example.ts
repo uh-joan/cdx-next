@@ -32,7 +32,7 @@ const styleCode = `.story {
 @Component({
   template: htmlCode,
   imports: [MatCheckboxModule],
-  styles: styleCode,
+  styles: [styleCode],
 })
 class SampleComponent {}
 
@@ -50,7 +50,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     imports: [
         MatCheckboxModule,
     ],
-    styles: styleCode,
+    styles: [styleCode],
 })
 class SampleComponent {}`,
 };

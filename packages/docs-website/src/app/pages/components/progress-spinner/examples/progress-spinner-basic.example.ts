@@ -29,7 +29,7 @@ const styleCode = `.story {
 @Component({
   template: htmlCode,
   imports: [MatProgressSpinnerModule],
-  styles: styleCode,
+  styles: [styleCode],
 })
 class SampleComponent {}
 
@@ -47,7 +47,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     imports: [
         MatProgressSpinnerModule
     ],
-    styles: styleCode,
+    styles: [styleCode],
 })
 class SampleComponent {}`,
 };

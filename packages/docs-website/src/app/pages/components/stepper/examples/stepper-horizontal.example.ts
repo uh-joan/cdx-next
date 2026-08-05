@@ -69,7 +69,7 @@ const styleCode = `.story {
     ReactiveFormsModule,
     MatButtonModule,
   ],
-  styles: styleCode,
+  styles: [styleCode],
 })
 class SampleComponent {
   private _formBuilder = inject(FormBuilder);
@@ -107,7 +107,7 @@ import { MatStepperModule } from '@angular/material/stepper';
       ReactiveFormsModule,
       MatButtonModule,
     ],
-    styles: styleCode,
+    styles: [styleCode],
 })
 class SampleComponent {
   private _formBuilder = inject(FormBuilder);

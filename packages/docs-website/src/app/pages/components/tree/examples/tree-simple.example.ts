@@ -56,7 +56,7 @@ interface FlatNode {
 @Component({
   template: htmlCode,
   imports: [MatTreeModule, MatIconModule, MatButtonModule],
-  styles: styleCode,
+  styles: [styleCode],
 })
 class SampleComponent {
   public treeControl = new FlatTreeControl<FlatNode>(
@@ -121,7 +121,7 @@ import { MatButtonModule } from '@angular/material/button';
       MatIconModule,
       MatButtonModule
     ],
-    styles: styleCode,
+    styles: [styleCode],
 })
 class SampleComponent {
   public treeControl = new FlatTreeControl<FlatNode>(

@@ -106,7 +106,7 @@ const styleCode = `.story {
     MatIconModule,
     JsonPipe,
   ],
-  styles: styleCode,
+  styles: [styleCode],
 })
 class SampleComponent {
   title = 'test';
@@ -153,7 +153,7 @@ import { MatMenuModule } from '@angular/material/menu';
         ReactiveFormsModule,
         MatIconModule
     ],
-    styles: styleCode,
+    styles: [styleCode],
 })
 class SampleComponent {
     title = 'test';

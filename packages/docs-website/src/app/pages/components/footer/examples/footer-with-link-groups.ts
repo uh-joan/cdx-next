@@ -62,7 +62,7 @@ const styleCode = `.story {
 @Component({
   template: htmlCode,
   imports: [HelixFooterComponent, HelixFooterGroupComponent],
-  styles: styleCode,
+  styles: [styleCode],
 })
 class SampleComponent {}
 
@@ -88,7 +88,7 @@ import {
     HelixFooterGroupComponent,
     HelixFooterGroupTitleDirective,
   ],
-  styles: styleCode,
+  styles: [styleCode],
 })
 class SampleComponent {}`,
 };

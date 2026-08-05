@@ -32,7 +32,7 @@ const styleCode = `.story {
 @Component({
   template: htmlCode,
   imports: [MatProgressBarModule],
-  styles: styleCode,
+  styles: [styleCode],
 })
 class SampleComponent {}
 
@@ -50,7 +50,7 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
     imports: [
         MatProgressBarModule
     ],
-    styles: styleCode,
+    styles: [styleCode],
 })
 class SampleComponent {}`,
 };

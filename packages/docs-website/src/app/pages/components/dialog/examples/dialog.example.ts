@@ -98,7 +98,7 @@ class DialogContentExampleDialog {}
 @Component({
   template: htmlCode,
   imports: [MatIconModule, MatButtonModule, MatDialogModule],
-  styles: styleCode,
+  styles: [styleCode],
 })
 class SampleComponent {
   readonly dialog = inject(MatDialog);
@@ -141,7 +141,7 @@ class DialogContentExampleDialog {}
         MatButtonModule,
         MatDialogModule
     ],
-    styles: styleCode,
+    styles: [styleCode],
 })
 class SampleComponent {
     readonly dialog = inject(MatDialog);

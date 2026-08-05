@@ -36,7 +36,7 @@ const styleCode = `.story {
 @Component({
   template: htmlCode,
   imports: [MatFormFieldModule, MatInputModule, MatIconModule],
-  styles: styleCode,
+  styles: [styleCode],
 })
 class SampleComponent {}
 
@@ -59,7 +59,7 @@ import { MatInputModule } from '@angular/material/input';
         MatInputModule,
         MatIconModule
     ],
-    styles: styleCode,
+    styles: [styleCode],
 })
 class SampleComponent {}`,
 };

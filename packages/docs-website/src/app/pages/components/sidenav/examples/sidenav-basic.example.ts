@@ -64,7 +64,7 @@ const styleCode = `.story {
     MatSelectModule,
     MatButtonModule,
   ],
-  styles: styleCode,
+  styles: [styleCode],
 })
 class SampleComponent {}
 
@@ -94,7 +94,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
       MatSelectModule,
       MatButtonModule,
     ],
-    styles: styleCode,
+    styles: [styleCode],
 })
 class SampleComponent {}`,
 };

@@ -23,7 +23,7 @@ const styleCode = `.story {
 @Component({
   template: htmlCode,
   imports: [NgxSkeletonLoaderModule],
-  styles: styleCode,
+  styles: [styleCode],
 })
 class SampleComponent {}
 
@@ -39,7 +39,7 @@ import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 @Component({
   template: htmlCode,
   imports: [NgxSkeletonLoaderModule],
-  styles: styleCode,
+  styles: [styleCode],
 })
 class SampleComponent {}`,
 };

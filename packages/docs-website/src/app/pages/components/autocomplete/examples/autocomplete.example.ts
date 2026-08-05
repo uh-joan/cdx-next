@@ -34,7 +34,7 @@ const styleCode = `.story {
 
 @Component({
   template: htmlCode,
-  styles: styleCode,
+  styles: [styleCode],
   imports: [
     FormsModule,
     MatFormFieldModule,

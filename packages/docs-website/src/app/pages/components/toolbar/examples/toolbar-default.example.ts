@@ -21,7 +21,7 @@ const styleCode = `.story {
 @Component({
   template: htmlCode,
   imports: [MatToolbarModule],
-  styles: styleCode,
+  styles: [styleCode],
 })
 class SampleComponent {}
 
@@ -40,7 +40,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     imports: [
       MatToolbarModule
     ],
-    styles: styleCode,
+    styles: [styleCode],
 })
 class SampleComponent {}`,
 };

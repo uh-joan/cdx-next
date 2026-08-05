@@ -20,7 +20,7 @@ const styleCode = `.story {
 @Component({
   template: htmlCode,
   imports: [HelixHeaderComponent, HelixHeaderProductNameOrLogoComponent],
-  styles: styleCode,
+  styles: [styleCode],
 })
 class SampleComponent {}
 
@@ -42,7 +42,7 @@ import {
 @Component({
   template: htmlCode,
   imports: [HelixHeaderComponent, HelixHeaderProductNameOrLogoComponent],
-  styles: styleCode,
+  styles: [styleCode],
 })
 class SampleComponent {}`,
 };

@@ -29,7 +29,7 @@ const styleCode = `.story {
 @Component({
   template: htmlCode,
   imports: [MatMenuModule, MatButtonModule],
-  styles: styleCode,
+  styles: [styleCode],
 })
 class SampleComponent {}
 
@@ -50,7 +50,7 @@ import { MatMenuModule } from '@angular/material/menu';
         MatMenuModule,
         MatButtonModule
     ],
-    styles: styleCode,
+    styles: [styleCode],
 })
 class SampleComponent {}`,
 };

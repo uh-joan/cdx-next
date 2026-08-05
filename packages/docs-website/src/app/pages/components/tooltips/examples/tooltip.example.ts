@@ -77,7 +77,7 @@ class AppOverlayContainer extends OverlayContainer {
       useFactory: (overlay: Overlay) => () => overlay.scrollStrategies.block(),
     },
   ],
-  styles: styleCode,
+  styles: [styleCode],
 })
 class SampleComponent {}
 
@@ -133,7 +133,7 @@ class AppOverlayContainer extends OverlayContainer {
           overlay.scrollStrategies.block(),
       },
     ],
-    styles: styleCode,
+    styles: [styleCode],
 })
 class SampleComponent {}`,
 };

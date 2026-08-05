@@ -18,7 +18,7 @@ const styleCode = `.story {
 @Component({
   template: htmlCode,
   imports: [MatPaginator],
-  styles: styleCode,
+  styles: [styleCode],
 })
 class SampleComponent {}
 
@@ -38,7 +38,7 @@ import { MatPaginator } from '@angular/material/paginator';
     imports: [
         MatPaginator
     ],
-    styles: styleCode,
+    styles: [styleCode],
 })
 class SampleComponent {}`,
 };

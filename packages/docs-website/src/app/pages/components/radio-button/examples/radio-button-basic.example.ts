@@ -46,7 +46,7 @@ const styleCode = `.story {
 @Component({
   template: htmlCode,
   imports: [MatRadioModule],
-  styles: styleCode,
+  styles: [styleCode],
 })
 class SampleComponent {}
 
@@ -65,7 +65,7 @@ import { MatRadioModule } from '@angular/material/radio';
     imports: [
       MatRadioModule
     ],
-    styles: styleCode,
+    styles: [styleCode],
 })
 class SampleComponent {}`,
 };

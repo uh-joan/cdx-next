@@ -33,7 +33,7 @@ const styleCode = `.story {
 @Component({
   template: htmlCode,
   imports: [MatButtonModule, RichTooltipDirective],
-  styles: styleCode,
+  styles: [styleCode],
 })
 class SampleComponent {}
 
@@ -51,7 +51,7 @@ import { RichTooltipDirective } from '@cdx/ngx-branding';
 @Component({
   template: htmlCode,
   imports: [MatButtonModule, RichTooltipDirective],
-  styles: styleCode,
+  styles: [styleCode],
 })
 class SampleComponent {}`,
 };

@@ -14,7 +14,7 @@ const styleCode = `.story {
 @Component({
   template: htmlCode,
   imports: [HelixHeaderComponent],
-  styles: styleCode,
+  styles: [styleCode],
 })
 class SampleComponent {}
 
@@ -34,7 +34,7 @@ import { HelixHeaderModule } from '@cdx/ngx-branding';
     imports: [
         HelixHeaderModule
     ],
-    styles: styleCode,
+    styles: [styleCode],
 })
 class SampleComponent {}`,
 };

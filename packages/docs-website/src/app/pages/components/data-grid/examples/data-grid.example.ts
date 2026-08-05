@@ -40,7 +40,7 @@ ModuleRegistry.registerModules([ClientSideRowModelModule]);
 @Component({
   template: htmlCode,
   imports: [AgGridAngular],
-  styles: styleCode,
+  styles: [styleCode],
 })
 class SampleComponent {
   // Row Data: The data to be displayed.
@@ -94,7 +94,7 @@ ModuleRegistry.registerModules([ClientSideRowModelModule]);
 @Component({
   template: htmlCode,
   imports: [AgGridAngular],
-  styles: styleCode,
+  styles: [styleCode],
 })
 class SampleComponent {
   // Row Data: The data to be displayed.

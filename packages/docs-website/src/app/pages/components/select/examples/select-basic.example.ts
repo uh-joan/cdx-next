@@ -36,7 +36,7 @@ const styleCode = `.story {
 @Component({
   template: htmlCode,
   imports: [MatSelectModule],
-  styles: styleCode,
+  styles: [styleCode],
 })
 class SampleComponent {}
 
@@ -54,7 +54,7 @@ import { MatSelectModule } from '@angular/material/select';
     imports: [
       MatSelectModule
     ],
-    styles: styleCode,
+    styles: [styleCode],
 })
 class SampleComponent {}`,
 };

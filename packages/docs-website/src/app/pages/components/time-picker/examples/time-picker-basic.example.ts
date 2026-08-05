@@ -21,7 +21,7 @@ const styleCode = `.story {
   template: htmlCode,
   imports: [MatFormFieldModule, MatInputModule, MatTimepickerModule],
   providers: [provideNativeDateAdapter()],
-  styles: styleCode,
+  styles: [styleCode],
 })
 class SampleComponent {}
 
@@ -42,7 +42,7 @@ import {provideNativeDateAdapter} from '@angular/material/core';
   template: htmlCode,
   imports: [MatFormFieldModule, MatInputModule, MatTimepickerModule],
   providers: [provideNativeDateAdapter()],
-  styles: styleCode,
+  styles: [styleCode],
 })
 class SampleComponent {}`,
 };

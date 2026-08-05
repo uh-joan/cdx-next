@@ -47,7 +47,7 @@ const styleCode = `.story {
 @Component({
   template: htmlCode,
   imports: [MatChipsModule],
-  styles: styleCode,
+  styles: [styleCode],
 })
 class SampleComponent {}
 
@@ -66,7 +66,7 @@ import { MatChipsModule } from '@angular/material/chips';
     imports: [
         MatChipsModule
     ],
-    styles: styleCode,
+    styles: [styleCode],
 })
 class SampleComponent {}`,
 };

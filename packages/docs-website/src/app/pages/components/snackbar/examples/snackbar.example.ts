@@ -72,7 +72,7 @@ class PizzaPartyAnnotatedComponent {
 @Component({
   template: htmlCode,
   imports: [MatFormFieldModule, FormsModule, MatInputModule, MatButtonModule],
-  styles: styleCode,
+  styles: [styleCode],
 })
 class SampleComponent {
   private _snackBar = inject(MatSnackBar);
@@ -112,7 +112,7 @@ class DialogContentExampleDialog {}
         MatButtonModule,
         MatDialogModule
     ],
-    styles: styleCode,
+    styles: [styleCode],
 })
 class SampleComponent {
     readonly dialog = inject(MatDialog);

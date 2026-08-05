@@ -40,7 +40,7 @@ export interface Dessert {
 @Component({
   template: htmlCode,
   imports: [MatSortModule],
-  styles: styleCode,
+  styles: [styleCode],
 })
 class SampleComponent {
   desserts: Dessert[] = [
@@ -117,7 +117,7 @@ export interface Dessert {
     imports: [
       MatSortModule
     ],
-    styles: styleCode,
+    styles: [styleCode],
 })
 class SampleComponent {
   desserts: Dessert[] = [

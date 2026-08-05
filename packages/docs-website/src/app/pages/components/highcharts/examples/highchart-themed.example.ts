@@ -26,7 +26,7 @@ const styleCode = `.story {
 @Component({
   template: htmlCode,
   imports: [HighchartsChartComponent],
-  styles: styleCode,
+  styles: [styleCode],
 })
 class SampleComponent {
   constructor() {
@@ -109,7 +109,7 @@ import { HighchartsChartComponent, providePartialHighcharts} from 'highcharts-an
     imports: [
         HighchartsChartComponent
     ],
-    styles: styleCode,
+    styles: [styleCode],
 })
 class SampleComponent {
     constructor() {
