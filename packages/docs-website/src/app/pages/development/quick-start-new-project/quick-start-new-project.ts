@@ -121,8 +121,9 @@ footer {
       name: '@cdx/ngx-session-activity',
       description: 'Session Activity service',
       dependencies: [
-        `"@ng-idle/keepalive": "^16.0.0"`,
-        `"@ngx-translate/core": ">=18.0.0"`,
+        '"@ng-idle/core": "^16.0.0"',
+        '"@ng-idle/keepalive": "^16.0.0"',
+        '"@ngx-translate/core": ">=18.0.0"',
       ],
     },
     {
@@ -133,33 +134,29 @@ footer {
     {
       name: '@cdx/ngx-analytics',
       description: 'Analytics service',
-      dependencies: [`"@snowplow/browser-tracker": "^4.6.8"`],
+      dependencies: [
+        '"@snowplow/browser-tracker": "^4.10.0"',
+      ],
     },
     {
       name: '@cdx/ngx-authentication',
       description: 'Authentication service',
+      dependencies: [
+        '"@angular/material": "^22"',
+        '"@angular/router": "^22"',
+        '"@auth0/angular-jwt": "^5.2.0"',
+        '"@cdx/theme-angular-material": "22.0.0"',
+      ],
     },
     {
       name: '@cdx/theme-ag-grid',
       description: 'AG Grid theme',
-      dependencies: [`"ag-grid-community": ">=35"`],
-    },
-    {
-      name: '@cdx/theme-badge',
-      description: 'Badge theme',
-    },
-    {
-      name: '@cdx/theme-button-toggle',
-      description: 'Button Toggle theme',
-    },
-    {
-      name: '@cdx/theme-expansion-panel',
-      description: 'Expansion Panel theme',
+      dependencies: [`"ag-grid-community": ">=36.0.0"`],
     },
     {
       name: '@cdx/theme-highcharts',
       description: 'Highcharts theme',
-      dependencies: [`"highcharts": "^12.5.0"`],
+      dependencies: ['"highcharts": "^13.0.0"'],
     },
     {
       name: '@cdx/theme-snackbar',
