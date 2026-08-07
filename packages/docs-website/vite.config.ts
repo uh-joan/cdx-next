@@ -17,6 +17,7 @@ export default defineConfig({
   plugins: [
     angular({
       tsconfig: resolve(__dirname, 'tsconfig.app.json'),
+      inlineStylesExtension: 'scss',
     }),
     nxViteTsPaths(),
   ],
