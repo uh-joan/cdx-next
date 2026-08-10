@@ -1,6 +1,6 @@
 {
   "name": "@cdx/ngx-authentication",
-  "version": "20.0.0",
+  "version": "21.0.0-alpha.0",
   "repository": {
     "type": "git",
     "url": "ssh://git@github.com/clarivate-prod/cdx-next.git",
@@ -13,6 +13,6 @@
     "@angular/material": "^21",
     "@angular/router": "^21",
     "@auth0/angular-jwt": "^5.2.0",
-    "@cdx/theme-angular-material": "20.0.0"
+    "@cdx/theme-angular-material": "21.0.0-alpha.0"
   }
 }
