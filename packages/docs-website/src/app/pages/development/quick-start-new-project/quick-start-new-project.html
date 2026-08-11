@@ -1,14 +1,21 @@
-<hlx-page [title]="'Quick Start new project'" [section]="'Development'"
-  [subtitle]="'Step-by-step instructions for starting a new project with Helix using Angular.'">
+<hlx-page
+  [title]="'Quick Start new project'"
+  [section]="'Development'"
+  [subtitle]="'Step-by-step instructions for starting a new project with Helix using Angular.'"
+>
   <h2>Using Helix Seed Repository</h2>
   <p>
     The Helix seed is hosted on
-    <cdx-external-link [text]="'Git Repository'"
-      [url]="'https://github.com/clarivate-prod/helix-reference-app/browse'"></cdx-external-link>
+    <cdx-external-link
+      [text]="'Git Repository'"
+      [url]="'https://github.com/clarivate-prod/helix-reference-app/browse'"
+    ></cdx-external-link>
   </p>
 
   <p>To clone the repository, run the following command in your terminal:</p>
-  <cdx-highlight [text]="'git clone https://github.com/clarivate-prod/helix-reference-app.git'"></cdx-highlight>
+  <cdx-highlight
+    [text]="'git clone https://github.com/clarivate-prod/helix-reference-app.git'"
+  ></cdx-highlight>
 
   <p>
     Once the repository is cloned, navigate to the project directory and install
@@ -27,7 +34,10 @@
     This guide assumes a baseline familiarity with the Angular environment. If
     this is your first time using Angular, we recommend starting with the
     official
-    <cdx-external-link [url]="'https://v22.angular.dev/overview'" [text]="'Getting Started Guide'"></cdx-external-link>
+    <cdx-external-link
+      [url]="'https://v22.angular.dev/overview'"
+      [text]="'Getting Started Guide'"
+    ></cdx-external-link>
     .
   </p>
   <mat-divider></mat-divider>
@@ -42,8 +52,12 @@
   <p>
     To make sure you also have matching TypeScript and RxJS versions, you can
     visit
-    <a underline href="https://angular.dev/reference/versions#actively-supported-versions:~:text=to%20the%20top-,Actively%20supported%20versions,-This%20table%20covers
-">the official Angular support table</a>
+    <a
+      underline
+      href="https://angular.dev/reference/versions#actively-supported-versions:~:text=to%20the%20top-,Actively%20supported%20versions,-This%20table%20covers
+"
+      >the official Angular support table</a
+    >
   </p>
 
   <mat-divider></mat-divider>
@@ -62,7 +76,9 @@
     In your terminal, navigate to the directory that you would like your local
     project to live. Then, create your Angular application.
   </p>
-  <cdx-highlight [text]="'npx @angular/cli@22 my-example-app-ui'"></cdx-highlight>
+  <cdx-highlight
+    [text]="'npx @angular/cli@22 my-example-app-ui'"
+  ></cdx-highlight>
   <p>
     Following the prompts, your Angular application will build and install
     necessary dependencies. Once it is complete, open the directory
@@ -81,7 +97,9 @@
     same place as package.json, name it <strong>.npmrc</strong> (don't forget
     the leading dot!) and give it this content:
   </p>
-  <cdx-highlight text="@cdx:registry = https://repo.clarivate.io/artifactory/api/npm/npm-central/"></cdx-highlight>
+  <cdx-highlight
+    text="@cdx:registry = https://repo.clarivate.io/artifactory/api/npm/npm-central/"
+  ></cdx-highlight>
 
   <mat-divider></mat-divider>
 
@@ -90,9 +108,15 @@
   <h3>Install Angular Material</h3>
   <p>
     Helix is based on
-    <cdx-external-link [text]="'Angular Material'" [url]="'https://material.angular.io/'"></cdx-external-link>
+    <cdx-external-link
+      [text]="'Angular Material'"
+      [url]="'https://material.angular.io/'"
+    ></cdx-external-link>
     , a set of themed components that conform to Google's
-    <cdx-external-link [text]="'Material Design'" [url]="'https://material.io/design'"></cdx-external-link>
+    <cdx-external-link
+      [text]="'Material Design'"
+      [url]="'https://material.io/design'"
+    ></cdx-external-link>
     spec. The best way to install Angular Material is to use the Angular CLI's
     installation schematic.
   </p>
@@ -129,7 +153,9 @@
     Then, install the theme package and the branding package, which contains the
     component code for the Clarivate header and footer.
   </p>
-  <cdx-highlight [text]="'npm install @cdx/theme-angular-material'"></cdx-highlight>
+  <cdx-highlight
+    [text]="'npm install @cdx/theme-angular-material'"
+  ></cdx-highlight>
   <cdx-highlight [text]="'npm install @cdx/ngx-branding'"></cdx-highlight>
 
   <mat-divider></mat-divider>
@@ -162,7 +188,10 @@
     <ng-container matColumnDef="code">
       <th mat-header-cell *matHeaderCellDef></th>
       <td mat-cell *matCellDef="let element">
-        <cdx-highlight theme="light" [text]="'npm i ' + element.name"></cdx-highlight>
+        <cdx-highlight
+          theme="light"
+          [text]="'npm i ' + element.name"
+        ></cdx-highlight>
       </td>
     </ng-container>
 
@@ -202,7 +231,10 @@
     fonts: Default (no descriptor, filled), Outlined, Two-Tone, Round, and
     Sharp. You can improve performance by reducing your request to only the
     variant(s) you need. Please see the
-    <cdx-internal-link [url]="'/components/icons'" [text]="'Material Icons page'"></cdx-internal-link>
+    <cdx-internal-link
+      [url]="'/components/icons'"
+      [text]="'Material Icons page'"
+    ></cdx-internal-link>
 
     for further information.
   </p>
@@ -214,9 +246,15 @@
   <h3>Place Header & Footer</h3>
   <p>
     The first components to be placed into your new app are the
-    <cdx-internal-link [text]="'Header'" [url]="'/components/header'"></cdx-internal-link>
+    <cdx-internal-link
+      [text]="'Header'"
+      [url]="'/components/header'"
+    ></cdx-internal-link>
     and
-    <cdx-internal-link [text]="'Footer'" [url]="'/components/footer'"></cdx-internal-link>
+    <cdx-internal-link
+      [text]="'Footer'"
+      [url]="'/components/footer'"
+    ></cdx-internal-link>
 
     components, which will frame the content of the application (aka the
     "Clarivate Sandwich"). This guide will place the most basic version of these
@@ -260,16 +298,23 @@
   <p>
     For a full list of components and details on how to implement them, visit
     our
-    <cdx-internal-link [url]="'/components/components-overview'" [text]="'Components Page'"></cdx-internal-link>
+    <cdx-internal-link
+      [url]="'/components/components-overview'"
+      [text]="'Components Page'"
+    ></cdx-internal-link>
 
     . Detailed usage instructions for Angular Material components are
-    <cdx-external-link [text]="'also available'"
-      [url]="'https://material.angular.io/components/categories'"></cdx-external-link>
+    <cdx-external-link
+      [text]="'also available'"
+      [url]="'https://material.angular.io/components/categories'"
+    ></cdx-external-link>
     .
   </p>
   <p>
-    <cdx-internal-link [url]="'/about/contact-information'"
-      [text]="'Connect with the Helix Dev Team'"></cdx-internal-link>
+    <cdx-internal-link
+      [url]="'/about/contact-information'"
+      [text]="'Connect with the Helix Dev Team'"
+    ></cdx-internal-link>
     ! Follow our Lens page for updates, and join our Teams channels if you need
     help with something.
   </p>

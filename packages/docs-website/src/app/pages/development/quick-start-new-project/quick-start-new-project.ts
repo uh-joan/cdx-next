@@ -134,9 +134,7 @@ footer {
     {
       name: '@cdx/ngx-analytics',
       description: 'Analytics service',
-      dependencies: [
-        '"@snowplow/browser-tracker": "^4.10.0"',
-      ],
+      dependencies: ['"@snowplow/browser-tracker": "^4.10.0"'],
     },
     {
       name: '@cdx/ngx-authentication',
