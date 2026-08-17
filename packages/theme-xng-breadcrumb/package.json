@@ -1,6 +1,6 @@
 {
   "name": "@cdx/theme-xng-breadcrumb",
-  "version": "21.0.0-alpha.0",
+  "version": "21.0.0",
   "exports": {
     ".": {
       "sass": "./src/lib/breadcrumb/_breadcrumb-theme.scss"

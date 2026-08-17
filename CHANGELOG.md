@@ -1,3 +1,28 @@
+# 21.0.0 (2026-08-17)
+
+### 🚀 Features
+
+- **docs-website:** vite build ([a98eb897](https://github.com/clarivate-prod/cdx-next/commit/a98eb897))
+- **theme-angular-material:** added click trigger for RichTooltipDirective ([55419b41](https://github.com/clarivate-prod/cdx-next/commit/55419b41))
+- **workspace:** angular v21 update ([2ccc1ce3](https://github.com/clarivate-prod/cdx-next/commit/2ccc1ce3))
+- **workspace:** update website dsitribution code ([94070a16](https://github.com/clarivate-prod/cdx-next/commit/94070a16))
+- **workspace:** bump lint dependencies ([058bd981](https://github.com/clarivate-prod/cdx-next/commit/058bd981))
+- **workspace:** bump angular deps to 21.3 ([daa25fe6](https://github.com/clarivate-prod/cdx-next/commit/daa25fe6))
+
+### 🩹 Fixes
+
+- **docs-website:** fix assets resolution ([79c131b4](https://github.com/clarivate-prod/cdx-next/commit/79c131b4))
+- **docs-website:** fix button example css load ([ff20e204](https://github.com/clarivate-prod/cdx-next/commit/ff20e204))
+- **docs-website:** fix vite sass ([3c801c66](https://github.com/clarivate-prod/cdx-next/commit/3c801c66))
+- **workspace:** fix 21 linting ([636ca788](https://github.com/clarivate-prod/cdx-next/commit/636ca788))
+- **workspace:** fix tests ([dee24ff8](https://github.com/clarivate-prod/cdx-next/commit/dee24ff8))
+
+### ❤️ Thank You
+
+- Alejandro Chacon
+- alejandro-chacon_clv
+- Fran Casternao
+
 ## 21.0.0-alpha.0 (2026-08-10)
 
 ### 🚀 Features
