@@ -11,6 +11,6 @@
   },
   "peerDependencies": {
     "@angular/material": "^22",
-    "@cdx/colors": "20.0.0"
+    "@cdx/colors": "21.0.0"
   }
 }

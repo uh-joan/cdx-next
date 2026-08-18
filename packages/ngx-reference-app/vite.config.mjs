@@ -20,11 +20,14 @@ export default defineConfig({
   plugins: [
     angular({
       tsconfig: resolve(rootDir, 'tsconfig.app.json'),
+      inlineStylesExtension: 'scss',
     }),
   ],
   css: {
     preprocessorOptions: {
       scss: {
+        quietDeps: true,
+        silenceDeprecations: ['if-function'],
         loadPaths: [resolve(rootDir, '../../node_modules')],
       },
     },

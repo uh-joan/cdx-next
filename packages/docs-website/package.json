@@ -1,11 +1,11 @@
 {
   "name": "@cdx/docs-website",
-  "version": "20.0.0-alpha.2",
+  "version": "21.0.0",
   "private": true,
   "dependencies": {
-    "@cdx/ngx-branding": "^20.0.0",
-    "@cdx/theme-angular-material": "^20.0.0",
-    "@cdx/theme-highcharts": "^20.0.0",
+    "@cdx/ngx-branding": "21.0.0",
+    "@cdx/theme-angular-material": "21.0.0",
+    "@cdx/theme-highcharts": "21.0.0",
     "highcharts": "^13.0.0",
     "highcharts-angular": "5.4.1",
     "marked": "^18.0.9",
