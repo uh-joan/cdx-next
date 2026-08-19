@@ -8,7 +8,7 @@ describe('HttpService', () => {
   });
 
   afterEach(() => {
-    jest.restoreAllMocks();
+    vi.restoreAllMocks();
   });
 
   describe('get', () => {
@@ -18,9 +18,9 @@ describe('HttpService', () => {
       const responseData = { key: 'value' };
 
       const xhrSpy = mockXHR(200, 'OK', responseData);
-      const openSpy = jest.spyOn(xhrSpy, 'open');
-      const setRequestHeaderSpy = jest.spyOn(xhrSpy, 'setRequestHeader');
-      const sendSpy = jest.spyOn(xhrSpy, 'send');
+      const openSpy = vi.spyOn(xhrSpy, 'open');
+      const setRequestHeaderSpy = vi.spyOn(xhrSpy, 'setRequestHeader');
+      const sendSpy = vi.spyOn(xhrSpy, 'send');
 
       await httpService.get(url, authToken);
 
@@ -62,11 +62,11 @@ describe('HttpService', () => {
       status,
       statusText,
       responseText: JSON.stringify(responseData),
-      open: jest.fn(),
-      onload: jest.fn(),
-      onerror: jest.fn(),
-      setRequestHeader: jest.fn(),
-      send: jest.fn(),
+      open: vi.fn(),
+      onload: vi.fn(),
+      onerror: vi.fn(),
+      setRequestHeader: vi.fn(),
+      send: vi.fn(),
     } as any;
 
     setTimeout(() => {
@@ -75,7 +75,13 @@ describe('HttpService', () => {
       }
     }, 500);
 
-    jest.spyOn(window, 'XMLHttpRequest').mockImplementation(() => xhr);
+    class MockXMLHttpRequest {
+      constructor() {
+        return xhr;
+      }
+    }
+
+    vi.stubGlobal('XMLHttpRequest', MockXMLHttpRequest);
 
     return xhr;
   }

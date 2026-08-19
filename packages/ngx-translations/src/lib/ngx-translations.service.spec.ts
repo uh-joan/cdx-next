@@ -27,7 +27,7 @@ describe('NgxTranslationsService', () => {
   describe('mergeTranslationsLabels', () => {
     it('should add languages when appLanguages provided', () => {
       const appLanguages = ['en', 'es_ES', 'ja'];
-      const addLangsSpy = jest.spyOn(translateService, 'addLangs');
+      const addLangsSpy = vi.spyOn(translateService, 'addLangs');
 
       service.mergeTranslationsLabels(appLanguages);
 
@@ -35,7 +35,7 @@ describe('NgxTranslationsService', () => {
     });
 
     it('should not add languages when appLanguages is undefined', () => {
-      const addLangsSpy = jest.spyOn(translateService, 'addLangs');
+      const addLangsSpy = vi.spyOn(translateService, 'addLangs');
 
       service.mergeTranslationsLabels(undefined);
 
@@ -43,7 +43,7 @@ describe('NgxTranslationsService', () => {
     });
 
     it('should not add languages when appLanguages is empty array', () => {
-      const addLangsSpy = jest.spyOn(translateService, 'addLangs');
+      const addLangsSpy = vi.spyOn(translateService, 'addLangs');
 
       service.mergeTranslationsLabels([]);
 
@@ -51,8 +51,8 @@ describe('NgxTranslationsService', () => {
     });
 
     it('should set translations for each language in langs array', () => {
-      const setTranslationSpy = jest.spyOn(translateService, 'setTranslation');
-      jest.spyOn(translateService, 'getLangs').mockReturnValue(['en', 'es_ES']);
+      const setTranslationSpy = vi.spyOn(translateService, 'setTranslation');
+      vi.spyOn(translateService, 'getLangs').mockReturnValue(['en', 'es_ES']);
 
       service.mergeTranslationsLabels();
 
@@ -70,8 +70,8 @@ describe('NgxTranslationsService', () => {
     });
 
     it('should merge translations with true flag to avoid overwriting', () => {
-      const setTranslationSpy = jest.spyOn(translateService, 'setTranslation');
-      jest.spyOn(translateService, 'getLangs').mockReturnValue(['en']);
+      const setTranslationSpy = vi.spyOn(translateService, 'setTranslation');
+      vi.spyOn(translateService, 'getLangs').mockReturnValue(['en']);
 
       service.mergeTranslationsLabels();
 
@@ -94,10 +94,10 @@ describe('NgxTranslationsService', () => {
         'zh_CN',
         'zh_TW',
       ];
-      const setTranslationSpy = jest.spyOn(translateService, 'setTranslation');
-      jest
-        .spyOn(translateService, 'getLangs')
-        .mockReturnValue(supportedLanguages);
+      const setTranslationSpy = vi.spyOn(translateService, 'setTranslation');
+      vi.spyOn(translateService, 'getLangs').mockReturnValue(
+        supportedLanguages,
+      );
 
       service.mergeTranslationsLabels(supportedLanguages);
 
@@ -114,8 +114,8 @@ describe('NgxTranslationsService', () => {
     });
 
     it('should unwrap default property from translation object if it exists', () => {
-      const setTranslationSpy = jest.spyOn(translateService, 'setTranslation');
-      jest.spyOn(translateService, 'getLangs').mockReturnValue(['en']);
+      const setTranslationSpy = vi.spyOn(translateService, 'setTranslation');
+      vi.spyOn(translateService, 'getLangs').mockReturnValue(['en']);
 
       service.mergeTranslationsLabels();
 
@@ -127,8 +127,8 @@ describe('NgxTranslationsService', () => {
     });
 
     it('should handle languages not in CDX_TRANSLATIONS gracefully', () => {
-      const setTranslationSpy = jest.spyOn(translateService, 'setTranslation');
-      jest.spyOn(translateService, 'getLangs').mockReturnValue(['fr', 'de']); // Languages not in CDX_TRANSLATIONS
+      const setTranslationSpy = vi.spyOn(translateService, 'setTranslation');
+      vi.spyOn(translateService, 'getLangs').mockReturnValue(['fr', 'de']); // Languages not in CDX_TRANSLATIONS
 
       expect(() => {
         service.mergeTranslationsLabels();

@@ -2,8 +2,33 @@ import { JwtExtractorService } from './jwt-extractor.service';
 
 describe('JwtExtractorService', () => {
   let service: JwtExtractorService;
+  let storage: Record<string, string>;
 
   beforeEach(() => {
+    storage = {};
+    vi.stubGlobal('localStorage', {
+      getItem: vi.fn((key: string): string | null =>
+        Object.prototype.hasOwnProperty.call(storage, key)
+          ? storage[key]
+          : null,
+      ),
+      setItem: vi.fn((key: string, value: string): void => {
+        storage[key] = String(value);
+      }),
+      removeItem: vi.fn((key: string): void => {
+        delete storage[key];
+      }),
+      clear: vi.fn((): void => {
+        storage = {};
+      }),
+      key: vi.fn(
+        (index: number): string | null => Object.keys(storage)[index] ?? null,
+      ),
+      get length(): number {
+        return Object.keys(storage).length;
+      },
+    } satisfies Storage);
+
     service = new JwtExtractorService();
 
     localStorage.setItem('token', 'xxxxxxx');
@@ -14,6 +39,8 @@ describe('JwtExtractorService', () => {
   afterEach(() => {
     localStorage.removeItem('token');
     localStorage.removeItem('ls.token');
+    localStorage.removeItem('bad.token');
+    vi.unstubAllGlobals();
   });
 
   describe('extract', () => {

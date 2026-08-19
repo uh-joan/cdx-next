@@ -9,7 +9,7 @@
   <div class="cdx-footer__content">
     @if (groupCompanyLinks()) {
       <cdx-footer-group>
-        <div cdx-footer-group-title>
+        <div cdxFooterGroupTitle>
           {{
             shouldShowTranslations()
               ? ('FOOTER.COMPANY' | translate)
@@ -19,7 +19,7 @@
         <ng-container *ngTemplateOutlet="companyLinks"></ng-container>
       </cdx-footer-group>
     } @else {
-      <a cdx-footer-link href="https://clarivate.com/legal-center/">
+      <a cdxFooterLink href="https://clarivate.com/legal-center/">
         {{
           shouldShowTranslations()
             ? ('FOOTER.LEGAL_CENTER' | translate)
@@ -27,7 +27,7 @@
         }}
       </a>
       <a
-        cdx-footer-link
+        cdxFooterLink
         href="https://clarivate.com/privacy-center/notices-policies/privacy-policy/"
       >
         {{
@@ -37,7 +37,7 @@
         }}
       </a>
       <a
-        cdx-footer-link
+        cdxFooterLink
         href="https://clarivate.com/privacy-center/notices-policies/cookie-policy/"
       >
         {{
@@ -50,7 +50,7 @@
         <a
           (click)="manageCookiePreferences()"
           (keydown.enter)="manageCookiePreferences()"
-          cdx-footer-link
+          cdxFooterLink
           tabindex="0"
         >
           {{
@@ -62,7 +62,7 @@
       }
     }
     <ng-template #companyLinks>
-      <a cdx-footer-link href="https://clarivate.com/legal-center/">
+      <a cdxFooterLink href="https://clarivate.com/legal-center/">
         {{
           shouldShowTranslations()
             ? ('FOOTER.LEGAL_CENTER' | translate)
@@ -70,7 +70,7 @@
         }}
       </a>
       <a
-        cdx-footer-link
+        cdxFooterLink
         href="https://clarivate.com/privacy-center/notices-policies/privacy-policy/"
       >
         {{
@@ -80,7 +80,7 @@
         }}
       </a>
       <a
-        cdx-footer-link
+        cdxFooterLink
         href="https://clarivate.com/privacy-center/notices-policies/cookie-policy/"
       >
         {{
@@ -93,7 +93,7 @@
         <a
           (click)="manageCookiePreferences()"
           (keydown.enter)="manageCookiePreferences()"
-          cdx-footer-link
+          cdxFooterLink
           tabindex="0"
         >
           {{

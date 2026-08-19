@@ -8,7 +8,7 @@
       "e2eTestRunner": "none",
       "linter": "eslint",
       "style": "scss",
-      "unitTestRunner": "jest"
+      "unitTestRunner": "vitest"
     },
     "@nx/angular:component": {
       "style": "scss",
@@ -25,7 +25,7 @@
     },
     "@nx/angular:library": {
       "linter": "eslint",
-      "unitTestRunner": "jest"
+      "unitTestRunner": "vitest"
     },
     "@nx/angular:module": {
       "typeSeparator": "."
@@ -62,12 +62,12 @@
       "e2eTestRunner": "none",
       "linter": "eslint",
       "style": "scss",
-      "unitTestRunner": "jest"
+      "unitTestRunner": "vitest"
     },
     "@nx/web:library": {
       "linter": "eslint",
       "style": "scss",
-      "unitTestRunner": "jest"
+      "unitTestRunner": "vitest"
     },
     "@schematics/angular:component": {
       "type": "component"
@@ -100,7 +100,7 @@
       "default",
       "!{projectRoot}/**/?(*.)+(spec|test).[jt]s?(x)?(.snap)",
       "!{projectRoot}/tsconfig.spec.json",
-      "!{projectRoot}/jest.config.[jt]s",
+      "!{projectRoot}/vitest.config.[jt]s",
       "!{projectRoot}/.eslintrc.json",
       "!{projectRoot}/src/test-setup.[jt]s",
       "!{projectRoot}/eslint.config.mjs"
@@ -150,22 +150,6 @@
       ]
     },
     {
-      "plugin": "@nx/jest/plugin",
-      "options": {
-        "targetName": "test"
-      },
-      "include": [
-        "packages/docs-website/**/*",
-        "packages/ngx-analytics/**/*",
-        "packages/ngx-authentication/**/*",
-        "packages/ngx-branding/**/*",
-        "packages/ngx-session-activity/**/*",
-        "packages/ngx-translations/**/*",
-        "packages/theme-angular-material/**/*",
-        "packages/theme-xng-breadcrumb/**/*"
-      ]
-    },
-    {
       "plugin": "@nx/vite/plugin",
       "options": {
         "buildTargetName": "build",
@@ -176,7 +160,14 @@
       },
       "include": [
         "packages/docs-website/**/*",
-        "packages/ngx-reference-app/**/*"
+        "packages/ngx-analytics/**/*",
+        "packages/ngx-authentication/**/*",
+        "packages/ngx-branding/**/*",
+        "packages/ngx-reference-app/**/*",
+        "packages/ngx-session-activity/**/*",
+        "packages/ngx-translations/**/*",
+        "packages/theme-angular-material/**/*",
+        "packages/theme-xng-breadcrumb/**/*"
       ]
     }
   ],
@@ -238,7 +229,7 @@
     },
     "test": {
       "cache": true,
-      "inputs": ["default", "^production", "{workspaceRoot}/jest.preset.js"]
+      "inputs": ["default", "^production", "{projectRoot}/vitest.config.mjs"]
     }
   },
   "workspaceLayout": {

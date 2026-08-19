@@ -28,7 +28,6 @@
   },
   "groovyLint.fix.trigger": "onSave",
   "groovyLint.insight.enable": false,
-  "jest.runMode": "watch",
   "less.validate": false,
   "prettier.requireConfig": true,
   "prettier.useEditorConfig": false,

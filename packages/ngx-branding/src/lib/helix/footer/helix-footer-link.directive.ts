@@ -1,8 +1,7 @@
 import { Directive, HostBinding } from '@angular/core';
 
 @Directive({
-  // eslint-disable-next-line @angular-eslint/directive-selector
-  selector: 'a[hlx-footer-link]',
+  selector: 'a[hlxFooterLink]',
 })
 export class HelixFooterLinkDirective {
   @HostBinding('target') target = '_blank';

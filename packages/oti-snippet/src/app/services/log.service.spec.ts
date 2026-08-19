@@ -2,11 +2,11 @@ import { LogService } from './log.service';
 
 describe('LogService', () => {
   let service: LogService;
-  let spyOnConsoleLog: jest.SpyInstance;
+  let spyOnConsoleLog: MockInstance;
 
   beforeEach(() => {
     service = new LogService();
-    spyOnConsoleLog = jest.spyOn(console, 'log');
+    spyOnConsoleLog = vi.spyOn(console, 'log');
   });
 
   afterEach(() => {

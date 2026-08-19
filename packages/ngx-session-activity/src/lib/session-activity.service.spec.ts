@@ -1,7 +1,10 @@
 import { EventEmitter } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Idle, LocalStorage } from '@ng-idle/core';
-import { createServiceFactory, SpectatorService } from '@ngneat/spectator/jest';
+import {
+  createServiceFactory,
+  SpectatorService,
+} from '@ngneat/spectator/vitest';
 import { TranslateService } from '@ngx-translate/core';
 
 import { IDLE_CONFIG } from './session-activity.config';
@@ -13,8 +16,8 @@ import { SessionActivityService } from './session-activity.service';
 const dialogClosed = new EventEmitter<null>();
 
 const matDialogMock = {
-  open: jest.fn().mockReturnValue({ afterClosed: () => dialogClosed }),
-  closeAll: jest.fn(),
+  open: vi.fn().mockReturnValue({ afterClosed: () => dialogClosed }),
+  closeAll: vi.fn(),
 };
 
 const idleMock = {
@@ -23,21 +26,21 @@ const idleMock = {
   onTimeoutWarning: new EventEmitter<number>(),
   onTimeout: new EventEmitter<void>(),
   onInterrupt: new EventEmitter<void>(),
-  setIdle: jest.fn(),
-  setTimeout: jest.fn(),
-  setInterrupts: jest.fn(),
-  clearInterrupts: jest.fn(),
-  watch: jest.fn(),
-  stop: jest.fn(),
-  interrupt: jest.fn(),
-  getIdle: jest.fn().mockReturnValue(8),
-  getTimeout: jest.fn().mockReturnValue(2),
+  setIdle: vi.fn(),
+  setTimeout: vi.fn(),
+  setInterrupts: vi.fn(),
+  clearInterrupts: vi.fn(),
+  watch: vi.fn(),
+  stop: vi.fn(),
+  interrupt: vi.fn(),
+  getIdle: vi.fn().mockReturnValue(8),
+  getTimeout: vi.fn().mockReturnValue(2),
 };
 
 const localStorageMock = {
-  getItem: jest.fn(),
-  setItem: jest.fn(),
-  removeItem: jest.fn(),
+  getItem: vi.fn(),
+  setItem: vi.fn(),
+  removeItem: vi.fn(),
 };
 
 describe('SessionActivityService', () => {
@@ -48,7 +51,7 @@ describe('SessionActivityService', () => {
     providers: [
       {
         provide: TranslateService,
-        useValue: { instant: jest.fn() },
+        useValue: { instant: vi.fn() },
       },
       {
         provide: MatDialog,
@@ -174,7 +177,7 @@ describe('SessionActivityService', () => {
     });
 
     it('openInactivityDialog should be called when idle starts and sessionActivityEvent should contain logout event on timeout', () => {
-      const openInactivityDialogSpy = jest.spyOn(
+      const openInactivityDialogSpy = vi.spyOn(
         spectator.service,
         'openInactivityDialog',
       );
@@ -195,7 +198,7 @@ describe('SessionActivityService', () => {
     });
 
     it('openInactivityDialog should not be called before idle starts', () => {
-      const openInactivityDialogSpy = jest.spyOn(
+      const openInactivityDialogSpy = vi.spyOn(
         spectator.service,
         'openInactivityDialog',
       );

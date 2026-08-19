@@ -4,7 +4,10 @@ import {
   convertToParamMap,
   Router,
 } from '@angular/router';
-import { createServiceFactory, SpectatorService } from '@ngneat/spectator/jest';
+import {
+  createServiceFactory,
+  SpectatorService,
+} from '@ngneat/spectator/vitest';
 
 import { AUTHENTICATION_SETTINGS } from './authentication.injectors';
 import { AuthenticationModule } from './authentication.module';

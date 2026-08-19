@@ -1,5 +1,4 @@
 import angular from '@analogjs/vite-plugin-angular';
-import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin';
 import { dirname, resolve } from 'path';
 import { fileURLToPath } from 'url';
 import { defineConfig } from 'vite';
@@ -10,6 +9,9 @@ export default defineConfig({
   root: resolve(__dirname, 'src'),
   base: '/',
   publicDir: resolve(__dirname, 'src/assets'),
+  resolve: {
+    tsconfigPaths: true,
+  },
   build: {
     outDir: resolve(__dirname, '../../dist/packages/docs-website'),
     emptyOutDir: true,
@@ -19,7 +21,6 @@ export default defineConfig({
       tsconfig: resolve(__dirname, 'tsconfig.app.json'),
       inlineStylesExtension: 'scss',
     }),
-    nxViteTsPaths(),
   ],
   css: {
     preprocessorOptions: {

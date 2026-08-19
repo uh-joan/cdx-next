@@ -20,6 +20,12 @@
       "options": {
         "distFolderPath": "{workspaceRoot}/dist/packages/oti-snippet"
       }
+    },
+    "test": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "vitest run --config packages/oti-snippet/vitest.config.mjs"
+      }
     }
   }
 }

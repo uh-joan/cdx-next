@@ -1,7 +1,7 @@
 import {
   createDirectiveFactory,
   SpectatorDirective,
-} from '@ngneat/spectator/jest';
+} from '@ngneat/spectator/vitest';
 
 import { HelixFooterLinkDirective } from './helix-footer-link.directive';
 
@@ -10,7 +10,7 @@ describe('FooterLinkComponent', () => {
   const createDirective = createDirectiveFactory(HelixFooterLinkDirective);
 
   beforeEach(() => {
-    spectator = createDirective('<a hlx-footer-link>Foo</a>');
+    spectator = createDirective('<a hlxFooterLink>Foo</a>');
   });
 
   it('should set target to _blank', () => {

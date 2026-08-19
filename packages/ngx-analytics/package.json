@@ -1,6 +1,7 @@
 {
   "name": "@cdx/ngx-analytics",
   "version": "21.0.0",
+  "type": "module",
   "repository": {
     "type": "git",
     "url": "ssh://git@github.com/clarivate-prod/cdx-next.git",

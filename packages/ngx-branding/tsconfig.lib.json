@@ -5,13 +5,13 @@
     "inlineSources": true,
     "moduleResolution": "bundler",
     "outDir": "../../dist/out-tsc",
-    "types": ["jest"]
+    "types": ["node"]
   },
   "exclude": [
     "src/test-setup.ts",
     "**/*.spec.ts",
     "**/*.test.ts",
-    "jest.config.ts"
+    "vitest.config.mjs"
   ],
   "extends": "./tsconfig.json",
   "include": ["**/*.ts"]

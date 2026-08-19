@@ -3,7 +3,7 @@ import {
   createHostFactory,
   SpectatorHost,
   SpyObject,
-} from '@ngneat/spectator/jest';
+} from '@ngneat/spectator/vitest';
 import { TranslateService } from '@ngx-translate/core';
 
 import { OneTrustService } from '../one-trust/one-trust.service';
@@ -51,7 +51,7 @@ describe('FooterComponent', () => {
         '<footer cdx-footer [groupCompanyLinks]="true"><div>stuff</div></footer>',
       );
       oneTrust = host.inject<OneTrustService>(OneTrustService);
-      jest.spyOn(oneTrust, 'isReady').mockReturnValue(true);
+      vi.spyOn(oneTrust, 'isReady').mockReturnValue(true);
       host.detectComponentChanges();
     });
 
@@ -66,12 +66,12 @@ describe('FooterComponent', () => {
         '<footer cdx-footer [groupCompanyLinks]="false"><div>stuff</div></footer>',
       );
       oneTrust = host.inject<OneTrustService>(OneTrustService);
-      jest.spyOn(oneTrust, 'isReady').mockReturnValue(true);
+      vi.spyOn(oneTrust, 'isReady').mockReturnValue(true);
       host.detectComponentChanges();
     });
 
     it('should show a Company link first', () => {
-      expect(host.query('a[cdx-footer-link]:first-child')).toExist();
+      expect(host.query('a[cdxFooterLink]:first-child')).toExist();
     });
   });
 
@@ -85,7 +85,7 @@ describe('FooterComponent', () => {
 
     describe('configured and available', () => {
       beforeEach(() => {
-        jest.spyOn(oneTrust, 'isReady').mockReturnValue(true);
+        vi.spyOn(oneTrust, 'isReady').mockReturnValue(true);
         host.detectComponentChanges();
       });
 
@@ -119,7 +119,7 @@ describe('FooterComponent', () => {
 
     describe('not configured', () => {
       beforeEach(() => {
-        jest.spyOn(oneTrust, 'isReady').mockReturnValue(false);
+        vi.spyOn(oneTrust, 'isReady').mockReturnValue(false);
         host.detectComponentChanges();
       });
 

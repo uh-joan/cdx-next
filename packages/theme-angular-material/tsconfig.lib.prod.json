@@ -6,6 +6,6 @@
     "declarationMap": false,
     "moduleResolution": "bundler"
   },
-  "exclude": ["jest.config.ts"],
+  "exclude": ["vitest.config.mjs"],
   "extends": "./tsconfig.lib.json"
 }

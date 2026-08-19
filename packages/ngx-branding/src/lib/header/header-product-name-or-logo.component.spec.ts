@@ -1,4 +1,4 @@
-import { createHostFactory, SpectatorHost } from '@ngneat/spectator/jest';
+import { createHostFactory, SpectatorHost } from '@ngneat/spectator/vitest';
 
 import { HeaderProductNameOrLogoComponent } from './header-product-name-or-logo.component';
 

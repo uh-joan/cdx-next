@@ -3,12 +3,12 @@
     "module": "es2020",
     "outDir": "../../dist/out-tsc",
     "target": "ES2022",
-    "types": ["jest", "node"],
+    "types": ["vitest/globals", "node"],
     "allowSyntheticDefaultImports": true,
     "resolveJsonModule": true,
     "isolatedModules": true
   },
   "extends": "./tsconfig.json",
   "files": ["src/test-setup.ts"],
-  "include": ["**/*.test.ts", "**/*.spec.ts", "**/*.d.ts", "jest.config.ts"]
+  "include": ["**/*.test.ts", "**/*.spec.ts", "**/*.d.ts"]
 }

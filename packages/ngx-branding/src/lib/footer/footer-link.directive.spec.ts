@@ -1,7 +1,7 @@
 import {
   createDirectiveFactory,
   SpectatorDirective,
-} from '@ngneat/spectator/jest';
+} from '@ngneat/spectator/vitest';
 
 import { FooterLinkDirective } from './footer-link.directive';
 
@@ -10,7 +10,7 @@ describe('FooterLinkComponent', () => {
   const createDirective = createDirectiveFactory(FooterLinkDirective);
 
   beforeEach(() => {
-    spectator = createDirective('<a cdx-footer-link>Foo</a>');
+    spectator = createDirective('<a cdxFooterLink>Foo</a>');
   });
 
   it('should set target to _blank', () => {

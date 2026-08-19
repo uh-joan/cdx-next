@@ -12,14 +12,14 @@ import { HeaderGlobalUserProfileComponent } from './header-global-user-profile.c
 describe('HeaderGlobalUserProfileComponent', () => {
   let component: HeaderGlobalUserProfileComponent;
   let fixture: ComponentFixture<HeaderGlobalUserProfileComponent>;
-  let authenticationService: jest.Mocked<AuthenticationService>;
+  let authenticationService: Mocked<AuthenticationService>;
 
   beforeEach(async () => {
     const authServiceMock = {
-      isAuthenticated: jest.fn(),
-      getTokenPayload: jest.fn(),
-      login: jest.fn(),
-      logout: jest.fn(),
+      isAuthenticated: vi.fn(),
+      getTokenPayload: vi.fn(),
+      login: vi.fn(),
+      logout: vi.fn(),
     };
 
     await TestBed.configureTestingModule({
@@ -43,7 +43,7 @@ describe('HeaderGlobalUserProfileComponent', () => {
     component = fixture.componentInstance;
     authenticationService = TestBed.inject(
       AuthenticationService,
-    ) as jest.Mocked<AuthenticationService>;
+    ) as Mocked<AuthenticationService>;
 
     fixture.detectChanges();
   });
@@ -72,7 +72,7 @@ describe('HeaderGlobalUserProfileComponent', () => {
   });
 
   it('should call login on authenticationService when loginWithRouteSnapshot is called', () => {
-    const loginSpy = jest.fn();
+    const loginSpy = vi.fn();
     authenticationService.login.mockImplementation(loginSpy);
 
     component.loginWithRouteSnapshot();
@@ -81,7 +81,7 @@ describe('HeaderGlobalUserProfileComponent', () => {
   });
 
   it('should call logout on authenticationService when logoutWithRouteSnapshot is called', () => {
-    const logoutSpy = jest.fn();
+    const logoutSpy = vi.fn();
     authenticationService.logout.mockImplementation(logoutSpy);
 
     component.logoutWithRouteSnapshot();

@@ -9,47 +9,47 @@ import { InputViewerComponent } from '../../../../core/example-viewer/example-vi
 const htmlCode = `<div class="story">
   <footer hlx-footer groupCompanyLinks()>
     <hlx-footer-group>
-      <div hlx-footer-group-title>
+      <div hlxFooterGroupTitle>
         Company</div>
-      <a hlx-footer-link 
+      <a hlxFooterLink 
         href="#">Legal center</a>
-      <a hlx-footer-link 
+      <a hlxFooterLink 
         href="#">Privacy notice</a>
-      <a hlx-footer-link 
+      <a hlxFooterLink 
         href="#">Cookie policy</a>
-      <a hlx-footer-link 
+      <a hlxFooterLink 
         href="#">Manage cookie preferences</a>
     </hlx-footer-group>
     <hlx-footer-group>
-      <div hlx-footer-group-title>
+      <div hlxFooterGroupTitle>
         Title</div>
-      <a hlx-footer-link 
+      <a hlxFooterLink 
         href="#">link-item-1</a>
-      <a hlx-footer-link 
+      <a hlxFooterLink 
         href="#">link-item-2</a>
-      <a hlx-footer-link 
+      <a hlxFooterLink 
         href="#">link-item-3</a>
-      <a hlx-footer-link 
+      <a hlxFooterLink 
         href="#">link-item-4</a>
-      <a hlx-footer-link 
+      <a hlxFooterLink 
         href="#">link-item-5</a>
-      <a hlx-footer-link 
+      <a hlxFooterLink 
         href="#">link-item-6</a>
     </hlx-footer-group>
     <hlx-footer-group>
-      <div hlx-footer-group-title>
+      <div hlxFooterGroupTitle>
         Title</div>
-      <a hlx-footer-link 
+      <a hlxFooterLink 
         href="#">link-item-1</a>
-      <a hlx-footer-link 
+      <a hlxFooterLink 
         href="#">link-item-2</a>
-      <a hlx-footer-link 
+      <a hlxFooterLink 
         href="#">link-item-3</a>
-      <a hlx-footer-link 
+      <a hlxFooterLink 
         href="#">link-item-4</a>
-      <a hlx-footer-link 
+      <a hlxFooterLink 
         href="#">link-item-5</a>
-      <a hlx-footer-link 
+      <a hlxFooterLink 
         href="#">link-item-6</a>
     </hlx-footer-group>
   </footer>

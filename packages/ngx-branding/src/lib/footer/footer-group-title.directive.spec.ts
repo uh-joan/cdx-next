@@ -1,4 +1,4 @@
-import { createHostFactory, SpectatorHost } from '@ngneat/spectator/jest';
+import { createHostFactory, SpectatorHost } from '@ngneat/spectator/vitest';
 
 import { FooterGroupTitleDirective } from './footer-group-title.directive';
 
@@ -7,7 +7,7 @@ describe('FooterGroupTitleDirective', () => {
   const createHost = createHostFactory(FooterGroupTitleDirective);
 
   beforeEach(
-    () => (host = createHost('<div cdx-footer-group-title>A Title</div>')),
+    () => (host = createHost('<div cdxFooterGroupTitle>A Title</div>')),
   );
 
   it('should set group title class', () => {

@@ -59,16 +59,12 @@
 </mat-tab-nav-panel>
 @if (isHelix()) {
   <footer hlx-footer>
-    <a hlx-footer-link href="https://stackoverflow.com/">Stack Overflow</a>
-    <a hlx-footer-link href="https://www.powerlanguage.co.uk/wordle/">
-      Wordle
-    </a>
+    <a hlxFooterLink href="https://stackoverflow.com/">Stack Overflow</a>
+    <a hlxFooterLink href="https://www.powerlanguage.co.uk/wordle/"> Wordle </a>
   </footer>
 } @else {
   <footer cdx-footer [shouldShowTranslations]="true">
-    <a cdx-footer-link href="https://stackoverflow.com/">Stack Overflow</a>
-    <a cdx-footer-link href="https://www.powerlanguage.co.uk/wordle/">
-      Wordle
-    </a>
+    <a cdxFooterLink href="https://stackoverflow.com/">Stack Overflow</a>
+    <a cdxFooterLink href="https://www.powerlanguage.co.uk/wordle/"> Wordle </a>
   </footer>
 }

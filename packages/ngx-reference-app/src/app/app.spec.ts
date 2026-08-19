@@ -1,55 +1,26 @@
 import { TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
 import { AnalyticsModule, AnalyticsService } from '@cdx/ngx-analytics';
-import {
-  AuthenticationModule,
-  HeaderGlobalUserProfileComponent,
-} from '@cdx/ngx-authentication';
-import { HeaderComponent, OneTrustModule } from '@cdx/ngx-branding';
-import {
-  HeaderGlobalSessionManagementDirective,
-  SessionActivityModule,
-} from '@cdx/ngx-session-activity';
-import { provideTranslateService } from '@ngx-translate/core';
 
-import { AppComponent } from './app';
-import { LanguageSelectorComponent } from './components/language-selector/language-selector.component';
-import { ModeSelectorComponent } from './components/mode-selector/mode-selector.component';
-import { ThemeSelectorComponent } from './components/theme-selector/theme-selector.component';
+import { ThemeService } from '../core/layout/theme-selector/theme.service';
+import { App } from './app';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [AppComponent],
       imports: [
-        HeaderComponent,
-        AuthenticationModule.forRoot({
-          appId: 'cdx',
-          environment: 'dev-stable',
-        }),
-        SessionActivityModule.forRoot(),
-        OneTrustModule.forRoot({
-          domainId: '1c592d3f-d63c-42d7-9871-1b022f316498',
-        }),
+        App,
+        RouterTestingModule,
         AnalyticsModule.forRoot({
           appId: 'reference-app',
         }),
-        HeaderGlobalUserProfileComponent,
-        HeaderGlobalSessionManagementDirective,
-        ModeSelectorComponent,
-        ThemeSelectorComponent,
-        LanguageSelectorComponent,
       ],
-      providers: [
-        AnalyticsService,
-        provideTranslateService({
-          fallbackLang: 'en',
-        }),
-      ],
+      providers: [AnalyticsService, ThemeService],
     }).compileComponents();
   });
 
   it('should create the app', () => {
-    const fixture = TestBed.createComponent(AppComponent);
+    const fixture = TestBed.createComponent(App);
     const app = fixture.componentInstance;
     expect(app).toBeTruthy();
   });

@@ -1,4 +1,4 @@
-var path = require('path'),
+const path = require('path'),
   fs = require('fs');
 
 function fromDir(startPath, filter, callback) {
@@ -7,7 +7,7 @@ function fromDir(startPath, filter, callback) {
     return;
   }
 
-  let files = fs.readdirSync(startPath);
+  const files = fs.readdirSync(startPath);
   for (let i = 0; i < files.length; i++) {
     const filename = path.join(startPath, files[i]);
     const stat = fs.lstatSync(filename);
@@ -18,9 +18,9 @@ function fromDir(startPath, filter, callback) {
 }
 
 function updateVersionInFile(filePath) {
-  let content = JSON.parse(fs.readFileSync(filePath, 'utf8'));
+  const content = JSON.parse(fs.readFileSync(filePath, 'utf8'));
   let updated = false;
-  let peerDependencies = content.peerDependencies;
+  const peerDependencies = content.peerDependencies;
   if (peerDependencies) {
     const dependencies = Object.keys(peerDependencies);
     dependencies.forEach((dependency) => {

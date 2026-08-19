@@ -19,20 +19,18 @@ describe('AnalyticsService', () => {
 
   beforeEach(() => {
     mockLocalStorage = {};
-    jest
-      .spyOn(Storage.prototype, 'getItem')
-      .mockImplementation((key: string) => {
-        return mockLocalStorage[key] || null;
-      });
-    jest
-      .spyOn(Storage.prototype, 'setItem')
-      .mockImplementation((key: string, value: string) => {
+    vi.spyOn(Storage.prototype, 'getItem').mockImplementation((key: string) => {
+      return mockLocalStorage[key] || null;
+    });
+    vi.spyOn(Storage.prototype, 'setItem').mockImplementation(
+      (key: string, value: string) => {
         mockLocalStorage[key] = value;
-      });
+      },
+    );
   });
 
   afterEach(() => {
-    jest.restoreAllMocks();
+    vi.restoreAllMocks();
   });
 
   describe('When no context is provided', () => {
@@ -61,7 +59,7 @@ describe('AnalyticsService', () => {
 
     it('should track events through snowplow', () => {
       const service: AnalyticsService = TestBed.inject(AnalyticsService);
-      const snowplowEventSpy = jest.spyOn(snowplowTracker, 'trackStructEvent');
+      const snowplowEventSpy = vi.spyOn(snowplowTracker, 'trackStructEvent');
       service.trackEvent({
         action: 'action',
         category: 'click',
@@ -74,7 +72,7 @@ describe('AnalyticsService', () => {
 
     it('should check OneTrust before tracking events', () => {
       const service: AnalyticsService = TestBed.inject(AnalyticsService);
-      const oneTrustCheckSpy = jest.spyOn(
+      const oneTrustCheckSpy = vi.spyOn(
         service as unknown as { isOneTrustEnabled: () => boolean },
         'isOneTrustEnabled',
       );
@@ -87,13 +85,11 @@ describe('AnalyticsService', () => {
 
     it('should not track events when OneTrust is enabled and cookies not accepted', () => {
       const service: AnalyticsService = TestBed.inject(AnalyticsService);
-      const snowplowEventSpy = jest.spyOn(snowplowTracker, 'trackStructEvent');
-      jest
-        .spyOn(
-          service as unknown as { isOneTrustEnabled: () => boolean },
-          'isOneTrustEnabled',
-        )
-        .mockReturnValue(true);
+      const snowplowEventSpy = vi.spyOn(snowplowTracker, 'trackStructEvent');
+      vi.spyOn(
+        service as unknown as { isOneTrustEnabled: () => boolean },
+        'isOneTrustEnabled',
+      ).mockReturnValue(true);
 
       service.trackEvent({
         action: 'click',
@@ -105,13 +101,11 @@ describe('AnalyticsService', () => {
 
     it('should track page views through snowplow', () => {
       const service: AnalyticsService = TestBed.inject(AnalyticsService);
-      const snowplowPageViewSpy = jest.spyOn(snowplowTracker, 'trackPageView');
-      jest
-        .spyOn(
-          service as unknown as { isOneTrustEnabled: () => boolean },
-          'isOneTrustEnabled',
-        )
-        .mockReturnValue(false);
+      const snowplowPageViewSpy = vi.spyOn(snowplowTracker, 'trackPageView');
+      vi.spyOn(
+        service as unknown as { isOneTrustEnabled: () => boolean },
+        'isOneTrustEnabled',
+      ).mockReturnValue(false);
 
       service.trackPageView({
         title: 'Test Page',
@@ -124,13 +118,11 @@ describe('AnalyticsService', () => {
 
     it('should not track page views when OneTrust is enabled and cookies not accepted', () => {
       const service: AnalyticsService = TestBed.inject(AnalyticsService);
-      const snowplowPageViewSpy = jest.spyOn(snowplowTracker, 'trackPageView');
-      jest
-        .spyOn(
-          service as unknown as { isOneTrustEnabled: () => boolean },
-          'isOneTrustEnabled',
-        )
-        .mockReturnValue(true);
+      const snowplowPageViewSpy = vi.spyOn(snowplowTracker, 'trackPageView');
+      vi.spyOn(
+        service as unknown as { isOneTrustEnabled: () => boolean },
+        'isOneTrustEnabled',
+      ).mockReturnValue(true);
 
       service.trackPageView({
         title: 'Test Page',
@@ -207,7 +199,7 @@ describe('AnalyticsService', () => {
         return;
       }
 
-      const disableAnonymousSpy = jest.spyOn(
+      const disableAnonymousSpy = vi.spyOn(
         service.tracker,
         'disableAnonymousTracking',
       );
@@ -232,11 +224,8 @@ describe('AnalyticsService', () => {
 
     it('should clear and set new context', () => {
       const service: AnalyticsService = TestBed.inject(AnalyticsService);
-      const clearContextsSpy = jest.spyOn(
-        snowplowTracker,
-        'clearGlobalContexts',
-      );
-      const addContextsSpy = jest.spyOn(snowplowTracker, 'addGlobalContexts');
+      const clearContextsSpy = vi.spyOn(snowplowTracker, 'clearGlobalContexts');
+      const addContextsSpy = vi.spyOn(snowplowTracker, 'addGlobalContexts');
 
       const newContext: AnalyticsContextSchema = {
         schema: CLARIVATE_IGLU_SCHEMA,
@@ -277,11 +266,8 @@ describe('AnalyticsService', () => {
 
     it('should merge new context data with existing data', () => {
       const service: AnalyticsService = TestBed.inject(AnalyticsService);
-      const clearContextsSpy = jest.spyOn(
-        snowplowTracker,
-        'clearGlobalContexts',
-      );
-      const addContextsSpy = jest.spyOn(snowplowTracker, 'addGlobalContexts');
+      const clearContextsSpy = vi.spyOn(snowplowTracker, 'clearGlobalContexts');
+      const addContextsSpy = vi.spyOn(snowplowTracker, 'addGlobalContexts');
 
       service.updateContextData({
         newProp: 'newValue',
@@ -305,7 +291,9 @@ describe('AnalyticsService', () => {
         ],
       });
       const service: AnalyticsService = TestBed.inject(AnalyticsService);
-      const consoleWarnSpy = jest.spyOn(console, 'warn').mockImplementation();
+      const consoleWarnSpy = vi
+        .spyOn(console, 'warn')
+        .mockImplementation(() => undefined);
 
       service.updateContextData({
         newProp: 'newValue',
@@ -339,24 +327,30 @@ describe('AnalyticsService', () => {
       });
     });
 
-    it('should listen for cookiesAccepted event', () => {
+    it('should listen for cookiesAccepted event', async () => {
       mockLocalStorage['analytics'] = JSON.stringify({
         visitor: 'stored-user',
       });
       const service: AnalyticsService = TestBed.inject(AnalyticsService);
-      const setUserIdSpy = service.tracker
-        ? jest.spyOn(service.tracker, 'setUserId')
-        : jest.fn();
-      const disableAnonymousSpy = service.tracker
-        ? jest.spyOn(service.tracker, 'disableAnonymousTracking')
-        : jest.fn();
+      if (!service.tracker) {
+        return;
+      }
+
+      const setUserIdSpy = vi.spyOn(service.tracker, 'setUserId');
+      const disableAnonymousSpy = vi.spyOn(
+        service.tracker,
+        'disableAnonymousTracking',
+      );
 
       window.dispatchEvent(new Event('cookiesAccepted'));
 
-      setTimeout(() => {
-        expect(setUserIdSpy).toHaveBeenCalledWith('stored-user');
-        expect(disableAnonymousSpy).toHaveBeenCalled();
-      }, 0);
+      await new Promise<void>((resolve) => {
+        setTimeout(() => {
+          expect(setUserIdSpy).toHaveBeenCalledWith('stored-user');
+          expect(disableAnonymousSpy).toHaveBeenCalled();
+          resolve();
+        }, 0);
+      });
     });
   });
 

@@ -1,5 +1,8 @@
 import { DOCUMENT } from '@angular/core';
-import { createServiceFactory, SpectatorService } from '@ngneat/spectator/jest';
+import {
+  createServiceFactory,
+  SpectatorService,
+} from '@ngneat/spectator/vitest';
 import { html } from 'common-tags';
 
 import { ONE_TRUST_SETTINGS } from './one-trust.injectors';
@@ -59,10 +62,10 @@ describe('OneTrustService', () => {
     describe('.openInfoDisplay()', () => {
       beforeEach(() => {
         const windowWithOneTrust = window as typeof window & {
-          OneTrust?: { ToggleInfoDisplay: jest.Mock };
+          OneTrust?: { ToggleInfoDisplay: Mock };
         };
 
-        windowWithOneTrust.OneTrust = { ToggleInfoDisplay: jest.fn() };
+        windowWithOneTrust.OneTrust = { ToggleInfoDisplay: vi.fn() };
         spectator.service.openInfoDisplay();
       });
 

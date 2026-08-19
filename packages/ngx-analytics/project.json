@@ -34,8 +34,10 @@
       }
     },
     "test": {
+      "executor": "nx:run-commands",
       "options": {
-        "passWithNoTests": true
+        "cwd": "packages/ngx-analytics",
+        "command": "vitest run --config vitest.config.mjs"
       }
     }
   }

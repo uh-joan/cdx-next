@@ -1,4 +1,4 @@
-import { createHostFactory, SpectatorHost } from '@ngneat/spectator/jest';
+import { createHostFactory, SpectatorHost } from '@ngneat/spectator/vitest';
 
 import { HelixFooterGroupTitleDirective } from './helix-footer-group-title.directive';
 
@@ -7,7 +7,7 @@ describe('HelixFooterGroupTitleDirective', () => {
   const createHost = createHostFactory(HelixFooterGroupTitleDirective);
 
   beforeEach(
-    () => (host = createHost('<div hlx-footer-group-title>A Title</div>')),
+    () => (host = createHost('<div hlxFooterGroupTitle>A Title</div>')),
   );
 
   it('should set group title class', () => {

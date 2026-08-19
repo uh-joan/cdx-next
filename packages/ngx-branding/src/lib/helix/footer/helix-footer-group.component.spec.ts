@@ -1,4 +1,4 @@
-import { createHostFactory, SpectatorHost } from '@ngneat/spectator/jest';
+import { createHostFactory, SpectatorHost } from '@ngneat/spectator/vitest';
 import { html } from 'common-tags';
 
 import { HelixFooterGroupComponent } from './helix-footer-group.component';

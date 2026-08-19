@@ -5,7 +5,7 @@
     "target": "ES2022",
     "types": []
   },
-  "exclude": ["**/*.test.ts", "**/*.spec.ts", "jest.config.ts"],
+  "exclude": ["**/*.test.ts", "**/*.spec.ts", "vitest.config.mjs"],
   "extends": "./tsconfig.json",
   "files": ["src/main.ts"],
   "include": ["src/**/*.d.ts"]

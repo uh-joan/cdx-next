@@ -9,7 +9,7 @@ import { HeaderService } from './header.service';
 
 class MockHeaderService {
   versions = signal(['18.0.0', '20.0.0', '30.0.0']);
-  fetchAllHelixVersions = jest.fn();
+  fetchAllHelixVersions = vi.fn();
 }
 
 describe('Header', () => {
@@ -17,7 +17,7 @@ describe('Header', () => {
   let fixture: ComponentFixture<Header>;
 
   beforeAll(() => {
-    jest.spyOn(window.history, 'pushState').mockImplementation();
+    vi.spyOn(window.history, 'pushState').mockImplementation();
   });
 
   beforeEach(() => {

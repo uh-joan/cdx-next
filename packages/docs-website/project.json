@@ -26,6 +26,10 @@
       }
     },
     "test": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "vitest run --config packages/docs-website/vitest.config.mjs"
+      },
       "outputs": [
         "{workspaceRoot}/coverage/{projectRoot}",
         "{workspaceRoot}/coverage/packages/docs-website"

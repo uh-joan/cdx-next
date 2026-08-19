@@ -5,10 +5,10 @@ import { InputViewerComponent } from '../../../../core/example-viewer/example-vi
 
 const htmlCode = `<div class="story">
   <footer hlx-footer>
-    <a hlx-footer-link href="#">Legal center</a>
-    <a hlx-footer-link href="#">Privacy notice</a>
-    <a hlx-footer-link href="#">Cookie policy</a>
-    <a hlx-footer-link href="#">
+    <a hlxFooterLink href="#">Legal center</a>
+    <a hlxFooterLink href="#">Privacy notice</a>
+    <a hlxFooterLink href="#">Cookie policy</a>
+    <a hlxFooterLink href="#">
         Manage cookie preferences</a>
   </footer>
 </div>`;
