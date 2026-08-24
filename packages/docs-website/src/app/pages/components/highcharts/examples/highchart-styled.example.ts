@@ -12,8 +12,8 @@ const htmlCode = `<div class="story">
 </div>`;
 
 const styleCode = `
-@use '@cdx/theme-highcharts' as highcharts;
 @import 'highcharts/css/highcharts.css';
+@use '@cdx/theme-highcharts' as highcharts;
 
 .highcharts-styled-container {
   @include highcharts.hlx-highcharts-styled-mode-theme;
