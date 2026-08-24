@@ -1,3 +1,18 @@
+## 22.0.0-alpha.0 (2026-08-24)
+
+### 🚀 Features
+
+- **docs-website:** update quickstart docs ([a1df1a2e](https://github.com/clarivate-prod/cdx-next/commit/a1df1a2e))
+- **workspace:** update to angular 22 ([cec8fc2c](https://github.com/clarivate-prod/cdx-next/commit/cec8fc2c))
+
+### 🩹 Fixes
+
+- **docs-website:** fix highcharts example ([a8e61265](https://github.com/clarivate-prod/cdx-next/commit/a8e61265))
+
+### ❤️ Thank You
+
+- alejandro-chacon_clv
+
 # 21.0.0 (2026-08-17)
 
 ### 🚀 Features

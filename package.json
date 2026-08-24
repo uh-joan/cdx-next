@@ -1,6 +1,6 @@
 {
   "name": "cdx",
-  "version": "21.0.0",
+  "version": "22.0.0-alpha.0",
   "private": true,
   "repository": {
     "type": "git",
