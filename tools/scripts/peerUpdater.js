@@ -31,7 +31,7 @@ function updateVersionInFile(filePath) {
     });
   }
   if (updated) {
-    fs.writeFileSync(filePath, JSON.stringify(content, null, 2));
+    fs.writeFileSync(filePath, JSON.stringify(content, null, 2) + '\n');
   }
 }
 
