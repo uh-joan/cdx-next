@@ -3,9 +3,12 @@
   "version": "22.0.0-alpha.1",
   "type": "module",
   "exports": {
-    "import": "./dist/theme-highcharts.mjs",
-    "types": "./dist/theme-highcharts.d.mts",
-    "sass": "./_index.scss"
+    ".": {
+      "types": "./dist/theme-highcharts.d.mts",
+      "sass": "./_index.scss",
+      "import": "./dist/theme-highcharts.mjs",
+      "default": "./dist/theme-highcharts.mjs"
+    }
   },
   "main": "./dist/theme-highcharts.mjs",
   "types": "./dist/theme-highcharts.d.mts",
