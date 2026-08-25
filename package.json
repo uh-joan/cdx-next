@@ -18,7 +18,7 @@
     "lint": "run-s lint:*",
     "lint:commit": "commitlint --from cea7d787c9e",
     "lint:nx": "run-s lint:nx:*",
-    "lint:nx:format": "nx format:check --skip-nx-cache",
+    "lint:nx:format": "nx format:write --all --skip-nx-cache",
     "lint:nx:lint": "nx run-many --all --exclude=workspace --target=lint --skip-nx-cache",
     "publish:prerelease": "npm run publish:release:common -- --tag=alpha",
     "publish:release": "npm run publish:release:common -- --tag=latest",
