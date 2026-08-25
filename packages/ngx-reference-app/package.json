@@ -5,7 +5,7 @@
   "dependencies": {
     "highcharts": "^13.0.0",
     "highcharts-angular": "5.4.1",
-    "@cdx/theme-angular-material": "21.0.0",
-    "@cdx/ngx-branding": "21.0.0"
+    "@cdx/theme-angular-material": "22.0.0-alpha.1",
+    "@cdx/ngx-branding": "22.0.0-alpha.1"
   }
 }

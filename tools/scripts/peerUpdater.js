@@ -17,19 +17,27 @@ function fromDir(startPath, filter, callback) {
   }
 }
 
+const rootVersion = JSON.parse(
+  fs.readFileSync('./package.json', 'utf8'),
+).version;
+
 function updateVersionInFile(filePath) {
   const content = JSON.parse(fs.readFileSync(filePath, 'utf8'));
   let updated = false;
-  const peerDependencies = content.peerDependencies;
-  if (peerDependencies) {
-    const dependencies = Object.keys(peerDependencies);
-    dependencies.forEach((dependency) => {
-      if (dependency.includes('@cdx/')) {
-        peerDependencies[dependency] = content.version;
+
+  ['dependencies', 'peerDependencies'].forEach((field) => {
+    const deps = content[field];
+    if (!deps) {
+      return;
+    }
+    Object.keys(deps).forEach((dependency) => {
+      if (dependency.includes('@cdx/') && deps[dependency] !== rootVersion) {
+        deps[dependency] = rootVersion;
         updated = true;
       }
     });
-  }
+  });
+
   if (updated) {
     fs.writeFileSync(filePath, JSON.stringify(content, null, 2) + '\n');
   }
