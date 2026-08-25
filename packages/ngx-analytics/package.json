@@ -1,6 +1,6 @@
 {
   "name": "@cdx/ngx-analytics",
-  "version": "22.0.0-alpha.0",
+  "version": "22.0.0-alpha.1",
   "type": "module",
   "repository": {
     "type": "git",
@@ -12,6 +12,6 @@
     "tslib": "^2.8.1"
   },
   "peerDependencies": {
-    "@cdx/ngx-branding": "22.0.0-alpha.0"
+    "@cdx/ngx-branding": "22.0.0-alpha.1"
   }
 }

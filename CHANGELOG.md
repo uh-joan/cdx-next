@@ -1,3 +1,16 @@
+## 22.0.0-alpha.1 (2026-08-25)
+
+### 🩹 Fixes
+
+- **ngx-branding:** fix exports ([2ba70a92](https://github.com/clarivate-prod/cdx-next/commit/2ba70a92))
+- **workspace:** fix eof line on peerupdater ([a7d2dc7b](https://github.com/clarivate-prod/cdx-next/commit/a7d2dc7b))
+- **workspace:** local linter will now fail in same way as when run in Jenkins ([e1ebbc71](https://github.com/clarivate-prod/cdx-next/commit/e1ebbc71))
+
+### ❤️ Thank You
+
+- alejandro-chacon_clv
+- Fran Casternao
+
 ## 22.0.0-alpha.0 (2026-08-24)
 
 ### 🚀 Features
