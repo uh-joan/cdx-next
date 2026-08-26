@@ -74,8 +74,10 @@ a per-button modifier:
 
 - `hlx-btn-xsmall`, `hlx-btn-small`, `hlx-btn-large` on a container div around
   `<button matButton>` elements (no class = default size).
-- `hlx-chip-small` on the `<mat-chip-set>` for compact chips.- These are **optional utilities** — the consuming application decides
+- `hlx-chip-small` on the `<mat-chip-set>` for compact chips.
+- These are **optional utilities** — the consuming application decides
   whether to opt into a non-default density; don't force one.
+
 ### Material native API (still required)
 
 Helix does not replace Material's own API — combine both:
