@@ -132,6 +132,8 @@ const requiredPackages = [
   '@angular/material',
 ];
 
+const HELIX_MAJOR_VERSION = 22;
+
 function checkPackageVersion(packageName, hlxVersion) {
   const packagePath = path.join(
     projectRoot,
@@ -173,7 +175,7 @@ function checkPackageVersion(packageName, hlxVersion) {
 }
 
 const allPackagesValid = requiredPackages
-  .map((pkg) => checkPackageVersion(pkg, 20))
+  .map((pkg) => checkPackageVersion(pkg, HELIX_MAJOR_VERSION))
   .every((valid) => valid);
 
 console.log(chalk.blue('\n---------------------------------\n'));
@@ -182,8 +184,6 @@ console.log(chalk.blue('\n---------------------------------\n'));
 // 🎨 THEME CHECK
 // ============================
 console.log(chalk.magenta.bold('🎨 THEME CHECK (styles.scss)\n'));
-
-const allStylesValid = true;
 
 function getFilesRecursive(dir, ext) {
   let results = [];
@@ -327,7 +327,7 @@ function checkStyles() {
   const scssFiles = getFilesRecursive(path.join(projectRoot, 'src'), '.scss');
   const htmlFiles = getFilesRecursive(path.join(projectRoot, 'src'), '.html');
 
-  checkThemeClass(scssFiles, htmlFiles);
+  return checkThemeClass(scssFiles, htmlFiles);
 }
 
 const stylesValid = checkStyles();
@@ -393,23 +393,7 @@ function checkIndexHtml() {
   return allIndexValid;
 }
 
-let themeClass = null;
-
-if (stylesValid) {
-  const stylesPath = path.join(projectRoot, 'src', 'styles.scss');
-  const stylesContent = fs
-    .readFileSync(stylesPath, 'utf8')
-    .replace(/\/\/.*|\/\*[\s\S]*?\*\//g, '');
-
-  const themeMatch = stylesContent.match(
-    /@include hlx\.default\(hlx\.\$helix-theme,\s*"([^"]+)"\);/,
-  );
-  if (themeMatch) {
-    themeClass = themeMatch[1];
-  }
-}
-
-checkIndexHtml(themeClass);
+checkIndexHtml();
 
 console.log(chalk.blue('\n---------------------------------\n'));
 
@@ -574,7 +558,7 @@ function displayFinalSummary() {
     );
   }
 
-  if (!allStylesValid) {
+  if (!stylesValid) {
     issueMessages.push(
       `❌ ${chalk.yellow('Theme checks failed.')}\n   ${chalk.underline(
         'https://design-lsh.clarivate.io/development/quick-start-new-project#styles',
