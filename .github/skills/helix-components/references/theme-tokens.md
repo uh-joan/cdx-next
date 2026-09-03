@@ -44,7 +44,8 @@ Group tokens by category — always prefer these over raw hex values:
   SCSS — never hardcode a color that already has a token.
 - Density/size is not a separate token set here; it's handled via the wrapper
   classes documented in [variant-classes.md](./variant-classes.md)
-  (`hlx-btn-large`, `hlx-btn-small`, `hlx-btn-xsmall`, `hlx-chip-small`).
+  (`hlx-btn-large`, `hlx-btn-small`, `hlx-btn-xsmall`, `hlx-btn-xxsmall`,
+  `hlx-chip-small`).
 - When a component needs an inverted look (dark background), reach for
   `$helix-invert-theme` / the corresponding `hlx-*-invert` class rather than
   manually setting `$surface-invert`/`$text-invert` colors.
