@@ -21,7 +21,7 @@ const htmlCode = `<div class="story">
             matInput
             type="number"
             [value]="durationInSeconds()"
-            (input)="durationInSeconds.set(duration.valueAsNumber)"
+            (input)="durationInSeconds.set(duration.valueAsNumber || 0)"
         />
     </mat-form-field>
 
