@@ -31,7 +31,7 @@ using a class, since new components/variants may be added later.
 | Icons         | `hlx-icon-primary`                                         | primary icon color                                          | `icons/examples/icon-colors.example.ts`                   |
 | Icons         | `hlx-icon-accent`                                          | accent icon color                                           | `icons/examples/icon-colors.example.ts`                   |
 | Notifications | `<hlx-notification>`                                       | Helix notification component (not a class)                  | `notifications/examples/notification.example.ts`          |
-| Snackbar      | `hlx-button-invert`                                        | inverted color action button inside snackbar                | `snackbar/examples/snackbar.example.ts`                   |
+| Snackbar      | `hlx-btn-invert`                                          | inverted button styling                                     | `snackbar/examples/snackbar.example.ts`                   |
 | Table         | `hlx-table` (combine with `mat-elevation-z8`)              | Helix table styling on top of Material table                | `table/examples/table-simple.example.ts`                  |
 | Tabs          | `hlx-tab-invert`                                           | inverted color tab variant                                  | `tabs/examples/tabs-inverted.color.example.ts`            |
 | Form field    | `appearance="fill"` / `appearance="outline"`               | Material form-field appearance (no Helix override observed) | `form-field/examples/form-field-appearences.ts`           |
