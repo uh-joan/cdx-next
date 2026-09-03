@@ -25,7 +25,7 @@ export const ExpansionPanelComponent: InputViewerComponent = {
   hideCss: true,
   verticalView: true,
   htmlCode: htmlCode,
-  cssCode: [styleCode],
+  cssCode: styleCode,
   tsCode: `import { Component } from '@angular/core';
 import { HelixHeaderModule } from '@cdx/ngx-branding';
 

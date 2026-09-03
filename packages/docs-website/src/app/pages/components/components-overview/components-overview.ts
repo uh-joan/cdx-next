@@ -1,6 +1,4 @@
-import { CommonModule } from '@angular/common';
-import { Component, HostBinding } from '@angular/core';
-import { MatButtonModule } from '@angular/material/button';
+import { Component } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
 import { MatRippleModule } from '@angular/material/core';
 import { RouterLink } from '@angular/router';
@@ -17,19 +15,11 @@ interface ComponentExample {
 @Component({
   selector: 'cdx-components-overview',
   templateUrl: './components-overview.html',
-  styleUrls: ['./components-overview.scss'],
-  imports: [
-    CommonModule,
-    RouterLink,
-    MatCardModule,
-    MatButtonModule,
-    MatRippleModule,
-    Page,
-  ],
+  styleUrl: './components-overview.scss',
+  host: { class: 'cdx-section' },
+  imports: [RouterLink, MatCardModule, MatRippleModule, Page],
 })
 export class ComponentsOverview {
-  @HostBinding('class') hostClass = 'cdx-section';
-
   basePath = '/components/scenes/';
   extension = '.png';
 

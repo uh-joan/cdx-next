@@ -5,7 +5,7 @@
 <div class="bottom-block">
   <span class="mat-display-medium"> {{ cardData().title }} </span>
   <span class="mat-body-xlarge"> {{ cardData().text }} </span>
-  <a [routerLink]="cardData().url" mat-stroked-button>
+  <a [routerLink]="cardData().url" matButton="outlined">
     {{ cardData().buttonName }}
   </a>
 </div>

@@ -49,7 +49,7 @@ export const RangeDatepickerComponent: InputViewerComponent = {
   height: 40,
   hideCss: true,
   htmlCode: htmlCode,
-  cssCode: [styleCode],
+  cssCode: styleCode,
   tsCode: `import { Component } from '@angular/core';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatDatepickerModule } from '@angular/material/datepicker';

@@ -1,19 +1,29 @@
-import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
-import { MatButtonModule } from '@angular/material/button';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  DestroyRef,
+  inject,
+  signal,
+} from '@angular/core';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { MatButton, MatIconButton } from '@angular/material/button';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
-import { MatIconModule } from '@angular/material/icon';
+import { MatIcon } from '@angular/material/icon';
 
 import { InputViewerComponent } from '../../../../core/example-viewer/example-viewer.model';
 
 const htmlCode = `<div class="story">
-    <button mat-button
-        (click)="openDialog()">Open dialog</button>
+  <button matButton="filled" (click)="openDialog()">Open dialog</button>
+
+  @if (lastResult(); as result) {
+    <p>Dialog result: {{ result }}</p>
+  }
 </div>`;
 
 const htmlCode2 = `
 <h2 mat-dialog-title>Install Angular
-  <button mat-icon-button class="close-button" [mat-dialog-close]="true" style="position: absolute; top: 16px; right: 16px">
-    <mat-icon >close</mat-icon>
+  <button matIconButton class="close-button" [mat-dialog-close]="true" aria-label="Close dialog">
+    <mat-icon>close</mat-icon>
   </button>
 </h2>
 <mat-dialog-content class="mat-typography">
@@ -76,39 +86,76 @@ const htmlCode2 = `
     sophisticated in-browser navigational capabilities.</p>
 </mat-dialog-content>
 <mat-dialog-actions align="end">
-    <button mat-button mat-dialog-close>Cancel</button>
-    <button mat-flat-button class="hlx-btn-primary" mat-button [mat-dialog-close]="true">Install</button>
+    <button matButton mat-dialog-close>Cancel</button>
+    <button matButton="filled" [mat-dialog-close]="true">Install</button>
 </mat-dialog-actions>`;
 
-const styleCode = `.close-btn{
+const styleCode = `.close-button {
   position: absolute;
   top: 1rem;
   right: 1rem;
+}`;
 
+const tsCode = `import { ChangeDetectionStrategy, Component, DestroyRef, inject, signal } from '@angular/core';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { MatButton, MatIconButton } from '@angular/material/button';
+import { MatDialog, MatDialogModule } from '@angular/material/dialog';
+import { MatIcon } from '@angular/material/icon';
+
+@Component({
+  selector: 'app-dialog-content-example',
+  templateUrl: './dialog-content-example.html',
+  styleUrl: './dialog-content-example.scss',
+  imports: [MatDialogModule, MatButton, MatIconButton, MatIcon],
+  changeDetection: ChangeDetectionStrategy.OnPush,
+})
+export class DialogContentExample {}
+
+@Component({
+  selector: 'app-dialog-example',
+  templateUrl: './dialog-example.html',
+  imports: [MatButton],
+})
+export class DialogExample {
+  private readonly dialog = inject(MatDialog);
+  private readonly destroyRef = inject(DestroyRef);
+
+  protected readonly lastResult = signal<string | undefined>(undefined);
+
+  protected openDialog(): void {
+    this.dialog
+      .open(DialogContentExample)
+      .afterClosed()
+      .pipe(takeUntilDestroyed(this.destroyRef))
+      .subscribe((result) => this.lastResult.set(String(result)));
+  }
 }`;
 
 @Component({
   selector: 'app-content-example-dialog',
   template: htmlCode2,
-  imports: [MatDialogModule, MatButtonModule, MatIconModule],
+  imports: [MatDialogModule, MatButton, MatIconButton, MatIcon],
   changeDetection: ChangeDetectionStrategy.OnPush,
+  styles: [styleCode],
 })
 class DialogContentExampleDialog {}
 
 @Component({
   template: htmlCode,
-  imports: [MatIconModule, MatButtonModule, MatDialogModule],
-  styles: [styleCode],
+  imports: [MatButton],
 })
 class SampleComponent {
-  readonly dialog = inject(MatDialog);
+  private readonly dialog = inject(MatDialog);
+  private readonly destroyRef = inject(DestroyRef);
 
-  openDialog() {
-    const dialogRef = this.dialog.open(DialogContentExampleDialog);
+  protected readonly lastResult = signal<string | undefined>(undefined);
 
-    dialogRef.afterClosed().subscribe((result) => {
-      console.log(`Dialog result: ${result}`);
-    });
+  protected openDialog(): void {
+    this.dialog
+      .open(DialogContentExampleDialog)
+      .afterClosed()
+      .pipe(takeUntilDestroyed(this.destroyRef))
+      .subscribe((result) => this.lastResult.set(String(result)));
   }
 }
 
@@ -118,40 +165,7 @@ export const DialogComponent: InputViewerComponent = {
   height: 60,
   hideCss: true,
   verticalView: true,
-  htmlCode: htmlCode,
-  cssCode: [styleCode],
-  tsCode: `import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
-import { MatButtonModule } from '@angular/material/button';
-import { MatDialog, MatDialogModule } from '@angular/material/dialog';
-
-@Component({
-
-    selector: 'app-content-example-dialog',
-    template: htmlCode2,
-    imports: [MatDialogModule, MatButtonModule],
-    changeDetection: ChangeDetectionStrategy.OnPush,
-})
-class DialogContentExampleDialog {}
-
-
-@Component({
-
-    template: htmlCode,
-    imports: [
-        MatButtonModule,
-        MatDialogModule
-    ],
-    styles: [styleCode],
-})
-class SampleComponent {
-    readonly dialog = inject(MatDialog);
-
-    openDialog() {
-      const dialogRef = this.dialog.open(DialogContentExampleDialog);
-
-      dialogRef.afterClosed().subscribe(result => {
-        console.log('Dialog result:', result);
-      });
-    }
-}`,
+  htmlCode,
+  cssCode: styleCode,
+  tsCode,
 };

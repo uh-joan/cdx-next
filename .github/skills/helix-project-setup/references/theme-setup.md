@@ -21,19 +21,21 @@ All `@use` rules must be at the very top of the file, before any other rule.
 Notes:
 
 - `cdx.default($theme, $class-name)` wraps `mat.core()`, `mat.core-theme()`,
-  `mat.all-component-themes()` and the Helix Material overrides inside `.$class-name`, and
-  emits the typography hierarchy under `.$class-name.mat-typography`.
-- The second argument is the theme class name. It defaults to `cdx-theme-material`; Helix apps
-  pass `'helix-theme-material'`. Whatever you pass must match the `<body>` class and the
-  overrides block.
-- Available themes forwarded by the package: `$helix-theme`, `$helix-dark-theme`,
-  `$helix-error-theme`, `$helix-success-theme`, `$helix-invert-theme`, plus the legacy
-  `$light-theme` / `$dark-theme`.
-- Never call `mat.core()` or `mat.all-component-themes()` yourself — `cdx.default` already
-  does, and duplicating them doubles the emitted CSS.
-- Component SCSS files that need Helix tokens should `@use '@cdx/theme-angular-material' as cdx;`
-  locally. `@use` is scoped per-file, so this is required in each file and emits no duplicate CSS
-  for token-only usage.
+  `mat.all-component-themes()` and the Helix Material overrides inside
+  `.$class-name`, and emits the typography hierarchy under
+  `.$class-name.mat-typography`.
+- The second argument is the theme class name. It defaults to
+  `cdx-theme-material`; Helix apps pass `'helix-theme-material'`. Whatever you
+  pass must match the `<body>` class and the overrides block.
+- Available themes forwarded by the package: `$helix-theme`,
+  `$helix-dark-theme`, `$helix-error-theme`, `$helix-success-theme`,
+  `$helix-invert-theme`, plus the legacy `$light-theme` / `$dark-theme`.
+- Never call `mat.core()` or `mat.all-component-themes()` yourself —
+  `cdx.default` already does, and duplicating them doubles the emitted CSS.
+- Component SCSS files that need Helix tokens should
+  `@use '@cdx/theme-angular-material' as cdx;` locally. `@use` is scoped
+  per-file, so this is required in each file and emits no duplicate CSS for
+  token-only usage.
 
 ## Body classes (`src/index.html`)
 
@@ -43,15 +45,19 @@ Notes:
 </body>
 ```
 
-Both classes must be on the same element (or `mat-typography` on a descendant of the theme
-class) so the Helix overrides win over Material defaults.
+Both classes must be on the same element (or `mat-typography` on a descendant of
+the theme class) so the Helix overrides win over Material defaults.
 
 ## Fonts (`src/index.html` `<head>`)
 
 ```html
 <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link rel="preconnect" href="https://cdn.digital-experience.clarivate.io" crossorigin />
+<link
+  rel="preconnect"
+  href="https://cdn.digital-experience.clarivate.io"
+  crossorigin
+/>
 <link
   rel="stylesheet"
   href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp"
@@ -66,8 +72,8 @@ class) so the Helix overrides win over Material defaults.
 />
 ```
 
-Trim the Material Icons variants to the ones actually used to reduce payload — the checker only
-requires the `family=Material+Icons` request to be present.
+Trim the Material Icons variants to the ones actually used to reduce payload —
+the checker only requires the `family=Material+Icons` request to be present.
 
 ## Branding — standalone component
 
@@ -99,7 +105,8 @@ import {
 export class App {}
 ```
 
-For NgModule apps, put the same components in the module `imports` array (they are standalone).
+For NgModule apps, put the same components in the module `imports` array (they
+are standalone).
 
 ## Branding — template and layout
 

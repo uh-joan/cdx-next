@@ -1,27 +1,25 @@
-import { JsonPipe } from '@angular/common';
-import { Component, inject } from '@angular/core';
-import {
-  FormBuilder,
-  FormGroup,
-  FormsModule,
-  ReactiveFormsModule,
-} from '@angular/forms';
-import { MatButtonModule } from '@angular/material/button';
-import { MatCheckboxModule } from '@angular/material/checkbox';
+import { Component, computed, signal } from '@angular/core';
+import { MatButton, MatIconButton } from '@angular/material/button';
+import { MatCheckbox } from '@angular/material/checkbox';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatIconModule } from '@angular/material/icon';
-import { MatInputModule } from '@angular/material/input';
+import { MatIcon } from '@angular/material/icon';
+import { MatInput } from '@angular/material/input';
 import { MatMenuModule } from '@angular/material/menu';
 
 import { InputViewerComponent } from '../../../../core/example-viewer/example-viewer.model';
 
+interface Topping {
+  id: string;
+  label: string;
+  selected: boolean;
+}
+
 const htmlCode = `<div class="story">
     <button
-        mat-button
+        matButton="filled"
         [matMenuTriggerFor]="menu"
         aria-label="Example menu with 
         complex content in expanded area"
-        color="primary"
     >
         Complex Menu
     </button>
@@ -32,47 +30,42 @@ const htmlCode = `<div class="story">
             class="panel">
             <mat-form-field appearance="fill">
                 <mat-label>Search</mat-label>
-                <input matInput type="text" 
-                    [(ngModel)]="textInput" />
-                    @if(textInput) {
+                <input
+                    #searchInput
+                    matInput
+                    type="text"
+                    [value]="search()"
+                    (input)="search.set(searchInput.value)"
+                />
+                @if (search()) {
                     <button
-                    matSuffix
-                    mat-icon-button
-                    aria-label="Clear"
-                    (click)="textInput = ''"
-                >
-                    <mat-icon>close</mat-icon>
-                </button>
-                    }
-                
+                        matIconButton
+                        matSuffix
+                        aria-label="Clear"
+                        (click)="search.set('')"
+                    >
+                        <mat-icon>close</mat-icon>
+                    </button>
+                }
             </mat-form-field>
 
-            <section
-                [formGroup]="toppings">
+            <section>
                 <h2>Select your toppings:</h2>
-                <p class="mat-body-2 no-margin">
-                    <mat-checkbox 
-                        formControlName="pepperoni"
-                        >Pepperoni</mat-checkbox>
-                </p>
-                <p class="no-margin">
-                    <mat-checkbox 
-                        formControlName="extracheese"
-                        >Extra Cheese</mat-checkbox>
-                </p>
-                <p >
-                    <mat-checkbox 
-                        formControlName="mushroom"
-                        >Mushroom</mat-checkbox>
-                </p>
+                @for (topping of toppings(); track topping.id) {
+                    <p class="no-margin">
+                        <mat-checkbox
+                            [checked]="topping.selected"
+                            (change)="toggleTopping(topping.id)"
+                        >
+                            {{ topping.label }}
+                        </mat-checkbox>
+                    </p>
+                }
             </section>
 
-            <section
-                [formGroup]="toppings">
+            <section>
                 <h3>You chose:</h3>
-                <span class="mat-small">
-                    {{ toppings.value | json }}
-                </span>
+                <span class="mat-small">{{ chosenToppings() }}</span>
             </section>
         </div>
     </mat-menu>
@@ -81,46 +74,111 @@ const htmlCode = `<div class="story">
 const styleCode = `.story {
     margin: 10rem;
 }
+
 .panel {
     width: 16rem;
-    display: flex; 
-    flex-direction: column; 
-    justify-content: center; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     padding: 20px;
+}
 
-    .no-margin {
-        margin: 0;
-    }
+.panel .no-margin {
+    margin: 0;
+}`;
+
+const tsCode = `import { Component, computed, signal } from '@angular/core';
+import { MatButton, MatIconButton } from '@angular/material/button';
+import { MatCheckbox } from '@angular/material/checkbox';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatIcon } from '@angular/material/icon';
+import { MatInput } from '@angular/material/input';
+import { MatMenuModule } from '@angular/material/menu';
+
+interface Topping {
+  id: string;
+  label: string;
+  selected: boolean;
+}
+
+@Component({
+  selector: 'app-menu-complex-example',
+  templateUrl: './menu-complex-example.html',
+  styleUrl: './menu-complex-example.scss',
+  imports: [
+    MatMenuModule,
+    MatButton,
+    MatIconButton,
+    MatCheckbox,
+    MatFormFieldModule,
+    MatInput,
+    MatIcon,
+  ],
+})
+export class MenuComplexExample {
+  protected readonly search = signal('');
+
+  protected readonly toppings = signal<Topping[]>([
+    { id: 'pepperoni', label: 'Pepperoni', selected: false },
+    { id: 'extracheese', label: 'Extra Cheese', selected: false },
+    { id: 'mushroom', label: 'Mushroom', selected: false },
+  ]);
+
+  protected readonly chosenToppings = computed(() => {
+    const chosen = this.toppings().filter((topping) => topping.selected);
+    return chosen.length
+      ? chosen.map((topping) => topping.label).join(', ')
+      : 'Nothing yet';
+  });
+
+  protected toggleTopping(id: string): void {
+    this.toppings.update((toppings) =>
+      toppings.map((topping) =>
+        topping.id === id
+          ? { ...topping, selected: !topping.selected }
+          : topping,
+      ),
+    );
+  }
 }`;
 
 @Component({
   template: htmlCode,
   imports: [
     MatMenuModule,
-    MatButtonModule,
-    MatCheckboxModule,
+    MatButton,
+    MatIconButton,
+    MatCheckbox,
     MatFormFieldModule,
-    MatInputModule,
-    FormsModule,
-    ReactiveFormsModule,
-    MatIconModule,
-    JsonPipe,
+    MatInput,
+    MatIcon,
   ],
   styles: [styleCode],
 })
 class SampleComponent {
-  title = 'test';
-  textInput = '';
+  protected readonly search = signal('');
 
-  toppings: FormGroup;
-  private fb = inject(FormBuilder);
+  protected readonly toppings = signal<Topping[]>([
+    { id: 'pepperoni', label: 'Pepperoni', selected: false },
+    { id: 'extracheese', label: 'Extra Cheese', selected: false },
+    { id: 'mushroom', label: 'Mushroom', selected: false },
+  ]);
 
-  constructor() {
-    this.toppings = this.fb.group({
-      pepperoni: false,
-      extracheese: false,
-      mushroom: false,
-    });
+  protected readonly chosenToppings = computed(() => {
+    const chosen = this.toppings().filter((topping) => topping.selected);
+    return chosen.length
+      ? chosen.map((topping) => topping.label).join(', ')
+      : 'Nothing yet';
+  });
+
+  protected toggleTopping(id: string): void {
+    this.toppings.update((toppings) =>
+      toppings.map((topping) =>
+        topping.id === id
+          ? { ...topping, selected: !topping.selected }
+          : topping,
+      ),
+    );
   }
 }
 
@@ -128,45 +186,7 @@ export const MenuComplexComponent: InputViewerComponent = {
   exampleName: 'Menu Complex',
   dynamicComponent: SampleComponent,
   height: 70,
-  htmlCode: htmlCode,
-  cssCode: [styleCode],
-  tsCode: `import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MatButtonModule } from '@angular/material/button';
-import { MatCheckboxModule } from '@angular/material/checkbox';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatIconModule } from '@angular/material/icon';
-import { MatInputModule } from '@angular/material/input';
-import { MatMenuModule } from '@angular/material/menu';
-
-@Component({
-    template: htmlCode,
-    imports: [
-        MatMenuModule,
-        MatButtonModule,
-        MatCheckboxModule,
-        MatFormFieldModule,
-        MatInputModule,
-        FormsModule,
-        CommonModule,
-        ReactiveFormsModule,
-        MatIconModule
-    ],
-    styles: [styleCode],
-})
-class SampleComponent {
-    title = 'test';
-    textInput = '';
-  
-    toppings: FormGroup;
-  
-    constructor(fb: FormBuilder) {
-      this.toppings = fb.group({
-        pepperoni: false,
-        extracheese: false,
-        mushroom: false,
-      });
-    }
-}`,
+  htmlCode,
+  cssCode: styleCode,
+  tsCode,
 };

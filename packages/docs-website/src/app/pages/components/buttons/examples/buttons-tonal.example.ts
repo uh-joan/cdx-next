@@ -1,51 +1,54 @@
 import { Component } from '@angular/core';
-import { MatButtonModule } from '@angular/material/button';
-import { MatIconModule } from '@angular/material/icon';
+import { MatButton } from '@angular/material/button';
+import { MatIcon } from '@angular/material/icon';
 
 import { InputViewerComponent } from '../../../../core/example-viewer/example-viewer.model';
 
 const htmlCode = `<div class="story">
   <div class="story__box">
-    <div class="story__row ">
-      <button matButton>Button</button>
-      <button matButton>
+    <div class="story__row">
+      <button matButton="tonal">Button</button>
+      <button matButton="tonal">
         <mat-icon>anchor</mat-icon>
         Button
       </button>
-      <button matButton>
+      <button matButton="tonal">
         Button
         <mat-icon iconPositionEnd>anchor</mat-icon>
       </button>
     </div>
+
     <div class="story__row hlx-btn-accent">
-      <button matButton>Button</button>
-      <button matButton>
+      <button matButton="tonal">Button</button>
+      <button matButton="tonal">
         <mat-icon>anchor</mat-icon>
         Button
       </button>
-      <button matButton>
+      <button matButton="tonal">
         Button
         <mat-icon iconPositionEnd>anchor</mat-icon>
       </button>
     </div>
+
     <div class="story__row hlx-btn-negative">
-      <button matButton>Button</button>
-      <button matButton>
+      <button matButton="tonal">Button</button>
+      <button matButton="tonal">
         <mat-icon>anchor</mat-icon>
         Button
       </button>
-      <button matButton>
+      <button matButton="tonal">
         Button
         <mat-icon iconPositionEnd>anchor</mat-icon>
       </button>
     </div>
+
     <div class="story__row hlx-btn-invert background-invert">
-      <button matButton>Button</button>
-      <button matButton>
+      <button matButton="tonal">Button</button>
+      <button matButton="tonal">
         <mat-icon>anchor</mat-icon>
         Button
       </button>
-      <button matButton>
+      <button matButton="tonal">
         Button
         <mat-icon iconPositionEnd>anchor</mat-icon>
       </button>
@@ -54,46 +57,48 @@ const htmlCode = `<div class="story">
 
   <div class="story__box">
     <div class="story__row">
-      <button matButton disabled>Button</button>
-      <button matButton disabled>
+      <button matButton="tonal" disabled>Button</button>
+      <button matButton="tonal" disabled>
         <mat-icon>anchor</mat-icon>
         Button
       </button>
-      <button matButton disabled>
+      <button matButton="tonal" disabled>
         Button
         <mat-icon iconPositionEnd>anchor</mat-icon>
       </button>
     </div>
 
     <div class="story__row hlx-btn-accent">
-      <button matButton disabled>Button</button>
-      <button matButton disabled>
+      <button matButton="tonal" disabled>Button</button>
+      <button matButton="tonal" disabled>
         <mat-icon>anchor</mat-icon>
         Button
       </button>
-      <button matButton disabled>
+      <button matButton="tonal" disabled>
         Button
         <mat-icon iconPositionEnd>anchor</mat-icon>
       </button>
     </div>
+
     <div class="story__row hlx-btn-negative">
-      <button matButton disabled>Button</button>
-      <button matButton disabled>
+      <button matButton="tonal" disabled>Button</button>
+      <button matButton="tonal" disabled>
         <mat-icon>anchor</mat-icon>
         Button
       </button>
-      <button matButton disabled>
+      <button matButton="tonal" disabled>
         Button
         <mat-icon iconPositionEnd>anchor</mat-icon>
       </button>
     </div>
+
     <div class="story__row hlx-btn-invert background-invert">
-      <button matButton disabled>Button</button>
-      <button matButton disabled>
+      <button matButton="tonal" disabled>Button</button>
+      <button matButton="tonal" disabled>
         <mat-icon>anchor</mat-icon>
         Button
       </button>
-      <button matButton disabled>
+      <button matButton="tonal" disabled>
         Button
         <mat-icon iconPositionEnd>anchor</mat-icon>
       </button>
@@ -126,30 +131,30 @@ const styleCode = `.story {
   background-color: var(--mat-sys-inverse-surface);
 }`;
 
+const tsCode = `import { Component } from '@angular/core';
+import { MatButton } from '@angular/material/button';
+import { MatIcon } from '@angular/material/icon';
+
+@Component({
+  selector: 'app-buttons-tonal-example',
+  templateUrl: './buttons-tonal-example.html',
+  styleUrl: './buttons-tonal-example.scss',
+  imports: [MatButton, MatIcon],
+})
+export class ButtonsTonalExample {}`;
+
 @Component({
   template: htmlCode,
-  imports: [MatButtonModule, MatIconModule],
+  imports: [MatButton, MatIcon],
   styles: [styleCode],
 })
 class SampleComponent {}
 
-export const ButtonsBasicdDefaultComponent: InputViewerComponent = {
-  exampleName: 'Buttons Basic Default',
+export const ButtonsTonalComponent: InputViewerComponent = {
+  exampleName: 'Buttons Tonal',
   dynamicComponent: SampleComponent,
   height: 50,
-  htmlCode: htmlCode,
-  cssCode: [styleCode],
-  tsCode: `import { Component } from '@angular/core';
-import { MatButtonModule } from '@angular/material/button';
-import { MatIconModule } from '@angular/material/icon';
-
-@Component({
-    template: htmlCode,
-    imports: [
-        MatButtonModule,
-        MatIconModule
-    ],
-    styles: [styleCode],
-})
-class SampleComponent {}`,
+  htmlCode,
+  cssCode: styleCode,
+  tsCode,
 };

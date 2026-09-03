@@ -7,11 +7,11 @@ const htmlCode = `<div class="story">
   <h3>Radio Buttons</h3>
   <div class="story__section">
     <mat-radio-group role="radiogroup" class="columns">
-      <mat-radio-button color="primary" 
+      <mat-radio-button 
         value="1" role="radio" checked>
         Option 1
       </mat-radio-button>
-      <mat-radio-button color="primary" 
+      <mat-radio-button 
         value="2" role="radio">
         Option 2
       </mat-radio-button>
@@ -23,7 +23,6 @@ const htmlCode = `<div class="story">
   <div class="story__section">
     <mat-radio-group role="radiogroup" class="columns">
       <mat-radio-button
-        color="primary"
         value="1"
         role="radio"
         checked
@@ -31,7 +30,7 @@ const htmlCode = `<div class="story">
       >
         Option 1
       </mat-radio-button>
-      <mat-radio-button color="primary" 
+      <mat-radio-button 
         value="2" role="radio" disabled>
         Option 2
       </mat-radio-button>
@@ -56,7 +55,7 @@ export const RadioButtonBasicComponent: InputViewerComponent = {
   height: 62,
   hideCss: true,
   htmlCode: htmlCode,
-  cssCode: [styleCode],
+  cssCode: styleCode,
   tsCode: `import { Component } from '@angular/core';
 import { MatRadioModule } from '@angular/material/radio';
 

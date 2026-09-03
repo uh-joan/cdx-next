@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { MatButtonModule } from '@angular/material/button';
-import { MatIconModule } from '@angular/material/icon';
+import { MatButton } from '@angular/material/button';
+import { MatIcon } from '@angular/material/icon';
 
 import { InputViewerComponent } from '../../../../core/example-viewer/example-viewer.model';
 
@@ -81,9 +81,22 @@ const styleCode = `.story {
   background-color: var(--mat-sys-inverse-surface);
 }`;
 
+const tsCode = `import { Component } from '@angular/core';
+import { MatButton } from '@angular/material/button';
+import { MatIcon } from '@angular/material/icon';
+
+// The Helix density class (hlx-btn-large) goes on the container, not on each button.
+@Component({
+  selector: 'app-buttons-large-example',
+  templateUrl: './buttons-large-example.html',
+  styleUrl: './buttons-large-example.scss',
+  imports: [MatButton, MatIcon],
+})
+export class ButtonsLargeExample {}`;
+
 @Component({
   template: htmlCode,
-  imports: [MatButtonModule, MatIconModule],
+  imports: [MatButton, MatIcon],
   styles: [styleCode],
 })
 class SampleComponent {}
@@ -92,19 +105,7 @@ export const ButtonsLargeSizeComponent: InputViewerComponent = {
   exampleName: 'Buttons Large Size',
   dynamicComponent: SampleComponent,
   height: 50,
-  htmlCode: htmlCode,
-  cssCode: [styleCode],
-  tsCode: `import { Component } from '@angular/core';
-import { MatButtonModule } from '@angular/material/button';
-import { MatIconModule } from '@angular/material/icon';
-
-@Component({
-    template: htmlCode,
-    imports: [
-        MatButtonModule,
-        MatIconModule
-    ],
-    styles: [styleCode],
-})
-class SampleComponent {}`,
+  htmlCode,
+  cssCode: styleCode,
+  tsCode,
 };

@@ -1,18 +1,51 @@
-import { Component, HostBinding } from '@angular/core';
+import { Component } from '@angular/core';
 
 import { ExampleViewer } from '../../../core/example-viewer/example-viewer';
 import { Page } from '../../../core/page/page';
-import * as samples from './examples';
+import {
+  ButtonsAnchorComponent,
+  ButtonsDisabledInteractiveComponent,
+  ButtonsElevatedComponent,
+  ButtonsExtendedFabComponent,
+  ButtonsFabComponent,
+  ButtonsFilledComponent,
+  ButtonsIconComponent,
+  ButtonsLargeSizeComponent,
+  ButtonsMiniFabComponent,
+  ButtonsOutlinedComponent,
+  ButtonsProgressComponent,
+  ButtonsSmallSizeComponent,
+  ButtonsTextComponent,
+  ButtonsTonalComponent,
+  ButtonsXSmallSizeComponent,
+  ButtonsXXSmallSizeComponent,
+} from './examples';
 
 @Component({
   selector: 'cdx-buttons',
   templateUrl: './buttons.html',
-  styleUrls: ['./buttons.scss'],
-
+  styleUrl: './buttons.scss',
+  host: { class: 'cdx-section' },
   imports: [Page, ExampleViewer],
 })
 export class Buttons {
-  @HostBinding('class') hostClass = 'cdx-section';
-
-  sampleList = Object.values(samples);
+  // Ordered by appearance, then shape, then state, then density.
+  protected readonly sampleList = [
+    ButtonsTextComponent,
+    ButtonsFilledComponent,
+    ButtonsOutlinedComponent,
+    ButtonsElevatedComponent,
+    ButtonsTonalComponent,
+    ButtonsIconComponent,
+    ButtonsFabComponent,
+    ButtonsMiniFabComponent,
+    ButtonsExtendedFabComponent,
+    ButtonsAnchorComponent,
+    ButtonsProgressComponent,
+    ButtonsDisabledInteractiveComponent,
+    ButtonsXXSmallSizeComponent,
+    ButtonsXSmallSizeComponent,
+    ButtonsSmallSizeComponent,
+    ButtonsLargeSizeComponent,
+  ];
 }

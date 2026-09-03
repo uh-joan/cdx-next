@@ -13,11 +13,9 @@ const htmlCode = `<div class="story">
     <mat-progress-bar 
         mode="determinate" 
         value="40"
-        color="accent"
     ></mat-progress-bar>
     <mat-progress-bar
         mode="buffer"
-        color="warn"
     ></mat-progress-bar>
 </div>`;
 
@@ -29,6 +27,19 @@ const styleCode = `.story {
     gap: 6rem;
 }`;
 
+const tsCode = `import { Component } from '@angular/core';
+import { MatProgressBar } from '@angular/material/progress-bar';
+
+// mat-progress-bar's color input is a Material 2 API and has no effect under
+// the Material 3 based Helix theme.
+@Component({
+  selector: 'app-progress-bar-basic-example',
+  templateUrl: './progress-bar-basic-example.html',
+  styleUrl: './progress-bar-basic-example.scss',
+  imports: [MatProgressBar],
+})
+export class ProgressBarBasicExample {}`;
+
 @Component({
   template: htmlCode,
   imports: [MatProgressBarModule],
@@ -36,21 +47,11 @@ const styleCode = `.story {
 })
 class SampleComponent {}
 
-export const PaginatorBasicComponent: InputViewerComponent = {
-  exampleName: 'Paginator',
+export const ProgressBarBasicComponent: InputViewerComponent = {
+  exampleName: 'Progress Bar',
   dynamicComponent: SampleComponent,
   height: 35,
-  htmlCode: htmlCode,
-  cssCode: [styleCode],
-  tsCode: `import { Component } from '@angular/core';
-import { MatProgressBarModule } from '@angular/material/progress-bar';
-
-@Component({
-    template: htmlCode,
-    imports: [
-        MatProgressBarModule
-    ],
-    styles: [styleCode],
-})
-class SampleComponent {}`,
+  htmlCode,
+  cssCode: styleCode,
+  tsCode,
 };

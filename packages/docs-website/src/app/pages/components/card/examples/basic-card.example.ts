@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { MatButtonModule } from '@angular/material/button';
+import { MatButton } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 
 import { InputViewerComponent } from '../../../../core/example-viewer/example-viewer.model';
@@ -15,14 +15,8 @@ const htmlCode = `<mat-card class="story">
     <p>Card content goes here.</p>
   </mat-card-content>
   <mat-card-actions>
-    <button mat-button mat-stroked-button 
-        color="primary">
-      Card action button
-    </button>
-    <button mat-button mat-flat-button 
-        color="primary">
-      Card action button
-    </button>
+    <button matButton="outlined">Card action button</button>
+    <button matButton="filled">Card action button</button>
   </mat-card-actions>
 </mat-card>
 `;
@@ -31,9 +25,21 @@ const styleCode = `.story {
     padding: 1rem;
 }`;
 
+const tsCode = `import { Component } from '@angular/core';
+import { MatButton } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+
+@Component({
+  selector: 'app-basic-card-example',
+  templateUrl: './basic-card-example.html',
+  styleUrl: './basic-card-example.scss',
+  imports: [MatCardModule, MatButton],
+})
+export class BasicCardExample {}`;
+
 @Component({
   template: htmlCode,
-  imports: [MatCardModule, MatButtonModule],
+  imports: [MatCardModule, MatButton],
   styles: [styleCode],
 })
 class SampleComponent {}
@@ -43,19 +49,7 @@ export const BasicCardComponent: InputViewerComponent = {
   dynamicComponent: SampleComponent,
   height: 40,
   hideCss: true,
-  htmlCode: htmlCode,
-  cssCode: [styleCode],
-  tsCode: `import { Component } from '@angular/core';
-import { MatButtonModule } from '@angular/material/button';
-import { MatCardModule } from '@angular/material/card';
-
-@Component({
-    template: htmlCode,
-    imports: [
-        MatCardModule,
-        MatButtonModule
-    ],
-    styles: [styleCode],
-})
-class SampleComponent {}`,
+  htmlCode,
+  cssCode: styleCode,
+  tsCode,
 };

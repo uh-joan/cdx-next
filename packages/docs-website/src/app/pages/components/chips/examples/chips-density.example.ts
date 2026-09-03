@@ -11,11 +11,11 @@ const htmlCode = `<mat-chip-set class="hlx-chip-small">
     <mat-chip class="hlx-negative-chip"
         >negative</mat-chip>
     <mat-chip class="hlx-warn-chip" 
-        color="primary">warn</mat-chip>
+        >warn</mat-chip>
     <mat-chip class="hlx-positive-chip" 
-        color="accent">positive</mat-chip>
+        >positive</mat-chip>
     <mat-chip class="hlx-info-chip" 
-        color="warn">info</mat-chip>
+        >info</mat-chip>
     <mat-chip class="hlx-neutral-chip"
         >neutral</mat-chip>
     <mat-chip class="hlx-outlined-chip"
@@ -29,11 +29,11 @@ const htmlCode = `<mat-chip-set class="hlx-chip-small">
     <mat-chip class="hlx-negative-chip"
         >negative</mat-chip>
     <mat-chip class="hlx-warn-chip"
-        color="primary">warn</mat-chip>
+        >warn</mat-chip>
     <mat-chip class="hlx-positive-chip" 
-        color="accent">positive</mat-chip>
+        >positive</mat-chip>
     <mat-chip class="hlx-info-chip" 
-        color="warn">info</mat-chip>
+        >info</mat-chip>
     <mat-chip class="hlx-neutral-chip"
         >neutral</mat-chip>
     <mat-chip class="hlx-outlined-chip"
@@ -43,6 +43,18 @@ const htmlCode = `<mat-chip-set class="hlx-chip-small">
 const styleCode = `.story {
     padding: 1rem;
 }`;
+
+const tsCode = `import { Component } from '@angular/core';
+import { MatChipsModule } from '@angular/material/chips';
+
+// Density is set with hlx-chip-small / hlx-chip-xsmall on the mat-chip-set.
+@Component({
+  selector: 'app-chips-density-example',
+  templateUrl: './chips-density-example.html',
+  styleUrl: './chips-density-example.scss',
+  imports: [MatChipsModule],
+})
+export class ChipsDensityExample {}`;
 
 @Component({
   template: htmlCode,
@@ -56,17 +68,7 @@ export const ChipsDensityComponent: InputViewerComponent = {
   dynamicComponent: SampleComponent,
   height: 63,
   hideCss: true,
-  htmlCode: htmlCode,
-  cssCode: [styleCode],
-  tsCode: `import { Component } from '@angular/core';
-import { MatChipsModule } from '@angular/material/chips';
-
-@Component({
-    template: htmlCode,
-    imports: [
-        MatChipsModule
-    ],
-    styles: [styleCode],
-})
-class SampleComponent {}`,
+  htmlCode,
+  cssCode: styleCode,
+  tsCode,
 };

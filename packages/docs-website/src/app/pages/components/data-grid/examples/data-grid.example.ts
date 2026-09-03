@@ -72,7 +72,7 @@ export const AgGridBasicdDefaultComponent: InputViewerComponent = {
   height: 85,
   verticalView: true,
   htmlCode: htmlCode,
-  cssCode: [styleCode],
+  cssCode: styleCode,
   tsCode: `import { Component } from '@angular/core';
 import { AgGridAngular } from 'ag-grid-angular';
 import {

@@ -1,9 +1,6 @@
-// TODO ASJUST STYLE
 import { Component } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { MatButtonModule } from '@angular/material/button';
+import { MatButton } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatSidenavModule } from '@angular/material/sidenav';
 
@@ -13,13 +10,12 @@ const htmlCode = `<div class="story mat-typography">
   <mat-drawer-container
     class="example-container"
     [hasBackdrop]="hasBackdrop.value"
-    style="height: 300px;"
   >
     <mat-drawer #drawer2 [mode]="mode.value">
       <h3>Sidenav</h3>
     </mat-drawer>
     <mat-drawer-content>
-      <div style="display: flex; column-gap: 1rem; margin: 1rem;">
+      <div class="example-controls">
         <mat-form-field appearance="fill">
           <mat-label>Sidenav mode</mat-label>
           <mat-select #mode value="side">
@@ -37,12 +33,8 @@ const htmlCode = `<div class="story mat-typography">
           </mat-select>
         </mat-form-field>
       </div>
-      <div style="text-align: center;">
-        <button
-          mat-raised-button
-          color="primary"
-          (click)="drawer2.toggle()"
-        >
+      <div class="example-actions">
+        <button matButton="elevated" (click)="drawer2.toggle()">
           Toggle sidenav
         </button>
       </div>
@@ -52,18 +44,39 @@ const htmlCode = `<div class="story mat-typography">
 
 const styleCode = `.story {
     padding: 1rem;
+}
+
+.example-container {
+    height: 300px;
+}
+
+.example-controls {
+    display: flex;
+    column-gap: 1rem;
+    margin: 1rem;
+}
+
+.example-actions {
+    text-align: center;
 }`;
+
+const tsCode = `import { Component } from '@angular/core';
+import { MatButton } from '@angular/material/button';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSelectModule } from '@angular/material/select';
+import { MatSidenavModule } from '@angular/material/sidenav';
+
+@Component({
+  selector: 'app-sidenav-basic-example',
+  templateUrl: './sidenav-basic-example.html',
+  styleUrl: './sidenav-basic-example.scss',
+  imports: [MatSidenavModule, MatFormFieldModule, MatSelectModule, MatButton],
+})
+export class SidenavBasicExample {}`;
 
 @Component({
   template: htmlCode,
-  imports: [
-    MatSidenavModule,
-    MatFormFieldModule,
-    MatInputModule,
-    FormsModule,
-    MatSelectModule,
-    MatButtonModule,
-  ],
+  imports: [MatSidenavModule, MatFormFieldModule, MatSelectModule, MatButton],
   styles: [styleCode],
 })
 class SampleComponent {}
@@ -74,27 +87,7 @@ export const SidenavComponent: InputViewerComponent = {
   height: 70,
   hideCss: true,
   verticalView: true,
-  htmlCode: htmlCode,
-  cssCode: [styleCode],
-  tsCode: `import { Component } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { MatButtonModule } from '@angular/material/button';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
-import { MatSelectModule } from '@angular/material/select';
-import { MatSidenavModule } from '@angular/material/sidenav';
-
-@Component({
-    template: htmlCode,
-    imports: [
-      MatSidenavModule,
-      MatFormFieldModule,
-      MatInputModule,
-      FormsModule,
-      MatSelectModule,
-      MatButtonModule,
-    ],
-    styles: [styleCode],
-})
-class SampleComponent {}`,
+  htmlCode,
+  cssCode: styleCode,
+  tsCode,
 };

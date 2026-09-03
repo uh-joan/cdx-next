@@ -65,7 +65,7 @@ export const TimePickeCustomComponent: InputViewerComponent = {
   height: 30,
   htmlCode: htmlCode,
   hideCss: true,
-  cssCode: [styleCode],
+  cssCode: styleCode,
   tsCode: `import { Component } from '@angular/core';
 import { provideNativeDateAdapter } from '@angular/material/core';
 import { MatFormFieldModule } from '@angular/material/form-field';

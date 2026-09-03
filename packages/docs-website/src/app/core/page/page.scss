@@ -18,7 +18,8 @@
       line-height: 24px;
     }
 
-    .mat-divider {
+    &__divider {
+      border-top: 1px solid hlx.$border-primary;
       margin: 1rem 0 2rem;
     }
   }

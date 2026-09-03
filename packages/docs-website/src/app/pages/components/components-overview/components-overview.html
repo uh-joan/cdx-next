@@ -4,19 +4,15 @@
   [subtitle]="'Angular Material components, Helix components, and external third party libraries.'"
 >
   <div class="component-list">
-    @for (component of components; track component) {
+    @for (component of components; track component.route) {
     <mat-card
       matRipple
       class="component-list__item"
-      let
-      i="index"
       [routerLink]="component.route"
     >
       <mat-card-header
         class="item-header"
-        [ngStyle]="{
-            'background-image': 'url(' + basePath + component.imageName + ')',
-          }"
+        [style.background-image]="'url(' + basePath + component.imageName + ')'"
       >
       </mat-card-header>
       <mat-card-content class="item-content">

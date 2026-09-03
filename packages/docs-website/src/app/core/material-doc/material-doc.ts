@@ -1,19 +1,19 @@
 import { Component, computed, input } from '@angular/core';
 import { MatDividerModule } from '@angular/material/divider';
 
-// eslint-disable-next-line @nx/enforce-module-boundaries
-import packageJson from '../../../../../../package.json';
 import { ExternalLink } from '../../components/external-link/external-link';
+import { APP_VERSION } from '../app-version';
 
 @Component({
   selector: 'hlx-material-doc',
   templateUrl: './material-doc.html',
-  styleUrls: ['./material-doc.scss'],
+  styleUrl: './material-doc.scss',
+  standalone: true,
   imports: [ExternalLink, MatDividerModule],
 })
 export class MaterialDoc {
   title = input<string>();
-  versionNumber = packageJson.version;
+  versionNumber = APP_VERSION;
   majorVersion = this.versionNumber.split('.')[0];
   url = computed(
     () =>

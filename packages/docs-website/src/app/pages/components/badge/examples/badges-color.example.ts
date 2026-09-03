@@ -51,7 +51,7 @@ export const badgeColorsComponent: InputViewerComponent = {
   dynamicComponent: SampleComponent,
   height: 44,
   htmlCode: htmlCode,
-  cssCode: [styleCode],
+  cssCode: styleCode,
   tsCode: `import { Component } from '@angular/core';
 import { MatBadgeModule } from '@angular/material/badge';
 

@@ -25,7 +25,7 @@ export const FooterBrandedComponent: InputViewerComponent = {
   verticalView: true,
   hideCss: true,
   htmlCode: htmlCode,
-  cssCode: [styleCode],
+  cssCode: styleCode,
   tsCode: `import { Component } from '@angular/core';
 import { HelixFooter } from '@cdx/ngx-branding';
 

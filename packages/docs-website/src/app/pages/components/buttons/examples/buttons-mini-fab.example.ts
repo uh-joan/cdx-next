@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { MatButtonModule } from '@angular/material/button';
-import { MatIconModule } from '@angular/material/icon';
+import { MatMiniFabButton } from '@angular/material/button';
+import { MatIcon } from '@angular/material/icon';
 
 import { InputViewerComponent } from '../../../../core/example-viewer/example-viewer.model';
 
@@ -84,30 +84,30 @@ const styleCode = `.story {
   background-color: var(--mat-sys-inverse-surface);
 }`;
 
+const tsCode = `import { Component } from '@angular/core';
+import { MatMiniFabButton } from '@angular/material/button';
+import { MatIcon } from '@angular/material/icon';
+
+@Component({
+  selector: 'app-buttons-mini-fab-example',
+  templateUrl: './buttons-mini-fab-example.html',
+  styleUrl: './buttons-mini-fab-example.scss',
+  imports: [MatMiniFabButton, MatIcon],
+})
+export class ButtonsMiniFabExample {}`;
+
 @Component({
   template: htmlCode,
-  imports: [MatButtonModule, MatIconModule],
+  imports: [MatMiniFabButton, MatIcon],
   styles: [styleCode],
 })
 class SampleComponent {}
 
-export const ButtonsMiniFabDefaultComponent: InputViewerComponent = {
-  exampleName: 'Buttons Mini Fab Default',
+export const ButtonsMiniFabComponent: InputViewerComponent = {
+  exampleName: 'Buttons Mini Fab',
   dynamicComponent: SampleComponent,
   height: 50,
-  htmlCode: htmlCode,
-  cssCode: [styleCode],
-  tsCode: `import { Component } from '@angular/core';
-import { MatButtonModule } from '@angular/material/button';
-import { MatIconModule } from '@angular/material/icon';
-
-@Component({
-    template: htmlCode,
-    imports: [
-        MatButtonModule,
-        MatIconModule
-    ],
-    styles: [styleCode],
-})
-class SampleComponent {}`,
+  htmlCode,
+  cssCode: styleCode,
+  tsCode,
 };

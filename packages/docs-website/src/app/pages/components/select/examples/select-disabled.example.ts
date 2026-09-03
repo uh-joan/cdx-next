@@ -51,7 +51,7 @@ export const SelectDisabledComponent: InputViewerComponent = {
   dynamicComponent: SampleComponent,
   height: 52,
   htmlCode: htmlCode,
-  cssCode: [styleCode],
+  cssCode: styleCode,
   tsCode: `import { Component } from '@angular/core';
 import { MatSelectModule } from '@angular/material/select';
 

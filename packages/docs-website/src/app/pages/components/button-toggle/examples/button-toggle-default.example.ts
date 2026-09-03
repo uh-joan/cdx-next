@@ -59,7 +59,7 @@ export const ButtonToggleDefaultComponent: InputViewerComponent = {
   height: 36,
   hideCss: true,
   htmlCode: htmlCode,
-  cssCode: [styleCode],
+  cssCode: styleCode,
   tsCode: `import { Component } from '@angular/core';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 

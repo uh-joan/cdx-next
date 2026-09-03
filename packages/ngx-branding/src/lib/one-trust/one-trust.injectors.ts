@@ -8,7 +8,7 @@ import {
   provideAppInitializer,
 } from '@angular/core';
 
-import { OneTrustSettings } from './one-trust.types';
+import type { OneTrustSettings } from './one-trust.types';
 
 export const ONE_TRUST_SETTINGS = new InjectionToken<OneTrustSettings>(
   'OneTrust Settings',

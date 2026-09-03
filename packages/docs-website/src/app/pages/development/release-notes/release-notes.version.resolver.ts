@@ -1,9 +1,9 @@
-import { inject, Service } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, Resolve } from '@angular/router';
 
 import { ReleaseNotesService } from './release-notes.service';
 
-@Service()
+@Injectable({ providedIn: 'root' })
 export class VersionResolver implements Resolve<string> {
   private releaseNotesService: ReleaseNotesService =
     inject(ReleaseNotesService);

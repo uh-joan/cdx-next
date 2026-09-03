@@ -78,7 +78,7 @@ export const IconsSizesComponent: InputViewerComponent = {
   dynamicComponent: SampleComponent,
   height: 70,
   htmlCode: htmlCode,
-  cssCode: [styleCode],
+  cssCode: styleCode,
   tsCode: `import { Component } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 

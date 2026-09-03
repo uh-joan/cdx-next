@@ -1,19 +1,19 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
-import { MatButtonModule } from '@angular/material/button';
+import { MatButton } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
+import { MatInput } from '@angular/material/input';
 import { MatStepperModule } from '@angular/material/stepper';
 
 import { InputViewerComponent } from '../../../../core/example-viewer/example-viewer.model';
 
 const htmlCode = `<div class="story">
-  <button mat-flat-button (click)="isEditable = !isEditable">
-    {{!isEditable ? 'Enable edit mode' : 'Disable edit mode'}}
+  <button matButton="filled" class="story__toggle" (click)="toggleEditable()">
+    {{ isEditable() ? 'Disable edit mode' : 'Enable edit mode' }}
   </button>
 
   <mat-stepper linear #stepper>
-    <mat-step [stepControl]="firstFormGroup" [editable]="isEditable">
+    <mat-step [stepControl]="firstFormGroup" [editable]="isEditable()">
       <form [formGroup]="firstFormGroup">
         <ng-template matStepLabel>Fill out your name</ng-template>
         <mat-form-field>
@@ -22,11 +22,11 @@ const htmlCode = `<div class="story">
             placeholder="Last name, First name" required>
         </mat-form-field>
         <div>
-          <button mat-button matStepperNext>Next</button>
+          <button matButton matStepperNext>Next</button>
         </div>
       </form>
     </mat-step>
-    <mat-step [stepControl]="secondFormGroup" [editable]="isEditable">
+    <mat-step [stepControl]="secondFormGroup" [editable]="isEditable()">
       <form [formGroup]="secondFormGroup">
         <ng-template matStepLabel>Fill out your address</ng-template>
         <mat-form-field>
@@ -36,8 +36,8 @@ const htmlCode = `<div class="story">
                 required>
         </mat-form-field>
         <div>
-          <button mat-button matStepperPrevious>Back</button>
-          <button mat-button matStepperNext>Next</button>
+          <button matButton matStepperPrevious>Back</button>
+          <button matButton matStepperNext>Next</button>
         </div>
       </form>
     </mat-step>
@@ -45,8 +45,8 @@ const htmlCode = `<div class="story">
       <ng-template matStepLabel>Done</ng-template>
       <p>You are now done.</p>
       <div>
-        <button mat-button matStepperPrevious>Back</button>
-        <button mat-button (click)="stepper.reset()">Reset</button>
+        <button matButton matStepperPrevious>Back</button>
+        <button matButton (click)="stepper.reset()">Reset</button>
       </div>
     </mat-step>
   </mat-stepper>
@@ -54,9 +54,41 @@ const htmlCode = `<div class="story">
 
 const styleCode = `.story {
   padding: 1rem;
+}
 
-  > button {
-    margin-bottom: 1rem;
+.story__toggle {
+  margin-bottom: 1rem;
+}`;
+
+const tsCode = `import { Component, inject, signal } from '@angular/core';
+import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
+import { MatButton } from '@angular/material/button';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInput } from '@angular/material/input';
+import { MatStepperModule } from '@angular/material/stepper';
+
+// mat-stepper still uses reactive forms because [stepControl] needs an
+// AbstractControl; only the local UI state is a signal.
+@Component({
+  selector: 'app-stepper-horizontal-example',
+  templateUrl: './stepper-horizontal-example.html',
+  styleUrl: './stepper-horizontal-example.scss',
+  imports: [MatStepperModule, MatFormFieldModule, MatInput, ReactiveFormsModule, MatButton],
+})
+export class StepperHorizontalExample {
+  private readonly formBuilder = inject(FormBuilder);
+
+  protected readonly firstFormGroup = this.formBuilder.group({
+    firstCtrl: ['', Validators.required],
+  });
+  protected readonly secondFormGroup = this.formBuilder.group({
+    secondCtrl: ['', Validators.required],
+  });
+
+  protected readonly isEditable = signal(false);
+
+  protected toggleEditable(): void {
+    this.isEditable.update((editable) => !editable);
   }
 }`;
 
@@ -65,22 +97,27 @@ const styleCode = `.story {
   imports: [
     MatStepperModule,
     MatFormFieldModule,
-    MatInputModule,
+    MatInput,
     ReactiveFormsModule,
-    MatButtonModule,
+    MatButton,
   ],
   styles: [styleCode],
 })
 class SampleComponent {
-  private _formBuilder = inject(FormBuilder);
+  private readonly formBuilder = inject(FormBuilder);
 
-  firstFormGroup = this._formBuilder.group({
+  protected readonly firstFormGroup = this.formBuilder.group({
     firstCtrl: ['', Validators.required],
   });
-  secondFormGroup = this._formBuilder.group({
+  protected readonly secondFormGroup = this.formBuilder.group({
     secondCtrl: ['', Validators.required],
   });
-  isEditable = false;
+
+  protected readonly isEditable = signal(false);
+
+  protected toggleEditable(): void {
+    this.isEditable.update((editable) => !editable);
+  }
 }
 
 export const StepperHorizontalComponent: InputViewerComponent = {
@@ -89,35 +126,7 @@ export const StepperHorizontalComponent: InputViewerComponent = {
   height: 75,
   hideCss: true,
   verticalView: true,
-  htmlCode: htmlCode,
-  cssCode: [styleCode],
-  tsCode: `import { Component, inject } from '@angular/core';
-import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
-import { MatButtonModule } from '@angular/material/button';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
-import { MatStepperModule } from '@angular/material/stepper';
-
-@Component({
-    template: htmlCode,
-    imports: [
-      MatStepperModule,
-      MatFormFieldModule,
-      MatInputModule,
-      ReactiveFormsModule,
-      MatButtonModule,
-    ],
-    styles: [styleCode],
-})
-class SampleComponent {
-  private _formBuilder = inject(FormBuilder);
-
-  firstFormGroup = this._formBuilder.group({
-    firstCtrl: ['', Validators.required],
-  });
-  secondFormGroup = this._formBuilder.group({
-    secondCtrl: ['', Validators.required],
-  });
-  isEditable = false;
-}`,
+  htmlCode,
+  cssCode: styleCode,
+  tsCode,
 };

@@ -1,7 +1,7 @@
 import { DOCUMENT, inject, Service } from '@angular/core';
 
 import { ONE_TRUST_SETTINGS } from './one-trust.injectors';
-import { OneTrust, OneTrustSettings } from './one-trust.types';
+import type { OneTrust, OneTrustSettings } from './one-trust.types';
 
 declare let OneTrust: OneTrust;
 

@@ -7,7 +7,7 @@ import { html } from 'common-tags';
 
 import { ONE_TRUST_SETTINGS } from './one-trust.injectors';
 import { OneTrustService } from './one-trust.service';
-import { OneTrust } from './one-trust.types';
+import type { OneTrust } from './one-trust.types';
 
 declare let OneTrust: OneTrust;
 

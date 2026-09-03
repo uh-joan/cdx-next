@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { MatIconModule } from '@angular/material/icon';
+import { MatIcon } from '@angular/material/icon';
 
 import { InputViewerComponent } from '../../../../core/example-viewer/example-viewer.model';
 
@@ -13,57 +13,82 @@ const htmlCode = `<div class="story">
 </div>
 <div class="story">
     <h4>Primary</h4>
-    <div class="story__section hlx-icon-primary background-primary">
-        <mat-icon color="primary">
-            whatshot</mat-icon>
-        <mat-icon color="primary">
-            storage</mat-icon>
-        <mat-icon color="primary">
-            assignment</mat-icon>
+    <div class="story__section hlx-icon-primary">
+        <mat-icon>whatshot</mat-icon>
+        <mat-icon>storage</mat-icon>
+        <mat-icon>assignment</mat-icon>
+    </div>
+</div>
+<div class="story">
+    <h4>Secondary</h4>
+    <div class="story__section hlx-icon-secondary">
+        <mat-icon>whatshot</mat-icon>
+        <mat-icon>storage</mat-icon>
+        <mat-icon>assignment</mat-icon>
     </div>
 </div>
 <div class="story">
     <h4>Accent</h4>
     <div class="story__section hlx-icon-accent">
-        <mat-icon color="accent">
-            language</mat-icon>
-        <mat-icon color="accent">
-            report_problem</mat-icon>
-        <mat-icon color="accent">
-            settings</mat-icon>
+        <mat-icon>language</mat-icon>
+        <mat-icon>report_problem</mat-icon>
+        <mat-icon>settings</mat-icon>
+    </div>
+</div>
+<div class="story">
+    <h4>Brand</h4>
+    <div class="story__section hlx-icon-brand">
+        <mat-icon>language</mat-icon>
+        <mat-icon>report_problem</mat-icon>
+        <mat-icon>settings</mat-icon>
+    </div>
+</div>
+<div class="story">
+    <h4>Positive</h4>
+    <div class="story__section hlx-icon-positive">
+        <mat-icon>check_circle</mat-icon>
+        <mat-icon>task_alt</mat-icon>
+        <mat-icon>verified</mat-icon>
     </div>
 </div>
 <div class="story">
     <h4>Warn</h4>
     <div class="story__section hlx-icon-warn background-warn">
-        <mat-icon mat-stroked-button>
-            view_agenda</mat-icon>
-        <mat-icon mat-stroked-button>
-            view_day</mat-icon>
-        <mat-icon mat-stroked-button>
-            rss_feed</mat-icon>
+        <mat-icon>view_agenda</mat-icon>
+        <mat-icon>view_day</mat-icon>
+        <mat-icon>rss_feed</mat-icon>
+    </div>
+</div>
+<div class="story">
+    <h4>Negative</h4>
+    <div class="story__section hlx-icon-negative">
+        <mat-icon>error</mat-icon>
+        <mat-icon>cancel</mat-icon>
+        <mat-icon>delete</mat-icon>
     </div>
 </div>
 <div class="story">
     <h4>Info</h4>
     <div class="story__section hlx-icon-info background-info">
-        <mat-icon mat-stroked-button>
-            view_agenda</mat-icon>
-        <mat-icon mat-stroked-button>
-            view_day</mat-icon>
-        <mat-icon mat-stroked-button>
-            rss_feed</mat-icon>
+        <mat-icon>view_agenda</mat-icon>
+        <mat-icon>view_day</mat-icon>
+        <mat-icon>rss_feed</mat-icon>
     </div>
 </div>
-<div class="story" >
+<div class="story">
+    <h4>Disabled</h4>
+    <div class="story__section hlx-icon-disabled">
+        <mat-icon>view_agenda</mat-icon>
+        <mat-icon>view_day</mat-icon>
+        <mat-icon>rss_feed</mat-icon>
+    </div>
+</div>
+<div class="story">
     <h4>Invert</h4>
     <div class="story__section hlx-icon-invert background-invert">
-        <mat-icon mat-stroked-button>
-            view_agenda</mat-icon>
-        <mat-icon mat-stroked-button>
-            view_day</mat-icon>
-        <mat-icon mat-stroked-button>
-            rss_feed</mat-icon>
+        <mat-icon>view_agenda</mat-icon>
+        <mat-icon>view_day</mat-icon>
+        <mat-icon>rss_feed</mat-icon>
     </div>
 </div>`;
 
@@ -75,10 +100,6 @@ const styleCode = `.story {
     display: flex;
     justify-content: space-between;
     padding: 0.5rem;
-}
-
-.background-primary {
-    background-color: var(--hlx-surface-primary, #0077cc);
 }
 
 .background-warn {
@@ -93,9 +114,23 @@ const styleCode = `.story {
     background-color: var(--mat-sys-inverse-surface);
 }`;
 
+const tsCode = `import { Component } from '@angular/core';
+import { MatIcon } from '@angular/material/icon';
+
+// Helix colours icons with an hlx-icon-* class on the container.
+// mat-icon's own color="primary|accent|warn" input is a Material 2 API and has
+// no effect in the Material 3 based Helix theme.
+@Component({
+  selector: 'app-icon-colors-example',
+  templateUrl: './icon-colors-example.html',
+  styleUrl: './icon-colors-example.scss',
+  imports: [MatIcon],
+})
+export class IconColorsExample {}`;
+
 @Component({
   template: htmlCode,
-  imports: [MatIconModule],
+  imports: [MatIcon],
   styles: [styleCode],
 })
 class SampleComponent {}
@@ -104,17 +139,7 @@ export const IconsColorsComponent: InputViewerComponent = {
   exampleName: 'Icons colors',
   dynamicComponent: SampleComponent,
   height: 70,
-  htmlCode: htmlCode,
-  cssCode: [styleCode],
-  tsCode: `import { Component } from '@angular/core';
-import { MatIconModule } from '@angular/material/icon';
-
-@Component({
-    template: htmlCode,
-    imports: [
-        MatIconModule
-    ],
-    styles: [styleCode],
-})
-class SampleComponent {}`,
+  htmlCode,
+  cssCode: styleCode,
+  tsCode,
 };

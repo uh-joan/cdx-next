@@ -12,9 +12,8 @@ const htmlCode = `<div class="story">
   <div class="story__section">
   <h3>Disabled Slider</h3>
     <mat-slider
-      color="primary"
       disabled="true"
-      thumbLabel
+      discrete="true"
       title="slider with volume options"
       min="0"
       max="100"
@@ -26,7 +25,6 @@ const htmlCode = `<div class="story">
   <div class="story__section">
     <h3>Slider With Number Label</h3>
     <mat-slider
-      color="primary"
       discrete="true"
       title="slider with volume options"
       min="0"
@@ -38,7 +36,7 @@ const htmlCode = `<div class="story">
   </div>
   <div class="story__section">
     <h3>Range Slider</h3>
-    <mat-slider color="primary" 
+    <mat-slider 
       title="range slider" min="0" max="100" step="1">
       <input matSliderStartThumb />
       <input matSliderEndThumb />
@@ -67,7 +65,7 @@ export const SliderSimpleComponent: InputViewerComponent = {
   dynamicComponent: SampleComponent,
   height: 74,
   htmlCode: htmlCode,
-  cssCode: [styleCode],
+  cssCode: styleCode,
   tsCode: `import { Component } from '@angular/core';
 import { MatSliderModule } from '@angular/material/slider';
 

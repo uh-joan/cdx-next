@@ -29,6 +29,18 @@ const styleCode = `.hlx-breadcrumb-home {
 }
 `;
 
+const tsCode = `import { Component } from '@angular/core';
+import { MatIcon } from '@angular/material/icon';
+import { BreadcrumbComponent, BreadcrumbItemDirective } from 'xng-breadcrumb';
+
+@Component({
+  selector: 'app-breadcrumbs-example',
+  templateUrl: './breadcrumbs-example.html',
+  styleUrl: './breadcrumbs-example.scss',
+  imports: [MatIcon, BreadcrumbComponent, BreadcrumbItemDirective],
+})
+export class BreadcrumbsExample {}`;
+
 @Component({
   template: htmlCode,
   imports: [MatIconModule, BreadcrumbComponent, BreadcrumbItemDirective],
@@ -36,27 +48,11 @@ const styleCode = `.hlx-breadcrumb-home {
 })
 class SampleComponent {}
 
-export const ButtonsBasicdDefaultComponent: InputViewerComponent = {
+export const BreadcrumbsDefaultComponent: InputViewerComponent = {
   exampleName: 'Breadcrumbs Default',
   dynamicComponent: SampleComponent,
   height: 34,
-  htmlCode: htmlCode,
-  cssCode: [styleCode],
-  tsCode: `import { Component } from '@angular/core';
-import { BreadcrumbComponent, 
-  BreadcrumbItemDirective } from "xng-breadcrumb";
-import {CommonModule} from "@angular/common";
-import { MatIconModule } from "@angular/material/icon";
-
-@Component({
-  template: htmlCode,
-  imports: [
-    CommonModule,
-    MatIconModule,
-    BreadcrumbComponent,
-    BreadcrumbItemDirective
-  ],
-  styles: [styleCode],
-})
-class SampleComponent {}`,
+  htmlCode,
+  cssCode: styleCode,
+  tsCode,
 };

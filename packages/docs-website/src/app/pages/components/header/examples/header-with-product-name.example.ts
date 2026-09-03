@@ -63,7 +63,7 @@ export const HeaderWithProductNameComponent: InputViewerComponent = {
   hideCss: true,
   verticalView: true,
   htmlCode: htmlCode,
-  cssCode: [styleCode],
+  cssCode: styleCode,
   tsCode: `import { Component } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import {

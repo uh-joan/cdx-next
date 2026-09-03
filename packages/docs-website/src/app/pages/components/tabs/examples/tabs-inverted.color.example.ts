@@ -28,7 +28,7 @@ export const TabsInvertedComponent: InputViewerComponent = {
   height: 30,
   hideCss: true,
   htmlCode: htmlCode,
-  cssCode: [styleCode],
+  cssCode: styleCode,
   tsCode: `import { Component } from '@angular/core';
 import { MatTabsModule } from '@angular/material/tabs';
 

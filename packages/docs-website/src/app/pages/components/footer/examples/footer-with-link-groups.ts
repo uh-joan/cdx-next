@@ -73,7 +73,7 @@ export const FooterWithLinkGroupsComponent: InputViewerComponent = {
   hideCss: true,
   verticalView: true,
   htmlCode: htmlCode,
-  cssCode: [styleCode],
+  cssCode: styleCode,
   tsCode: `import { Component } from '@angular/core';
 import {
   HelixFooterComponent,

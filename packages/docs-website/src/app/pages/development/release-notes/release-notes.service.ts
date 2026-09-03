@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
-import { inject, Service } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
 
-@Service()
+@Injectable({ providedIn: 'root' })
 export class ReleaseNotesService {
   private http = inject(HttpClient);
 

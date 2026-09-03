@@ -7,10 +7,7 @@
   (keydown.enter)="copyToClipboard()"
   (keydown.space)="copyToClipboard()"
 >
-  <div
-    class="color-pill__box"
-    [ngStyle]="{ 'background-color': value() }"
-  ></div>
+  <div class="color-pill__box" [style.background-color]="value()"></div>
   <div class="color-pill__value mat-body-medium">{{ value() }}</div>
   <mat-icon class="color-pill__icon"
     >{{ copied() ? 'check' : 'content_copy' }}</mat-icon

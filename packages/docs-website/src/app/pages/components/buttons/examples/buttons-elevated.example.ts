@@ -1,54 +1,54 @@
 import { Component } from '@angular/core';
-import { MatButtonModule } from '@angular/material/button';
-import { MatIconModule } from '@angular/material/icon';
+import { MatButton } from '@angular/material/button';
+import { MatIcon } from '@angular/material/icon';
 
 import { InputViewerComponent } from '../../../../core/example-viewer/example-viewer.model';
 
 const htmlCode = `<div class="story">
   <div class="story__box">
     <div class="story__row">
-      <button matButton="filled">Button</button>
-      <button matButton="filled">
+      <button matButton="elevated">Button</button>
+      <button matButton="elevated">
         <mat-icon>anchor</mat-icon>
         Button
       </button>
-      <button matButton="filled">
+      <button matButton="elevated">
         Button
         <mat-icon iconPositionEnd>anchor</mat-icon>
       </button>
     </div>
 
     <div class="story__row hlx-btn-accent">
-      <button matButton="filled">Button</button>
-      <button matButton="filled">
+      <button matButton="elevated">Button</button>
+      <button matButton="elevated">
         <mat-icon>anchor</mat-icon>
         Button
       </button>
-      <button matButton="filled">
+      <button matButton="elevated">
         Button
         <mat-icon iconPositionEnd>anchor</mat-icon>
       </button>
     </div>
 
     <div class="story__row hlx-btn-negative">
-      <button matButton="filled">Button</button>
-      <button matButton="filled">
+      <button matButton="elevated">Button</button>
+      <button matButton="elevated">
         <mat-icon>anchor</mat-icon>
         Button
       </button>
-      <button matButton="filled">
+      <button matButton="elevated">
         Button
         <mat-icon iconPositionEnd>anchor</mat-icon>
       </button>
     </div>
 
     <div class="story__row hlx-btn-invert background-invert">
-      <button matButton="filled">Button</button>
-      <button matButton="filled">
+      <button matButton="elevated">Button</button>
+      <button matButton="elevated">
         <mat-icon>anchor</mat-icon>
         Button
       </button>
-      <button matButton="filled">
+      <button matButton="elevated">
         Button
         <mat-icon iconPositionEnd>anchor</mat-icon>
       </button>
@@ -57,50 +57,48 @@ const htmlCode = `<div class="story">
 
   <div class="story__box">
     <div class="story__row">
-      <button class="hlx-btn-accent" matButton="filled" disabled>
-        Button
-      </button>
-      <button class="hlx-btn-accent" matButton="filled" disabled>
+      <button matButton="elevated" disabled>Button</button>
+      <button matButton="elevated" disabled>
         <mat-icon>anchor</mat-icon>
         Button
       </button>
-      <button class="hlx-btn-accent" matButton="filled" disabled>
+      <button matButton="elevated" disabled>
         Button
         <mat-icon iconPositionEnd>anchor</mat-icon>
       </button>
     </div>
 
     <div class="story__row hlx-btn-accent">
-      <button matButton="filled" disabled>Button</button>
-      <button matButton="filled" disabled>
+      <button matButton="elevated" disabled>Button</button>
+      <button matButton="elevated" disabled>
         <mat-icon>anchor</mat-icon>
         Button
       </button>
-      <button matButton="filled" disabled>
+      <button matButton="elevated" disabled>
         Button
         <mat-icon iconPositionEnd>anchor</mat-icon>
       </button>
     </div>
 
     <div class="story__row hlx-btn-negative">
-      <button matButton="filled" disabled>Button</button>
-      <button matButton="filled" disabled>
+      <button matButton="elevated" disabled>Button</button>
+      <button matButton="elevated" disabled>
         <mat-icon>anchor</mat-icon>
         Button
       </button>
-      <button matButton="filled" disabled>
+      <button matButton="elevated" disabled>
         Button
         <mat-icon iconPositionEnd>anchor</mat-icon>
       </button>
     </div>
 
     <div class="story__row hlx-btn-invert background-invert">
-      <button matButton="filled" disabled>Button</button>
-      <button matButton="filled" disabled>
+      <button matButton="elevated" disabled>Button</button>
+      <button matButton="elevated" disabled>
         <mat-icon>anchor</mat-icon>
         Button
       </button>
-      <button matButton="filled" disabled>
+      <button matButton="elevated" disabled>
         Button
         <mat-icon iconPositionEnd>anchor</mat-icon>
       </button>
@@ -133,30 +131,30 @@ const styleCode = `.story {
   background-color: var(--mat-sys-inverse-surface);
 }`;
 
+const tsCode = `import { Component } from '@angular/core';
+import { MatButton } from '@angular/material/button';
+import { MatIcon } from '@angular/material/icon';
+
+@Component({
+  selector: 'app-buttons-elevated-example',
+  templateUrl: './buttons-elevated-example.html',
+  styleUrl: './buttons-elevated-example.scss',
+  imports: [MatButton, MatIcon],
+})
+export class ButtonsElevatedExample {}`;
+
 @Component({
   template: htmlCode,
-  imports: [MatButtonModule, MatIconModule],
+  imports: [MatButton, MatIcon],
   styles: [styleCode],
 })
 class SampleComponent {}
 
-export const ButtonsFlatDefaultComponent: InputViewerComponent = {
-  exampleName: 'Buttons Filled Default',
+export const ButtonsElevatedComponent: InputViewerComponent = {
+  exampleName: 'Buttons Elevated',
   dynamicComponent: SampleComponent,
   height: 50,
-  htmlCode: htmlCode,
-  cssCode: [styleCode],
-  tsCode: `import { Component } from '@angular/core';
-import { MatButtonModule } from '@angular/material/button';
-import { MatIconModule } from '@angular/material/icon';
-
-@Component({
-    template: htmlCode,
-    imports: [
-        MatButtonModule,
-        MatIconModule
-    ],
-    styles: [styleCode],
-})
-class SampleComponent {}`,
+  htmlCode,
+  cssCode: styleCode,
+  tsCode,
 };

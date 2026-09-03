@@ -3,11 +3,23 @@
     <div class="heading__section">{{ section() | uppercase }}</div>
     <h1>{{ title() }}</h1>
     <div class="mat-title-medium">{{ subtitle() }}</div>
-    <mat-divider></mat-divider>
+    <div class="heading__divider" aria-hidden="true"></div>
   </div>
   <div class="content">
     @if (componentName()) {
-    <hlx-material-doc [title]="componentName()"></hlx-material-doc>
+    <h2>Angular Material Documentation</h2>
+    <p>
+      For more information about the API for
+      <strong>{{ componentName() }}</strong>, visit the Angular Material docs:
+    </p>
+    <a
+      [href]="'https://v21.material.angular.io/components/' + componentName() + '/api'"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Open Material API Docs
+    </a>
+    <div class="heading__divider" aria-hidden="true"></div>
     }
     <ng-content></ng-content>
   </div>

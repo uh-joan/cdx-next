@@ -1,8 +1,8 @@
 import { Component, inject } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
-import { MatButtonModule } from '@angular/material/button';
+import { MatButton } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
+import { MatInput } from '@angular/material/input';
 import { MatStepperModule } from '@angular/material/stepper';
 
 import { InputViewerComponent } from '../../../../core/example-viewer/example-viewer.model';
@@ -14,18 +14,19 @@ const htmlCode = `<div class="story">
       type="number" min="0" step="100" #duration>
   </div>
 
-  <mat-vertical-stepper [linear]="false" #stepper 
+  <mat-stepper orientation="vertical" [linear]="false" #stepper 
     [animationDuration]="duration.value">
     <mat-step [stepControl]="firstFormGroup">
       <form [formGroup]="firstFormGroup">
         <ng-template matStepLabel>
           Fill out your name</ng-template>
         <mat-form-field>
-          <input matInput placeholder="Last name, 
-            First name" formControlName="firstCtrl" required>
+          <mat-label>Name</mat-label>
+          <input matInput placeholder="Last name, First name"
+            formControlName="firstCtrl" required>
         </mat-form-field>
         <div>
-          <button mat-button matStepperNext>Next</button>
+          <button matButton matStepperNext>Next</button>
         </div>
       </form>
     </mat-step>
@@ -34,12 +35,13 @@ const htmlCode = `<div class="story">
         <ng-template matStepLabel>Fill 
           out your address</ng-template>
         <mat-form-field>
-          <input matInput placeholder="Address" 
+          <mat-label>Address</mat-label>
+          <input matInput placeholder="Ex. 1 Main St, New York, NY"
             formControlName="secondCtrl" required>
         </mat-form-field>
         <div>
-          <button mat-button matStepperPrevious>Back</button>
-          <button mat-button matStepperNext>Next</button>
+          <button matButton matStepperPrevious>Back</button>
+          <button matButton matStepperNext>Next</button>
         </div>
       </form>
     </mat-step>
@@ -47,20 +49,48 @@ const htmlCode = `<div class="story">
       <ng-template matStepLabel>Done</ng-template>
       You are now done.
       <div>
-        <button mat-button matStepperPrevious>Back</button>
-        <button mat-button 
+        <button matButton matStepperPrevious>Back</button>
+        <button matButton 
           (click)="stepper.reset()">Reset</button>
       </div>
     </mat-step>
-  </mat-vertical-stepper>
+  </mat-stepper>
 </div>`;
 
 const styleCode = `.story {
   padding: 1rem;
+}
 
-  > button {
-    margin-bottom: 1rem;
-  }
+.example-input-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}`;
+
+const tsCode = `import { Component, inject } from '@angular/core';
+import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
+import { MatButton } from '@angular/material/button';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInput } from '@angular/material/input';
+import { MatStepperModule } from '@angular/material/stepper';
+
+// mat-vertical-stepper is legacy markup; use mat-stepper with orientation="vertical".
+@Component({
+  selector: 'app-stepper-vertical-example',
+  templateUrl: './stepper-vertical-example.html',
+  styleUrl: './stepper-vertical-example.scss',
+  imports: [MatStepperModule, MatFormFieldModule, MatInput, ReactiveFormsModule, MatButton],
+})
+export class StepperVerticalExample {
+  private readonly formBuilder = inject(FormBuilder);
+
+  protected readonly firstFormGroup = this.formBuilder.group({
+    firstCtrl: ['', Validators.required],
+  });
+  protected readonly secondFormGroup = this.formBuilder.group({
+    secondCtrl: ['', Validators.required],
+  });
 }`;
 
 @Component({
@@ -68,23 +98,21 @@ const styleCode = `.story {
   imports: [
     MatStepperModule,
     MatFormFieldModule,
-    MatInputModule,
+    MatInput,
     ReactiveFormsModule,
-    MatButtonModule,
-    MatInputModule,
+    MatButton,
   ],
   styles: [styleCode],
 })
 class SampleComponent {
-  private _formBuilder = inject(FormBuilder);
+  private readonly formBuilder = inject(FormBuilder);
 
-  firstFormGroup = this._formBuilder.group({
+  protected readonly firstFormGroup = this.formBuilder.group({
     firstCtrl: ['', Validators.required],
   });
-  secondFormGroup = this._formBuilder.group({
+  protected readonly secondFormGroup = this.formBuilder.group({
     secondCtrl: ['', Validators.required],
   });
-  isEditable = false;
 }
 
 export const StepperVerticalComponent: InputViewerComponent = {
@@ -92,37 +120,7 @@ export const StepperVerticalComponent: InputViewerComponent = {
   dynamicComponent: SampleComponent,
   height: 80,
   hideCss: true,
-  htmlCode: htmlCode,
-  cssCode: [styleCode],
-  tsCode: `import { Component, inject } from '@angular/core';
-import { FormBuilder, ReactiveFormsModule, 
-  Validators } from '@angular/forms';
-import { MatButtonModule } from '@angular/material/button';
-import { MatFormFieldModule } 
-  from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
-import { MatStepperModule } from '@angular/material/stepper';
-
-@Component({
-    template: htmlCode,
-    imports: [
-      MatStepperModule,
-      MatFormFieldModule,
-      MatInputModule,
-      ReactiveFormsModule,
-      MatButtonModule,
-    ],
-    styles: [styleCode],
-})
-class SampleComponent {
-  private _formBuilder = inject(FormBuilder);
-
-  firstFormGroup = this._formBuilder.group({
-    firstCtrl: ['', Validators.required],
-  });
-  secondFormGroup = this._formBuilder.group({
-    secondCtrl: ['', Validators.required],
-  });
-  isEditable = false;
-}`,
+  htmlCode,
+  cssCode: styleCode,
+  tsCode,
 };

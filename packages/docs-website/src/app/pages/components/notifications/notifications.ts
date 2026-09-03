@@ -100,8 +100,8 @@ export class Notifications {
 >
   Notification message
   <mat-icon icon>check</mat-icon>
-  <button mat-button actions>Projected Action</button>
-  <button mat-button actions>Another Action</button>
+  <button matButton actions>Projected Action</button>
+  <button matButton actions>Another Action</button>
 </cdx-notification>`;
 
   notificationInfoText = `

@@ -1,4 +1,3 @@
-import { NgStyle } from '@angular/common';
 import { Component, inject, input, signal } from '@angular/core';
 import { MatRippleModule } from '@angular/material/core';
 import { MatIconModule } from '@angular/material/icon';
@@ -6,7 +5,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-color-pill',
-  imports: [NgStyle, MatIconModule, MatRippleModule],
+  imports: [MatIconModule, MatRippleModule],
   templateUrl: './color-pill.html',
   styleUrls: ['./color-pill.scss'],
 })

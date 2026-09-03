@@ -1,9 +1,8 @@
-import { Component, inject } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { MatButtonModule } from '@angular/material/button';
+import { Component, inject, signal } from '@angular/core';
+import { MatButton, MatIconButton } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatIconModule } from '@angular/material/icon';
-import { MatInputModule } from '@angular/material/input';
+import { MatIcon } from '@angular/material/icon';
+import { MatInput } from '@angular/material/input';
 import {
   MatSnackBar,
   MatSnackBarAction,
@@ -17,11 +16,16 @@ import { InputViewerComponent } from '../../../../core/example-viewer/example-vi
 const htmlCode = `<div class="story">
     <mat-form-field>
         <mat-label>Snack bar duration (seconds)</mat-label>
-        <input type="number"
-            [(ngModel)]="durationInSeconds" matInput>
+        <input
+            #duration
+            matInput
+            type="number"
+            [value]="durationInSeconds()"
+            (input)="durationInSeconds.set(duration.valueAsNumber)"
+        />
     </mat-form-field>
 
-    <button mat-stroked-button
+    <button matButton="outlined"
         (click)="openSnackBar()"
         aria-label="Show an example snack-bar">
         Pizza party
@@ -29,12 +33,18 @@ const htmlCode = `<div class="story">
 </div>`;
 
 const htmlCode2 = `<span matSnackBarLabel>
-  Snackbbar supporting text
+  Snackbar supporting text
 </span>
 <span matSnackBarActions>
-  <button mat-icon-button matSnackBarAction class="hlx-button-invert" (click)="snackBarRef.dismissWithAction()">
+  <button
+    matIconButton
+    matSnackBarAction
+    class="hlx-button-invert"
+    aria-label="Dismiss"
+    (click)="snackBarRef.dismissWithAction()"
+  >
     <mat-icon>close</mat-icon>
-</button>
+  </button>
 </span>`;
 
 const styleCode = `.story {
@@ -43,10 +53,50 @@ const styleCode = `.story {
     justify-content: center;
     align-items: center;
     gap: 2rem;
+}
 
-    ::ng-deep .mat-mdc-form-field-subscript-wrapper {
-        display: none;
-    }
+.story ::ng-deep .mat-mdc-form-field-subscript-wrapper {
+    display: none;
+}`;
+
+const tsCode = `import { Component, inject, signal } from '@angular/core';
+import { MatButton, MatIconButton } from '@angular/material/button';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatIcon } from '@angular/material/icon';
+import { MatInput } from '@angular/material/input';
+import {
+  MatSnackBar,
+  MatSnackBarAction,
+  MatSnackBarActions,
+  MatSnackBarLabel,
+  MatSnackBarRef,
+} from '@angular/material/snack-bar';
+
+@Component({
+  selector: 'app-pizza-party-snack',
+  templateUrl: './pizza-party-snack.html',
+  imports: [MatIconButton, MatIcon, MatSnackBarLabel, MatSnackBarActions, MatSnackBarAction],
+})
+export class PizzaPartySnack {
+  protected readonly snackBarRef = inject(MatSnackBarRef);
+}
+
+@Component({
+  selector: 'app-snackbar-example',
+  templateUrl: './snackbar-example.html',
+  styleUrl: './snackbar-example.scss',
+  imports: [MatFormFieldModule, MatInput, MatButton],
+})
+export class SnackbarExample {
+  private readonly snackBar = inject(MatSnackBar);
+
+  protected readonly durationInSeconds = signal(5);
+
+  protected openSnackBar(): void {
+    this.snackBar.openFromComponent(PizzaPartySnack, {
+      duration: this.durationInSeconds() * 1000,
+    });
+  }
 }`;
 
 @Component({
@@ -58,30 +108,30 @@ const styleCode = `.story {
     }
   `,
   imports: [
-    MatButtonModule,
-    MatIconModule,
+    MatIconButton,
+    MatIcon,
     MatSnackBarLabel,
     MatSnackBarActions,
     MatSnackBarAction,
   ],
 })
 class PizzaPartyAnnotatedComponent {
-  snackBarRef = inject(MatSnackBarRef);
+  protected readonly snackBarRef = inject(MatSnackBarRef);
 }
 
 @Component({
   template: htmlCode,
-  imports: [MatFormFieldModule, FormsModule, MatInputModule, MatButtonModule],
+  imports: [MatFormFieldModule, MatInput, MatButton],
   styles: [styleCode],
 })
 class SampleComponent {
-  private _snackBar = inject(MatSnackBar);
+  private readonly snackBar = inject(MatSnackBar);
 
-  durationInSeconds = 5;
+  protected readonly durationInSeconds = signal(5);
 
-  openSnackBar() {
-    this._snackBar.openFromComponent(PizzaPartyAnnotatedComponent, {
-      duration: this.durationInSeconds * 1000,
+  protected openSnackBar(): void {
+    this.snackBar.openFromComponent(PizzaPartyAnnotatedComponent, {
+      duration: this.durationInSeconds() * 1000,
     });
   }
 }
@@ -92,37 +142,7 @@ export const SnackbarComponent: InputViewerComponent = {
   height: 58,
   hideCss: true,
   verticalView: true,
-  htmlCode: htmlCode,
-  cssCode: [styleCode],
-  tsCode: `import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
-import { MatButtonModule } from '@angular/material/button';
-import { MatDialog, MatDialogModule } from '@angular/material/dialog';
-
-@Component({
-    selector: 'app-content-example-dialog',
-    template: htmlCode2,
-    imports: [MatDialogModule, MatButtonModule],
-    changeDetection: ChangeDetectionStrategy.OnPush,
-})
-class DialogContentExampleDialog {}
-
-@Component({
-    template: htmlCode,
-    imports: [
-        MatButtonModule,
-        MatDialogModule
-    ],
-    styles: [styleCode],
-})
-class SampleComponent {
-    readonly dialog = inject(MatDialog);
-
-    openDialog() {
-      const dialogRef = this.dialog.open(DialogContentExampleDialog);
-
-      dialogRef.afterClosed().subscribe(result => {
-        console.log('Dialog result:', result);
-      });
-    }
-}`,
+  htmlCode,
+  cssCode: styleCode,
+  tsCode,
 };

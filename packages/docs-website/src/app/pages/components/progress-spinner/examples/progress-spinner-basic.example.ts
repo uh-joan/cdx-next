@@ -6,16 +6,14 @@ import { InputViewerComponent } from '../../../../core/example-viewer/example-vi
 const htmlCode = `<div class="story">
     <mat-progress-spinner
         mode="indeterminate"
-        color="primary"
     ></mat-progress-spinner>
     <mat-progress-spinner
         mode="determinate"
         value="70"
-        color="accent"
     ></mat-progress-spinner>
     <mat-progress-spinner
         mode="indeterminate"
-        color="warn"
+        diameter="24"
     ></mat-progress-spinner>
 </div>`;
 
@@ -25,6 +23,19 @@ const styleCode = `.story {
     flex-direction: column;
     gap: 2rem;
 }`;
+
+const tsCode = `import { Component } from '@angular/core';
+import { MatProgressSpinner } from '@angular/material/progress-spinner';
+
+// mat-progress-spinner's color input is a Material 2 API and has no effect
+// under the Material 3 based Helix theme.
+@Component({
+  selector: 'app-progress-spinner-basic-example',
+  templateUrl: './progress-spinner-basic-example.html',
+  styleUrl: './progress-spinner-basic-example.scss',
+  imports: [MatProgressSpinner],
+})
+export class ProgressSpinnerBasicExample {}`;
 
 @Component({
   template: htmlCode,
@@ -37,17 +48,7 @@ export const ProgressSpinnerBasicComponent: InputViewerComponent = {
   exampleName: 'Progress Spinner',
   dynamicComponent: SampleComponent,
   height: 35,
-  htmlCode: htmlCode,
-  cssCode: [styleCode],
-  tsCode: `import { Component } from '@angular/core';
-import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
-
-@Component({
-    template: htmlCode,
-    imports: [
-        MatProgressSpinnerModule
-    ],
-    styles: [styleCode],
-})
-class SampleComponent {}`,
+  htmlCode,
+  cssCode: styleCode,
+  tsCode,
 };

@@ -1,28 +1,28 @@
 import { Component } from '@angular/core';
-import { MatButtonModule } from '@angular/material/button';
-import { MatIconModule } from '@angular/material/icon';
+import { MatFabButton } from '@angular/material/button';
+import { MatIcon } from '@angular/material/icon';
 
 import { InputViewerComponent } from '../../../../core/example-viewer/example-viewer.model';
 
 const htmlCode = `<div class="story">
   <div class="story__box">
     <div class="story__row">
-      <button matFab>
+      <button matFab aria-label="Anchor">
         <mat-icon>anchor</mat-icon>
       </button>
     </div>
     <div class="story__row hlx-btn-accent">
-      <button matFab>
+      <button matFab aria-label="Anchor">
         <mat-icon>anchor</mat-icon>
       </button>
     </div>
     <div class="story__row hlx-btn-negative">
-      <button matFab>
+      <button matFab aria-label="Anchor">
         <mat-icon>anchor</mat-icon>
       </button>
     </div>
     <div class="story__row hlx-btn-invert background-invert">
-      <button matFab>
+      <button matFab aria-label="Anchor">
         <mat-icon>anchor</mat-icon>
       </button>
     </div>
@@ -30,22 +30,22 @@ const htmlCode = `<div class="story">
 
   <div class="story__box">
     <div class="story__row">
-      <button matFab disabled>
+      <button matFab disabled aria-label="Anchor">
         <mat-icon>anchor</mat-icon>
       </button>
     </div>
     <div class="story__row hlx-btn-accent">
-      <button matFab disabled>
+      <button matFab disabled aria-label="Anchor">
         <mat-icon>anchor</mat-icon>
       </button>
     </div>
     <div class="story__row hlx-btn-negative">
-      <button matFab disabled>
+      <button matFab disabled aria-label="Anchor">
         <mat-icon>anchor</mat-icon>
       </button>
     </div>
     <div class="story__row hlx-btn-invert background-invert">
-      <button matFab disabled>
+      <button matFab disabled aria-label="Anchor">
         <mat-icon>anchor</mat-icon>
       </button>
     </div>
@@ -78,30 +78,30 @@ const styleCode = `.story {
   background-color: var(--mat-sys-inverse-surface);
 }`;
 
+const tsCode = `import { Component } from '@angular/core';
+import { MatFabButton } from '@angular/material/button';
+import { MatIcon } from '@angular/material/icon';
+
+@Component({
+  selector: 'app-buttons-fab-example',
+  templateUrl: './buttons-fab-example.html',
+  styleUrl: './buttons-fab-example.scss',
+  imports: [MatFabButton, MatIcon],
+})
+export class ButtonsFabExample {}`;
+
 @Component({
   template: htmlCode,
-  imports: [MatButtonModule, MatIconModule],
+  imports: [MatFabButton, MatIcon],
   styles: [styleCode],
 })
 class SampleComponent {}
 
-export const ButtonsFabDefaultComponent: InputViewerComponent = {
-  exampleName: 'Buttons Fab Default',
+export const ButtonsFabComponent: InputViewerComponent = {
+  exampleName: 'Buttons Fab',
   dynamicComponent: SampleComponent,
   height: 50,
-  htmlCode: htmlCode,
-  cssCode: [styleCode],
-  tsCode: `import { Component } from '@angular/core';
-import { MatButtonModule } from '@angular/material/button';
-import { MatIconModule } from '@angular/material/icon';
-
-@Component({
-    template: htmlCode,
-    imports: [
-        MatButtonModule,
-        MatIconModule
-    ],
-    styles: [styleCode],
-})
-class SampleComponent {}`,
+  htmlCode,
+  cssCode: styleCode,
+  tsCode,
 };

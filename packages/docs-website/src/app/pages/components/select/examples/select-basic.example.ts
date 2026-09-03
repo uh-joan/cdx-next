@@ -45,7 +45,7 @@ export const SelectBasicComponent: InputViewerComponent = {
   dynamicComponent: SampleComponent,
   height: 42,
   htmlCode: htmlCode,
-  cssCode: [styleCode],
+  cssCode: styleCode,
   tsCode: `import { Component } from '@angular/core';
 import { MatSelectModule } from '@angular/material/select';
 

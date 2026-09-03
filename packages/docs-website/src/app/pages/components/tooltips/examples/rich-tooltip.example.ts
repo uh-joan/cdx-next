@@ -1,14 +1,14 @@
 import { Component } from '@angular/core';
-import { MatButtonModule } from '@angular/material/button';
+import { MatButton } from '@angular/material/button';
 import { RichTooltipDirective } from '@cdx/ngx-branding';
 
 import { InputViewerComponent } from '../../../../core/example-viewer/example-viewer.model';
 
 const htmlCode = `<div class="story">
-  <button mat-flat-button [hlxTooltip]="tooltipTemplate">
+  <button matButton="filled" [hlxTooltip]="tooltipTemplate">
     Hover me
   </button>
-  <button mat-flat-button [hlxTooltip]="tooltipTemplate" [tooltipTrigger]="'click'">
+  <button matButton="filled" [hlxTooltip]="tooltipTemplate" [tooltipTrigger]="'click'">
     Click me
   </button>
   <ng-template #tooltipTemplate>
@@ -30,9 +30,22 @@ const styleCode = `.story {
 }
 `;
 
+const tsCode = `import { Component } from '@angular/core';
+import { MatButton } from '@angular/material/button';
+import { RichTooltipDirective } from '@cdx/ngx-branding';
+
+// hlxTooltip is a Helix (ngx-branding) directive, not an Angular Material one.
+@Component({
+  selector: 'app-rich-tooltip-example',
+  templateUrl: './rich-tooltip-example.html',
+  styleUrl: './rich-tooltip-example.scss',
+  imports: [MatButton, RichTooltipDirective],
+})
+export class RichTooltipExample {}`;
+
 @Component({
   template: htmlCode,
-  imports: [MatButtonModule, RichTooltipDirective],
+  imports: [MatButton, RichTooltipDirective],
   styles: [styleCode],
 })
 class SampleComponent {}
@@ -42,16 +55,7 @@ export const RichTooltipComponent: InputViewerComponent = {
   dynamicComponent: SampleComponent,
   height: 36,
   hideCss: false,
-  htmlCode: htmlCode,
-  cssCode: [styleCode],
-  tsCode: `import { Component } from '@angular/core';
-import { MatButtonModule } from '@angular/material/button';
-import { RichTooltipDirective } from '@cdx/ngx-branding';
-
-@Component({
-  template: htmlCode,
-  imports: [MatButtonModule, RichTooltipDirective],
-  styles: [styleCode],
-})
-class SampleComponent {}`,
+  htmlCode,
+  cssCode: styleCode,
+  tsCode,
 };

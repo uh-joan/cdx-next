@@ -9,7 +9,7 @@ import { HeaderService } from './header.service';
 
 class MockHeaderService {
   versions = signal(['18.0.0', '20.0.0', '30.0.0']);
-  fetchAllHelixVersions = vi.fn();
+  getAllHelixVersions = vi.fn();
 }
 
 describe('Header', () => {
@@ -44,7 +44,7 @@ describe('Header', () => {
 
     fixture.detectChanges();
 
-    expect(component.currentVersion).toBe('20.0.0');
+    expect(component.currentVersion()).toBe('20.0.0');
   });
 
   it('should default to latest version if no version in URL', () => {
@@ -56,6 +56,6 @@ describe('Header', () => {
     });
 
     fixture.detectChanges();
-    expect(component.currentVersion).toBe('30.0.0 (latest)');
+    expect(component.currentVersion()).toBe('30.0.0 (latest)');
   });
 });

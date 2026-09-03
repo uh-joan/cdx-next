@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
-import { MatButtonModule } from '@angular/material/button';
-import { MatIconModule } from '@angular/material/icon';
+import { MatIconButton } from '@angular/material/button';
+import { MatIcon } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 
 import { InputViewerComponent } from '../../../../core/example-viewer/example-viewer.model';
 
 const htmlCode = `<div class="story">
-    <button mat-button [matMenuTriggerFor]="menu2">
+    <button matIconButton [matMenuTriggerFor]="menu2" aria-label="Settings">
         <mat-icon>settings</mat-icon>
     </button>
     <mat-menu #menu2="matMenu" role="menu" yPosition="below">
@@ -25,9 +25,22 @@ const styleCode = `.story {
     padding: 6rem;
 }`;
 
+const tsCode = `import { Component } from '@angular/core';
+import { MatIconButton } from '@angular/material/button';
+import { MatIcon } from '@angular/material/icon';
+import { MatMenuModule } from '@angular/material/menu';
+
+@Component({
+  selector: 'app-menu-icon-example',
+  templateUrl: './menu-icon-example.html',
+  styleUrl: './menu-icon-example.scss',
+  imports: [MatMenuModule, MatIcon, MatIconButton],
+})
+export class MenuIconExample {}`;
+
 @Component({
   template: htmlCode,
-  imports: [MatMenuModule, MatIconModule, MatButtonModule],
+  imports: [MatMenuModule, MatIcon, MatIconButton],
   styles: [styleCode],
 })
 class SampleComponent {}
@@ -37,21 +50,7 @@ export const MenuIconComponent: InputViewerComponent = {
   dynamicComponent: SampleComponent,
   height: 35,
   hideCss: true,
-  htmlCode: htmlCode,
-  cssCode: [styleCode],
-  tsCode: `import { Component } from '@angular/core';
-import { MatButtonModule } from '@angular/material/button';
-import { MatIconModule } from '@angular/material/icon';
-import { MatMenuModule } from '@angular/material/menu';
-
-@Component({
-    template: htmlCode,
-    imports: [
-        MatMenuModule,
-        MatIconModule,
-        MatButtonModule
-    ],
-    styles: [styleCode],
-})
-class SampleComponent {}`,
+  htmlCode,
+  cssCode: styleCode,
+  tsCode,
 };

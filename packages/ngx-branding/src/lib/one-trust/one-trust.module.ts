@@ -5,7 +5,7 @@ import {
   ONE_TRUST_SETTINGS,
 } from './one-trust.injectors';
 import { OneTrustService } from './one-trust.service';
-import { OneTrustSettings } from './one-trust.types';
+import type { OneTrustSettings } from './one-trust.types';
 
 @NgModule()
 export class OneTrustModule {

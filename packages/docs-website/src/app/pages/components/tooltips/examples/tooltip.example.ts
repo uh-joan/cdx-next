@@ -11,9 +11,8 @@ import { InputViewerComponent } from '../../../../core/example-viewer/example-vi
 
 const htmlCode = `<div class="story">
   <button
-    mat-flat-button
+    matButton="filled"
     (click)="tooltip.toggle()"
-    color="primary"
     #tooltip="matTooltip"
     matTooltip="Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
     Pellentesque vel iaculis nunc. Duis magna erat, semper id iaculis 
@@ -29,7 +28,7 @@ const htmlCode = `<div class="story">
   >
     Action
   </button>
-  <button mat-flat-button
+  <button matButton="filled"
    (click)="tooltip.toggle()">
   Toggle
 </button>
@@ -85,7 +84,7 @@ export const TooltipComponent: InputViewerComponent = {
   height: 48,
   hideCss: true,
   htmlCode: htmlCode,
-  cssCode: [styleCode],
+  cssCode: styleCode,
   tsCode: `import { Overlay, OverlayContainer } from '@angular/cdk/overlay';
 import { Platform } from '@angular/cdk/platform';
 import { Component } from '@angular/core';

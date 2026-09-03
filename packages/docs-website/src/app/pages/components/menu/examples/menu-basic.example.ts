@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
-import { MatButtonModule } from '@angular/material/button';
+import { MatButton } from '@angular/material/button';
 import { MatMenuModule } from '@angular/material/menu';
 
 import { InputViewerComponent } from '../../../../core/example-viewer/example-viewer.model';
 
 const htmlCode = `<div class="story">
-    <button mat-flat-button 
-        [matMenuTriggerFor]="menu" color="primary">
+    <button matButton="filled" 
+        [matMenuTriggerFor]="menu">
         Menu
     </button>
     <mat-menu #menu="matMenu" 
@@ -26,9 +26,21 @@ const styleCode = `.story {
     padding: 9rem;
 }`;
 
+const tsCode = `import { Component } from '@angular/core';
+import { MatButton } from '@angular/material/button';
+import { MatMenuModule } from '@angular/material/menu';
+
+@Component({
+  selector: 'app-menu-basic-example',
+  templateUrl: './menu-basic-example.html',
+  styleUrl: './menu-basic-example.scss',
+  imports: [MatMenuModule, MatButton],
+})
+export class MenuBasicExample {}`;
+
 @Component({
   template: htmlCode,
-  imports: [MatMenuModule, MatButtonModule],
+  imports: [MatMenuModule, MatButton],
   styles: [styleCode],
 })
 class SampleComponent {}
@@ -38,19 +50,7 @@ export const MenuBasicComponent: InputViewerComponent = {
   dynamicComponent: SampleComponent,
   height: 40,
   hideCss: true,
-  htmlCode: htmlCode,
-  cssCode: [styleCode],
-  tsCode: `import { Component } from '@angular/core';
-import { MatButtonModule } from '@angular/material/button';
-import { MatMenuModule } from '@angular/material/menu';
-
-@Component({
-    template: htmlCode,
-    imports: [
-        MatMenuModule,
-        MatButtonModule
-    ],
-    styles: [styleCode],
-})
-class SampleComponent {}`,
+  htmlCode,
+  cssCode: styleCode,
+  tsCode,
 };

@@ -32,7 +32,7 @@ export const SkeletonLoaderWithAnimations: InputViewerComponent = {
   dynamicComponent: SampleComponent,
   height: 22,
   htmlCode: htmlCode,
-  cssCode: [styleCode],
+  cssCode: styleCode,
   tsCode: `import { Component } from '@angular/core';
 import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 

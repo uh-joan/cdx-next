@@ -29,7 +29,7 @@ export const PaginatorBasicComponent: InputViewerComponent = {
   verticalView: true,
   hideCss: true,
   htmlCode: htmlCode,
-  cssCode: [styleCode],
+  cssCode: styleCode,
   tsCode: `import { Component } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 
