@@ -1,7 +1,8 @@
-<header hlx-header class="header">
+<header hlx-header class="header" [branded]="!isNarrow()">
   <hlx-header-product-name [routerLink]="['/home']">
-    Helix Design System
+    {{ isNarrow() ? 'Helix' : 'Helix Design System' }}
   </hlx-header-product-name>
+  @if (!isCompact()) {
   <nav class="header__navigation">
     @for (link of links; track link.path) {
     <a
@@ -14,9 +15,25 @@
     </a>
     }
   </nav>
+  }
   <hlx-header-global>
+    @if (isCompact()) {
+    <button
+      matIconButton
+      class="header__nav-trigger"
+      aria-label="Open navigation menu"
+      [matMenuTriggerFor]="navigationMenu"
+    >
+      <mat-icon>menu</mat-icon>
+    </button>
+    <mat-menu #navigationMenu="matMenu">
+      @for (link of links; track link.path) {
+      <a mat-menu-item [routerLink]="[link.path]">{{ link.label }}</a>
+      }
+    </mat-menu>
+    }
     <button class="header__menu" matButton [matMenuTriggerFor]="versionMenu">
-      Version: {{ currentVersion() }}
+      {{ isNarrow() ? 'v' : 'Version: ' }}{{ currentVersion() }}
     </button>
     <mat-menu #versionMenu="matMenu">
       @for (version of versions(); track version) {

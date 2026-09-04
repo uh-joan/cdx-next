@@ -13,11 +13,9 @@
       padding-right: 4rem;
       padding-left: 4rem;
       background:
-        linear-gradient(
-          101deg,
+        linear-gradient(101deg,
           rgb(53 149 240 / 10%) 38.35%,
-          rgb(177 117 225 / 10%) 61.65%
-        ),
+          rgb(177 117 225 / 10%) 61.65%),
         #fff;
       gap: 2rem;
 
@@ -26,22 +24,53 @@
         flex-shrink: 0;
       }
 
-      > img {
+      >img {
         height: 17rem;
       }
     }
 
     &__bottom-block {
       display: flex;
-      align-items: flex-start;
+      align-items: stretch;
       justify-content: center;
       padding-right: 4rem;
       padding-bottom: 6rem;
       padding-left: 4rem;
       gap: 2rem;
 
-      > app-card-c {
+      >app-card-c {
+        display: flex;
         margin-top: -4rem;
+      }
+    }
+  }
+
+  @media (width <=64rem) {
+    .content {
+      &__top-block {
+        height: auto;
+        flex-direction: column;
+        justify-content: center;
+        padding: 3rem 1.5rem;
+        text-align: center;
+
+        .top-block__title {
+          width: 100%;
+        }
+
+        >img {
+          max-width: 100%;
+          height: auto;
+        }
+      }
+
+      &__bottom-block {
+        flex-wrap: wrap;
+        padding: 0 1.5rem 3rem;
+
+        >app-card-c {
+          margin-top: 0;
+        }
       }
     }
   }

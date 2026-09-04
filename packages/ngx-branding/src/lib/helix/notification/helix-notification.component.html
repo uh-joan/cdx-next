@@ -2,57 +2,53 @@
   <div #customIconWrapper>
     <ng-content select="[icon]"></ng-content>
   </div>
-  @if (!customIconWrapper?.children?.length) {
-    <mat-icon>{{ notificationIcons[severity()] }}</mat-icon>
+  @if (!customIconWrapper.children.length) {
+  <mat-icon>{{ notificationIcons[severity()] }}</mat-icon>
   }
 </div>
 
 <div class="hlx-notification__content">
   @if (title()) {
-    <div class="hlx-notification__title mat-headline-small">
-      {{ title() }}
-    </div>
+  <div class="hlx-notification__title mat-headline-small">
+    {{ title() }}
+  </div>
   }
   <ng-content></ng-content>
   @if (presentation() === 'inline') {
-    <div class="hlx-notification__actions">
-      <ng-container
-        *ngTemplateOutlet="
+  <div class="hlx-notification__actions">
+    <ng-container *ngTemplateOutlet="
           actionsTemplate;
           context: { action: this.action(), $implicit: actionsTemplate }
-        "
-      ></ng-container>
-    </div>
+        "></ng-container>
+  </div>
   }
 </div>
 @if (presentation() === 'banner') {
-  <div class="hlx-notification__actions">
-    <ng-container
-      *ngTemplateOutlet="
+<div class="hlx-notification__actions">
+  <ng-container *ngTemplateOutlet="
         actionsTemplate;
         context: { action: this.action(), $implicit: actionsTemplate }
-      "
-    ></ng-container>
-    @if (!!dismissable()) {
-      <button mat-button [color]="severity()" (click)="onDismiss()">
-        Dismiss
-      </button>
-    }
-  </div>
+      "></ng-container>
+  @if (!!dismissable()) {
+  <button mat-button [color]="severity()" (click)="onDismiss()">
+    Dismiss
+  </button>
+  }
+</div>
 }
 @if (presentation() === 'inline' && !!dismissable()) {
-  <div class="hlx-notification__close">
-    <button mat-button [color]="severity()" (click)="onDismiss()">
-      <mat-icon>close</mat-icon>
-    </button>
-  </div>
+<div class="hlx-notification__close">
+  <button mat-button [color]="severity()" (click)="onDismiss()">
+    <mat-icon>close</mat-icon>
+  </button>
+</div>
 }
 
 <ng-template #actionsTemplate>
   @if (action()) {
-    <button mat-button [color]="severity()" (click)="onAction()">
-      {{ action() }}
-    </button>
+  <button mat-button [color]="severity()" (click)="onAction()">
+    {{ action() }}
+  </button>
   }
   <ng-content select="[actions]"></ng-content>
 </ng-template>

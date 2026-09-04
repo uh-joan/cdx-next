@@ -9,6 +9,7 @@ export default defineConfig({
   root: resolve(__dirname, 'src'),
   base: '/',
   publicDir: resolve(__dirname, 'src/assets'),
+  server: { port: 4200 },
   resolve: {
     tsconfigPaths: true,
   },

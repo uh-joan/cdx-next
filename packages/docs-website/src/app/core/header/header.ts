@@ -1,5 +1,8 @@
+import { BreakpointObserver } from '@angular/cdk/layout';
 import { Component, computed, inject, OnInit } from '@angular/core';
+import { toSignal } from '@angular/core/rxjs-interop';
 import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 import { Router, RouterLink } from '@angular/router';
 import {
@@ -19,6 +22,7 @@ import { HeaderService } from './header.service';
     HelixHeaderGlobalComponent,
     Search,
     MatButtonModule,
+    MatIconModule,
     RouterLink,
     MatMenuModule,
   ],
@@ -26,12 +30,29 @@ import { HeaderService } from './header.service';
   styleUrls: ['./header.scss'],
 })
 export class Header implements OnInit {
+  static readonly COMPACT_QUERY = '(max-width: 1023.98px)';
+  static readonly NARROW_QUERY = '(max-width: 599.98px)';
+
   readonly MIN_SUPPORTED_VERSION = 18;
   links: NavigationLink[] = links;
 
   private router: Router = inject(Router);
   private headerService: HeaderService = inject(HeaderService);
   private readonly appVersion = APP_VERSION;
+
+  private readonly viewport = toSignal(
+    inject(BreakpointObserver).observe([
+      Header.COMPACT_QUERY,
+      Header.NARROW_QUERY,
+    ]),
+  );
+
+  readonly isCompact = computed(
+    () => this.viewport()?.breakpoints[Header.COMPACT_QUERY] ?? false,
+  );
+  readonly isNarrow = computed(
+    () => this.viewport()?.breakpoints[Header.NARROW_QUERY] ?? false,
+  );
 
   readonly versions = computed(() =>
     this.normalizeVersions(this.headerService.versions()),

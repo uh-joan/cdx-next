@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { MatIconModule } from '@angular/material/icon';
+import { MatButton } from '@angular/material/button';
+import { MatIcon } from '@angular/material/icon';
 import { MatTabsModule } from '@angular/material/tabs';
 import { RouterModule } from '@angular/router';
 import {
@@ -23,7 +24,8 @@ import { ThemeSelector } from './theme-selector/theme-selector';
   imports: [
     RouterModule,
     FooterModule,
-    MatIconModule,
+    MatButton,
+    MatIcon,
     MatTabsModule,
     NgxTranslationsModule,
     ModeSelector,

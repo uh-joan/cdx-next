@@ -13,6 +13,12 @@
     opacity: 0.5;
   }
 
+  .cdx-header-nav {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+  }
+
   .cdx-is-active {
     opacity: 1;
   }

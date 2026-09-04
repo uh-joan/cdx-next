@@ -1,8 +1,18 @@
 {
   "compilerOptions": {
-    "types": ["node", "vitest/globals"]
+    "noEmit": true,
+    "types": [
+      "node",
+      "vitest/globals"
+    ]
   },
-  "exclude": ["vitest.config.mjs", "src/**/*.test.ts", "src/**/*.spec.ts"],
+  "exclude": [
+    "vitest.config.mjs",
+    "src/**/*.test.ts",
+    "src/**/*.spec.ts"
+  ],
   "extends": "./tsconfig.json",
-  "include": ["src/**/*.ts"]
+  "include": [
+    "src/**/*.ts"
+  ]
 }

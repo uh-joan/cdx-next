@@ -9,8 +9,15 @@ export default defineConfig({
   root: resolve(rootDir, 'src'),
   base: '/',
   publicDir: resolve(rootDir, 'src/assets'),
+  server: { port: 4200 },
   resolve: {
     tsconfigPaths: true,
+    alias: [
+      {
+        find: /^@cdx\/ngx-branding$/,
+        replacement: resolve(rootDir, '../ngx-branding/src/index.ts'),
+      },
+    ],
   },
   build: {
     outDir: resolve(rootDir, '../../dist/packages/docs-website'),

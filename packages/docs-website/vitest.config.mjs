@@ -1,4 +1,5 @@
 import angular from '@analogjs/vite-plugin-angular';
+import { resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { defineConfig } from 'vitest/config';
 
@@ -6,7 +7,18 @@ const projectRoot = fileURLToPath(new URL('.', import.meta.url));
 
 export default defineConfig({
   root: projectRoot,
-  resolve: { conditions: ['default'], tsconfigPaths: true },
+  resolve: {
+    conditions: ['default'],
+    tsconfigPaths: true,
+    // The library package.json only declares sass subpath exports, so node
+    // resolution has no "." entry — point the bare specifier at the sources.
+    alias: [
+      {
+        find: /^@cdx\/ngx-branding$/,
+        replacement: resolve(projectRoot, '../ngx-branding/src/index.ts'),
+      },
+    ],
+  },
   plugins: [
     angular({
       tsconfig: `${projectRoot}/tsconfig.spec.json`,
