@@ -3,10 +3,25 @@
   [subtitle]="'A normal input field that provides selectable suggestions as a user types into it, allowing the scope of the search to be narrowed down.'"
   [section]="'Components'"
   componentName="autocomplete"
+  storybookId="components-autocomplete"
+  tabbed
 >
-  <h2>Examples</h2>
+  <div overview>
+    <p>
+      A normal input field that provides selectable suggestions as a user types
+      into it, allowing the scope of the search to be narrowed down.
+    </p>
 
-  @for (sample of sampleList; track sample.exampleName) {
-  <hlx-example-viewer [inputViewerComponent]="sample"></hlx-example-viewer>
-  }
+    <p>
+      Helix design guidance for this component hasn't been published yet. See
+      the Code tab for usage and examples.
+    </p>
+  </div>
+
+  <div code>
+    <h2>Examples</h2>
+    @for (sample of sampleList; track sample.exampleName) {
+    <hlx-example-viewer [inputViewerComponent]="sample" />
+    }
+  </div>
 </hlx-page>

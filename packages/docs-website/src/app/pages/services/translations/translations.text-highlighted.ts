@@ -15,7 +15,7 @@ export const translationsTemplateAngular = `<header cdx-header>
             </cdx-header-global-user-profile>
         </cdx-header-global>
     </header>
-<footer cdx-footer [shouldShowTranslations]="true"><footer>`;
+<footer cdx-footer [shouldShowTranslations]="true"></footer>`;
 
 export const translationsSampleComponentAngular = `import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';

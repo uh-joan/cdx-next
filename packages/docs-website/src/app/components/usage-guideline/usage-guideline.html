@@ -1,0 +1,10 @@
+@if (imageSrc()) {
+<img class="usage-guideline__image" [src]="imageSrc()" [alt]="imageAlt()" />
+}
+<div class="usage-guideline__label mat-title-medium">
+  <mat-icon aria-hidden="true">{{ icon() }}</mat-icon>
+  {{ label() }}
+</div>
+<div class="usage-guideline__body mat-body-large">
+  <ng-content></ng-content>
+</div>

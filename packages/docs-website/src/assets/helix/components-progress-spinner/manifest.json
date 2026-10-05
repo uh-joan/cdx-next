@@ -1,0 +1,24 @@
+[
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/323edd6a-16f5-47ae-9f10-5b98a4ecfe13.png",
+    "alt": "Progress Spinner",
+    "heading": "Options",
+    "file": "01.png"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/87aed1e8-0ef4-4842-b76e-2182ee9b1783.png",
+    "alt": "",
+    "heading": "Usage",
+    "guideline": "do",
+    "text": "Can appear within components, buttons, or sections when only a specific part of the UI is loading.",
+    "file": "02.png"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/5f5c37ec-097d-4b96-9d4f-783f3542a468.png",
+    "alt": "",
+    "heading": "Usage",
+    "guideline": "dont",
+    "text": "Don't use Progress Spinner for processes with known or measurable duration\u2014use a Progress Bar instead.",
+    "file": "03.png"
+  }
+]

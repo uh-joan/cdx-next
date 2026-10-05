@@ -14,7 +14,7 @@ export class Components {
     {
       elements: [
         {
-          label: 'Components Overview',
+          label: 'Component overview',
           url: 'components-overview',
         },
         {
@@ -34,11 +34,19 @@ export class Components {
           url: 'breadcrumbs',
         },
         {
-          label: 'Buttons',
+          label: 'Button',
           url: 'buttons',
         },
         {
-          label: 'Button Toggle',
+          label: 'Button - FAB',
+          url: 'fab',
+        },
+        {
+          label: 'Button - Icon button',
+          url: 'icon-button',
+        },
+        {
+          label: 'Button toggle',
           url: 'button-toggle',
         },
         {
@@ -50,15 +58,15 @@ export class Components {
           url: 'checkbox',
         },
         {
-          label: 'Chips',
+          label: 'Chip',
           url: 'chips',
         },
         {
-          label: 'Data Grid',
+          label: 'Data grid',
           url: 'data-grid',
         },
         {
-          label: 'Date Picker',
+          label: 'Date picker',
           url: 'date-picker',
         },
         {
@@ -70,7 +78,7 @@ export class Components {
           url: 'divider',
         },
         {
-          label: 'Expansion Panel',
+          label: 'Expansion panel (accordion)',
           url: 'expansion-panel',
         },
         {
@@ -78,7 +86,7 @@ export class Components {
           url: 'footer',
         },
         {
-          label: 'Form Field',
+          label: 'Form field',
           url: 'form-field',
         },
         {
@@ -94,8 +102,12 @@ export class Components {
           url: 'hyperlink',
         },
         {
-          label: 'Icons',
+          label: 'Icon',
           url: 'icons',
+        },
+        {
+          label: 'Input (text field)',
+          url: 'text-input',
         },
         {
           label: 'List',
@@ -114,16 +126,15 @@ export class Components {
           url: 'paginator',
         },
         {
-          label: 'Progress Bar',
+          label: 'Progress bar',
           url: 'progress-bar',
         },
         {
-          label: 'Progress Spinner',
+          label: 'Progress spinner',
           url: 'progress-spinner',
         },
-
         {
-          label: 'Radio Button',
+          label: 'Radio button',
           url: 'radio-button',
         },
         {
@@ -131,15 +142,15 @@ export class Components {
           url: 'select',
         },
         {
-          label: 'Sidenav',
+          label: 'Sidenav (Navigation drawer)',
           url: 'sidenav',
         },
         {
-          label: 'Skeleton Loader',
+          label: 'Skeleton loader',
           url: 'skeleton-loader',
         },
         {
-          label: 'Slide Toggle',
+          label: 'Slide toggle (switch)',
           url: 'slide-toggle',
         },
         {
@@ -151,7 +162,7 @@ export class Components {
           url: 'snackbar',
         },
         {
-          label: 'Sort Header',
+          label: 'Sort header',
           url: 'sort-header',
         },
         {
@@ -159,7 +170,7 @@ export class Components {
           url: 'stepper',
         },
         {
-          label: 'Table',
+          label: 'Table and data grid',
           url: 'table',
         },
         {
@@ -167,15 +178,11 @@ export class Components {
           url: 'tabs',
         },
         {
-          label: 'Text Area',
+          label: 'Text area',
           url: 'text-area',
         },
         {
-          label: 'Text Input',
-          url: 'text-input',
-        },
-        {
-          label: 'Time Picker',
+          label: 'Time picker',
           url: 'time-picker',
         },
         {
@@ -183,7 +190,7 @@ export class Components {
           url: 'toolbar',
         },
         {
-          label: 'Tooltips',
+          label: 'Tooltip',
           url: 'tooltips',
         },
         {

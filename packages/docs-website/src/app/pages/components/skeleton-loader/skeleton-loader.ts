@@ -8,7 +8,7 @@ import { Page } from '../../../core/page/page';
 import * as samples from './examples';
 
 @Component({
-  selector: 'app-skeleton-loader',
+  selector: 'cdx-skeleton-loader',
   templateUrl: './skeleton-loader.html',
   styleUrls: ['./skeleton-loader.scss'],
   imports: [Page, ExternalLink, ExampleViewer, MatDividerModule, Highlight],
@@ -51,7 +51,7 @@ import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
     ...
     NgxSkeletonLoaderModule.forRoot({
       theme: {
-        // Enabliong theme combination
+        // Enabling theme combination
         extendsFromRoot: true,
         // ... list of CSS theme attributes
         height: '30px',

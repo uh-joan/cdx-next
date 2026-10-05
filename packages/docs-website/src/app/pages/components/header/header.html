@@ -1,17 +1,59 @@
 <hlx-page
   [title]="'Header'"
-  [subtitle]="'The product UI header displays primary navigation within applications.'"
+  [subtitle]="'The header displays the product name and global actions, such as account access and app-wide navigation.'"
   [section]="'Components'"
+  storybookId="branding-header"
+  tabbed
 >
-  <h2>Module Import for HLX Header</h2>
+  <div overview>
+    <h2>Options</h2>
+    <h3>Types</h3>
+    <p>The header is available in three different types.</p>
+    <ul>
+      <li>
+        <strong>Default</strong> – Most prominent. Use when additional space for
+        app navigation is needed.
+        <img
+          class="doc-image"
+          src="helix/components-header/01.png"
+          alt="Default header: a dark Clarivate bar with language, products and user menus, above a white bar with the product name and five navigation links"
+          loading="lazy"
+        />
+      </li>
+      <li>
+        <strong>Condensed</strong> – Use for a slimmer, simpler navigation or
+        when no global navigation is needed.
+        <img
+          class="doc-image"
+          src="helix/components-header/02.png"
+          alt="Condensed header: a single dark bar with the Clarivate logo, the product name, five navigation links and language, apps and account icons"
+          loading="lazy"
+        />
+      </li>
+      <li>
+        <strong>No Clarivate logo</strong> – Use for products with a strong
+        brand.
+        <img
+          class="doc-image"
+          src="helix/components-header/03.png"
+          alt="Header without the Clarivate logo: a single dark bar with the product name, five navigation links and language, apps and account icons"
+          loading="lazy"
+        />
+      </li>
+    </ul>
+  </div>
 
-  <cdx-highlight [text]="moduleText"></cdx-highlight>
+  <div code>
+    <h2>Module Import for HLX Header</h2>
 
-  <mat-divider></mat-divider>
+    <cdx-highlight [text]="moduleText"></cdx-highlight>
 
-  <h2>Examples</h2>
+    <mat-divider></mat-divider>
 
-  @for (sample of sampleList; track sample.exampleName) {
-  <hlx-example-viewer [inputViewerComponent]="sample"></hlx-example-viewer>
-  }
+    <h2>Examples</h2>
+
+    @for (sample of sampleList; track sample.exampleName) {
+    <hlx-example-viewer [inputViewerComponent]="sample"></hlx-example-viewer>
+    }
+  </div>
 </hlx-page>

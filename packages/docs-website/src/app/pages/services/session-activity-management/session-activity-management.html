@@ -18,7 +18,7 @@
   <p>
     Once the continue session button is clicked or once some amount of
     configurable ping interval amount of time is passed (while some action are
-    perfomed during that amount of time) the rehydrate API
+    performed during that amount of time) the rehydrate API
     'api/session/user/rehydrate' is called to keep the backend aware of the fact
     that the session is active.
   </p>
@@ -58,9 +58,9 @@
         <p>
           <strong>expireWarningMinutes: </strong> (defaults to 2): Sets
           countdown in minutes that will be displayed in the popup. It is
-          important for this value to be bigger than expireDurationMinutes
-          because the popup will be opened after a time what will be calculated
-          as: expireDurationMinutes - expireWarningMinutes of inactivity.
+          important for this value to be smaller than expireDurationMinutes,
+          because the popup opens after expireDurationMinutes -
+          expireWarningMinutes of inactivity.
         </p>
       </li>
       <li>
@@ -112,7 +112,7 @@
     configurations as shown before and the cdx-header-global-user-profile (that
     will require also AuthenticationModule. ) component that contains the
     authentication inside it the withSessionManagement directive will be
-    responsible of adding the session mangement.
+    responsible of adding the session management.
   </p>
   <cdx-highlight
     [text]="headerSessioNActivityTemplateAngular"

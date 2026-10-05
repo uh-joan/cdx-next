@@ -5,7 +5,7 @@ import { Page } from '../../../core/page/page';
 import * as samples from './examples';
 
 @Component({
-  selector: 'app-paginator',
+  selector: 'cdx-paginator',
   templateUrl: './paginator.html',
   styleUrls: ['./paginator.scss'],
   imports: [Page, ExampleViewer],

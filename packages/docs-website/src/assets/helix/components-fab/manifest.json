@@ -1,0 +1,42 @@
+[
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/3bb6ebdc-099f-4ff4-b973-20b5588b6645.png",
+    "alt": "Button Fab",
+    "heading": "Color and size",
+    "file": "01.png"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/5c6f613e-39b8-4a04-9bea-d5b4188a6728.png",
+    "alt": "Button Fab",
+    "heading": "Color and size",
+    "file": "02.png"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/ddf22078-a299-4330-b569-7b2526dee632.png",
+    "alt": "Button Fab",
+    "heading": "Color and size",
+    "file": "03.png"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/2d2b4420-f9a9-4604-bf42-8dabf19c811f.png",
+    "alt": "Button Fab",
+    "heading": "Color and size",
+    "file": "04.png"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/dfcf130b-9999-4bf5-99c5-6b55ecd79543.png",
+    "alt": "",
+    "heading": "Usage",
+    "guideline": "do",
+    "text": "Use clear and simple icons such as add, message, or edit.",
+    "file": "05.png"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/ec01a26f-3fbf-4761-8f69-283a29b2e544.png",
+    "alt": "",
+    "heading": "Usage",
+    "guideline": "dont",
+    "text": "Don't display multiple FABs on one screen and steer clear of confusing or vague icons for less common actions.",
+    "file": "06.png"
+  }
+]

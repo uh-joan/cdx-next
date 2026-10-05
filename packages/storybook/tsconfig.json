@@ -1,0 +1,28 @@
+{
+  "angularCompilerOptions": {
+    "strictInjectionParameters": true,
+    "strictInputAccessModifiers": true,
+    "strictTemplates": true
+  },
+  "compilerOptions": {
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "moduleResolution": "bundler",
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitOverride": true,
+    "noImplicitReturns": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "paths": {
+      "@cdx/ngx-branding": ["packages/ngx-branding/src/index.ts"],
+      "@cdx/theme-highcharts": ["packages/theme-highcharts/src/index.ts"],
+      "@cdx/theme-angular-material": [
+        "packages/theme-angular-material/src/index.ts"
+      ]
+    },
+    "strict": true,
+    "target": "es2022"
+  },
+  "extends": "../../tsconfig.base.json",
+  "files": [],
+  "include": []
+}

@@ -1,0 +1,70 @@
+<hlx-page
+  [section]="'Foundations'"
+  [title]="'Principles &amp; foundations'"
+  [subtitle]="'The Helix Design System is more than a set of components—it’s a shared foundation that brings clarity, consistency and purpose to everything we design and build.'"
+>
+  <div class="intro">
+    <div class="intro__text">
+      <h2>Introduction</h2>
+      <p>
+        Helix begins with our core design principles, which shape how we think
+        about user experience. These principles inform our foundations—colour,
+        typography, layout and more.
+      </p>
+      <p>
+        Together, they support our components and patterns, enabling us to
+        deliver intuitive, high-quality products across Life Sciences and
+        Healthcare.
+      </p>
+    </div>
+    <img
+      class="intro__pyramid"
+      [src]="assets + '/01.svg'"
+      alt="Pyramid of the Helix layers: Principles at the top, then Foundations, Components and Patterns at the base."
+    />
+  </div>
+
+  <mat-divider></mat-divider>
+
+  <h2>Principles</h2>
+  <p>
+    Our design principles guide every decision we make. They help us solve
+    complex problems with empathy, communicate with clarity, and maintain a high
+    standard of craft across all our products.
+  </p>
+  <div class="principles">
+    @for (principle of principles; track principle.title) {
+    <div class="principle">
+      <img
+        class="principle__pictogram"
+        [src]="principle.pictogram"
+        alt=""
+        width="64"
+        height="64"
+      />
+      <h3>{{ principle.title }}</h3>
+      <p>{{ principle.description }}</p>
+    </div>
+    }
+  </div>
+
+  <mat-divider></mat-divider>
+
+  <h2>Foundations</h2>
+  <p>
+    Our foundations define the visual and structural language of Helix. They
+    bring consistency, accessibility and intention to our products, helping
+    teams design with confidence and cohesion.
+  </p>
+  <div class="foundation-cards">
+    @for (card of foundations; track card.url) {
+    <a class="foundation-card" [routerLink]="card.url">
+      <img class="foundation-card__preview" [src]="card.image" alt="" />
+      <span class="foundation-card__content">
+        <span class="foundation-card__title">{{ card.title }}</span>
+        <span class="foundation-card__description">{{ card.description }}</span>
+      </span>
+    </a>
+    }
+  </div>
+</hlx-page>

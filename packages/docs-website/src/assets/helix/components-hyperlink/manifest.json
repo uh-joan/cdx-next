@@ -1,0 +1,54 @@
+[
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/7176a139-36de-42b4-bd0b-e419e864be9c.png",
+    "alt": "Hyperlink",
+    "heading": "Color and types",
+    "file": "01.png"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/a25377d1-1c4d-4ed3-b091-c63d06cc0e48.png",
+    "alt": "Hyperlink",
+    "heading": "Color and types",
+    "file": "02.png"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/8bf987c3-635b-4b25-868d-4a615238eac2.png",
+    "alt": "Hyperlink",
+    "heading": "Color and types",
+    "file": "03.png"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/4f20bda5-3bb2-4b7a-9a57-df7bee66b73c.png",
+    "alt": "Hyperlink",
+    "heading": "Color and types",
+    "file": "04.png"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/14c915ba-24dd-44fa-b33a-96247be30a3c.png",
+    "alt": "Hyperlink",
+    "heading": "Color and types",
+    "file": "05.png"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/8290afa1-1c0c-4cb6-b10c-6531b997fd1a.png",
+    "alt": "Hyperlink",
+    "heading": "Color and types",
+    "file": "06.png"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/7f1f7fe7-df44-42e7-93a5-aaf065f8f451.png",
+    "alt": "",
+    "heading": "Usage",
+    "guideline": "do",
+    "text": "Use semibold weight and permanent underline to style inline hyperlinks.",
+    "file": "07.png"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/fd927f85-335c-47fc-8afa-46d2e5b3b5f3.png",
+    "alt": "",
+    "heading": "Usage",
+    "guideline": "dont",
+    "text": "Don\u2019t rely on color alone to indicate inline links, and avoid using links for actions\u2014use buttons instead.",
+    "file": "08.png"
+  }
+]

@@ -16,7 +16,7 @@ export class OtiSnippet {
 
   scriptRegistry = `<script src="https://sp-library.prod.sp.aws.clarivate.net/oti/{VERSION}/index.umd.js"></script>`;
   scriptRegistryWithVersion = `<script src="https://sp-library.prod.sp.aws.clarivate.net/oti/1.1.61/index.umd.js"></script>`;
-  scriptRegistryWithLatestVersion = `<script src="https://sp-library.prod.sp.aws.clarivate.net/oti/1.1.61/index.umd.js"></script>`;
+  scriptRegistryWithLatestVersion = `<script src="https://sp-library.prod.sp.aws.clarivate.net/oti/latest/index.umd.js"></script>`;
 
   usageAsModule = `import { Component, OnInit } from '@angular/core';
 import { OtiService } from '@sp/oti-snippet';
@@ -344,56 +344,56 @@ if (typeof Oti !== 'undefined' && typeof Oti.OtiService !== 'undefined') {
     {
       method: 'onCookieChanges',
       params: 'function',
-      return: 'void',
+      returnType: 'void',
       description:
         'Adds a listener for each cookie configuration change. The function sent as a parameter receives the object { next: string[], prev?: string[] } with the cookies changes. The listener is triggered once during initial setup and every time the user changes their cookie preferences.',
     },
     {
       method: 'openCookiePreferences',
       params: 'void',
-      return: 'void',
+      returnType: 'void',
       description: 'Opens OneTrust Cookies management panel.',
     },
     {
       method: 'printDebug',
       params: 'void',
-      return: 'void',
+      returnType: 'void',
       description: 'Shows current OneTrust cookies in the console.',
     },
     {
       method: 'resetAnalyticsContext',
       params: 'void',
-      return: 'void',
+      returnType: 'void',
       description: 'Resets the analytics context.',
     },
     {
       method: 'setDebug',
       params: 'boolean',
-      return: 'void',
+      returnType: 'void',
       description: 'Allows enabling debug mode.',
     },
     {
       method: 'trackEvent',
       params: 'string',
-      return: 'void',
+      returnType: 'void',
       description: 'Tracks an event in Snowplow.',
     },
     {
       method: 'trackNamedEvent',
       params: 'name: string, props: object',
-      return: 'void',
+      returnType: 'void',
       description: 'Tracks a named event via Pendo.',
     },
     {
       method: 'trackPageView',
       params: 'string',
-      return: 'void',
+      returnType: 'void',
       description: 'Tracks a page view event in Snowplow.',
     },
     {
       method: 'updateAnalyticsContextData',
       params: 'object',
-      return: 'void',
+      returnType: 'void',
       description:
         'Updates the analytics context data. See the "snowplow_context_data" attribute.',
     },
@@ -538,18 +538,15 @@ otiService.onCookieChanges(({ initial, next, prev }) => {
     pendo_details: {}
 });
 `;
-  anonymousUser2 = `<code>
-new OtiService({
+  anonymousUser2 = `new OtiService({
     ot_key: 'xxxx-xxxxx-xxxxxx',
     prod_domain: 'www.mysite.com',
     pendo_key: 'yyyy-yyyyyy-yyyy',
     pendo_visitor_id_generator: () => \`_OTI_\${Math.random().toString(36).slice(2, 9)}\`,
     pendo_details: {}
 });
-</code>
 `;
-  anonymousUser3 = `<code>
-new OtiService({
+  anonymousUser3 = `new OtiService({
     ot_key: 'xxxx-xxxxx-xxxxxx',
     prod_domain: 'www.mysite.com',
     pendo_key : 'yyyy-yyyyyy-yyyy',
@@ -558,7 +555,6 @@ new OtiService({
         visitorId : visitorId
     })
 });
-</code>
 `;
 
   snowPlow = `new OtiService({

@@ -1,33 +1,24 @@
 @use '@cdx/theme-angular-material' as hlx;
 
-.component-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  padding: 30px 30px 100px;
+.component-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-block: 16px;
 
-  &__item {
-    width: 300px;
-    margin: 20px;
-    cursor: pointer;
-    transition: all 0.2s;
+  th,
+  td {
+    padding: 8px 16px;
+    border-bottom: 1px solid hlx.$surface-contrast;
+    text-align: start;
+    vertical-align: top;
+  }
 
-    &:hover {
-      transform: scale(1.05);
-    }
+  thead th {
+    font-weight: 600;
+  }
 
-    .item-header {
-      height: 170px;
-      padding: 0;
-      background-color: hlx.$surface-contrast;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: 50%;
-    }
-
-    .item-content {
-      min-height: 100px;
-      margin-top: 8px;
-    }
+  th[scope='row'] {
+    font-weight: normal;
+    white-space: nowrap;
   }
 }

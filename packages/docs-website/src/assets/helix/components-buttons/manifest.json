@@ -1,0 +1,160 @@
+[
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/533bec22-7720-4d5f-9a2f-d7c8220b106f.png",
+    "alt": "Button",
+    "heading": "Color and types",
+    "file": "01.png"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/176c2566-60ec-4a31-b698-d814a6f9ee94.png",
+    "alt": "Button",
+    "heading": "Color and types",
+    "file": "02.png"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/55b18365-15d9-4cb0-a026-bc4921cb7850.png",
+    "alt": "Button",
+    "heading": "Color and types",
+    "file": "03.png"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/14ae44ca-a789-443c-bd97-4377973c13c7.png",
+    "alt": "Button",
+    "heading": "Color and types",
+    "file": "04.png"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/073d4148-6697-4b7b-aef2-a43ce3826ea0.png",
+    "alt": "Button",
+    "heading": "Color and types",
+    "file": "05.png"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/73980de1-6d50-4db8-bc43-5ba7a411f532.png",
+    "alt": "Button",
+    "heading": "Color and types",
+    "file": "06.png"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/525e1c54-14c8-409c-8cc5-39bea74cf58b.png",
+    "alt": "Button",
+    "heading": "Color and types",
+    "file": "07.png"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/16ba8fcc-1cdf-4769-806a-f04e84b4892e.png",
+    "alt": "Button",
+    "heading": "Color and types",
+    "file": "08.png"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/1e32941a-7c4e-4c24-859d-65766492a93a.png",
+    "alt": "Button",
+    "heading": "Color and types",
+    "file": "09.png"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/5c67b707-f56e-4b6d-b5bb-a7a4edcb9367.png",
+    "alt": "Button",
+    "heading": "Color and types",
+    "file": "10.png"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/db920270-810e-4a66-b72c-6777a3571efa.png",
+    "alt": "Button",
+    "heading": "Color and types",
+    "file": "11.png"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/93cfcc05-74a8-4723-9eef-5f7943d669c2.png",
+    "alt": "Button",
+    "heading": "Color and types",
+    "file": "12.png"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/27d259fb-481a-4314-b760-4d6227a7b20c.png",
+    "alt": "Button",
+    "heading": "Color and types",
+    "file": "13.png"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/850d429f-3139-4c2c-acae-3db04e381f9c.png",
+    "alt": "Button",
+    "heading": "Color and types",
+    "file": "14.png"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/caf38ad0-c5d2-4e26-954f-75ec0eeb2402.png",
+    "alt": "Button",
+    "heading": "Color and types",
+    "file": "15.png"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/43b48e41-b484-4a03-ae45-6e197906d019.png",
+    "alt": "Button",
+    "heading": "Density",
+    "file": "16.png"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/f05209ad-72c7-4a60-b089-db2cdd8d7447.png",
+    "alt": "Button",
+    "heading": "Density",
+    "file": "17.png"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/0e853f70-0321-4b96-8ab9-22b7cd5097dd.png",
+    "alt": "Button",
+    "heading": "Density",
+    "file": "18.png"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/79b49a48-f6fc-4a5d-befd-75380fe29f1c.png",
+    "alt": "Button",
+    "heading": "Density",
+    "file": "19.png"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/819e28fa-93b5-4648-abc5-8b5030d38e61.png",
+    "alt": "Button",
+    "heading": "Icons",
+    "file": "20.png"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/11cbc644-b1c2-4244-ac26-a1906487f441.png",
+    "alt": "Button",
+    "heading": "Icons",
+    "file": "21.png"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/d06bfa71-b9f4-44a3-9614-3837b255d528.png",
+    "alt": "",
+    "heading": "Usage",
+    "guideline": "do",
+    "text": "Use a single high-emphasis button per page to guide users clearly toward the primary action.",
+    "file": "22.png"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/e8d8c556-0738-4608-8cc2-c274e0ccc3aa.png",
+    "alt": "",
+    "heading": "Usage",
+    "guideline": "dont",
+    "text": "Don't use multiple high-emphasis buttons, it can dilute focus and create confusion.",
+    "file": "23.png"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/2bf04455-e126-4370-83a1-286b08a15351.png",
+    "alt": "",
+    "heading": "Usage",
+    "guideline": "do",
+    "text": "Use icons when they enhance understanding and directly support the button\u2019s purpose.",
+    "file": "24.png"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/ca98a432-700a-4844-a6bc-7444c6ec1031.png",
+    "alt": "",
+    "heading": "Usage",
+    "guideline": "dont",
+    "text": "Don't use icons that serve only as decoration or add unnecessary visual noise.",
+    "file": "25.png"
+  }
+]

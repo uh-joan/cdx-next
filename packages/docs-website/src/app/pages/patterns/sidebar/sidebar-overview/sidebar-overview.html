@@ -1,0 +1,227 @@
+<hlx-page
+  [section]="'Patterns'"
+  [title]="'Sidebar'"
+  [subtitle]="'A sidebar component is a column of links that allow users to quickly access different pages or sections of your product or application.'"
+>
+  <h2>Definition</h2>
+  <ul>
+    <li>
+      <strong>Common alternative names:</strong> Sidebar, Sidebar menu, Side
+      navigation / Sidenav, Navigation rail, Vertical navigation, Left nav,
+      Drawer, Navigation panel. Use “Sidebar” or “Side navigation / Sidenav” as
+      the standard label in documentation and design tools.
+    </li>
+    <li>
+      <strong>Position:</strong> Usually fixed to the left side (commonly) or
+      right side of the screen.
+    </li>
+    <li>
+      <strong>Purpose:</strong> Help users efficiently navigate through major
+      areas or tools of a product, especially when there are multiple unrelated
+      destinations or features.
+    </li>
+  </ul>
+
+  <mat-divider></mat-divider>
+
+  <h2>Frequent menu items</h2>
+  <p>
+    The sidebar frequently hosts those links: home, settings, Cortellis or
+    Clarivate family links, Alerts/notifications, Saved searches, Search
+    history, Updates/Latest news.
+  </p>
+
+  <mat-divider></mat-divider>
+
+  <h2>Use cases</h2>
+  <p>
+    Use horizontal navigation (on the
+    <cdx-internal-link
+      [inline]="true"
+      [text]="'header'"
+      [url]="'/components/header'"
+    ></cdx-internal-link>
+    component) as the primary navigation for your product. The sidebar is
+    restricted to the use cases below only:
+  </p>
+  <ul>
+    <li>
+      <strong
+        ><cdx-internal-link
+          [inline]="true"
+          [text]="'Header with navigation and sidebar'"
+          [url]="'/patterns/sidebar/header-with-navigation'"
+        ></cdx-internal-link
+        >:</strong
+      >
+      Products that require both primary and secondary navigation.
+    </li>
+    <li>
+      <strong
+        ><cdx-internal-link
+          [inline]="true"
+          [text]="'Nested navigation'"
+          [url]="'/patterns/sidebar/nested-navigation'"
+        ></cdx-internal-link
+      ></strong>
+      (products with navigation that includes subcategories).
+    </li>
+    <li>
+      <strong
+        ><cdx-internal-link
+          [inline]="true"
+          [text]="'Products that naturally work best with a side navigation'"
+          [url]="'/patterns/sidebar/products'"
+        ></cdx-internal-link
+      ></strong>
+      (Sidenav): For products where it's standard to use side nav as a main
+      navigation instead of horizontal menu (for instance, AI chats or app-like
+      products, e.g. ChatGPT).
+    </li>
+  </ul>
+  <h3>Navigation layout decision tree</h3>
+  <img
+    class="doc-image"
+    src="helix/patterns-sidebar/01.png"
+    alt="Decision tree. 1: Can the top navigation fit all key tools and destinations cleanly? Yes: use a header with navigation and actions, no sidebar. No: use a header with navigation and a sidebar for secondary items such as saved searches, alerts, bookmarks or tool switching. 2: Are there subcategories users need to explore within a section? Yes: use nested navigation inside the sidebar. No: no sidebar needed. 3: Does the product naturally work best with a side navigation, such as AI chats or app-like products? Yes: use the sidebar as primary navigation. No: use a header with navigation only."
+    loading="lazy"
+  />
+
+  <mat-divider></mat-divider>
+
+  <h2>Behavior and rules</h2>
+  <ul>
+    <li>
+      <strong>Scrolling:</strong> Destinations should remain visible and fixed
+      when scrolling vertically.
+    </li>
+    <li>
+      Use icons only for first-level navigation items. Sub-level (nested) items
+      should be text-only to maintain a clear and consistent hierarchy.
+    </li>
+  </ul>
+
+  <mat-divider></mat-divider>
+
+  <h2>Best practices</h2>
+  <ul>
+    <li>Should contain <strong>between 3-7 navigation items</strong>.</li>
+    <li>
+      The side bar <strong>should be on the left</strong> and can be controlled
+      by a navigation menu icon for responsive or dense UIs.
+    </li>
+    <li>Don’t overload the side nav; <strong>keep it scannable</strong>.</li>
+    <li>
+      <strong>Use visual structure</strong> when the side bar is complex, for
+      instance:
+      <ul>
+        <li><strong>Top part:</strong> links related to the product itself</li>
+        <li>
+          <strong>Bottom part:</strong> generic Clarivate links (e.g. Cortellis
+          products, Clarivate products)
+        </li>
+        <li>
+          Use <strong>section headers</strong> or horizontal dividers for better
+          scanning if the nav is long or to separate groups of navigation
+        </li>
+      </ul>
+    </li>
+    <li>
+      <strong>Do not repeat options from the horizontal menus</strong>; if you
+      need to do it for a legitimate reason, use the same icon in both places.
+    </li>
+    <li>
+      Pair <strong>icons with text labels and avoid</strong> icon-only navs when
+      possible. If using collapsed side navs, show only icons but provide
+      <strong>tooltips</strong> on hover.
+    </li>
+    <li>
+      When collapsed, the label text
+      <strong>should be one clear word</strong> that describes the destination
+      and helps users understand the icon. In the case you cannot use only one
+      word, avoid wrapping long labels when possible and do not truncate labels.
+      If necessary, create a line break between words. Don’t shrink the type
+      scale to fit longer text labels.
+    </li>
+  </ul>
+
+  <mat-divider></mat-divider>
+
+  <h2>Components used</h2>
+  <ul>
+    <li>
+      <strong>Collapse/Uncollapse "button"</strong> – allows users to hide or
+      reveal the sidebar
+    </li>
+    <li>
+      <strong
+        ><cdx-internal-link
+          [inline]="true"
+          [text]="'Menu list'"
+          [url]="'/components/list'"
+        ></cdx-internal-link
+      ></strong>
+      – organized list of destinations
+    </li>
+    <li>
+      <strong
+        ><cdx-internal-link
+          [inline]="true"
+          [text]="'Icons'"
+          [url]="'/components/icons'"
+        ></cdx-internal-link
+      ></strong>
+      – used only on first-level items for quick scanning
+    </li>
+    <li>
+      <strong
+        ><cdx-internal-link
+          [inline]="true"
+          [text]="'Tree menu / Collapsible sections'"
+          [url]="'/components/tree'"
+        ></cdx-internal-link
+      ></strong>
+      – for nested navigation menu
+    </li>
+    <li>
+      <strong
+        ><cdx-internal-link
+          [inline]="true"
+          [text]="'Tooltips'"
+          [url]="'/components/tooltips'"
+        ></cdx-internal-link
+      ></strong>
+      – helps users identify icons when labels are hidden
+    </li>
+    <li>
+      <strong
+        ><cdx-internal-link
+          [inline]="true"
+          [text]="'Badges'"
+          [url]="'/components/badge'"
+        ></cdx-internal-link
+      ></strong>
+      – to communicate dynamic information about the destination, such as counts
+      or status
+    </li>
+  </ul>
+
+  <mat-divider></mat-divider>
+
+  <h2>Accessibility</h2>
+  <ul>
+    <li>
+      All navigation items must be accessible and operable via keyboard (Tab,
+      Arrow keys, Enter, etc.) and screen reader accessibility for an inclusive
+      experience.
+    </li>
+    <li>
+      Group related items together (use <code>&lt;ul&gt;</code> and
+      <code>&lt;li&gt;</code> properly).
+    </li>
+    <li>
+      Support <strong>responsive behavior</strong>: collapse or hide the sidebar
+      on smaller screens.
+    </li>
+  </ul>
+</hlx-page>

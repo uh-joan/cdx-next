@@ -1,0 +1,44 @@
+[
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/3702f01d-3fb8-4f20-8cc1-7dc471939bbf.png",
+    "file": "card-color.png",
+    "title": "Color",
+    "description": "Foundations shortcut card"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/b7d46aa3-ddb7-4a5d-bb0f-0b4217b880db.png",
+    "file": "card-typography.png",
+    "title": "Typography",
+    "description": "Foundations shortcut card"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/75b1533c-53ff-4a0c-9c2e-fbcdd747aa23.png",
+    "file": "card-icons.png",
+    "title": "Icons",
+    "description": "Foundations shortcut card"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/88a2402a-75d3-4e72-b646-3a7afa6c0bd6.png",
+    "file": "card-branding.png",
+    "title": "Branding",
+    "description": "Foundations shortcut card"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/634bc4f1-cd4b-4082-a2e7-0ebcd60a1ace.png",
+    "file": "card-elevation.png",
+    "title": "Elevation",
+    "description": "Foundations shortcut card"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/e6de5ff8-e207-4d86-83d9-5f7d0be319bb.png",
+    "file": "card-density.png",
+    "title": "Density",
+    "description": "Foundations shortcut card"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/39436d4b-042f-48b7-a4f7-5573bd7556b9.png",
+    "file": "card-ai.png",
+    "title": "AI",
+    "description": "Foundations shortcut card"
+  }
+]

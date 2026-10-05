@@ -1,25 +1,43 @@
 <hlx-page
-  [title]="'Components Overview'"
+  [title]="'Component overview'"
   [section]="'Components'"
   [subtitle]="'Angular Material components, Helix components, and external third party libraries.'"
 >
-  <div class="component-list">
-    @for (component of components; track component.route) {
-    <mat-card
-      matRipple
-      class="component-list__item"
-      [routerLink]="component.route"
-    >
-      <mat-card-header
-        class="item-header"
-        [style.background-image]="'url(' + basePath + component.imageName + ')'"
-      >
-      </mat-card-header>
-      <mat-card-content class="item-content">
-        <div class="title mat-headline-small">{{ component.title }}</div>
-        <div class="text">{{ component.text }}</div>
-      </mat-card-content>
-    </mat-card>
-    }
-  </div>
+  <table class="component-table">
+    <thead>
+      <tr>
+        <th scope="col">Component</th>
+        <th scope="col">Description</th>
+        <th scope="col">Figma component</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (component of components; track component.route) {
+      <tr>
+        <th scope="row">
+          <cdx-internal-link
+            [inline]="true"
+            [text]="component.title"
+            [url]="component.route"
+          ></cdx-internal-link>
+        </th>
+        <td>{{ component.text }}</td>
+        <td>
+          @if (component.figmaUrl; as figmaUrl) {
+          <a
+            underline
+            [href]="figmaUrl"
+            target="_blank"
+            rel="noopener noreferrer"
+            [attr.aria-label]="'Open ' + component.title + ' in Figma'"
+            >Open in Figma</a
+          >
+          } @else {
+          <span aria-label="Not available">–</span>
+          }
+        </td>
+      </tr>
+      }
+    </tbody>
+  </table>
 </hlx-page>

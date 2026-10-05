@@ -1,0 +1,24 @@
+[
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/cb6e855b-cacd-4c4b-9bbd-9c86e88b60ed.png",
+    "alt": "Styles",
+    "heading": "Options",
+    "file": "01.png"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/d75e3105-785b-4eb7-954c-46720caa4f67.png",
+    "alt": "",
+    "heading": "Usage",
+    "guideline": "do",
+    "text": "Cards can be shown together in a grid, vertical list or carousel.",
+    "file": "02.png"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/790a50cf-e122-423f-9856-ac7e30cf1eef.png",
+    "alt": "",
+    "heading": "Usage",
+    "guideline": "dont",
+    "text": "Don\u2019t use cards when spacing, headings, or dividers provide a simpler hierarchy.",
+    "file": "03.png"
+  }
+]

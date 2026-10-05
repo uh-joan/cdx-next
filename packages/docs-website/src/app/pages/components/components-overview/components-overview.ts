@@ -1,263 +1,279 @@
 import { Component } from '@angular/core';
-import { MatCardModule } from '@angular/material/card';
-import { MatRippleModule } from '@angular/material/core';
-import { RouterLink } from '@angular/router';
 
+import { InternalLink } from '../../../components/internal-link/internal-link';
 import { Page } from '../../../core/page/page';
 
-interface ComponentExample {
+interface ComponentEntry {
   title: string;
-  text: string;
   route: string;
-  imageName: string;
+  text: string;
+  /** Helix Figma library node, when the component has one. */
+  figmaUrl?: string;
 }
+
+/** Helix component library in Figma (links from the Helix Component overview). */
+const FIGMA_FILE = 'https://www.figma.com/file/pI4MbkwcVXdqrqFRi7YhLt?node-id=';
 
 @Component({
   selector: 'cdx-components-overview',
   templateUrl: './components-overview.html',
   styleUrl: './components-overview.scss',
   host: { class: 'cdx-section' },
-  imports: [RouterLink, MatCardModule, MatRippleModule, Page],
+  imports: [Page, InternalLink],
 })
 export class ComponentsOverview {
-  basePath = '/components/scenes/';
-  extension = '.png';
-
-  components: ComponentExample[] = [
+  protected readonly components: ComponentEntry[] = [
     {
       title: 'Autocomplete',
-      text: 'Suggests relevant options as the user types.',
       route: '/components/autocomplete',
-      imageName: 'autocomplete.svg',
+      text: 'Suggests relevant options as the user types.',
     },
     {
       title: 'Badge',
-      text: 'A small value indicator that can be overlaid on another object.',
       route: '/components/badge',
-      imageName: 'badge.svg',
+      text: 'A small value indicator that can be overlaid on another object.',
+      figmaUrl: FIGMA_FILE + '13:1974',
     },
     {
       title: 'Breadcrumbs',
-      text: "A navigational aid that displays the user's location in a hierarchy.",
       route: '/components/breadcrumbs',
-      imageName: 'breadcrumbs.svg',
+      text: "A navigational aid that displays the user's location in a hierarchy.",
+      figmaUrl: FIGMA_FILE + '797:24271',
     },
     {
-      title: 'Buttons',
-      text: 'An interactive button with a range of presentation options.',
+      title: 'Button',
       route: '/components/buttons',
-      imageName: 'button.svg',
+      text: 'An interactive button with a range of presentation options.',
+      figmaUrl: FIGMA_FILE + '3641:50925',
+    },
+    {
+      title: 'Button - FAB',
+      route: '/components/fab',
+      text: 'The most common or important action on a screen, persisting when scrolling.',
+      figmaUrl: FIGMA_FILE + '36:5657',
+    },
+    {
+      title: 'Button - Icon button',
+      route: '/components/icon-button',
+      text: 'Performs a small action with a single tap.',
+      figmaUrl: FIGMA_FILE + '31:5059',
     },
     {
       title: 'Button toggle',
-      text: 'A groupable on/off toggle for enabling and disabling options.',
       route: '/components/button-toggle',
-      imageName: 'button-toggle.svg',
+      text: 'A groupable on/off toggle for enabling and disabling options.',
+      figmaUrl: FIGMA_FILE + '3921:13728',
     },
     {
       title: 'Card',
-      text: 'A styled container for pieces of itemized content.',
       route: '/components/card',
-      imageName: 'card.svg',
+      text: 'A styled container for pieces of itemized content.',
+      figmaUrl: FIGMA_FILE + '13907:6',
     },
     {
       title: 'Checkbox',
-      text: 'Captures boolean input with an optional indeterminate mode.',
       route: '/components/checkbox',
-      imageName: 'checkbox.svg',
+      text: 'Captures boolean input with an optional indeterminate mode.',
+      figmaUrl: FIGMA_FILE + '99:9144',
     },
     {
-      title: 'Chips',
-      text: 'Presents a list of items as a set of small, tactile entities.',
+      title: 'Chip',
       route: '/components/chips',
-      imageName: 'chips.svg',
+      text: 'Presents a list of items as a set of small, tactile entities.',
+      figmaUrl: FIGMA_FILE + '139:8778',
     },
     {
       title: 'Data grid',
-      text: 'A data table that displays a set of data in a grid.',
       route: '/components/data-grid',
-      imageName: 'data-grid.svg',
+      text: 'A data table that displays a set of data in a grid.',
     },
     {
-      title: 'Datepicker',
-      text: 'Captures dates, agnostic about their internal representation.',
+      title: 'Date picker',
       route: '/components/date-picker',
-      imageName: 'datepicker.svg',
+      text: 'Captures dates, agnostic about their internal representation.',
+      figmaUrl: FIGMA_FILE + '306:15059',
     },
     {
       title: 'Dialog',
-      text: 'A configurable modal that displays dynamic content.',
       route: '/components/dialog',
-      imageName: 'dialog.svg',
+      text: 'A configurable modal that displays dynamic content.',
+      figmaUrl: FIGMA_FILE + '104:8638',
     },
     {
       title: 'Divider',
-      text: 'A vertical or horizontal visual divider.',
       route: '/components/divider',
-      imageName: 'divider.svg',
+      text: 'A vertical or horizontal visual divider.',
+      figmaUrl: FIGMA_FILE + '116:8735',
+    },
+    {
+      title: 'Expansion panel (accordion)',
+      route: '/components/expansion-panel',
+      text: 'A container which can be expanded to reveal more content.',
+      figmaUrl: FIGMA_FILE + '132:11183',
     },
     {
       title: 'Footer',
-      text: 'A footer that sticks to the bottom of the page.',
       route: '/components/footer',
-      imageName: 'footer.svg',
+      text: 'A footer that sticks to the bottom of the page.',
+      figmaUrl: FIGMA_FILE + '3728:22088',
     },
     {
       title: 'Form field',
-      text: 'Wraps input fields so they are displayed consistently.',
       route: '/components/form-field',
-      imageName: 'form-field.svg',
-    },
-    {
-      title: 'Expansion Panel',
-      text: 'A container which can be expanded to reveal more content.',
-      route: '/components/expansion-panel',
-      imageName: 'expansion-panel.svg',
+      text: 'Wraps input fields so they are displayed consistently.',
     },
     {
       title: 'Header',
-      text: 'A header that sticks to the top of the page.',
       route: '/components/header',
-      imageName: 'header.svg',
+      text: 'A header that sticks to the top of the page.',
+      figmaUrl: FIGMA_FILE + '4072:7091',
     },
     {
       title: 'Highcharts',
-      text: 'A theme for Highcharts library.',
       route: '/components/highcharts',
-      imageName: 'highcharts.svg',
+      text: 'A theme for Highcharts library.',
     },
     {
-      title: 'Icons',
-      text: 'Renders a specified icon.',
+      title: 'Hyperlink',
+      route: '/components/hyperlink',
+      text: 'Text that navigates users to another location.',
+      figmaUrl: FIGMA_FILE + '3813:26274',
+    },
+    {
+      title: 'Icon',
       route: '/components/icons',
-      imageName: 'icons.svg',
+      text: 'Renders a specified icon.',
+      figmaUrl: FIGMA_FILE + '13:11245',
+    },
+    {
+      title: 'Input (text field)',
+      route: '/components/text-input',
+      text: 'A single-line text input field.',
+      figmaUrl: FIGMA_FILE + '3682:20670',
     },
     {
       title: 'List',
-      text: 'A container for a list of items.',
       route: '/components/list',
-      imageName: 'list.svg',
+      text: 'A container for a list of items.',
+      figmaUrl: FIGMA_FILE + '71:7314',
     },
     {
       title: 'Menu',
-      text: 'A floating panel of nestable options.',
       route: '/components/menu',
-      imageName: 'menu.svg',
+      text: 'A floating panel of nestable options.',
+      figmaUrl: FIGMA_FILE + '132:13646',
     },
     {
       title: 'Notifications',
-      text: 'A message displayed to the user.',
       route: '/components/notifications',
-      imageName: 'notifications.svg',
+      text: 'A message displayed to the user.',
     },
-
     {
       title: 'Paginator',
-      text: 'Controls for displaying paged data.',
       route: '/components/paginator',
-      imageName: 'paginator.svg',
+      text: 'Controls for displaying paged data.',
+      figmaUrl: FIGMA_FILE + '184:9523',
     },
     {
       title: 'Progress bar',
-      text: 'A linear progress indicator.',
       route: '/components/progress-bar',
-      imageName: 'progress-bar.svg',
+      text: 'A linear progress indicator.',
+      figmaUrl: FIGMA_FILE + '190:9578',
     },
     {
       title: 'Progress spinner',
-      text: 'A circular progress indicator.',
       route: '/components/progress-spinner',
-      imageName: 'progress-spinner.svg',
+      text: 'A circular progress indicator.',
+      figmaUrl: FIGMA_FILE + '220:10479',
     },
     {
       title: 'Radio button',
-      text: 'Allows the user to select one option from a group.',
       route: '/components/radio-button',
-      imageName: 'radio-button.svg',
+      text: 'Allows the user to select one option from a group.',
+      figmaUrl: FIGMA_FILE + '104:8435',
     },
     {
       title: 'Select',
-      text: 'Allows the user to select one or more options using a dropdown.',
       route: '/components/select',
-      imageName: 'select.svg',
+      text: 'Allows the user to select one or more options using a dropdown.',
+      figmaUrl: FIGMA_FILE + '3873:3705',
     },
     {
-      title: 'Sidenav',
-      text: 'A container for content that is fixed to one side of the screen.',
+      title: 'Sidenav (Navigation drawer)',
       route: '/components/sidenav',
-      imageName: 'sidenav.svg',
+      text: 'A container for content that is fixed to one side of the screen.',
     },
     {
-      title: 'Slide toggle',
-      text: 'Captures boolean values as a clickable and draggable switch.',
+      title: 'Skeleton loader',
+      route: '/components/skeleton-loader',
+      text: 'Shows a placeholder of content while data is loading.',
+    },
+    {
+      title: 'Slide toggle (switch)',
       route: '/components/slide-toggle',
-      imageName: 'slide-toggle.svg',
+      text: 'Captures boolean values as a clickable and draggable switch.',
+      figmaUrl: FIGMA_FILE + '3668:12495',
     },
     {
       title: 'Slider',
-      text: 'Allows the user to input a value by dragging along a slider.',
       route: '/components/slider',
-      imageName: 'slider.svg',
+      text: 'Allows the user to input a value by dragging along a slider.',
+      figmaUrl: FIGMA_FILE + '8587:660',
     },
     {
       title: 'Snackbar',
-      text: 'Displays short actionable messages as an uninvasive alert.',
       route: '/components/snackbar',
-      imageName: 'snackbar.svg',
+      text: 'Displays short actionable messages as an uninvasive alert.',
+      figmaUrl: FIGMA_FILE + '256:9622',
     },
     {
       title: 'Sort header',
-      text: 'Allows the user to configure how tabular data is sorted.',
       route: '/components/sort-header',
-      imageName: 'sort-header.svg',
+      text: 'Allows the user to configure how tabular data is sorted.',
     },
     {
       title: 'Stepper',
-      text: 'Presents content as steps through which to progress.',
       route: '/components/stepper',
-      imageName: 'stepper.svg',
+      text: 'Presents content as steps through which to progress.',
     },
     {
-      title: 'Table',
-      text: 'A configurable component for displaying tabular data.',
+      title: 'Table and data grid',
       route: '/components/table',
-      imageName: 'table.svg',
+      text: 'A configurable component for displaying tabular data.',
+      figmaUrl: FIGMA_FILE + '428:30324',
     },
     {
       title: 'Tabs',
-      text: 'Only presents one view at a time from a provided set of views.',
       route: '/components/tabs',
-      imageName: 'tabs.svg',
+      text: 'Only presents one view at a time from a provided set of views.',
+      figmaUrl: FIGMA_FILE + '3953:13310',
     },
     {
-      title: 'Text Area',
-      text: 'A multi-line text input field.',
+      title: 'Text area',
       route: '/components/text-area',
-      imageName: 'text-area.svg',
+      text: 'A multi-line text input field.',
     },
     {
-      title: 'Text Input',
-      text: 'A single-line text input field.',
-      route: '/components/text-input',
-      imageName: 'text-input.svg',
+      title: 'Time picker',
+      route: '/components/time-picker',
+      text: 'Sets the time portion of a date by typing or picking from a list.',
     },
     {
       title: 'Toolbar',
-      text: 'A container for top-level titles and controls.',
       route: '/components/toolbar',
-      imageName: 'toolbar.svg',
+      text: 'A container for top-level titles and controls.',
     },
     {
-      title: 'Tooltips',
-      text: 'Displays floating content when an object is hovered.',
+      title: 'Tooltip',
       route: '/components/tooltips',
-      imageName: 'tooltips.svg',
+      text: 'Displays floating content when an object is hovered.',
+      figmaUrl: FIGMA_FILE + '288:14173',
     },
     {
       title: 'Tree',
-      text: 'Presents hierarchical content as an expandable tree.',
       route: '/components/tree',
-      imageName: 'tree.svg',
+      text: 'Presents hierarchical content as an expandable tree.',
+      figmaUrl: FIGMA_FILE + '293:14982',
     },
   ];
 }

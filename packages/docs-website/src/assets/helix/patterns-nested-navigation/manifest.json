@@ -1,0 +1,16 @@
+[
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/3244b28d-385a-4e75-aa47-d20c030eb7c4.png",
+    "alt": "Nested navigation",
+    "heading": "When to use",
+    "file": "01.png"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/9009c735-8929-4c4d-9871-3221be406052.png",
+    "alt": "",
+    "heading": "Do/Dont's",
+    "guideline": "dont",
+    "text": "Don\u2019t hide frequently used or important options inside nested dropdown menus. In the example, placing key items like \u201cSearches and alerts,\u201d \u201cSearch History,\u201d and \u201cReports\u201d nested under \"My work\" in a dropdown menu, makes them harder to discover and access. If these options are essential to the user workflow, they should be surfaced in a more prominent and persistent location\u2014like the side navigation panel\u2014.",
+    "file": "02.png"
+  }
+]

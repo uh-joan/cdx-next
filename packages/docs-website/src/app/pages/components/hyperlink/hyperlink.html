@@ -1,10 +1,162 @@
 <hlx-page
   [title]="'Hyperlink'"
-  [subtitle]="'A hyperlink takes the user to another page, section or resource.'"
+  [subtitle]="'Hyperlinks are text that navigate users to another location.'"
   [section]="'Components'"
+  storybookId="components-hyperlink"
+  tabbed
 >
-  <h2>Examples</h2>
-  @for (sample of sampleList; track sample.exampleName) {
-  <hlx-example-viewer [inputViewerComponent]="sample"></hlx-example-viewer>
-  }
+  <div overview>
+    <h2>Options</h2>
+    <h3>Color and types</h3>
+    <p>
+      Hyperlinks combine color themes and types to signal the importance of the
+      hyperlink and make it work with its surroundings.
+    </p>
+    <p>Choose from three colors:</p>
+    <ul>
+      <li><strong>Primary</strong> – Our default. Use for most hyperlinks.</li>
+      <li>
+        <strong>Blue</strong> – Use for hyperlinks that need extra emphasis or
+        differentiation.
+      </li>
+      <li>
+        <strong>Visited</strong> – Only use when a hyperlink has been clicked
+        (visited).
+      </li>
+    </ul>
+    <div class="doc-image-grid">
+      <figure>
+        <img
+          src="helix/components-hyperlink/01.png"
+          alt="Primary hyperlink: dark grey text, no underline"
+          loading="lazy"
+        />
+        <figcaption>Primary</figcaption>
+      </figure>
+      <figure>
+        <img
+          src="helix/components-hyperlink/03.png"
+          alt="Blue hyperlink: blue semibold text, no underline"
+          loading="lazy"
+        />
+        <figcaption>Blue</figcaption>
+      </figure>
+      <figure>
+        <img
+          src="helix/components-hyperlink/04.png"
+          alt="Visited hyperlink: dark indigo semibold text, no underline"
+          loading="lazy"
+        />
+        <figcaption>Visited</figcaption>
+      </figure>
+    </div>
+    <p>There are two types of underline:</p>
+    <ul>
+      <li><strong>On hover</strong> – Use for standalone hyperlinks.</li>
+      <li>
+        <strong>Permanent</strong> – Use for inline hyperlinks to ensure
+        accessibility.
+      </li>
+    </ul>
+    <div class="doc-image-grid">
+      <figure>
+        <img
+          src="helix/components-hyperlink/02.png"
+          alt="Primary hyperlink with a permanent underline"
+          loading="lazy"
+        />
+        <figcaption>Primary, permanent</figcaption>
+      </figure>
+      <figure>
+        <img
+          src="helix/components-hyperlink/05.png"
+          alt="Blue hyperlink with a permanent underline"
+          loading="lazy"
+        />
+        <figcaption>Blue, permanent</figcaption>
+      </figure>
+      <figure>
+        <img
+          src="helix/components-hyperlink/06.png"
+          alt="Visited hyperlink with a permanent underline"
+          loading="lazy"
+        />
+        <figcaption>Visited, permanent</figcaption>
+      </figure>
+    </div>
+
+    <mat-divider></mat-divider>
+
+    <h2>Buttons vs. links</h2>
+    <p>
+      Use buttons and links purposefully to support clarity and accessibility.
+    </p>
+    <ul>
+      <li>
+        Use a button for actions that affect the current page—such as submitting
+        a form, starting media playback, or closing a modal.
+      </li>
+      <li>
+        Use a link to navigate to a new page or to a different section within
+        the current page (anchor navigation).
+      </li>
+    </ul>
+    <p>
+      Avoid substituting one for the other. Buttons and links behave differently
+      in browsers and are interpreted differently by assistive technologies.
+      Using the correct element ensures a more inclusive experience for all
+      users. See also
+      <cdx-internal-link
+        [inline]="true"
+        [text]="'Button'"
+        [url]="'/components/buttons'"
+      ></cdx-internal-link
+      >.
+    </p>
+
+    <mat-divider></mat-divider>
+
+    <h2>Usage</h2>
+    <cdx-usage-guidelines>
+      <cdx-usage-guideline
+        kind="do"
+        imageSrc="helix/components-hyperlink/07.png"
+        imageAlt="Cookie notice with an inline Cookie policy link in semibold dark text with a permanent underline"
+      >
+        Use semibold weight and permanent underline to style inline hyperlinks.
+      </cdx-usage-guideline>
+      <cdx-usage-guideline
+        kind="dont"
+        imageSrc="helix/components-hyperlink/08.png"
+        imageAlt="Cookie notice with an inline Cookie policy link shown only in blue without underline, and Decline styled as an underlined link instead of a button"
+      >
+        Don’t rely on color alone to indicate inline links, and avoid using
+        links for actions—use buttons instead.
+      </cdx-usage-guideline>
+    </cdx-usage-guidelines>
+  </div>
+
+  <div code>
+    <p>
+      The Helix theme styles every <code>&lt;a&gt;</code> element: links inherit
+      the surrounding text color (Primary) and are underlined on hover. Add a
+      class for the other options:
+    </p>
+    <ul>
+      <li>
+        <code>hlx-link-blue</code> – Blue; after the link is visited the browser
+        shows the Visited color.
+      </li>
+      <li><code>hlx-link-visited</code> – Forces the Visited color.</li>
+      <li>
+        <code>hlx-link-inline</code> – Semibold with a permanent underline, for
+        links in running text. The <code>underline</code> attribute adds only
+        the permanent underline.
+      </li>
+    </ul>
+    <h2>Examples</h2>
+    @for (sample of sampleList; track sample.exampleName) {
+    <hlx-example-viewer [inputViewerComponent]="sample" />
+    }
+  </div>
 </hlx-page>

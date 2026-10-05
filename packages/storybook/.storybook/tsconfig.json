@@ -1,0 +1,9 @@
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "emitDecoratorMetadata": true,
+    "types": ["node", "vite/client"]
+  },
+  "include": ["../src/**/*.stories.ts", "*.ts"],
+  "exclude": ["../src/**/*.spec.ts"]
+}

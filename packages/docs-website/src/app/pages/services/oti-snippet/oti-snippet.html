@@ -1,5 +1,5 @@
 <hlx-page
-  [title]="'Oti Snippets'"
+  [title]="'OTI snippets'"
   [subtitle]="'This API is designed to use OneTrust as Cookies acceptance manager and integrate some analytics tools (such as pendo) within it.'"
   [section]="'Services'"
 >
@@ -262,7 +262,7 @@
   <ul>
     <li>The request to a different domain might lead to Cross-Origin error</li>
     <li>
-      Exposing x-pendo-integration-keyin the request header is insecure. A
+      Exposing x-pendo-integration-key in the request header is insecure. A
       malicious user might use it to generate fake usage of the application.
     </li>
   </ul>
@@ -274,7 +274,7 @@
   <p>
     In both cases, the solution implies specifying an internal url for the pendo
     requests. The attributes pendo_visitor_url, pendo_dnp_url and
-    pendo_visitor_url are made for that purpose:
+    pendo_metadata_url are made for that purpose:
   </p>
 
   <cdx-highlight [text]="workAroud1"></cdx-highlight>
@@ -334,7 +334,7 @@
 
   <p>
     CNAME features, handled by the attributes pendo_cname_content and
-    pendo_cname_content, helps ensure that events are collected and guides are
+    pendo_cname_data, helps ensure that events are collected and guides are
     served to end users who are subject to ad-blocking software, firewalls, web
     filters, etc. Visit CNAME setups for more information.
   </p>
@@ -419,8 +419,8 @@
     which is not the desired behaviour.
   </p>
   <p>
-    <strong>NOTE:</strong> It is imporant to highlight the issue applies to this
-    particular case. Take into account the following considerations:
+    <strong>NOTE:</strong> It is important to highlight the issue applies to
+    this particular case. Take into account the following considerations:
   </p>
   <ul>
     <li>
@@ -459,7 +459,7 @@
   </p>
   <cdx-highlight [text]="problem"></cdx-highlight>
   <p>
-    The OneTrust API is not prepared for this, so they take one of the for
+    The OneTrust API is not prepared for this, so they take one of them for
     building the mentioned global variables.
   </p>
   <h6>The solution</h6>

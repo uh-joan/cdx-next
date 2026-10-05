@@ -38,6 +38,15 @@ export const componentsRoutes: Routes = [
         loadComponent: () => import('./buttons/buttons').then((m) => m.Buttons),
       },
       {
+        path: 'fab',
+        loadComponent: () => import('./fab/fab').then((m) => m.Fab),
+      },
+      {
+        path: 'icon-button',
+        loadComponent: () =>
+          import('./icon-button/icon-button').then((m) => m.IconButton),
+      },
+      {
         path: 'button-toggle',
         loadComponent: () =>
           import('./button-toggle/button-toggle').then((m) => m.ButtonToggle),

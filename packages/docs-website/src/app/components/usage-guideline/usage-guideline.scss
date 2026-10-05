@@ -1,0 +1,39 @@
+@use '@cdx/theme-angular-material' as hlx;
+
+:host {
+  border-top: 4px solid;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-top: 12px;
+}
+
+:host(.usage-guideline--do) {
+  border-top-color: hlx.$icon-positive;
+
+  .usage-guideline__label {
+    color: hlx.$text-positive;
+  }
+}
+
+:host(.usage-guideline--dont) {
+  border-top-color: hlx.$icon-negative;
+
+  .usage-guideline__label {
+    color: hlx.$text-negative;
+  }
+}
+
+.usage-guideline__image {
+  display: block;
+  height: auto;
+  max-width: 100%;
+  order: -1;
+}
+
+.usage-guideline__label {
+  align-items: center;
+  display: flex;
+  gap: 8px;
+  margin: 0;
+}

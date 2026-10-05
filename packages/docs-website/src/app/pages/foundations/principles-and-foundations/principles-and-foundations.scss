@@ -1,0 +1,93 @@
+@use '@cdx/theme-angular-material' as hlx;
+
+:host {
+  .intro {
+    align-items: center;
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+
+    @media (width <= 960px) {
+      grid-template-columns: minmax(0, 1fr);
+    }
+
+    &__pyramid {
+      display: block;
+      height: auto;
+      width: 100%;
+    }
+  }
+
+  .principles {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    margin-block: 1.5rem;
+  }
+
+  .principle {
+    h3 {
+      margin: 1rem 0 0.5rem;
+    }
+
+    p {
+      margin: 0;
+    }
+
+    &__pictogram {
+      display: block;
+      height: 64px;
+      width: 64px;
+    }
+  }
+
+  .foundation-cards {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    margin-block: 1.5rem 2rem;
+  }
+
+  .foundation-card {
+    border: 1px solid hlx.$border-secondary;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgb(0 0 0 / 8%);
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    text-decoration: none;
+    transition: box-shadow 150ms ease;
+
+    &:hover,
+    &:focus-visible {
+      box-shadow: 0 4px 12px rgb(0 0 0 / 16%);
+      text-decoration: none;
+    }
+
+    &__preview {
+      aspect-ratio: 472 / 224;
+      display: block;
+      object-fit: cover;
+      width: 100%;
+    }
+
+    &__content {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      padding: 1rem;
+    }
+
+    &__title {
+      font-size: 16px;
+      font-weight: 600;
+    }
+
+    &__description {
+      color: hlx.$text-secondary;
+      font-size: 14px;
+      line-height: 20px;
+    }
+  }
+}

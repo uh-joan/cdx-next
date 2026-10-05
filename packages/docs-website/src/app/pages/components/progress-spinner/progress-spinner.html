@@ -1,11 +1,59 @@
 <hlx-page
-  [title]="'Progress Spinner'"
-  [subtitle]="'Progress spinners are used when retrieving data or performing slow computations, and help to notify users that loading is underway.'"
+  [title]="'Progress spinner'"
+  [subtitle]="'A Progress Spinner is a visual indicator used to represent an ongoing process in the app. It communicates to users that the system is actively working on a task whose duration is unknown.'"
   [section]="'Components'"
   componentName="progress-spinner"
+  storybookId="components-progress-spinner"
+  tabbed
 >
-  <h2>Examples</h2>
-  @for (sample of sampleList; track sample.exampleName) {
-  <hlx-example-viewer [inputViewerComponent]="sample"></hlx-example-viewer>
-  }
+  <div overview>
+    <p>
+      The Helix progress spinner is built using selected styles from the Angular
+      Material framework. For implementation details, see the Code tab.
+    </p>
+
+    <h2>Options</h2>
+    <p>The progress-spinner supports mainly this mode:</p>
+    <ul>
+      <li>
+        <strong>Indeterminate</strong> – Indicates that something is happening
+        without conveying a discrete progress.
+      </li>
+    </ul>
+    <img
+      class="doc-image"
+      src="helix/components-progress-spinner/01.png"
+      alt="Indeterminate progress spinner: a partial circular arc"
+      loading="lazy"
+    />
+
+    <mat-divider></mat-divider>
+
+    <h2>Usage</h2>
+    <cdx-usage-guidelines>
+      <cdx-usage-guideline
+        kind="do"
+        imageSrc="helix/components-progress-spinner/02.png"
+        imageAlt="Card with a button showing a small progress spinner next to the label “In progress”"
+      >
+        Can appear within components, buttons, or sections when only a specific
+        part of the UI is loading.
+      </cdx-usage-guideline>
+      <cdx-usage-guideline
+        kind="dont"
+        imageSrc="helix/components-progress-spinner/03.png"
+        imageAlt="Progress spinner above the text “Downloading 30%”, a measurable process that should use a progress bar"
+      >
+        Don't use Progress Spinner for processes with known or measurable
+        duration—use a Progress Bar instead.
+      </cdx-usage-guideline>
+    </cdx-usage-guidelines>
+  </div>
+
+  <div code>
+    <h2>Examples</h2>
+    @for (sample of sampleList; track sample.exampleName) {
+    <hlx-example-viewer [inputViewerComponent]="sample"></hlx-example-viewer>
+    }
+  </div>
 </hlx-page>

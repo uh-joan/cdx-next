@@ -1,12 +1,69 @@
 <hlx-page
   [title]="'List'"
-  [subtitle]="'Lists consist of related content grouped together and organized vertically.'"
+  [subtitle]="'Lists organize related content into vertically stacked groups for clear and easy scanning.'"
   [section]="'Components'"
   componentName="list"
+  storybookId="components-list"
+  tabbed
 >
-  <h2>Examples</h2>
+  <div overview>
+    <p>
+      The Helix list component is built using selected styles from the Angular
+      Material list framework. For implementation details, see the Code tab.
+    </p>
 
-  @for (sample of sampleList; track sample.exampleName) {
-  <hlx-example-viewer [inputViewerComponent]="sample"></hlx-example-viewer>
-  }
+    <h2>Options</h2>
+    <p>
+      Lists are vertical groups of text, icons, images, or other elements
+      designed for easy scanning. Items can include multiple actions, such as
+      selection, buttons, or menus.
+    </p>
+    <div class="doc-image-grid">
+      <figure>
+        <img
+          src="helix/components-list/01.png"
+          alt="A list item with a leading image icon, the text list-item and a trailing chevron, on a white background"
+          loading="lazy"
+        />
+        <figcaption>Default</figcaption>
+      </figure>
+      <figure>
+        <img
+          src="helix/components-list/02.png"
+          alt="The same list item on a light grey background"
+          loading="lazy"
+        />
+        <figcaption>Hover</figcaption>
+      </figure>
+      <figure>
+        <img
+          src="helix/components-list/03.png"
+          alt="The same list item on a darker grey background"
+          loading="lazy"
+        />
+        <figcaption>Selected</figcaption>
+      </figure>
+    </div>
+
+    <mat-divider></mat-divider>
+
+    <h2>Usage</h2>
+    <cdx-usage-guidelines>
+      <cdx-usage-guideline
+        kind="dont"
+        imageSrc="helix/components-list/04.png"
+        imageAlt="A list stretched across a wide container, so titles and descriptions run into very long lines that are cut off with ellipses"
+      >
+        Don’t scale components without adjusting related elements, like text, as
+        this can create line lengths that are hard to read.
+      </cdx-usage-guideline>
+    </cdx-usage-guidelines>
+  </div>
+
+  <div code>
+    <h2>Examples</h2>
+    @for (sample of sampleList; track sample.exampleName) {
+    <hlx-example-viewer [inputViewerComponent]="sample" />
+    }
+  </div>
 </hlx-page>

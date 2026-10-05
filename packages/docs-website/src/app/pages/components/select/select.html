@@ -1,11 +1,156 @@
 <hlx-page
   [title]="'Select'"
-  [subtitle]="'A select is a form control for selecting a value from a set of options.'"
+  [subtitle]="'A dropdown menu that allows users to choose options from a list of selectable options.'"
   [section]="'Components'"
   componentName="select"
+  storybookId="components-select"
+  tabbed
 >
-  <h2>Examples</h2>
-  @for (sample of sampleList; track sample.exampleName) {
-  <hlx-example-viewer [inputViewerComponent]="sample"></hlx-example-viewer>
-  }
+  <div overview>
+    <p>
+      The Helix select component is built using selected styles from the Angular
+      Material select framework. For implementation details, see the Code tab.
+    </p>
+
+    <h2>Options</h2>
+    <h3>Styles</h3>
+    <p>
+      Both types of select components use a container to offer a visual cue for
+      interaction and deliver the same functionality.
+    </p>
+    <ul>
+      <li>
+        <strong>Outlined</strong> – Less visual emphasis, helps to simplify the
+        layout.
+      </li>
+      <li>
+        <strong>Filled</strong> – More distinct from other components (like
+        buttons) and surrounding content.
+      </li>
+    </ul>
+    <div class="doc-image-grid">
+      <figure>
+        <img
+          src="helix/components-select/01.png"
+          alt="Filled select with a label and a dropdown arrow"
+          loading="lazy"
+        />
+        <figcaption>Filled</figcaption>
+      </figure>
+      <figure>
+        <img
+          src="helix/components-select/02.png"
+          alt="Outlined select with a label and a dropdown arrow"
+          loading="lazy"
+        />
+        <figcaption>Outlined</figcaption>
+      </figure>
+    </div>
+
+    <h3>Density</h3>
+    <p>
+      Selects are available in five size options, controlled by the density
+      setting.
+    </p>
+    <ul>
+      <li>Density 0 is the default</li>
+      <li>Density -4 aligns with the default button height of 40px</li>
+      <li>
+        Use alternative densities to create a clear visual hierarchy—sparingly
+        and with purpose.
+      </li>
+    </ul>
+    <img
+      class="doc-image"
+      src="helix/components-select/03.png"
+      alt="Outlined select at the default density"
+      loading="lazy"
+    />
+    <p>
+      For more detail, see
+      <cdx-internal-link
+        [inline]="true"
+        [text]="'Foundations › Density'"
+        [url]="'/foundations/density'"
+      ></cdx-internal-link
+      >.
+    </p>
+
+    <h3>Icons</h3>
+    <p>Icons help clarify meaning, but should never be purely decorative.</p>
+    <ul>
+      <li>Use a leading icon to reinforce the select’s intent.</li>
+    </ul>
+    <img
+      class="doc-image"
+      src="helix/components-select/04.png"
+      alt="Outlined select “Select a drug” with a leading pill icon"
+      loading="lazy"
+    />
+    <p>
+      For guidance on choosing and applying icons, see
+      <cdx-internal-link
+        [inline]="true"
+        [text]="'Foundations › Iconography'"
+        [url]="'/foundations/iconography'"
+      ></cdx-internal-link
+      >.
+    </p>
+
+    <h3>States</h3>
+    <p>
+      Outlined and filled selects have enabled, hovered, focused, disabled and
+      error states.
+    </p>
+    <img
+      class="doc-image"
+      src="helix/components-select/05.png"
+      alt="Outlined and filled selects shown in enabled, hovered, focused, disabled and error states"
+      loading="lazy"
+    />
+
+    <mat-divider></mat-divider>
+
+    <h2>Usage</h2>
+    <cdx-usage-guidelines>
+      <cdx-usage-guideline
+        kind="do"
+        imageSrc="helix/components-select/06.png"
+        imageAlt="Open select listing development phases in order, each with a checkbox and a count"
+      >
+        Do group and order options logically. Group them by category and sort
+        them alphabetically when useful.
+      </cdx-usage-guideline>
+      <cdx-usage-guideline
+        kind="dont"
+        imageSrc="helix/components-select/07.png"
+        imageAlt="Open select with a long scrolling list of options, one wrapping onto two lines"
+      >
+        Don’t overload the Select with too many options or truncate options
+        excessively.
+      </cdx-usage-guideline>
+      <cdx-usage-guideline
+        kind="do"
+        imageSrc="helix/components-select/08.png"
+        imageAlt="Outlined select labelled “View” with the value “Drugs”"
+      >
+        Do use a clear, short and persistent label.
+      </cdx-usage-guideline>
+      <cdx-usage-guideline
+        kind="dont"
+        imageSrc="helix/components-select/09.png"
+        imageAlt="Open select listing the actions Delete, Submit and Send"
+      >
+        Don’t use a Select for actions (e.g., Delete, Send, Submit). Selects are
+        for choosing values.
+      </cdx-usage-guideline>
+    </cdx-usage-guidelines>
+  </div>
+
+  <div code>
+    <h2>Examples</h2>
+    @for (sample of sampleList; track sample.exampleName) {
+    <hlx-example-viewer [inputViewerComponent]="sample"></hlx-example-viewer>
+    }
+  </div>
 </hlx-page>

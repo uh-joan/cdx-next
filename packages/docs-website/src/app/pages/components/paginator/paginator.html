@@ -3,10 +3,33 @@
   [subtitle]="'The paginator provides navigation for paged information, typically used with a table.'"
   [section]="'Components'"
   componentName="paginator"
+  storybookId="components-paginator"
+  tabbed
 >
-  <h2>Examples</h2>
+  <div overview>
+    <p>
+      The Helix paginator component is built using selected styles from the
+      Angular Material paginator framework. For implementation details, see the
+      Code tab.
+    </p>
 
-  @for (sample of sampleList; track sample.exampleName) {
-  <hlx-example-viewer [inputViewerComponent]="sample"></hlx-example-viewer>
-  }
+    <h2>Options</h2>
+    <p>
+      Each paginator instance requires the total number of items to paginate and
+      the number of items per page, which defaults to 50.
+    </p>
+    <img
+      class="doc-image"
+      src="helix/components-paginator/01.png"
+      alt="Paginator with an items-per-page select set to 10, the range “1 – 10 of 50”, and first, previous, next and last page buttons"
+      loading="lazy"
+    />
+  </div>
+
+  <div code>
+    <h2>Examples</h2>
+    @for (sample of sampleList; track sample.exampleName) {
+    <hlx-example-viewer [inputViewerComponent]="sample"></hlx-example-viewer>
+    }
+  </div>
 </hlx-page>

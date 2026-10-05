@@ -7,7 +7,7 @@ import { Page } from '../../../core/page/page';
 import * as samples from './examples';
 
 @Component({
-  selector: 'app-header',
+  selector: 'cdx-header-page',
   templateUrl: './header.html',
   styleUrls: ['./header.scss'],
   imports: [Page, ExampleViewer, MatDividerModule, Highlight],

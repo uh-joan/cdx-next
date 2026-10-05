@@ -1,11 +1,65 @@
 <hlx-page
-  [title]="'Radio Button'"
-  [subtitle]="'A radio button allows the user to make one selection from a list of choices. A radio button should always appear in a group with 2 or more options.'"
+  [title]="'Radio button'"
+  [subtitle]="'Radio buttons allow users to select a single option from a group.'"
   [section]="'Components'"
   componentName="radio"
+  storybookId="components-radio-button"
+  tabbed
 >
-  <h2>Examples</h2>
-  @for (sample of sampleList; track sample.exampleName) {
-  <hlx-example-viewer [inputViewerComponent]="sample"></hlx-example-viewer>
-  }
+  <div overview>
+    <p>
+      The Helix radio button component is built using selected styles from the
+      Angular Material radio button framework. For implementation details, see
+      the Code tab.
+    </p>
+    <ul>
+      <li>The label should be scannable</li>
+      <li>Selected items are more prominent than unselected items</li>
+    </ul>
+    <div class="doc-image-grid">
+      <figure>
+        <img
+          src="helix/components-radio-button/01.png"
+          alt="Unselected radio button with a label"
+          loading="lazy"
+        />
+        <figcaption>Unselected</figcaption>
+      </figure>
+      <figure>
+        <img
+          src="helix/components-radio-button/02.png"
+          alt="Selected radio button with a label"
+          loading="lazy"
+        />
+        <figcaption>Selected</figcaption>
+      </figure>
+    </div>
+
+    <mat-divider></mat-divider>
+
+    <h2>Usage</h2>
+    <cdx-usage-guidelines>
+      <cdx-usage-guideline
+        kind="do"
+        imageSrc="helix/components-radio-button/03.png"
+        imageAlt="Radio group “Language” with English selected and Chinese (Mandarin) and Spanish unselected"
+      >
+        Use radio buttons when only one option can be selected.
+      </cdx-usage-guideline>
+      <cdx-usage-guideline
+        kind="dont"
+        imageSrc="helix/components-radio-button/04.png"
+        imageAlt="Radio buttons nested under “Receive email alerts” with both Weekly and Monthly selected"
+      >
+        Don't nest radio buttons or let users select multiple options.
+      </cdx-usage-guideline>
+    </cdx-usage-guidelines>
+  </div>
+
+  <div code>
+    <h2>Examples</h2>
+    @for (sample of sampleList; track sample.exampleName) {
+    <hlx-example-viewer [inputViewerComponent]="sample"></hlx-example-viewer>
+    }
+  </div>
 </hlx-page>

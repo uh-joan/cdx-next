@@ -8,10 +8,11 @@ describe('Highlight', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [Highlight],
+      imports: [Highlight],
     });
     fixture = TestBed.createComponent(Highlight);
     component = fixture.componentInstance;
+    fixture.componentRef.setInput('text', 'const a = 1;');
     fixture.detectChanges();
   });
 

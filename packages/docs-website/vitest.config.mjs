@@ -21,6 +21,11 @@ export default defineConfig({
         find: /^@cdx\/helix-icons$/,
         replacement: resolve(projectRoot, '../helix-icons/src/index.ts'),
       },
+      // Resolve from sources so tests don't depend on a prior library build.
+      {
+        find: /^@cdx\/theme-highcharts$/,
+        replacement: resolve(projectRoot, '../theme-highcharts/src/index.ts'),
+      },
     ],
   },
   plugins: [

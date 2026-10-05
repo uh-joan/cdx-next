@@ -1,11 +1,78 @@
 <hlx-page
   [title]="'Snackbar'"
-  [subtitle]="'A Snackbar, more commonly referred to as a `toast`, is a type of notification that provides a brief message about the application state (e.g. `connection issue`), or feedback based a users interaction (e.g. `file deleted`).'"
+  [subtitle]="'Snackbars display brief updates about app processes at the bottom of the screen.'"
   [section]="'Components'"
   componentName="snack-bar"
+  storybookId="components-snackbar"
+  tabbed
 >
-  <h2>Examples</h2>
-  @for (sample of sampleList; track sample.exampleName) {
-  <hlx-example-viewer [inputViewerComponent]="sample"></hlx-example-viewer>
-  }
+  <div overview>
+    <p>
+      The Helix snackbar component is built using selected styles from the
+      Angular Material snackbar framework. For implementation details, see the
+      Code tab.
+    </p>
+
+    <h2>Options</h2>
+    <ul>
+      <li>A snackbar can include a single action.</li>
+      <li>“Dismiss” or “Cancel” actions are optional.</li>
+      <li>Without actions, snackbars will disappear automatically.</li>
+    </ul>
+    <img
+      class="doc-image"
+      src="helix/components-snackbar/01.png"
+      alt="Snackbar with supporting text only"
+      loading="lazy"
+    />
+    <img
+      class="doc-image"
+      src="helix/components-snackbar/02.png"
+      alt="Snackbar with supporting text and a single text button action"
+      loading="lazy"
+    />
+
+    <mat-divider></mat-divider>
+
+    <h2>Snackbars vs. dialogs</h2>
+    <p>
+      Dialogs are intended for displaying important messages. Choose the
+      appropriate component based on message priority to prevent overusing
+      snackbars.
+    </p>
+    <ul>
+      <li>Use snackbars for low priority and when user action is optional.</li>
+      <li>Use dialogs for high priority messages that require user action.</li>
+    </ul>
+
+    <mat-divider></mat-divider>
+
+    <h2>Usage</h2>
+    <cdx-usage-guidelines>
+      <cdx-usage-guideline
+        kind="do"
+        imageSrc="helix/components-snackbar/03.png"
+        imageAlt="Snackbar reading “All changes saved” at the bottom of a page"
+      >
+        Text labels give clear, concise updates on completed processes and
+        should fit on one line whenever possible.
+      </cdx-usage-guideline>
+      <cdx-usage-guideline
+        kind="dont"
+        imageSrc="helix/components-snackbar/04.png"
+        imageAlt="Snackbar with a check icon and an inline link in its text"
+      >
+        Don't use icons, stylized text, or inline links in snackbars, as they
+        add unnecessary complexity. If a link is needed, use a button or a
+        different component.
+      </cdx-usage-guideline>
+    </cdx-usage-guidelines>
+  </div>
+
+  <div code>
+    <h2>Examples</h2>
+    @for (sample of sampleList; track sample.exampleName) {
+    <hlx-example-viewer [inputViewerComponent]="sample"></hlx-example-viewer>
+    }
+  </div>
 </hlx-page>

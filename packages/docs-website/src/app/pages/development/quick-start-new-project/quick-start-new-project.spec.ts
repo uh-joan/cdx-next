@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { QuickStartNewProjectComponent } from './quick-start-new-project';
+import { QuickStartNewProject } from './quick-start-new-project';
 
-describe('QuickStartNewProjectComponent', () => {
-  let component: QuickStartNewProjectComponent;
-  let fixture: ComponentFixture<QuickStartNewProjectComponent>;
+describe('QuickStartNewProject', () => {
+  let component: QuickStartNewProject;
+  let fixture: ComponentFixture<QuickStartNewProject>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [QuickStartNewProjectComponent],
+      imports: [QuickStartNewProject],
     });
-    fixture = TestBed.createComponent(QuickStartNewProjectComponent);
+    fixture = TestBed.createComponent(QuickStartNewProject);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

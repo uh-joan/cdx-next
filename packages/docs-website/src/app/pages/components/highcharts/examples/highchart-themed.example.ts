@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { HIGHCHARTS_HLX_THEME } from '@cdx/theme-highcharts';
-import * as Highcharts from 'highcharts';
+import Highcharts from 'highcharts';
 import { HighchartsChartComponent } from 'highcharts-angular';
 
 import { InputViewerComponent } from '../../../../core/example-viewer/example-viewer.model';

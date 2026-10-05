@@ -1,0 +1,94 @@
+[
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/9e93eb54-cca0-4c63-a375-f1b41212748e.png",
+    "alt": "Text Input",
+    "heading": "Styles",
+    "file": "01.png"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/16e253ce-ea3c-40fd-aced-c701dd1fc904.png",
+    "alt": "Text Input",
+    "heading": "Styles",
+    "file": "02.png"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/4cb913ef-7bab-4d18-817d-4609d8c75b49.png",
+    "alt": "Text Area",
+    "heading": "Styles",
+    "file": "03.png"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/b0d936d7-e4b9-48c0-be82-e55314e867ad.png",
+    "alt": "Text Area",
+    "heading": "Styles",
+    "file": "04.png"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/7c563930-551a-4f96-84f8-22f4b76e8318.png",
+    "alt": "States",
+    "heading": "States",
+    "file": "05.png"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/6ce5f399-f449-4f1b-bf2a-d3936ee3df30.png",
+    "alt": "Text Input",
+    "heading": "Density",
+    "file": "06.png"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/988805e8-47b6-4d5b-ab2d-ceb3e42d061f.png",
+    "alt": "Text Input",
+    "heading": "Density",
+    "file": "07.png"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/9507d840-9145-4d19-9500-67d4a13a3611.png",
+    "alt": "Text Input",
+    "heading": "Density",
+    "file": "08.png"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/1a0b7a2d-941a-4d39-8304-e39f4601933f.png",
+    "alt": "Text Input",
+    "heading": "Density",
+    "file": "09.png"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/978c0124-78f3-44c1-96bf-6a66b192327b.png",
+    "alt": "Icons",
+    "heading": "Icons",
+    "file": "10.png"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/5c0af4d1-726d-40fd-ab77-0917bd43e92f.png",
+    "alt": "",
+    "heading": "Usage",
+    "guideline": "do",
+    "text": "When using both types of inputs in a UI, separate them by region (e.g. page header and modal).",
+    "file": "11.png"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/e7580d6f-2f77-48b4-8774-e21d8566942f.png",
+    "alt": "",
+    "heading": "Usage",
+    "guideline": "dont",
+    "text": "Don't use both types next to each other or within the same form.",
+    "file": "12.png"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/c8d8033b-9c67-4a0a-bbb0-3915367f4b05.png",
+    "alt": "",
+    "heading": "Usage",
+    "guideline": "do",
+    "text": "Keep the label text short, clear, and fully visible.",
+    "file": "13.png"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/a50fdfcb-a765-44fe-ac30-a3ce27cf4ab8.png",
+    "alt": "",
+    "heading": "Usage",
+    "guideline": "dont",
+    "text": "Don't use labels that are too long, wrap onto multiple lines, or get truncated.",
+    "file": "14.png"
+  }
+]

@@ -1,0 +1,103 @@
+<hlx-page
+  [title]="'Button - FAB'"
+  [subtitle]="'Floating action buttons (FAB) are used for the most common or important action on a screen, and they persist on screen when scrolling.'"
+  [section]="'Components'"
+  componentName="button"
+  storybookId="components-fab"
+  tabbed
+>
+  <div overview>
+    <p>
+      The Helix FAB component is built using selected styles from the Angular
+      Material button framework. For implementation details, see the Code tab.
+    </p>
+
+    <h2>Options</h2>
+    <h3>Color and size</h3>
+    <p>
+      FABs have four color themes and two sizes to signal the importance of an
+      action.
+    </p>
+    <p>Choose from four functional color themes:</p>
+    <ul>
+      <li><strong>Primary</strong> – Our default. Use for most actions.</li>
+      <li><strong>Invert</strong> – Use on dark backgrounds for contrast.</li>
+      <li>
+        <strong>Accent</strong> – Use sparingly for actions that need extra
+        emphasis.
+      </li>
+      <li>
+        <strong>AI</strong> – Use for actions that trigger AI-powered tasks.
+      </li>
+    </ul>
+    <div class="doc-image-grid">
+      <figure>
+        <img
+          src="helix/components-fab/01.png"
+          alt="Primary FAB: dark grey circle with a white image icon"
+          loading="lazy"
+        />
+        <figcaption>Primary</figcaption>
+      </figure>
+      <figure>
+        <img
+          src="helix/components-fab/02.png"
+          alt="Accent FAB: purple circle with a white image icon"
+          loading="lazy"
+        />
+        <figcaption>Accent</figcaption>
+      </figure>
+      <figure>
+        <img
+          src="helix/components-fab/03.png"
+          alt="AI FAB: blue-to-purple gradient circle with a white sparkle icon"
+          loading="lazy"
+        />
+        <figcaption>AI</figcaption>
+      </figure>
+      <figure>
+        <img
+          src="helix/components-fab/04.png"
+          alt="Invert FAB: white circle with a dark image icon"
+          loading="lazy"
+        />
+        <figcaption>Invert</figcaption>
+      </figure>
+    </div>
+
+    <mat-divider></mat-divider>
+
+    <h2>Usage</h2>
+    <cdx-usage-guidelines>
+      <cdx-usage-guideline
+        kind="do"
+        imageSrc="helix/components-fab/05.png"
+        imageAlt="A table with a single primary FAB with an edit (pencil) icon at its corner"
+      >
+        Use clear and simple icons such as add, message, or edit.
+      </cdx-usage-guideline>
+      <cdx-usage-guideline
+        kind="dont"
+        imageSrc="helix/components-fab/06.png"
+        imageAlt="A table with two FABs side by side, one with an unclear sun-like icon and one with a question mark"
+      >
+        Don't display multiple FABs on one screen and steer clear of confusing
+        or vague icons for less common actions.
+      </cdx-usage-guideline>
+    </cdx-usage-guidelines>
+  </div>
+
+  <div code>
+    <p>
+      Use <code>matFab</code> for the default size, <code>matMiniFab</code> for
+      the small size and <code>matFab extended</code> for a FAB with a label.
+      Apply a color with a class on the FAB or on a parent:
+      <code>hlx-btn-accent</code>, <code>hlx-btn-ai</code> (AI gradient) or
+      <code>hlx-btn-invert</code> (Primary needs no class).
+    </p>
+    <h2>Examples</h2>
+    @for (sample of sampleList; track sample.exampleName) {
+    <hlx-example-viewer [inputViewerComponent]="sample" />
+    }
+  </div>
+</hlx-page>

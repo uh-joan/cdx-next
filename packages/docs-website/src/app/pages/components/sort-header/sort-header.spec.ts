@@ -8,7 +8,7 @@ describe('SortHeader', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [SortHeader],
+      imports: [SortHeader],
     });
     fixture = TestBed.createComponent(SortHeader);
     component = fixture.componentInstance;

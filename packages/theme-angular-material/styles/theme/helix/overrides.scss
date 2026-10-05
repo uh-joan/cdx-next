@@ -1,4 +1,5 @@
 /* stylelint-disable plugin/stylelint-bem-namics */
+@use 'sass:color';
 @use 'sass:list';
 @use 'sass:map';
 @use 'sass:math';
@@ -21,6 +22,9 @@ $elevation-lg:
   0 8px 12px rgb(0 0 0 / 12%);
 
 @mixin theme-helix-overrides() {
+  // Emits every FAB colour token, so it must come before the Helix overrides
+  @include mat.fab-color(hlx.$helix-theme, $color-variant: secondary);
+
   @include theme-helix-buttons;
   @include theme-helix-chips;
   @include theme-helix-icons;
@@ -28,8 +32,6 @@ $elevation-lg:
   @include theme-helix-density;
   @include theme-helix-controls;
   @include typography.theme-helix-typography;
-
-  @include mat.fab-color(hlx.$helix-theme, $color-variant: secondary);
 
   $helix-default-round-shape: tokens.$border-radius-default;
   $helix-default-container-background: tokens.$surface-primary;
@@ -100,7 +102,8 @@ $elevation-lg:
       text-decoration: underline;
     }
 
-    &[underline] {
+    &[underline],
+    &.hlx-link-inline {
       text-decoration: underline;
       text-decoration-skip-ink: auto;
       text-decoration-style: solid;
@@ -110,6 +113,31 @@ $elevation-lg:
         text-decoration-thickness: 12%;
       }
     }
+
+    // Helix: inline hyperlinks use semibold weight and a permanent underline.
+    &.hlx-link-inline {
+      font-weight: 600;
+    }
+
+    &.hlx-link-blue {
+      color: tokens.$text-link;
+      font-weight: 600;
+
+      &:visited {
+        color: tokens.$text-link-visited;
+      }
+    }
+
+    // Forces the visited look (e.g. to show it in docs, or for links the app
+    // knows were opened). Declared after .hlx-link-blue so it wins.
+    &.hlx-link-visited {
+      color: tokens.$text-link-visited;
+      font-weight: 600;
+    }
+  }
+
+  .hlx-gradient-ai {
+    @include tokens.gradient-ai;
   }
 
   a .mdc-text-field {
@@ -277,6 +305,8 @@ Z'/>\
     @include mat.icon-button-overrides(
       (
         icon-color: tokens.$icon-accent,
+        state-layer-color: tokens.$icon-accent,
+        ripple-color: color.change(tokens.$icon-accent, $alpha: 0.12),
       )
     );
 
@@ -320,6 +350,8 @@ Z'/>\
     @include mat.icon-button-overrides(
       (
         icon-color: tokens.$icon-negative,
+        state-layer-color: tokens.$icon-negative,
+        ripple-color: color.change(tokens.$icon-negative, $alpha: 0.12),
       )
     );
 
@@ -347,11 +379,10 @@ Z'/>\
   }
 
   .hlx-btn-invert {
-    @include mat.icon-button-overrides(
-      (
-        icon-color: tokens.$icon-invert,
-      )
-    );
+    // Helix has no disabled-on-dark token; derive from text-invert using M3
+    // disabled opacities.
+    $invert-disabled-content: color.change(tokens.$text-invert, $alpha: 0.38);
+    $invert-disabled-container: color.change(tokens.$text-invert, $alpha: 0.12);
 
     @include mat.button-color(hlx.$helix-invert-theme, $color-variant: primary);
     @include mat.fab-color(hlx.$helix-invert-theme, $color-variant: primary);
@@ -361,6 +392,24 @@ Z'/>\
         outlined-outline-color: #{tokens.$text-invert},
         filled-state-layer-color: #{tokens.$components-button-hover-background},
         filled-hover-state-layer-opacity: 0.04,
+        text-disabled-label-text-color: $invert-disabled-content,
+        filled-disabled-label-text-color: $invert-disabled-content,
+        filled-disabled-container-color: $invert-disabled-container,
+        tonal-disabled-label-text-color: $invert-disabled-content,
+        tonal-disabled-container-color: $invert-disabled-container,
+        outlined-disabled-label-text-color: $invert-disabled-content,
+        outlined-disabled-outline-color: $invert-disabled-container,
+        protected-disabled-label-text-color: $invert-disabled-content,
+        protected-disabled-container-color: $invert-disabled-container,
+      )
+    );
+
+    @include mat.icon-button-overrides(
+      (
+        icon-color: tokens.$icon-invert,
+        state-layer-color: tokens.$icon-invert,
+        ripple-color: color.change(tokens.$icon-invert, $alpha: 0.12),
+        disabled-icon-color: $invert-disabled-content,
       )
     );
 
@@ -370,8 +419,79 @@ Z'/>\
         foreground-color: #{tokens.$icon-primary},
         small-container-color: #{tokens.$surface-primary},
         small-foreground-color: #{tokens.$icon-primary},
+        disabled-state-container-color: $invert-disabled-container,
+        disabled-state-foreground-color: $invert-disabled-content,
+        small-disabled-state-container-color: $invert-disabled-container,
+        small-disabled-state-foreground-color: $invert-disabled-content,
       )
     );
+  }
+
+  // AI: the Helix AI gradient for filled buttons and FABs (regular, mini and
+  // extended), and a gradient border for stroked buttons. Works on the button
+  // itself or on a parent. Disabled buttons fall back to the
+  // normal disabled look because the gradient is only painted when enabled.
+  .hlx-btn-ai {
+    @include mat.button-overrides(
+      (
+        filled-container-color: #{tokens.$gradient-ai-start},
+        filled-label-text-color: #{tokens.$text-invert},
+        filled-state-layer-color: #{tokens.$components-button-hover-background},
+        filled-hover-state-layer-opacity: 0.16,
+        filled-focus-state-layer-opacity: 0.16,
+        filled-pressed-state-layer-opacity: 0.24,
+        filled-ripple-color: #{tokens.$components-ripple-pressed_focused},
+        // Figma AI stroked and basic buttons: primary text, 4% hover
+        outlined-label-text-color: #{tokens.$text-primary},
+        outlined-state-layer-color: #000,
+        outlined-hover-state-layer-opacity: 0.04,
+        text-label-text-color: #{tokens.$text-primary},
+        text-state-layer-color: #000,
+        text-hover-state-layer-opacity: 0.04,
+      )
+    );
+
+    @include mat.fab-overrides(
+      (
+        container-color: #{tokens.$gradient-ai-start},
+        foreground-color: #{tokens.$text-invert},
+        state-layer-color: #{tokens.$components-button-hover-background},
+        hover-state-layer-opacity: 0.16,
+        focus-state-layer-opacity: 0.16,
+        pressed-state-layer-opacity: 0.24,
+        ripple-color: #{tokens.$components-ripple-pressed_focused},
+        small-container-color: #{tokens.$gradient-ai-start},
+        small-foreground-color: #{tokens.$text-invert},
+        small-state-layer-color: #{tokens.$components-button-hover-background},
+        small-hover-state-layer-opacity: 0.16,
+        small-focus-state-layer-opacity: 0.16,
+        small-pressed-state-layer-opacity: 0.24,
+        small-ripple-color: #{tokens.$components-ripple-pressed_focused},
+      )
+    );
+
+    &.mat-mdc-unelevated-button,
+    .mat-mdc-unelevated-button,
+    &.mat-mdc-fab,
+    .mat-mdc-fab,
+    &.mat-mdc-mini-fab,
+    .mat-mdc-mini-fab {
+      &:not([disabled], .mat-mdc-button-disabled) {
+        background-image: tokens.$gradient-ai;
+      }
+    }
+
+    // Figma AI stroked button: gradient border on a white fill
+    &.mat-mdc-outlined-button,
+    .mat-mdc-outlined-button {
+      &:not([disabled], .mat-mdc-button-disabled) {
+        border-color: transparent;
+        background:
+          linear-gradient(tokens.$surface-primary, tokens.$surface-primary)
+            padding-box,
+          tokens.$gradient-ai border-box;
+      }
+    }
   }
 
   .hlx-tab-invert {
@@ -388,48 +508,6 @@ Z'/>\
     --mat-tab-active-indicator-color: #{tokens.$text-invert};
     --mat-tab-active-focus-indicator-color: #{tokens.$text-invert};
     --mat-tab-active-hover-indicator-color: #{tokens.$text-invert};
-  }
-
-  // Figma "AI" theme
-  .hlx-btn-ai {
-    $ai-gradient: tokens.$gradient-ai;
-    $enabled: ':not(:disabled, .mat-mdc-button-disabled)';
-
-    @include mat.button-overrides(
-      (
-        filled-label-text-color: #{tokens.$text-invert},
-        filled-state-layer-color: #000,
-        filled-hover-state-layer-opacity: 0.04,
-        outlined-label-text-color: #{tokens.$text-primary},
-        outlined-state-layer-color: #000,
-        outlined-hover-state-layer-opacity: 0.04,
-        text-label-text-color: #{tokens.$text-primary},
-        text-state-layer-color: #000,
-        text-hover-state-layer-opacity: 0.04,
-      )
-    );
-
-    @include mat.fab-overrides(
-      (
-        foreground-color: #{tokens.$text-invert},
-        small-foreground-color: #{tokens.$text-invert},
-      )
-    );
-
-    &.mat-mdc-unelevated-button#{$enabled},
-    &.mat-mdc-fab#{$enabled},
-    &.mat-mdc-mini-fab#{$enabled},
-    &.mat-mdc-extended-fab#{$enabled} {
-      background-image: $ai-gradient;
-    }
-
-    &.mat-mdc-outlined-button#{$enabled} {
-      border-color: transparent;
-      background:
-        linear-gradient(tokens.$surface-primary, tokens.$surface-primary)
-          padding-box,
-        $ai-gradient border-box;
-    }
   }
 
   .hlx-btn-large {
@@ -574,7 +652,7 @@ Z'/>\
   );
 }
 
-// Figma Hyperlink
+// Figma Hyperlink sizes. Colours and types are on `a` in theme-helix-overrides.
 @mixin theme-helix-links() {
   $link-sizes: (
     lg: (
@@ -590,32 +668,6 @@ Z'/>\
       16px,
     ),
   );
-
-  .hlx-link {
-    color: tokens.$text-primary;
-    font-weight: 400;
-    text-decoration: none;
-    cursor: pointer;
-
-    &:hover,
-    &.hlx-link-underline {
-      text-decoration: underline;
-    }
-  }
-
-  .hlx-link-blue {
-    color: tokens.$text-link;
-    font-weight: 600;
-
-    &:visited {
-      color: tokens.$text-link-visited;
-    }
-  }
-
-  .hlx-link-visited {
-    color: tokens.$text-link-visited;
-    font-weight: 600;
-  }
 
   @each $size, $metrics in $link-sizes {
     .hlx-link-#{$size} {

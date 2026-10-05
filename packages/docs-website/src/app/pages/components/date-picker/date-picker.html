@@ -1,11 +1,74 @@
 <hlx-page
-  [title]="'Date Picker'"
-  [subtitle]="'A date picker makes it easy and quick for your users to enter a date through text input or from a calendar pop-up.'"
+  [title]="'Date picker'"
+  [subtitle]="'Date pickers let users quickly enter a date or date range through text input or a calendar pop-up.'"
   [section]="'Components'"
   componentName="datepicker"
+  storybookId="components-date-picker"
+  tabbed
 >
-  <h2>Examples</h2>
-  @for (sample of sampleList; track sample.exampleName) {
-  <hlx-example-viewer [inputViewerComponent]="sample"></hlx-example-viewer>
-  }
+  <div overview>
+    <p>
+      The Helix date picker is built using selected styles from the Angular
+      Material date picker framework. For implementation details, see the Code
+      tab.
+    </p>
+
+    <h2>Options</h2>
+    <p>
+      The date picker shows a date input by default, and a calendar dropdown
+      appears when the user selects the field or clicks the icon. Users can
+      enter a date using either method.
+    </p>
+    <div class="doc-image-grid">
+      <figure>
+        <img
+          src="helix/components-date-picker/01.png"
+          alt="Filled date input with a label, the placeholder Choose a date or range, a calendar icon and an MM/DD/YYYY hint"
+          loading="lazy"
+        />
+        <figcaption>Date input, fill</figcaption>
+      </figure>
+      <figure>
+        <img
+          src="helix/components-date-picker/02.png"
+          alt="Outlined date input with the placeholder Choose a date or range, a calendar icon and an MM/DD/YYYY hint"
+          loading="lazy"
+        />
+        <figcaption>Date input, outline</figcaption>
+      </figure>
+    </div>
+    <div class="doc-image-grid">
+      <figure>
+        <img
+          src="helix/components-date-picker/03.png"
+          alt="Calendar pop-up showing a month, with today (the 5th) circled"
+          loading="lazy"
+        />
+        <figcaption>Month view</figcaption>
+      </figure>
+      <figure>
+        <img
+          src="helix/components-date-picker/04.png"
+          alt="Calendar pop-up showing a grid of years from 2015 to 2034, with 2022 selected"
+          loading="lazy"
+        />
+        <figcaption>Year view</figcaption>
+      </figure>
+      <figure>
+        <img
+          src="helix/components-date-picker/05.png"
+          alt="Calendar pop-up with a date range selected from the 5th to the 15th, the days between shaded"
+          loading="lazy"
+        />
+        <figcaption>Date range</figcaption>
+      </figure>
+    </div>
+  </div>
+
+  <div code>
+    <h2>Examples</h2>
+    @for (sample of sampleList; track sample.exampleName) {
+    <hlx-example-viewer [inputViewerComponent]="sample" />
+    }
+  </div>
 </hlx-page>

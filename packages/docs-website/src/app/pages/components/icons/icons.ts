@@ -5,7 +5,7 @@ import { Page } from '../../../core/page/page';
 import * as samples from './examples';
 
 @Component({
-  selector: 'app-icons',
+  selector: 'cdx-icons',
   templateUrl: './icons.html',
   styleUrls: ['./icons.scss'],
   imports: [Page, ExampleViewer],

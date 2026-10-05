@@ -8,10 +8,12 @@ describe('InternalLink', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [InternalLink],
+      imports: [InternalLink],
     });
     fixture = TestBed.createComponent(InternalLink);
     component = fixture.componentInstance;
+    fixture.componentRef.setInput('url', '/');
+    fixture.componentRef.setInput('text', 'Link');
     fixture.detectChanges();
   });
 

@@ -107,8 +107,8 @@ class SampleComponent {
   }
 }
 
-export const PaginatorBasicComponent: InputViewerComponent = {
-  exampleName: 'Paginator',
+export const NotificationPlaygroundComponent: InputViewerComponent = {
+  exampleName: 'Notification Playground',
   dynamicComponent: SampleComponent,
   height: 70,
   hideCss: true,
@@ -119,12 +119,12 @@ export const PaginatorBasicComponent: InputViewerComponent = {
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
-import { NotificationModule } from '@cdx/ngx-branding';
+import { HelixNotificationComponent } from '@cdx/ngx-branding';
 
 @Component({
     template: htmlCode,
     imports: [
-        NotificationModule,
+        HelixNotificationComponent,
         FormsModule,
         ReactiveFormsModule,
         MatSelectModule,

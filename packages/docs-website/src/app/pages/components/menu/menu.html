@@ -1,12 +1,76 @@
 <hlx-page
   [title]="'Menu'"
-  [subtitle]="'A menu is a floating panel containing a list of options that allow users to make a selection from multiple options. They appear when users interact with a button, action, or other control. They are less prominent and take up less space than selection controls, such as a set of radio buttons.'"
+  [subtitle]="'Menus are floating panels presenting a list of options for users to choose from. They appear when users interact with a button, action, or other control.'"
   [section]="'Components'"
   componentName="menu"
+  storybookId="components-menu"
+  tabbed
 >
-  <h2>Examples</h2>
+  <div overview>
+    <p>
+      The Helix menu component is built using selected styles from the Angular
+      Material menu framework. For implementation details, see the Code tab.
+    </p>
 
-  @for (sample of sampleList; track sample.exampleName) {
-  <hlx-example-viewer [inputViewerComponent]="sample"></hlx-example-viewer>
-  }
+    <h2>Options</h2>
+    <p>Use menus in situations that need extra actions, like:</p>
+    <ul>
+      <li>Overflow menus</li>
+      <li>Text field dropdown menus</li>
+      <li>Select menus</li>
+      <li>Context menus</li>
+    </ul>
+    <img
+      class="doc-image"
+      src="helix/components-menu/01.png"
+      alt="Menu panel listing three plain text items"
+      loading="lazy"
+    />
+
+    <h3>Icons</h3>
+    <p>Icons help clarify meaning, but should never be purely decorative.</p>
+    <ul>
+      <li>Use a leading icon to reinforce the label’s intent.</li>
+      <li>
+        Use a trailing icon to suggest interactivity, such as a dropdown or
+        navigation.
+      </li>
+    </ul>
+    <img
+      class="doc-image"
+      src="helix/components-menu/02.png"
+      alt="Menu with leading icons on each item, trailing chevrons on items that open submenus, and a secondary description line"
+      loading="lazy"
+    />
+    <p>
+      For guidance on choosing and applying icons, see
+      <cdx-internal-link
+        [inline]="true"
+        [text]="'Foundations › Iconography'"
+        [url]="'/foundations/iconography'"
+      ></cdx-internal-link
+      >.
+    </p>
+
+    <mat-divider></mat-divider>
+
+    <h2>Usage</h2>
+    <cdx-usage-guidelines>
+      <cdx-usage-guideline
+        kind="do"
+        imageSrc="helix/components-menu/03.png"
+        imageAlt="Menu with a “More products” item whose submenu opens to its right without covering it"
+      >
+        Submenus should open beside their parent menu item without overlapping
+        it.
+      </cdx-usage-guideline>
+    </cdx-usage-guidelines>
+  </div>
+
+  <div code>
+    <h2>Examples</h2>
+    @for (sample of sampleList; track sample.exampleName) {
+    <hlx-example-viewer [inputViewerComponent]="sample"></hlx-example-viewer>
+    }
+  </div>
 </hlx-page>

@@ -1,0 +1,160 @@
+<hlx-page
+  [title]="'Button - Icon button'"
+  [subtitle]="'Icon buttons enable users to perform small actions with a single tap.'"
+  [section]="'Components'"
+  componentName="button"
+  storybookId="components-icon-button"
+  tabbed
+>
+  <div overview>
+    <p>
+      The Helix icon button component is built using selected styles from the
+      Angular Material button framework. For implementation details, see the
+      Code tab.
+    </p>
+
+    <h2>Options</h2>
+    <h3>Color</h3>
+    <p>
+      Icon buttons have four color themes to signal the importance of an action.
+    </p>
+    <p>Choose from four functional color themes:</p>
+    <ul>
+      <li><strong>Primary</strong> – Our default. Use for most actions.</li>
+      <li><strong>Invert</strong> – Use on dark backgrounds for contrast.</li>
+      <li>
+        <strong>Negative</strong> – Use on the negative background only for
+        destructive or negative actions.
+      </li>
+      <li>
+        <strong>Accent</strong> – Use sparingly for actions that need extra
+        emphasis.
+      </li>
+    </ul>
+    <div class="doc-image-grid">
+      <figure>
+        <img
+          src="helix/components-icon-button/01.png"
+          alt="Primary icon button: dark grey image icon"
+          loading="lazy"
+        />
+        <figcaption>Primary</figcaption>
+      </figure>
+      <figure class="doc-image-invert">
+        <img
+          src="helix/components-icon-button/02.png"
+          alt="Invert icon button: white image icon on a dark background"
+          loading="lazy"
+        />
+        <figcaption>Invert</figcaption>
+      </figure>
+      <figure>
+        <img
+          src="helix/components-icon-button/03.png"
+          alt="Negative icon button: dark red image icon"
+          loading="lazy"
+        />
+        <figcaption>Negative</figcaption>
+      </figure>
+      <figure>
+        <img
+          src="helix/components-icon-button/04.png"
+          alt="Accent icon button: purple image icon"
+          loading="lazy"
+        />
+        <figcaption>Accent</figcaption>
+      </figure>
+    </div>
+
+    <h3>Density</h3>
+    <p>
+      Icon buttons are available in four size options, controlled by the density
+      setting. The size affects the hover effect (and target area) but not the
+      icon size.
+    </p>
+    <ul>
+      <li>Density 0 is the default and most commonly used.</li>
+      <li>
+        Use alternative densities when you use icon buttons in a more restricted
+        space.
+      </li>
+    </ul>
+    <div class="doc-image-grid">
+      <figure>
+        <img
+          src="helix/components-icon-button/05.png"
+          alt="Icon button at density 0 with a 40 pixel hover circle around a 24 pixel icon"
+          loading="lazy"
+        />
+        <figcaption>Density 0</figcaption>
+      </figure>
+      <figure>
+        <img
+          src="helix/components-icon-button/06.png"
+          alt="Icon button at density -1 with a 36 pixel hover circle; the icon keeps its size"
+          loading="lazy"
+        />
+        <figcaption>Density -1</figcaption>
+      </figure>
+      <figure>
+        <img
+          src="helix/components-icon-button/07.png"
+          alt="Icon button at density -2 with a 32 pixel hover circle; the icon keeps its size"
+          loading="lazy"
+        />
+        <figcaption>Density -2</figcaption>
+      </figure>
+      <figure>
+        <img
+          src="helix/components-icon-button/08.png"
+          alt="Icon button at density -3 with a 28 pixel hover circle; the icon keeps its size"
+          loading="lazy"
+        />
+        <figcaption>Density -3</figcaption>
+      </figure>
+    </div>
+    <p>
+      For more detail, see
+      <cdx-internal-link
+        [inline]="true"
+        [text]="'Foundations › Density'"
+        [url]="'/foundations/density'"
+      ></cdx-internal-link
+      >.
+    </p>
+
+    <mat-divider></mat-divider>
+
+    <h2>Usage</h2>
+    <cdx-usage-guidelines>
+      <cdx-usage-guideline
+        kind="do"
+        imageSrc="helix/components-icon-button/09.png"
+        imageAlt="Bookmark icon button on hover with a Bookmark page tooltip next to it"
+      >
+        A clear and concise tooltip should describe the action and appear on
+        hover.
+      </cdx-usage-guideline>
+      <cdx-usage-guideline
+        kind="dont"
+        imageSrc="helix/components-icon-button/10.png"
+        imageAlt="Two icon buttons with unfamiliar icons whose meaning is unclear without a label"
+      >
+        Be cautious when using unfamiliar or ambiguous icons, as they may
+        confuse users.
+      </cdx-usage-guideline>
+    </cdx-usage-guidelines>
+  </div>
+
+  <div code>
+    <p>
+      Apply a color with a class on the button or on a parent:
+      <code>hlx-btn-accent</code>, <code>hlx-btn-negative</code> or
+      <code>hlx-btn-invert</code> (Primary needs no class).
+    </p>
+    <h2>Examples</h2>
+    @for (sample of sampleList; track sample.exampleName) {
+    <hlx-example-viewer [inputViewerComponent]="sample" />
+    }
+  </div>
+</hlx-page>

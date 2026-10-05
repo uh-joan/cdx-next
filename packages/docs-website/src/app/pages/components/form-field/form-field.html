@@ -1,12 +1,36 @@
 <hlx-page
-  [title]="'Form Field'"
+  [title]="'Form field'"
   [subtitle]="'Form field is a component used to wrap several Angular Material components and apply common text field styles such as the underline, floating label, and hint messages.'"
   [section]="'Components'"
   componentName="form-field"
+  storybookId="components-form-field"
+  tabbed
 >
-  <h2>Examples</h2>
+  <div overview>
+    <p>
+      Form field is a component used to wrap several Angular Material components
+      and apply common text field styles such as the underline, floating label,
+      and hint messages.
+    </p>
+    <p>
+      For guidance on the outlined and filled text field appearances, see
+      <cdx-internal-link
+        [inline]="true"
+        [text]="'Components › Text Input'"
+        [url]="'/components/text-input'"
+      ></cdx-internal-link
+      >.
+    </p>
+    <p>
+      Helix design guidance for this component hasn't been published yet. See
+      the Code tab for usage and examples.
+    </p>
+  </div>
 
-  @for (sample of sampleList; track sample.exampleName) {
-  <hlx-example-viewer [inputViewerComponent]="sample"></hlx-example-viewer>
-  }
+  <div code>
+    <h2>Examples</h2>
+    @for (sample of sampleList; track sample.exampleName) {
+    <hlx-example-viewer [inputViewerComponent]="sample" />
+    }
+  </div>
 </hlx-page>

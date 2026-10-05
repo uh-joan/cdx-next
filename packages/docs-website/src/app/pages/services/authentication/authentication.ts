@@ -6,6 +6,7 @@ import { Highlight } from '../../../components/highlight/highlight';
 import { Page } from '../../../core/page/page';
 import {
   appModuleAuthAngular,
+  appModuleAuthAngular2,
   authenticationServiceAngular,
   headerAuthTemplateAngular,
 } from './authentication.text-highlighted';
@@ -20,6 +21,7 @@ export class Authentication {
   @HostBinding('class') hostClass = 'cdx-section';
 
   appModuleAuthAngular = appModuleAuthAngular;
+  appModuleAuthAngular2 = appModuleAuthAngular2;
   authenticationServiceAngular = authenticationServiceAngular;
   headerAuthTemplateAngular = headerAuthTemplateAngular;
 }

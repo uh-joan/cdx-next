@@ -1,0 +1,30 @@
+[
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/99986db1-9daa-4e76-878d-383ead46e543.png",
+    "alt": "",
+    "heading": "Results page",
+    "file": "01.png"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/fb44a75a-ccf8-46d0-b2bb-4bdb9dc5182c.png",
+    "alt": "",
+    "heading": "Dashboard",
+    "file": "02.png"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/c0c30367-4c50-4d6d-a9f1-7fa3f5c7418d.png",
+    "alt": "",
+    "heading": "Best Practices",
+    "guideline": "do",
+    "text": "",
+    "file": "03.png"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/674918a3-62b4-4d4a-a28c-b07ac813b376.png",
+    "alt": "",
+    "heading": "Best Practices",
+    "guideline": "dont",
+    "text": "",
+    "file": "04.png"
+  }
+]

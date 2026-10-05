@@ -1,0 +1,28 @@
+[
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/fcdfcc92-0bb8-4748-bf68-0a967b7483fa.png",
+    "alt": "List Item",
+    "heading": "Options",
+    "file": "01.png"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/91479253-f9d2-4bbf-a288-f10064b3326d.png",
+    "alt": "List Item",
+    "heading": "Options",
+    "file": "02.png"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/4be962cd-3097-4db1-b5a7-e3eaee6f4e73.png",
+    "alt": "List Item",
+    "heading": "Options",
+    "file": "03.png"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/ed72b9a0-18fb-4b63-98e8-830205e9ef68.png",
+    "alt": "",
+    "heading": "Usage",
+    "guideline": "dont",
+    "text": "Don\u2019t scale components without adjusting related elements, like text, as this can create line lengths that are hard to read.",
+    "file": "04.png"
+  }
+]

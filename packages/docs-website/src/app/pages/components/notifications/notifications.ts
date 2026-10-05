@@ -61,7 +61,7 @@ const ELEMENT_APIS: ElementApis[] = [
 ];
 
 @Component({
-  selector: 'app-notifications',
+  selector: 'cdx-notifications',
   templateUrl: './notifications.html',
   styleUrls: ['./notifications.scss'],
   imports: [Page, ExampleViewer, Highlight, MatDividerModule, MatTableModule],
