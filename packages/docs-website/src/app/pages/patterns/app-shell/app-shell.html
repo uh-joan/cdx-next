@@ -1,0 +1,92 @@
+<hlx-page
+  [section]="'Patterns'"
+  [title]="'App shell'"
+  [subtitle]="'The standard page chrome — Helix header with product name, primary navigation and global actions, a routed content area, and the footer — assembled once and driven by typed route data.'"
+  tabbed
+>
+  <div overview>
+    <p>
+      The app shell is the chrome every page sits in: the Helix header (Clarivate
+      mark, product name, primary navigation, global actions), the routed content
+      area, and the footer. Build it <strong>once</strong> in a layout component
+      and let the router fill the content.
+    </p>
+
+    <h2>When to use it</h2>
+    <p>
+      The top-level layout of a product — every routed page renders inside it. A
+      single embedded widget or a micro-frontend fragment the host already wraps
+      does not need its own shell.
+    </p>
+
+    <mat-divider></mat-divider>
+
+    <h2>Anatomy</h2>
+    <ul>
+      <li>
+        <strong>Header</strong> — <code>header[hlx-header]</code> with a
+        <code>hlx-header-product-name</code>, the primary nav, and global actions
+        in <code>hlx-header-global</code>. See the
+        <cdx-internal-link
+          [inline]="true"
+          [url]="'/components/header'"
+          [text]="'Header'"
+        ></cdx-internal-link>
+        component.
+      </li>
+      <li><strong>Content</strong> — a <code>&lt;router-outlet/&gt;</code> where pages render.</li>
+      <li>
+        <strong>Footer</strong> — <code>footer[hlx-footer]</code>. See the
+        <cdx-internal-link
+          [inline]="true"
+          [url]="'/components/footer'"
+          [text]="'Footer'"
+        ></cdx-internal-link>
+        component.
+      </li>
+    </ul>
+
+    <h2>Do</h2>
+    <ul>
+      <li>Assemble the shell once; pages render in the outlet.</li>
+      <li>Declare per-page chrome as typed route <code>data</code>.</li>
+      <li>Collapse the nav with <code>HELIX_MEDIA</code>, not <code>innerWidth</code>.</li>
+      <li>Make nav items real <code>a[routerLink]</code> with <code>routerLinkActive</code>.</li>
+      <li>Apply the theme classes on <code>&lt;body&gt;</code> so overlays inherit it.</li>
+    </ul>
+
+    <h2>Don't</h2>
+    <ul>
+      <li>Repeat the header/footer in each page.</li>
+      <li>Decide layout from <code>window.innerWidth</code> or a hardcoded width.</li>
+      <li>Use buttons or tabs as primary navigation.</li>
+      <li>Drill <code>showFooter</code> / <code>showNav</code> through component inputs.</li>
+    </ul>
+  </div>
+
+  <div code>
+    <h2>Route-data-driven chrome</h2>
+    <p>
+      Per-page differences — does this page show the footer? which nav is active? —
+      are declared on the route, typed, and read from the
+      <code>ActivatedRoute</code>, not drilled through component inputs.
+    </p>
+    <cdx-highlight [text]="routeDataSnippet"></cdx-highlight>
+
+    <h2>Responsive navigation</h2>
+    <p>
+      The primary nav shows inline at <code>md</code> and up, and collapses into a
+      menu below <code>md</code>. Use the Helix breakpoint queries so the shell and
+      the rest of the app agree on where that happens.
+    </p>
+    <cdx-highlight [text]="responsiveSnippet"></cdx-highlight>
+
+    <mat-divider></mat-divider>
+
+    <h2>Example</h2>
+    <p>Resize the preview to see the navigation collapse below the <code>md</code> breakpoint.</p>
+    @for (sample of sampleList; track sample.exampleName) {
+      <hlx-example-viewer [inputViewerComponent]="sample" />
+    }
+  </div>
+</hlx-page>

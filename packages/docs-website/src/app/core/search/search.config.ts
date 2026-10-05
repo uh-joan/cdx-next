@@ -113,6 +113,9 @@ const patternsNavigationMap: NavigationItem[] = [
   { title: 'Dialogs', route: '/patterns/dialogs' },
   { title: 'Confirm dialog', route: '/patterns/dialogs' },
   { title: 'Side panel dialog', route: '/patterns/dialogs' },
+  { title: 'App shell', route: '/patterns/app-shell' },
+  { title: 'Layout', route: '/patterns/app-shell' },
+  { title: 'Responsive navigation', route: '/patterns/app-shell' },
 ];
 
 const servicesNavigationMap: NavigationItem[] = [
