@@ -76,5 +76,9 @@ export class Patterns {
       heading: 'Export',
       elements: [{ label: 'Overview', url: 'export' }],
     },
+    {
+      heading: 'Error pages',
+      elements: [{ label: 'Overview', url: 'error-pages' }],
+    },
   ];
 }

@@ -111,6 +111,11 @@ export const patternsRoutes: Routes = [
           import('./export/export').then((m) => m.Export),
       },
       {
+        path: 'error-pages',
+        loadComponent: () =>
+          import('./error-pages/error-pages').then((m) => m.ErrorPages),
+      },
+      {
         path: 'data-grid',
         loadComponent: () =>
           import('./data-grid/data-grid').then((m) => m.DataGridPattern),
