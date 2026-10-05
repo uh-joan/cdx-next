@@ -25,7 +25,6 @@ export type PageTab = 'overview' | 'code';
  */
 @Component({
   // Shared by every docs page; predates the cdx prefix rule.
-  // eslint-disable-next-line @angular-eslint/component-selector
   selector: 'hlx-page',
   templateUrl: './page.html',
   styleUrl: './page.scss',
