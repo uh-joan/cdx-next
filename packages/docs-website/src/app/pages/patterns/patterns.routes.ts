@@ -68,6 +68,11 @@ export const patternsRoutes: Routes = [
         loadComponent: () =>
           import('./page-states/page-states').then((m) => m.PageStates),
       },
+      {
+        path: 'dialogs',
+        loadComponent: () =>
+          import('./dialogs/dialogs').then((m) => m.Dialogs),
+      },
       // Previous placeholder page.
       {
         path: 'patterns-overview',

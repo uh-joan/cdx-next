@@ -110,6 +110,9 @@ const patternsNavigationMap: NavigationItem[] = [
   { title: 'Empty state', route: '/patterns/page-states' },
   { title: 'Error state', route: '/patterns/page-states' },
   { title: 'Loading skeleton', route: '/patterns/page-states' },
+  { title: 'Dialogs', route: '/patterns/dialogs' },
+  { title: 'Confirm dialog', route: '/patterns/dialogs' },
+  { title: 'Side panel dialog', route: '/patterns/dialogs' },
 ];
 
 const servicesNavigationMap: NavigationItem[] = [
