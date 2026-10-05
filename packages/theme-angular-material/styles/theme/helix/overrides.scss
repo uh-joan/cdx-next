@@ -7,20 +7,15 @@
 @use 'helix' as hlx;
 @use 'typography' as typography;
 @use 'css-vars' as css-vars;
+@use 'variables/elevation' as elevation;
 @use 'variables/primitives' as primitives;
 @use 'variables/tokens' as tokens;
 
-// Figma "Elevation/Level 0–3" effect styles
-$elevation-none: 0 0 0 1px rgb(42 43 45 / 8%);
-$elevation-sm:
-  0 0 1px rgb(0 0 0 / 12%),
-  0 1px 3px rgb(0 0 0 / 12%);
-$elevation-md:
-  0 0 4px rgb(0 0 0 / 12%),
-  0 4px 6px rgb(0 0 0 / 12%);
-$elevation-lg:
-  0 0 8px rgb(0 0 0 / 12%),
-  0 8px 12px rgb(0 0 0 / 12%);
+// Figma "Elevation/Level 0–3" effect styles, re-exported for back-compat.
+$elevation-none: elevation.$elevation-none;
+$elevation-sm: elevation.$elevation-sm;
+$elevation-md: elevation.$elevation-md;
+$elevation-lg: elevation.$elevation-lg;
 
 @mixin theme-helix-overrides() {
   // Emits every FAB colour token, so it must come before the Helix overrides

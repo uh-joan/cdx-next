@@ -37,7 +37,8 @@ them at runtime in plain CSS — no Sass import needed:
 
 Available: every `--hlx-surface-*`, `--hlx-text-*`, `--hlx-border-*`,
 `--hlx-icon-*`, `--hlx-border-radius-default`, `--hlx-spacing-half` through
-`--hlx-spacing-13`, `--hlx-breakpoint-sm…xl`, and the AI gradient
+`--hlx-spacing-13`, `--hlx-breakpoint-sm…xl`, `--hlx-elevation-none/sm/md/lg`
+(also the `.hlx-elevation-*` utility classes), and the AI gradient
 (`--hlx-gradient-ai`, `--hlx-gradient-ai-start`, `--hlx-gradient-ai-end`). The
 names match the Sass tokens below (minus the `$`). Use these from component SCSS
 instead of hardcoding hex/px or inventing your own `var(--text-primary)` names.
