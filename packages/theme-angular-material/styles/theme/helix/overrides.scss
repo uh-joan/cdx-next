@@ -21,6 +21,9 @@ $elevation-lg:
   0 8px 12px rgb(0 0 0 / 12%);
 
 @mixin theme-helix-overrides() {
+  // Emits every FAB colour token, so it must come before the Helix overrides
+  @include mat.fab-color(hlx.$helix-theme, $color-variant: secondary);
+
   @include theme-helix-buttons;
   @include theme-helix-chips;
   @include theme-helix-icons;
@@ -28,8 +31,6 @@ $elevation-lg:
   @include theme-helix-density;
   @include theme-helix-controls;
   @include typography.theme-helix-typography;
-
-  @include mat.fab-color(hlx.$helix-theme, $color-variant: secondary);
 
   $helix-default-round-shape: tokens.$border-radius-default;
   $helix-default-container-background: tokens.$surface-primary;
