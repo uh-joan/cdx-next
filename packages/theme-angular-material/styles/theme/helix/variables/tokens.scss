@@ -73,3 +73,24 @@ $text-warn: $color-yellow-900;
 $text-positive: $color-green-900;
 $text-info: $color-blue-900;
 $text-disabled: $color-neutral-400;
+$text-link: $color-blue-700;
+$text-link-visited: $color-indigo-900;
+// AI gradient (Helix Foundations > Color > AI gradient): 30deg from vertical,
+// blue at the top-left to purple at the bottom-right.
+$gradient-ai-start: $color-blue-400;
+$gradient-ai-end: $color-purple-400;
+$gradient-ai-angle: 150deg;
+$gradient-ai: linear-gradient(
+  $gradient-ai-angle,
+  $gradient-ai-start,
+  $gradient-ai-end
+);
+$components-ai-filled: $gradient-ai;
+$components-ai-filled-hover: rgb(0 0 0 / 16%);
+
+// Paints the Helix AI gradient. The solid start colour is kept as a fallback
+// background-color (e.g. for forced-colors mode, which drops images).
+@mixin gradient-ai() {
+  background-color: $gradient-ai-start;
+  background-image: $gradient-ai;
+}

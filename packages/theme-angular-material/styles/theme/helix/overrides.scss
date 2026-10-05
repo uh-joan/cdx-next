@@ -81,7 +81,8 @@
       text-decoration: underline;
     }
 
-    &[underline] {
+    &[underline],
+    &.hlx-link-inline {
       text-decoration: underline;
       text-decoration-skip-ink: auto;
       text-decoration-style: solid;
@@ -91,6 +92,29 @@
         text-decoration-thickness: 12%;
       }
     }
+
+    // Helix: inline hyperlinks use semibold weight and a permanent underline.
+    &.hlx-link-inline {
+      font-weight: 600;
+    }
+
+    &.hlx-link-blue {
+      color: tokens.$text-link;
+
+      &:visited {
+        color: tokens.$text-link-visited;
+      }
+    }
+
+    // Forces the visited look (e.g. to show it in docs, or for links the app
+    // knows were opened). Declared after .hlx-link-blue so it wins.
+    &.hlx-link-visited {
+      color: tokens.$text-link-visited;
+    }
+  }
+
+  .hlx-gradient-ai {
+    @include tokens.gradient-ai;
   }
 
   a .mdc-text-field {
@@ -337,6 +361,54 @@ Z'/>\
         small-foreground-color: #{tokens.$icon-primary},
       )
     );
+  }
+
+  // AI: the Helix AI gradient for filled buttons and FABs (regular, mini and
+  // extended). Works on the button itself or on a parent. Other button
+  // variants keep their normal colors. Disabled buttons fall back to the
+  // normal disabled look because the gradient is only painted when enabled.
+  .hlx-btn-ai {
+    @include mat.button-overrides(
+      (
+        filled-container-color: #{tokens.$gradient-ai-start},
+        filled-label-text-color: #{tokens.$text-invert},
+        filled-state-layer-color: #{tokens.$components-button-hover-background},
+        filled-hover-state-layer-opacity: 0.16,
+        filled-focus-state-layer-opacity: 0.16,
+        filled-pressed-state-layer-opacity: 0.24,
+        filled-ripple-color: #{tokens.$components-ripple-pressed_focused},
+      )
+    );
+
+    @include mat.fab-overrides(
+      (
+        container-color: #{tokens.$gradient-ai-start},
+        foreground-color: #{tokens.$text-invert},
+        state-layer-color: #{tokens.$components-button-hover-background},
+        hover-state-layer-opacity: 0.16,
+        focus-state-layer-opacity: 0.16,
+        pressed-state-layer-opacity: 0.24,
+        ripple-color: #{tokens.$components-ripple-pressed_focused},
+        small-container-color: #{tokens.$gradient-ai-start},
+        small-foreground-color: #{tokens.$text-invert},
+        small-state-layer-color: #{tokens.$components-button-hover-background},
+        small-hover-state-layer-opacity: 0.16,
+        small-focus-state-layer-opacity: 0.16,
+        small-pressed-state-layer-opacity: 0.24,
+        small-ripple-color: #{tokens.$components-ripple-pressed_focused},
+      )
+    );
+
+    &.mat-mdc-unelevated-button,
+    .mat-mdc-unelevated-button,
+    &.mat-mdc-fab,
+    .mat-mdc-fab,
+    &.mat-mdc-mini-fab,
+    .mat-mdc-mini-fab {
+      &:not([disabled], .mat-mdc-button-disabled) {
+        background-image: tokens.$gradient-ai;
+      }
+    }
   }
 
   .hlx-tab-invert {
