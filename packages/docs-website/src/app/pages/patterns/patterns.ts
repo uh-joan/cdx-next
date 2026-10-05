@@ -36,5 +36,9 @@ export class Patterns {
         },
       ],
     },
+    {
+      heading: 'Page states',
+      elements: [{ label: 'Overview', url: 'page-states' }],
+    },
   ];
 }

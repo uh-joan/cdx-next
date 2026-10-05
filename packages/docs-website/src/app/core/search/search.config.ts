@@ -106,6 +106,10 @@ const patternsNavigationMap: NavigationItem[] = [
     title: 'Products working best with sidebar',
     route: '/patterns/sidebar/products',
   },
+  { title: 'Page states', route: '/patterns/page-states' },
+  { title: 'Empty state', route: '/patterns/page-states' },
+  { title: 'Error state', route: '/patterns/page-states' },
+  { title: 'Loading skeleton', route: '/patterns/page-states' },
 ];
 
 const servicesNavigationMap: NavigationItem[] = [

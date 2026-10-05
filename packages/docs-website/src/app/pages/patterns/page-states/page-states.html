@@ -1,0 +1,83 @@
+<hlx-page
+  [section]="'Patterns'"
+  [title]="'Page states'"
+  [subtitle]="'Every region that loads data has four states — loading, loaded, empty and error. Design all four so a screen never shows a blank box or a frozen spinner.'"
+  tabbed
+>
+  <div overview>
+    <p>
+      Any region that reads data from the network moves through four states, and
+      a quality screen designs all four up front:
+    </p>
+    <ol>
+      <li><strong>Loading</strong> – a skeleton shaped like the content that is coming.</li>
+      <li><strong>Loaded</strong> – the real content.</li>
+      <li><strong>Empty</strong> – the request succeeded but there is nothing to show.</li>
+      <li><strong>Error</strong> – the request failed, with a way to try again.</li>
+    </ol>
+
+    <mat-divider></mat-divider>
+
+    <h2>Anatomy</h2>
+    <ul>
+      <li>
+        <strong>Loading</strong> uses
+        <cdx-internal-link
+          [inline]="true"
+          [url]="'/components/skeleton-loader'"
+          [text]="'Skeleton loader'"
+        ></cdx-internal-link>, laid out to match the real content so the page
+        does not reflow when data arrives.
+      </li>
+      <li>
+        <strong>Empty and error</strong> use <code>&lt;hlx-empty-state&gt;</code>
+        from <code>&#64;cdx/ngx-branding</code>: a media slot (a pictogram, or a
+        Material Symbol fallback), a heading, a message and an actions slot.
+        <code>tone="error"</code> switches the icon colour and adds
+        <code>role="alert"</code> so the failure is announced.
+      </li>
+    </ul>
+
+    <h2>When to use it</h2>
+    <p>
+      Any view, panel, drawer or card whose content comes from an async source —
+      HTTP, a <code>resource()</code>, or a signal store. Content that is always
+      present and synchronous does not need these states.
+    </p>
+
+    <h2>Do</h2>
+    <ul>
+      <li>Design all four states before building the happy path.</li>
+      <li>Match the skeleton to the real layout.</li>
+      <li>Give every error a retry.</li>
+      <li>Write specific copy: name what is empty or what failed, in the user's words.</li>
+    </ul>
+
+    <h2>Don't</h2>
+    <ul>
+      <li>Ship a spinner with no empty or error state.</li>
+      <li>Render an empty table or a blank panel on no results.</li>
+      <li>Track the state with several independent booleans that can contradict each other.</li>
+      <li>Hand-roll an empty state when <code>hlx-empty-state</code> exists.</li>
+    </ul>
+  </div>
+
+  <div code>
+    <h2>Driving the states</h2>
+    <p>
+      Keep one source of truth for which state is showing. With Angular's
+      <code>resource()</code> its <code>status</code> already gives you this;
+      otherwise expose a single status signal from your store and branch on it
+      with <code>&#64;switch</code>. This keeps the four states mutually
+      exclusive — no overlapping booleans.
+    </p>
+    <cdx-highlight [text]="switchSnippet" language="html"></cdx-highlight>
+
+    <mat-divider></mat-divider>
+
+    <h2>Examples</h2>
+    @for (sample of sampleList; track sample.exampleName) {
+      <hlx-example-viewer [inputViewerComponent]="sample" />
+    }
+  </div>
+</hlx-page>
