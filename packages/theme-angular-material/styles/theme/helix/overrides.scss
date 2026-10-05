@@ -1,4 +1,5 @@
 /* stylelint-disable plugin/stylelint-bem-namics */
+@use 'sass:color';
 @use 'sass:list';
 @use 'sass:map';
 @use 'sass:math';
@@ -304,6 +305,8 @@ Z'/>\
     @include mat.icon-button-overrides(
       (
         icon-color: tokens.$icon-accent,
+        state-layer-color: tokens.$icon-accent,
+        ripple-color: color.change(tokens.$icon-accent, $alpha: 0.12),
       )
     );
 
@@ -347,6 +350,8 @@ Z'/>\
     @include mat.icon-button-overrides(
       (
         icon-color: tokens.$icon-negative,
+        state-layer-color: tokens.$icon-negative,
+        ripple-color: color.change(tokens.$icon-negative, $alpha: 0.12),
       )
     );
 
@@ -374,11 +379,10 @@ Z'/>\
   }
 
   .hlx-btn-invert {
-    @include mat.icon-button-overrides(
-      (
-        icon-color: tokens.$icon-invert,
-      )
-    );
+    // Helix has no disabled-on-dark token; derive from text-invert using M3
+    // disabled opacities.
+    $invert-disabled-content: color.change(tokens.$text-invert, $alpha: 0.38);
+    $invert-disabled-container: color.change(tokens.$text-invert, $alpha: 0.12);
 
     @include mat.button-color(hlx.$helix-invert-theme, $color-variant: primary);
     @include mat.fab-color(hlx.$helix-invert-theme, $color-variant: primary);
@@ -388,6 +392,24 @@ Z'/>\
         outlined-outline-color: #{tokens.$text-invert},
         filled-state-layer-color: #{tokens.$components-button-hover-background},
         filled-hover-state-layer-opacity: 0.04,
+        text-disabled-label-text-color: $invert-disabled-content,
+        filled-disabled-label-text-color: $invert-disabled-content,
+        filled-disabled-container-color: $invert-disabled-container,
+        tonal-disabled-label-text-color: $invert-disabled-content,
+        tonal-disabled-container-color: $invert-disabled-container,
+        outlined-disabled-label-text-color: $invert-disabled-content,
+        outlined-disabled-outline-color: $invert-disabled-container,
+        protected-disabled-label-text-color: $invert-disabled-content,
+        protected-disabled-container-color: $invert-disabled-container,
+      )
+    );
+
+    @include mat.icon-button-overrides(
+      (
+        icon-color: tokens.$icon-invert,
+        state-layer-color: tokens.$icon-invert,
+        ripple-color: color.change(tokens.$icon-invert, $alpha: 0.12),
+        disabled-icon-color: $invert-disabled-content,
       )
     );
 
@@ -397,6 +419,10 @@ Z'/>\
         foreground-color: #{tokens.$icon-primary},
         small-container-color: #{tokens.$surface-primary},
         small-foreground-color: #{tokens.$icon-primary},
+        disabled-state-container-color: $invert-disabled-container,
+        disabled-state-foreground-color: $invert-disabled-content,
+        small-disabled-state-container-color: $invert-disabled-container,
+        small-disabled-state-foreground-color: $invert-disabled-content,
       )
     );
   }
