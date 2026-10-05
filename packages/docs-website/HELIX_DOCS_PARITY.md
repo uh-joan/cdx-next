@@ -95,11 +95,12 @@ All embeds also point at the v19 host and should move to the current one.
 
 ### Phase 0: Infrastructure (small, unblocks the rest)
 
-- [ ] Reusable doc building blocks: `DoDont` card pair and a guidance section
-      style, so content pages stay declarative.
+- [x] Reusable Do / Don't block: `<cdx-usage-guideline kind="do|dont">` cards
+      inside a `<cdx-usage-guidelines>` grid (`components/usage-guideline`).
 - [ ] Component page tabs: **Overview** (guidance) / **Code** (existing
-      examples + Material API link), mirroring Helix.
-- [ ] `/examples` slug aliases so every Helix embed resolves (`button`, `chip`,
+      examples + Material API link), mirroring Helix. Decide together with Phase
+      5, since the Code tab is where Storybook would be embedded.
+- [x] `/examples` slug aliases so every Helix embed resolves (`button`, `chip`,
       `icon`, `input-text-field`, `tooltip`, …).
 - [ ] Decide on image hosting (download Supernova assets into
       `src/assets/helix/` vs. hotlink).
@@ -134,9 +135,35 @@ All embeds also point at the v19 host and should move to the current one.
 - [ ] Home: align with Helix Welcome
 - [ ] Diff remaining Development/Services pages for drift
 
-### Phase 5: Supernova (needs `supernova-helix` MCP authorized)
+### Phase 5: Storybook (component playground)
 
-- [ ] Repoint every Code-tab iframe to the current host and the correct example
-      (§3)
+Goal: every component documented with **all** of its configurations
+(color/theme, size, density, appearance, states, icons, disabled, …) as
+interactive Storybook controls, embedded in the component pages.
+
+- [ ] Add a Storybook Nx project (Angular + Vite via
+      `@analogjs/storybook-angular`, matching our Vite/Analog toolchain) that
+      loads the Helix theme, fonts and density setup.
+- [ ] Theme/density toolbar globals (light/dark, density 0 to -4) so every story
+      can be checked against Foundations rules.
+- [ ] Stories with full `argTypes` per component:
+  - `@cdx/ngx-branding` components first (header, footer, …): these are ours, so
+    their inputs are the API.
+  - Helix-styled Material components next, following the Options sections on
+    Helix (e.g. Button: variant × color × density × icon × disabled; Input:
+    appearance × state × density × prefix/suffix icons).
+  - AI variants (AI button, FAB, avatar) per Foundations › AI.
+- [ ] Autodocs with Helix usage notes, and a11y addon checks on every story.
+- [ ] Embed the matching story on each component page (Code tab / "Playground"
+      section) next to the curated examples.
+- [ ] Deploy Storybook next to the docs site per version (`/storybook`).
+- [ ] Interaction/visual tests from stories in CI (optional, later).
+
+### Phase 6: Supernova (needs `supernova-helix` MCP authorized)
+
+- [ ] Repoint every Code-tab embed to the current host and the correct example
+      (§3). Supernova supports Storybook embeds natively, so once Phase 5 ships
+      the Code tabs can embed the stories directly instead of our `/examples`
+      pages.
 - [ ] Decide which site is canonical for Development/Services and remove the
       duplicate
