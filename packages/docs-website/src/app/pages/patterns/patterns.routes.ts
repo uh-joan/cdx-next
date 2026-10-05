@@ -78,6 +78,13 @@ export const patternsRoutes: Routes = [
         loadComponent: () =>
           import('./app-shell/app-shell').then((m) => m.AppShell),
       },
+      {
+        path: 'list-with-filters',
+        loadComponent: () =>
+          import('./list-with-filters/list-with-filters').then(
+            (m) => m.ListWithFilters,
+          ),
+      },
       // Previous placeholder page.
       {
         path: 'patterns-overview',

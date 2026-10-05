@@ -48,5 +48,9 @@ export class Patterns {
       heading: 'App shell',
       elements: [{ label: 'Overview', url: 'app-shell' }],
     },
+    {
+      heading: 'List with filters',
+      elements: [{ label: 'Overview', url: 'list-with-filters' }],
+    },
   ];
 }
