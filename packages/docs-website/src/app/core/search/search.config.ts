@@ -123,6 +123,9 @@ const patternsNavigationMap: NavigationItem[] = [
   { title: 'Chat', route: '/patterns/ai-assistant' },
   { title: 'Conversation', route: '/patterns/ai-assistant' },
   { title: 'Streaming', route: '/patterns/ai-assistant' },
+  { title: 'Data grid wrapper', route: '/patterns/data-grid' },
+  { title: 'AG Grid', route: '/patterns/data-grid' },
+  { title: 'Grid persistence', route: '/patterns/data-grid' },
 ];
 
 const servicesNavigationMap: NavigationItem[] = [

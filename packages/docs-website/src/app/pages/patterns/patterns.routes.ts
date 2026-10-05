@@ -90,6 +90,11 @@ export const patternsRoutes: Routes = [
         loadComponent: () =>
           import('./ai-assistant/ai-assistant').then((m) => m.AiAssistant),
       },
+      {
+        path: 'data-grid',
+        loadComponent: () =>
+          import('./data-grid/data-grid').then((m) => m.DataGridPattern),
+      },
       // Previous placeholder page.
       {
         path: 'patterns-overview',

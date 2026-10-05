@@ -56,5 +56,9 @@ export class Patterns {
       heading: 'AI assistant',
       elements: [{ label: 'Overview', url: 'ai-assistant' }],
     },
+    {
+      heading: 'Data grid',
+      elements: [{ label: 'Overview', url: 'data-grid' }],
+    },
   ];
 }
