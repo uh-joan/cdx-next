@@ -111,15 +111,18 @@ Helix component names like `tooltip`) keep resolving on our side, as do
       `?tab=code`.
 - [x] `/examples` slug aliases so every Helix embed resolves (`button`, `chip`,
       `icon`, `input-text-field`, `tooltip`, …).
-- [ ] Decide on image hosting (download Supernova assets into
-      `src/assets/helix/` vs. hotlink).
+- [x] Image hosting: Helix images are downloaded into `src/assets/helix/<page>/`
+      (served at `helix/<page>/…`), each folder with a `manifest.json` of the
+      source URL, section and Do/Don't card. Global `.doc-image` /
+      `.doc-image-grid` styles.
 
 ### Phase 1: Foundations
 
 - [x] Principles & foundations (replaces lorem-ipsum About Helix)
 - [x] Color, Typography, Iconography, Branding, Elevation, Density, AI (design
       guidance, cross-linked to the Development token pages)
-- [ ] Images for the above (blocked on the Phase 0 asset decision)
+- [x] Images for the above (Branding pictograms, AI spec/examples/icons,
+      principles, density). Iconography's icon images are rendered live instead.
 
 ### Phase 2: Components
 
@@ -142,8 +145,9 @@ Helix component names like `tooltip`) keep resolving on our side, as do
 - [x] Sidebar: overview, header with navigation and sidebar, nested navigation,
       products working best with sidebar (`/patterns/sidebar/…`)
 - [x] Re-enable Patterns in the header nav
-- [ ] Images (decision tree, Do/Don't illustrations) — blocked on the asset
-      decision
+- [x] Images (decision tree, "when to use" illustrations, Do/Don't cards)
+- [x] Component Overview images on every component page (Options illustrations
+      and Do/Don't cards)
 
 ### Phase 4: Development, Services, Home
 
@@ -154,9 +158,9 @@ Helix component names like `tooltip`) keep resolving on our side, as do
 - [x] Diff remaining Development/Services pages for drift. Ours is newer for
       Session activity, Translations and Quick start (Angular 22, standalone);
       fixed broken links and snippet bugs.
-- [ ] Confirm with the owners: Session activity says `expireWarningMinutes` must
-      be "bigger than" `expireDurationMinutes` (likely "smaller"; same on
-      Helix).
+- [x] Session activity: `expireWarningMinutes` must be smaller than
+      `expireDurationMinutes` (confirmed in the service code; Helix still says
+      "bigger").
 
 ### Phase 5: Storybook (component playground)
 
@@ -207,12 +211,17 @@ Found while prototyping:
 - The breadcrumbs story renders `xng-breadcrumb` with the Helix template instead
   of the `<cdx-breadcrumb>` wrapper, because Storybook doesn't resolve
   `@cdx/theme-xng-breadcrumb` from source yet.
-- Some Helix options have no matching theme class or input, so stories
-  approximate them: header "Condensed" (no navigation), divider "dark", button
-  toggle Light/Dark and equal/variable width, slide toggle "three sizes" (one
-  size class plus density), hyperlink Blue/Visited colors and semibold inline
-  links (no theme class or token), FAB "AI" color (no theme class). These are
-  theme gaps for the design/theme owners.
+- Theme classes added from Helix values: `hlx-btn-ai` (AI gradient `#3595F0` →
+  `#B175E1` at 150°, filled buttons and FABs), `hlx-link-blue` (`#1565C0`,
+  visited `#282C75`), `hlx-link-visited`, `hlx-link-inline` (underline + 600),
+  `.hlx-gradient-ai`, plus tokens in `tokens.scss`. White text on the AI
+  gradient is 3.1–3.4:1 (fails 4.5:1 for the 14px label; a Helix colour issue).
+  The AI _stroked_ button (gradient outline) isn't themed yet.
+- Still approximated, needing design specs: the Helix **Default** header is two
+  rows (dark Clarivate bar + white product bar with navigation) and doesn't
+  exist in `@cdx/ngx-branding`; our `hlx-header` is Helix's "Condensed". Also
+  divider "dark", button toggle Light/Dark and equal/variable width, slide
+  toggle "three sizes".
 
 #### Helix content issues to raise with design
 
@@ -234,9 +243,16 @@ Fixed or dropped while porting:
 
 ### Phase 6: Supernova (needs `supernova-helix` MCP authorized)
 
-- [ ] Repoint every Code-tab embed to the current host and the correct example
-      (§3). Supernova supports Storybook embeds natively, so once Phase 5 ships
-      the Code tabs can embed the stories directly instead of our `/examples`
-      pages.
+- [ ] Repoint every Code-tab embed to the current host
+      (`v22-helix-website.dev.sp.aws.clarivate.net`) and the correct example
+      (§3), with heights matching our example pages. The shared draft still has
+      33 of 34 on v19 (Divider is fixed in the draft but unpublished). Publish
+      only after this branch is deployed (Hyperlink, Icon button and FAB
+      examples are new). Supernova supports Storybook embeds natively, so the
+      Code tabs could later embed the stories instead.
+- [ ] Fix the Helix copy errors listed above in Supernova too.
+- [ ] The header's version list comes from `latest-helix-website…`, which still
+      serves v19 (versions 18–19 only); point it at the current deployment or
+      update "latest".
 - [ ] Decide which site is canonical for Development/Services and remove the
       duplicate
