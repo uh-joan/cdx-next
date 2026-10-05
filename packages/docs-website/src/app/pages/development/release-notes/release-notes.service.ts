@@ -6,13 +6,13 @@ export class ReleaseNotesService {
   private http = inject(HttpClient);
 
   getAllReleaseNotesFiles() {
-    return this.http.get<string[]>(
-      'https://design-lsh.clarivate.io/assets/release-notes/index.json',
-    );
+    // Generated next to the notes by tools/scripts/generate_release-notes_index.sh.
+    // `src/assets` is Vite's publicDir, so its contents are served from the root.
+    return this.http.get<string[]>('release-notes/index.json');
   }
 
   getReleaseNote(file: string) {
-    return this.http.get(`assets/release-notes/${file}`, {
+    return this.http.get(`release-notes/${file}`, {
       responseType: 'text',
     });
   }
