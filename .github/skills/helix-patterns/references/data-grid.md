@@ -1,7 +1,7 @@
 # Pattern: Data grid wrapper
 
 - **id**: data-grid
-- **status**: beta
+- **status**: stable
 - **use when**: Large, sortable, filterable or column-managed datasets — the
   results grid in a list page, an analytics table, anything beyond a simple
   mat-table.
@@ -80,10 +80,9 @@ export class TrialsGrid {
 }
 ```
 
-> **Helix gap (why this is `beta`):** `provideHelixAgGrid`, `helixGridTheme` and
-> `HELIX_DEFAULT_COL_DEF` should ship from `@cdx/theme-ag-grid` (which today
-> ships only the legacy CSS theme). Until then, copy `examples/helix-ag-grid.ts`
-> from this pattern.
+`provideHelixAgGrid`, `helixGridTheme` and `HELIX_DEFAULT_COL_DEF` ship from
+`@cdx/theme-ag-grid` (the Theming-API theme supersedes the package's legacy CSS
+theme for new grids).
 
 ## Persist the user's layout
 

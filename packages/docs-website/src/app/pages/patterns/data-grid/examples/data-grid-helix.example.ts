@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { MatButton } from '@angular/material/button';
+import { HELIX_DEFAULT_COL_DEF, helixGridTheme } from '@cdx/theme-ag-grid';
 import { AgGridAngular } from 'ag-grid-angular';
 import {
   AllCommunityModule,
@@ -9,10 +10,6 @@ import {
 } from 'ag-grid-community';
 
 import { InputViewerComponent } from '../../../../core/example-viewer/example-viewer.model';
-import {
-  HELIX_DEFAULT_COL_DEF,
-  helixGridTheme,
-} from './helix-ag-grid';
 
 // In an app this registration lives in provideHelixAgGrid() at bootstrap; the
 // example registers at module scope so the standalone demo works.
