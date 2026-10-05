@@ -68,5 +68,9 @@ export class Patterns {
       heading: 'Form layout',
       elements: [{ label: 'Overview', url: 'forms' }],
     },
+    {
+      heading: 'Entity detail',
+      elements: [{ label: 'Overview', url: 'entity-detail' }],
+    },
   ];
 }

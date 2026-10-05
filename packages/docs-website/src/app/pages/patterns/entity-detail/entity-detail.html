@@ -1,0 +1,61 @@
+<hlx-page
+  [section]="'Patterns'"
+  [title]="'Entity detail'"
+  [subtitle]="'A record page: an entity header, a summary card of the key facts, then an accordion of sections that load lazily and are disabled when they have nothing to show.'"
+  tabbed
+>
+  <div overview>
+    <p>
+      An entity detail page shows one record. off-x-ui's Snapshot is the source: an
+      entity header, a <strong>summary card</strong> of the key facts, then an
+      <strong>accordion</strong> of sections that load lazily and are
+      <strong>disabled when empty</strong> — so the user sees at a glance what the
+      record has and only pays for the sections they open.
+    </p>
+
+    <h2>When to use it</h2>
+    <p>
+      The detail view of one record — a drug, trial or target — reached from a
+      <cdx-internal-link [inline]="true" [url]="'/patterns/list-with-filters'" [text]="'list'"></cdx-internal-link>
+      or search. A collection is a list; a short record is just a card.
+    </p>
+
+    <mat-divider></mat-divider>
+
+    <h2>Shape</h2>
+    <ol>
+      <li><strong>Entity header</strong> — name (the page's <code>h1</code>), type, key metadata, actions (the <cdx-internal-link [inline]="true" [url]="'/patterns/app-shell'" [text]="'App shell'"></cdx-internal-link> heading area).</li>
+      <li><strong>Summary card</strong> — the handful of facts the user came for, no clicks needed.</li>
+      <li><strong>Sections</strong> — a <code>mat-accordion</code>; each loads on first open and shows its own <cdx-internal-link [inline]="true" [url]="'/patterns/page-states'" [text]="'Page states'"></cdx-internal-link>. Empty sections are disabled.</li>
+    </ol>
+
+    <h2>Do</h2>
+    <ul>
+      <li>Lead with the header and a summary card; keep the depth in the accordion.</li>
+      <li>Load each section on first open; show its four states inside the panel.</li>
+      <li>Disable (or mark) sections with no data.</li>
+      <li>Keep one <code>h1</code> (the entity name).</li>
+    </ul>
+
+    <h2>Don't</h2>
+    <ul>
+      <li>Expand and load every section up front.</li>
+      <li>Leave empty panels openable only to show "no data".</li>
+      <li>Skip the summary and start with accordions.</li>
+    </ul>
+  </div>
+
+  <div code>
+    <h2>Lazy sections</h2>
+    <p>Load a section's data when it first opens, and show its Page states inside the panel:</p>
+    <cdx-highlight [text]="lazySnippet" language="html"></cdx-highlight>
+
+    <mat-divider></mat-divider>
+
+    <h2>Example</h2>
+    <p>Open a section to load it (the third is empty, so it's disabled).</p>
+    @for (sample of sampleList; track sample.exampleName) {
+      <hlx-example-viewer [inputViewerComponent]="sample" />
+    }
+  </div>
+</hlx-page>

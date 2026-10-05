@@ -132,6 +132,9 @@ const patternsNavigationMap: NavigationItem[] = [
   { title: 'Form layout', route: '/patterns/forms' },
   { title: 'Forms', route: '/patterns/forms' },
   { title: 'Validation', route: '/patterns/forms' },
+  { title: 'Entity detail', route: '/patterns/entity-detail' },
+  { title: 'Snapshot', route: '/patterns/entity-detail' },
+  { title: 'Record page', route: '/patterns/entity-detail' },
 ];
 
 const servicesNavigationMap: NavigationItem[] = [
