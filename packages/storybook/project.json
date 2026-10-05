@@ -1,0 +1,43 @@
+{
+  "name": "storybook",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "packages/storybook/src",
+  "tags": ["exclude-from-build"],
+  "targets": {
+    "storybook": {
+      "executor": "@analogjs/storybook-angular:start-storybook",
+      "options": {
+        "configDir": "packages/storybook/.storybook",
+        "tsConfig": "packages/storybook/.storybook/tsconfig.json",
+        "port": 4400,
+        "compodoc": false,
+        "experimentalZoneless": true,
+        "stylePreprocessorOptions": {
+          "loadPaths": ["node_modules"]
+        },
+        "open": false
+      }
+    },
+    "build-storybook": {
+      "executor": "@analogjs/storybook-angular:build-storybook",
+      "outputs": ["{options.outputDir}"],
+      "options": {
+        "configDir": "packages/storybook/.storybook",
+        "tsConfig": "packages/storybook/.storybook/tsconfig.json",
+        "outputDir": "dist/packages/storybook",
+        "compodoc": false,
+        "experimentalZoneless": true,
+        "stylePreprocessorOptions": {
+          "loadPaths": ["node_modules"]
+        }
+      }
+    },
+    "typecheck": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "tsc -p packages/storybook/.storybook/tsconfig.json --noEmit"
+      }
+    }
+  }
+}

@@ -1,0 +1,37 @@
+/* stylelint-disable plugin/stylelint-bem-namics */
+@use '@angular/material' as mat;
+@use '@cdx/theme-angular-material' as hlx;
+@use '@cdx/ngx-branding/header/theme' as header;
+@use '@cdx/ngx-branding/footer/theme' as footer;
+
+@include header.theme(hlx.$helix-theme);
+@include footer.theme(hlx.$helix-theme);
+@include hlx.default(hlx.$helix-theme, 'helix-theme-material');
+
+.helix-theme-material {
+  @include hlx.theme-helix-overrides;
+}
+
+// Density levels from Foundations › Density, driven by the toolbar global.
+@each $density in (-1, -2, -3, -4) {
+  .hlx-density-minus#{$density} {
+    @include mat.all-component-densities($density);
+  }
+}
+
+body {
+  margin: 0;
+  background: mat.get-theme-color(hlx.$helix-theme, surface);
+  color: mat.get-theme-color(hlx.$helix-theme, on-surface);
+}
+
+.story-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding: 16px;
+}
+
+.story-invert {
+  background: mat.get-theme-color(hlx.$helix-theme, inverse-surface);
+}
