@@ -1,14 +1,31 @@
 /* stylelint-disable plugin/stylelint-bem-namics */
+@use 'sass:list';
+@use 'sass:map';
+@use 'sass:math';
 @use '@angular/material' as mat;
 @use 'helix' as hlx;
 @use 'typography' as typography;
 @use 'variables/primitives' as primitives;
 @use 'variables/tokens' as tokens;
 
+// Figma "Elevation/Level 0–3" effect styles
+$elevation-none: 0 0 0 1px rgb(42 43 45 / 8%);
+$elevation-sm:
+  0 0 1px rgb(0 0 0 / 12%),
+  0 1px 3px rgb(0 0 0 / 12%);
+$elevation-md:
+  0 0 4px rgb(0 0 0 / 12%),
+  0 4px 6px rgb(0 0 0 / 12%);
+$elevation-lg:
+  0 0 8px rgb(0 0 0 / 12%),
+  0 8px 12px rgb(0 0 0 / 12%);
+
 @mixin theme-helix-overrides() {
   @include theme-helix-buttons;
   @include theme-helix-chips;
   @include theme-helix-icons;
+  @include theme-helix-links;
+  @include theme-helix-density;
   @include typography.theme-helix-typography;
 
   @include mat.fab-color(hlx.$helix-theme, $color-variant: secondary);
@@ -31,11 +48,12 @@
   --mat-datepicker-calendar-container-shape: #{$helix-default-round-shape};
   --mat-datepicker-calendar-container-background-color: #{$helix-default-container-background};
   --mat-menu-container-color: #{$helix-default-container-background};
-  /* stylelint-disable-next-line scss/operator-no-newline-after */
-  --mat-datepicker-calendar-container-elevation-shadow:
-    0 3px 1px -2px rgb(0 0 0 / 20%), 0 2px 2px 0 rgb(0 0 0 / 14%),
-    0 1px 5px 0 rgb(0 0 0 / 12%);
+  // Figma Date picker: Elevation/Level 3
+  --mat-datepicker-calendar-container-elevation-shadow: #{$elevation-lg};
   --mat-divider-color: #{tokens.$surface-contrast};
+  // Figma Table: row 48px, header 56px at density 0
+  --mat-table-row-item-container-height: 48px;
+  --mat-table-header-container-height: 56px;
   --mat-progress-bar-track-color: #{tokens.$surface-contrast};
   --mat-chip-container-shape-radius: 16px;
   --mat-chip-outline-color: transparent;
@@ -103,27 +121,13 @@
     --mat-tab-active-indicator-shape: 2px 2px 0 0;
   }
 
-  .hlx-slide-toggle-small {
-    @include mat.slide-toggle-density(-2);
-
-    --mat-slide-toggle-track-height: 28px;
-  }
-
-  .hlx-input-small {
-    @include mat.form-field-density(-3);
-  }
-
-  .hlx-input-x-small {
-    @include mat.form-field-density(-4);
-  }
-
   .hlx-button-toggle-container {
     --mat-button-toggle-height: 30px;
 
     width: fit-content;
     height: fit-content;
     padding: 4px;
-    border: 1px solid #babcbe;
+    border: 1px solid tokens.$border-primary;
     border-radius: $helix-default-round-shape;
     background-color: tokens.$surface-minimal;
   }
@@ -172,7 +176,7 @@
     }
 
     tr {
-      background-color: white;
+      background-color: tokens.$surface-primary;
       font: mat.get-theme-typography(hlx.$helix-theme, body-small, font);
       line-height: mat.get-theme-typography(
         hlx.$helix-theme,
@@ -182,20 +186,32 @@
     }
   }
 
+  // Figma Tab: Source Sans 3 Regular 14/24 in every state
   .mat-mdc-tab {
     font: mat.get-theme-typography(hlx.$helix-theme, label-large, font);
+    font-weight: 400;
+  }
+
+  // Elevation levels match the Figma "Elevation/Level 0–3" effect styles
+  .hlx-elevation-none {
+    box-shadow: $elevation-none;
   }
 
   .hlx-elevation-sm {
-    @include mat.elevation(3);
+    box-shadow: $elevation-sm;
   }
 
   .hlx-elevation-md {
-    @include mat.elevation(9);
+    box-shadow: $elevation-md;
   }
 
   .hlx-elevation-lg {
-    @include mat.elevation(18);
+    box-shadow: $elevation-lg;
+  }
+
+  // Figma Divider "light": for use on dark surfaces
+  .hlx-divider-invert {
+    --mat-divider-color: #{tokens.$border-invert};
   }
 
   .mdc-switch--unselected .mdc-switch__icon--off {
@@ -211,7 +227,7 @@
     position: absolute;
     inset: 0;
 
-    background-color: #f2f2f2;
+    background-color: tokens.$surface-minimal;
 
     -webkit-mask-image: url("data:image/svg+xml;utf8,\
 <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'>\
@@ -355,16 +371,50 @@ Z'/>\
     --mat-tab-active-hover-indicator-color: #{tokens.$text-invert};
   }
 
-  .hlx-btn-small {
-    @include mat.button-density(-1);
-  }
+  // Figma "AI" theme. The gradient start colour isn't a Figma variable yet.
+  .hlx-btn-ai {
+    $ai-gradient: linear-gradient(
+      to bottom right,
+      #3595f0,
+      primitives.$color-purple-400
+    );
+    $enabled: ':not(:disabled, .mat-mdc-button-disabled)';
 
-  .hlx-btn-xsmall {
-    @include mat.button-density(-2);
-  }
+    @include mat.button-overrides(
+      (
+        filled-label-text-color: #{tokens.$text-invert},
+        filled-state-layer-color: #000,
+        filled-hover-state-layer-opacity: 0.04,
+        outlined-label-text-color: #{tokens.$text-primary},
+        outlined-state-layer-color: #000,
+        outlined-hover-state-layer-opacity: 0.04,
+        text-label-text-color: #{tokens.$text-primary},
+        text-state-layer-color: #000,
+        text-hover-state-layer-opacity: 0.04,
+      )
+    );
 
-  .hlx-btn-xxsmall {
-    @include mat.button-density(-3);
+    @include mat.fab-overrides(
+      (
+        foreground-color: #{tokens.$text-invert},
+        small-foreground-color: #{tokens.$text-invert},
+      )
+    );
+
+    &.mat-mdc-unelevated-button#{$enabled},
+    &.mat-mdc-fab#{$enabled},
+    &.mat-mdc-mini-fab#{$enabled},
+    &.mat-mdc-extended-fab#{$enabled} {
+      background-image: $ai-gradient;
+    }
+
+    &.mat-mdc-outlined-button#{$enabled} {
+      border-color: transparent;
+      background:
+        linear-gradient(tokens.$surface-primary, tokens.$surface-primary)
+          padding-box,
+        $ai-gradient border-box;
+    }
   }
 
   .hlx-btn-large {
@@ -479,17 +529,23 @@ Z'/>\
     @include mat.chips-overrides(
       (
         outline-color: #{tokens.$components-primary-outline},
-        elevated-container-color: white,
+        elevated-container-color: #{tokens.$surface-primary},
       )
     );
   }
 
-  .hlx-chip-small {
-    @include mat.chips-density(-1);
-  }
+  .hlx-basic-chip {
+    @include hlx-chip-text-color(tokens.$text-primary);
 
-  .hlx-chip-xsmall {
-    @include mat.chips-density(-2);
+    @include mat.chips-overrides(
+      (
+        outline-color: transparent,
+        elevated-container-color: transparent,
+        hover-state-layer-color: #000,
+        hover-state-layer-opacity: 0.04,
+        disabled-label-text-color: #{tokens.$text-disabled},
+      )
+    );
   }
 }
 
@@ -503,18 +559,232 @@ Z'/>\
   );
 }
 
+// Figma Hyperlink. Blue and visited colours aren't Figma variables yet.
+@mixin theme-helix-links() {
+  $link-sizes: (
+    lg: (
+      16px,
+      24px,
+    ),
+    md: (
+      14px,
+      24px,
+    ),
+    sm: (
+      13px,
+      16px,
+    ),
+  );
+
+  .hlx-link {
+    color: tokens.$text-primary;
+    font-weight: 400;
+    text-decoration: none;
+    cursor: pointer;
+
+    &:hover,
+    &.hlx-link-underline {
+      text-decoration: underline;
+    }
+  }
+
+  .hlx-link-blue {
+    color: #1565c0;
+    font-weight: 600;
+
+    &:visited {
+      color: #282c75;
+    }
+  }
+
+  .hlx-link-visited {
+    color: #282c75;
+    font-weight: 600;
+  }
+
+  @each $size, $metrics in $link-sizes {
+    .hlx-link-#{$size} {
+      font-size: list.nth($metrics, 1);
+      line-height: list.nth($metrics, 2);
+    }
+  }
+}
+
+// Figma density scale. Apply to a component or to a container to cascade.
+// Each component only gets the levels Figma defines for it. Sizes are set
+// directly because Material's numeric density mixins use the M2 size scale.
+$density-button: (
+  0: 40px,
+  -1: 36px,
+  -2: 32px,
+  -3: 28px,
+);
+$density-chip: (
+  0: 32px,
+  -1: 28px,
+  -2: 24px,
+);
+$density-table: (
+  0: (
+    row: 48px,
+    header: 56px,
+  ),
+  -1: (
+      row: 44px,
+      header: 52px,
+    ),
+  -2: (
+      row: 40px,
+      header: 48px,
+    ),
+);
+$density-slide-toggle: (
+  0: (
+    track: 52px 32px,
+    handle: 24px,
+    pressed: 28px,
+    unselected: 16px,
+    icon: 16px,
+    layer: 40px,
+  ),
+  -1: (
+      track: 46px 28px,
+      handle: 20px,
+      pressed: 24px,
+      unselected: 14px,
+      icon: 14px,
+      layer: 36px,
+    ),
+  -2: (
+      track: 40px 24px,
+      handle: 16px,
+      pressed: 20px,
+      unselected: 12px,
+      icon: 12px,
+      layer: 32px,
+    ),
+);
+
+@mixin theme-helix-density() {
+  @each $level in (0, -1, -2, -3, -4) {
+    .hlx-density-#{$level} {
+      @include mat.form-field-density($level);
+
+      @if map.has-key($density-button, $level) {
+        @include hlx-button-size(map.get($density-button, $level));
+      }
+
+      @if map.has-key($density-chip, $level) {
+        --mat-chip-container-height: #{map.get($density-chip, $level)};
+        --mat-table-row-item-container-height: #{map.get(
+            $density-table,
+            $level,
+            row
+          )};
+        --mat-table-header-container-height: #{map.get(
+            $density-table,
+            $level,
+            header
+          )};
+
+        @include hlx-slide-toggle-size(map.get($density-slide-toggle, $level));
+      }
+    }
+  }
+
+  // Deprecated aliases for the old size classes, now matching Figma sizes
+  .hlx-btn-small {
+    @include hlx-button-size(map.get($density-button, -1));
+  }
+
+  .hlx-btn-xsmall {
+    @include hlx-button-size(map.get($density-button, -2));
+  }
+
+  .hlx-btn-xxsmall {
+    @include hlx-button-size(map.get($density-button, -3));
+  }
+
+  .hlx-chip-small {
+    --mat-chip-container-height: #{map.get($density-chip, -1)};
+  }
+
+  .hlx-chip-xsmall {
+    --mat-chip-container-height: #{map.get($density-chip, -2)};
+  }
+
+  .hlx-input-small {
+    @include mat.form-field-density(-3);
+  }
+
+  .hlx-input-x-small {
+    @include mat.form-field-density(-4);
+  }
+
+  .hlx-slide-toggle-small {
+    @include hlx-slide-toggle-size(map.get($density-slide-toggle, -2));
+  }
+}
+
+@mixin hlx-button-size($height) {
+  --mat-button-filled-container-height: #{$height};
+  --mat-button-outlined-container-height: #{$height};
+  --mat-button-protected-container-height: #{$height};
+  --mat-button-text-container-height: #{$height};
+  --mat-button-tonal-container-height: #{$height};
+  --mat-icon-button-state-layer-size: #{$height};
+}
+
+@mixin hlx-slide-toggle-size($size) {
+  $width: list.nth(map.get($size, track), 1);
+  $height: list.nth(map.get($size, track), 2);
+  $handle: map.get($size, handle);
+  $pressed: map.get($size, pressed);
+  $unselected: map.get($size, unselected);
+  $gap: math.div($height - $handle, 2);
+
+  @include mat.slide-toggle-overrides(
+    (
+      track-width: $width,
+      track-height: $height,
+      selected-handle-size: $handle,
+      with-icon-handle-size: $handle,
+      unselected-handle-size: $unselected,
+      pressed-handle-size: $pressed,
+      selected-icon-size: map.get($size, icon),
+      unselected-icon-size: map.get($size, icon),
+      state-layer-size: map.get($size, layer),
+      selected-handle-horizontal-margin: 0
+        (
+          $width - $handle - $gap,
+        ),
+      selected-with-icon-handle-horizontal-margin: 0
+        (
+          $width - $handle - $gap,
+        ),
+      selected-pressed-handle-horizontal-margin: 0
+        (
+          $width - $pressed - 2px,
+        ),
+      unselected-handle-horizontal-margin: 0 math.div($height - $unselected, 2),
+      unselected-with-icon-handle-horizontal-margin: 0 $gap,
+      unselected-pressed-handle-horizontal-margin: 0 2px,
+    )
+  );
+}
+
 @mixin theme-helix-icons() {
   $hlx-icon-colors: (
-    primary: primitives.$color-neutral-800,
-    secondary: primitives.$color-neutral-600,
-    invert: primitives.$color-neutral-0,
-    info: primitives.$color-blue-900,
-    negative: primitives.$color-red-500,
-    warn: primitives.$color-yellow-900,
-    positive: primitives.$color-green-900,
-    brand: primitives.$color-purple-400,
-    accent: primitives.$color-purple-600,
-    disabled: primitives.$color-neutral-400,
+    primary: tokens.$icon-primary,
+    secondary: tokens.$icon-secondary,
+    invert: tokens.$icon-invert,
+    info: tokens.$icon-info,
+    negative: tokens.$icon-negative,
+    warn: tokens.$icon-warn,
+    positive: tokens.$icon-positive,
+    brand: tokens.$icon-brand,
+    accent: tokens.$icon-accent,
+    disabled: tokens.$icon-disabled,
   );
 
   @each $name, $color in $hlx-icon-colors {

@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { ExampleViewer } from '../../../core/example-viewer/example-viewer';
 import { Page } from '../../../core/page/page';
 import {
+  ButtonsAiComponent,
   ButtonsAnchorComponent,
   ButtonsDisabledInteractiveComponent,
   ButtonsElevatedComponent,
@@ -40,6 +41,7 @@ export class Buttons {
     ButtonsFabComponent,
     ButtonsMiniFabComponent,
     ButtonsExtendedFabComponent,
+    ButtonsAiComponent,
     ButtonsAnchorComponent,
     ButtonsProgressComponent,
     ButtonsDisabledInteractiveComponent,

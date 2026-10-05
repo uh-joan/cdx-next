@@ -15,6 +15,7 @@ import * as footer from './footer/examples';
 import * as formField from './form-field/examples';
 import * as header from './header/examples';
 import * as highcharts from './highcharts/examples';
+import * as hyperlink from './hyperlink/examples';
 import * as icons from './icons/examples';
 import * as list from './list/examples';
 import * as menu from './menu/examples';
@@ -58,6 +59,7 @@ export const examplesMap: Record<string, unknown> = {
   'form-field': formField,
   header: header,
   highcharts: highcharts,
+  hyperlink: hyperlink,
   icons: icons,
   list: list,
   menu: menu,

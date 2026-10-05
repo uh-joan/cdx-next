@@ -36,7 +36,7 @@
 
 .hlx-notification--inline {
   border-left: 8px solid hlx.$border-primary;
-  border-radius: 6px;
+  border-radius: 2px; // Figma Notifications (inline): border/radius-default
 
   .hlx-notification__actions {
     color: hlx.$icon-primary;

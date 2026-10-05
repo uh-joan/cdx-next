@@ -86,6 +86,10 @@ export class Components {
           url: 'highcharts',
         },
         {
+          label: 'Hyperlink',
+          url: 'hyperlink',
+        },
+        {
           label: 'Icons',
           url: 'icons',
         },

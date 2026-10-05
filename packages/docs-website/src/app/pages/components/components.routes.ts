@@ -94,6 +94,11 @@ export const componentsRoutes: Routes = [
           import('./highcharts/highcharts').then((m) => m.Highcharts),
       },
       {
+        path: 'hyperlink',
+        loadComponent: () =>
+          import('./hyperlink/hyperlink').then((m) => m.Hyperlink),
+      },
+      {
         path: 'icons',
         loadComponent: () => import('./icons/icons').then((m) => m.Icons),
       },

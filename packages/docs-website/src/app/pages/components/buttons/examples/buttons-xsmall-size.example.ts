@@ -4,7 +4,7 @@ import { MatIcon } from '@angular/material/icon';
 
 import { InputViewerComponent } from '../../../../core/example-viewer/example-viewer.model';
 
-const htmlCode = `<div class="story hlx-btn-xsmall">
+const htmlCode = `<div class="story hlx-density--2">
   <div class="story__box">
     <div class="story__row">
       <button matButton="filled">Button</button>
@@ -85,7 +85,7 @@ const tsCode = `import { Component } from '@angular/core';
 import { MatButton } from '@angular/material/button';
 import { MatIcon } from '@angular/material/icon';
 
-// The Helix density class (hlx-btn-xsmall) goes on the container, not on each button.
+// The Helix density class (hlx-density--2) goes on the container, not on each button.
 @Component({
   selector: 'app-buttons-xsmall-example',
   templateUrl: './buttons-xsmall-example.html',

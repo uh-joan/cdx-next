@@ -29,6 +29,9 @@ const htmlCode = `<mat-chip-set class="story">
         <mat-chip 
             class="hlx-outlined-chip"
             >outlined</mat-chip>
+        <mat-chip 
+            class="hlx-basic-chip"
+            >basic</mat-chip>
     </div>
 </mat-chip-set>`;
 

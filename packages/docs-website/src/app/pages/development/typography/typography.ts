@@ -200,7 +200,7 @@ export class Typography {
       nativeElement: 'None',
       properties: {
         fontSize: '16px / 1rem',
-        lineHeight: '24px / 1.25rem',
+        lineHeight: '24px / 1.5rem',
         fontFace: 'Source Sans 3',
         fontWeight: '400 (regular) / 600 (semi-bold)',
       },
@@ -211,9 +211,9 @@ export class Typography {
       nativeElement: 'None',
       properties: {
         fontSize: '14px / 0.875rem',
-        lineHeight: '20px / 1.25rem',
+        lineHeight: '24px / 1.5rem',
         fontFace: 'Source Sans 3',
-        fontWeight: '600 (semi-bold)',
+        fontWeight: '600 (semi-bold) / 400 (regular)',
       },
     },
     {
@@ -222,12 +222,20 @@ export class Typography {
       nativeElement: 'None',
       properties: {
         fontSize: '12px / 0.75rem',
-        lineHeight: '20px / 1.25rem',
+        lineHeight: '24px / 1.5rem',
         fontFace: 'Source Sans 3',
-        fontWeight: '600 (semi-bold)',
+        fontWeight: '600 (semi-bold) / 400 (regular)',
       },
     },
   ]);
+
+  labelWeightHtml = `
+  <!-- Figma Label/label-lg-md-bold -->
+  <span class="mat-label-large">Label</span>
+
+  <!-- Figma Label/label-lg-md -->
+  <span class="mat-label-large mat-weight-regular">Label</span>
+  `;
 
   displayedColumns = ['level', 'className', 'nativeElement', 'properties'];
 }
