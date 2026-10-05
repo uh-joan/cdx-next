@@ -51,10 +51,9 @@ $cycle: $step * 4;
 }
 
 .hlx-ai-avatar--gradient::before {
-  // The AI gradient start colour isn't a Figma variable yet
   background: linear-gradient(
     180deg,
-    #3595f0,
+    hlx-primitives.$color-blue-300,
     hlx-primitives.$color-purple-400
   );
 }

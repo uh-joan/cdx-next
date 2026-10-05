@@ -390,11 +390,11 @@ Z'/>\
     --mat-tab-active-hover-indicator-color: #{tokens.$text-invert};
   }
 
-  // Figma "AI" theme. The gradient start colour isn't a Figma variable yet.
+  // Figma "AI" theme
   .hlx-btn-ai {
     $ai-gradient: linear-gradient(
       to bottom right,
-      #3595f0,
+      primitives.$color-blue-300,
       primitives.$color-purple-400
     );
     $enabled: ':not(:disabled, .mat-mdc-button-disabled)';
@@ -578,7 +578,7 @@ Z'/>\
   );
 }
 
-// Figma Hyperlink. Blue and visited colours aren't Figma variables yet.
+// Figma Hyperlink
 @mixin theme-helix-links() {
   $link-sizes: (
     lg: (
@@ -608,16 +608,16 @@ Z'/>\
   }
 
   .hlx-link-blue {
-    color: #1565c0;
+    color: primitives.$color-blue-500;
     font-weight: 600;
 
     &:visited {
-      color: #282c75;
+      color: primitives.$color-indigo-700;
     }
   }
 
   .hlx-link-visited {
-    color: #282c75;
+    color: primitives.$color-indigo-700;
     font-weight: 600;
   }
 

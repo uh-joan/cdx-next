@@ -52,7 +52,7 @@ export class HelixNotificationComponent {
   notificationIcons: Record<string, string> = {
     primary: 'info_outline',
     warn: 'warning',
-    negative: 'warning',
+    negative: 'error',
     positive: 'check_circle',
   };
 

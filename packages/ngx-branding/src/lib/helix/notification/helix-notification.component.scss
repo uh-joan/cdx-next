@@ -30,8 +30,7 @@ $themes: (
   positive: (
     surface: hlx.$surface-positive,
     text: hlx.$text-positive,
-    // Unbound colour in Figma, not a token
-    border: #018760,
+    border: hlx-primitives.$color-green-600,
     banner-button: hlx.$text-primary,
     inline-button: hlx.$text-primary,
   ),
