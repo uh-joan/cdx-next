@@ -1,7 +1,7 @@
 # Pattern: Dialogs
 
 - **id**: dialogs
-- **status**: beta
+- **status**: stable
 - **use when**: Confirming a decision (especially a destructive one), a short
   focused task, or showing detail beside the current page without navigating
   away.
@@ -9,7 +9,8 @@
   passive message that needs no decision (use a snackbar or hlx-notification).
 - **components**: MatDialog, MatDialogModule, matButton, matIconButton
 - **hlx classes**: hlx-btn-negative
-- **tokens**: border-radius-default, elevation-lg
+- **tokens**: dialog-size-sm, dialog-size-md, dialog-size-lg, dialog-size-side,
+  dialog-max-width, border-radius-default, elevation-lg
 
 ## Rules
 
@@ -50,8 +51,10 @@ instead of the dialog slots. This pattern fixes the defaults.
 ## Sizes
 
 Open every dialog through a named preset, so widths are consistent and the set
-is small. Until the theme ships these panel classes, define the config once in
-your app and the widths in your global styles:
+is small. The `.hlx-dialog-*` panel classes and their size tokens
+(`$dialog-size-sm` … `$dialog-size-side`, `$dialog-max-width`) ship from
+`@cdx/theme-angular-material` via `theme-helix-overrides`, so an app that
+applies the Helix theme gets them for free. Wrap them in a small typed helper:
 
 ```ts
 import { MatDialogConfig } from '@angular/material/dialog';
@@ -74,37 +77,6 @@ export function helixDialog<D>(
   return { panelClass: PANEL_CLASS[size], ...config };
 }
 ```
-
-```scss
-.hlx-dialog-sm {
-  width: 400px;
-  max-width: 92vw;
-}
-.hlx-dialog-md {
-  width: 560px;
-  max-width: 92vw;
-}
-.hlx-dialog-lg {
-  width: 800px;
-  max-width: 92vw;
-}
-.hlx-dialog-side {
-  position: fixed;
-  inset: 0 0 0 auto;
-  height: 100%;
-  width: 480px;
-  max-width: 92vw;
-}
-.hlx-dialog-fullscreen {
-  width: 100vw;
-  max-width: 100vw;
-  height: 100%;
-}
-```
-
-> **Helix gap (why this is `beta`):** these panel classes and the size tokens
-> should ship from `@cdx/theme-angular-material` so every app shares one set.
-> Until then, copy the config and styles above.
 
 ## Structure
 
