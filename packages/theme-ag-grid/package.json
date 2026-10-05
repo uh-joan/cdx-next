@@ -1,6 +1,7 @@
 {
   "name": "@cdx/theme-ag-grid",
   "version": "22.0.0-alpha.1",
+  "type": "module",
   "repository": {
     "type": "git",
     "url": "ssh://git@github.com/clarivate-prod/cdx-next.git",
@@ -8,10 +9,15 @@
   },
   "exports": {
     ".": {
+      "types": "./dist/theme-ag-grid.d.ts",
       "sass": "./theme-ag-grid.scss",
-      "css": "./dist/theme-ag-grid.min.css"
+      "css": "./dist/theme-ag-grid.min.css",
+      "import": "./dist/theme-ag-grid.mjs",
+      "default": "./dist/theme-ag-grid.mjs"
     }
   },
+  "main": "./dist/theme-ag-grid.mjs",
+  "types": "./dist/theme-ag-grid.d.ts",
   "files": [
     "dist",
     "*.css",
@@ -23,6 +29,10 @@
     "deploy:cdn": "deploy-aws-s3-cloudfront --bucket cdx-cdn.digital-experience.clarivate.io --distribution EF022SLU13YUI --source dist --destination @cdx/theme-ag-grid/${VERSION:-latest} --non-interactive"
   },
   "peerDependencies": {
-    "ag-grid-community": ">=35"
+    "@angular/core": ">=22",
+    "ag-grid-community": ">=36"
+  },
+  "devDependencies": {
+    "vite-plugin-dts": "^5.0.3"
   }
 }
