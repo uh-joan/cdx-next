@@ -10,30 +10,38 @@ import { CardC, CardCInput } from '../../components/card-c/card-c';
 export class Home {
   cardConfigs: CardCInput[] = [
     {
-      title: 'Development',
-      text: 'Start building with our guidelines, service information and resources.',
-      imageUrl: '/home/pictograms/development.svg',
-      buttonName: 'Get started',
-      url: '/development',
-    },
-    {
       title: 'Foundations',
-      text: 'Discover the visual elements that make up our design system.',
+      text: 'Explore the visual language that defines Helix—from colour and typography to spacing and iconography.',
       imageUrl: '/home/pictograms/foundations.svg',
       buttonName: 'Explore foundations',
       url: '/foundations',
     },
     {
       title: 'Components',
-      text: 'Learn about the intuitive building blocks of our design system.',
+      text: 'Use flexible, accessible UI components designed for consistency across products.',
       imageUrl: '/home/pictograms/components.svg',
       buttonName: 'Explore components',
       url: '/components',
     },
     {
+      title: 'Patterns',
+      text: 'Follow proven, reusable solutions for common user needs and workflows.',
+      imageUrl: '/home/pictograms/patterns.svg',
+      buttonName: 'Explore patterns',
+      url: '/patterns',
+    },
+    {
+      title: 'Development',
+      text: 'Start building with clear guidelines, platform services and developer resources.',
+      imageUrl: '/home/pictograms/development.svg',
+      buttonName: 'Get started',
+      url: '/development',
+    },
+    {
       title: 'Services',
       text: 'Find out about our preferred solutions to common use-cases.',
-      imageUrl: '/home/pictograms/patterns.svg',
+      // No dedicated Services pictogram yet; reuses the Development one.
+      imageUrl: '/home/pictograms/development.svg',
       buttonName: 'Explore services',
       url: '/services',
     },
