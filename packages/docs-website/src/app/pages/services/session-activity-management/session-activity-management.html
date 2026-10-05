@@ -58,9 +58,9 @@
         <p>
           <strong>expireWarningMinutes: </strong> (defaults to 2): Sets
           countdown in minutes that will be displayed in the popup. It is
-          important for this value to be bigger than expireDurationMinutes
-          because the popup will be opened after a time what will be calculated
-          as: expireDurationMinutes - expireWarningMinutes of inactivity.
+          important for this value to be smaller than expireDurationMinutes,
+          because the popup opens after expireDurationMinutes -
+          expireWarningMinutes of inactivity.
         </p>
       </li>
       <li>
