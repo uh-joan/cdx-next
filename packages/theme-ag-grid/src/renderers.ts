@@ -37,3 +37,29 @@ export function helixChipCellRenderer(
   ].join(';');
   return chip;
 }
+
+/**
+ * Formats a date cell consistently (e.g. "2 Oct 2026"). Accepts a `Date`, an ISO
+ * string, or an epoch number; passes through non-dates unchanged. Use for date
+ * columns so every grid formats dates the same way.
+ *
+ * ```ts
+ * { field: 'updated', cellRenderer: helixDateCellRenderer }
+ * ```
+ */
+const HELIX_DATE_FORMAT = new Intl.DateTimeFormat('en-GB', {
+  day: 'numeric',
+  month: 'short',
+  year: 'numeric',
+});
+
+export function helixDateCellRenderer(params: ICellRendererParams): string {
+  const value = params.value;
+  if (value == null || value === '') {
+    return '';
+  }
+  const date = value instanceof Date ? value : new Date(value);
+  return Number.isNaN(date.getTime())
+    ? String(value)
+    : HELIX_DATE_FORMAT.format(date);
+}
