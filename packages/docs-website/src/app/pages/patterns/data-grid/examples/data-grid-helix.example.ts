@@ -3,6 +3,7 @@ import { MatButton } from '@angular/material/button';
 import {
   HELIX_DEFAULT_COL_DEF,
   helixChipCellRenderer,
+  helixDateCellRenderer,
   helixGridTheme,
 } from '@cdx/theme-ag-grid';
 import { AgGridAngular } from 'ag-grid-angular';
@@ -77,15 +78,16 @@ class SampleComponent {
       cellRenderer: helixChipCellRenderer,
     },
     { field: 'sponsor', headerName: 'Sponsor', flex: 2 },
-    { field: 'updated', headerName: 'Updated' },
+    // Shared Helix date renderer: formats the ISO value as e.g. "2 Oct 2026".
+    { field: 'updated', headerName: 'Updated', cellRenderer: helixDateCellRenderer },
   ];
 
   readonly rows: Trial[] = [
-    { drug: 'Pembrolizumab', phase: 'Phase III', sponsor: 'Merck', updated: '2 Oct 2026' },
-    { drug: 'Osimertinib', phase: 'Phase III', sponsor: 'AstraZeneca', updated: '28 Sep 2026' },
-    { drug: 'Sotorasib', phase: 'Phase II', sponsor: 'Amgen', updated: '21 Sep 2026' },
-    { drug: 'Adagrasib', phase: 'Phase II', sponsor: 'Mirati', updated: '14 Sep 2026' },
-    { drug: 'Divarasib', phase: 'Phase I', sponsor: 'Genentech', updated: '9 Sep 2026' },
+    { drug: 'Pembrolizumab', phase: 'Phase III', sponsor: 'Merck', updated: '2026-10-02' },
+    { drug: 'Osimertinib', phase: 'Phase III', sponsor: 'AstraZeneca', updated: '2026-09-28' },
+    { drug: 'Sotorasib', phase: 'Phase II', sponsor: 'Amgen', updated: '2026-09-21' },
+    { drug: 'Adagrasib', phase: 'Phase II', sponsor: 'Mirati', updated: '2026-09-14' },
+    { drug: 'Divarasib', phase: 'Phase I', sponsor: 'Genentech', updated: '2026-09-09' },
   ];
 
   onGridReady(event: GridReadyEvent<Trial>): void {
