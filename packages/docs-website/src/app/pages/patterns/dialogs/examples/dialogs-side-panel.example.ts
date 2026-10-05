@@ -4,7 +4,6 @@ import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { MatIcon } from '@angular/material/icon';
 
 import { InputViewerComponent } from '../../../../core/example-viewer/example-viewer.model';
-import { ensureDialogSizeStyles } from './dialog-size-styles';
 
 const htmlCode = `<div class="story">
   <button matButton="outlined" (click)="openDetails()">Open details panel</button>
@@ -44,10 +43,6 @@ class DetailsPanel {}
 })
 class SampleComponent {
   private readonly dialog = inject(MatDialog);
-
-  constructor() {
-    ensureDialogSizeStyles();
-  }
 
   openDetails(): void {
     this.dialog.open(DetailsPanel, { panelClass: 'hlx-dialog-side' });

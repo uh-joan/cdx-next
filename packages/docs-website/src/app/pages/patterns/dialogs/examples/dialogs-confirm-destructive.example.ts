@@ -4,7 +4,6 @@ import { MatButton } from '@angular/material/button';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 
 import { InputViewerComponent } from '../../../../core/example-viewer/example-viewer.model';
-import { ensureDialogSizeStyles } from './dialog-size-styles';
 
 const htmlCode = `<div class="story">
   <button matButton="filled" class="hlx-btn-negative" (click)="confirmDelete()">
@@ -44,12 +43,9 @@ class SampleComponent {
   private readonly destroyRef = inject(DestroyRef);
   readonly result = signal<string | null>(null);
 
-  constructor() {
-    ensureDialogSizeStyles();
-  }
-
   confirmDelete(): void {
-    // helixDialog('sm', …) in a real app; inlined here so the example is self-contained.
+    // helixDialog('sm', …) in a real app; the hlx-dialog-sm panel class ships
+    // from @cdx/theme-angular-material.
     this.dialog
       .open(ConfirmDeleteDialog, { panelClass: 'hlx-dialog-sm' })
       .afterClosed()

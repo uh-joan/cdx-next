@@ -2,7 +2,7 @@
 id: dialogs
 title: Dialogs
 layer: pattern
-status: beta
+status: stable
 summary: >-
   A modal for one decision or one short task. Open it through a named size
   preset, structure the body with the Material dialog slots, and put the primary
@@ -21,6 +21,11 @@ components:
 hlx-classes:
   - hlx-btn-negative
 tokens:
+  - dialog-size-sm
+  - dialog-size-md
+  - dialog-size-lg
+  - dialog-size-side
+  - dialog-max-width
   - border-radius-default
   - elevation-lg
 related-foundations:
@@ -81,8 +86,10 @@ off to stop a destructive button being focused, and bodies built from
 ## Sizes
 
 Open every dialog through a named preset, so widths are consistent and the set is
-small. Until the theme ships these panel classes, define the config once in your
-app and the widths in your global styles:
+small. The `.hlx-dialog-*` panel classes and their size tokens
+(`$dialog-size-sm` … `$dialog-size-side`, `$dialog-max-width`) ship from
+`@cdx/theme-angular-material` via `theme-helix-overrides`, so an app that applies
+the Helix theme gets them for free. Wrap them in a small typed helper:
 
 ```ts
 import { MatDialogConfig } from '@angular/material/dialog';
@@ -105,37 +112,6 @@ export function helixDialog<D>(
   return { panelClass: PANEL_CLASS[size], ...config };
 }
 ```
-
-```scss
-.hlx-dialog-sm {
-  width: 400px;
-  max-width: 92vw;
-}
-.hlx-dialog-md {
-  width: 560px;
-  max-width: 92vw;
-}
-.hlx-dialog-lg {
-  width: 800px;
-  max-width: 92vw;
-}
-.hlx-dialog-side {
-  position: fixed;
-  inset: 0 0 0 auto;
-  height: 100%;
-  width: 480px;
-  max-width: 92vw;
-}
-.hlx-dialog-fullscreen {
-  width: 100vw;
-  max-width: 100vw;
-  height: 100%;
-}
-```
-
-> **Helix gap (why this is `beta`):** these panel classes and the size tokens
-> should ship from `@cdx/theme-angular-material` so every app shares one set.
-> Until then, copy the config and styles above.
 
 ## Structure
 
