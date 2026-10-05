@@ -22,9 +22,10 @@ signals, `@if`/`@for`/`@switch`, `inject()`, no `*ngIf`, no new NgModule.
 
 ## Catalog
 
-| Pattern     | Status | Summary                                                                                                                                                                  | Reference                                  |
-| ----------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------ |
-| Page states | beta   | Every region that loads data has four states — loading, loaded, empty and error. Design all four from the start so a screen never shows a blank box or a frozen spinner. | [page-states](./references/page-states.md) |
+| Pattern     | Status | Summary                                                                                                                                                                      | Reference                                  |
+| ----------- | ------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------ |
+| Dialogs     | beta   | A modal for one decision or one short task. Open it through a named size preset, structure the body with the Material dialog slots, and put the primary action on the right. | [dialogs](./references/dialogs.md)         |
+| Page states | beta   | Every region that loads data has four states — loading, loaded, empty and error. Design all four from the start so a screen never shows a blank box or a frozen spinner.     | [page-states](./references/page-states.md) |
 
 ## How to use
 

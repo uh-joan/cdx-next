@@ -1,0 +1,72 @@
+<hlx-page
+  [section]="'Patterns'"
+  [title]="'Dialogs'"
+  [subtitle]="'A modal for one decision or one short task. Open it through a named size preset, structure the body with the Material dialog slots, and put the primary action on the right.'"
+  tabbed
+>
+  <div overview>
+    <p>
+      A dialog interrupts the user for <strong>one</strong> decision or one short
+      task. Anything longer belongs on a page; a passive message belongs in a
+      snackbar or <code>hlx-notification</code>.
+    </p>
+
+    <h2>When to use it</h2>
+    <ul>
+      <li>Confirming a decision, especially a destructive one.</li>
+      <li>A short, focused task such as a small form.</li>
+      <li>Showing detail beside the current page without navigating away (a side panel).</li>
+    </ul>
+
+    <mat-divider></mat-divider>
+
+    <h2>Sizes</h2>
+    <p>
+      Open every dialog through a named preset — <code>sm</code>, <code>md</code>,
+      <code>lg</code>, <code>side</code>, <code>fullscreen</code> — never with a
+      raw <code>width</code>. One set of widths keeps dialogs consistent.
+    </p>
+
+    <h2>Do</h2>
+    <ul>
+      <li>Open through a size preset.</li>
+      <li>Build the body from <code>mat-dialog-title</code> / <code>-content</code> / <code>-actions</code>.</li>
+      <li>Keep <code>autoFocus</code> on and order actions so the safe one is focused.</li>
+      <li>Use <code>hlx-btn-negative</code> for a destructive confirm, and give any close button <code>aria-label="Close"</code>.</li>
+    </ul>
+
+    <h2>Don't</h2>
+    <ul>
+      <li>Pass a raw <code>width</code> such as <code>'80vw'</code>.</li>
+      <li>Turn <code>autoFocus</code> off to avoid focusing a destructive button — order the actions instead.</li>
+      <li>Build the body from <code>mat-card</code> inside the dialog.</li>
+      <li>Rely on <code>window.confirm</code>.</li>
+    </ul>
+  </div>
+
+  <div code>
+    <h2>A size helper</h2>
+    <p>
+      Open every dialog through a named preset. Until the theme ships these panel
+      classes, define the helper once in your app and the widths in your global
+      styles (see the pattern guide for the SCSS).
+    </p>
+    <cdx-highlight [text]="sizeSnippet"></cdx-highlight>
+
+    <h2>Body structure</h2>
+    <p>
+      Corners (<code>border-radius-default</code>) and the overlay shadow
+      (<code>elevation-lg</code>) come from the theme — you do not set them.
+      <code>align="end"</code> puts the actions on the right, Cancel before the
+      destructive Delete, so focus lands on Cancel.
+    </p>
+    <cdx-highlight [text]="structureSnippet" language="html"></cdx-highlight>
+
+    <mat-divider></mat-divider>
+
+    <h2>Examples</h2>
+    @for (sample of sampleList; track sample.exampleName) {
+      <hlx-example-viewer [inputViewerComponent]="sample" />
+    }
+  </div>
+</hlx-page>
