@@ -1,0 +1,5 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "name": "eslint-config-helix",
+  "tags": ["exclude-from-build"]
+}
