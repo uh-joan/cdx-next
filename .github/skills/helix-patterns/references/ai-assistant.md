@@ -8,7 +8,7 @@
   that is a button with a loading state, not a conversation.
 - **components**: HelixAiAvatarComponent, matButton, matIconButton,
   MatFormFieldModule, HelixEmptyStateComponent
-- **hlx classes**: hlx-btn-ai, hlx-gradient-ai
+- **hlx classes**: hlx-btn-ai, hlx-gradient-ai, hlx-prose
 - **tokens**: surface-minimal, text-secondary, spacing-2, spacing-3
 
 ## Rules
@@ -106,9 +106,10 @@ real text, not `::before { content }`. Feedback is real buttons with
 
 ## Markdown answers
 
-Render model markdown through one shared, sanitised prose style — not per-app
-`::ng-deep` on `innerHTML`. (A shared Helix prose style is a tracked gap; until
-it lands, scope the prose styles to the answer component.)
+Render sanitised model markdown into an element with the `hlx-prose` class (from
+`theme-helix-overrides`), which styles headings, lists, code, tables, links and
+quotes with Helix tokens — so you do not reach in with per-app `::ng-deep` on
+the `innerHTML`.
 
 ## Do
 
