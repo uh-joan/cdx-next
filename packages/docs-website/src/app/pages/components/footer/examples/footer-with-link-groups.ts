@@ -7,7 +7,7 @@ import {
 import { InputViewerComponent } from '../../../../core/example-viewer/example-viewer.model';
 
 const htmlCode = `<div class="story">
-  <footer hlx-footer groupCompanyLinks()>
+  <footer hlx-footer [groupCompanyLinks]="true">
     <hlx-footer-group>
       <div hlxFooterGroupTitle>
         Company</div>

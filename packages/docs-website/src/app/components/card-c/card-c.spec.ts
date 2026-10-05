@@ -13,6 +13,13 @@ describe('CardC', () => {
 
     fixture = TestBed.createComponent(CardC);
     component = fixture.componentInstance;
+    fixture.componentRef.setInput('cardData', {
+      title: 'Title',
+      text: 'Text',
+      imageUrl: 'image.png',
+      buttonName: 'Go',
+      url: '/',
+    });
     fixture.detectChanges();
   });
 

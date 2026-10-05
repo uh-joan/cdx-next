@@ -17,6 +17,11 @@ export default defineConfig({
         find: /^@cdx\/ngx-branding$/,
         replacement: resolve(projectRoot, '../ngx-branding/src/index.ts'),
       },
+      // Resolve from sources so tests don't depend on a prior library build.
+      {
+        find: /^@cdx\/theme-highcharts$/,
+        replacement: resolve(projectRoot, '../theme-highcharts/src/index.ts'),
+      },
     ],
   },
   plugins: [

@@ -8,10 +8,11 @@ describe('ExternalLink', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [ExternalLink],
+      imports: [ExternalLink],
     });
     fixture = TestBed.createComponent(ExternalLink);
     component = fixture.componentInstance;
+    fixture.componentRef.setInput('url', 'https://example.com');
     fixture.detectChanges();
   });
 

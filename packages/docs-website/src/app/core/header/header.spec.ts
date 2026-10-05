@@ -7,6 +7,14 @@ import { provideRouter } from '@angular/router';
 import { Header } from './header';
 import { HeaderService } from './header.service';
 
+const appVersion = vi.hoisted(() => ({ value: '30.1.0' }));
+
+vi.mock('../app-version', () => ({
+  get APP_VERSION() {
+    return appVersion.value;
+  },
+}));
+
 class MockHeaderService {
   versions = signal(['18.0.0', '20.0.0', '30.0.0']);
   getAllHelixVersions = vi.fn();
@@ -29,33 +37,24 @@ describe('Header', () => {
         { provide: HeaderService, useClass: MockHeaderService },
       ],
     }).compileComponents();
+  });
 
+  function createComponent(version: string) {
+    appVersion.value = version;
     fixture = TestBed.createComponent(Header);
     component = fixture.componentInstance;
-  });
-
-  it('should set versionControl to the matched version from URL', () => {
-    Object.defineProperty(window, 'location', {
-      value: {
-        href: 'https://v20-helix-website.dev.sp.aws.clarivate.net/',
-      },
-      writable: true,
-    });
-
     fixture.detectChanges();
+  }
 
-    expect(component.currentVersion()).toBe('20.0.0');
-  });
+  it('should use the latest version when the app major matches it', () => {
+    createComponent('30.1.0');
 
-  it('should default to latest version if no version in URL', () => {
-    Object.defineProperty(window, 'location', {
-      value: {
-        href: 'hhttps://design-lsh.clarivate.io',
-      },
-      writable: true,
-    });
-
-    fixture.detectChanges();
     expect(component.currentVersion()).toBe('30.0.0 (latest)');
+  });
+
+  it('should fall back to the app major version when it is not the latest', () => {
+    createComponent('20.3.0');
+
+    expect(component.currentVersion()).toBe('20');
   });
 });
