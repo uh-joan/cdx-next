@@ -2,7 +2,7 @@
 id: data-grid
 title: Data grid wrapper
 layer: pattern
-status: beta
+status: stable
 summary: >-
   One place to set up AG Grid the Helix way — modules and licence registered
   once, a Theming-API theme built from Helix tokens, shared column defaults, and
@@ -110,10 +110,9 @@ export class TrialsGrid {
 }
 ```
 
-> **Helix gap (why this is `beta`):** `provideHelixAgGrid`, `helixGridTheme` and
-> `HELIX_DEFAULT_COL_DEF` should ship from `@cdx/theme-ag-grid` (which today ships
-> only the legacy CSS theme). Until then, copy
-> `examples/helix-ag-grid.ts` from this pattern.
+`provideHelixAgGrid`, `helixGridTheme` and `HELIX_DEFAULT_COL_DEF` ship from
+`@cdx/theme-ag-grid` (the Theming-API theme supersedes the package's legacy CSS
+theme for new grids).
 
 ## Persist the user's layout
 

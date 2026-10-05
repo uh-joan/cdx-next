@@ -54,12 +54,10 @@
     </p>
     <cdx-highlight [text]="gridSnippet"></cdx-highlight>
     <p>
-      <strong>Helix gap (why this is <code>beta</code>):</strong>
       <code>provideHelixAgGrid</code>, <code>helixGridTheme</code> and
-      <code>HELIX_DEFAULT_COL_DEF</code> should ship from
-      <code>&#64;cdx/theme-ag-grid</code> (which today ships only the legacy CSS
-      theme). Until then, copy <code>helix-ag-grid.ts</code> from this pattern's
-      examples.
+      <code>HELIX_DEFAULT_COL_DEF</code> ship from
+      <code>&#64;cdx/theme-ag-grid</code>; the Theming-API theme supersedes the
+      package's legacy CSS theme for new grids.
     </p>
 
     <mat-divider></mat-divider>
