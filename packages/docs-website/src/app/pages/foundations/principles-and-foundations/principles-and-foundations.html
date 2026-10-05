@@ -3,22 +3,26 @@
   [title]="'Principles &amp; foundations'"
   [subtitle]="'The Helix Design System is more than a set of components—it’s a shared foundation that brings clarity, consistency and purpose to everything we design and build.'"
 >
-  <h2>Introduction</h2>
-  <p>
-    Helix begins with our core design principles, which shape how we think about
-    user experience. These principles inform our foundations—colour, typography,
-    layout and more.
-  </p>
-  <p>
-    Together, they support our components and patterns, enabling us to deliver
-    intuitive, high-quality products across Life Sciences and Healthcare.
-  </p>
-  <img
-    class="doc-image principles-pyramid"
-    src="helix/foundations-principles-and-foundations/01.svg"
-    alt="Pyramid of the Helix layers: Principles at the top, then Foundations, Components and Patterns at the base."
-    loading="lazy"
-  />
+  <div class="intro">
+    <div class="intro__text">
+      <h2>Introduction</h2>
+      <p>
+        Helix begins with our core design principles, which shape how we think
+        about user experience. These principles inform our foundations—colour,
+        typography, layout and more.
+      </p>
+      <p>
+        Together, they support our components and patterns, enabling us to
+        deliver intuitive, high-quality products across Life Sciences and
+        Healthcare.
+      </p>
+    </div>
+    <img
+      class="intro__pyramid"
+      [src]="assets + '/01.svg'"
+      alt="Pyramid of the Helix layers: Principles at the top, then Foundations, Components and Patterns at the base."
+    />
+  </div>
 
   <mat-divider></mat-divider>
 
@@ -28,47 +32,21 @@
     complex problems with empathy, communicate with clarity, and maintain a high
     standard of craft across all our products.
   </p>
-  <h3>Focus on the user</h3>
-  <img
-    class="principle-pictogram"
-    src="helix/foundations-principles-and-foundations/02.png"
-    alt=""
-    width="96"
-    height="96"
-    loading="lazy"
-  />
-  <p>
-    We design with empathy and understanding—putting user needs first to create
-    experiences that help them achieve their goals with confidence.
-  </p>
-  <h3>Create clarity</h3>
-  <img
-    class="principle-pictogram"
-    src="helix/foundations-principles-and-foundations/03.png"
-    alt=""
-    width="96"
-    height="96"
-    loading="lazy"
-  />
-  <p>
-    In complex environments like Life Sciences and Healthcare, we turn
-    complexity into simplicity—delivering solutions that are clear, direct and
-    easy to understand.
-  </p>
-  <h3>Care about the craft</h3>
-  <img
-    class="principle-pictogram"
-    src="helix/foundations-principles-and-foundations/04.png"
-    alt=""
-    width="96"
-    height="96"
-    loading="lazy"
-  />
-  <p>
-    We pay close attention to detail and stay current with best
-    practices—ensuring every interaction feels refined, reliable and
-    thoughtfully designed.
-  </p>
+  <div class="principles">
+    @for (principle of principles; track principle.title) {
+    <div class="principle">
+      <img
+        class="principle__pictogram"
+        [src]="principle.pictogram"
+        alt=""
+        width="64"
+        height="64"
+      />
+      <h3>{{ principle.title }}</h3>
+      <p>{{ principle.description }}</p>
+    </div>
+    }
+  </div>
 
   <mat-divider></mat-divider>
 
@@ -78,64 +56,15 @@
     bring consistency, accessibility and intention to our products, helping
     teams design with confidence and cohesion.
   </p>
-  <ul>
-    <li>
-      <cdx-internal-link
-        [inline]="true"
-        [text]="'Color'"
-        [url]="'/foundations/color'"
-      ></cdx-internal-link>
-      – Establish a consistent palette that communicates meaning and supports
-      accessibility.
-    </li>
-    <li>
-      <cdx-internal-link
-        [inline]="true"
-        [text]="'Typography'"
-        [url]="'/foundations/typography'"
-      ></cdx-internal-link>
-      – Use clear, readable type to create hierarchy and support user focus.
-    </li>
-    <li>
-      <cdx-internal-link
-        [inline]="true"
-        [text]="'Iconography'"
-        [url]="'/foundations/iconography'"
-      ></cdx-internal-link>
-      – Apply purposeful icons to enhance meaning and improve scannability.
-    </li>
-    <li>
-      <cdx-internal-link
-        [inline]="true"
-        [text]="'Branding'"
-        [url]="'/foundations/branding'"
-      ></cdx-internal-link>
-      – Align visuals and tone with our brand to build recognition and trust.
-    </li>
-    <li>
-      <cdx-internal-link
-        [inline]="true"
-        [text]="'Elevation'"
-        [url]="'/foundations/elevation'"
-      ></cdx-internal-link>
-      – Use depth and shadow to convey hierarchy and guide user attention.
-    </li>
-    <li>
-      <cdx-internal-link
-        [inline]="true"
-        [text]="'Density'"
-        [url]="'/foundations/density'"
-      ></cdx-internal-link>
-      – Adapt spacing and sizing to suit different contexts and content needs.
-    </li>
-    <li>
-      <cdx-internal-link
-        [inline]="true"
-        [text]="'AI'"
-        [url]="'/foundations/ai'"
-      ></cdx-internal-link>
-      – Design AI experiences that are transparent, recognisable, and support
-      user control.
-    </li>
-  </ul>
+  <div class="foundation-cards">
+    @for (card of foundations; track card.url) {
+    <a class="foundation-card" [routerLink]="card.url">
+      <img class="foundation-card__preview" [src]="card.image" alt="" />
+      <span class="foundation-card__content">
+        <span class="foundation-card__title">{{ card.title }}</span>
+        <span class="foundation-card__description">{{ card.description }}</span>
+      </span>
+    </a>
+    }
+  </div>
 </hlx-page>

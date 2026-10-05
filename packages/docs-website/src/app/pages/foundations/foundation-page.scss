@@ -41,15 +41,6 @@
   }
 
   // Helix illustrations (src/assets/helix/foundations-*).
-  .principles-pyramid {
-    max-width: 480px;
-  }
-
-  .principle-pictogram {
-    display: block;
-    margin-block: 8px;
-  }
-
   .ai-usage-grid,
   .branding-logo-grid {
     grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
