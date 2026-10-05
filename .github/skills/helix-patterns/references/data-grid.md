@@ -89,10 +89,12 @@ theme for new grids).
 Use the shared renderers from `@cdx/theme-ag-grid` rather than re-writing them
 per grid. `helixChipCellRenderer` renders a short categorical value (status,
 phase, type) as a Helix chip, styled with `--hlx-*` tokens and built with
-`textContent` (no HTML injection):
+`textContent` (no HTML injection). `helixDateCellRenderer` formats a date value
+consistently (e.g. "2 Oct 2026") from a `Date`, ISO string or epoch number.
 
 ```ts
 { field: 'phase', cellRenderer: helixChipCellRenderer }
+{ field: 'updated', cellRenderer: helixDateCellRenderer }
 ```
 
 ## Persist the user's layout
