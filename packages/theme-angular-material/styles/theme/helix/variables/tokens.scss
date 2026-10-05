@@ -95,3 +95,12 @@ $components-ai-filled-hover: rgb(0 0 0 / 16%);
   background-color: $gradient-ai-start;
   background-image: $gradient-ai;
 }
+
+// Dialog sizes (Helix Patterns > Dialogs): named widths for MatDialog panel
+// classes, so every dialog opens through a preset rather than a raw width. The
+// matching `.hlx-dialog-*` panel classes are emitted by `theme-helix-overrides`.
+$dialog-size-sm: 400px; // a confirm
+$dialog-size-md: 560px; // a short form
+$dialog-size-lg: 800px; // a rich task
+$dialog-size-side: 480px; // a right-docked panel
+$dialog-max-width: 92vw; // cap on sm/md/lg/side at narrow widths

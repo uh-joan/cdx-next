@@ -238,6 +238,39 @@ $elevation-lg:
     box-shadow: $elevation-lg;
   }
 
+  // Dialog size presets (Helix Patterns > Dialogs). Applied as MatDialog
+  // panelClass, so every dialog opens through a named size rather than a raw
+  // width. The class lands on .cdk-overlay-pane; the pane sizes the dialog.
+  .hlx-dialog-sm {
+    width: tokens.$dialog-size-sm;
+    max-width: tokens.$dialog-max-width;
+  }
+
+  .hlx-dialog-md {
+    width: tokens.$dialog-size-md;
+    max-width: tokens.$dialog-max-width;
+  }
+
+  .hlx-dialog-lg {
+    width: tokens.$dialog-size-lg;
+    max-width: tokens.$dialog-max-width;
+  }
+
+  // Right-docked side panel, full height.
+  .hlx-dialog-side {
+    position: fixed;
+    inset: 0 0 0 auto;
+    height: 100%;
+    width: tokens.$dialog-size-side;
+    max-width: tokens.$dialog-max-width;
+  }
+
+  .hlx-dialog-fullscreen {
+    width: 100vw;
+    max-width: 100vw;
+    height: 100%;
+  }
+
   // Figma Divider "light": for use on dark surfaces
   .hlx-divider-invert {
     --mat-divider-color: #{tokens.$border-invert};
