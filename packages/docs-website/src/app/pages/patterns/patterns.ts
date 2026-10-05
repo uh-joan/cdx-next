@@ -60,5 +60,9 @@ export class Patterns {
       heading: 'Data grid',
       elements: [{ label: 'Overview', url: 'data-grid' }],
     },
+    {
+      heading: 'Charts',
+      elements: [{ label: 'Overview', url: 'charts' }],
+    },
   ];
 }
