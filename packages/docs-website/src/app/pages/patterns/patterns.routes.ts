@@ -85,6 +85,11 @@ export const patternsRoutes: Routes = [
             (m) => m.ListWithFilters,
           ),
       },
+      {
+        path: 'ai-assistant',
+        loadComponent: () =>
+          import('./ai-assistant/ai-assistant').then((m) => m.AiAssistant),
+      },
       // Previous placeholder page.
       {
         path: 'patterns-overview',
