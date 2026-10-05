@@ -53,8 +53,8 @@ $cycle: $step * 4;
 .hlx-ai-avatar--gradient::before {
   background: linear-gradient(
     180deg,
-    hlx-primitives.$color-blue-300,
-    hlx-primitives.$color-purple-400
+    hlx.$gradient-ai-start,
+    hlx.$gradient-ai-end
   );
 }
 

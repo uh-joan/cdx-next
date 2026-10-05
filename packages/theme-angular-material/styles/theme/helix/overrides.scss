@@ -392,11 +392,7 @@ Z'/>\
 
   // Figma "AI" theme
   .hlx-btn-ai {
-    $ai-gradient: linear-gradient(
-      to bottom right,
-      primitives.$color-blue-300,
-      primitives.$color-purple-400
-    );
+    $ai-gradient: tokens.$gradient-ai;
     $enabled: ':not(:disabled, .mat-mdc-button-disabled)';
 
     @include mat.button-overrides(
@@ -608,16 +604,16 @@ Z'/>\
   }
 
   .hlx-link-blue {
-    color: primitives.$color-blue-500;
+    color: tokens.$text-link;
     font-weight: 600;
 
     &:visited {
-      color: primitives.$color-indigo-700;
+      color: tokens.$text-link-visited;
     }
   }
 
   .hlx-link-visited {
-    color: primitives.$color-indigo-700;
+    color: tokens.$text-link-visited;
     font-weight: 600;
   }
 
