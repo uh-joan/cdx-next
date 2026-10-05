@@ -1,0 +1,65 @@
+<hlx-page
+  [section]="'Patterns'"
+  [title]="'Form layout'"
+  [subtitle]="'A single-column form of Material fields grouped into sections, with inline validation on blur, a required/optional convention, and a docked action bar — laid out with Helix spacing tokens.'"
+  tabbed
+>
+  <div overview>
+    <p>
+      Helix documents the form <em>controls</em> (field, input, select, checkbox,
+      radio) but not how to compose them into a form. This pattern is that
+      composition: a single column of Material fields, grouped into sections, with
+      inline validation and a docked action bar — spaced with Helix tokens.
+    </p>
+
+    <h2>When to use it</h2>
+    <p>
+      Collecting or editing structured input — a settings page, a create/edit
+      form. A single search box is just that control; a long multi-step flow is a
+      stepper.
+    </p>
+
+    <mat-divider></mat-divider>
+
+    <h2>Shape</h2>
+    <ul>
+      <li><strong>One column</strong>, fields full-width, grouped under section headings. Two fields on a row only when they are a genuine pair, and never below the <code>sm</code> breakpoint.</li>
+      <li><strong>Spacing</strong> — sections <code>spacing-4</code>, fields <code>spacing-2</code>/<code>spacing-3</code>.</li>
+      <li><strong>Labels</strong> always present (<code>mat-label</code>); hints in <code>mat-hint</code>, errors in <code>mat-error</code>.</li>
+      <li><strong>Action bar</strong> at the end: Cancel, then the primary submit on the right.</li>
+    </ul>
+
+    <h2>Do</h2>
+    <ul>
+      <li>Keep it one column; pair two fields on a row only when they belong together.</li>
+      <li>Use typed reactive forms and signals for derived state.</li>
+      <li>Give every field a label; put hints and errors in their slots.</li>
+      <li>Dock the actions; disable submit while invalid or saving.</li>
+    </ul>
+
+    <h2>Don't</h2>
+    <ul>
+      <li>Lay forms out in multiple columns that zig-zag.</li>
+      <li>Use the placeholder as the label.</li>
+      <li>Flash validation on every keystroke.</li>
+      <li>Use <code>ngModel</code> / template-driven forms in new code.</li>
+    </ul>
+  </div>
+
+  <div code>
+    <h2>Typed reactive form</h2>
+    <cdx-highlight [text]="formSnippet"></cdx-highlight>
+
+    <h2>Validate on blur, show errors in <code>mat-error</code></h2>
+    <p>Errors render only once the control is touched, so the user is not scolded mid-typing. Write messages that say how to fix it, in sentence case.</p>
+    <cdx-highlight [text]="errorSnippet" language="html"></cdx-highlight>
+
+    <mat-divider></mat-divider>
+
+    <h2>Example</h2>
+    <p>Submit with empty fields to see validation; the submit button shows a busy state while saving.</p>
+    @for (sample of sampleList; track sample.exampleName) {
+      <hlx-example-viewer [inputViewerComponent]="sample" />
+    }
+  </div>
+</hlx-page>
