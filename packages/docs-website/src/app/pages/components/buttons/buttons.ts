@@ -1,7 +1,11 @@
 import { Component } from '@angular/core';
 import { MatDivider } from '@angular/material/divider';
 
-import { StorybookEmbed } from '../../../components/storybook-embed/storybook-embed';
+import { InternalLink } from '../../../components/internal-link/internal-link';
+import {
+  UsageGuideline,
+  UsageGuidelines,
+} from '../../../components/usage-guideline/usage-guideline';
 import { ExampleViewer } from '../../../core/example-viewer/example-viewer';
 import { Page } from '../../../core/page/page';
 import {
@@ -28,7 +32,14 @@ import {
   templateUrl: './buttons.html',
   styleUrl: './buttons.scss',
   host: { class: 'cdx-section' },
-  imports: [Page, ExampleViewer, MatDivider, StorybookEmbed],
+  imports: [
+    Page,
+    ExampleViewer,
+    MatDivider,
+    InternalLink,
+    UsageGuideline,
+    UsageGuidelines,
+  ],
 })
 export class Buttons {
   // Ordered by appearance, then shape, then state, then density.

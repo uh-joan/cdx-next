@@ -1,21 +1,218 @@
 <hlx-page
   [title]="'Buttons'"
-  [subtitle]="'Buttons are clickable elements that are used to trigger actions. They communicate calls to action to the user and allow users to interact with pages in a variety of ways.'"
+  [subtitle]="'Buttons prompt users to take action. They’re designed to stand out and guide users toward the next step in a process. Use them to highlight key interactions and ensure momentum in a flow.'"
   [section]="'Components'"
   componentName="button"
+  storybookId="components-button"
+  tabbed
 >
-  <h2>Playground</h2>
-  <p>
-    Try every configuration with live controls. The density toolbar applies the
-    levels from Foundations › Density.
-  </p>
-  <cdx-storybook-embed componentId="components-button"></cdx-storybook-embed>
+  <div overview>
+    <p>
+      The Helix button component is built using selected styles from the Angular
+      Material button framework. For implementation details, see the Code tab.
+    </p>
 
-  <mat-divider></mat-divider>
+    <h2>Options</h2>
+    <h3>Color and types</h3>
+    <p>
+      Buttons combine color themes and types to signal the importance of an
+      action. Choose from these functional color themes:
+    </p>
+    <ul>
+      <li><strong>Primary</strong> – Our default. Use for most actions.</li>
+      <li>
+        <strong>Accent</strong> – Use sparingly for actions that need extra
+        emphasis.
+      </li>
+      <li>
+        <strong>Negative</strong> – Use only for destructive or negative
+        actions.
+      </li>
+      <li>
+        <strong>AI</strong> – Use for actions that trigger AI-powered tasks.
+      </li>
+      <li><strong>Invert</strong> – Use on dark backgrounds for contrast.</li>
+    </ul>
+    <p>There are three button types to help communicate priority:</p>
+    <ul>
+      <li>
+        <strong>Flat</strong> (<code>filled</code>) – High emphasis. Use for the
+        main action on a page.
+      </li>
+      <li>
+        <strong>Stroked</strong> (<code>outlined</code>) – Medium emphasis. Use
+        for secondary actions.
+      </li>
+      <li>
+        <strong>Basic</strong> (<code>text</code>) – Low emphasis. Use when the
+        action is optional or less important.
+      </li>
+    </ul>
 
-  <h2>Examples</h2>
+    <h3>Density</h3>
+    <p>
+      Buttons are available in five size options, controlled by the density
+      setting.
+    </p>
+    <ul>
+      <li>Density 0 is the default and most commonly used.</li>
+      <li>
+        Use alternative densities to create a clear visual hierarchy—sparingly
+        and with purpose.
+      </li>
+    </ul>
+    <p>
+      For more detail, see
+      <cdx-internal-link
+        [inline]="true"
+        [text]="'Foundations › Density'"
+        [url]="'/foundations/density'"
+      ></cdx-internal-link
+      >.
+    </p>
 
-  @for (sample of sampleList; track sample.exampleName) {
-  <hlx-example-viewer [inputViewerComponent]="sample" />
-  }
+    <h3>Icons</h3>
+    <p>Icons help clarify meaning, but should never be purely decorative.</p>
+    <ul>
+      <li>Use a leading icon to reinforce the label’s intent.</li>
+      <li>
+        Use a trailing icon to suggest interactivity, such as a dropdown or
+        navigation.
+      </li>
+    </ul>
+    <p>
+      For guidance on choosing and applying icons, see
+      <cdx-internal-link
+        [inline]="true"
+        [text]="'Foundations › Iconography'"
+        [url]="'/foundations/iconography'"
+      ></cdx-internal-link
+      >.
+    </p>
+
+    <mat-divider></mat-divider>
+
+    <h2>Buttons vs. links</h2>
+    <p>
+      Use buttons and links purposefully to support clarity and accessibility.
+    </p>
+    <ul>
+      <li>
+        Use a button for actions that affect the current page—such as submitting
+        a form, starting media playback, or closing a modal.
+      </li>
+      <li>
+        Use a link to navigate to a new page or to a different section within
+        the current page (anchor navigation).
+      </li>
+    </ul>
+    <p>
+      Avoid substituting one for the other. Buttons and links behave differently
+      in browsers and are interpreted differently by assistive technologies.
+      Using the correct element ensures a more inclusive experience for all
+      users.
+    </p>
+
+    <mat-divider></mat-divider>
+
+    <h2>Usage</h2>
+    <cdx-usage-guidelines>
+      <cdx-usage-guideline kind="do">
+        Use a single high-emphasis button per page to guide users clearly toward
+        the primary action.
+      </cdx-usage-guideline>
+      <cdx-usage-guideline kind="dont">
+        Don't use multiple high-emphasis buttons, it can dilute focus and create
+        confusion.
+      </cdx-usage-guideline>
+      <cdx-usage-guideline kind="do">
+        Use icons when they enhance understanding and directly support the
+        button’s purpose.
+      </cdx-usage-guideline>
+      <cdx-usage-guideline kind="dont">
+        Don't use icons that serve only as decoration or add unnecessary visual
+        noise.
+      </cdx-usage-guideline>
+    </cdx-usage-guidelines>
+
+    <mat-divider></mat-divider>
+
+    <h2>Icon button</h2>
+    <p>Icon buttons enable users to perform small actions with a single tap.</p>
+    <h3>Color</h3>
+    <ul>
+      <li><strong>Primary</strong> – Our default. Use for most actions.</li>
+      <li><strong>Invert</strong> – Use on dark backgrounds for contrast.</li>
+      <li>
+        <strong>Negative</strong> – Use on the negative background only for
+        destructive or negative actions.
+      </li>
+      <li>
+        <strong>Accent</strong> – Use sparingly for actions that need extra
+        emphasis.
+      </li>
+    </ul>
+    <h3>Density</h3>
+    <p>
+      Icon buttons are available in four size options, controlled by the density
+      setting. The size affects the hover effect (and target area) but not the
+      icon size.
+    </p>
+    <ul>
+      <li>Density 0 is the default and most commonly used.</li>
+      <li>
+        Use alternative densities when you use icon buttons in a more restricted
+        space.
+      </li>
+    </ul>
+    <h3>Usage</h3>
+    <cdx-usage-guidelines>
+      <cdx-usage-guideline kind="do">
+        A clear and concise tooltip should describe the action and appear on
+        hover.
+      </cdx-usage-guideline>
+      <cdx-usage-guideline kind="dont">
+        Be cautious when using unfamiliar or ambiguous icons, as they may
+        confuse users.
+      </cdx-usage-guideline>
+    </cdx-usage-guidelines>
+
+    <mat-divider></mat-divider>
+
+    <h2>Floating action button (FAB)</h2>
+    <p>
+      Floating action buttons are used for the most common or important action
+      on a screen, and they persist on screen when scrolling. They come in two
+      sizes.
+    </p>
+    <h3>Color</h3>
+    <ul>
+      <li><strong>Primary</strong> – Our default. Use for most actions.</li>
+      <li><strong>Invert</strong> – Use on dark backgrounds for contrast.</li>
+      <li>
+        <strong>Accent</strong> – Use sparingly for actions that need extra
+        emphasis.
+      </li>
+      <li>
+        <strong>AI</strong> – Use for actions that trigger AI-powered tasks.
+      </li>
+    </ul>
+    <h3>Usage</h3>
+    <cdx-usage-guidelines>
+      <cdx-usage-guideline kind="do">
+        Use clear and simple icons such as add, message, or edit.
+      </cdx-usage-guideline>
+      <cdx-usage-guideline kind="dont">
+        Don't display multiple FABs on one screen and steer clear of confusing
+        or vague icons for less common actions.
+      </cdx-usage-guideline>
+    </cdx-usage-guidelines>
+  </div>
+
+  <div code>
+    <h2>Examples</h2>
+    @for (sample of sampleList; track sample.exampleName) {
+    <hlx-example-viewer [inputViewerComponent]="sample" />
+    }
+  </div>
 </hlx-page>
