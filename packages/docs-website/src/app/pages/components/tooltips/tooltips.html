@@ -1,11 +1,106 @@
 <hlx-page
-  [title]="'Tooltips'"
-  [subtitle]="'Tooltips are floating labels that briefly explain the function of an unknown or unfamiliar user interface element that isn`t directly described within the interface.'"
+  [title]="'Tooltip'"
+  [subtitle]="'Tooltips display brief labels or messages that provide additional context.'"
   [section]="'Components'"
   componentName="tooltip"
+  storybookId="components-tooltip"
+  tabbed
 >
-  <h2>Examples</h2>
-  @for (sample of sampleList; track sample.exampleName) {
-  <hlx-example-viewer [inputViewerComponent]="sample"></hlx-example-viewer>
-  }
+  <div overview>
+    <p>
+      The Helix tooltip component is built using selected styles from the
+      Angular Material tooltip framework. For implementation details, see the
+      Code tab.
+    </p>
+
+    <h2>Options</h2>
+    <p>
+      Use tooltips to add additional context to a button or other UI element.
+      There are two types of tooltips: plain and rich.
+    </p>
+    <ul>
+      <li>
+        <strong>Plain tooltips</strong> briefly describe a UI element or action.
+        They are commonly used to label icon-only buttons or fields without
+        visible text.
+      </li>
+      <li>
+        <strong>Rich tooltips</strong> provide more detailed information, such
+        as explaining the value or behavior of a feature. They can include an
+        optional title, links, and buttons.
+      </li>
+    </ul>
+    <img
+      class="doc-image"
+      src="helix/components-tooltips/01.png"
+      alt="Plain tooltip with the text “Supporting text”"
+      loading="lazy"
+    />
+    <img
+      class="doc-image"
+      src="helix/components-tooltips/02.png"
+      alt="Rich tooltip with a title, supporting text and two text buttons"
+      loading="lazy"
+    />
+
+    <mat-divider></mat-divider>
+
+    <h2>Usage</h2>
+    <cdx-usage-guidelines>
+      <cdx-usage-guideline
+        kind="do"
+        imageSrc="helix/components-tooltips/03.png"
+        imageAlt="Plain tooltip “Download” above a download icon button"
+      >
+        Use plain tooltips to label icon buttons and provide brief descriptions
+        of the UI elements.
+      </cdx-usage-guideline>
+      <cdx-usage-guideline
+        kind="dont"
+        imageSrc="helix/components-tooltips/04.png"
+        imageAlt="Plain tooltip containing a long multi-line definition of “Active company”"
+      >
+        Don't use plain tooltips for lengthy explanations.
+      </cdx-usage-guideline>
+      <cdx-usage-guideline
+        kind="do"
+        imageSrc="helix/components-tooltips/05.png"
+        imageAlt="Rich tooltip “High drug score” with an explanation and a Learn more button, attached to a High badge"
+      >
+        Use rich tooltips when additional details or actions are needed for a UI
+        element or new feature.
+      </cdx-usage-guideline>
+      <cdx-usage-guideline
+        kind="dont"
+        imageSrc="helix/components-tooltips/06.png"
+        imageAlt="Rich tooltip asking to confirm deleting an item, attached to a delete icon button"
+      >
+        Don’t hide critical information in tooltips, as they’re easy to miss.
+        Use an interruptive dialog instead.
+      </cdx-usage-guideline>
+    </cdx-usage-guidelines>
+  </div>
+
+  <div code>
+    <h2>Rich tooltip</h2>
+    <p>
+      Rich tooltips use the <code>hlxTooltip</code> directive
+      (<code>RichTooltipDirective</code>) from
+      <code>&#64;cdx/ngx-branding</code>, not Angular Material. Pass an
+      <code>ng-template</code> with the content and set
+      <code>tooltipTrigger</code> to <code>'hover'</code> (default) or
+      <code>'click'</code>.
+    </p>
+    <cdx-storybook-embed
+      componentId="branding-rich-tooltip"
+      title="Rich tooltip playground"
+    ></cdx-storybook-embed>
+
+    <mat-divider></mat-divider>
+
+    <h2>Examples</h2>
+    @for (sample of sampleList; track sample.exampleName) {
+    <hlx-example-viewer [inputViewerComponent]="sample"></hlx-example-viewer>
+    }
+  </div>
 </hlx-page>

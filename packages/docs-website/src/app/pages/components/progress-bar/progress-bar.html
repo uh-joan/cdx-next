@@ -1,12 +1,80 @@
 <hlx-page
-  [title]="'Progress Bar'"
-  [subtitle]="'The progress bar help users follow the progress of an action or process.'"
+  [title]="'Progress bar'"
+  [subtitle]="'A progress bar visually indicates the completion status of a task or process over time.'"
   [section]="'Components'"
   componentName="progress-bar"
+  storybookId="components-progress-bar"
+  tabbed
 >
-  <h2>Examples</h2>
+  <div overview>
+    <p>
+      The Helix progress bar component is built using selected styles from the
+      Angular Material progress bar framework. For implementation details, see
+      the Code tab.
+    </p>
 
-  @for (sample of sampleList; track sample.exampleName) {
-  <hlx-example-viewer [inputViewerComponent]="sample"></hlx-example-viewer>
-  }
+    <h2>Options</h2>
+    <p>Choose from these two types of progress bars:</p>
+    <h3>Determinate</h3>
+    <ul>
+      <li>
+        Operations where the percentage of the operation complete is known
+        should use the determinate indicator.
+      </li>
+      <li>Determinate progress bars fill from 0 to 100%.</li>
+    </ul>
+    <img
+      class="doc-image"
+      src="helix/components-progress-bar/02.png"
+      alt="Determinate progress bar with the track filled to about 40%"
+      loading="lazy"
+    />
+    <h3>Indeterminate</h3>
+    <ul>
+      <li>
+        Operations where the user is asked to wait while something finishes and
+        it’s not necessary to indicate how long it will take should use the
+        indeterminate indicator.
+      </li>
+      <li>
+        Indeterminate progress bars animate continuously along a fixed track to
+        indicate ongoing activity until the process finishes.
+      </li>
+    </ul>
+    <img
+      class="doc-image"
+      src="helix/components-progress-bar/03.png"
+      alt="Indeterminate progress bar track"
+      loading="lazy"
+    />
+
+    <mat-divider></mat-divider>
+
+    <h2>Usage</h2>
+    <cdx-usage-guidelines>
+      <cdx-usage-guideline
+        kind="do"
+        imageSrc="helix/components-progress-bar/04.png"
+        imageAlt="Export panel showing “Exporting results 40%” above a determinate progress bar"
+      >
+        Use progress bar when the process can be described with quantitative
+        information, such as a percentage.
+      </cdx-usage-guideline>
+      <cdx-usage-guideline
+        kind="dont"
+        imageSrc="helix/components-progress-bar/05.png"
+        imageAlt="History side panel where a progress bar would stand in for list content that is still loading; skeleton rows are the better fit"
+      >
+        Don't use progress bar when longer load times are expected and
+        additional content will be revealed, use skeleton states instead.
+      </cdx-usage-guideline>
+    </cdx-usage-guidelines>
+  </div>
+
+  <div code>
+    <h2>Examples</h2>
+    @for (sample of sampleList; track sample.exampleName) {
+    <hlx-example-viewer [inputViewerComponent]="sample"></hlx-example-viewer>
+    }
+  </div>
 </hlx-page>

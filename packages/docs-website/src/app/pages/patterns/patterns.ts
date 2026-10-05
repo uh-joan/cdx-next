@@ -13,10 +13,26 @@ import { NavbarSection } from '../../core/left-navigation/left-navigation.interf
 export class Patterns {
   leftNavbarConfig: NavbarSection[] = [
     {
+      heading: 'Filters',
       elements: [
+        { label: 'Overview', url: 'filters' },
+        { label: 'Basic filters', url: 'filters/basic-filters' },
+        { label: 'Filter modal', url: 'filters/filter-modal' },
+        { label: 'Filter panel', url: 'filters/filter-panel' },
+      ],
+    },
+    {
+      heading: 'Sidebar',
+      elements: [
+        { label: 'Overview', url: 'sidebar' },
         {
-          label: 'Patterns Overview',
-          url: 'patterns-overview',
+          label: 'Header with navigation and sidebar',
+          url: 'sidebar/header-with-navigation',
+        },
+        { label: 'Nested navigation', url: 'sidebar/nested-navigation' },
+        {
+          label: 'Products working best with sidebar',
+          url: 'sidebar/products',
         },
       ],
     },

@@ -1,0 +1,68 @@
+<hlx-page
+  [section]="'Patterns'"
+  [title]="'Nested navigation'"
+  [subtitle]="'A sidebar component is a column of links that allow users to quickly access different pages or sections of your product or application.'"
+>
+  <h2>When to use</h2>
+  <p>
+    When your product includes subcategories under main sections (nested
+    navigation), a <strong>side navigation</strong> can serve as the primary
+    navigation. Unlike horizontal navigation, which often relies on dropdowns to
+    reveal subcategories, side navigation allows content to remain visible and
+    well-structured without overwhelming the user.
+  </p>
+  <p>
+    That said, horizontal navigation can still be used to display essential
+    elements—such as the product logo and user login icon—that are common across
+    products in this location.
+  </p>
+  <img
+    class="doc-image"
+    src="helix/patterns-nested-navigation/01.png"
+    alt="Page whose left side navigation groups child links under three section headings, with the product header kept above."
+    loading="lazy"
+  />
+
+  <mat-divider></mat-divider>
+
+  <h2>Dos and don'ts</h2>
+  <cdx-usage-guidelines>
+    <cdx-usage-guideline
+      kind="dont"
+      imageSrc="helix/patterns-nested-navigation/02.png"
+      imageAlt="User menu dropdown in the header with Searches and alerts, Search history and Reports nested under My work."
+    >
+      <p>
+        <strong
+          >Don’t hide frequently used or important options inside nested
+          dropdown menus.</strong
+        >
+      </p>
+      <p>
+        In the example, placing key items like “Searches and alerts,” “Search
+        History,” and “Reports” nested under “My work” in a dropdown menu makes
+        them harder to discover and access. If these options are essential to
+        the user workflow, they should be surfaced in a more prominent and
+        persistent location, like the side navigation panel.
+      </p>
+    </cdx-usage-guideline>
+  </cdx-usage-guidelines>
+
+  <mat-divider></mat-divider>
+
+  <h2>Design considerations</h2>
+  <ul>
+    <li>
+      Make the structure as shallow as possible, avoiding deeply nested levels —
+      aim for <strong>maximum 2 levels of nesting</strong>.
+    </li>
+    <li>Collapse child navigation by default.</li>
+    <li>
+      <strong
+        >Default the sidenav to an expanded state (when it serves as the primary
+        navigation),</strong
+      >
+      since users will frequently switch between sections.
+    </li>
+  </ul>
+</hlx-page>

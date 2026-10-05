@@ -1,3 +1,4 @@
+import { InputViewerComponent } from '../../core/example-viewer/example-viewer.model';
 import * as aiAvatar from './ai-avatar/examples';
 import * as autocomplete from './autocomplete/examples';
 import * as badge from './badge/examples';
@@ -12,11 +13,13 @@ import * as datePicker from './date-picker/examples';
 import * as dialog from './dialog/examples';
 import * as divider from './divider/examples';
 import * as expansionPanel from './expansion-panel/examples';
+import * as fab from './fab/examples';
 import * as footer from './footer/examples';
 import * as formField from './form-field/examples';
 import * as header from './header/examples';
 import * as highcharts from './highcharts/examples';
 import * as hyperlink from './hyperlink/examples';
+import * as iconButton from './icon-button/examples';
 import * as icons from './icons/examples';
 import * as list from './list/examples';
 import * as menu from './menu/examples';
@@ -57,12 +60,14 @@ export const examplesMap: Record<string, unknown> = {
   dialog: dialog,
   divider: divider,
   'expansion-panel': expansionPanel,
+  fab: fab,
   footer: footer,
   'form-field': formField,
   header: header,
   highcharts: highcharts,
   hyperlink: hyperlink,
   icons: icons,
+  'icon-button': iconButton,
   list: list,
   menu: menu,
   notifications: notifications,
@@ -87,3 +92,66 @@ export const examplesMap: Record<string, unknown> = {
   tooltips: tooltips,
   tree: tree,
 };
+
+/**
+ * Alternative component slugs that resolve to an `examplesMap` entry. The
+ * Helix (Supernova) site embeds `/examples/:component` using its own
+ * component names, so keep those working here.
+ */
+const componentAliases: Record<string, string> = {
+  button: 'buttons',
+  'button-fab': 'fab',
+  'button-icon-button': 'icon-button',
+  chip: 'chips',
+  'expansion-panel-accordion': 'expansion-panel',
+  icon: 'icons',
+  'input-text-field': 'text-input',
+  'sidenav-navigation-drawer': 'sidenav',
+  'slide-toggle-switch': 'slide-toggle',
+  'table-and-data-grid': 'table',
+  tooltip: 'tooltips',
+};
+
+/** Legacy example slugs (per canonical component) still embedded by Helix. */
+const exampleAliases: Record<string, Record<string, string>> = {
+  buttons: {
+    'buttons-fab-default': 'buttons-fab',
+    'icon-button': 'buttons-icon',
+  },
+  fab: {
+    'buttons-fab-default': 'buttons-fab',
+  },
+  'icon-button': {
+    'icon-button': 'buttons-icon',
+  },
+};
+
+export function resolveComponentSlug(component: string): string {
+  return componentAliases[component] ?? component;
+}
+
+export function getExamples(
+  component: string,
+): InputViewerComponent[] | undefined {
+  const samples = examplesMap[resolveComponentSlug(component)];
+  return samples
+    ? (Object.values(samples) as InputViewerComponent[])
+    : undefined;
+}
+
+export function toExampleSlug(exampleName: string): string {
+  return exampleName.trim().toLowerCase().replace(/\s+/g, '-');
+}
+
+export function findExample(
+  component: string,
+  exampleSlug: string,
+): InputViewerComponent | undefined {
+  const canonical = resolveComponentSlug(component);
+  const slug = exampleSlug.toLowerCase();
+  const target = exampleAliases[canonical]?.[slug] ?? slug;
+
+  return getExamples(canonical)?.find(
+    (example) => toExampleSlug(example.exampleName ?? '') === target,
+  );
+}

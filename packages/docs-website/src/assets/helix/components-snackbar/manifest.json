@@ -1,0 +1,30 @@
+[
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/f9768fd0-d77f-44bd-8663-314494ee0cfb.png",
+    "alt": "Snackbar",
+    "heading": "Options",
+    "file": "01.png"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/9ca59633-7d56-40a8-8110-d1c83086fb01.png",
+    "alt": "Snackbar",
+    "heading": "Options",
+    "file": "02.png"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/2891d210-4015-433f-aac2-c2d787c8a149.png",
+    "alt": "",
+    "heading": "Usage",
+    "guideline": "do",
+    "text": "Text labels give clear, concise updates on completed processes and should fit on one line whenever possible.",
+    "file": "03.png"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/360d2174-f4d3-4641-9eb5-03dece6dd3ea.png",
+    "alt": "",
+    "heading": "Usage",
+    "guideline": "dont",
+    "text": "Don't use icons, stylized text, or inline links in snackbars, as they add unnecessary complexity. If a link is needed, use a button or a different component.",
+    "file": "04.png"
+  }
+]

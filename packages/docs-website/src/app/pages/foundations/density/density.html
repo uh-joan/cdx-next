@@ -1,0 +1,127 @@
+<hlx-page
+  [section]="'Foundations'"
+  [title]="'Density'"
+  [subtitle]="'Density controls the size and spacing of select Helix components. It allows layouts to adapt in compact environments without compromising clarity, usability or accessibility.'"
+>
+  <h2>Density principles</h2>
+  <p>Density in Helix is guided by three core principles:</p>
+  <ul>
+    <li>
+      <strong>Default-first</strong> – Density 0 is the standard for most
+      interfaces. It offers the best balance of space, clarity, and
+      accessibility.
+    </li>
+    <li>
+      <strong>Consistent</strong> – Never mix different density levels within a
+      single view. Components presented together (e.g. a button group) should
+      always share the same setting.
+    </li>
+    <li>
+      <strong>Context-aware</strong> – Use compact densities only where screen
+      space is limited or dense information is presented (e.g. dashboards, admin
+      tools, data tables).
+    </li>
+  </ul>
+
+  <mat-divider></mat-divider>
+
+  <h2>Component scaling</h2>
+  <p>
+    Density in Helix is applied through Google Material 3’s Component Scaling,
+    which adjusts internal spacing - typically by reducing vertical padding or
+    height in 4px increments per level.
+  </p>
+  <p>
+    Density is only supported on certain components and within clearly defined
+    limits to preserve usability and legibility.
+  </p>
+  <img
+    class="doc-image"
+    src="helix/foundations-density/01.png"
+    alt="Four dark Apply buttons side by side at density 0, -1, -2 and -3, each slightly shorter than the previous one."
+    loading="lazy"
+  />
+  <table class="foundation-table">
+    <thead>
+      <tr>
+        <th scope="col">Component</th>
+        <th scope="col">Density 0</th>
+        <th scope="col">Density -1</th>
+        <th scope="col">Density -2</th>
+        <th scope="col">Density -3</th>
+        <th scope="col">Density -4</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">Button</th>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>❌</td>
+      </tr>
+      <tr>
+        <th scope="row">Icon button</th>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>❌</td>
+      </tr>
+      <tr>
+        <th scope="row">Input</th>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
+      </tr>
+      <tr>
+        <th scope="row">Select</th>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
+      </tr>
+      <tr>
+        <th scope="row">Chip</th>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>❌</td>
+        <td>❌</td>
+      </tr>
+      <tr>
+        <th scope="row">Table</th>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>❌</td>
+        <td>❌</td>
+      </tr>
+      <tr>
+        <th scope="row">Slide toggle</th>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>❌</td>
+        <td>❌</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <mat-divider></mat-divider>
+
+  <h2>Implementation</h2>
+  <p>
+    For how to apply density in code, see
+    <cdx-internal-link
+      [inline]="true"
+      [text]="'Development › Density'"
+      [url]="'/development/density'"
+    ></cdx-internal-link
+    >.
+  </p>
+</hlx-page>

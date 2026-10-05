@@ -1,32 +1,87 @@
 <hlx-page
-  [title]="'Data Grid'"
+  [title]="'Data grid'"
   [subtitle]="'Data Grids show complex information in widely customizable tabular form.'"
   [section]="'Components'"
+  storybookId="components-data-grid"
+  tabbed
 >
-  <h2>AG Grid Documentation</h2>
-  <p>
-    For information about installation and usage for
-    <strong>AG Grid</strong> with Angular, visit AG Grid's Angular
-    <cdx-external-link
-      [text]="'Getting Started'"
-      [url]="'https://www.ag-grid.com/angular-data-grid/getting-started/'"
-    ></cdx-external-link>
-    documentation.
-  </p>
-  <p>
-    After successfully installing AG Grid, please see our
-    <cdx-internal-link
-      [text]="'Adding the Clarivate Theme'"
-      [url]="'/development/quick-start-new-project'"
-    ></cdx-internal-link>
-    instructions.
-  </p>
+  <div overview>
+    <p>
+      Use AG Grid for interactive tables with large data sets. Helix styles AG
+      Grid with the Clarivate theme. For installation and theme setup, see the
+      Code tab.
+    </p>
 
-  <mat-divider></mat-divider>
+    <h2>Options</h2>
+    <p>
+      Data grids follow the same guidance as
+      <cdx-internal-link
+        [inline]="true"
+        [text]="'Components › Table'"
+        [url]="'/components/table'"
+      ></cdx-internal-link
+      >:
+    </p>
+    <ul>
+      <li>
+        Use clear, descriptive column headers that accurately reflect the data.
+      </li>
+      <li>
+        Include units of measurement in column headers if possible, not in
+        individual cells.
+      </li>
+      <li>Align text left and numeric values right to improve scannability.</li>
+      <li>
+        Use consistent formatting for similar data types (dates, currencies,
+        percentages).
+      </li>
+      <li>Use row and column dividers sparingly to maintain visual clarity.</li>
+      <li>
+        Ensure sufficient contrast and spacing for readability and
+        accessibility.
+      </li>
+    </ul>
 
-  <h2>Examples</h2>
+    <mat-divider></mat-divider>
 
-  @for (sample of sampleList; track sample.exampleName) {
-  <hlx-example-viewer [inputViewerComponent]="sample"></hlx-example-viewer>
-  }
+    <h2>Usage</h2>
+    <cdx-usage-guidelines>
+      <cdx-usage-guideline kind="do">
+        Design tables to be clean and scannable, with a clear purpose and
+        minimal, well-prioritized interactions.
+      </cdx-usage-guideline>
+      <cdx-usage-guideline kind="dont">
+        Don't overload tables with excessive controls or competing interactions
+        that increase cognitive load and reduce readability.
+      </cdx-usage-guideline>
+    </cdx-usage-guidelines>
+  </div>
+
+  <div code>
+    <h2>AG Grid Documentation</h2>
+    <p>
+      For information about installation and usage for
+      <strong>AG Grid</strong> with Angular, visit AG Grid's Angular
+      <cdx-external-link
+        [text]="'Getting Started'"
+        [url]="'https://www.ag-grid.com/angular-data-grid/getting-started/'"
+      ></cdx-external-link>
+      documentation.
+    </p>
+    <p>
+      After successfully installing AG Grid, please see our
+      <cdx-internal-link
+        [text]="'Adding the Clarivate Theme'"
+        [url]="'/development/quick-start-new-project'"
+      ></cdx-internal-link>
+      instructions.
+    </p>
+
+    <mat-divider></mat-divider>
+
+    <h2>Examples</h2>
+    @for (sample of sampleList; track sample.exampleName) {
+    <hlx-example-viewer [inputViewerComponent]="sample"></hlx-example-viewer>
+    }
+  </div>
 </hlx-page>

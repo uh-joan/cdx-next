@@ -3,10 +3,91 @@
   [subtitle]="'Badges are small status descriptors for UI elements. A badge consists of a small circle, typically containing a number or other short set of characters, that appears in proximity to another object.'"
   [section]="'Components'"
   componentName="badge"
+  storybookId="components-badge"
+  tabbed
 >
-  <h2>Examples</h2>
+  <div overview>
+    <p>
+      The Helix badge component is built using selected styles from the Angular
+      Material badge framework. For implementation details, see the Code tab.
+    </p>
 
-  @for (sample of sampleList; track sample.exampleName) {
-  <hlx-example-viewer [inputViewerComponent]="sample"></hlx-example-viewer>
-  }
+    <h2>Options</h2>
+    <h3>Color and size</h3>
+    <p>
+      Badges have two color themes and two sizes to signal the importance of an
+      action.
+    </p>
+    <p>Choose from two functional color themes:</p>
+    <ul>
+      <li><strong>Primary</strong> – Our default. Use for most actions.</li>
+      <li>
+        <strong>Accent</strong> – Use sparingly for actions that need extra
+        emphasis.
+      </li>
+    </ul>
+    <div class="doc-image-grid">
+      <figure>
+        <img
+          src="helix/components-badge/01.png"
+          alt="Large primary badge: a dark grey circle containing a number sign"
+          loading="lazy"
+        />
+        <figcaption>Primary, large</figcaption>
+      </figure>
+      <figure>
+        <img
+          src="helix/components-badge/02.png"
+          alt="Small primary badge: a dark grey dot"
+          loading="lazy"
+        />
+        <figcaption>Primary, small</figcaption>
+      </figure>
+      <figure>
+        <img
+          src="helix/components-badge/03.png"
+          alt="Large accent badge: a purple circle containing a number sign"
+          loading="lazy"
+        />
+        <figcaption>Accent, large</figcaption>
+      </figure>
+      <figure>
+        <img
+          src="helix/components-badge/04.png"
+          alt="Small accent badge: a purple dot"
+          loading="lazy"
+        />
+        <figcaption>Accent, small</figcaption>
+      </figure>
+    </div>
+
+    <mat-divider></mat-divider>
+
+    <h2>Usage</h2>
+    <cdx-usage-guidelines>
+      <cdx-usage-guideline
+        kind="do"
+        imageSrc="helix/components-badge/05.png"
+        imageAlt="A filter list where Filter 02 shows a purple badge with the number 3 next to it"
+      >
+        Use badges to show a count of items or notifications (e.g., number of
+        filters applied).
+      </cdx-usage-guideline>
+      <cdx-usage-guideline
+        kind="dont"
+        imageSrc="helix/components-badge/06.png"
+        imageAlt="A dark badge on the edge of a dark floating action button, where it blends in and is hard to read"
+      >
+        Ensure contrast and readability, especially against different
+        backgrounds.
+      </cdx-usage-guideline>
+    </cdx-usage-guidelines>
+  </div>
+
+  <div code>
+    <h2>Examples</h2>
+    @for (sample of sampleList; track sample.exampleName) {
+    <hlx-example-viewer [inputViewerComponent]="sample" />
+    }
+  </div>
 </hlx-page>

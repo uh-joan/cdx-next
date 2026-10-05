@@ -1,25 +1,70 @@
 <hlx-page
-  [title]="'Icons'"
-  [subtitle]="'Product icons are the visual expression of a brand and product, typically related to UI actions.'"
+  [title]="'Icon'"
+  [subtitle]="'Icons are small visual symbols that help users quickly identify actions and categories.'"
   [section]="'Components'"
   componentName="icon"
+  storybookId="components-icon"
+  tabbed
 >
-  <h2>Which icons to use</h2>
-  <p>
-    Almost every icon in the Helix Figma library is a standard Material icon.
-    Use those through the Material Symbols font, by name:
-    <code>&lt;mat-icon&gt;search&lt;/mat-icon&gt;</code>.
-  </p>
-  <p>
-    The few icons Clarivate draws itself, such as the AI and brand icons, come
-    from <code>@cdx/helix-icons</code>. Add <code>provideHelixIcons()</code> to
-    your app config and use them with the <code>hlx</code> namespace:
-    <code>&lt;mat-icon svgIcon="hlx:ai-summary"&gt;&lt;/mat-icon&gt;</code>.
-  </p>
+  <div overview>
+    <p>
+      The Helix icon component is built using selected styles from the Angular
+      Material icon framework. For implementation details, see the Code tab.
+    </p>
+    <p>
+      Icons are visual symbols that communicate information, afford
+      interactivity and draw attention to important information at a glance.
+      They are simple, familiar and universal.
+    </p>
 
-  <h2>Examples</h2>
+    <h2>Options</h2>
+    <h3>Styles</h3>
+    <p>
+      Icons use specific color themes to convey their importance or meaning.
+    </p>
+    <p>
+      Helix uses the Google Material Symbols and Icons library, configured to
+      align with the Clarivate brand guidelines and maintain consistency across
+      the system.
+    </p>
+    <p>Choose from three functional color themes:</p>
+    <ul>
+      <li><strong>Standard</strong> – Default style for most icons.</li>
+      <li>
+        <strong>Semantic</strong> – Use to reinforce meaning, only on the
+        corresponding surface color.
+      </li>
+      <li>
+        <strong>Distinct</strong> – Use sparingly for emphasis or decorative
+        purposes.
+      </li>
+    </ul>
+    <img
+      class="doc-image"
+      src="helix/components-icons/01.png"
+      alt="Icon color styles. Standard: primary, secondary, disabled and invert. Semantic: negative, positive, warn and info, each on its matching light surface. Distinct: accent and brand, in purple"
+      loading="lazy"
+    />
+  </div>
 
-  @for (sample of sampleList; track sample.exampleName) {
-  <hlx-example-viewer [inputViewerComponent]="sample"></hlx-example-viewer>
-  }
+  <div code>
+    <h2>Which icons to use</h2>
+    <p>
+      Almost every icon in the Helix Figma library is a standard Material icon.
+      Use those through the Material Symbols font, by name:
+      <code>&lt;mat-icon&gt;search&lt;/mat-icon&gt;</code>.
+    </p>
+    <p>
+      The few icons Clarivate draws itself, such as the AI and brand icons, and
+      the pictograms come from <code>@cdx/helix-icons</code>. Add
+      <code>provideHelixIcons()</code> to your app config and use them with the
+      <code>hlx</code> and <code>hlx-pictogram</code> namespaces:
+      <code>&lt;mat-icon svgIcon="hlx:ai-summary"&gt;&lt;/mat-icon&gt;</code>.
+    </p>
+
+    <h2>Examples</h2>
+    @for (sample of sampleList; track sample.exampleName) {
+    <hlx-example-viewer [inputViewerComponent]="sample" />
+    }
+  </div>
 </hlx-page>

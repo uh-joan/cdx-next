@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ColorPaletteComponent } from './typography';
+import { Typography } from './typography';
 
-describe('ColorPaletteComponent', () => {
-  let component: ColorPaletteComponent;
-  let fixture: ComponentFixture<ColorPaletteComponent>;
+describe('Typography', () => {
+  let component: Typography;
+  let fixture: ComponentFixture<Typography>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [ColorPaletteComponent],
+      imports: [Typography],
     });
-    fixture = TestBed.createComponent(ColorPaletteComponent);
+    fixture = TestBed.createComponent(Typography);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

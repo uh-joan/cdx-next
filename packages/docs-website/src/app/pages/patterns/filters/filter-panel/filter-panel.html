@@ -1,0 +1,203 @@
+<hlx-page
+  [section]="'Patterns'"
+  [title]="'Filter panel'"
+  [subtitle]="'Filters allow users to refine large volumes of data based on specific criteria, improving the accuracy and relevance of results.'"
+>
+  <p>
+    It is a sidebar component that lets users apply filters while still viewing
+    the results table.
+  </p>
+
+  <mat-divider></mat-divider>
+
+  <h2>When to use it</h2>
+  <p>
+    A filter panel is ideal when users need to refine large sets of information
+    based on multiple criteria to find relevant results. We should consider
+    using a filter panel when:
+  </p>
+  <ul>
+    <li>There are multiple filtering options across different categories.</li>
+    <li>Users need to apply several filters at once.</li>
+    <li>
+      It’s important to view the results and filters simultaneously to maintain
+      context.
+    </li>
+  </ul>
+  <p>Examples:</p>
+  <div class="doc-image-grid pattern-example-grid">
+    <figure>
+      <img
+        src="helix/patterns-filter-panel/01.png"
+        alt="Results page with a filter panel listing filter categories on the left of the results table."
+        loading="lazy"
+      />
+      <figcaption>Results page</figcaption>
+    </figure>
+    <figure>
+      <img
+        src="helix/patterns-filter-panel/02.png"
+        alt="Dashboard with a Filter by bar of three dropdowns above a bubble chart."
+        loading="lazy"
+      />
+      <figcaption>Dashboard</figcaption>
+    </figure>
+  </div>
+
+  <mat-divider></mat-divider>
+
+  <h2>Components used</h2>
+  <ul>
+    <li>Text</li>
+    <li>
+      <cdx-internal-link
+        [inline]="true"
+        [text]="'List'"
+        [url]="'/components/list'"
+      ></cdx-internal-link>
+    </li>
+    <li>
+      <cdx-internal-link
+        [inline]="true"
+        [text]="'Button'"
+        [url]="'/components/buttons'"
+      ></cdx-internal-link>
+    </li>
+    <li>
+      <cdx-internal-link
+        [inline]="true"
+        [text]="'Chips'"
+        [url]="'/components/chips'"
+      ></cdx-internal-link>
+    </li>
+    <li>
+      <cdx-internal-link
+        [inline]="true"
+        [text]="'Tabs'"
+        [url]="'/components/tabs'"
+      ></cdx-internal-link>
+    </li>
+    <li>
+      <cdx-internal-link
+        [inline]="true"
+        [text]="'Cards'"
+        [url]="'/components/card'"
+      ></cdx-internal-link>
+    </li>
+    <li>
+      <cdx-internal-link
+        [inline]="true"
+        [text]="'Divider'"
+        [url]="'/components/divider'"
+      ></cdx-internal-link>
+    </li>
+    <li>
+      <cdx-internal-link
+        [inline]="true"
+        [text]="'Slide toggle'"
+        [url]="'/components/slide-toggle'"
+      ></cdx-internal-link>
+    </li>
+    <li>
+      <cdx-internal-link
+        [inline]="true"
+        [text]="'Expansion panel'"
+        [url]="'/components/expansion-panel'"
+      ></cdx-internal-link>
+    </li>
+    <li>
+      <cdx-internal-link
+        [inline]="true"
+        [text]="'Date range'"
+        [url]="'/components/date-picker'"
+      ></cdx-internal-link>
+    </li>
+    <li>
+      <cdx-internal-link
+        [inline]="true"
+        [text]="'Checkboxes'"
+        [url]="'/components/checkbox'"
+      ></cdx-internal-link>
+    </li>
+  </ul>
+
+  <mat-divider></mat-divider>
+
+  <h2>Frequently used functionalities</h2>
+  <ul>
+    <li>
+      <strong>Clear all / Select all:</strong> To clear the selected options.
+    </li>
+    <li>
+      <strong>Reset:</strong> When there’s a default configuration users might
+      want to restore.
+    </li>
+    <li>
+      <strong>Search inside the list:</strong> When the list of items is quite
+      long.
+    </li>
+    <li>
+      <strong>Cancel / Apply buttons:</strong> When filters cannot update
+      results in real-time.
+    </li>
+    <li><strong>Alphabetical / Hierarchical views</strong></li>
+    <li><strong>Filter selected</strong></li>
+    <li><strong>Counts</strong> at the filter categories</li>
+    <li><strong>Expand/Collapse</strong> button (sidebar)</li>
+    <li><strong>Order by frequency</strong></li>
+  </ul>
+
+  <mat-divider></mat-divider>
+
+  <h2>Best practices</h2>
+  <ul>
+    <li>
+      The
+      <strong>sidebar can be expanded or collapsed by default</strong> depending
+      on the use case.
+    </li>
+    <li>
+      <strong>Group related filters</strong> together to enhance scannability.
+    </li>
+    <li>
+      <strong>Avoid having very long scrolling inside the bar</strong>; if the
+      set of filters is very long, it is better to use the
+      <cdx-internal-link
+        [inline]="true"
+        [text]="'filter modal'"
+        [url]="'/patterns/filters/filter-modal'"
+      ></cdx-internal-link
+      >.
+    </li>
+    <li>
+      Provide a <strong>"Clear all"</strong> option to easily clear all filters.
+    </li>
+    <li>
+      Include a <strong>"Reset" button</strong> whenever there’s a default
+      configuration that users may want to revert to.
+    </li>
+    <li>
+      Indicate active filters clearly so users always know how results are being
+      narrowed down.
+    </li>
+    <li>
+      Remember, a well-designed filter panel helps users find what they are
+      looking for faster, feel more in control, and have a smoother, more
+      satisfying app experience.
+    </li>
+  </ul>
+  <cdx-usage-guidelines>
+    <cdx-usage-guideline
+      kind="do"
+      imageSrc="helix/patterns-filter-panel/03.png"
+      imageAlt="Filter panel beside a results table; the list of filter categories scrolls inside the panel."
+    >
+    </cdx-usage-guideline>
+    <cdx-usage-guideline
+      kind="dont"
+      imageSrc="helix/patterns-filter-panel/04.png"
+      imageAlt="Filter panel beside a results table that hides part of the list behind a Show more filters button."
+    >
+    </cdx-usage-guideline>
+  </cdx-usage-guidelines>
+</hlx-page>

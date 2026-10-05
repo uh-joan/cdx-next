@@ -5,7 +5,7 @@ import { Page } from '../../../core/page/page';
 import * as samples from './examples';
 
 @Component({
-  selector: 'app-expansion-panel',
+  selector: 'cdx-expansion-panel',
   templateUrl: './expansion-panel.html',
   styleUrls: ['./expansion-panel.scss'],
   imports: [Page, ExampleViewer],

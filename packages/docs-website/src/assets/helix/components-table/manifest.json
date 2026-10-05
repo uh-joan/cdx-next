@@ -1,0 +1,48 @@
+[
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/85be86ff-332a-4796-ac3b-9620499c0f50.png",
+    "alt": "Table Cell",
+    "heading": "Options",
+    "file": "01.png"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/d7a68d2d-04d7-4b21-83a0-16dc6e45bea7.png",
+    "alt": "Table Header",
+    "heading": "Options",
+    "file": "02.png"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/5d9ec09f-9ced-45c0-9208-b923baf62e83.png",
+    "alt": "Table Header",
+    "heading": "Density",
+    "file": "03.png"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/0a5a354c-4eef-4bbb-8a45-28162c0663f4.png",
+    "alt": "Table Header",
+    "heading": "Density",
+    "file": "04.png"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/f8f1e641-c6b2-4662-9acf-81ea5ab288e7.png",
+    "alt": "Styles",
+    "heading": "Sort header",
+    "file": "05.png"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/ae1be870-bd70-4e9e-a043-ed613691c306.png",
+    "alt": "",
+    "heading": "Usage",
+    "guideline": "do",
+    "text": "Design tables to be clean and scannable, with a clear purpose and minimal, well-prioritized interactions.",
+    "file": "06.png"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/23948c20-c32f-4f04-bc60-8f483d59d8e0.png",
+    "alt": "",
+    "heading": "Usage",
+    "guideline": "dont",
+    "text": "Don't overload tables with excessive controls or competing interactions that increase cognitive load and reduce readability.",
+    "file": "07.png"
+  }
+]

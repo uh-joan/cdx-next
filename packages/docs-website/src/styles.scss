@@ -22,6 +22,36 @@
 body {
   margin: 0;
 
+  // Illustrations ported from Helix (src/assets/helix/<page>/).
+  .doc-image {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 1rem 0 1.5rem;
+  }
+
+  .doc-image-grid {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    margin: 1rem 0 1.5rem;
+
+    figure {
+      margin: 0;
+      text-align: center;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    figcaption {
+      font-size: 14px;
+      color: hlx.$text-secondary;
+    }
+  }
+
   hlx-page {
     p,
     li {
@@ -72,7 +102,8 @@ body {
       flex: 1;
       flex-direction: column;
 
-      img {
+      // Legacy sizing for example images; Helix illustrations size themselves.
+      img:not([src^='helix/']) {
         width: 80%;
         margin-top: 1rem;
         margin-bottom: 0.5rem;

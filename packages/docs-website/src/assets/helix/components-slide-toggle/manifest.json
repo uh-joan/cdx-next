@@ -1,0 +1,42 @@
+[
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/024686cf-5bd1-42e5-b310-ffb4ed26ba38.png",
+    "alt": "Slide Toggle",
+    "heading": "",
+    "file": "01.png"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/85c7d932-0245-4a83-8c47-1cca8740f2bd.png",
+    "alt": "Slide Toggle",
+    "heading": "",
+    "file": "02.png"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/f20396ae-b35e-4350-b284-47e0856c4833.png",
+    "alt": "Slide Toggle",
+    "heading": "Density",
+    "file": "03.png"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/56a95d1a-0d29-4178-9d0f-63cfe015d094.png",
+    "alt": "Slide Toggle",
+    "heading": "Density",
+    "file": "04.png"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/5ac9c916-d090-44ad-ba2e-91656729eb60.png",
+    "alt": "",
+    "heading": "Usage",
+    "guideline": "do",
+    "text": "Keep labels short and clear. Describe the action that occurs when the slide toggle is on.",
+    "file": "05.png"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/8f602d55-b8b1-4e95-8e94-d91ca6a850ee.png",
+    "alt": "",
+    "heading": "Usage",
+    "guideline": "dont",
+    "text": "Don\u2019t use slide toggles for multiple selections or actions that need saving. Changes should apply instantly. Use checkboxes instead.",
+    "file": "06.png"
+  }
+]

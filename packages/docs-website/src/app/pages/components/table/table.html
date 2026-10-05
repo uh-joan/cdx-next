@@ -1,11 +1,154 @@
 <hlx-page
-  [title]="'Table'"
-  [subtitle]="'Data tables display information in a way thats easy to scan, so that users can look for patterns and insights.'"
+  [title]="'Table and data grid'"
+  [subtitle]="'Tables present information in a scannable format, enabling users to identify patterns and insights quickly.'"
   [section]="'Components'"
   componentName="table"
+  storybookId="components-table"
+  tabbed
 >
-  <h2>Examples</h2>
-  @for (sample of sampleList; track sample.exampleName) {
-  <hlx-example-viewer [inputViewerComponent]="sample"></hlx-example-viewer>
-  }
+  <div overview>
+    <p>
+      The Helix table component is built using selected styles from the Angular
+      Material table framework. For implementation details, see the Code tab.
+    </p>
+
+    <h2>Options</h2>
+    <ul>
+      <li>
+        Use clear, descriptive column headers that accurately reflect the data.
+      </li>
+      <li>
+        Include units of measurement in column headers if possible, not in
+        individual cells.
+      </li>
+      <li>Align text left and numeric values right to improve scannability.</li>
+      <li>
+        Use consistent formatting for similar data types (dates, currencies,
+        percentages).
+      </li>
+      <li>Use row and column dividers sparingly to maintain visual clarity.</li>
+      <li>
+        Ensure sufficient contrast and spacing for readability and
+        accessibility.
+      </li>
+      <li>
+        Use AG Grid for interactive tables with large data sets (see
+        <cdx-internal-link
+          [inline]="true"
+          [text]="'Components › Data Grid'"
+          [url]="'/components/data-grid'"
+        ></cdx-internal-link
+        >).
+      </li>
+    </ul>
+    <div class="doc-image-grid">
+      <figure>
+        <img
+          src="helix/components-table/01.png"
+          alt="Table cell with a label and a bottom divider"
+          loading="lazy"
+        />
+        <figcaption>Table cell</figcaption>
+      </figure>
+      <figure>
+        <img
+          src="helix/components-table/02.png"
+          alt="Table header cell with a bold title"
+          loading="lazy"
+        />
+        <figcaption>Table header</figcaption>
+      </figure>
+    </div>
+
+    <h3>Density</h3>
+    <p>
+      Table cells and headers are available in three size options, controlled by
+      the density setting.
+    </p>
+    <ul>
+      <li>Density 0 is the default and most commonly used.</li>
+    </ul>
+    <div class="doc-image-grid">
+      <figure>
+        <img
+          src="helix/components-table/03.png"
+          alt="Table header at density -1"
+          loading="lazy"
+        />
+        <figcaption>Density -1</figcaption>
+      </figure>
+      <figure>
+        <img
+          src="helix/components-table/04.png"
+          alt="Table header at density -2"
+          loading="lazy"
+        />
+        <figcaption>Density -2</figcaption>
+      </figure>
+    </div>
+    <p>
+      For more detail, see
+      <cdx-internal-link
+        [inline]="true"
+        [text]="'Foundations › Density'"
+        [url]="'/foundations/density'"
+      ></cdx-internal-link
+      >.
+    </p>
+
+    <mat-divider></mat-divider>
+
+    <h2>Sort header</h2>
+    <p>
+      Sort headers add sorting functionality to data tables, allowing users to
+      sort rows, columns, or entire tables. By default, they toggle between
+      ascending and descending order. See
+      <cdx-internal-link
+        [inline]="true"
+        [text]="'Components › Sort Header'"
+        [url]="'/components/sort-header'"
+      ></cdx-internal-link
+      >.
+    </p>
+    <img
+      class="doc-image"
+      src="helix/components-table/05.png"
+      alt="Sort header cell with an up arrow for ascending order and a down arrow for descending order"
+      loading="lazy"
+    />
+
+    <mat-divider></mat-divider>
+
+    <h2>Usage</h2>
+    <cdx-usage-guidelines>
+      <cdx-usage-guideline
+        kind="do"
+        imageSrc="helix/components-table/06.png"
+        imageAlt="Simple table with City, State and Owners columns, sorted by City"
+      >
+        Design tables to be clean and scannable, with a clear purpose and
+        minimal, well-prioritized interactions.
+      </cdx-usage-guideline>
+      <cdx-usage-guideline
+        kind="dont"
+        imageSrc="helix/components-table/07.png"
+        imageAlt="Table with checkboxes, sort, filter and menu icons in every header and wrapping cell text"
+      >
+        Don't overload tables with excessive controls or competing interactions
+        that increase cognitive load and reduce readability.
+      </cdx-usage-guideline>
+    </cdx-usage-guidelines>
+  </div>
+
+  <div code>
+    <p>
+      Add the <code>hlx-table</code> class to a <code>mat-table</code> to apply
+      the Helix table styles.
+    </p>
+
+    <h2>Examples</h2>
+    @for (sample of sampleList; track sample.exampleName) {
+    <hlx-example-viewer [inputViewerComponent]="sample"></hlx-example-viewer>
+    }
+  </div>
 </hlx-page>

@@ -1,12 +1,47 @@
 <hlx-page
-  [title]="'Expansion Panel'"
-  [subtitle]="'The expansion panel, or commonly known as an accordion, is a component which organizes content within collapsable items.'"
+  [title]="'Expansion panel (accordion)'"
+  [subtitle]="'Expansion panels, commonly called accordion, organise content into collapsible items.'"
   [section]="'Components'"
   componentName="expansion"
+  storybookId="components-expansion-panel"
+  tabbed
 >
-  <h2>Examples</h2>
+  <div overview>
+    <p>
+      The Helix expansion panel component is built using selected styles from
+      the Angular Material framework. For implementation details, see the Code
+      tab.
+    </p>
 
-  @for (sample of sampleList; track sample.exampleName) {
-  <hlx-example-viewer [inputViewerComponent]="sample"></hlx-example-viewer>
-  }
+    <h2>Options</h2>
+    <p>
+      By default, the expansion-panel header includes a toggle icon at its end
+      to indicate whether it is expanded or collapsed.
+    </p>
+    <div class="doc-image-grid">
+      <figure>
+        <img
+          src="helix/components-expansion-panel/01.png"
+          alt="A collapsed expansion panel: a title with a downward chevron at the end"
+          loading="lazy"
+        />
+        <figcaption>Collapsed</figcaption>
+      </figure>
+      <figure>
+        <img
+          src="helix/components-expansion-panel/02.png"
+          alt="An expanded panel showing its content area and an upward chevron, above a second, collapsed panel"
+          loading="lazy"
+        />
+        <figcaption>Expanded</figcaption>
+      </figure>
+    </div>
+  </div>
+
+  <div code>
+    <h2>Examples</h2>
+    @for (sample of sampleList; track sample.exampleName) {
+    <hlx-example-viewer [inputViewerComponent]="sample" />
+    }
+  </div>
 </hlx-page>

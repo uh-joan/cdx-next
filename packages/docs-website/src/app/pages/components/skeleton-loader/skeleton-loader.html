@@ -1,113 +1,143 @@
 <hlx-page
-  [title]="'Skeleton Loader'"
-  [subtitle]="'Skeleton Loader provides a visual representation of content loading, giving users a seamless experience while waiting for data to load.'"
+  [title]="'Skeleton loader'"
+  [subtitle]="'A Skeleton Loader shows a placeholder of content while data is loading, providing users with a seamless waiting experience.'"
   [section]="'Components'"
+  storybookId="components-skeleton-loader"
+  tabbed
 >
-  <h2>NGX Skeleton loader Documentation</h2>
-  <p>
-    For more information about the API for <strong>skeleton loader</strong>,
-    visit the docs:
-  </p>
-  <cdx-external-link
-    [inline]="false"
-    [url]="'https://www.npmjs.com/package/ngx-skeleton-loader'"
-  ></cdx-external-link>
-  <mat-divider></mat-divider>
+  <div overview>
+    <p>
+      Skeleton Loader provides a visual representation of content loading,
+      giving users a seamless experience while waiting for data to load. The
+      Helix skeleton loader is built with
+      <code>ngx-skeleton-loader</code>. For implementation details, see the Code
+      tab.
+    </p>
 
-  <h2>Installation</h2>
+    <h2>Options</h2>
+    <h3>Appearance</h3>
+    <ul>
+      <li><strong>Line</strong> – The default. Renders like a line of text.</li>
+      <li><strong>Circle</strong> – Great for avatar skeletons.</li>
+      <li>
+        <strong>Custom content</strong> – No appearance is added. Great for
+        custom content, such as SVG or internal components.
+      </li>
+    </ul>
 
-  <cdx-highlight [text]="moduleText"></cdx-highlight>
+    <h3>Animations</h3>
+    <ul>
+      <li><strong>Progress</strong> – The default animation.</li>
+      <li>
+        <strong>Progress dark</strong> – Recommended if your color scheme is
+        dark.
+      </li>
+      <li><strong>Pulse</strong></li>
+      <li><strong>None</strong> – Disables the animation.</li>
+    </ul>
+  </div>
 
-  <br /><br />
+  <div code>
+    <h2>NGX Skeleton loader Documentation</h2>
+    <p>
+      For more information about the API for <strong>skeleton loader</strong>,
+      visit the docs:
+    </p>
+    <cdx-external-link
+      [inline]="false"
+      [url]="'https://www.npmjs.com/package/ngx-skeleton-loader'"
+    ></cdx-external-link>
 
-  <h2>Using NgxSkeletonLoaderModule.forRoot()</h2>
+    <mat-divider></mat-divider>
 
-  <p>
-    Also, you can import the module in your app by calling
-    NgxSkeletonLoaderModule.forRoot() when adding it. So it will be available
-    across your Angular application.
-  </p>
-  <p>
-    Importing the module this way also allows you to globally configure the
-    default values for the ngx-skeleton-loader components in your application,
-    in case you need some different default values for your app.
-  </p>
+    <h2>Installation</h2>
+    <cdx-highlight [text]="moduleText"></cdx-highlight>
 
-  <cdx-highlight [text]="complexModule"></cdx-highlight>
+    <h3>Using NgxSkeletonLoaderModule.forRoot()</h3>
+    <p>
+      You can also import the module in your app by calling
+      <code>NgxSkeletonLoaderModule.forRoot()</code> when adding it, so it will
+      be available across your Angular application.
+    </p>
+    <p>
+      Importing the module this way also allows you to globally configure the
+      default values for the ngx-skeleton-loader components in your application,
+      in case you need different default values for your app.
+    </p>
 
-  <ul>
-    <li>
-      By default, every ngx-skeleton-loader component will use theme coming from
-      NgxSkeletonLoaderModule.forRoot() as the source of truth
-    </li>
-    <li>
-      If there's any CSS attribute on the component locally which overrides the
-      CSS spec, it combines both themes, but overriding global CSS attributes in
-      favor of local ones.
-    </li>
-  </ul>
+    <cdx-highlight [text]="complexModule"></cdx-highlight>
 
-  <cdx-highlight [text]="complexModule2"></cdx-highlight>
+    <ul>
+      <li>
+        By default, every ngx-skeleton-loader component will use the theme
+        coming from <code>NgxSkeletonLoaderModule.forRoot()</code> as the source
+        of truth.
+      </li>
+      <li>
+        If there's any CSS attribute on the component locally which overrides
+        the CSS spec, it combines both themes, but overrides global CSS
+        attributes in favor of local ones.
+      </li>
+    </ul>
 
-  <br /><br />
+    <cdx-highlight [text]="complexModule2"></cdx-highlight>
 
-  <h2>Appearance</h2>
+    <mat-divider></mat-divider>
 
-  <p>
-    You can also define which appearance want to use in your skeleton loader by
-    passing the options in your component via [appearance] attribute.
-  </p>
+    <h2>Appearance</h2>
+    <p>
+      You can define which appearance to use in your skeleton loader by passing
+      the option to your component via the <code>[appearance]</code>
+      attribute.
+    </p>
+    <ul>
+      <li><code>''</code> – default: renders like a line.</li>
+      <li>
+        <code>line</code> – renders like a line. This is the same behavior as
+        passing an empty string.
+      </li>
+      <li>
+        <code>circle</code> – uses a circle as appearance. Great for avatar
+        skeletons, for example.
+      </li>
+      <li>
+        <code>custom-content</code> – does NOT add any appearance. Great for
+        custom content, such as SVG, internal components and such.
+      </li>
+    </ul>
 
-  <h5>Options</h5>
-  <ul>
-    <li>
-      '' - default: it will use it '' as appearance. At the end, it will render
-      like a line;
-    </li>
-    <li>
-      line: it will render like a line. This is the same behavior as passing an
-      empty string;
-    </li>
-    <li>
-      circle: it will use circle as appearance. Great for avatar skeletons, for
-      example :);
-    </li>
-    <li>
-      custom-content: it will NOT add any appearance. Great for custom content,
-      such as SVG, internal components and such;
-    </li>
-  </ul>
+    <h2>Animations</h2>
+    <p>
+      You can define which CSS animation to use - or none at all - in your
+      skeleton loader by passing the option to your component via the
+      <code>[animation]</code> attribute.
+    </p>
+    <ul>
+      <li>
+        <code>false</code> (as boolean or string) – disables the animation.
+      </li>
+      <li><code>progress</code> – default: uses progress as animation.</li>
+      <li>
+        <code>progress-dark</code> – uses progress-dark as animation.
+        Recommended if your color scheme is dark.
+      </li>
+      <li><code>pulse</code> – uses pulse as animation.</li>
+    </ul>
 
-  <h2>Animations</h2>
-  <p>
-    You can also define which CSS animation you want to use - even not use any,
-    if it's the case - in your skeleton loader by passing the options in your
-    component via [animation] attribute.
-  </p>
-  <h5>Options</h5>
-  <ul>
-    <li>false (as boolean or string): it will disable the animation.</li>
-    <li>progress - default: it will use it progress as animation;</li>
-    <li>
-      progress-dark: it will use it progress-dark as animation. Recommended if
-      your color schema is darken;
-    </li>
-    <li>pulse: it will use pulse as animation;</li>
-  </ul>
+    <h2>Theming</h2>
+    <p>
+      You can define different styles for the skeleton loader by passing an
+      object with the CSS styles - in dashed case - into the component via the
+      <code>[theme]</code> attribute. The <code>[theme]</code> attribute accepts
+      the same configuration as <code>ngStyle</code>, so you can use it just
+      like the built-in directive.
+    </p>
 
-  <h2>Theming</h2>
-  <p>
-    You can also define different styles for the skeleton loader by passing an
-    object with the css styles - in dashed case - into the component via [theme]
-    attribute. The [theme] attribute now accepts the same configuration as
-    ngStyle as well. That means you can manage to use like you're doing with the
-    built-in directive, having a pleasure and beautiful experience
-  </p>
+    <mat-divider></mat-divider>
 
-  <br /><br />
-
-  <h2>Examples</h2>
-  @for (sample of sampleList; track sample.exampleName) {
-  <hlx-example-viewer [inputViewerComponent]="sample"></hlx-example-viewer>
-  }
+    <h2>Examples</h2>
+    @for (sample of sampleList; track sample.exampleName) {
+    <hlx-example-viewer [inputViewerComponent]="sample"></hlx-example-viewer>
+    }
+  </div>
 </hlx-page>

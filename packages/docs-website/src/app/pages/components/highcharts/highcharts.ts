@@ -8,7 +8,7 @@ import { Page } from '../../../core/page/page';
 import * as samples from './examples';
 
 @Component({
-  selector: 'app-highcharts',
+  selector: 'cdx-highcharts',
   templateUrl: './highcharts.html',
   styleUrls: ['./highcharts.scss'],
   imports: [Page, ExampleViewer, Highlight, MatDividerModule, ExternalLink],
@@ -18,7 +18,7 @@ export class Highcharts {
 
   moduleText = `import * as Highcharts from 'highcharts';
   import { HighchartsChartComponent } from 'highcharts-angular';
-  import { HIGHCHARTS_CDX_THEME } from '@cdx/theme-highcharts';
+  import { HIGHCHARTS_HLX_THEME } from '@cdx/theme-highcharts';
   
   @NgModule({
     declarations: [MyHighchartsComponent],
@@ -26,8 +26,8 @@ export class Highcharts {
   })
   export class MyHighchartsModule {
     constructor() {
-      // Apply the CDX theme globally
-      Highcharts.setOptions(HIGHCHARTS_CDX_THEME);
+      // Apply the HLX theme globally
+      Highcharts.setOptions(HIGHCHARTS_HLX_THEME);
     }
   }`;
 
@@ -35,7 +35,7 @@ export class Highcharts {
   import HighchartsAccessibilityModule from 'highcharts/modules/accessibility';
   
   // Initialize accessibility module
-  HighchartsAccessibilityModule(Highcharts);}`;
+  HighchartsAccessibilityModule(Highcharts);`;
 
   sampleList = Object.values(samples);
 }

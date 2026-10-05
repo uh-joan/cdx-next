@@ -1,0 +1,30 @@
+[
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/bfc05315-7f86-495c-b589-8e9a50859587.png",
+    "alt": "Radio Button",
+    "heading": "",
+    "file": "01.png"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/21e3026f-ffe5-45cf-9862-1433452a4157.png",
+    "alt": "Radio Button",
+    "heading": "",
+    "file": "02.png"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/eb1da2bb-4c8d-4c78-864c-f9f4907ead3f.png",
+    "alt": "",
+    "heading": "Usage",
+    "guideline": "do",
+    "text": "Use radio buttons when only one option can be selected.",
+    "file": "03.png"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/24eb404f-a7b0-43be-a429-671a5eb02292.png",
+    "alt": "",
+    "heading": "Usage",
+    "guideline": "dont",
+    "text": "Don't nest radio buttons or let users select multiple options.",
+    "file": "04.png"
+  }
+]

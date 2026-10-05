@@ -1,0 +1,92 @@
+[
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/75a44d3a-bc81-475a-a370-fcce9480fba2.png",
+    "alt": "Button Toggle",
+    "heading": "Color and types",
+    "file": "01.png"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/aae6a1b2-392e-4c93-a548-961ebdf2a28c.png",
+    "alt": "Button Toggle",
+    "heading": "Color and types",
+    "file": "02.png"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/1a35d32b-bc24-4858-95f3-e40360574ff7.png",
+    "alt": "Button Toggle",
+    "heading": "Color and types",
+    "file": "03.png"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/d1f5e03c-b918-4d27-aa8a-46c546a9302c.png",
+    "alt": "Button Toggle",
+    "heading": "Color and types",
+    "file": "04.png"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/accb65ca-8926-4b66-b9fe-dd57b2f1f7e6.png",
+    "alt": "Button Toggle",
+    "heading": "Color and types",
+    "file": "05.png"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/9bf1ecec-9ab4-46ab-950a-498682f2892a.png",
+    "alt": "Button Toggle",
+    "heading": "Color and types",
+    "file": "06.png"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/0c9370c3-4943-4574-9643-f7f67d66d635.png",
+    "alt": "Styles",
+    "heading": "Icons",
+    "file": "07.png"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/d9c6c034-5416-46fe-984b-f8a955f6ad81.png",
+    "alt": "",
+    "heading": "Usage",
+    "guideline": "do",
+    "text": "Multi-select segmented buttons can be used to filter.",
+    "file": "08.png"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/23927431-dd39-41fb-b8b5-0a81507001e4.png",
+    "alt": "",
+    "heading": "Usage",
+    "guideline": "dont",
+    "text": "Don\u2019t use more than five segments or let them wrap to a new line.",
+    "file": "09.png"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/3b755403-eff5-4c2e-8a8c-8d7ee6b7498c.png",
+    "alt": "",
+    "heading": "Usage",
+    "guideline": "do",
+    "text": "Keep labels short and consistent.",
+    "file": "10.png"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/6c5425b0-63b9-4c06-b5cc-dfbaa3ac05b8.png",
+    "alt": "",
+    "heading": "Usage",
+    "guideline": "dont",
+    "text": "Don't mix icon-only labels with text labels.",
+    "file": "11.png"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/653f1c84-23dc-4a04-93af-1309dd2dad4c.png",
+    "alt": "",
+    "heading": "Usage",
+    "guideline": "do",
+    "text": "Set a maximum segment padding to maintain usability on large screens.",
+    "file": "12.png"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/a15a9725-2370-4bc1-b39a-5afaf50956ba.png",
+    "alt": "",
+    "heading": "Usage",
+    "guideline": "dont",
+    "text": "Don\u2019t let segmented buttons stretch across wide screens. Excessive padding reduces usability.",
+    "file": "13.png"
+  }
+]

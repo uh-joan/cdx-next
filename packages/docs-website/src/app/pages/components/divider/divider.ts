@@ -5,7 +5,7 @@ import { Page } from '../../../core/page/page';
 import * as samples from './examples';
 
 @Component({
-  selector: 'app-divider',
+  selector: 'cdx-divider',
   templateUrl: './divider.html',
   styleUrls: ['./divider.scss'],
   imports: [Page, ExampleViewer],

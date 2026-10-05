@@ -8,7 +8,7 @@ describe('LeftNavigation', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [LeftNavigation],
+      imports: [LeftNavigation],
     });
     fixture = TestBed.createComponent(LeftNavigation);
     component = fixture.componentInstance;

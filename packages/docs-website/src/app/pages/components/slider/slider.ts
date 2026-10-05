@@ -5,7 +5,7 @@ import { Page } from '../../../core/page/page';
 import * as samples from './examples';
 
 @Component({
-  selector: 'app-slider',
+  selector: 'cdx-slider',
   templateUrl: './slider.html',
   styleUrls: ['./slider.scss'],
   imports: [Page, ExampleViewer],

@@ -47,7 +47,6 @@ interface ElTable {
 export class Elevation {
   @HostBinding('class') hostClass = 'cdx-section';
 
-  basePath = '../../assets/elevation/';
   systemBackground = `
   body {
     background: var(--mat-sys-surface);

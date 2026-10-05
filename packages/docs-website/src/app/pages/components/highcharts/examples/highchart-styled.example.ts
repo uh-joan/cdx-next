@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import * as Highcharts from 'highcharts';
+import Highcharts from 'highcharts';
 import { HighchartsChartComponent } from 'highcharts-angular';
 
 import { InputViewerComponent } from '../../../../core/example-viewer/example-viewer.model';
@@ -133,7 +133,7 @@ export const HighchartStyledComponent: InputViewerComponent = {
   htmlCode: htmlCode,
   cssCode: styleCode,
   tsCode: `import { Component } from '@angular/core';
-import * as Highcharts from 'highcharts';
+import Highcharts from 'highcharts';
 import { HighchartsChartComponent } from 'highcharts-angular';
 import { HIGHCHARTS_HLX_THEME } from '@cdx/theme-highcharts';
 

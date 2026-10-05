@@ -1,0 +1,170 @@
+<hlx-page
+  [section]="'Patterns'"
+  [title]="'Filter modal'"
+  [subtitle]="'Filters allow users to refine large volumes of data based on specific criteria, improving the accuracy and relevance of results.'"
+>
+  <p>Applies from five filters per use case.</p>
+
+  <mat-divider></mat-divider>
+
+  <h2>When to use it</h2>
+  <p>
+    If the filters are complex and numerous, it's recommended to use a modal for
+    better usability, e.g., hierarchical filters.
+  </p>
+  <div class="doc-image-grid pattern-example-grid">
+    <figure>
+      <img
+        src="helix/patterns-filter-modal/01.png"
+        alt="Filter modal open over a results table: a list of filter categories on the left and the selected category's chip options on the right."
+        loading="lazy"
+      />
+      <figcaption>Results page</figcaption>
+    </figure>
+    <figure>
+      <img
+        src="helix/patterns-filter-modal/02.png"
+        alt="Results page with four basic filter dropdowns above a table."
+        loading="lazy"
+      />
+      <figcaption>
+        Basic filters with more than 20 list items or several categories inside
+      </figcaption>
+    </figure>
+    <figure>
+      <img
+        src="helix/patterns-filter-modal/03.png"
+        alt="The same page with a filter modal open, showing the categories and options that did not fit in the dropdowns."
+        loading="lazy"
+      />
+      <figcaption>The same page with the filter modal open</figcaption>
+    </figure>
+    <figure>
+      <img
+        src="helix/patterns-filter-modal/04.png"
+        alt="Results page with a Filter button followed by three basic filter dropdowns above a table."
+        loading="lazy"
+      />
+      <figcaption>
+        When there are a few basic filters upfront and a general filter button
+        with the rest of the filters
+      </figcaption>
+    </figure>
+  </div>
+
+  <mat-divider></mat-divider>
+
+  <h2>Components used</h2>
+  <ul>
+    <li>Text</li>
+    <li>
+      <cdx-internal-link
+        [inline]="true"
+        [text]="'List'"
+        [url]="'/components/list'"
+      ></cdx-internal-link>
+    </li>
+    <li>
+      <cdx-internal-link
+        [inline]="true"
+        [text]="'Button'"
+        [url]="'/components/buttons'"
+      ></cdx-internal-link>
+    </li>
+    <li>
+      <cdx-internal-link
+        [inline]="true"
+        [text]="'Chips'"
+        [url]="'/components/chips'"
+      ></cdx-internal-link>
+    </li>
+    <li>
+      <cdx-internal-link
+        [inline]="true"
+        [text]="'Tabs'"
+        [url]="'/components/tabs'"
+      ></cdx-internal-link>
+    </li>
+    <li>
+      <cdx-internal-link
+        [inline]="true"
+        [text]="'Cards'"
+        [url]="'/components/card'"
+      ></cdx-internal-link>
+    </li>
+    <li>
+      <cdx-internal-link
+        [inline]="true"
+        [text]="'Divider'"
+        [url]="'/components/divider'"
+      ></cdx-internal-link>
+    </li>
+    <li>
+      <cdx-internal-link
+        [inline]="true"
+        [text]="'Slide toggle'"
+        [url]="'/components/slide-toggle'"
+      ></cdx-internal-link>
+    </li>
+    <li>
+      <cdx-internal-link
+        [inline]="true"
+        [text]="'Select'"
+        [url]="'/components/select'"
+      ></cdx-internal-link>
+    </li>
+    <li>
+      <cdx-internal-link
+        [inline]="true"
+        [text]="'Badge'"
+        [url]="'/components/badge'"
+      ></cdx-internal-link>
+    </li>
+  </ul>
+
+  <mat-divider></mat-divider>
+
+  <h2>Frequently used functionalities</h2>
+  <ul>
+    <li>
+      <strong>Clear all / Select all:</strong> To clear the selected options.
+    </li>
+    <li>
+      <strong>Search inside the list:</strong> When the list of items is quite
+      long.
+    </li>
+    <li>
+      <strong>Cancel / Apply buttons:</strong> When filters cannot update
+      results in real-time.
+    </li>
+    <li><strong>Alphabetical / Hierarchical views</strong></li>
+    <li><strong>Filter selected</strong></li>
+    <li><strong>Counts at the filter categories</strong></li>
+  </ul>
+
+  <mat-divider></mat-divider>
+
+  <h2>Best practices</h2>
+  <ul>
+    <li>
+      <strong>Group related filters</strong> together to enhance scannability.
+    </li>
+    <li>
+      Provide a <strong>"Clear all" option</strong> to easily clear all filters
+      selected (more info in Frequently used functionalities).
+    </li>
+    <li>
+      Include a <strong>"Reset" button</strong> whenever there’s a default
+      configuration that users may want to revert to.
+    </li>
+    <li>
+      Indicate active filters clearly so users always know how results are being
+      narrowed down.
+    </li>
+    <li>
+      Remember, a well-designed filter panel helps users find what they are
+      looking for faster, feel more in control, and have a smoother, more
+      satisfying app experience.
+    </li>
+  </ul>
+</hlx-page>

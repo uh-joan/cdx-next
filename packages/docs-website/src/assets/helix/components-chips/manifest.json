@@ -1,0 +1,112 @@
+[
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/ae9de5e3-6f8c-4a9d-94d8-1ec8e279daa7.png",
+    "alt": "Chip",
+    "heading": "Color and styles",
+    "file": "01.png"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/779bf145-2fe2-4e38-8cfb-aba79a3d0b36.png",
+    "alt": "Chip",
+    "heading": "Color and styles",
+    "file": "02.png"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/86273771-40bd-493a-8778-862d41b5f4c9.png",
+    "alt": "Chip",
+    "heading": "Color and styles",
+    "file": "03.png"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/106c3b1d-201e-419e-b781-92bc0e22f0c6.png",
+    "alt": "Chip",
+    "heading": "Color and styles",
+    "file": "04.png"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/9ae0c79b-7ae8-4778-857a-8af1db58f0ad.png",
+    "alt": "Chip",
+    "heading": "Color and styles",
+    "file": "05.png"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/c702af48-5701-48f7-917c-0323783fd909.png",
+    "alt": "Chip",
+    "heading": "Color and styles",
+    "file": "06.png"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/52774f8f-0955-45b7-89b3-f54dff0d2b0f.png",
+    "alt": "Chip",
+    "heading": "Color and styles",
+    "file": "07.png"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/b6f3d854-6675-45d1-958c-cc9d208ab4cc.png",
+    "alt": "Chip",
+    "heading": "Color and styles",
+    "file": "08.png"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/bb318bc0-6d81-4b52-80f7-3b011f3b2fc9.png",
+    "alt": "Chip",
+    "heading": "Color and styles",
+    "file": "09.png"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/d583da32-d52e-4edc-8fcd-bd404459bd3f.png",
+    "alt": "Chip",
+    "heading": "Density",
+    "file": "10.png"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/2fb34749-52a4-4b30-bcb9-2bd8eef315f6.png",
+    "alt": "Chip",
+    "heading": "Density",
+    "file": "11.png"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/6ae0f0c5-60e4-4ae2-820f-7aaaddbcbdd1.png",
+    "alt": "Icons",
+    "heading": "Icons",
+    "file": "12.png"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/b2f77670-d3d0-44c7-9f64-491b5ca42c89.png",
+    "alt": "Types",
+    "heading": "Type",
+    "file": "13.png"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/b7aa04d5-c1ba-406d-8133-a24862d1e8b5.png",
+    "alt": "",
+    "heading": "Usage",
+    "guideline": "do",
+    "text": "Use chips to present contextual, supplemental options or filter results.",
+    "file": "14.png"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/b5bbaa1a-6db2-459f-b75c-529db2f9cf60.png",
+    "alt": "",
+    "heading": "Usage",
+    "guideline": "dont",
+    "text": "Don't use chips for primary actions. Use buttons for moving users forward in a process.",
+    "file": "15.png"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/25ecad2f-d5c0-4282-bcc3-3fccb8e12e23.png",
+    "alt": "",
+    "heading": "Usage",
+    "guideline": "do",
+    "text": "Use chips to show statuses or states (e.g., Completed).",
+    "file": "16.png"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/3361d43e-5823-4b82-b232-18745d18d6c0.png",
+    "alt": "",
+    "heading": "Usage",
+    "guideline": "dont",
+    "text": "Don't use chips to display static data, such as dates.",
+    "file": "17.png"
+  }
+]

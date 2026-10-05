@@ -3,26 +3,74 @@
     <div class="heading__section">{{ section() | uppercase }}</div>
     <h1>{{ title() }}</h1>
     <div class="mat-title-medium">{{ subtitle() }}</div>
-    <div class="heading__divider" aria-hidden="true"></div>
-  </div>
-  <div class="content">
-    @if (componentName()) {
-    <h2>Angular Material Documentation</h2>
-    <p>
-      For more information about the API for
-      <strong>{{ componentName() }}</strong>, visit the Angular Material docs:
-    </p>
-    <a
-      [href]="'https://material.angular.dev/components/' + componentName() + '/api'"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      Open Material API Docs
-    </a>
+    @if (!tabbed()) {
     <div class="heading__divider" aria-hidden="true"></div>
     }
+  </div>
+
+  @if (tabbed()) {
+  <nav mat-tab-nav-bar class="page-tabs" [tabPanel]="tabPanel">
+    <a
+      mat-tab-link
+      [routerLink]="[]"
+      [queryParams]="{ tab: null }"
+      queryParamsHandling="merge"
+      [active]="activeTab() === 'overview'"
+    >
+      Overview
+    </a>
+    <a
+      mat-tab-link
+      [routerLink]="[]"
+      [queryParams]="{ tab: 'code' }"
+      queryParamsHandling="merge"
+      [active]="activeTab() === 'code'"
+    >
+      Code
+    </a>
+  </nav>
+  <mat-tab-nav-panel #tabPanel>
+    <div class="content" [hidden]="activeTab() !== 'overview'">
+      <ng-content select="[overview]"></ng-content>
+    </div>
+    <div class="content" [hidden]="activeTab() !== 'code'">
+      <ng-container *ngTemplateOutlet="materialApi"></ng-container>
+      @if (storybookId(); as storybookId) {
+      <h2>Playground</h2>
+      <p>
+        Try every configuration with live controls. The density toolbar applies
+        the levels from Foundations › Density.
+      </p>
+      <cdx-storybook-embed [componentId]="storybookId"></cdx-storybook-embed>
+      <mat-divider></mat-divider>
+      }
+      <ng-content select="[code]"></ng-content>
+    </div>
+  </mat-tab-nav-panel>
+  } @else {
+  <div class="content">
+    <ng-container *ngTemplateOutlet="materialApi"></ng-container>
     <ng-content></ng-content>
   </div>
+  }
 </div>
+
+<ng-template #materialApi>
+  @if (componentName()) {
+  <h2>Angular Material Documentation</h2>
+  <p>
+    For more information about the API for
+    <strong>{{ componentName() }}</strong>, visit the Angular Material docs:
+  </p>
+  <a
+    [href]="'https://material.angular.dev/components/' + componentName() + '/api'"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    Open Material API Docs
+  </a>
+  <div class="heading__divider" aria-hidden="true"></div>
+  }
+</ng-template>
 
 <footer hlx-footer slim branded></footer>

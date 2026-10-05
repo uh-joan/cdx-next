@@ -1,0 +1,46 @@
+[
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/a264ae10-079b-43c6-bd71-da33b3c63f54.png",
+    "alt": "Tooltip",
+    "heading": "Options",
+    "file": "01.png"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/e7d38b69-9964-482d-8928-9e7eca5622cf.png",
+    "alt": "Rich Tooltip",
+    "heading": "Options",
+    "file": "02.png"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/48b44db1-37cc-4a76-b2b6-02735a37e61c.png",
+    "alt": "",
+    "heading": "Usage",
+    "guideline": "do",
+    "text": "Use plain tooltips to label icon buttons and provide brief descriptions of the UI elements.",
+    "file": "03.png"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/049fc4a8-3549-4aec-bd14-55754cff6d40.png",
+    "alt": "",
+    "heading": "Usage",
+    "guideline": "dont",
+    "text": "Don't use plain tooltips for lengthy explanations.",
+    "file": "04.png"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/894e4ccb-56cd-4a45-a88e-b512986ba0fa.png",
+    "alt": "",
+    "heading": "Usage",
+    "guideline": "do",
+    "text": "Use rich tooltips when additional details or actions are needed for a UI element or new feature.",
+    "file": "05.png"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/6ed4216f-c2cd-418f-86d5-09093481ba52.png",
+    "alt": "",
+    "heading": "Usage",
+    "guideline": "dont",
+    "text": "Don\u2019t hide critical information in tooltips, as they\u2019re easy to miss. Use an interruptive dialog instead.",
+    "file": "06.png"
+  }
+]

@@ -7,7 +7,7 @@ import { Page } from '../../../core/page/page';
 import * as samples from './examples';
 
 @Component({
-  selector: 'app-footer',
+  selector: 'cdx-footer-page',
   templateUrl: './footer.html',
   styleUrls: ['./footer.scss'],
   imports: [Page, ExampleViewer, MatDivider, Highlight],

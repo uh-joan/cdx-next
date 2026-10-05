@@ -1,0 +1,46 @@
+[
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/e44d16ad-e973-4a4c-8e12-377f4cc446a2.png",
+    "alt": "panel-1",
+    "heading": "Options",
+    "file": "01.png"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/789a3dd2-53b8-4196-b30c-b96a8e36b23d.png",
+    "alt": "panel-2",
+    "heading": "Options",
+    "file": "02.png"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/d06bfa71-b9f4-44a3-9614-3837b255d528.png",
+    "alt": "",
+    "heading": "Usage",
+    "guideline": "do",
+    "text": "Use a single high-emphasis button per page to guide users clearly toward the primary action.",
+    "file": "03.png"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/e8d8c556-0738-4608-8cc2-c274e0ccc3aa.png",
+    "alt": "",
+    "heading": "Usage",
+    "guideline": "dont",
+    "text": "Don't use multiple high-emphasis buttons, it can dilute focus and create confusion.",
+    "file": "04.png"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/2bf04455-e126-4370-83a1-286b08a15351.png",
+    "alt": "",
+    "heading": "Usage",
+    "guideline": "do",
+    "text": "Use icons when they enhance understanding and directly support the button\u2019s purpose.",
+    "file": "05.png"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/ca98a432-700a-4844-a6bc-7444c6ec1031.png",
+    "alt": "",
+    "heading": "Usage",
+    "guideline": "dont",
+    "text": "Don't use icons that serve only as decoration or add unnecessary visual noise.",
+    "file": "06.png"
+  }
+]

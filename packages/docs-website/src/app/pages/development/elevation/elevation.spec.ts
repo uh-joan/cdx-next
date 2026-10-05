@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ColorPaletteComponent } from './elevation';
+import { Elevation } from './elevation';
 
-describe('ColorPaletteComponent', () => {
-  let component: ColorPaletteComponent;
-  let fixture: ComponentFixture<ColorPaletteComponent>;
+describe('Elevation', () => {
+  let component: Elevation;
+  let fixture: ComponentFixture<Elevation>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [ColorPaletteComponent],
+      imports: [Elevation],
     });
-    fixture = TestBed.createComponent(ColorPaletteComponent);
+    fixture = TestBed.createComponent(Elevation);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

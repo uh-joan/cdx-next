@@ -5,7 +5,7 @@ import { Page } from '../../../core/page/page';
 import * as samples from './examples';
 
 @Component({
-  selector: 'app-toolbar',
+  selector: 'cdx-toolbar',
   templateUrl: './toolbar.html',
   styleUrls: ['./toolbar.scss'],
   imports: [Page, ExampleViewer],

@@ -1,0 +1,170 @@
+<hlx-page
+  [section]="'Patterns'"
+  [title]="'Basic filters'"
+  [subtitle]="'Filters allow users to refine large volumes of data based on specific criteria, improving the accuracy and relevance of results.'"
+>
+  <p>
+    Applies to one to five or six filters per use case. This limit can vary
+    depending on the layout, but it's important to ensure filters always stay on
+    a single line across all screen resolutions to maintain a clean and
+    consistent design.
+  </p>
+
+  <mat-divider></mat-divider>
+
+  <h2>When to use it</h2>
+  <p>Choosing the right use case will improve usability and user efficiency.</p>
+  <div class="doc-image-grid pattern-example-grid">
+    <figure>
+      <img
+        src="helix/patterns-basic-filters/01.png"
+        alt="Bar chart with two Filter by dropdowns above it."
+        loading="lazy"
+      />
+      <figcaption>Data visualization</figcaption>
+    </figure>
+    <figure>
+      <img
+        src="helix/patterns-basic-filters/02.png"
+        alt="Table with three Filter by dropdowns above it."
+        loading="lazy"
+      />
+      <figcaption>Table</figcaption>
+    </figure>
+    <figure>
+      <img
+        src="helix/patterns-basic-filters/03.png"
+        alt="Entity page with tabs, a Filter by bar with three dropdowns and a bubble chart below."
+        loading="lazy"
+      />
+      <figcaption>Entity page with small sets of data</figcaption>
+    </figure>
+    <figure>
+      <img
+        src="helix/patterns-basic-filters/04.png"
+        alt="Results page with a Filter button followed by three quick-filter dropdowns above a table."
+        loading="lazy"
+      />
+      <figcaption>
+        The most used filters on an entity or results page
+      </figcaption>
+    </figure>
+  </div>
+
+  <mat-divider></mat-divider>
+
+  <h2>Components used</h2>
+  <ul>
+    <li>Search</li>
+    <li>
+      <cdx-internal-link
+        [inline]="true"
+        [text]="'Radio button'"
+        [url]="'/components/radio-button'"
+      ></cdx-internal-link>
+    </li>
+    <li>
+      <cdx-internal-link
+        [inline]="true"
+        [text]="'Checkbox'"
+        [url]="'/components/checkbox'"
+      ></cdx-internal-link>
+    </li>
+    <li>Dropdown lists</li>
+    <li>
+      <cdx-internal-link
+        [inline]="true"
+        [text]="'Card'"
+        [url]="'/components/card'"
+      ></cdx-internal-link>
+    </li>
+    <li>
+      <cdx-internal-link
+        [inline]="true"
+        [text]="'Slide toggle'"
+        [url]="'/components/slide-toggle'"
+      ></cdx-internal-link>
+    </li>
+    <li>
+      <cdx-internal-link
+        [inline]="true"
+        [text]="'Text input'"
+        [url]="'/components/text-input'"
+      ></cdx-internal-link>
+    </li>
+    <li>
+      <cdx-internal-link
+        [inline]="true"
+        [text]="'Buttons'"
+        [url]="'/components/buttons'"
+      ></cdx-internal-link>
+    </li>
+    <li>
+      <cdx-internal-link
+        [inline]="true"
+        [text]="'Select'"
+        [url]="'/components/select'"
+      ></cdx-internal-link>
+    </li>
+    <li>
+      <cdx-internal-link
+        [inline]="true"
+        [text]="'Chips'"
+        [url]="'/components/chips'"
+      ></cdx-internal-link>
+    </li>
+  </ul>
+
+  <mat-divider></mat-divider>
+
+  <h2>Frequently used functionalities</h2>
+  <ul>
+    <li>
+      <strong>Clear all / Select all:</strong> To clear the selected options.
+    </li>
+    <li>
+      <strong>Reset:</strong> When there’s a default configuration users might
+      want to restore.
+    </li>
+    <li>
+      <strong>Search inside the list:</strong> When the list of items is quite
+      long.
+    </li>
+    <li>
+      <strong>Cancel / Apply buttons:</strong> When filters cannot update
+      results in real-time.
+    </li>
+  </ul>
+
+  <mat-divider></mat-divider>
+
+  <h2>Best practices</h2>
+  <ul>
+    <li>
+      <strong>Use for common &amp; high-frequency actions:</strong> Quick
+      filters should address the most used or high-frequency filtering actions
+      to minimize user effort.
+    </li>
+    <li>
+      <strong>Keep labels short &amp; clear:</strong> Use concise, descriptive
+      labels that are immediately understandable.
+    </li>
+    <li>
+      <strong>Show active states clearly:</strong> Provide a clear visual
+      indicator (e.g., highlight, checkmark, pill state) when a quick filter is
+      active, to reinforce user feedback.
+    </li>
+    <li>
+      <strong>Limit the number of quick filters:</strong> Display only the most
+      relevant filters to avoid overwhelming users. Prioritize based on user
+      needs and usage data.
+    </li>
+    <li>
+      <strong>Maintain a single line layout:</strong> Ensure quick filters stay
+      on a single line across screen sizes to keep the interface clean and
+      scannable. In case more filters need to be added, they can be inside a
+      general filter button. Use case: "The most used filters on an entity or
+      results page."
+    </li>
+  </ul>
+</hlx-page>

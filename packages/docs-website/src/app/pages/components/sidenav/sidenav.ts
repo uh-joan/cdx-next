@@ -5,7 +5,7 @@ import { Page } from '../../../core/page/page';
 import * as samples from './examples';
 
 @Component({
-  selector: 'app-sidenav',
+  selector: 'cdx-sidenav',
   templateUrl: './sidenav.html',
   styleUrls: ['./sidenav.scss'],
   imports: [Page, ExampleViewer],

@@ -1,0 +1,36 @@
+[
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/6055dfdf-db57-4036-adaa-85bc366cb41d.png",
+    "alt": "Progress Bar Determinate (Animated)",
+    "heading": "",
+    "file": "01.png"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/5bb751f8-60d6-444a-88ed-dd226aeb2565.png",
+    "alt": "Progress Bar Determinate (Static)",
+    "heading": "",
+    "file": "02.png"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/ec302f3b-5512-4283-98b7-1156f48c5166.png",
+    "alt": "Progress Bar Indeterminate (Animated)",
+    "heading": "",
+    "file": "03.png"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/3c897e15-51ac-4a6f-a5bc-188454e77194.png",
+    "alt": "",
+    "heading": "Usage",
+    "guideline": "do",
+    "text": "Use progress bar when the process can be described with quantitative information, such as a percentage",
+    "file": "04.png"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/ce34bfbf-4329-4562-aee2-dd3a1621cefc.png",
+    "alt": "",
+    "heading": "Usage",
+    "guideline": "dont",
+    "text": "Don't use progress bar when longer load times are expected and additional content will be revealed, use skeleton states instead.",
+    "file": "05.png"
+  }
+]

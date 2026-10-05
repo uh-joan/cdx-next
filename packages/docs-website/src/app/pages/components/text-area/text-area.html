@@ -1,11 +1,79 @@
 <hlx-page
-  [title]="'Text Area'"
-  [subtitle]="'Text Area defines a multi-line text input control, which can hold an unlimited number of characters.'"
+  [title]="'Text area'"
+  [subtitle]="'Text areas are taller than standard inputs and wrap overflow text onto new lines. The large size suggests longer responses.'"
   [section]="'Components'"
   componentName="input"
+  storybookId="components-text-area"
+  tabbed
 >
-  <h2>Examples</h2>
-  @for (sample of sampleList; track sample.exampleName) {
-  <hlx-example-viewer [inputViewerComponent]="sample"></hlx-example-viewer>
-  }
+  <div overview>
+    <p>
+      The Helix text area is built using selected styles from the Angular
+      Material input framework and shares its styles and states with
+      <cdx-internal-link
+        [inline]="true"
+        [text]="'Components › Text Input'"
+        [url]="'/components/text-input'"
+      ></cdx-internal-link
+      >. For implementation details, see the Code tab.
+    </p>
+
+    <h2>Options</h2>
+    <h3>Styles</h3>
+    <p>
+      Both types of input fields use a container to offer a visual cue for
+      interaction and deliver the same functionality.
+    </p>
+    <ul>
+      <li>
+        <strong>Outlined</strong> – Less visual emphasis, helps to simplify the
+        layout.
+      </li>
+      <li>
+        <strong>Filled</strong> – More distinct from other components (like
+        buttons) and surrounding content.
+      </li>
+    </ul>
+    <div class="doc-image-grid">
+      <figure>
+        <img
+          src="helix/components-text-input/03.png"
+          alt="Outlined text area with a label"
+          loading="lazy"
+        />
+        <figcaption>Outlined</figcaption>
+      </figure>
+      <figure>
+        <img
+          src="helix/components-text-input/04.png"
+          alt="Filled text area with a label"
+          loading="lazy"
+        />
+        <figcaption>Filled</figcaption>
+      </figure>
+    </div>
+
+    <h3>States</h3>
+    <p>The input component has integrated hover, focus and error states.</p>
+
+    <mat-divider></mat-divider>
+
+    <h2>Usage</h2>
+    <cdx-usage-guidelines>
+      <cdx-usage-guideline kind="do">
+        Keep the label text short, clear, and fully visible.
+      </cdx-usage-guideline>
+      <cdx-usage-guideline kind="dont">
+        Don't use labels that are too long, wrap onto multiple lines, or get
+        truncated.
+      </cdx-usage-guideline>
+    </cdx-usage-guidelines>
+  </div>
+
+  <div code>
+    <h2>Examples</h2>
+    @for (sample of sampleList; track sample.exampleName) {
+    <hlx-example-viewer [inputViewerComponent]="sample"></hlx-example-viewer>
+    }
+  </div>
 </hlx-page>

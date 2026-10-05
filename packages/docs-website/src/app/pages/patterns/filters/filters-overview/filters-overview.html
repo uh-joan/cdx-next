@@ -1,0 +1,132 @@
+<hlx-page
+  [section]="'Patterns'"
+  [title]="'Filters'"
+  [subtitle]="'Filters allow users to refine large volumes of data based on specific criteria, improving the accuracy and relevance of results.'"
+>
+  <h2>Use cases</h2>
+  <table class="pattern-table">
+    <thead>
+      <tr>
+        <th scope="col">Use case</th>
+        <th scope="col">Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">Refine results</th>
+        <td>in lists, tables, or dashboards.</td>
+      </tr>
+      <tr>
+        <th scope="row">Data visualization</th>
+        <td>Filter large datasets to highlight relevant patterns.</td>
+      </tr>
+      <tr>
+        <th scope="row">Facilitate content exploration</th>
+        <td>on platforms with large volumes of information.</td>
+      </tr>
+      <tr>
+        <th scope="row">Model training data selection</th>
+        <td>
+          Choose training datasets for machine learning models by applying
+          specific criteria.
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <mat-divider></mat-divider>
+
+  <h2>Filter types</h2>
+  <table class="pattern-table">
+    <thead>
+      <tr>
+        <th scope="col">Filter type</th>
+        <th scope="col">Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">Text search</th>
+        <td>Allows users to enter keywords to narrow results.</td>
+      </tr>
+      <tr>
+        <th scope="row">Category selection</th>
+        <td>
+          Uses dropdown lists, checkboxes, radio buttons or chips to segment
+          content.
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Boolean filter</th>
+        <td>
+          Allows users to narrow down data based on a simple true/false (yes/no)
+          condition. It typically represents binary choices — for example,
+          whether a sample is "approved" or "not approved," or whether a device
+          is "active" or "inactive." In a user interface, a Boolean filter often
+          appears as a toggle switch, a checkbox, or a pair of radio buttons.
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Hierarchical filters</th>
+        <td>
+          Organize filtering options into multiple levels, where the choices at
+          one level determine the available options at the next. They help users
+          progressively narrow down data by selecting categories and
+          subcategories in a structured way. In a user interface, hierarchical
+          filters often appear as cascading dropdowns, expandable trees, or
+          grouped categories. They are especially useful when datasets are large
+          and complex, and when elements naturally fit into a parent-child
+          relationship.
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Numeric ranges</th>
+        <td>Defines minimum and maximum limits (e.g., price, age, etc.).</td>
+      </tr>
+      <tr>
+        <th scope="row">Date filters</th>
+        <td>Uses date pickers to define specific periods.</td>
+      </tr>
+      <tr>
+        <th scope="row">Advanced filters</th>
+        <td>Combination of multiple criteria for greater precision.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <mat-divider></mat-divider>
+
+  <h2>Behavior and rules</h2>
+  <ul>
+    <li>Filters should update after user action.</li>
+    <li>Users should be able to easily clear filters.</li>
+    <li>
+      Clearly indicate applied filters and allow their individual removal.
+    </li>
+  </ul>
+
+  <mat-divider></mat-divider>
+
+  <h2>Best practices</h2>
+  <ul>
+    <li>
+      If the filters are complex and numerous, it's recommended to use a
+      <cdx-internal-link
+        [inline]="true"
+        [text]="'modal'"
+        [url]="'/patterns/filters/filter-modal'"
+      ></cdx-internal-link>
+      for better usability, e.g., hierarchical filters.
+    </li>
+    <li>Please avoid using both types of filters simultaneously.</li>
+  </ul>
+
+  <mat-divider></mat-divider>
+
+  <h2>Accessibility</h2>
+  <ul>
+    <li>Ensure filters are navigable via keyboard.</li>
+    <li>Provide clear labels for screen readers.</li>
+    <li>Include adequate contrast to improve readability.</li>
+  </ul>
+</hlx-page>

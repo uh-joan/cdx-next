@@ -1,11 +1,37 @@
 <hlx-page
-  [title]="'Sort Header'"
-  [subtitle]="'Sort headers are used in conjunction with data tables to add sorting functionality to a table row, column, or whole table. The default set up of a sort header sorts by ascending then descending.'"
+  [title]="'Sort header'"
+  [subtitle]="'Sort headers add sorting functionality to data tables, allowing users to sort rows, columns, or entire tables.'"
   [section]="'Components'"
   componentName="sort"
+  storybookId="components-sort-header"
+  tabbed
 >
-  <h2>Examples</h2>
-  @for (sample of sampleList; track sample.exampleName) {
-  <hlx-example-viewer [inputViewerComponent]="sample"></hlx-example-viewer>
-  }
+  <div overview>
+    <p>
+      By default, sort headers toggle between ascending and descending order.
+      For implementation details, see the Code tab.
+    </p>
+    <img
+      class="doc-image"
+      src="helix/components-table/05.png"
+      alt="Sort header cell with an up arrow for ascending order and a down arrow for descending order"
+      loading="lazy"
+    />
+    <p>
+      For general table guidance, see
+      <cdx-internal-link
+        [inline]="true"
+        [text]="'Components › Table'"
+        [url]="'/components/table'"
+      ></cdx-internal-link
+      >.
+    </p>
+  </div>
+
+  <div code>
+    <h2>Examples</h2>
+    @for (sample of sampleList; track sample.exampleName) {
+    <hlx-example-viewer [inputViewerComponent]="sample"></hlx-example-viewer>
+    }
+  </div>
 </hlx-page>
