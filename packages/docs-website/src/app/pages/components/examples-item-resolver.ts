@@ -1,44 +1,31 @@
 import { inject, Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, Resolve, Router } from '@angular/router';
 
-import { examplesMap } from './examples-map';
+import { InputViewerComponent } from '../../core/example-viewer/example-viewer.model';
+import { findExample, getExamples } from './examples-map';
 
 @Injectable({ providedIn: 'root' })
-export class ExampleItemResolver implements Resolve<unknown[] | null> {
+export class ExampleItemResolver implements Resolve<
+  InputViewerComponent[] | null
+> {
   private router = inject(Router);
 
-  normalizeExampleName(raw: string): string {
-    if (!raw) return '';
-
-    const spaced = raw.replace(/-/g, ' ');
-    return spaced
-      .split(' ')
-      .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-      .join(' ');
-  }
-
-  resolve(route: ActivatedRouteSnapshot): unknown[] | null {
+  resolve(route: ActivatedRouteSnapshot): InputViewerComponent[] | null {
     const component = route.parent?.paramMap.get('component');
     const exampleName = route.paramMap.get('exampleName');
 
     if (!component || !exampleName) return null;
 
-    const samples = examplesMap[component];
-    if (!samples) {
-      console.warn(`No samples  found for component "${component}"`);
+    if (!getExamples(component)) {
+      console.warn(`No samples found for component "${component}"`);
       this.router.navigate([`/examples/${component}`]);
       return null;
     }
 
-    const normalized = this.normalizeExampleName(exampleName);
-
-    const match = Object.values(samples).find(
-      (s) => s.exampleName === normalized,
-    );
-
+    const match = findExample(component, exampleName);
     if (!match) {
       console.warn(
-        `No example "${normalized}" found for component "${component}"`,
+        `No example "${exampleName}" found for component "${component}"`,
       );
       this.router.navigate([`/examples/${component}`]);
       return null;

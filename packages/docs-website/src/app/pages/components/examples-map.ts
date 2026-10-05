@@ -1,3 +1,4 @@
+import { InputViewerComponent } from '../../core/example-viewer/example-viewer.model';
 import * as autocomplete from './autocomplete/examples';
 import * as badge from './badge/examples';
 import * as breadcrumbs from './breadcrumbs/examples';
@@ -83,3 +84,58 @@ export const examplesMap: Record<string, unknown> = {
   tooltips: tooltips,
   tree: tree,
 };
+
+/**
+ * Alternative component slugs that resolve to an `examplesMap` entry. The
+ * Helix (Supernova) site embeds `/examples/:component` using its own
+ * component names, so keep those working here.
+ */
+const componentAliases: Record<string, string> = {
+  button: 'buttons',
+  chip: 'chips',
+  'expansion-panel-accordion': 'expansion-panel',
+  icon: 'icons',
+  'input-text-field': 'text-input',
+  'sidenav-navigation-drawer': 'sidenav',
+  'slide-toggle-switch': 'slide-toggle',
+  'table-and-data-grid': 'table',
+  tooltip: 'tooltips',
+};
+
+/** Legacy example slugs (per canonical component) still embedded by Helix. */
+const exampleAliases: Record<string, Record<string, string>> = {
+  buttons: {
+    'buttons-fab-default': 'buttons-fab',
+    'icon-button': 'buttons-icon',
+  },
+};
+
+export function resolveComponentSlug(component: string): string {
+  return componentAliases[component] ?? component;
+}
+
+export function getExamples(
+  component: string,
+): InputViewerComponent[] | undefined {
+  const samples = examplesMap[resolveComponentSlug(component)];
+  return samples
+    ? (Object.values(samples) as InputViewerComponent[])
+    : undefined;
+}
+
+export function toExampleSlug(exampleName: string): string {
+  return exampleName.trim().toLowerCase().replace(/\s+/g, '-');
+}
+
+export function findExample(
+  component: string,
+  exampleSlug: string,
+): InputViewerComponent | undefined {
+  const canonical = resolveComponentSlug(component);
+  const slug = exampleSlug.toLowerCase();
+  const target = exampleAliases[canonical]?.[slug] ?? slug;
+
+  return getExamples(canonical)?.find(
+    (example) => toExampleSlug(example.exampleName ?? '') === target,
+  );
+}
