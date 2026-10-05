@@ -119,6 +119,10 @@ const patternsNavigationMap: NavigationItem[] = [
   { title: 'List with filters', route: '/patterns/list-with-filters' },
   { title: 'Results page', route: '/patterns/list-with-filters' },
   { title: 'Filter chips', route: '/patterns/list-with-filters' },
+  { title: 'AI assistant', route: '/patterns/ai-assistant' },
+  { title: 'Chat', route: '/patterns/ai-assistant' },
+  { title: 'Conversation', route: '/patterns/ai-assistant' },
+  { title: 'Streaming', route: '/patterns/ai-assistant' },
 ];
 
 const servicesNavigationMap: NavigationItem[] = [

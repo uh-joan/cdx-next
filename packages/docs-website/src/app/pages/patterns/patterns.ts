@@ -52,5 +52,9 @@ export class Patterns {
       heading: 'List with filters',
       elements: [{ label: 'Overview', url: 'list-with-filters' }],
     },
+    {
+      heading: 'AI assistant',
+      elements: [{ label: 'Overview', url: 'ai-assistant' }],
+    },
   ];
 }

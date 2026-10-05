@@ -1,0 +1,88 @@
+<hlx-page
+  [section]="'Patterns'"
+  [title]="'AI assistant'"
+  [subtitle]="'A conversational assistant: user and assistant message cards, a streaming answer announced to assistive technology, per-answer feedback, and a docked composer — built on the Helix AI avatar and gradient.'"
+  tabbed
+>
+  <div overview>
+    <p>
+      An assistant surface is a thread of turns the user and the model take, with a
+      composer docked at the bottom. Helix ships the pieces that make it feel like
+      Clarivate AI — the
+      <cdx-internal-link [inline]="true" [url]="'/components/ai-avatar'" [text]="'AI avatar'"></cdx-internal-link>,
+      the <code>hlx-btn-ai</code> gradient button and the <code>hlx-gradient-ai</code>
+      surface — and the
+      <cdx-internal-link [inline]="true" [url]="'/foundations/ai'" [text]="'AI foundation'"></cdx-internal-link>
+      covers the voice.
+    </p>
+
+    <h2>When to use it</h2>
+    <p>
+      A product's AI chat or assistant surface, full-page or in a side panel. A
+      one-shot generate action (a button that fills a field) is a button with a
+      loading state, not a conversation.
+    </p>
+
+    <mat-divider></mat-divider>
+
+    <h2>Anatomy</h2>
+    <ul>
+      <li><strong>Thread</strong> — a <code>role="log"</code> list, centred, each turn a list item.</li>
+      <li><strong>User turn</strong> — a right-aligned bubble on <code>surface-minimal</code>.</li>
+      <li><strong>Assistant turn</strong> — led by <code>hlx-ai-avatar</code>; the answer renders into an <code>aria-live="polite"</code> region; below it, the feedback actions.</li>
+      <li><strong>Streaming indicator</strong> — the avatar <code>animated</code>, with the status as text in the live region.</li>
+      <li><strong>Composer</strong> — an autosizing textarea (Enter submits, Shift+Enter newlines), disabled while generating, and a labelled <code>hlx-btn-ai</code> send button.</li>
+    </ul>
+
+    <h2>Do</h2>
+    <ul>
+      <li>Put the streamed answer and status in an <code>aria-live</code> region.</li>
+      <li>Mark assistant turns with <code>hlx-ai-avatar</code>; animate only while generating.</li>
+      <li>Make feedback and citations real buttons with <code>aria-pressed</code> / <code>aria-label</code>.</li>
+      <li>Share one set of chat parts across surfaces.</li>
+    </ul>
+
+    <h2>Don't</h2>
+    <ul>
+      <li>Stream tokens with no live region, or put status in CSS <code>content:</code>.</li>
+      <li>Use clickable <code>&lt;div&gt;</code>s for feedback or citations.</li>
+      <li>Load a library from a CDN at runtime inside the chat.</li>
+      <li>Copy the whole chat UI per surface.</li>
+    </ul>
+
+    <h2>Citations, history, feedback</h2>
+    <ul>
+      <li><strong>Citations</strong> — an inline numbered button that opens the
+        <cdx-internal-link [inline]="true" [url]="'/components/tooltips'" [text]="'rich tooltip'"></cdx-internal-link>
+        as a keyboard-reachable popover, not a hover-only div.</li>
+      <li><strong>History</strong> — a drawer (the
+        <cdx-internal-link [inline]="true" [url]="'/patterns/app-shell'" [text]="'App shell'"></cdx-internal-link>
+        drawer) grouped by date, reusing
+        <cdx-internal-link [inline]="true" [url]="'/patterns/page-states'" [text]="'Page states'"></cdx-internal-link>
+        for loading / empty / error, with rename and delete through the
+        <cdx-internal-link [inline]="true" [url]="'/patterns/dialogs'" [text]="'Dialogs'"></cdx-internal-link>
+        size presets.</li>
+      <li><strong>Thumbs-down</strong> opens an inline reason form with a short privacy note.</li>
+    </ul>
+  </div>
+
+  <div code>
+    <h2>Accessibility is the point here</h2>
+    <p>
+      Screen readers announce the status and the answer as they change. The status
+      is real text, not <code>::before &#123; content &#125;</code>.
+    </p>
+    <cdx-highlight [text]="liveRegionSnippet" language="html"></cdx-highlight>
+
+    <p>Feedback is real buttons with <code>aria-pressed</code>:</p>
+    <cdx-highlight [text]="feedbackSnippet" language="html"></cdx-highlight>
+
+    <mat-divider></mat-divider>
+
+    <h2>Example</h2>
+    <p>Ask a question — the assistant shows a thinking state, then streams the answer into a live region, then offers feedback. (The answer is simulated.)</p>
+    @for (sample of sampleList; track sample.exampleName) {
+      <hlx-example-viewer [inputViewerComponent]="sample" />
+    }
+  </div>
+</hlx-page>
