@@ -3,7 +3,9 @@
   "version": "22.0.0-alpha.1",
   "exports": {
     ".": {
-      "sass": "./styles/_index.scss"
+      "sass": "./styles/_index.scss",
+      "types": "./src/index.ts",
+      "default": "./src/index.ts"
     }
   },
   "dependencies": {
