@@ -1,12 +1,49 @@
 <hlx-page
   [title]="'Dialog'"
-  [subtitle]="'Dialogs are purposefully interruptive windows that inform users about a task and can contain critical information, require decisions, or involve multiple tasks.'"
+  [subtitle]="'Dialogs are intentionally interruptive windows that provide important information, request decisions, or guide users through a task.'"
   [section]="'Components'"
   componentName="dialog"
+  storybookId="components-dialog"
+  tabbed
 >
-  <h2>Examples</h2>
+  <div overview>
+    <p>
+      The Helix dialog component is built using selected styles from the Angular
+      Material dialog framework. For implementation details, see the Code tab.
+    </p>
 
-  @for (sample of sampleList; track sample.exampleName) {
-  <hlx-example-viewer [inputViewerComponent]="sample"></hlx-example-viewer>
-  }
+    <h2>Options</h2>
+    <p>
+      Use dialogs to prompt users to act on important information. They should
+      focus on a single task, while optionally showing supporting details.
+      Dialogs are commonly used to confirm high-risk actions, such as deleting
+      progress.
+    </p>
+
+    <mat-divider></mat-divider>
+
+    <h2>Usage</h2>
+    <ul>
+      <li>Convey a clear, concise statement or question.</li>
+      <li>
+        Be direct and unambiguous; avoid apologetic (“Sorry for the
+        interruption”), alarming (“Warning!”), or vague (“Are you sure?”)
+        language.
+      </li>
+      <li>Allow users to confirm, dismiss, or acknowledge an action.</li>
+      <li>Provide only one action if it’s an acknowledgement.</li>
+      <li>Provide two actions if one confirms and the other dismisses.</li>
+      <li>
+        Use clear, descriptive labels that reflect the action (e.g., avoid
+        generic “Yes” / “No”).
+      </li>
+    </ul>
+  </div>
+
+  <div code>
+    <h2>Examples</h2>
+    @for (sample of sampleList; track sample.exampleName) {
+    <hlx-example-viewer [inputViewerComponent]="sample" />
+    }
+  </div>
 </hlx-page>

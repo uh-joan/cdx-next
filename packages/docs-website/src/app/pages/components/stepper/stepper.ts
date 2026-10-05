@@ -5,7 +5,7 @@ import { Page } from '../../../core/page/page';
 import * as samples from './examples';
 
 @Component({
-  selector: 'app-stepper',
+  selector: 'cdx-stepper',
   templateUrl: './stepper.html',
   styleUrls: ['./stepper.scss'],
   imports: [Page, ExampleViewer],

@@ -1,11 +1,49 @@
 <hlx-page
   [title]="'Slider'"
-  [subtitle]="'A slider allows users to make a selection from a range of values.'"
+  [subtitle]="'Sliders allow users to select a value from a defined range.'"
   [section]="'Components'"
   componentName="slider"
+  storybookId="components-slider"
+  tabbed
 >
-  <h2>Examples</h2>
-  @for (sample of sampleList; track sample.exampleName) {
-  <hlx-example-viewer [inputViewerComponent]="sample"></hlx-example-viewer>
-  }
+  <div overview>
+    <p>
+      The Helix slider component is built using selected styles from the Angular
+      Material slider framework. For implementation details, see the Code tab.
+    </p>
+
+    <h2>Options</h2>
+    <p>There are two types of sliders: basic and range.</p>
+    <p>
+      The track represents the full range of selectable values on a slider and
+      is divided into active and inactive sections.
+    </p>
+    <ul>
+      <li>
+        The active track runs from the minimum value to the handle, or between
+        the two handles on a range slider.
+      </li>
+      <li>
+        The inactive track extends from the handle to the maximum value, or
+        outside the handles on a range slider.
+      </li>
+    </ul>
+    <p>
+      Values increase from left to right (reversed in right-to-left languages).
+    </p>
+    <ul>
+      <li>A value is displayed when a user interacts with a handle.</li>
+      <li>Range sliders show only one value at a time.</li>
+      <li>
+        If the value is displayed elsewhere, the indicator is not required.
+      </li>
+    </ul>
+  </div>
+
+  <div code>
+    <h2>Examples</h2>
+    @for (sample of sampleList; track sample.exampleName) {
+    <hlx-example-viewer [inputViewerComponent]="sample"></hlx-example-viewer>
+    }
+  </div>
 </hlx-page>

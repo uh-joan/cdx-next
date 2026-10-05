@@ -1,26 +1,38 @@
 <hlx-page
   [title]="'Footer'"
-  [subtitle]="'The footer is an additional navigation component. It can hold links, buttons, company info, copyrights, forms, and many other elements.'"
+  [subtitle]="'The footer provides supplemental information and secondary navigation, such as legal links, help resources, and product details.'"
   [section]="'Components'"
+  storybookId="branding-footer"
+  tabbed
 >
-  <h2>Module Import for HLX Footer</h2>
+  <div overview>
+    <h2>Options</h2>
+    <h3>Layout</h3>
+    <p>The footer is available in three different layouts.</p>
+    <ul>
+      <li><strong>Row</strong> – Our default.</li>
+      <li>
+        <strong>Logo row</strong> – Use only when the logo is not displayed in
+        the header.
+      </li>
+      <li>
+        <strong>Column</strong> – Use when more comprehensive navigation is
+        required.
+      </li>
+    </ul>
+  </div>
 
-  <cdx-highlight [text]="moduleText"></cdx-highlight>
+  <div code>
+    <h2>Module Import for HLX Footer</h2>
 
-  <mat-divider></mat-divider>
+    <cdx-highlight [text]="moduleText"></cdx-highlight>
 
-  <h2>Playground</h2>
-  <p>
-    Try every configuration with live controls. The density toolbar applies the
-    levels from Foundations › Density.
-  </p>
-  <cdx-storybook-embed componentId="branding-footer"></cdx-storybook-embed>
+    <mat-divider></mat-divider>
 
-  <mat-divider></mat-divider>
+    <h2>Examples</h2>
 
-  <h2>Examples</h2>
-
-  @for (sample of sampleList; track sample.exampleName) {
-  <hlx-example-viewer [inputViewerComponent]="sample"></hlx-example-viewer>
-  }
+    @for (sample of sampleList; track sample.exampleName) {
+    <hlx-example-viewer [inputViewerComponent]="sample"></hlx-example-viewer>
+    }
+  </div>
 </hlx-page>

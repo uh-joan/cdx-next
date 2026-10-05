@@ -5,7 +5,7 @@ import { Page } from '../../../core/page/page';
 import * as samples from './examples';
 
 @Component({
-  selector: 'app-date-picker',
+  selector: 'cdx-date-picker',
   templateUrl: './date-picker.html',
   styleUrls: ['./date-picker.scss'],
   imports: [Page, ExampleViewer],

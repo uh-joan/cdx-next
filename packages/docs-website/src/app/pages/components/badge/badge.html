@@ -3,10 +3,48 @@
   [subtitle]="'Badges are small status descriptors for UI elements. A badge consists of a small circle, typically containing a number or other short set of characters, that appears in proximity to another object.'"
   [section]="'Components'"
   componentName="badge"
+  storybookId="components-badge"
+  tabbed
 >
-  <h2>Examples</h2>
+  <div overview>
+    <p>
+      The Helix badge component is built using selected styles from the Angular
+      Material badge framework. For implementation details, see the Code tab.
+    </p>
 
-  @for (sample of sampleList; track sample.exampleName) {
-  <hlx-example-viewer [inputViewerComponent]="sample"></hlx-example-viewer>
-  }
+    <h2>Options</h2>
+    <h3>Color and size</h3>
+    <p>
+      Badges have two color themes and two sizes to signal the importance of an
+      action.
+    </p>
+    <p>Choose from two functional color themes:</p>
+    <ul>
+      <li><strong>Primary</strong> – Our default. Use for most actions.</li>
+      <li>
+        <strong>Accent</strong> – Use sparingly for actions that need extra
+        emphasis.
+      </li>
+    </ul>
+
+    <mat-divider></mat-divider>
+
+    <h2>Usage</h2>
+    <cdx-usage-guidelines>
+      <cdx-usage-guideline kind="do">
+        Use badges to show a count of items or notifications (e.g., number of
+        filters applied).
+      </cdx-usage-guideline>
+    </cdx-usage-guidelines>
+    <p>
+      Ensure contrast and readability, especially against different backgrounds.
+    </p>
+  </div>
+
+  <div code>
+    <h2>Examples</h2>
+    @for (sample of sampleList; track sample.exampleName) {
+    <hlx-example-viewer [inputViewerComponent]="sample" />
+    }
+  </div>
 </hlx-page>

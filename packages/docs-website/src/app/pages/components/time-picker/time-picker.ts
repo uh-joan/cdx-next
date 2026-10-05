@@ -5,7 +5,7 @@ import { Page } from '../../../core/page/page';
 import * as samples from './examples';
 
 @Component({
-  selector: 'app-time-picker',
+  selector: 'cdx-time-picker',
   templateUrl: './time-picker.html',
   imports: [Page, ExampleViewer],
 })

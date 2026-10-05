@@ -1,12 +1,39 @@
 <hlx-page
   [title]="'List'"
-  [subtitle]="'Lists consist of related content grouped together and organized vertically.'"
+  [subtitle]="'Lists organize related content into vertically stacked groups for clear and easy scanning.'"
   [section]="'Components'"
   componentName="list"
+  storybookId="components-list"
+  tabbed
 >
-  <h2>Examples</h2>
+  <div overview>
+    <p>
+      The Helix list component is built using selected styles from the Angular
+      Material list framework. For implementation details, see the Code tab.
+    </p>
 
-  @for (sample of sampleList; track sample.exampleName) {
-  <hlx-example-viewer [inputViewerComponent]="sample"></hlx-example-viewer>
-  }
+    <h2>Options</h2>
+    <p>
+      Lists are vertical groups of text, icons, images, or other elements
+      designed for easy scanning. Items can include multiple actions, such as
+      selection, buttons, or menus.
+    </p>
+
+    <mat-divider></mat-divider>
+
+    <h2>Usage</h2>
+    <cdx-usage-guidelines>
+      <cdx-usage-guideline kind="dont">
+        Don’t scale components without adjusting related elements, like text, as
+        this can create line lengths that are hard to read.
+      </cdx-usage-guideline>
+    </cdx-usage-guidelines>
+  </div>
+
+  <div code>
+    <h2>Examples</h2>
+    @for (sample of sampleList; track sample.exampleName) {
+    <hlx-example-viewer [inputViewerComponent]="sample" />
+    }
+  </div>
 </hlx-page>

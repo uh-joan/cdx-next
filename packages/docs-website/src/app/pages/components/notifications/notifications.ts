@@ -54,7 +54,7 @@ const ELEMENT_APIS: ElementApis[] = [
 ];
 
 @Component({
-  selector: 'app-notifications',
+  selector: 'cdx-notifications',
   templateUrl: './notifications.html',
   styleUrls: ['./notifications.scss'],
   imports: [Page, ExampleViewer, Highlight, MatDividerModule, MatTableModule],
@@ -79,9 +79,9 @@ export class Notifications {
   displayedColumns2: string[] = ['property', 'type', 'default', 'description'];
   dataSource2 = new MatTableDataSource<ElementApis>(ELEMENT_APIS);
 
-  moduleText = `import { NotificationModule } from '@cdx/ngx-branding';`;
+  moduleText = `import { HelixNotificationComponent } from '@cdx/ngx-branding';`;
 
-  htmlText = `<cdx-notification
+  htmlText = `<hlx-notification
   title="Title"
   severity="success"
   action="Action"
@@ -89,9 +89,9 @@ export class Notifications {
   dismissable="true"
 >
   Notification message
-</cdx-notification>`;
+</hlx-notification>`;
 
-  contentProjectionText = `<cdx-notification
+  contentProjectionText = `<hlx-notification
   title="Title"
   severity="success"
   action="Action"
@@ -102,37 +102,37 @@ export class Notifications {
   <mat-icon icon>check</mat-icon>
   <button matButton actions>Projected Action</button>
   <button matButton actions>Another Action</button>
-</cdx-notification>`;
+</hlx-notification>`;
 
   notificationInfoText = `
-<cdx-notification title="Title" severity="info" action="Action">
+<hlx-notification title="Title" severity="info" action="Action">
   Notification message
-</cdx-notification>`;
+</hlx-notification>`;
 
   notificationSuccessText = `
-<cdx-notification title="Title" severity="success" action="Action">
+<hlx-notification title="Title" severity="success" action="Action">
   Notification message
-</cdx-notification>`;
+</hlx-notification>`;
 
   notificationWarnText = `
-<cdx-notification title="Title" severity="warn" action="Action">
+<hlx-notification title="Title" severity="warn" action="Action">
   Notification message
-</cdx-notification>`;
+</hlx-notification>`;
 
-  dismissableText = `<cdx-notification
+  dismissableText = `<hlx-notification
   action="Action"
   dismissable="true"
-  (dismissEvent)="onDismiss($event)"
+  (dismissEvent)="onDismiss()"
   (actionEvent)="onAction($event)"
 >
   Notification message
-</cdx-notification>`;
+</hlx-notification>`;
 
-  eventListenerText = `onDismiss(event: CustomEvent) {
+  eventListenerText = `onDismiss() {
   // Handle event Dismiss triggered
 }
 
-onAction(event: CustomEvent) {
+onAction(action: string) {
   // Handle event Action triggered
 }`;
 

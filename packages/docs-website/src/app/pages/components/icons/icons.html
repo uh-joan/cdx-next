@@ -1,12 +1,50 @@
 <hlx-page
   [title]="'Icons'"
-  [subtitle]="'Product icons are the visual expression of a brand and product, typically related to UI actions.'"
+  [subtitle]="'Icons are small visual symbols that help users quickly identify actions and categories.'"
   [section]="'Components'"
   componentName="icon"
+  storybookId="components-icon"
+  tabbed
 >
-  <h2>Examples</h2>
+  <div overview>
+    <p>
+      The Helix icon component is built using selected styles from the Angular
+      Material icon framework. For implementation details, see the Code tab.
+    </p>
+    <p>
+      Icons are visual symbols that communicate information, afford
+      interactivity and draw attention to important information at a glance.
+      They are simple, familiar and universal.
+    </p>
 
-  @for (sample of sampleList; track sample.exampleName) {
-  <hlx-example-viewer [inputViewerComponent]="sample"></hlx-example-viewer>
-  }
+    <h2>Options</h2>
+    <h3>Styles</h3>
+    <p>
+      Icons use specific color themes to convey their importance or meaning.
+    </p>
+    <p>
+      Helix uses the Google Material Symbols and Icons library, configured to
+      align with the Clarivate brand guidelines and maintain consistency across
+      the system.
+    </p>
+    <p>Choose from three functional color themes:</p>
+    <ul>
+      <li><strong>Standard</strong> – Default style for most icons.</li>
+      <li>
+        <strong>Semantic</strong> – Use to reinforce meaning, only on the
+        corresponding surface color.
+      </li>
+      <li>
+        <strong>Distinct</strong> – Use sparingly for emphasis or decorative
+        purposes.
+      </li>
+    </ul>
+  </div>
+
+  <div code>
+    <h2>Examples</h2>
+    @for (sample of sampleList; track sample.exampleName) {
+    <hlx-example-viewer [inputViewerComponent]="sample" />
+    }
+  </div>
 </hlx-page>

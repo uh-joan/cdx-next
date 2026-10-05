@@ -1,12 +1,45 @@
 <hlx-page
   [title]="'Checkbox'"
-  [subtitle]="'Checkboxes are used when there are multiple items to select in a list. Users can select zero, one, or any number of items. Checkboxes can turn an item on or off.'"
+  [subtitle]="'Checkboxes let users choose multiple options or turn a setting on and off.'"
   [section]="'Components'"
   componentName="checkbox"
+  storybookId="components-checkbox"
+  tabbed
 >
-  <h2>Examples</h2>
+  <div overview>
+    <p>
+      The Helix checkbox component is built using selected styles from the
+      Angular Material checkbox framework. For implementation details, see the
+      Code tab.
+    </p>
+    <ul>
+      <li>The label should be scannable.</li>
+      <li>Selected items are more prominent than unselected items.</li>
+      <li>Checkboxes can have parent-child relationships.</li>
+      <li>
+        Use a parent checkbox to make it more efficient to select many items.
+      </li>
+    </ul>
 
-  @for (sample of sampleList; track sample.exampleName) {
-  <hlx-example-viewer [inputViewerComponent]="sample"></hlx-example-viewer>
-  }
+    <mat-divider></mat-divider>
+
+    <h2>Usage</h2>
+    <cdx-usage-guidelines>
+      <cdx-usage-guideline kind="do">
+        Use checkboxes to let users select one or more options, and include a
+        parent checkbox to allow selecting or deselecting all items at once.
+      </cdx-usage-guideline>
+      <cdx-usage-guideline kind="dont">
+        Don't use checkboxes when only one option can be selected — use radio
+        buttons instead.
+      </cdx-usage-guideline>
+    </cdx-usage-guidelines>
+  </div>
+
+  <div code>
+    <h2>Examples</h2>
+    @for (sample of sampleList; track sample.exampleName) {
+    <hlx-example-viewer [inputViewerComponent]="sample" />
+    }
+  </div>
 </hlx-page>

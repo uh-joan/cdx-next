@@ -1,11 +1,34 @@
 <hlx-page
   [title]="'Divider'"
-  [subtitle]="'A divider is a horizontal line creating a discrete separation between two components, sections, or pieces of content.'"
+  [subtitle]="'Dividers are thin lines creating a discrete separation between two components, sections, or pieces of content.'"
   [section]="'Components'"
   componentName="divider"
+  storybookId="components-divider"
+  tabbed
 >
-  <h2>Examples</h2>
-  @for (sample of sampleList; track sample.exampleName) {
-  <hlx-example-viewer [inputViewerComponent]="sample"></hlx-example-viewer>
-  }
+  <div overview>
+    <p>
+      The Helix divider component is built using selected styles from the
+      Angular Material divider framework. For implementation details, see the
+      Code tab.
+    </p>
+
+    <h2>Options</h2>
+    <ul>
+      <li>Horizontal or vertical</li>
+      <li>Full width or inset</li>
+      <li>Light or dark theme</li>
+    </ul>
+    <p>
+      Use dividers to visually group related components, establish hierarchy,
+      and indicate nested parent/child relationships.
+    </p>
+  </div>
+
+  <div code>
+    <h2>Examples</h2>
+    @for (sample of sampleList; track sample.exampleName) {
+    <hlx-example-viewer [inputViewerComponent]="sample" />
+    }
+  </div>
 </hlx-page>

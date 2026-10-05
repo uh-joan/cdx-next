@@ -2,7 +2,6 @@ import { Component, HostBinding } from '@angular/core';
 import { MatDividerModule } from '@angular/material/divider';
 
 import { Highlight } from '../../../components/highlight/highlight';
-import { StorybookEmbed } from '../../../components/storybook-embed/storybook-embed';
 import { ExampleViewer } from '../../../core/example-viewer/example-viewer';
 import { Page } from '../../../core/page/page';
 import * as samples from './examples';
@@ -11,7 +10,7 @@ import * as samples from './examples';
   selector: 'cdx-header-page',
   templateUrl: './header.html',
   styleUrls: ['./header.scss'],
-  imports: [Page, ExampleViewer, MatDividerModule, Highlight, StorybookEmbed],
+  imports: [Page, ExampleViewer, MatDividerModule, Highlight],
 })
 export class Header {
   @HostBinding('class') hostClass = 'cdx-section';

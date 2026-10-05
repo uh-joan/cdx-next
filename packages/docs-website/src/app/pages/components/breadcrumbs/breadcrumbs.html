@@ -1,57 +1,57 @@
 <hlx-page
-  [subtitle]="'Breadcrumbs are a secondary type of navigation system that shows a user’s location within a site or web application. They serve as an effective visual aid, indicating where a user is relative to the site’s hierarchy.'"
+  [subtitle]="'Breadcrumbs show a user’s location within a site, helping them understand where they are in the hierarchy.'"
   [title]="'Breadcrumbs'"
   [section]="'Components'"
+  storybookId="components-breadcrumbs"
+  tabbed
 >
-  <h2>Introduction</h2>
+  <div overview>
+    <p>
+      The Helix breadcrumbs component is built using
+      <cdx-external-link
+        [inline]="true"
+        [text]="'xng-breadcrumb'"
+        [url]="'https://udayvunnam.github.io/xng-breadcrumb/'"
+      ></cdx-external-link>
+      in order to provide a zero-configuration breadcrumb trail based on the
+      state of the Angular router. The library is lightweight and customizable.
+      <em>cdx-breadcrumb</em> is a simple wrapper component that establishes
+      compliance with Clarivate brand and design standards.
+    </p>
+    <p>
+      Although <em>xng-breadcrumb</em> provides affordances for customizing the
+      style of the breadcrumb trail, the HLX maintainers insist that no further
+      stylistic changes are made.
+    </p>
+  </div>
 
-  <p>
-    We leverage
-    <cdx-external-link
-      [inline]="true"
-      [text]="'xng-breadcrumb'"
-      [url]="'https://udayvunnam.github.io/xng-breadcrumb/'"
-    ></cdx-external-link>
-    in order to provide a zero-configuration breadcrumb trail based on the state
-    of the Angular router. The library is lightweight and customizable.
-  </p>
-  <p>
-    <em>cdx-breadcrumb</em> is a simple wrapper Component that establishes
-    compliance with Clarivate brand and design standards.
-  </p>
+  <div code>
+    <h2>Installation</h2>
+    <cdx-highlight
+      [text]="'npm install @cdx/theme-xng-breadcrumb xng-breadcrumb'"
+    ></cdx-highlight>
 
-  <mat-divider></mat-divider>
+    <mat-divider></mat-divider>
 
-  <h2>Documentation</h2>
-  <p>
-    For more detailed information regarding the configuration of xng-breadcrumb
-    visit the
-    <cdx-external-link
-      [inline]="true"
-      [text]="'documentation'"
-      [url]="'https://udayvunnam.github.io/xng-breadcrumb/#/'"
-    ></cdx-external-link>
-    . This includes customization of the links in the breadcrumb trail as well
-    as the ability to skip certain routes if they are not important for
-    navigation.
-  </p>
-  <p>
-    Although <em>xng-breadcrumb</em> provides afordances for cusomtizing the
-    style of the breadcrumb trail, the HLX maintainers insist that no further
-    stylistic changes are made.
-  </p>
+    <h2>Documentation</h2>
+    <p>
+      For more detailed information regarding the configuration of
+      xng-breadcrumb visit the
+      <cdx-external-link
+        [inline]="true"
+        [text]="'documentation'"
+        [url]="'https://udayvunnam.github.io/xng-breadcrumb/#/'"
+      ></cdx-external-link>
+      . This includes customization of the links in the breadcrumb trail as well
+      as the ability to skip certain routes if they are not important for
+      navigation.
+    </p>
 
-  <mat-divider></mat-divider>
-  <h2>Installation</h2>
-  <cdx-highlight
-    [text]="'npm install @cdx/theme-xng-breadcrumb xng-breadcrumb'"
-  ></cdx-highlight>
+    <mat-divider></mat-divider>
 
-  <mat-divider></mat-divider>
-
-  <h2>Examples</h2>
-
-  @for (sample of sampleList; track sample.exampleName) {
-  <hlx-example-viewer [inputViewerComponent]="sample"></hlx-example-viewer>
-  }
+    <h2>Examples</h2>
+    @for (sample of sampleList; track sample.exampleName) {
+    <hlx-example-viewer [inputViewerComponent]="sample" />
+    }
+  </div>
 </hlx-page>

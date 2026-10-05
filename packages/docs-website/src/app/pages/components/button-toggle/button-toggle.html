@@ -1,12 +1,90 @@
 <hlx-page
   [title]="'Button Toggle'"
-  [subtitle]="'A button prompts the user to decide between multiple specific options and always has a default value set.'"
+  [subtitle]="'Button toggles assist users in choosing options, changing views, or organising items.'"
   [section]="'Components'"
   componentName="button-toggle"
+  storybookId="components-button-toggle"
+  tabbed
 >
-  <h2>Examples</h2>
+  <div overview>
+    <p>
+      The Helix button toggle component is built using selected styles from the
+      Angular Material button toggle framework. For implementation details, see
+      the Code tab.
+    </p>
 
-  @for (sample of sampleList; track sample.exampleName) {
-  <hlx-example-viewer [inputViewerComponent]="sample"></hlx-example-viewer>
-  }
+    <h2>Options</h2>
+    <h3>Color and types</h3>
+    <p>
+      Button toggles combine color themes and types to signal the importance of
+      an action.
+    </p>
+    <p>Choose between two themes:</p>
+    <ul>
+      <li><strong>Light</strong> – Our default. Use for most scenarios.</li>
+      <li>
+        <strong>Dark</strong> – Use sparingly for navigation that needs extra
+        emphasis.
+      </li>
+    </ul>
+    <p>There are three button types to help communicate priority:</p>
+    <ul>
+      <li>
+        <strong>Equal button width</strong> – Use as the default for a balanced
+        UI.
+      </li>
+      <li>
+        <strong>Variable button width</strong> – Can be used when there is a
+        wide variety in word length.
+      </li>
+      <li>
+        <strong>Icon button</strong> – Lower emphasis. Use when the action is
+        less important and can be clearly communicated by icons.
+      </li>
+    </ul>
+
+    <h3>Icons</h3>
+    <p>Icons help clarify meaning, but should never be purely decorative.</p>
+    <p>
+      For guidance on choosing and applying icons, see
+      <cdx-internal-link
+        [inline]="true"
+        [text]="'Foundations › Iconography'"
+        [url]="'/foundations/iconography'"
+      ></cdx-internal-link
+      >.
+    </p>
+
+    <mat-divider></mat-divider>
+
+    <h2>Usage</h2>
+    <cdx-usage-guidelines>
+      <cdx-usage-guideline kind="do">
+        Multi-select segmented buttons can be used to filter.
+      </cdx-usage-guideline>
+      <cdx-usage-guideline kind="dont">
+        Don’t use more than five segments or let them wrap to a new line.
+      </cdx-usage-guideline>
+      <cdx-usage-guideline kind="do">
+        Keep labels short and consistent.
+      </cdx-usage-guideline>
+      <cdx-usage-guideline kind="dont">
+        Don't mix icon-only labels with text labels.
+      </cdx-usage-guideline>
+      <cdx-usage-guideline kind="do">
+        Set a maximum segment padding to maintain usability on large screens.
+      </cdx-usage-guideline>
+      <cdx-usage-guideline kind="dont">
+        Don’t let segmented buttons stretch across wide screens. Excessive
+        padding reduces usability.
+      </cdx-usage-guideline>
+    </cdx-usage-guidelines>
+  </div>
+
+  <div code>
+    <h2>Examples</h2>
+    @for (sample of sampleList; track sample.exampleName) {
+    <hlx-example-viewer [inputViewerComponent]="sample" />
+    }
+  </div>
 </hlx-page>

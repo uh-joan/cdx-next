@@ -1,11 +1,61 @@
 <hlx-page
   [title]="'Tabs'"
-  [subtitle]="'Tabs organize related content and separate it into different views, one view per a tab.'"
+  [subtitle]="'Tabs allow users to switch between related content, providing a clear structure across screens and views.'"
   [section]="'Components'"
   componentName="tabs"
+  storybookId="components-tabs"
+  tabbed
 >
-  <h2>Examples</h2>
-  @for (sample of sampleList; track sample.exampleName) {
-  <hlx-example-viewer [inputViewerComponent]="sample"></hlx-example-viewer>
-  }
+  <div overview>
+    <p>
+      The Helix tabs component is built using selected styles from the Angular
+      Material tabs framework. For implementation details, see the Code tab.
+    </p>
+
+    <h2>Options</h2>
+    <p>
+      The active indicator (bar) can either fit the content or the width of the
+      tab.
+    </p>
+    <ul>
+      <li>
+        Tabs enable users to navigate between groups of related content
+        efficiently.
+      </li>
+      <li>
+        Content within a set of tabs should share a common organizing principle,
+        but each tab presents distinct content.
+      </li>
+      <li>Only one tab can be active at a time.</li>
+      <li>
+        Tabs are considered peers and exist at the same hierarchical level
+        within the navigation structure.
+      </li>
+      <li>Tabs can scroll horizontally to accommodate overflow.</li>
+    </ul>
+
+    <mat-divider></mat-divider>
+
+    <h2>Usage</h2>
+    <cdx-usage-guidelines>
+      <cdx-usage-guideline kind="do">
+        Use short labels and categorize related groups into defined sets.
+      </cdx-usage-guideline>
+      <cdx-usage-guideline kind="dont">
+        Don’t use tabs for content that must be read in order. Use typographic
+        hierarchy and spacing instead.
+      </cdx-usage-guideline>
+      <cdx-usage-guideline kind="dont">
+        Don’t mix tabs with icons and text labels alongside tabs that use text
+        labels only.
+      </cdx-usage-guideline>
+    </cdx-usage-guidelines>
+  </div>
+
+  <div code>
+    <h2>Examples</h2>
+    @for (sample of sampleList; track sample.exampleName) {
+    <hlx-example-viewer [inputViewerComponent]="sample"></hlx-example-viewer>
+    }
+  </div>
 </hlx-page>

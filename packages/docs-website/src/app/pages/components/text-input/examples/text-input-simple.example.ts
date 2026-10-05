@@ -32,8 +32,8 @@ const styleCode = `.story {
 })
 class SampleComponent {}
 
-export const TextAreaSimpleComponent: InputViewerComponent = {
-  exampleName: 'Text Area',
+export const TextInputSimpleComponent: InputViewerComponent = {
+  exampleName: 'Text Input',
   dynamicComponent: SampleComponent,
   height: 30,
   htmlCode: htmlCode,

@@ -2,113 +2,142 @@
   [title]="'Notifications'"
   [subtitle]="'Notifications provide information about the application where an action may be required from the user.'"
   [section]="'Components'"
+  storybookId="branding-notification"
+  tabbed
 >
-  <h2>Installation</h2>
+  <div overview>
+    <p>
+      Notifications provide information about the application where an action
+      may be required from the user.
+    </p>
+    <p>
+      Helix design guidance for this component hasn't been published yet. See
+      the Code tab for usage and examples.
+    </p>
 
-  <p>Add the notification package from the cdx repository</p>
-  <cdx-highlight [text]="'npm install @cdx/ngx-notification'"></cdx-highlight>
+    <h2>Options</h2>
+    <h3>Severity</h3>
+    <p>
+      You can use <strong>info</strong>, <strong>success</strong> or
+      <strong>warn</strong> to adapt styles to match the status and severity of
+      the message.
+    </p>
 
-  <mat-divider></mat-divider>
+    <h3>Presentation</h3>
+    <p>
+      Notifications can be shown <strong>inline</strong> (the default) or as a
+      <strong>banner</strong>. They can include an optional title, an action
+      button and a control to dismiss them.
+    </p>
+  </div>
 
-  <h2>Usage</h2>
+  <div code>
+    <h2>Installation</h2>
 
-  <p>Add Notification Module on your NgModule imports array.</p>
-  <cdx-highlight [text]="moduleText"></cdx-highlight>
-  <p>Add the element where needed</p>
-  <cdx-highlight [text]="htmlText" language="html"></cdx-highlight>
+    <p>Add the branding package from the cdx repository</p>
+    <cdx-highlight [text]="'npm install @cdx/ngx-branding'"></cdx-highlight>
 
-  <mat-divider></mat-divider>
+    <mat-divider></mat-divider>
 
-  <h2>Content Projection</h2>
-  <p>
-    A custom icon and buttons can be provided using slot projections by adding
-    icon or actions attribute to the element.
-  </p>
-  <cdx-highlight
-    [text]="contentProjectionText"
-    [language]="'html'"
-  ></cdx-highlight>
+    <h2>Usage</h2>
 
-  <mat-divider></mat-divider>
+    <p>Add the notification component to your component's imports array.</p>
+    <cdx-highlight [text]="moduleText"></cdx-highlight>
+    <p>Add the element where needed</p>
+    <cdx-highlight [text]="htmlText" language="html"></cdx-highlight>
 
-  <h2>Severity</h2>
-  <p>
-    You can use <strong>info</strong>, <strong>success</strong> or
-    <strong>warn</strong> to adapt styles to match the status and severity of
-    the message.
-  </p>
-  <cdx-highlight
-    [text]="notificationInfoText"
-    [language]="'html'"
-  ></cdx-highlight>
-  <cdx-highlight
-    [text]="notificationSuccessText"
-    [language]="'html'"
-  ></cdx-highlight>
-  <cdx-highlight
-    [text]="notificationWarnText"
-    [language]="'html'"
-  ></cdx-highlight>
+    <mat-divider></mat-divider>
 
-  <mat-divider></mat-divider>
+    <h2>Content Projection</h2>
+    <p>
+      A custom icon and buttons can be provided using slot projections by adding
+      icon or actions attribute to the element.
+    </p>
+    <cdx-highlight
+      [text]="contentProjectionText"
+      [language]="'html'"
+    ></cdx-highlight>
 
-  <h2>Events</h2>
-  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 hlx-table">
-    <ng-container matColumnDef="event">
-      <th mat-header-cell *matHeaderCellDef>Event</th>
-      <td mat-cell *matCellDef="let element">{{ element.event }}</td>
-    </ng-container>
+    <mat-divider></mat-divider>
 
-    <ng-container matColumnDef="description">
-      <th mat-header-cell *matHeaderCellDef>Description</th>
-      <td mat-cell *matCellDef="let element">{{ element.description }}</td>
-    </ng-container>
+    <h2>Severity</h2>
+    <cdx-highlight
+      [text]="notificationInfoText"
+      [language]="'html'"
+    ></cdx-highlight>
+    <cdx-highlight
+      [text]="notificationSuccessText"
+      [language]="'html'"
+    ></cdx-highlight>
+    <cdx-highlight
+      [text]="notificationWarnText"
+      [language]="'html'"
+    ></cdx-highlight>
 
-    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
-  </table>
+    <mat-divider></mat-divider>
 
-  <cdx-highlight [text]="dismissableText" [language]="'html'"></cdx-highlight>
+    <h2>Events</h2>
+    <table
+      mat-table
+      [dataSource]="dataSource"
+      class="mat-elevation-z8 hlx-table"
+    >
+      <ng-container matColumnDef="event">
+        <th mat-header-cell *matHeaderCellDef>Event</th>
+        <td mat-cell *matCellDef="let element">{{ element.event }}</td>
+      </ng-container>
 
-  <cdx-highlight [text]="eventListenerText"></cdx-highlight>
+      <ng-container matColumnDef="description">
+        <th mat-header-cell *matHeaderCellDef>Description</th>
+        <td mat-cell *matCellDef="let element">{{ element.description }}</td>
+      </ng-container>
 
-  <mat-divider></mat-divider>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
 
-  <h2>API</h2>
+    <cdx-highlight [text]="dismissableText" [language]="'html'"></cdx-highlight>
 
-  <table
-    mat-table
-    [dataSource]="dataSource2"
-    class="mat-elevation-z8 hlx-table"
-  >
-    <ng-container matColumnDef="property">
-      <th mat-header-cell *matHeaderCellDef>Property</th>
-      <td mat-cell *matCellDef="let element">{{ element.property }}</td>
-    </ng-container>
+    <cdx-highlight [text]="eventListenerText"></cdx-highlight>
 
-    <ng-container matColumnDef="type">
-      <th mat-header-cell *matHeaderCellDef>Type</th>
-      <td mat-cell *matCellDef="let element">{{ element.type }}</td>
-    </ng-container>
+    <mat-divider></mat-divider>
 
-    <ng-container matColumnDef="default">
-      <th mat-header-cell *matHeaderCellDef>Default</th>
-      <td mat-cell *matCellDef="let element">{{ element.default }}</td>
-    </ng-container>
+    <h2>API</h2>
 
-    <ng-container matColumnDef="description">
-      <th mat-header-cell *matHeaderCellDef>Description</th>
-      <td mat-cell *matCellDef="let element">{{ element.description }}</td>
-    </ng-container>
+    <table
+      mat-table
+      [dataSource]="dataSource2"
+      class="mat-elevation-z8 hlx-table"
+    >
+      <ng-container matColumnDef="property">
+        <th mat-header-cell *matHeaderCellDef>Property</th>
+        <td mat-cell *matCellDef="let element">{{ element.property }}</td>
+      </ng-container>
 
-    <tr mat-header-row *matHeaderRowDef="displayedColumns2"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns2"></tr>
-  </table>
+      <ng-container matColumnDef="type">
+        <th mat-header-cell *matHeaderCellDef>Type</th>
+        <td mat-cell *matCellDef="let element">{{ element.type }}</td>
+      </ng-container>
 
-  <mat-divider></mat-divider>
+      <ng-container matColumnDef="default">
+        <th mat-header-cell *matHeaderCellDef>Default</th>
+        <td mat-cell *matCellDef="let element">{{ element.default }}</td>
+      </ng-container>
 
-  <h2>Examples</h2>
-  @for (sample of sampleList; track sample.exampleName) {
-  <hlx-example-viewer [inputViewerComponent]="sample"></hlx-example-viewer>
-  }
+      <ng-container matColumnDef="description">
+        <th mat-header-cell *matHeaderCellDef>Description</th>
+        <td mat-cell *matCellDef="let element">{{ element.description }}</td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns2"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns2"></tr>
+    </table>
+
+    <mat-divider></mat-divider>
+
+    <h2>Examples</h2>
+    @for (sample of sampleList; track sample.exampleName) {
+    <hlx-example-viewer [inputViewerComponent]="sample"></hlx-example-viewer>
+    }
+  </div>
 </hlx-page>
