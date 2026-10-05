@@ -58,9 +58,11 @@ If you serve them somewhere else, pass the path:
 ## Updating from Figma
 
 ```bash
-FIGMA_TOKEN=<personal access token> node tools/scripts/sync-helix-icons.mjs
+node tools/scripts/sync-helix-icons.mjs
 ```
 
-The script exports every icon that isn't in Material Symbols, plus all
-pictograms, normalises the SVGs and regenerates `src/lib/*.generated.ts`. Use
-`--build-only` to regenerate the TypeScript after editing the SVGs by hand.
+Put `FIGMA_TOKEN=<personal access token>` in the repo's `.env` file (ignored by
+git) or export it in your shell. The script exports every icon that isn't in
+Material Symbols, plus all pictograms, normalises the SVGs and regenerates
+`src/lib/*.generated.ts`. Use `--build-only` to regenerate the TypeScript after
+editing the SVGs by hand.

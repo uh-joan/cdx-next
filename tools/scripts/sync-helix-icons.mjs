@@ -7,7 +7,10 @@
  * from the Material Symbols font. Only Clarivate's own icons are exported.
  *
  * Usage:
- *   FIGMA_TOKEN=<personal access token> node tools/scripts/sync-helix-icons.mjs
+ *   node tools/scripts/sync-helix-icons.mjs
+ *
+ * FIGMA_TOKEN (a Figma personal access token) is read from the environment or
+ * from the repo's .env file, which git ignores.
  *   node tools/scripts/sync-helix-icons.mjs --build-only
  *
  * --build-only skips Figma and regenerates the TypeScript from the SVGs
@@ -87,7 +90,7 @@ async function figma(path) {
   const token = process.env.FIGMA_TOKEN;
   if (!token) {
     throw new Error(
-      'Set FIGMA_TOKEN to a Figma personal access token with read access to the Helix library.',
+      'Set FIGMA_TOKEN in .env or the environment to a Figma personal access token with read access to the Helix library.',
     );
   }
   const res = await fetch(`https://api.figma.com/v1/${path}`, {
@@ -221,6 +224,12 @@ async function generateTypeScript() {
 }
 
 if (process.argv[1] === fileURLToPath(import.meta.url)) {
+  try {
+    // Values already in the environment take precedence over .env
+    process.loadEnvFile(join(root, '.env'));
+  } catch {
+    // No .env file
+  }
   try {
     if (!process.argv.includes('--build-only')) await syncFromFigma();
     await generateTypeScript();
