@@ -10,13 +10,10 @@ import {
   HelixHeaderGlobalComponent,
   HelixHeaderProductNameOrLogoComponent,
 } from '@cdx/ngx-branding';
+import { HELIX_MEDIA } from '@cdx/theme-angular-material';
 import { map } from 'rxjs';
 
 import { InputViewerComponent } from '../../../../core/example-viewer/example-viewer.model';
-
-// In an app this is `HELIX_MEDIA.ltMd` from @cdx/theme-angular-material; inlined
-// here only because the docs site builds the theme package from source.
-const BELOW_MD = '(max-width: 959.98px)';
 
 // The nav shows inline at md and up, and collapses into a menu below md — driven
 // by the Helix breakpoint query, not a hardcoded width. Resize the preview to
@@ -102,7 +99,7 @@ class SampleComponent {
   readonly active = signal('Alerts');
 
   readonly isCompact = toSignal(
-    this.breakpoints.observe(BELOW_MD).pipe(map((s) => s.matches)),
+    this.breakpoints.observe(HELIX_MEDIA.ltMd).pipe(map((s) => s.matches)),
     { initialValue: false },
   );
 }
