@@ -1,0 +1,54 @@
+<hlx-page
+  [section]="'Patterns'"
+  [title]="'Export'"
+  [subtitle]="'An export action: pick a format, then give asynchronous feedback through snackbars — preparing, then ready (or failed with retry) — so the user is not left staring at a frozen button.'"
+  tabbed
+>
+  <div overview>
+    <p>
+      Exports are usually generated server-side and take a moment, so the user
+      needs feedback. A <strong>format menu</strong>, then <strong>snackbars</strong>
+      that carry the state — preparing, ready, or failed with a retry — while the
+      export runs in the background. Don't block the screen, and don't leave the
+      button silent.
+    </p>
+
+    <h2>When to use it</h2>
+    <p>
+      Downloading the current data (a grid, a report) as CSV, Excel or PDF,
+      especially when the file is generated server-side. An instant client-side
+      download needs none of this — just trigger it.
+    </p>
+
+    <mat-divider></mat-divider>
+
+    <h2>Do</h2>
+    <ul>
+      <li>Put formats in one Export menu; disable it while an export runs.</li>
+      <li>Open a preparing snackbar, then a ready / failed (with Retry) snackbar.</li>
+      <li>Deliver the file immediately or via a Download action on the snackbar.</li>
+      <li>State the scope — all rows, the current filter, or the selection.</li>
+    </ul>
+
+    <h2>Don't</h2>
+    <ul>
+      <li>Leave the trigger with no feedback.</li>
+      <li>Block the whole screen for a background export.</li>
+      <li>Spread CSV / Excel / PDF across separate buttons.</li>
+      <li>Fail silently.</li>
+    </ul>
+  </div>
+
+  <div code>
+    <h2>The flow</h2>
+    <cdx-highlight [text]="flowSnippet"></cdx-highlight>
+
+    <mat-divider></mat-divider>
+
+    <h2>Example</h2>
+    <p>Pick a format — a "preparing" snackbar shows, then a "ready" snackbar with a Download action.</p>
+    @for (sample of sampleList; track sample.exampleName) {
+      <hlx-example-viewer [inputViewerComponent]="sample" />
+    }
+  </div>
+</hlx-page>

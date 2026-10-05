@@ -72,5 +72,9 @@ export class Patterns {
       heading: 'Entity detail',
       elements: [{ label: 'Overview', url: 'entity-detail' }],
     },
+    {
+      heading: 'Export',
+      elements: [{ label: 'Overview', url: 'export' }],
+    },
   ];
 }
