@@ -256,3 +256,34 @@ Fixed or dropped while porting:
       update "latest".
 - [ ] Decide which site is canonical for Development/Services and remove the
       duplicate
+
+## Phase 7: Patterns, templates & AI guidance
+
+Adds the layers above individual components — compositions and templates — and a
+single source that feeds both the docs site and AI tools. See
+[ADR 20261005](../../adr/20261005-author-patterns-once-generate-ai-guidance.md).
+
+- **Single source.** Each pattern is authored once as a `*.guide.md` (YAML
+  front-matter contract + prose) beside its docs page and compiled
+  `examples/*.example.ts`. `tools/patterns/generate-pattern-ai.mjs` reads the
+  guides and generates `.github/skills/helix-patterns/`; run with `--check` (as
+  `npm run lint:patterns`) it fails on stale output or an `hlx-*` class the theme
+  doesn't define.
+- **Catalog (11).** page-states, dialogs, app-shell, list-with-filters,
+  ai-assistant, data-grid, charts, forms, entity-detail, export, error-pages —
+  each with Overview + Code tabs and runnable examples.
+- **Shipped to close pattern gaps.** `hlx-empty-state` (`@cdx/ngx-branding`);
+  `--hlx-*` custom properties (colour, spacing, breakpoints, elevation, AI
+  gradient); dialog size tokens/classes; `.hlx-prose`; `hlx-menu-scrollable`; the
+  `@cdx/theme-ag-grid` TS API (`provideHelixAgGrid`, `helixGridTheme`,
+  `HELIX_DEFAULT_COL_DEF`, chip/date renderers); and the `@cdx/stylelint-config-helix`
+  and `@cdx/eslint-config-helix` lint presets.
+- **Measured.** Two control-vs-treatment runs of AI output against the skill
+  confirmed the approach and steered it toward shipping components/tokens.
+
+### Still open
+
+- [ ] Adoption — extend the lint presets in the consumer apps and migrate real
+      screens to the patterns (deliberately deferred).
+- [ ] Storybook `Patterns/*` stories (docs pages + examples cover this for now).
+- [ ] Borderless form-field variant — needs design sign-off before it ships.
