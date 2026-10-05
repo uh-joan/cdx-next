@@ -1,0 +1,73 @@
+<hlx-page
+  [section]="'Patterns'"
+  [title]="'Data grid wrapper'"
+  [subtitle]="'One place to set up AG Grid the Helix way — modules and licence registered once, a Theming-API theme built from Helix tokens, shared column defaults, and column-state persistence.'"
+  tabbed
+>
+  <div overview>
+    <p>
+      AG Grid is the right tool for large, sortable, filterable, column-managed
+      data. This pattern is the one Helix setup: modules and licence registered
+      once, a Theming-API theme built from the <code>--hlx-*</code> tokens, shared
+      column defaults, and persisted column state.
+    </p>
+
+    <h2>When to use it</h2>
+    <p>
+      Large or column-managed datasets. For a short, read-mostly list use a
+      <code>mat-table</code> instead (see
+      <cdx-internal-link [inline]="true" [url]="'/patterns/list-with-filters'" [text]="'List with filters'"></cdx-internal-link>);
+      the toolbar, chips and
+      <cdx-internal-link [inline]="true" [url]="'/patterns/page-states'" [text]="'Page states'"></cdx-internal-link>
+      around the grid are the same either way. See also the
+      <cdx-internal-link [inline]="true" [url]="'/components/data-grid'" [text]="'Data grid'"></cdx-internal-link>
+      component.
+    </p>
+
+    <mat-divider></mat-divider>
+
+    <h2>Do</h2>
+    <ul>
+      <li>Register modules and the licence once, via <code>provideHelixAgGrid()</code>.</li>
+      <li>Use the Theming-API <code>helixGridTheme</code> and <code>HELIX_DEFAULT_COL_DEF</code>.</li>
+      <li>Persist and reset column state per grid.</li>
+      <li>Build the toolbar, chips and states from the composing patterns.</li>
+    </ul>
+
+    <h2>Don't</h2>
+    <ul>
+      <li>Scatter <code>ModuleRegistry.registerModules</code> or the licence key.</li>
+      <li>Use the legacy CSS theme, or bespoke <code>.ag-*</code> overrides, for a new grid.</li>
+      <li>Grow one grid component with feature-flag booleans — use config or variants.</li>
+      <li>Let a column-managed grid forget the user's layout.</li>
+    </ul>
+  </div>
+
+  <div code>
+    <h2>One setup, shared</h2>
+    <p>Register AG Grid once at bootstrap:</p>
+    <cdx-highlight [text]="providerSnippet"></cdx-highlight>
+    <p>
+      Bind the Theming-API theme and the shared default column def. The theme is
+      built from the <code>--hlx-*</code> custom properties, so the grid follows
+      the app theme.
+    </p>
+    <cdx-highlight [text]="gridSnippet"></cdx-highlight>
+    <p>
+      <strong>Helix gap (why this is <code>beta</code>):</strong>
+      <code>provideHelixAgGrid</code>, <code>helixGridTheme</code> and
+      <code>HELIX_DEFAULT_COL_DEF</code> should ship from
+      <code>&#64;cdx/theme-ag-grid</code> (which today ships only the legacy CSS
+      theme). Until then, copy <code>helix-ag-grid.ts</code> from this pattern's
+      examples.
+    </p>
+
+    <mat-divider></mat-divider>
+
+    <h2>Example</h2>
+    <p>Reorder or resize a column, then reload the page — the layout persists. Use Reset columns to clear it.</p>
+    @for (sample of sampleList; track sample.exampleName) {
+      <hlx-example-viewer [inputViewerComponent]="sample" />
+    }
+  </div>
+</hlx-page>
