@@ -273,6 +273,119 @@ $elevation-lg:
     height: 100%;
   }
 
+  // Prose: one place to style rendered markdown / LLM answers (set as innerHTML)
+  // with Helix tokens, so apps don't reach in with ::ng-deep and per-app styles.
+  // Put it on the wrapper whose content is the generated HTML.
+  .hlx-prose {
+    color: tokens.$text-primary;
+    font: var(--sys-body-medium, 400 14px / 24px 'Source Sans 3', sans-serif);
+
+    > :first-child {
+      margin-top: 0;
+    }
+
+    > :last-child {
+      margin-bottom: 0;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+      margin: #{primitives.$spacing-3} 0 #{primitives.$spacing-1};
+      color: tokens.$text-primary;
+      font-family: 'Source Sans 3', sans-serif;
+      font-weight: 600;
+    }
+
+    h1 {
+      font-size: 20px;
+      line-height: 28px;
+    }
+
+    h2 {
+      font-size: 18px;
+      line-height: 24px;
+    }
+
+    h3,
+    h4 {
+      font-size: 16px;
+      line-height: 24px;
+    }
+
+    p,
+    ul,
+    ol {
+      margin: 0 0 #{primitives.$spacing-2};
+    }
+
+    ul,
+    ol {
+      padding-left: #{primitives.$spacing-3};
+    }
+
+    li {
+      margin-bottom: #{primitives.$spacing-half};
+    }
+
+    a {
+      color: tokens.$text-link;
+      text-decoration: underline;
+    }
+
+    code {
+      padding: 2px 4px;
+      border-radius: tokens.$border-radius-default;
+
+      background: tokens.$surface-minimal;
+      font-family: ui-monospace, "SF Mono", "Cascadia Mono", "Roboto Mono",
+        monospace;
+      font-size: 0.9em;
+    }
+
+    pre {
+      overflow-x: auto;
+      margin: 0 0 #{primitives.$spacing-2};
+      padding: #{primitives.$spacing-2};
+      border-radius: tokens.$border-radius-default;
+
+      background: tokens.$surface-minimal;
+
+      code {
+        padding: 0;
+
+        background: none;
+      }
+    }
+
+    blockquote {
+      margin: 0 0 #{primitives.$spacing-2};
+      padding-left: #{primitives.$spacing-2};
+      border-left: 2px solid tokens.$border-secondary;
+
+      color: tokens.$text-secondary;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 0 0 #{primitives.$spacing-2};
+    }
+
+    th,
+    td {
+      padding: #{primitives.$spacing-1};
+      border-bottom: 1px solid tokens.$border-secondary;
+      text-align: left;
+    }
+
+    th {
+      color: tokens.$text-secondary;
+      font-weight: 600;
+    }
+  }
+
   // Figma Divider "light": for use on dark surfaces
   .hlx-divider-invert {
     --mat-divider-color: #{tokens.$border-invert};

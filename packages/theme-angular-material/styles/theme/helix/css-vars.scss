@@ -71,7 +71,13 @@ $hlx-css-vars: (
   'breakpoint-sm': bp.$breakpoint-sm,
   'breakpoint-md': bp.$breakpoint-md,
   'breakpoint-lg': bp.$breakpoint-lg,
-  'breakpoint-xl': bp.$breakpoint-xl
+  'breakpoint-xl': bp.$breakpoint-xl,
+  // AI gradient (for custom AI surfaces; the hlx-ai-avatar and hlx-btn-ai
+  // components paint it themselves). gradient-ai-start doubles as the solid
+  // fallback for forced-colors mode.
+  'gradient-ai': t.$gradient-ai,
+  'gradient-ai-start': t.$gradient-ai-start,
+  'gradient-ai-end': t.$gradient-ai-end
 );
 
 @mixin theme-helix-css-vars() {
