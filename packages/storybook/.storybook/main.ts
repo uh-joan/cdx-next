@@ -25,6 +25,10 @@ const config: StorybookConfig = {
             replacement: resolve(packagesDir, 'ngx-branding/src/index.ts'),
           },
           {
+            find: /^@cdx\/theme-highcharts$/,
+            replacement: resolve(packagesDir, 'theme-highcharts/src/index.ts'),
+          },
+          {
             find: /^@cdx\/theme-angular-material$/,
             replacement: resolve(
               packagesDir,

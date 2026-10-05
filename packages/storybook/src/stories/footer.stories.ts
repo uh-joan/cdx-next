@@ -32,7 +32,7 @@ const meta: Meta<FooterArgs> = {
     docs: {
       description: {
         component:
-          '`<footer hlx-footer>` from `@cdx/ngx-branding`. Use `branded` when the product name takes precedence in the header, so the Clarivate logo appears in the footer (Foundations › Branding).',
+          "`<footer hlx-footer>` from `@cdx/ngx-branding`. Use `branded` when the product name takes precedence in the header, so the Clarivate logo appears in the footer (Foundations › Branding). Helix footer layouts: Row (default), Logo row (`branded`, only when the logo isn't in the header) and Column (link groups).",
       },
     },
   },
@@ -106,4 +106,12 @@ export const Slim: Story = { args: { slim: true, branded: true } };
 
 export const WithLinkGroups: Story = {
   args: { groupCompanyLinks: true, linkGroups: 2 },
+};
+
+export const Row: Story = {};
+
+export const LogoRow: Story = { args: { branded: true } };
+
+export const Column: Story = {
+  args: { groupCompanyLinks: true, linkGroups: 3 },
 };

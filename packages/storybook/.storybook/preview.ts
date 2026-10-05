@@ -9,18 +9,25 @@ import {
 
 const DENSITIES = ['0', '-1', '-2', '-3', '-4'];
 
-/** Applies the Helix theme and the selected density to every story. */
-const withHelixTheme: Decorator = (storyFn, context) => {
-  const density = context.globals['density'] ?? '0';
-  const story = storyFn();
+const THEME_CLASSES = ['helix-theme-material', 'mat-typography'];
 
-  return {
-    ...story,
-    template: `<div class="helix-theme-material mat-typography hlx-density-${density.replace(
-      '-',
-      'minus-',
-    )}">${story.template ?? ''}</div>`,
-  };
+/**
+ * Applies the Helix theme and the selected density to every story. The
+ * classes go on `<body>` rather than a wrapper so CDK overlays (dialog, menu,
+ * select, tooltip, snackbar, datepicker), which render in a container
+ * appended to `<body>`, are themed and follow the density toolbar too.
+ */
+const withHelixTheme: Decorator = (storyFn, context) => {
+  const density: string = context.globals['density'] ?? '0';
+  const { classList } = document.body;
+
+  classList.add(...THEME_CLASSES);
+  classList.remove(
+    ...Array.from(classList).filter((c) => c.startsWith('hlx-density-')),
+  );
+  classList.add(`hlx-density-${density.replace('-', 'minus-')}`);
+
+  return storyFn();
 };
 
 const preview: Preview = {
