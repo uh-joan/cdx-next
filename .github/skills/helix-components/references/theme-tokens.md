@@ -36,11 +36,24 @@ them at runtime in plain CSS — no Sass import needed:
 ```
 
 Available: every `--hlx-surface-*`, `--hlx-text-*`, `--hlx-border-*`,
-`--hlx-icon-*`, `--hlx-border-radius-default`, and `--hlx-spacing-half` through
-`--hlx-spacing-13`. The names match the Sass tokens below (minus the `$`). Use
-these from component SCSS instead of hardcoding hex/px or inventing your own
-`var(--text-primary)` names. Component-internal (`$components-*`) and primitive
-(`ref-*`, `$color-*`) tokens are **not** exposed — use the semantic ones.
+`--hlx-icon-*`, `--hlx-border-radius-default`, `--hlx-spacing-half` through
+`--hlx-spacing-13`, `--hlx-breakpoint-sm…xl`, and the AI gradient
+(`--hlx-gradient-ai`, `--hlx-gradient-ai-start`, `--hlx-gradient-ai-end`). The
+names match the Sass tokens below (minus the `$`). Use these from component SCSS
+instead of hardcoding hex/px or inventing your own `var(--text-primary)` names.
+Component-internal (`$components-*`) and primitive (`ref-*`, `$color-*`) tokens
+are **not** exposed — use the semantic ones.
+
+## Prose (rendered markdown / LLM output)
+
+`theme-helix-overrides` also ships a `hlx-prose` class that styles rendered
+markdown — headings, lists, code, tables, links, blockquotes — with Helix tokens.
+Put it on the element whose `innerHTML` is the generated HTML (e.g. an AI answer),
+instead of reaching in with per-component `::ng-deep`:
+
+```html
+<div class="hlx-prose" [innerHTML]="sanitizedAnswer()"></div>
+```
 
 ## Breakpoints (`variables/breakpoints.scss`)
 
