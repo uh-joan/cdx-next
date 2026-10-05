@@ -26,6 +26,7 @@ $elevation-lg:
   @include theme-helix-icons;
   @include theme-helix-links;
   @include theme-helix-density;
+  @include theme-helix-controls;
   @include typography.theme-helix-typography;
 
   @include mat.fab-color(hlx.$helix-theme, $color-variant: secondary);
@@ -273,6 +274,12 @@ Z'/>\
 
 @mixin theme-helix-buttons() {
   .hlx-btn-accent {
+    @include mat.icon-button-overrides(
+      (
+        icon-color: tokens.$icon-accent,
+      )
+    );
+
     @include mat.button-color(hlx.$helix-theme, $color-variant: tertiary);
     @include mat.fab-color(hlx.$helix-theme, $color-variant: tertiary);
     @include mat.button-overrides(
@@ -310,6 +317,12 @@ Z'/>\
   }
 
   .hlx-btn-negative {
+    @include mat.icon-button-overrides(
+      (
+        icon-color: tokens.$icon-negative,
+      )
+    );
+
     @include mat.button-color(hlx.$helix-error-theme);
     @include mat.fab-color(hlx.$helix-error-theme);
 
@@ -334,6 +347,12 @@ Z'/>\
   }
 
   .hlx-btn-invert {
+    @include mat.icon-button-overrides(
+      (
+        icon-color: tokens.$icon-invert,
+      )
+    );
+
     @include mat.button-color(hlx.$helix-invert-theme, $color-variant: primary);
     @include mat.fab-color(hlx.$helix-invert-theme, $color-variant: primary);
 
@@ -769,6 +788,142 @@ $density-slide-toggle: (
       unselected-handle-horizontal-margin: 0 math.div($height - $unselected, 2),
       unselected-with-icon-handle-horizontal-margin: 0 $gap,
       unselected-pressed-handle-horizontal-margin: 0 2px,
+    )
+  );
+}
+
+// Figma colours and sizes for components that otherwise fall back to Material
+// defaults. Material uses on-surface-variant (#4f4f4f) and 38% opacity for
+// these, neither of which is a Helix token.
+@mixin theme-helix-controls() {
+  @include mat.checkbox-overrides(
+    (
+      unselected-icon-color: tokens.$icon-secondary,
+      unselected-hover-icon-color: tokens.$icon-secondary,
+      unselected-focus-icon-color: tokens.$icon-secondary,
+      disabled-selected-icon-color: tokens.$icon-disabled,
+      disabled-unselected-icon-color: tokens.$icon-disabled,
+      disabled-label-color: tokens.$text-disabled,
+    )
+  );
+
+  @include mat.radio-overrides(
+    (
+      unselected-icon-color: tokens.$icon-secondary,
+      unselected-hover-icon-color: tokens.$icon-secondary,
+      unselected-focus-icon-color: tokens.$icon-secondary,
+      unselected-pressed-icon-color: tokens.$icon-secondary,
+      disabled-selected-icon-color: tokens.$icon-disabled,
+      disabled-unselected-icon-color: tokens.$icon-disabled,
+      disabled-selected-icon-opacity: 1,
+      disabled-unselected-icon-opacity: 1,
+      disabled-label-color: tokens.$text-disabled,
+    )
+  );
+
+  // Figma Slider Thumb: Level 1 shadow, 4% hover and 12% pressed halo
+  @include mat.slider-overrides(
+    (
+      handle-elevation: $elevation-sm,
+      // Figma uses 4% here, not the 8% ripple-hover token
+      hover-state-layer-color: rgb(42 43 45 / 4%),
+      focus-state-layer-color: tokens.$components-ripple-pressed_focused,
+    )
+  );
+
+  // Material draws the inactive track at a fixed 24% opacity
+  .mat-mdc-slider .mdc-slider__track--inactive {
+    opacity: 1;
+  }
+
+  @include mat.list-overrides(
+    (
+      list-item-leading-icon-color: tokens.$icon-primary,
+      list-item-trailing-icon-color: tokens.$icon-primary,
+      list-item-supporting-text-color: tokens.$text-secondary,
+      list-item-hover-state-layer-color: #000,
+      list-item-hover-state-layer-opacity: 0.04,
+    )
+  );
+
+  // Figma Button Icon, also used by the tree toggle and paginator arrows
+  @include mat.icon-button-overrides(
+    (
+      icon-color: tokens.$icon-primary,
+      disabled-icon-color: tokens.$icon-disabled,
+    )
+  );
+
+  // Figma Menu: 2px corners, Level 2 shadow, Body/body-lg-md items
+  @include mat.menu-overrides(
+    (
+      container-shape: tokens.$border-radius-default,
+      container-elevation-shadow: $elevation-md,
+      item-label-text-weight: 400,
+      item-leading-spacing: 16px,
+      item-trailing-spacing: 16px,
+      item-icon-color: tokens.$icon-primary,
+    )
+  );
+
+  @include mat.select-overrides(
+    (
+      container-elevation-shadow: $elevation-md,
+      enabled-arrow-color: tokens.$icon-secondary,
+    )
+  );
+
+  // Doubled class beats Material's per-position radius rules
+  div.mat-mdc-select-panel.mat-mdc-select-panel {
+    border-radius: tokens.$border-radius-default;
+  }
+
+  // Figma Text Input / Select: filled and outlined colours
+  @include mat.form-field-overrides(
+    (
+      filled-container-color: tokens.$components-text-input-filled-fill,
+      filled-active-indicator-color:
+        tokens.$components-text-input-filled-enabled-border,
+      filled-label-text-color: tokens.$text-secondary,
+      outlined-label-text-color: tokens.$text-secondary,
+      enabled-select-arrow-color: tokens.$icon-secondary,
+    )
+  );
+
+  // Figma Paginator: 12px side padding, 14/24 page size value
+  @include mat.paginator-overrides(
+    (
+      enabled-icon-color: tokens.$icon-primary,
+      disabled-icon-color: tokens.$icon-disabled,
+      select-trigger-text-size: 14px,
+    )
+  );
+
+  .mat-mdc-paginator-container {
+    padding: 0 12px;
+  }
+
+  // Figma disabled buttons: components/disabled fill, text/disabled label
+  @include mat.button-overrides(
+    (
+      filled-disabled-container-color: tokens.$components-disabled,
+      filled-disabled-label-text-color: tokens.$text-disabled,
+      protected-disabled-container-color: tokens.$components-disabled,
+      protected-disabled-label-text-color: tokens.$text-disabled,
+      tonal-disabled-container-color: tokens.$components-disabled,
+      tonal-disabled-label-text-color: tokens.$text-disabled,
+      outlined-disabled-outline-color: tokens.$components-disabled-outline,
+      outlined-disabled-label-text-color: tokens.$text-disabled,
+      text-disabled-label-text-color: tokens.$text-disabled,
+    )
+  );
+
+  @include mat.fab-overrides(
+    (
+      disabled-state-container-color: tokens.$components-disabled,
+      disabled-state-foreground-color: tokens.$text-disabled,
+      small-disabled-state-container-color: tokens.$components-disabled,
+      small-disabled-state-foreground-color: tokens.$text-disabled,
     )
   );
 }

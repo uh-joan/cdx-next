@@ -67,7 +67,7 @@ const styleCode = `.story {
 }
 
 .background-invert {
-  background-color: var(--mat-sys-inverse-surface);
+  background-color: #2a2b2d; /* Helix surface/invert */
 }`;
 
 const tsCode = `import { Component } from '@angular/core';
