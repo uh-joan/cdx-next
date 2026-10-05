@@ -41,6 +41,24 @@
         >).
       </li>
     </ul>
+    <div class="doc-image-grid">
+      <figure>
+        <img
+          src="helix/components-table/01.png"
+          alt="Table cell with a label and a bottom divider"
+          loading="lazy"
+        />
+        <figcaption>Table cell</figcaption>
+      </figure>
+      <figure>
+        <img
+          src="helix/components-table/02.png"
+          alt="Table header cell with a bold title"
+          loading="lazy"
+        />
+        <figcaption>Table header</figcaption>
+      </figure>
+    </div>
 
     <h3>Density</h3>
     <p>
@@ -50,6 +68,24 @@
     <ul>
       <li>Density 0 is the default and most commonly used.</li>
     </ul>
+    <div class="doc-image-grid">
+      <figure>
+        <img
+          src="helix/components-table/03.png"
+          alt="Table header at density -1"
+          loading="lazy"
+        />
+        <figcaption>Density -1</figcaption>
+      </figure>
+      <figure>
+        <img
+          src="helix/components-table/04.png"
+          alt="Table header at density -2"
+          loading="lazy"
+        />
+        <figcaption>Density -2</figcaption>
+      </figure>
+    </div>
     <p>
       For more detail, see
       <cdx-internal-link
@@ -74,16 +110,30 @@
       ></cdx-internal-link
       >.
     </p>
+    <img
+      class="doc-image"
+      src="helix/components-table/05.png"
+      alt="Sort header cell with an up arrow for ascending order and a down arrow for descending order"
+      loading="lazy"
+    />
 
     <mat-divider></mat-divider>
 
     <h2>Usage</h2>
     <cdx-usage-guidelines>
-      <cdx-usage-guideline kind="do">
+      <cdx-usage-guideline
+        kind="do"
+        imageSrc="helix/components-table/06.png"
+        imageAlt="Simple table with City, State and Owners columns, sorted by City"
+      >
         Design tables to be clean and scannable, with a clear purpose and
         minimal, well-prioritized interactions.
       </cdx-usage-guideline>
-      <cdx-usage-guideline kind="dont">
+      <cdx-usage-guideline
+        kind="dont"
+        imageSrc="helix/components-table/07.png"
+        imageAlt="Table with checkboxes, sort, filter and menu icons in every header and wrapping cell text"
+      >
         Don't overload tables with excessive controls or competing interactions
         that increase cognitive load and reduce readability.
       </cdx-usage-guideline>

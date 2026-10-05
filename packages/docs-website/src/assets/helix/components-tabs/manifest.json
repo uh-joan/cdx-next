@@ -1,0 +1,30 @@
+[
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/813865b7-9445-4f15-a441-4e907aaa05b3.png",
+    "alt": "Tab",
+    "heading": "Options",
+    "file": "01.png"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/17cf8751-1178-4d08-84d3-b7f3af6bdbf1.png",
+    "alt": "Tab",
+    "heading": "Options",
+    "file": "02.png"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/8d395e6d-ff5f-436c-8685-44401bcd9ccc.png",
+    "alt": "",
+    "heading": "Usage",
+    "guideline": "do",
+    "text": "Use short labels and categorize related groups into defined sets.",
+    "file": "03.png"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/a500b0e3-a057-4ece-ade8-4f4b927131d4.png",
+    "alt": "",
+    "heading": "Usage",
+    "guideline": "dont",
+    "text": "Don\u2019t use tabs for content that must be read in order. Use typographic hierarchy and spacing instead. Don\u2019t mix tabs with icons and text labels alongside tabs that use text labels only.",
+    "file": "04.png"
+  }
+]

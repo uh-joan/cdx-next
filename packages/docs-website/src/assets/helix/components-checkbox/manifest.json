@@ -1,0 +1,36 @@
+[
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/5697558d-18a9-46b8-a0d1-c34b8ab54a79.png",
+    "alt": "Checkbox",
+    "heading": "",
+    "file": "01.png"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/8fe1366c-198d-4981-87bb-e70960e41eba.png",
+    "alt": "Checkbox",
+    "heading": "",
+    "file": "02.png"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/4c84324a-efb0-4707-8ff9-fbc72698e42d.png",
+    "alt": "Checkbox",
+    "heading": "",
+    "file": "03.png"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/8c640d18-e091-41f4-b2ef-9567ae79e65a.png",
+    "alt": "",
+    "heading": "Usage",
+    "guideline": "do",
+    "text": "Use checkboxes to let users select one or more options, and include a parent checkbox to allow selecting or deselecting all items at once.",
+    "file": "04.png"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/6ea5e22c-ce27-4ad9-ae79-7a5d7fd3ed6b.png",
+    "alt": "",
+    "heading": "Usage",
+    "guideline": "dont",
+    "text": "Don't use checkboxes when only one option can be selected \u2014 use radio buttons instead.",
+    "file": "05.png"
+  }
+]

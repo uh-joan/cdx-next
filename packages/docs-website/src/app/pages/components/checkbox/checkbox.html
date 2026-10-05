@@ -12,6 +12,32 @@
       Angular Material checkbox framework. For implementation details, see the
       Code tab.
     </p>
+    <div class="doc-image-grid">
+      <figure>
+        <img
+          src="helix/components-checkbox/01.png"
+          alt="An empty checkbox with a label"
+          loading="lazy"
+        />
+        <figcaption>Unselected</figcaption>
+      </figure>
+      <figure>
+        <img
+          src="helix/components-checkbox/02.png"
+          alt="A filled checkbox with a check mark and a label"
+          loading="lazy"
+        />
+        <figcaption>Selected</figcaption>
+      </figure>
+      <figure>
+        <img
+          src="helix/components-checkbox/03.png"
+          alt="A filled checkbox with a dash and a label"
+          loading="lazy"
+        />
+        <figcaption>Indeterminate</figcaption>
+      </figure>
+    </div>
     <ul>
       <li>The label should be scannable.</li>
       <li>Selected items are more prominent than unselected items.</li>
@@ -25,11 +51,19 @@
 
     <h2>Usage</h2>
     <cdx-usage-guidelines>
-      <cdx-usage-guideline kind="do">
+      <cdx-usage-guideline
+        kind="do"
+        imageSrc="helix/components-checkbox/04.png"
+        imageAlt="A partially selected parent checkbox, Receive email alerts, above Daily, Weekly and Monthly child checkboxes with only Weekly selected"
+      >
         Use checkboxes to let users select one or more options, and include a
         parent checkbox to allow selecting or deselecting all items at once.
       </cdx-usage-guideline>
-      <cdx-usage-guideline kind="dont">
+      <cdx-usage-guideline
+        kind="dont"
+        imageSrc="helix/components-checkbox/05.png"
+        imageAlt="A Language question that allows one answer, shown as checkboxes with English selected"
+      >
         Don't use checkboxes when only one option can be selected — use radio
         buttons instead.
       </cdx-usage-guideline>

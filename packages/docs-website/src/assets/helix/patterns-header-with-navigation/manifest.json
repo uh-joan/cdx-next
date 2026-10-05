@@ -1,0 +1,24 @@
+[
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/bce076da-0f3f-4fdc-a891-0da69723e108.png",
+    "alt": "Clinical Trials- Expanded",
+    "heading": "When to Use",
+    "file": "01.png"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/1e31d327-4735-449c-9303-7d4205a7ded2.png",
+    "alt": "",
+    "heading": "Do/Dont's",
+    "guideline": "dont",
+    "text": "Don't repeat options from the horizontal menu, if you need to do it for legit reason, use the same icon in both places",
+    "file": "02.png"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/f6538145-2fea-49dd-91c0-a506ea58b51a.png",
+    "alt": "",
+    "heading": "Do/Dont's",
+    "guideline": "dont",
+    "text": "Do not duplicate a section on the horizontal menu and sidebar. For example: Don't use sidebar for one-time actions (like \u201cLog out\u201d or \u201cProfile Settings\u201d \u2014 those belong in the header).",
+    "file": "03.png"
+  }
+]

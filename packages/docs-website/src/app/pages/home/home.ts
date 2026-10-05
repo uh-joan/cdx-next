@@ -40,8 +40,8 @@ export class Home {
     {
       title: 'Services',
       text: 'Find out about our preferred solutions to common use-cases.',
-      // No dedicated Services pictogram yet; reuses the Development one.
-      imageUrl: '/home/pictograms/development.svg',
+      // Helix pictogram 035 (hands holding a gear), light theme.
+      imageUrl: '/home/pictograms/services.svg',
       buttonName: 'Explore services',
       url: '/services',
     },

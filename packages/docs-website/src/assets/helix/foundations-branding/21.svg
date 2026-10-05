@@ -1,0 +1,52 @@
+<svg width="1000" height="1000" viewBox="0 0 1000 1000" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M575 691.6H548.8V454.4H827.8V480.6H575V691.6Z" fill="url(#paint0_linear_8112_4463)"/>
+<path d="M787.2 354V297.2L755.8 301.4V352.2L823.6 467.4V547H849.8V460.4L787.2 354Z" fill="url(#paint1_linear_8112_4463)"/>
+<path d="M850 532.4H823.8V823.8H755.8V850H850V532.4Z" fill="#1D1D1B"/>
+<path d="M544.6 823.8H755.8V850H544.6V823.8Z" fill="url(#paint2_linear_8112_4463)"/>
+<path d="M349.2 453.8H204.2C174.4 453.8 150 478 150 508V795.6C150 825.6 174.4 849.8 204.2 849.8H370.6L317.2 823.6H204.2C188.8 823.6 176.2 811 176.2 795.6V508C176.2 492.6 188.8 480 204.2 480H349.6L349.2 453.8Z" fill="url(#paint3_linear_8112_4463)"/>
+<path d="M465.4 480H347.8L347.2 453.8H464.8L465.4 480Z" fill="url(#paint4_linear_8112_4463)"/>
+<path d="M277.4 632.2C248.2 632.2 224.4 608.4 224.4 579.2C224.4 550 248.2 526.2 277.4 526.2C306.6 526.2 330.4 550 330.4 579.2C330.4 608.4 306.6 632.2 277.4 632.2ZM277.4 552.6C262.6 552.6 250.6 564.6 250.6 579.4C250.6 594.2 262.6 606.2 277.4 606.2C292.2 606.2 304.2 594.2 304.2 579.4C304.2 564.6 292.2 552.6 277.4 552.6Z" fill="#1D1D1B"/>
+<path d="M277.6 780.2C268.4 780.2 259.2 777.8 251 773.2C225.8 758.6 217 726.2 231.6 700.8C246.2 675.6 278.6 666.8 304 681.4C310.2 685 315.4 689.6 319.8 695.4L298.8 711.2C296.6 708.4 294 706 290.8 704.2C278 696.8 261.6 701.2 254.4 714C247 726.8 251.4 743.2 264.2 750.4C269.6 753.6 275.6 754.6 281.8 753.6L286 779.4C283.2 780 280.4 780.2 277.6 780.2Z" fill="url(#paint5_linear_8112_4463)"/>
+<path d="M451.8 632.2C422.6 632.2 398.8 608.4 398.8 579.2C398.8 550 422.6 526.2 451.8 526.2V552.4C437 552.4 425 564.4 425 579.2C425 594 437 606 451.8 606V632.2Z" fill="url(#paint6_linear_8112_4463)"/>
+<path d="M823.6 302.8V150H478V302.8H517.6V354.6L452 467.4V691.2H478.2V474.6L547.8 354.8H787.2V328.6H547.8V303H823.6V302.8ZM504.2 176.2H797.4V276.6H504.2V176.2Z" fill="#1D1D1B"/>
+<path d="M566 850H358C309.8 850 270.6 810.8 270.6 762.6C270.6 714.4 309.8 675.2 358 675.2H566C614.2 675.2 653.4 714.4 653.4 762.6C653.4 810.8 614.2 850 566 850ZM358 701.6C324.4 701.6 297 729 297 762.8C297 796.4 324.4 823.8 358 823.8H566C599.6 823.8 627 796.4 627 762.8C627 729.2 599.6 701.6 566 701.6H358Z" fill="url(#paint7_linear_8112_4463)"/>
+<path d="M451.8 692.2H478V833.2H451.8V692.2Z" fill="url(#paint8_linear_8112_4463)"/>
+<defs>
+<linearGradient id="paint0_linear_8112_4463" x1="688.31" y1="572.628" x2="688.31" y2="685.852" gradientUnits="userSpaceOnUse">
+<stop/>
+<stop offset="1" stop-opacity="0"/>
+</linearGradient>
+<linearGradient id="paint1_linear_8112_4463" x1="802.796" y1="476.056" x2="802.796" y2="285.41" gradientUnits="userSpaceOnUse">
+<stop offset="0.134"/>
+<stop offset="1" stop-opacity="0"/>
+</linearGradient>
+<linearGradient id="paint2_linear_8112_4463" x1="736.994" y1="836.886" x2="613.746" y2="836.886" gradientUnits="userSpaceOnUse">
+<stop/>
+<stop offset="1" stop-opacity="0"/>
+</linearGradient>
+<linearGradient id="paint3_linear_8112_4463" x1="309.206" y1="728.298" x2="352.916" y2="798.616" gradientUnits="userSpaceOnUse">
+<stop/>
+<stop offset="1" stop-opacity="0"/>
+</linearGradient>
+<linearGradient id="paint4_linear_8112_4463" x1="360.554" y1="466.822" x2="460.062" y2="466.822" gradientUnits="userSpaceOnUse">
+<stop/>
+<stop offset="1" stop-opacity="0"/>
+</linearGradient>
+<linearGradient id="paint5_linear_8112_4463" x1="248.928" y1="708.806" x2="283.058" y2="730.848" gradientUnits="userSpaceOnUse">
+<stop/>
+<stop offset="1" stop-opacity="0"/>
+</linearGradient>
+<linearGradient id="paint6_linear_8112_4463" x1="407.07" y1="579.266" x2="456.178" y2="579.266" gradientUnits="userSpaceOnUse">
+<stop/>
+<stop offset="1" stop-opacity="0"/>
+</linearGradient>
+<linearGradient id="paint7_linear_8112_4463" x1="405.27" y1="670.412" x2="481.116" y2="793.66" gradientUnits="userSpaceOnUse">
+<stop stop-color="#B175E1"/>
+<stop offset="1" stop-color="#319AF0"/>
+</linearGradient>
+<linearGradient id="paint8_linear_8112_4463" x1="407.312" y1="669.156" x2="483.158" y2="792.404" gradientUnits="userSpaceOnUse">
+<stop stop-color="#B175E1"/>
+<stop offset="1" stop-color="#319AF0"/>
+</linearGradient>
+</defs>
+</svg>

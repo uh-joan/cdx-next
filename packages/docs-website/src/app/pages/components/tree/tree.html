@@ -14,15 +14,41 @@
 
     <h2>Options</h2>
     <p>Use trees with or without check boxes.</p>
+    <div class="doc-image-grid">
+      <figure>
+        <img
+          src="helix/components-tree/01.png"
+          alt="Tree item with an expand chevron and a label"
+          loading="lazy"
+        />
+        <figcaption>Without checkbox</figcaption>
+      </figure>
+      <figure>
+        <img
+          src="helix/components-tree/02.png"
+          alt="Tree item with an expand chevron, a checkbox and a label"
+          loading="lazy"
+        />
+        <figcaption>With checkbox</figcaption>
+      </figure>
+    </div>
 
     <mat-divider></mat-divider>
 
     <h2>Usage</h2>
     <cdx-usage-guidelines>
-      <cdx-usage-guideline kind="do">
+      <cdx-usage-guideline
+        kind="do"
+        imageSrc="helix/components-tree/03.png"
+        imageAlt="Nested tree with checkboxes, including partially selected parents, aligned by level"
+      >
         Create a clear hierarchy and use checkboxes where selection is needed.
       </cdx-usage-guideline>
-      <cdx-usage-guideline kind="dont">
+      <cdx-usage-guideline
+        kind="dont"
+        imageSrc="helix/components-tree/04.png"
+        imageAlt="Tree with dividers between every item and a checkbox misaligned with its level"
+      >
         Don't clutter the tree list with unnecessary elements such as extra
         dividers. Maintain consistent vertical alignment across all hierarchical
         levels to ensure visual clarity and a cohesive layout.

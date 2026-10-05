@@ -30,23 +30,51 @@
         optional title, links, and buttons.
       </li>
     </ul>
+    <img
+      class="doc-image"
+      src="helix/components-tooltips/01.png"
+      alt="Plain tooltip with the text “Supporting text”"
+      loading="lazy"
+    />
+    <img
+      class="doc-image"
+      src="helix/components-tooltips/02.png"
+      alt="Rich tooltip with a title, supporting text and two text buttons"
+      loading="lazy"
+    />
 
     <mat-divider></mat-divider>
 
     <h2>Usage</h2>
     <cdx-usage-guidelines>
-      <cdx-usage-guideline kind="do">
+      <cdx-usage-guideline
+        kind="do"
+        imageSrc="helix/components-tooltips/03.png"
+        imageAlt="Plain tooltip “Download” above a download icon button"
+      >
         Use plain tooltips to label icon buttons and provide brief descriptions
         of the UI elements.
       </cdx-usage-guideline>
-      <cdx-usage-guideline kind="dont">
+      <cdx-usage-guideline
+        kind="dont"
+        imageSrc="helix/components-tooltips/04.png"
+        imageAlt="Plain tooltip containing a long multi-line definition of “Active company”"
+      >
         Don't use plain tooltips for lengthy explanations.
       </cdx-usage-guideline>
-      <cdx-usage-guideline kind="do">
+      <cdx-usage-guideline
+        kind="do"
+        imageSrc="helix/components-tooltips/05.png"
+        imageAlt="Rich tooltip “High drug score” with an explanation and a Learn more button, attached to a High badge"
+      >
         Use rich tooltips when additional details or actions are needed for a UI
         element or new feature.
       </cdx-usage-guideline>
-      <cdx-usage-guideline kind="dont">
+      <cdx-usage-guideline
+        kind="dont"
+        imageSrc="helix/components-tooltips/06.png"
+        imageAlt="Rich tooltip asking to confirm deleting an item, attached to a delete icon button"
+      >
         Don’t hide critical information in tooltips, as they’re easy to miss.
         Use an interruptive dialog instead.
       </cdx-usage-guideline>

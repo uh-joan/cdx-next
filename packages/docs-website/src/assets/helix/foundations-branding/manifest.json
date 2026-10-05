@@ -1,0 +1,962 @@
+[
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/910e7805-a793-48d6-b825-f9df9fe5e8a1.png",
+    "alt": "When Clarivate is the primary brand",
+    "heading": "Logo",
+    "file": "01.png"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/d0d9b888-16c9-40b1-9a44-e56425571b33.png",
+    "alt": "When the product name takes precedence",
+    "heading": "Logo",
+    "file": "02.png"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/e703f69e-b94a-419c-805e-6f5e1cc51225.svg",
+    "alt": "PI_pictogram-001_Light-theme",
+    "heading": "Pictograms",
+    "file": "03.svg"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/4a6953af-94d8-4d39-aafe-b024887b1734.svg",
+    "alt": "PI_pictogram-002_Light-theme",
+    "heading": "Pictograms",
+    "file": "04.svg"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/bc9df541-a3aa-4384-be5c-c52f9efddfdb.svg",
+    "alt": "PI_pictogram-003_Light-theme",
+    "heading": "Pictograms",
+    "file": "05.svg"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/0be96f09-3b42-4e30-a883-413899f8bb69.svg",
+    "alt": "PI_pictogram-004_Light-theme",
+    "heading": "Pictograms",
+    "file": "06.svg"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/6121788d-57c0-41b2-b0c3-c76596831e54.svg",
+    "alt": "PI_pictogram-005_Light-theme",
+    "heading": "Pictograms",
+    "file": "07.svg"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/ff1cba5e-917d-4d17-aeaf-176b92f05e7f.svg",
+    "alt": "PI_pictogram-006_Light-theme",
+    "heading": "Pictograms",
+    "file": "08.svg"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/e73d3893-6e29-4aab-afb5-10c204708706.svg",
+    "alt": "PI_pictogram-007_Light-theme",
+    "heading": "Pictograms",
+    "file": "09.svg"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/e417a89c-6934-4509-a840-22dc423034f0.svg",
+    "alt": "PI_pictogram-008_Light-theme",
+    "heading": "Pictograms",
+    "file": "10.svg"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/7cfd0819-8c86-4bcc-81fe-793538f66ce3.svg",
+    "alt": "PI_pictogram-009_Light-theme",
+    "heading": "Pictograms",
+    "file": "11.svg"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/82657af2-1a21-46bd-af97-dedd9ee30d5a.svg",
+    "alt": "PI_pictogram-010_Light-theme",
+    "heading": "Pictograms",
+    "file": "12.svg"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/78315e59-4419-418c-9b67-649ed9416028.svg",
+    "alt": "PI_pictogram-011_Light-theme",
+    "heading": "Pictograms",
+    "file": "13.svg"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/19593239-1e5e-48f7-9c86-c3ad64792527.svg",
+    "alt": "PI_pictogram-012_Light-theme",
+    "heading": "Pictograms",
+    "file": "14.svg"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/f755278d-15a4-463b-95a1-8ad198f2d959.svg",
+    "alt": "PI_pictogram-013_Light-theme",
+    "heading": "Pictograms",
+    "file": "15.svg"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/ebc742d6-b14e-4f23-a526-631abff241da.svg",
+    "alt": "PI_pictogram-014_Light-theme",
+    "heading": "Pictograms",
+    "file": "16.svg"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/4ab59952-2a00-4c25-b156-d31ace7da2cb.svg",
+    "alt": "PI_pictogram-015_Light-theme",
+    "heading": "Pictograms",
+    "file": "17.svg"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/af84a5f6-5a65-4c0f-a4c6-e5838c06c66a.svg",
+    "alt": "PI_pictogram-016_Light-theme",
+    "heading": "Pictograms",
+    "file": "18.svg"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/7d63eda4-349c-4e19-bcaa-2437074fc959.svg",
+    "alt": "PI_pictogram-017_Light-theme",
+    "heading": "Pictograms",
+    "file": "19.svg"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/e6fb7574-6069-43cf-a058-61e76e5cbc01.svg",
+    "alt": "PI_pictogram-018_Light-theme",
+    "heading": "Pictograms",
+    "file": "20.svg"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/4182f41d-e7ee-4817-bdd9-facd8ff8bbe1.svg",
+    "alt": "PI_pictogram-019_Light-theme",
+    "heading": "Pictograms",
+    "file": "21.svg"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/1e5a9c0e-34ac-4a69-9235-4892e6101d15.svg",
+    "alt": "PI_pictogram-020_Light-theme",
+    "heading": "Pictograms",
+    "file": "22.svg"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/2f768de0-f78a-43f9-b7a5-fd7073c262e1.svg",
+    "alt": "PI_pictogram-021_Light-theme",
+    "heading": "Pictograms",
+    "file": "23.svg"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/7f3357fa-cccc-40f0-945d-a1e39965a27e.svg",
+    "alt": "PI_pictogram-022_Light-theme",
+    "heading": "Pictograms",
+    "file": "24.svg"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/01668942-1ee5-4ae8-9d56-1050572d417c.svg",
+    "alt": "PI_pictogram-023_Light-theme",
+    "heading": "Pictograms",
+    "file": "25.svg"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/ce5ee2f9-05cf-4782-ba55-3c0304f54e0e.svg",
+    "alt": "PI_pictogram-024_Light-theme",
+    "heading": "Pictograms",
+    "file": "26.svg"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/0b7cb2be-7244-4ab1-b97a-e24778fbf284.svg",
+    "alt": "PI_pictogram-025_Light-theme",
+    "heading": "Pictograms",
+    "file": "27.svg"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/4fdc0218-239b-4e4d-80c4-5aa0212dbee5.svg",
+    "alt": "PI_pictogram-026_Light-theme",
+    "heading": "Pictograms",
+    "file": "28.svg"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/f5dc1f14-bf7e-41da-97b7-5bdfa051d2d2.svg",
+    "alt": "PI_pictogram-027_Light-theme",
+    "heading": "Pictograms",
+    "file": "29.svg"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/eeb56b07-34d8-441c-971d-6a2f39952a9a.svg",
+    "alt": "PI_pictogram-028_Light-theme",
+    "heading": "Pictograms",
+    "file": "30.svg"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/17839825-a4bc-4286-b5d4-73bc5fc2f0b0.svg",
+    "alt": "PI_pictogram-029_Light-theme",
+    "heading": "Pictograms",
+    "file": "31.svg"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/581d3f43-0837-4025-85fb-8faea430f43d.svg",
+    "alt": "PI_pictogram-030_Light-theme",
+    "heading": "Pictograms",
+    "file": "32.svg"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/c5b36c84-738f-409d-b84c-63015ab7967c.svg",
+    "alt": "PI_pictogram-031_Light-theme",
+    "heading": "Pictograms",
+    "file": "33.svg"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/0ec067c6-3c33-4afa-9309-04456d3e7f7a.svg",
+    "alt": "PI_pictogram-032_Light-theme",
+    "heading": "Pictograms",
+    "file": "34.svg"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/6002ac7a-b732-469c-a786-eacc2e59eb11.svg",
+    "alt": "PI_pictogram-033_Light-theme",
+    "heading": "Pictograms",
+    "file": "35.svg"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/1589b8db-43b3-47fe-98dd-371fb4f7c42a.svg",
+    "alt": "PI_pictogram-034_Light-theme",
+    "heading": "Pictograms",
+    "file": "36.svg"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/eebb50fa-fd6c-4db5-84d4-ac6ba1c78fcb.svg",
+    "alt": "PI_pictogram-035_Light-theme",
+    "heading": "Pictograms",
+    "file": "37.svg"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/994694fe-3940-4857-b13c-868ec1ff0e86.svg",
+    "alt": "PI_pictogram-036_Light-theme",
+    "heading": "Pictograms",
+    "file": "38.svg"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/47605e3e-a7d6-4919-80d2-31c834196f83.svg",
+    "alt": "PI_pictogram-037_Light-theme",
+    "heading": "Pictograms",
+    "file": "39.svg"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/8ce62e90-a447-461d-ac61-346696fd04ff.svg",
+    "alt": "PI_pictogram-038_Light-theme",
+    "heading": "Pictograms",
+    "file": "40.svg"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/6c30327c-95c6-45ee-9393-f6ae1362c26b.svg",
+    "alt": "PI_pictogram-039_Light-theme",
+    "heading": "Pictograms",
+    "file": "41.svg"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/8d81838c-e27e-4dfc-83e2-dd38ef2433b4.svg",
+    "alt": "PI_pictogram-040_Light-theme",
+    "heading": "Pictograms",
+    "file": "42.svg"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/a7d2ab26-25ee-4c12-b8d0-e6b65d585f24.svg",
+    "alt": "PI_pictogram-041_Light-theme",
+    "heading": "Pictograms",
+    "file": "43.svg"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/f74fef9a-4655-425c-a8b5-59c9590ef5d8.svg",
+    "alt": "PI_pictogram-042_Light-theme_PurpleBlue",
+    "heading": "Pictograms",
+    "file": "44.svg"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/6df61bb2-c9ab-4930-9f82-47c0f6cf1bb8.svg",
+    "alt": "PI_pictogram-043_Light-theme_PurpleBlue",
+    "heading": "Pictograms",
+    "file": "45.svg"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/73fee967-d831-403d-bd39-e7f743e0bf7d.svg",
+    "alt": "PI_pictogram-044_Light-theme_PurpleBlue",
+    "heading": "Pictograms",
+    "file": "46.svg"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/7cf138fc-1260-4c9b-a862-b844e6928929.svg",
+    "alt": "PI_pictogram-045_Light-theme_PurpleBlue",
+    "heading": "Pictograms",
+    "file": "47.svg"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/c84994e7-d350-4cab-bc69-2be713dfc0b2.svg",
+    "alt": "PI_pictogram-046_Light-theme_PurpleBlue",
+    "heading": "Pictograms",
+    "file": "48.svg"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/ec145fa0-2c78-48e6-b517-bf8ca5977492.svg",
+    "alt": "PI_pictogram-047_Light-theme_PurpleBlue",
+    "heading": "Pictograms",
+    "file": "49.svg"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/146d7c52-ed71-4d8b-bdd9-f6cb0bc7bd31.svg",
+    "alt": "PI_pictogram-048_Light-theme_PurpleBlue",
+    "heading": "Pictograms",
+    "file": "50.svg"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/5b6c1eb2-78e0-4be7-8d54-48b4cb5b0132.svg",
+    "alt": "PI_pictogram-049_Light-theme_PurpleBlue",
+    "heading": "Pictograms",
+    "file": "51.svg"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/47a189e5-c4ad-4fce-801f-cbddb3653549.svg",
+    "alt": "PI_pictogram-050_Light-theme_PurpleBlue",
+    "heading": "Pictograms",
+    "file": "52.svg"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/f464c5f2-a6d2-47b6-ab01-109a5769eea1.svg",
+    "alt": "PI_pictogram-051_Light-theme_PurpleBlue",
+    "heading": "Pictograms",
+    "file": "53.svg"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/460c12b9-b14b-4cf6-bfa5-9415ce93af8e.svg",
+    "alt": "PI_pictogram-052_Light-theme_PurpleBlue",
+    "heading": "Pictograms",
+    "file": "54.svg"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/a39cf2f5-7445-4321-81c8-bf28512362cc.svg",
+    "alt": "PI_pictogram-053_Light-theme_PurpleBlue",
+    "heading": "Pictograms",
+    "file": "55.svg"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/4bde9064-7025-413c-b52d-5c5573bf56f0.svg",
+    "alt": "PI_pictogram-054_Light-theme_PurpleBlue",
+    "heading": "Pictograms",
+    "file": "56.svg"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/0b142d18-250a-407f-9bb5-21b912d8d534.svg",
+    "alt": "PI_pictogram-055_Light-theme_PurpleBlue",
+    "heading": "Pictograms",
+    "file": "57.svg"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/d983235d-723b-49f9-b410-66fb1914831a.svg",
+    "alt": "PI_pictogram-056_Light-theme_PurpleBlue",
+    "heading": "Pictograms",
+    "file": "58.svg"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/98fc6949-5c8b-48ae-87b0-6b6c3f824e92.svg",
+    "alt": "PI_pictogram-057_Light-theme_PurpleBlue",
+    "heading": "Pictograms",
+    "file": "59.svg"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/4cc196fa-cedd-497c-bc15-4618de512462.svg",
+    "alt": "PI_pictogram-058_Light-theme_PurpleBlue",
+    "heading": "Pictograms",
+    "file": "60.svg"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/a95b4455-fb1b-434c-b3d3-a4411d52a7df.svg",
+    "alt": "PI_pictogram-059_Light-theme_PurpleBlue",
+    "heading": "Pictograms",
+    "file": "61.svg"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/b1f6a4ad-ab7f-4509-aad4-4e304f788562.svg",
+    "alt": "PI_pictogram-060_Light-theme_PurpleBlue",
+    "heading": "Pictograms",
+    "file": "62.svg"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/7b6486b0-6311-4c9a-bfc0-64df8adff0ee.svg",
+    "alt": "PI_pictogram-061_Light-theme_PurpleBlue",
+    "heading": "Pictograms",
+    "file": "63.svg"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/4a2c5ced-1ef9-4878-987f-1e0281c6ee60.svg",
+    "alt": "PI_pictogram-062_Light-theme_PurpleBlue",
+    "heading": "Pictograms",
+    "file": "64.svg"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/c73a454a-8006-42a2-8f3f-59a22e457f73.svg",
+    "alt": "PI_pictogram-063_Light-theme_PurpleBlue",
+    "heading": "Pictograms",
+    "file": "65.svg"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/6128b56b-5eb6-4860-b684-9d5ab961ef2a.svg",
+    "alt": "PI_pictogram-064_Light-theme_PurpleBlue",
+    "heading": "Pictograms",
+    "file": "66.svg"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/10e7deb7-d641-480b-bbd8-9af5f3526b1b.svg",
+    "alt": "PI_pictogram-065_Light-theme_PurpleBlue",
+    "heading": "Pictograms",
+    "file": "67.svg"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/a22403e2-e8c1-46e1-ab07-4c703977e644.svg",
+    "alt": "PI_pictogram-066_Light-theme_PurpleBlue",
+    "heading": "Pictograms",
+    "file": "68.svg"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/a76e44c3-32bf-4ba1-a091-c4812d7e26c3.svg",
+    "alt": "PI_pictogram-067_Light-theme_PurpleBlue",
+    "heading": "Pictograms",
+    "file": "69.svg"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/bd7fab85-df89-4f2b-8bc0-096970524117.svg",
+    "alt": "PI_pictogram-068_Light-theme_PurpleBlue",
+    "heading": "Pictograms",
+    "file": "70.svg"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/455d2c6d-2c48-49d6-b023-703eac71869e.svg",
+    "alt": "PI_pictogram-069_Light-theme_PurpleBlue",
+    "heading": "Pictograms",
+    "file": "71.svg"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/11b5a418-8012-4515-a5f3-e191683c54e3.svg",
+    "alt": "PI_pictogram-070_Light-theme_PurpleBlue",
+    "heading": "Pictograms",
+    "file": "72.svg"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/30836f1e-0a8f-4132-936c-4ff7cf3a8074.svg",
+    "alt": "PI_pictogram-071_Light-theme_PurpleBlue",
+    "heading": "Pictograms",
+    "file": "73.svg"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/c6e9c168-2ebb-4200-b35c-fdb862c018e9.svg",
+    "alt": "PI_pictogram-072_Light-theme_PurpleBlue",
+    "heading": "Pictograms",
+    "file": "74.svg"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/3d572e31-8c7a-457e-96a7-a403ca8fd8d2.svg",
+    "alt": "PI_pictogram-073_Light-theme_PurpleBlue",
+    "heading": "Pictograms",
+    "file": "75.svg"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/2d3abc9d-57d6-410a-a1d6-a57bbe5b5eae.svg",
+    "alt": "PI_pictogram-074_Light-theme_PurpleBlue",
+    "heading": "Pictograms",
+    "file": "76.svg"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/f2aa78e8-d94e-475a-9687-d753c0e71974.svg",
+    "alt": "PI_pictogram-075_Light-theme_PurpleBlue",
+    "heading": "Pictograms",
+    "file": "77.svg"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/02af73da-978c-4639-8feb-34a2d56bf3bb.svg",
+    "alt": "PI_pictogram-076_Light-theme_PurpleBlue",
+    "heading": "Pictograms",
+    "file": "78.svg"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/475a0ee7-251e-46a7-83dd-330546bc1e57.svg",
+    "alt": "PI_pictogram-077_Dark-theme_PurpleBlue",
+    "heading": "Pictograms",
+    "file": "79.svg"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/5631940d-0d58-4539-85da-4bbe0a5da4a2.svg",
+    "alt": "PI_pictogram-078_Light-theme_PurpleBlue",
+    "heading": "Pictograms",
+    "file": "80.svg"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/68e76747-45d6-41c3-a6e5-68287f6cfd04.svg",
+    "alt": "PI_pictogram-079_Light-theme_PurpleBlue",
+    "heading": "Pictograms",
+    "file": "81.svg"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/2a1f3a6f-9e3b-4826-aad2-0bbe6fe54a02.svg",
+    "alt": "PI_pictogram-001_Dark-theme_PurpleBlue",
+    "heading": "Pictograms",
+    "file": "82.svg"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/6acc3ac4-3699-49de-a288-e537601eec6d.svg",
+    "alt": "PI_pictogram-002_Dark-theme_PurpleBlue",
+    "heading": "Pictograms",
+    "file": "83.svg"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/7ca0b547-0b7f-4ffa-8c88-7906a7a14c70.svg",
+    "alt": "PI_pictogram-003_Dark-theme_PurpleBlue",
+    "heading": "Pictograms",
+    "file": "84.svg"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/75e430f0-94f6-4371-84d9-375cff96134d.svg",
+    "alt": "PI_pictogram-004_Dark-theme_PurpleBlue",
+    "heading": "Pictograms",
+    "file": "85.svg"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/7e4efad6-21ff-4070-87bf-d8db1e2562e8.svg",
+    "alt": "PI_pictogram-005_Dark-theme_PurpleBlue",
+    "heading": "Pictograms",
+    "file": "86.svg"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/b7748f87-cb5a-4c43-bd11-e5f799dc18c5.svg",
+    "alt": "PI_pictogram-006_Dark-theme_PurpleBlue",
+    "heading": "Pictograms",
+    "file": "87.svg"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/b78e26df-884a-4218-9751-71ecf68dedd0.svg",
+    "alt": "PI_pictogram-007_Dark-theme_PurpleBlue",
+    "heading": "Pictograms",
+    "file": "88.svg"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/5c25e45b-e385-4d6b-962f-8cae8f0ad704.svg",
+    "alt": "PI_pictogram-008_Dark-theme_PurpleBlue",
+    "heading": "Pictograms",
+    "file": "89.svg"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/13d5ff0b-17ce-4c51-8582-3687babe5ff8.svg",
+    "alt": "PI_pictogram-009_Dark-theme_PurpleBlue",
+    "heading": "Pictograms",
+    "file": "90.svg"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/6ac04304-2c72-42b1-ab03-d7475d4cb649.svg",
+    "alt": "PI_pictogram-010_Dark-theme_PurpleBlue",
+    "heading": "Pictograms",
+    "file": "91.svg"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/63075bc3-be7a-4d7c-a8f2-4021ee3f6c59.svg",
+    "alt": "PI_pictogram-011_Dark-theme_PurpleBlue",
+    "heading": "Pictograms",
+    "file": "92.svg"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/e2920ce1-d56a-4ee6-a3cd-2b49714b0e5b.svg",
+    "alt": "PI_pictogram-012_Dark-theme_PurpleBlue",
+    "heading": "Pictograms",
+    "file": "93.svg"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/e0c7d536-7a39-47cc-bbbf-b13e612ec378.svg",
+    "alt": "PI_pictogram-013_Dark-theme_PurpleBlue",
+    "heading": "Pictograms",
+    "file": "94.svg"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/964546d0-c0de-4639-ba72-398fb45826bf.svg",
+    "alt": "PI_pictogram-014_Dark-theme_PurpleBlue",
+    "heading": "Pictograms",
+    "file": "95.svg"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/a49d14d7-ec8e-4134-952f-2bb8b061b911.svg",
+    "alt": "PI_pictogram-015_Dark-theme_PurpleBlue",
+    "heading": "Pictograms",
+    "file": "96.svg"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/caac73fa-c96a-431a-bcfa-95f905731c54.svg",
+    "alt": "PI_pictogram-016_Dark-theme_PurpleBlue",
+    "heading": "Pictograms",
+    "file": "97.svg"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/2c3789c2-da1d-44bc-b3f3-f89dd59efa42.svg",
+    "alt": "PI_pictogram-017_Dark-theme_PurpleBlue",
+    "heading": "Pictograms",
+    "file": "98.svg"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/fba7c3e2-84b7-47cd-a98f-9c68620b5805.svg",
+    "alt": "PI_pictogram-018_Dark-theme_PurpleBlue",
+    "heading": "Pictograms",
+    "file": "99.svg"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/04c66374-e333-4e39-976d-3dc0868f589f.svg",
+    "alt": "PI_pictogram-019_Dark-theme_PurpleBlue",
+    "heading": "Pictograms",
+    "file": "100.svg"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/f43e92c6-ce04-4423-9f46-96d1074aef7f.svg",
+    "alt": "PI_pictogram-020_Dark-theme_PurpleBlue",
+    "heading": "Pictograms",
+    "file": "101.svg"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/db9fed20-f9ad-4dcb-8740-2f24e870a860.svg",
+    "alt": "PI_pictogram-021_Dark-theme_PurpleBlue",
+    "heading": "Pictograms",
+    "file": "102.svg"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/90afff75-59d0-4d10-ac3f-5abbe307a423.svg",
+    "alt": "PI_pictogram-022_Dark-theme_PurpleBlue",
+    "heading": "Pictograms",
+    "file": "103.svg"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/3ae28336-7a9e-4821-92d9-f7c53dffd103.svg",
+    "alt": "PI_pictogram-023_Dark-theme_PurpleBlue",
+    "heading": "Pictograms",
+    "file": "104.svg"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/27bca3f6-3f61-4ed9-be23-fe2d80973c39.svg",
+    "alt": "PI_pictogram-024_Dark-theme_PurpleBlue",
+    "heading": "Pictograms",
+    "file": "105.svg"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/0e111d06-16fb-4d16-bc00-d8b3da8f9dda.svg",
+    "alt": "PI_pictogram-025_Dark-theme_PurpleBlue",
+    "heading": "Pictograms",
+    "file": "106.svg"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/1bfb7784-7940-4ccd-9d49-17223d52054c.svg",
+    "alt": "PI_pictogram-026_Dark-theme_PurpleBlue",
+    "heading": "Pictograms",
+    "file": "107.svg"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/963924a3-2338-4a6e-8331-8ebb3533efb9.svg",
+    "alt": "PI_pictogram-027_Dark-theme_PurpleBlue",
+    "heading": "Pictograms",
+    "file": "108.svg"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/940813f0-c6d8-40c7-8333-56c406ec826c.svg",
+    "alt": "PI_pictogram-028_Dark-theme_PurpleBlue",
+    "heading": "Pictograms",
+    "file": "109.svg"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/1368f4d6-9033-4d20-ae55-de1acbc49f0c.svg",
+    "alt": "PI_pictogram-029_Dark-theme_PurpleBlue",
+    "heading": "Pictograms",
+    "file": "110.svg"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/46f7747a-c197-4979-a40b-af7f0b1e4dcc.svg",
+    "alt": "PI_pictogram-030_Dark-theme_PurpleBlue",
+    "heading": "Pictograms",
+    "file": "111.svg"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/bd0b25ec-2dcb-4d09-97d8-d0a405f40615.svg",
+    "alt": "PI_pictogram-031_Dark-theme_PurpleBlue",
+    "heading": "Pictograms",
+    "file": "112.svg"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/eefeb738-afef-406a-8b5f-62ca3892bdae.svg",
+    "alt": "PI_pictogram-032_Dark-theme_PurpleBlue",
+    "heading": "Pictograms",
+    "file": "113.svg"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/5f479e0e-1b1c-46bd-960f-31bf10220103.svg",
+    "alt": "PI_pictogram-033_Dark-theme_PurpleBlue",
+    "heading": "Pictograms",
+    "file": "114.svg"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/270122d7-4326-494e-b7d9-b9529aab516d.svg",
+    "alt": "PI_pictogram-034_Dark-theme_PurpleBlue",
+    "heading": "Pictograms",
+    "file": "115.svg"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/6ec762d1-a1d9-4380-86e6-e3127ba30443.svg",
+    "alt": "PI_pictogram-035_Dark-theme_PurpleBlue",
+    "heading": "Pictograms",
+    "file": "116.svg"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/19abe63d-618a-45c3-b91b-bbafb6a81af5.svg",
+    "alt": "PI_pictogram-036_Dark-theme_PurpleBlue",
+    "heading": "Pictograms",
+    "file": "117.svg"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/0ca3897f-9678-4b80-9024-48a1939f764a.svg",
+    "alt": "PI_pictogram-037_Dark-theme_PurpleBlue",
+    "heading": "Pictograms",
+    "file": "118.svg"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/50b004df-9de4-4559-83ab-4791c5236ceb.svg",
+    "alt": "PI_pictogram-038_Dark-theme_PurpleBlue",
+    "heading": "Pictograms",
+    "file": "119.svg"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/5204e058-3658-4b55-9456-34489d1f699b.svg",
+    "alt": "PI_pictogram-039_Dark-theme_PurpleBlue",
+    "heading": "Pictograms",
+    "file": "120.svg"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/9dcfb135-1661-4a7d-88b0-44a2948506fb.svg",
+    "alt": "PI_pictogram-040_Dark-theme_PurpleBlue",
+    "heading": "Pictograms",
+    "file": "121.svg"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/0996963a-7fd6-431e-94b7-101fbafd6e50.svg",
+    "alt": "PI_pictogram-041_Dark-theme_PurpleBlue",
+    "heading": "Pictograms",
+    "file": "122.svg"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/89b110f9-c32a-4870-a2b5-085e27afb9a9.svg",
+    "alt": "PI_pictogram-042_Dark-theme_PurpleBlue",
+    "heading": "Pictograms",
+    "file": "123.svg"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/fade31a0-c98e-4485-bcd3-55a57d27265a.svg",
+    "alt": "PI_pictogram-043_Dark-theme_PurpleBlue",
+    "heading": "Pictograms",
+    "file": "124.svg"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/f975f4c8-fad0-4044-ab24-4cc09e97c193.svg",
+    "alt": "PI_pictogram-044_Dark-theme_PurpleBlue",
+    "heading": "Pictograms",
+    "file": "125.svg"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/23929f40-8567-43a6-9aed-44ccc2bb6b1f.svg",
+    "alt": "PI_pictogram-045_Dark-theme_PurpleBlue",
+    "heading": "Pictograms",
+    "file": "126.svg"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/a1c7802e-d21d-466e-b4f6-0c0a43745adb.svg",
+    "alt": "PI_pictogram-046_Dark-theme_PurpleBlue",
+    "heading": "Pictograms",
+    "file": "127.svg"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/3146ab28-b04a-47c5-8ca5-40cd9e4dbc95.svg",
+    "alt": "PI_pictogram-047_Dark-theme_PurpleBlue",
+    "heading": "Pictograms",
+    "file": "128.svg"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/711d94cf-1b8b-444c-996c-550819be1396.svg",
+    "alt": "PI_pictogram-048_Dark-theme_PurpleBlue",
+    "heading": "Pictograms",
+    "file": "129.svg"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/d899b983-b709-4a16-95d9-c38f0ca4a27f.svg",
+    "alt": "PI_pictogram-049_Dark-theme_PurpleBlue",
+    "heading": "Pictograms",
+    "file": "130.svg"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/4269cd3d-0be3-48e3-bf66-756b7342c32d.svg",
+    "alt": "PI_pictogram-050_Dark-theme_PurpleBlue",
+    "heading": "Pictograms",
+    "file": "131.svg"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/4089e21d-9927-4780-9b07-38c3d58e7d06.svg",
+    "alt": "PI_pictogram-051_Dark-theme_PurpleBlue",
+    "heading": "Pictograms",
+    "file": "132.svg"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/5925ca38-646a-4e33-a91f-31225945fe30.svg",
+    "alt": "PI_pictogram-052_Dark-theme_PurpleBlue",
+    "heading": "Pictograms",
+    "file": "133.svg"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/6c0d314f-b2c6-432b-a10f-4f364e3a6339.svg",
+    "alt": "PI_pictogram-053_Dark-theme_PurpleBlue",
+    "heading": "Pictograms",
+    "file": "134.svg"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/bc5e35ad-a463-4442-81f1-336450508f2b.svg",
+    "alt": "PI_pictogram-054_Dark-theme_PurpleBlue",
+    "heading": "Pictograms",
+    "file": "135.svg"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/f79a3263-c015-4cc7-8058-be20d85359fb.svg",
+    "alt": "PI_pictogram-055_Dark-theme_PurpleBlue",
+    "heading": "Pictograms",
+    "file": "136.svg"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/2c384d91-ad95-4a99-bd74-2e5f19b53d85.svg",
+    "alt": "PI_pictogram-056_Dark-theme_PurpleBlue",
+    "heading": "Pictograms",
+    "file": "137.svg"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/556f91b8-5e5b-4844-8e80-7be6fcd93378.svg",
+    "alt": "PI_pictogram-057_Dark-theme_PurpleBlue",
+    "heading": "Pictograms",
+    "file": "138.svg"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/4a4b5311-02fd-4ac3-a866-cd138f7cb59a.svg",
+    "alt": "PI_pictogram-058_Dark-theme_PurpleBlue",
+    "heading": "Pictograms",
+    "file": "139.svg"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/1cdb84a4-9728-44f4-97f5-7a2a18e2810b.svg",
+    "alt": "PI_pictogram-059_Dark-theme_PurpleBlue",
+    "heading": "Pictograms",
+    "file": "140.svg"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/382e632b-0324-49b2-ba08-6a6b82a6900b.svg",
+    "alt": "PI_pictogram-060_Dark-theme_PurpleBlue",
+    "heading": "Pictograms",
+    "file": "141.svg"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/3d643b90-8749-4f6c-b76f-7786ddb1445c.svg",
+    "alt": "PI_pictogram-061_Dark-theme_PurpleBlue",
+    "heading": "Pictograms",
+    "file": "142.svg"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/e99b7233-5d09-49f4-8d71-db514cfa9867.svg",
+    "alt": "PI_pictogram-062_Dark-theme_PurpleBlue",
+    "heading": "Pictograms",
+    "file": "143.svg"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/6f951285-1981-4161-8222-78bec664cdcb.svg",
+    "alt": "PI_pictogram-063_Dark-theme_PurpleBlue",
+    "heading": "Pictograms",
+    "file": "144.svg"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/df62089c-e979-4c02-a9e1-10aa6486db56.svg",
+    "alt": "PI_pictogram-064_Dark-theme_PurpleBlue",
+    "heading": "Pictograms",
+    "file": "145.svg"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/4a109d84-0f52-490b-b34f-cd57f686509f.svg",
+    "alt": "PI_pictogram-065_Dark-theme_PurpleBlue",
+    "heading": "Pictograms",
+    "file": "146.svg"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/e27972d2-13e3-4e5d-b4b9-e09b0250caeb.svg",
+    "alt": "PI_pictogram-066_Dark-theme_PurpleBlue",
+    "heading": "Pictograms",
+    "file": "147.svg"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/aa85ee09-236e-4b62-a975-e363c3f9633d.svg",
+    "alt": "PI_pictogram-067_Dark-theme_PurpleBlue",
+    "heading": "Pictograms",
+    "file": "148.svg"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/83660976-a23d-4221-8248-496a65785085.svg",
+    "alt": "PI_pictogram-068_Dark-theme_PurpleBlue",
+    "heading": "Pictograms",
+    "file": "149.svg"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/1f0be5c3-8d09-4077-83ea-fba0644b6644.svg",
+    "alt": "PI_pictogram-069_Dark-theme_PurpleBlue",
+    "heading": "Pictograms",
+    "file": "150.svg"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/3a3fc370-8a23-45d7-8ead-19e0939c92ae.svg",
+    "alt": "PI_pictogram-070_Dark-theme_PurpleBlue",
+    "heading": "Pictograms",
+    "file": "151.svg"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/7e072375-9113-4af8-8310-a2e6f7def160.svg",
+    "alt": "PI_pictogram-071_Dark-theme_PurpleBlue",
+    "heading": "Pictograms",
+    "file": "152.svg"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/b81c5b3c-c5c1-447d-9e19-8bd34e94551e.svg",
+    "alt": "PI_pictogram-072_Dark-theme_PurpleBlue",
+    "heading": "Pictograms",
+    "file": "153.svg"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/8ff76ff6-7180-422e-807e-de52db6e5a7c.svg",
+    "alt": "PI_pictogram-073_Dark-theme_PurpleBlue",
+    "heading": "Pictograms",
+    "file": "154.svg"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/c1c26aeb-0a84-4277-91e9-1da6cc152ef2.svg",
+    "alt": "PI_pictogram-074_Dark-theme_PurpleBlue",
+    "heading": "Pictograms",
+    "file": "155.svg"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/60959e0c-0eb5-47cb-b169-40af4f2f9f20.svg",
+    "alt": "PI_pictogram-075_Dark-theme_PurpleBlue",
+    "heading": "Pictograms",
+    "file": "156.svg"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/27014528-39ae-4fd6-b5ab-c3623a6d481a.svg",
+    "alt": "PI_pictogram-076_Dark-theme_PurpleBlue",
+    "heading": "Pictograms",
+    "file": "157.svg"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/2517d856-b4df-4059-80be-828f3550935a.svg",
+    "alt": "PI_pictogram-077_Dark-theme_PurpleBlue",
+    "heading": "Pictograms",
+    "file": "158.svg"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/a94b5c5e-047a-47a3-892d-661825abc15c.svg",
+    "alt": "PI_pictogram-078_Dark-theme_PurpleBlue",
+    "heading": "Pictograms",
+    "file": "159.svg"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/fa1445e9-8a6b-4cdc-acaa-5592b82b52bb.svg",
+    "alt": "PI_pictogram-079_Dark-theme_PurpleBlue",
+    "heading": "Pictograms",
+    "file": "160.svg"
+  }
+]

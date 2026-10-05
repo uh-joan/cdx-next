@@ -38,6 +38,48 @@
         extra emphasis.
       </li>
     </ul>
+    <div class="doc-image-grid">
+      <figure>
+        <img
+          src="helix/components-chips/01.png"
+          alt="Neutral chip: light grey fill"
+          loading="lazy"
+        />
+        <figcaption>Neutral</figcaption>
+      </figure>
+      <figure>
+        <img
+          src="helix/components-chips/02.png"
+          alt="Outlined chip: white with a grey outline"
+          loading="lazy"
+        />
+        <figcaption>Outlined</figcaption>
+      </figure>
+      <figure>
+        <img
+          src="helix/components-chips/03.png"
+          alt="Primary chip: dark grey fill with white text"
+          loading="lazy"
+        />
+        <figcaption>Primary</figcaption>
+      </figure>
+      <figure>
+        <img
+          src="helix/components-chips/04.png"
+          alt="Basic chip: label only, no fill or outline"
+          loading="lazy"
+        />
+        <figcaption>Basic</figcaption>
+      </figure>
+      <figure>
+        <img
+          src="helix/components-chips/09.png"
+          alt="Accent chip: purple fill with white text"
+          loading="lazy"
+        />
+        <figcaption>Accent</figcaption>
+      </figure>
+    </div>
     <p>Semantic chips reinforce meaning:</p>
     <ul>
       <li>
@@ -47,6 +89,40 @@
       <li><strong>Warn</strong> – Use for cautionary states.</li>
       <li><strong>Info</strong> – Use for neutral or informational context.</li>
     </ul>
+    <div class="doc-image-grid">
+      <figure>
+        <img
+          src="helix/components-chips/05.png"
+          alt="Negative chip: light red fill"
+          loading="lazy"
+        />
+        <figcaption>Negative</figcaption>
+      </figure>
+      <figure>
+        <img
+          src="helix/components-chips/06.png"
+          alt="Positive chip: light green fill"
+          loading="lazy"
+        />
+        <figcaption>Positive</figcaption>
+      </figure>
+      <figure>
+        <img
+          src="helix/components-chips/07.png"
+          alt="Warn chip: light amber fill"
+          loading="lazy"
+        />
+        <figcaption>Warn</figcaption>
+      </figure>
+      <figure>
+        <img
+          src="helix/components-chips/08.png"
+          alt="Info chip: light blue fill"
+          loading="lazy"
+        />
+        <figcaption>Info</figcaption>
+      </figure>
+    </div>
 
     <h3>Density</h3>
     <p>
@@ -60,6 +136,32 @@
         and with purpose.
       </li>
     </ul>
+    <div class="doc-image-grid">
+      <figure>
+        <img
+          src="helix/components-chips/01.png"
+          alt="Chip at density 0, 32 pixels tall"
+          loading="lazy"
+        />
+        <figcaption>Density 0 (default)</figcaption>
+      </figure>
+      <figure>
+        <img
+          src="helix/components-chips/10.png"
+          alt="Chip at density -1, 28 pixels tall"
+          loading="lazy"
+        />
+        <figcaption>Density -1</figcaption>
+      </figure>
+      <figure>
+        <img
+          src="helix/components-chips/11.png"
+          alt="Chip at density -2, 24 pixels tall"
+          loading="lazy"
+        />
+        <figcaption>Density -2</figcaption>
+      </figure>
+    </div>
     <p>
       For more detail, see
       <cdx-internal-link
@@ -78,6 +180,12 @@
         Use a trailing icon to suggest interactivity, such as removing the chip.
       </li>
     </ul>
+    <img
+      class="doc-image"
+      src="helix/components-chips/12.png"
+      alt="An In progress chip with a leading sync icon, and a Filter one chip with a trailing close icon"
+      loading="lazy"
+    />
     <p>
       For guidance on choosing and applying icons, see
       <cdx-internal-link
@@ -121,22 +229,44 @@
         <strong>suggestion chip</strong>
       </li>
     </ul>
+    <img
+      class="doc-image"
+      src="helix/components-chips/13.png"
+      alt="The four chip types: an outlined Bookmark assist chip with an icon, a dark Latest reports filter chip, a grey Clinical holds input chip with a remove icon, and an amber Suspected suggestion chip"
+      loading="lazy"
+    />
 
     <mat-divider></mat-divider>
 
     <h2>Usage</h2>
     <cdx-usage-guidelines>
-      <cdx-usage-guideline kind="do">
+      <cdx-usage-guideline
+        kind="do"
+        imageSrc="helix/components-chips/14.png"
+        imageAlt="A row of filter chips with All selected and three outlined category chips"
+      >
         Use chips to present contextual, supplemental options or filter results.
       </cdx-usage-guideline>
-      <cdx-usage-guideline kind="dont">
+      <cdx-usage-guideline
+        kind="dont"
+        imageSrc="helix/components-chips/15.png"
+        imageAlt="A dialog footer where Cancel and Submit are shown as chips instead of buttons"
+      >
         Don't use chips for primary actions. Use buttons for moving users
         forward in a process.
       </cdx-usage-guideline>
-      <cdx-usage-guideline kind="do">
+      <cdx-usage-guideline
+        kind="do"
+        imageSrc="helix/components-chips/16.png"
+        imageAlt="A Status field showing a green Completed chip"
+      >
         Use chips to show statuses or states (e.g., Completed).
       </cdx-usage-guideline>
-      <cdx-usage-guideline kind="dont">
+      <cdx-usage-guideline
+        kind="dont"
+        imageSrc="helix/components-chips/17.png"
+        imageAlt="A Date field showing 20 November 2023 inside a blue chip"
+      >
         Don't use chips to display static data, such as dates.
       </cdx-usage-guideline>
     </cdx-usage-guidelines>

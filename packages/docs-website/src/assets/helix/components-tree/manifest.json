@@ -1,0 +1,30 @@
+[
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/1607256d-a1c7-4f23-b6e7-f5975e7afc28.png",
+    "alt": "Tree Item",
+    "heading": "Options",
+    "file": "01.png"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/4ad143fe-e781-4ee5-89a7-b2c5bdf4bea0.png",
+    "alt": "Tree Item",
+    "heading": "Options",
+    "file": "02.png"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/096e0fcc-8050-48ef-ab6f-a31b27f2a936.png",
+    "alt": "",
+    "heading": "Usage",
+    "guideline": "do",
+    "text": "Create a clear hierarchy and use checkboxes where selection is needed.",
+    "file": "03.png"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/6d640641-2de0-4969-b2a4-9c40b5a5adfc.png",
+    "alt": "",
+    "heading": "Usage",
+    "guideline": "dont",
+    "text": "Don't clutter the tree list with unnecessary elements such as extra dividers. Maintain consistent vertical alignment across all hierarchical levels to ensure visual clarity and a cohesive layout.",
+    "file": "04.png"
+  }
+]

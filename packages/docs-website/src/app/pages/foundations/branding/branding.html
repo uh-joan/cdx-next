@@ -35,6 +35,24 @@
     <li>Use the logo in the header when Clarivate is the primary brand.</li>
     <li>Use the logo in the footer when the product name takes precedence.</li>
   </ul>
+  <div class="doc-image-grid branding-logo-grid">
+    <figure>
+      <img
+        src="helix/foundations-branding/01.png"
+        alt="Dark header with the Clarivate logo before the product name; the footer shows only a copyright line and links."
+        loading="lazy"
+      />
+      <figcaption>When Clarivate is the primary brand</figcaption>
+    </figure>
+    <figure>
+      <img
+        src="helix/foundations-branding/02.png"
+        alt="Dark header showing only the product name; the Clarivate logo sits at the start of the footer."
+        loading="lazy"
+      />
+      <figcaption>When the product name takes precedence</figcaption>
+    </figure>
+  </div>
   <p>
     Both our
     <cdx-internal-link
@@ -90,4 +108,22 @@
     error screens—adding warmth and context without distracting from the core
     content. Light and dark theme variants are available.
   </p>
+  <h3>Light theme</h3>
+  <div class="doc-image-grid pictogram-grid">
+    @for (pictogram of lightPictograms; track pictogram.file) {
+    <figure>
+      <img [src]="pictogram.src" alt="" width="80" height="80" loading="lazy" />
+      <figcaption>Pictogram {{ pictogram.number }}</figcaption>
+    </figure>
+    }
+  </div>
+  <h3>Dark theme</h3>
+  <div class="doc-image-grid pictogram-grid pictogram-grid--dark">
+    @for (pictogram of darkPictograms; track pictogram.file) {
+    <figure>
+      <img [src]="pictogram.src" alt="" width="80" height="80" loading="lazy" />
+      <figcaption>Pictogram {{ pictogram.number }}</figcaption>
+    </figure>
+    }
+  </div>
 </hlx-page>

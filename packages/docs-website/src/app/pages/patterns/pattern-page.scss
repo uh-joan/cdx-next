@@ -20,4 +20,9 @@
       vertical-align: top;
     }
   }
+
+  // "When to use it" illustrations ported from Helix (src/assets/helix/patterns-*).
+  .pattern-example-grid {
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  }
 }

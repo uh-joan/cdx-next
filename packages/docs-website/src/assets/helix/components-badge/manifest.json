@@ -1,0 +1,42 @@
+[
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/42128540-5d26-4e04-8f05-64dc53c05dd9.png",
+    "alt": "Badge",
+    "heading": "Color and size",
+    "file": "01.png"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/2a3fbf0e-9f0f-4b7e-8ef0-eb81d5221a1f.png",
+    "alt": "Badge",
+    "heading": "Color and size",
+    "file": "02.png"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/ca11bd3d-16bf-4315-9c10-a48f8d79edfc.png",
+    "alt": "Badge",
+    "heading": "Color and size",
+    "file": "03.png"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/f41c1faf-83b6-4797-841c-9d5216dfa1f0.png",
+    "alt": "Badge",
+    "heading": "Color and size",
+    "file": "04.png"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/6b447103-2f8e-438e-a72d-fb89112733b9.png",
+    "alt": "",
+    "heading": "Usage",
+    "guideline": "do",
+    "text": "Use badges to show a count of items or notifications (e.g., number of filters applied)",
+    "file": "05.png"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/0badb67d-7491-4431-821d-8815db9eb2b3.png",
+    "alt": "",
+    "heading": "Usage",
+    "guideline": "dont",
+    "text": "Ensure contrast and readability, especially against different backgrounds.",
+    "file": "06.png"
+  }
+]

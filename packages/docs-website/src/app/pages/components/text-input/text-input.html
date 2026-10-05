@@ -28,6 +28,24 @@
         buttons) and surrounding content.
       </li>
     </ul>
+    <div class="doc-image-grid">
+      <figure>
+        <img
+          src="helix/components-text-input/01.png"
+          alt="Outlined text input with a label"
+          loading="lazy"
+        />
+        <figcaption>Outlined</figcaption>
+      </figure>
+      <figure>
+        <img
+          src="helix/components-text-input/02.png"
+          alt="Filled text input with a label"
+          loading="lazy"
+        />
+        <figcaption>Filled</figcaption>
+      </figure>
+    </div>
     <p>
       Text areas are taller than standard inputs and wrap overflow text onto new
       lines. The large size suggests longer responses. See
@@ -38,9 +56,33 @@
       ></cdx-internal-link
       >.
     </p>
+    <div class="doc-image-grid">
+      <figure>
+        <img
+          src="helix/components-text-input/03.png"
+          alt="Outlined text area with a label"
+          loading="lazy"
+        />
+        <figcaption>Outlined text area</figcaption>
+      </figure>
+      <figure>
+        <img
+          src="helix/components-text-input/04.png"
+          alt="Filled text area with a label"
+          loading="lazy"
+        />
+        <figcaption>Filled text area</figcaption>
+      </figure>
+    </div>
 
     <h3>States</h3>
     <p>The input component has integrated hover, focus and error states.</p>
+    <img
+      class="doc-image"
+      src="helix/components-text-input/05.png"
+      alt="Outlined and filled text inputs in focused state with supporting text, and in error state with error text"
+      loading="lazy"
+    />
 
     <h3>Density</h3>
     <p>
@@ -55,6 +97,40 @@
         and with purpose.
       </li>
     </ul>
+    <div class="doc-image-grid">
+      <figure>
+        <img
+          src="helix/components-text-input/06.png"
+          alt="Outlined text input at density 0"
+          loading="lazy"
+        />
+        <figcaption>Density 0</figcaption>
+      </figure>
+      <figure>
+        <img
+          src="helix/components-text-input/07.png"
+          alt="Outlined text input at density -1"
+          loading="lazy"
+        />
+        <figcaption>Density -1</figcaption>
+      </figure>
+      <figure>
+        <img
+          src="helix/components-text-input/08.png"
+          alt="Outlined text input at density -2"
+          loading="lazy"
+        />
+        <figcaption>Density -2</figcaption>
+      </figure>
+      <figure>
+        <img
+          src="helix/components-text-input/09.png"
+          alt="Outlined text input at density -3"
+          loading="lazy"
+        />
+        <figcaption>Density -3</figcaption>
+      </figure>
+    </div>
     <p>
       For more detail, see
       <cdx-internal-link
@@ -74,6 +150,12 @@
         input.
       </li>
     </ul>
+    <img
+      class="doc-image"
+      src="helix/components-text-input/10.png"
+      alt="Outlined search input with a leading search icon, and an outlined input with a trailing clear icon"
+      loading="lazy"
+    />
     <p>
       For guidance on choosing and applying icons, see
       <cdx-internal-link
@@ -88,17 +170,33 @@
 
     <h2>Usage</h2>
     <cdx-usage-guidelines>
-      <cdx-usage-guideline kind="do">
+      <cdx-usage-guideline
+        kind="do"
+        imageSrc="helix/components-text-input/11.png"
+        imageAlt="Outlined search input in the page header above a panel of filled inputs"
+      >
         When using both types of inputs in a UI, separate them by region (e.g.
         page header and modal).
       </cdx-usage-guideline>
-      <cdx-usage-guideline kind="dont">
+      <cdx-usage-guideline
+        kind="dont"
+        imageSrc="helix/components-text-input/12.png"
+        imageAlt="Address form mixing filled Address and City inputs with outlined State and Zip inputs"
+      >
         Don't use both types next to each other or within the same form.
       </cdx-usage-guideline>
-      <cdx-usage-guideline kind="do">
+      <cdx-usage-guideline
+        kind="do"
+        imageSrc="helix/components-text-input/13.png"
+        imageAlt="Filled input with the short label “Job role”"
+      >
         Keep the label text short, clear, and fully visible.
       </cdx-usage-guideline>
-      <cdx-usage-guideline kind="dont">
+      <cdx-usage-guideline
+        kind="dont"
+        imageSrc="helix/components-text-input/14.png"
+        imageAlt="Filled inputs whose long label is truncated in one and wraps onto two lines in the other"
+      >
         Don't use labels that are too long, wrap onto multiple lines, or get
         truncated.
       </cdx-usage-guideline>

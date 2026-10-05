@@ -1,0 +1,22 @@
+[
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/2f199964-6116-4e42-8033-3f0d9591e941.png",
+    "alt": "Menu",
+    "heading": "Options",
+    "file": "01.png"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/ab6ad089-3fe1-4aa7-b5ff-5ff17e16746d.png",
+    "alt": "Styles",
+    "heading": "Icons",
+    "file": "02.png"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/9027ac55-48f9-42f2-8a11-6a201e9d6cb2.png",
+    "alt": "",
+    "heading": "Usage",
+    "guideline": "do",
+    "text": "Submenus should open beside their parent menu item without overlapping it.",
+    "file": "03.png"
+  }
+]
