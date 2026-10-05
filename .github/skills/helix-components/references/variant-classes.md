@@ -53,6 +53,7 @@ using a class, since new components/variants may be added later.
 | Snackbar      | `hlx-btn-invert`                                          | inverted button styling                                     | `snackbar/examples/snackbar.example.ts`                   |
 | Table         | `hlx-table` (combine with `mat-elevation-z8`)              | Helix table styling on top of Material table                | `table/examples/table-simple.example.ts`                  |
 | Tabs          | `hlx-tab-invert`                                           | inverted color tab variant                                  | `tabs/examples/tabs-inverted.color.example.ts`            |
+| Menu          | `hlx-menu-scrollable`                                      | caps a long menu's height and scrolls (apply as panelClass) | —                                                         |
 | Form field    | `appearance="fill"` / `appearance="outline"`               | Material form-field appearance (no Helix override observed) | `form-field/examples/form-field-appearences.ts`           |
 
 ## Components with no Helix override (plain Material API only)

@@ -381,6 +381,14 @@ $elevation-lg: elevation.$elevation-lg;
     }
   }
 
+  // Scrollable menu: cap a long mat-menu and let it scroll, instead of a menu
+  // taller than the viewport. Apply as the menu's panelClass
+  // (matMenuTriggerFor's menu with [class]="'hlx-menu-scrollable'", or
+  // mat-menu class="hlx-menu-scrollable"). The class lands on the menu panel.
+  .hlx-menu-scrollable {
+    max-height: 320px;
+  }
+
   // Figma Divider "light": for use on dark surfaces
   .hlx-divider-invert {
     --mat-divider-color: #{tokens.$border-invert};
