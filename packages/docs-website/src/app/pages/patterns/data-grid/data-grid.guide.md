@@ -114,6 +114,17 @@ export class TrialsGrid {
 `@cdx/theme-ag-grid` (the Theming-API theme supersedes the package's legacy CSS
 theme for new grids).
 
+## Cell renderers
+
+Use the shared renderers from `@cdx/theme-ag-grid` rather than re-writing them per
+grid. `helixChipCellRenderer` renders a short categorical value (status, phase,
+type) as a Helix chip, styled with `--hlx-*` tokens and built with `textContent`
+(no HTML injection):
+
+```ts
+{ field: 'phase', cellRenderer: helixChipCellRenderer }
+```
+
 ## Persist the user's layout
 
 Save the column state on `stateUpdated` and restore it on `gridReady`, keyed per

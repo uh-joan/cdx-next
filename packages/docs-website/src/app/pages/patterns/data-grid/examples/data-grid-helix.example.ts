@@ -1,6 +1,10 @@
 import { Component } from '@angular/core';
 import { MatButton } from '@angular/material/button';
-import { HELIX_DEFAULT_COL_DEF, helixGridTheme } from '@cdx/theme-ag-grid';
+import {
+  HELIX_DEFAULT_COL_DEF,
+  helixChipCellRenderer,
+  helixGridTheme,
+} from '@cdx/theme-ag-grid';
 import { AgGridAngular } from 'ag-grid-angular';
 import {
   AllCommunityModule,
@@ -69,12 +73,8 @@ class SampleComponent {
     {
       field: 'phase',
       headerName: 'Phase',
-      // Inline styles with global --hlx-* tokens: AG Grid injects this HTML
-      // outside the component's scoped styles, so a scoped class wouldn't apply.
-      cellRenderer: (p: { value: string }) =>
-        `<span style="display:inline-block;padding:1px 8px;border-radius:16px;` +
-        `background:var(--hlx-surface-minimal);color:var(--hlx-text-secondary);` +
-        `font-weight:600">${p.value}</span>`,
+      // Shared Helix chip renderer from the package (styled with --hlx-* tokens).
+      cellRenderer: helixChipCellRenderer,
     },
     { field: 'sponsor', headerName: 'Sponsor', flex: 2 },
     { field: 'updated', headerName: 'Updated' },
