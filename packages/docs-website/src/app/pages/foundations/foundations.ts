@@ -15,25 +15,37 @@ export class Foundations {
     {
       elements: [
         {
-          label: 'About Helix',
-          url: 'about-helix',
-        },
-        /*{
-          label: 'Quickstart guide',
-          url: 'quickstart-guide',
+          label: 'Principles & foundations',
+          url: 'principles-and-foundations',
         },
         {
-          label: 'Services',
-          url: 'services',
+          label: 'Color',
+          url: 'color',
         },
         {
-          label: 'Browser support',
-          url: 'browser-support',
+          label: 'Typography',
+          url: 'typography',
         },
         {
-          label: 'Accessibility',
-          url: 'accessibility',
-        },*/
+          label: 'Iconography',
+          url: 'iconography',
+        },
+        {
+          label: 'Branding',
+          url: 'branding',
+        },
+        {
+          label: 'Elevation',
+          url: 'elevation',
+        },
+        {
+          label: 'Density',
+          url: 'density',
+        },
+        {
+          label: 'AI',
+          url: 'ai',
+        },
       ],
     },
   ];

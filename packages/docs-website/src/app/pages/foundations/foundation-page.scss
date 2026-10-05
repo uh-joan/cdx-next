@@ -1,0 +1,42 @@
+:host {
+  p,
+  li {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+  }
+
+  .foundation-table {
+    border-collapse: collapse;
+    margin-block: 16px;
+
+    th,
+    td {
+      border-bottom: 1px solid var(--mat-sys-outline-variant);
+      padding: 8px 16px;
+      text-align: center;
+    }
+
+    th[scope='row'] {
+      text-align: start;
+    }
+  }
+
+  .icon-grid {
+    display: grid;
+    gap: 16px;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    margin-block: 16px;
+
+    &__item {
+      align-items: center;
+      border: 1px solid var(--mat-sys-outline-variant);
+      border-radius: 8px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      padding: 16px;
+      text-align: center;
+    }
+  }
+}
