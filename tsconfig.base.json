@@ -16,6 +16,7 @@
       "@cdx/ngx-analytics": ["packages/ngx-analytics/src/index.ts"],
       "@cdx/ngx-authentication": ["packages/ngx-authentication/src/index.ts"],
       "@cdx/ngx-branding": ["packages/ngx-branding/src/index.ts"],
+      "@cdx/helix-icons": ["packages/helix-icons/src/index.ts"],
       "@cdx/ngx-session-activity": [
         "packages/ngx-session-activity/src/index.ts"
       ],
