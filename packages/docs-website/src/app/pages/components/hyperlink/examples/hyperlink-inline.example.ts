@@ -5,17 +5,14 @@ import { InputViewerComponent } from '../../../../core/example-viewer/example-vi
 
 const htmlCode = `<p class="story">
   Hyperlinks inside running text keep a permanent underline, for example
-  <a routerLink="/foundations/density" underline class="story__link">the Density guidelines</a>, so they
-  don't rely on color alone.
+  <a routerLink="/foundations/density" class="hlx-link-inline">the Density guidelines</a>, so they
+  don't rely on color alone. Combine it with a color class, for example
+  <a routerLink="/foundations/color" class="hlx-link-inline hlx-link-blue">the Color guidelines</a>.
 </p>
 `;
 
 const styleCode = `.story {
   padding: 1rem;
-}
-
-.story__link {
-  font-weight: 600;
 }`;
 
 const tsCode = `import { Component } from '@angular/core';

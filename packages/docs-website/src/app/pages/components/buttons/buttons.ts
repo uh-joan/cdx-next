@@ -9,6 +9,8 @@ import {
 import { ExampleViewer } from '../../../core/example-viewer/example-viewer';
 import { Page } from '../../../core/page/page';
 import {
+  ButtonsAiComponent,
+  ButtonsAiFabComponent,
   ButtonsAnchorComponent,
   ButtonsDisabledInteractiveComponent,
   ButtonsElevatedComponent,
@@ -46,6 +48,7 @@ export class Buttons {
   protected readonly sampleList = [
     ButtonsTextComponent,
     ButtonsFilledComponent,
+    ButtonsAiComponent,
     ButtonsOutlinedComponent,
     ButtonsElevatedComponent,
     ButtonsTonalComponent,
@@ -53,6 +56,7 @@ export class Buttons {
     ButtonsFabComponent,
     ButtonsMiniFabComponent,
     ButtonsExtendedFabComponent,
+    ButtonsAiFabComponent,
     ButtonsAnchorComponent,
     ButtonsProgressComponent,
     ButtonsDisabledInteractiveComponent,

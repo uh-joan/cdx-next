@@ -24,6 +24,32 @@
         (visited).
       </li>
     </ul>
+    <div class="doc-image-grid">
+      <figure>
+        <img
+          src="helix/components-hyperlink/01.png"
+          alt="Primary hyperlink: dark grey text, no underline"
+          loading="lazy"
+        />
+        <figcaption>Primary</figcaption>
+      </figure>
+      <figure>
+        <img
+          src="helix/components-hyperlink/03.png"
+          alt="Blue hyperlink: blue semibold text, no underline"
+          loading="lazy"
+        />
+        <figcaption>Blue</figcaption>
+      </figure>
+      <figure>
+        <img
+          src="helix/components-hyperlink/04.png"
+          alt="Visited hyperlink: dark indigo semibold text, no underline"
+          loading="lazy"
+        />
+        <figcaption>Visited</figcaption>
+      </figure>
+    </div>
     <p>There are two types of underline:</p>
     <ul>
       <li><strong>On hover</strong> – Use for standalone hyperlinks.</li>
@@ -32,6 +58,32 @@
         accessibility.
       </li>
     </ul>
+    <div class="doc-image-grid">
+      <figure>
+        <img
+          src="helix/components-hyperlink/02.png"
+          alt="Primary hyperlink with a permanent underline"
+          loading="lazy"
+        />
+        <figcaption>Primary, permanent</figcaption>
+      </figure>
+      <figure>
+        <img
+          src="helix/components-hyperlink/05.png"
+          alt="Blue hyperlink with a permanent underline"
+          loading="lazy"
+        />
+        <figcaption>Blue, permanent</figcaption>
+      </figure>
+      <figure>
+        <img
+          src="helix/components-hyperlink/06.png"
+          alt="Visited hyperlink with a permanent underline"
+          loading="lazy"
+        />
+        <figcaption>Visited, permanent</figcaption>
+      </figure>
+    </div>
 
     <mat-divider></mat-divider>
 
@@ -66,10 +118,18 @@
 
     <h2>Usage</h2>
     <cdx-usage-guidelines>
-      <cdx-usage-guideline kind="do">
+      <cdx-usage-guideline
+        kind="do"
+        imageSrc="helix/components-hyperlink/07.png"
+        imageAlt="Cookie notice with an inline Cookie policy link in semibold dark text with a permanent underline"
+      >
         Use semibold weight and permanent underline to style inline hyperlinks.
       </cdx-usage-guideline>
-      <cdx-usage-guideline kind="dont">
+      <cdx-usage-guideline
+        kind="dont"
+        imageSrc="helix/components-hyperlink/08.png"
+        imageAlt="Cookie notice with an inline Cookie policy link shown only in blue without underline, and Decline styled as an underlined link instead of a button"
+      >
         Don’t rely on color alone to indicate inline links, and avoid using
         links for actions—use buttons instead.
       </cdx-usage-guideline>
@@ -79,10 +139,21 @@
   <div code>
     <p>
       The Helix theme styles every <code>&lt;a&gt;</code> element: links inherit
-      the surrounding text color and are underlined on hover. Add the
-      <code>underline</code> attribute for a permanent underline on inline
-      links.
+      the surrounding text color (Primary) and are underlined on hover. Add a
+      class for the other options:
     </p>
+    <ul>
+      <li>
+        <code>hlx-link-blue</code> – Blue; after the link is visited the browser
+        shows the Visited color.
+      </li>
+      <li><code>hlx-link-visited</code> – Forces the Visited color.</li>
+      <li>
+        <code>hlx-link-inline</code> – Semibold with a permanent underline, for
+        links in running text. The <code>underline</code> attribute adds only
+        the permanent underline.
+      </li>
+    </ul>
     <h2>Examples</h2>
     @for (sample of sampleList; track sample.exampleName) {
     <hlx-example-viewer [inputViewerComponent]="sample" />

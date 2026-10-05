@@ -30,15 +30,57 @@
         <strong>AI</strong> – Use for actions that trigger AI-powered tasks.
       </li>
     </ul>
+    <div class="doc-image-grid">
+      <figure>
+        <img
+          src="helix/components-fab/01.png"
+          alt="Primary FAB: dark grey circle with a white image icon"
+          loading="lazy"
+        />
+        <figcaption>Primary</figcaption>
+      </figure>
+      <figure>
+        <img
+          src="helix/components-fab/02.png"
+          alt="Accent FAB: purple circle with a white image icon"
+          loading="lazy"
+        />
+        <figcaption>Accent</figcaption>
+      </figure>
+      <figure>
+        <img
+          src="helix/components-fab/03.png"
+          alt="AI FAB: blue-to-purple gradient circle with a white sparkle icon"
+          loading="lazy"
+        />
+        <figcaption>AI</figcaption>
+      </figure>
+      <figure>
+        <img
+          src="helix/components-fab/04.png"
+          alt="Invert FAB: white circle with a dark image icon"
+          loading="lazy"
+        />
+        <figcaption>Invert</figcaption>
+      </figure>
+    </div>
 
     <mat-divider></mat-divider>
 
     <h2>Usage</h2>
     <cdx-usage-guidelines>
-      <cdx-usage-guideline kind="do">
+      <cdx-usage-guideline
+        kind="do"
+        imageSrc="helix/components-fab/05.png"
+        imageAlt="A table with a single primary FAB with an edit (pencil) icon at its corner"
+      >
         Use clear and simple icons such as add, message, or edit.
       </cdx-usage-guideline>
-      <cdx-usage-guideline kind="dont">
+      <cdx-usage-guideline
+        kind="dont"
+        imageSrc="helix/components-fab/06.png"
+        imageAlt="A table with two FABs side by side, one with an unclear sun-like icon and one with a question mark"
+      >
         Don't display multiple FABs on one screen and steer clear of confusing
         or vague icons for less common actions.
       </cdx-usage-guideline>
@@ -46,6 +88,13 @@
   </div>
 
   <div code>
+    <p>
+      Use <code>matFab</code> for the default size, <code>matMiniFab</code> for
+      the small size and <code>matFab extended</code> for a FAB with a label.
+      Apply a color with a class on the FAB or on a parent:
+      <code>hlx-btn-accent</code>, <code>hlx-btn-ai</code> (AI gradient) or
+      <code>hlx-btn-invert</code> (Primary needs no class).
+    </p>
     <h2>Examples</h2>
     @for (sample of sampleList; track sample.exampleName) {
     <hlx-example-viewer [inputViewerComponent]="sample" />

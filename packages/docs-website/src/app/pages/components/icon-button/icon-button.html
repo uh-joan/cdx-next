@@ -31,6 +31,40 @@
         emphasis.
       </li>
     </ul>
+    <div class="doc-image-grid">
+      <figure>
+        <img
+          src="helix/components-icon-button/01.png"
+          alt="Primary icon button: dark grey image icon"
+          loading="lazy"
+        />
+        <figcaption>Primary</figcaption>
+      </figure>
+      <figure class="doc-image-invert">
+        <img
+          src="helix/components-icon-button/02.png"
+          alt="Invert icon button: white image icon on a dark background"
+          loading="lazy"
+        />
+        <figcaption>Invert</figcaption>
+      </figure>
+      <figure>
+        <img
+          src="helix/components-icon-button/03.png"
+          alt="Negative icon button: dark red image icon"
+          loading="lazy"
+        />
+        <figcaption>Negative</figcaption>
+      </figure>
+      <figure>
+        <img
+          src="helix/components-icon-button/04.png"
+          alt="Accent icon button: purple image icon"
+          loading="lazy"
+        />
+        <figcaption>Accent</figcaption>
+      </figure>
+    </div>
 
     <h3>Density</h3>
     <p>
@@ -45,6 +79,40 @@
         space.
       </li>
     </ul>
+    <div class="doc-image-grid">
+      <figure>
+        <img
+          src="helix/components-icon-button/05.png"
+          alt="Icon button at density 0 with a 40 pixel hover circle around a 24 pixel icon"
+          loading="lazy"
+        />
+        <figcaption>Density 0</figcaption>
+      </figure>
+      <figure>
+        <img
+          src="helix/components-icon-button/06.png"
+          alt="Icon button at density -1 with a 36 pixel hover circle; the icon keeps its size"
+          loading="lazy"
+        />
+        <figcaption>Density -1</figcaption>
+      </figure>
+      <figure>
+        <img
+          src="helix/components-icon-button/07.png"
+          alt="Icon button at density -2 with a 32 pixel hover circle; the icon keeps its size"
+          loading="lazy"
+        />
+        <figcaption>Density -2</figcaption>
+      </figure>
+      <figure>
+        <img
+          src="helix/components-icon-button/08.png"
+          alt="Icon button at density -3 with a 28 pixel hover circle; the icon keeps its size"
+          loading="lazy"
+        />
+        <figcaption>Density -3</figcaption>
+      </figure>
+    </div>
     <p>
       For more detail, see
       <cdx-internal-link
@@ -59,11 +127,19 @@
 
     <h2>Usage</h2>
     <cdx-usage-guidelines>
-      <cdx-usage-guideline kind="do">
+      <cdx-usage-guideline
+        kind="do"
+        imageSrc="helix/components-icon-button/09.png"
+        imageAlt="Bookmark icon button on hover with a Bookmark page tooltip next to it"
+      >
         A clear and concise tooltip should describe the action and appear on
         hover.
       </cdx-usage-guideline>
-      <cdx-usage-guideline kind="dont">
+      <cdx-usage-guideline
+        kind="dont"
+        imageSrc="helix/components-icon-button/10.png"
+        imageAlt="Two icon buttons with unfamiliar icons whose meaning is unclear without a label"
+      >
         Be cautious when using unfamiliar or ambiguous icons, as they may
         confuse users.
       </cdx-usage-guideline>
@@ -71,6 +147,11 @@
   </div>
 
   <div code>
+    <p>
+      Apply a color with a class on the button or on a parent:
+      <code>hlx-btn-accent</code>, <code>hlx-btn-negative</code> or
+      <code>hlx-btn-invert</code> (Primary needs no class).
+    </p>
     <h2>Examples</h2>
     @for (sample of sampleList; track sample.exampleName) {
     <hlx-example-viewer [inputViewerComponent]="sample" />

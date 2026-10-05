@@ -6,18 +6,25 @@ type FabArgs = {
   type: 'fab' | 'mini' | 'extended';
   icon: string;
   label: string;
-  color: 'primary' | 'accent' | 'negative' | 'invert';
+  color: 'primary' | 'accent' | 'negative' | 'ai' | 'invert';
   disabled: boolean;
 };
 
 const TYPES: FabArgs['type'][] = ['fab', 'mini', 'extended'];
 
-const COLORS: FabArgs['color'][] = ['primary', 'accent', 'negative', 'invert'];
+const COLORS: FabArgs['color'][] = [
+  'primary',
+  'accent',
+  'negative',
+  'ai',
+  'invert',
+];
 
 const colorClass: Record<FabArgs['color'], string> = {
   primary: '',
   accent: 'hlx-btn-accent',
   negative: 'hlx-btn-negative',
+  ai: 'hlx-btn-ai',
   invert: 'hlx-btn-invert',
 };
 
@@ -59,7 +66,7 @@ const meta: Meta<FabArgs> = {
     docs: {
       description: {
         component:
-          'Helix floating action buttons are Angular Material `matFab` (default size), `matMiniFab` (small size) and `matFab extended` (with a label), styled by the Helix theme. Color is applied with `hlx-btn-*` classes on a parent. The Helix AI color has no theme class yet.',
+          'Helix floating action buttons are Angular Material `matFab` (default size), `matMiniFab` (small size) and `matFab extended` (with a label), styled by the Helix theme. Color is applied with `hlx-btn-*` classes on the FAB or a parent.',
       },
     },
   },
@@ -79,7 +86,7 @@ const meta: Meta<FabArgs> = {
       control: 'inline-radio',
       options: COLORS,
       description:
-        'Primary is the default; accent for extra emphasis (`hlx-btn-accent`); invert for dark backgrounds (`hlx-btn-invert`). Negative (`hlx-btn-negative`) exists in the theme but is not a Helix FAB color.',
+        'Primary is the default; accent for extra emphasis (`hlx-btn-accent`); AI for AI-powered actions (`hlx-btn-ai`, AI gradient); invert for dark backgrounds (`hlx-btn-invert`). Negative (`hlx-btn-negative`) exists in the theme but is not a Helix FAB color.',
     },
     disabled: { control: 'boolean' },
   },
@@ -107,6 +114,11 @@ export const ExtendedFab: Story = { args: { type: 'extended' } };
 
 export const Accent: Story = { args: { color: 'accent' } };
 
+export const Ai: Story = {
+  name: 'AI',
+  args: { color: 'ai', icon: 'auto_awesome', label: 'Ask AI' },
+};
+
 export const Invert: Story = { args: { color: 'invert' } };
 
 export const Disabled: Story = { args: { disabled: true } };
@@ -116,7 +128,7 @@ export const Matrix: Story = {
   parameters: { controls: { include: ['icon', 'label', 'disabled'] } },
   render: (args) => ({
     props: args,
-    template: (['primary', 'accent', 'invert'] as FabArgs['color'][])
+    template: (['primary', 'accent', 'ai', 'invert'] as FabArgs['color'][])
       .map((color) => fabRow(color, TYPES))
       .join(''),
   }),

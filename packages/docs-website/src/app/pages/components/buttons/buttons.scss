@@ -1,0 +1,7 @@
+@use '@cdx/theme-angular-material' as hlx;
+
+// Helix shows the Invert options as white artwork on a transparent
+// background; give them the inverse surface so they stay visible.
+.doc-image-invert img {
+  background-color: hlx.$surface-invert;
+}

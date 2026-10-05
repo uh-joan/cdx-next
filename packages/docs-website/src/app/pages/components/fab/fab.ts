@@ -9,6 +9,7 @@ import {
 import { ExampleViewer } from '../../../core/example-viewer/example-viewer';
 import { Page } from '../../../core/page/page';
 import {
+  ButtonsAiFabComponent,
   ButtonsExtendedFabComponent,
   ButtonsFabComponent,
   ButtonsMiniFabComponent,
@@ -29,10 +30,11 @@ import {
   ],
 })
 export class Fab {
-  // FAB, mini FAB, then extended FAB.
+  // FAB, mini FAB, extended FAB, then the AI color across all three.
   protected readonly sampleList = [
     ButtonsFabComponent,
     ButtonsMiniFabComponent,
     ButtonsExtendedFabComponent,
+    ButtonsAiFabComponent,
   ];
 }

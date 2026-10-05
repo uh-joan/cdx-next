@@ -1,0 +1,66 @@
+[
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/3ef0bbf2-f18a-40f1-bae9-b7153e7b0dfb.png",
+    "alt": "Button Icon",
+    "heading": "Color",
+    "file": "01.png"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/2eb4a79f-15ae-433c-b539-a4201adce5e6.png",
+    "alt": "Button Icon",
+    "heading": "Color",
+    "file": "02.png"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/ee631674-7049-406e-bbc4-47c9927c0e33.png",
+    "alt": "Button Icon",
+    "heading": "Color",
+    "file": "03.png"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/49dfeda6-a937-4c12-bc7a-09d1fb784d2e.png",
+    "alt": "Button Icon",
+    "heading": "Color",
+    "file": "04.png"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/c76f5332-3dcb-4851-8d80-d246a796d91c.png",
+    "alt": "Button Icon",
+    "heading": "Density",
+    "file": "05.png"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/d5378170-d2a2-46cd-b995-9c5f0ef21b2f.png",
+    "alt": "Button Icon",
+    "heading": "Density",
+    "file": "06.png"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/191e0caf-0c6d-483c-8ffe-217b4fadfb74.png",
+    "alt": "Button Icon",
+    "heading": "Density",
+    "file": "07.png"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/f16a11ea-7cfa-459f-bbcc-da72bb4095b1.png",
+    "alt": "Button Icon",
+    "heading": "Density",
+    "file": "08.png"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/c73388a0-ad73-4b94-ab46-5036f62e070e.png",
+    "alt": "",
+    "heading": "Usage",
+    "guideline": "do",
+    "text": "A clear and concise tooltip should describe the action and appear on hover.",
+    "file": "09.png"
+  },
+  {
+    "src": "https://studio-assets.supernova.io/design-systems/452887/fef36f7d-bac6-4ee9-b9d4-2c7947e4c02e.png",
+    "alt": "",
+    "heading": "Usage",
+    "guideline": "note",
+    "text": "Be cautious when using unfamiliar or ambiguous icons, as they may confuse users.",
+    "file": "10.png"
+  }
+]

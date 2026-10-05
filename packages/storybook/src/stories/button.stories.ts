@@ -5,7 +5,7 @@ import { type Meta, moduleMetadata, type StoryObj } from '@storybook/angular';
 type ButtonArgs = {
   label: string;
   variant: 'text' | 'filled' | 'elevated' | 'outlined' | 'tonal';
-  color: 'primary' | 'accent' | 'negative' | 'invert';
+  color: 'primary' | 'accent' | 'negative' | 'ai' | 'invert';
   size: 'default' | 'large' | 'small' | 'xsmall' | 'xxsmall';
   icon: string;
   iconPosition: 'none' | 'start' | 'end';
@@ -17,6 +17,7 @@ const colorClass: Record<ButtonArgs['color'], string> = {
   primary: '',
   accent: 'hlx-btn-accent',
   negative: 'hlx-btn-negative',
+  ai: 'hlx-btn-ai',
   invert: 'hlx-btn-invert',
 };
 
@@ -66,9 +67,9 @@ const meta: Meta<ButtonArgs> = {
     },
     color: {
       control: 'inline-radio',
-      options: ['primary', 'accent', 'negative', 'invert'],
+      options: ['primary', 'accent', 'negative', 'ai', 'invert'],
       description:
-        'Primary is the default; accent for extra emphasis (`hlx-btn-accent`); negative for destructive actions (`hlx-btn-negative`); invert for dark backgrounds (`hlx-btn-invert`).',
+        'Primary is the default; accent for extra emphasis (`hlx-btn-accent`); negative for destructive actions (`hlx-btn-negative`); AI for AI-powered actions (`hlx-btn-ai`, AI gradient on `filled` buttons only); invert for dark backgrounds (`hlx-btn-invert`).',
     },
     size: {
       control: 'select',
@@ -109,6 +110,12 @@ export const Playground: Story = {};
 
 export const Accent: Story = { args: { color: 'accent' } };
 
+/** The AI gradient (`hlx-btn-ai`) applies to filled buttons. */
+export const Ai: Story = {
+  name: 'AI',
+  args: { color: 'ai', icon: 'auto_awesome', iconPosition: 'start' },
+};
+
 export const WithIcon: Story = {
   args: { variant: 'outlined', iconPosition: 'start' },
 };
@@ -130,6 +137,7 @@ export const Matrix: Story = {
       'primary',
       'accent',
       'negative',
+      'ai',
       'invert',
     ];
     const rows = colors
