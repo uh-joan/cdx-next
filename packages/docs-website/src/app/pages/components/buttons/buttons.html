@@ -1,5 +1,5 @@
 <hlx-page
-  [title]="'Buttons'"
+  [title]="'Button'"
   [subtitle]="'Buttons prompt users to take action. They’re designed to stand out and guide users toward the next step in a process. Use them to highlight key interactions and ensure momentum in a flow.'"
   [section]="'Components'"
   componentName="button"
@@ -137,76 +137,23 @@
 
     <mat-divider></mat-divider>
 
-    <h2>Icon button</h2>
-    <p>Icon buttons enable users to perform small actions with a single tap.</p>
-    <h3>Color</h3>
-    <ul>
-      <li><strong>Primary</strong> – Our default. Use for most actions.</li>
-      <li><strong>Invert</strong> – Use on dark backgrounds for contrast.</li>
-      <li>
-        <strong>Negative</strong> – Use on the negative background only for
-        destructive or negative actions.
-      </li>
-      <li>
-        <strong>Accent</strong> – Use sparingly for actions that need extra
-        emphasis.
-      </li>
-    </ul>
-    <h3>Density</h3>
+    <h2>Icon buttons and FABs</h2>
     <p>
-      Icon buttons are available in four size options, controlled by the density
-      setting. The size affects the hover effect (and target area) but not the
-      icon size.
+      Icon buttons and floating action buttons (FAB) have their own guidance:
+      see
+      <cdx-internal-link
+        [inline]="true"
+        [text]="'Button - Icon button'"
+        [url]="'/components/icon-button'"
+      ></cdx-internal-link>
+      and
+      <cdx-internal-link
+        [inline]="true"
+        [text]="'Button - FAB'"
+        [url]="'/components/fab'"
+      ></cdx-internal-link
+      >.
     </p>
-    <ul>
-      <li>Density 0 is the default and most commonly used.</li>
-      <li>
-        Use alternative densities when you use icon buttons in a more restricted
-        space.
-      </li>
-    </ul>
-    <h3>Usage</h3>
-    <cdx-usage-guidelines>
-      <cdx-usage-guideline kind="do">
-        A clear and concise tooltip should describe the action and appear on
-        hover.
-      </cdx-usage-guideline>
-      <cdx-usage-guideline kind="dont">
-        Be cautious when using unfamiliar or ambiguous icons, as they may
-        confuse users.
-      </cdx-usage-guideline>
-    </cdx-usage-guidelines>
-
-    <mat-divider></mat-divider>
-
-    <h2>Floating action button (FAB)</h2>
-    <p>
-      Floating action buttons are used for the most common or important action
-      on a screen, and they persist on screen when scrolling. They come in two
-      sizes.
-    </p>
-    <h3>Color</h3>
-    <ul>
-      <li><strong>Primary</strong> – Our default. Use for most actions.</li>
-      <li><strong>Invert</strong> – Use on dark backgrounds for contrast.</li>
-      <li>
-        <strong>Accent</strong> – Use sparingly for actions that need extra
-        emphasis.
-      </li>
-      <li>
-        <strong>AI</strong> – Use for actions that trigger AI-powered tasks.
-      </li>
-    </ul>
-    <h3>Usage</h3>
-    <cdx-usage-guidelines>
-      <cdx-usage-guideline kind="do">
-        Use clear and simple icons such as add, message, or edit.
-      </cdx-usage-guideline>
-      <cdx-usage-guideline kind="dont">
-        Don't display multiple FABs on one screen and steer clear of confusing
-        or vague icons for less common actions.
-      </cdx-usage-guideline>
-    </cdx-usage-guidelines>
   </div>
 
   <div code>

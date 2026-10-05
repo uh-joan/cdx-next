@@ -21,4 +21,18 @@ describe('examples-map', () => {
       'Buttons Icon',
     );
   });
+
+  it('resolves the Hyperlink, Icon button and FAB pages', () => {
+    expect(getExamples('hyperlink')?.length).toBeGreaterThan(0);
+    expect(getExamples('button-icon-button')).toEqual(
+      getExamples('icon-button'),
+    );
+    expect(getExamples('button-fab')).toEqual(getExamples('fab'));
+    expect(findExample('button-fab', 'buttons-mini-fab')?.exampleName).toBe(
+      'Buttons Mini Fab',
+    );
+    expect(findExample('button-icon-button', 'icon-button')?.exampleName).toBe(
+      'Buttons Icon',
+    );
+  });
 });

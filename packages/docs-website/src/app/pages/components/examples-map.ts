@@ -12,10 +12,13 @@ import * as datePicker from './date-picker/examples';
 import * as dialog from './dialog/examples';
 import * as divider from './divider/examples';
 import * as expansionPanel from './expansion-panel/examples';
+import * as fab from './fab/examples';
 import * as footer from './footer/examples';
 import * as formField from './form-field/examples';
 import * as header from './header/examples';
 import * as highcharts from './highcharts/examples';
+import * as hyperlink from './hyperlink/examples';
+import * as iconButton from './icon-button/examples';
 import * as icons from './icons/examples';
 import * as list from './list/examples';
 import * as menu from './menu/examples';
@@ -55,11 +58,14 @@ export const examplesMap: Record<string, unknown> = {
   dialog: dialog,
   divider: divider,
   'expansion-panel': expansionPanel,
+  fab: fab,
   footer: footer,
   'form-field': formField,
   header: header,
   highcharts: highcharts,
+  hyperlink: hyperlink,
   icons: icons,
+  'icon-button': iconButton,
   list: list,
   menu: menu,
   notifications: notifications,
@@ -92,6 +98,8 @@ export const examplesMap: Record<string, unknown> = {
  */
 const componentAliases: Record<string, string> = {
   button: 'buttons',
+  'button-fab': 'fab',
+  'button-icon-button': 'icon-button',
   chip: 'chips',
   'expansion-panel-accordion': 'expansion-panel',
   icon: 'icons',
@@ -106,6 +114,12 @@ const componentAliases: Record<string, string> = {
 const exampleAliases: Record<string, Record<string, string>> = {
   buttons: {
     'buttons-fab-default': 'buttons-fab',
+    'icon-button': 'buttons-icon',
+  },
+  fab: {
+    'buttons-fab-default': 'buttons-fab',
+  },
+  'icon-button': {
     'icon-button': 'buttons-icon',
   },
 };
