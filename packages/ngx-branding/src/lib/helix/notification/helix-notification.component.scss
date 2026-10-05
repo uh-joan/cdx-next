@@ -1,81 +1,141 @@
-@use '@angular/material' as mat;
+@use 'sass:map';
 @use '../../../../../theme-angular-material/styles/theme/helix/variables/tokens'
   as hlx;
-@use '../../../../../theme-angular-material/styles/theme/helix/helix' as
-  hlx-themes;
 @use '../../../../../theme-angular-material/styles/theme/helix/variables/primitives.scss'
   as hlx-primitives;
 
-.hlx-notification {
-  @include mat.elevation(1);
+// Figma Notifications: per theme surface, text, inline border and button colours
+$themes: (
+  primary: (
+    surface: hlx.$surface-minimal,
+    text: hlx.$text-primary,
+    border: hlx.$border-primary,
+    banner-button: hlx.$text-primary,
+    inline-button: hlx.$text-primary,
+  ),
+  warn: (
+    surface: hlx.$surface-warn,
+    text: hlx.$text-warn,
+    border: hlx-primitives.$color-yellow-500,
+    banner-button: hlx.$text-warn,
+    inline-button: hlx.$text-warn,
+  ),
+  negative: (
+    surface: hlx.$surface-negative,
+    text: hlx-primitives.$color-red-900,
+    border: hlx-primitives.$color-red-500,
+    banner-button: hlx-primitives.$color-red-900,
+    inline-button: hlx.$text-negative,
+  ),
+  positive: (
+    surface: hlx.$surface-positive,
+    text: hlx.$text-positive,
+    border: hlx-primitives.$color-green-600,
+    banner-button: hlx.$text-primary,
+    inline-button: hlx.$text-primary,
+  ),
+);
 
+.hlx-notification {
   display: flex;
-  justify-content: space-between;
-  padding: 16px 24px;
-  background-color: white;
-  gap: 0 20px;
+  gap: 16px;
+  border-radius: hlx.$border-radius-default;
   user-select: none;
 
-  &__icon,
-  &__close {
-    align-self: flex-start;
-    color: hlx.$icon-primary;
+  &__message {
+    display: flex;
+    flex: 1;
+    gap: 16px;
+    align-items: flex-start;
   }
 
-  &__content {
+  &__icon {
+    display: flex;
+    flex-shrink: 0;
+  }
+
+  &__text {
     display: flex;
     flex: 1;
     flex-direction: column;
-    align-self: center;
+    gap: 8px;
+    min-width: 0;
+  }
+
+  &__title {
+    font: var(--sys-display-small, 700 18px / 24px 'Clarivate Regular');
+  }
+
+  &__content {
+    font: var(--sys-label-large, 600 14px / 24px 'Source Sans 3', sans-serif);
+  }
+
+  &__close {
+    --mat-icon-button-state-layer-size: 24px;
+
+    flex-shrink: 0;
+    padding: 0;
+    color: inherit;
   }
 
   &__actions {
-    color: hlx.$icon-primary;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+
+    &:empty {
+      display: none;
+    }
   }
 }
 
 .hlx-notification--inline {
-  border-left: 8px solid hlx.$border-primary;
-  border-radius: 6px;
+  flex-direction: column;
+  padding: 16px 16px 16px 24px;
+  border-left: 8px solid;
 
   .hlx-notification__actions {
-    color: hlx.$icon-primary;
+    padding-left: 24px;
   }
 }
 
 .hlx-notification--banner {
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 16px 32px;
+
+  .hlx-notification__message {
+    flex-basis: 16rem;
+  }
+
+  // On narrow screens the actions wrap below the message, aligned with the text
   .hlx-notification__actions {
-    align-self: center;
+    flex-wrap: nowrap;
+    margin-left: auto;
   }
 }
 
-.hlx-notification--success {
-  @include mat.button-color(hlx-themes.$helix-success-theme);
+@each $name, $theme in $themes {
+  .hlx-notification--#{$name} {
+    border-left-color: map.get($theme, border);
+    background-color: map.get($theme, surface);
+    color: map.get($theme, text);
 
-  border-left-color: #018760;
-  background-color: hlx.$surface-positive;
-  color: hlx.$text-positive;
+    .hlx-notification__icon,
+    .hlx-notification__close {
+      color: map.get($theme, text);
+    }
 
-  .hlx-notification__icon,
-  .hlx-notification__actions,
-  .hlx-notification__close {
-    color: hlx.$icon-positive;
-  }
-}
+    &.hlx-notification--banner .hlx-notification__actions {
+      --mat-button-text-label-text-color: #{map.get($theme, banner-button)};
+      --mat-button-text-state-layer-color: #{map.get($theme, banner-button)};
+    }
 
-.hlx-notification--warn {
-  @include mat.button-color(hlx-themes.$helix-error-theme);
-
-  border-left-color: hlx-primitives.$color-red-500;
-  background-color: hlx.$surface-negative;
-
-  .hlx-notification__actions {
-    color: hlx.$text-negative;
-  }
-
-  .hlx-notification__icon,
-  .hlx-notification__close {
-    color: hlx-primitives.$color-red-900;
+    &.hlx-notification--inline .hlx-notification__actions {
+      --mat-button-text-label-text-color: #{map.get($theme, inline-button)};
+      --mat-button-text-state-layer-color: #{map.get($theme, inline-button)};
+    }
   }
 }
 

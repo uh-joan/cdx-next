@@ -3,6 +3,7 @@
 /* Tokens - Mode 1 */
 $surface-primary: $color-neutral-0;
 $surface-minimal: $color-neutral-100;
+$surface-minimal-light: $color-neutral-50;
 $surface-contrast: $color-neutral-200;
 $surface-invert: $color-neutral-800;
 $surface-info: $color-blue-100;
@@ -22,7 +23,7 @@ $icon-secondary: $color-neutral-600;
 $icon-invert: $color-neutral-0;
 $icon-info: $color-blue-900;
 $icon-positive: $color-green-900;
-$icon-negative: $color-red-500;
+$icon-negative: $color-red-900;
 $icon-warn: $color-yellow-900;
 $icon-accent: $color-purple-600;
 $icon-brand: $color-purple-400;
@@ -73,3 +74,24 @@ $text-warn: $color-yellow-900;
 $text-positive: $color-green-900;
 $text-info: $color-blue-900;
 $text-disabled: $color-neutral-400;
+$text-link: $color-blue-500;
+$text-link-visited: $color-indigo-900;
+// AI gradient (Helix Foundations > Color > AI gradient): 30deg from vertical,
+// blue at the top-left to purple at the bottom-right.
+$gradient-ai-start: $color-blue-400;
+$gradient-ai-end: $color-purple-400;
+$gradient-ai-angle: 150deg;
+$gradient-ai: linear-gradient(
+  $gradient-ai-angle,
+  $gradient-ai-start,
+  $gradient-ai-end
+);
+$components-ai-filled: $gradient-ai;
+$components-ai-filled-hover: rgb(0 0 0 / 16%);
+
+// Paints the Helix AI gradient. The solid start colour is kept as a fallback
+// background-color (e.g. for forced-colors mode, which drops images).
+@mixin gradient-ai() {
+  background-color: $gradient-ai-start;
+  background-image: $gradient-ai;
+}

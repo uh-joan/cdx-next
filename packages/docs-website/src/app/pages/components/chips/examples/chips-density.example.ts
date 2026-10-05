@@ -3,7 +3,7 @@ import { MatChipsModule } from '@angular/material/chips';
 
 import { InputViewerComponent } from '../../../../core/example-viewer/example-viewer.model';
 
-const htmlCode = `<mat-chip-set class="hlx-chip-small">
+const htmlCode = `<mat-chip-set class="hlx-density--1">
     <mat-chip class="hlx-primary-chip"
         >primary</mat-chip>
     <mat-chip class="hlx-accent-chip"
@@ -21,7 +21,7 @@ const htmlCode = `<mat-chip-set class="hlx-chip-small">
     <mat-chip class="hlx-outlined-chip"
         >outlined</mat-chip>
 </mat-chip-set>
-<mat-chip-set class="hlx-chip-xsmall">
+<mat-chip-set class="hlx-density--2">
     <mat-chip class="hlx-primary-chip"
         >primary</mat-chip>
     <mat-chip class="hlx-accent-chip"
@@ -47,7 +47,7 @@ const styleCode = `.story {
 const tsCode = `import { Component } from '@angular/core';
 import { MatChipsModule } from '@angular/material/chips';
 
-// Density is set with hlx-chip-small / hlx-chip-xsmall on the mat-chip-set.
+// Density is set with hlx-density--1 / hlx-density--2 on the mat-chip-set.
 @Component({
   selector: 'app-chips-density-example',
   templateUrl: './chips-density-example.html',

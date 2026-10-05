@@ -15,6 +15,11 @@ export const componentsRoutes: Routes = [
           ),
       },
       {
+        path: 'ai-avatar',
+        loadComponent: () =>
+          import('./ai-avatar/ai-avatar').then((m) => m.AiAvatar),
+      },
+      {
         path: 'autocomplete',
         loadComponent: () =>
           import('./autocomplete/autocomplete').then((m) => m.Autocomplete),
@@ -92,6 +97,11 @@ export const componentsRoutes: Routes = [
         path: 'highcharts',
         loadComponent: () =>
           import('./highcharts/highcharts').then((m) => m.Highcharts),
+      },
+      {
+        path: 'hyperlink',
+        loadComponent: () =>
+          import('./hyperlink/hyperlink').then((m) => m.Hyperlink),
       },
       {
         path: 'icons',

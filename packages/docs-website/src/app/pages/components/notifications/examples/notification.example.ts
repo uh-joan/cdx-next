@@ -33,11 +33,16 @@ const htmlCode = `<div class="story">
             <input id="action" type="text" formControlName="action" />
         </div>
         <div class="story__form">
+            <label for="secondaryAction">Secondary action</label>
+            <input id="secondaryAction" type="text" formControlName="secondaryAction" />
+        </div>
+        <div class="story__form">
             <label for="severity">Severity</label>
             <mat-select id="severity" formControlName="severity">
-                <mat-option value="info">Info</mat-option>
-                <mat-option value="success">Success</mat-option>
+                <mat-option value="primary">Primary</mat-option>
                 <mat-option value="warn">Warn</mat-option>
+                <mat-option value="negative">Negative</mat-option>
+                <mat-option value="positive">Positive</mat-option>
             </mat-select>
         </div>
     </form>
@@ -45,6 +50,7 @@ const htmlCode = `<div class="story">
     <hlx-notification
         [severity]="notificationForm.get('severity')?.value"
         [action]="notificationForm.get('action')?.value"
+        [secondaryAction]="notificationForm.get('secondaryAction')?.value"
         [presentation]="notificationForm.get('presentation')?.value"
         [dismissable]="notificationForm.get('dismissable')?.value"
         [title]="notificationForm.get('title')?.value"
@@ -95,7 +101,8 @@ class SampleComponent {
       title: [''],
       dismissable: [false],
       action: [''],
-      severity: ['info'],
+      secondaryAction: [''],
+      severity: ['primary'],
     });
   }
 }
@@ -135,7 +142,8 @@ class SampleComponent {
         title: [''],
         dismissable: [false],
         action: [''],
-        severity: ['info'],
+        secondaryAction: [''],
+        severity: ['primary'],
         });
     }
 }`,

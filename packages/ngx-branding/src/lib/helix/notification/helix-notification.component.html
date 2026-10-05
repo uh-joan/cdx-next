@@ -1,54 +1,45 @@
-<div class="hlx-notification__icon">
-  <div #customIconWrapper>
-    <ng-content select="[icon]"></ng-content>
+<div class="hlx-notification__message">
+  <div class="hlx-notification__icon">
+    <div #customIconWrapper>
+      <ng-content select="[icon]"></ng-content>
+    </div>
+    @if (!customIconWrapper.children.length) {
+      <mat-icon>{{ notificationIcons[theme()] }}</mat-icon>
+    }
   </div>
-  @if (!customIconWrapper.children.length) {
-  <mat-icon>{{ notificationIcons[severity()] }}</mat-icon>
+
+  <div class="hlx-notification__text">
+    @if (title()) {
+      <div class="hlx-notification__title">{{ title() }}</div>
+    }
+    <div class="hlx-notification__content">
+      <ng-content></ng-content>
+    </div>
+  </div>
+
+  @if (presentation() === 'inline' && !!dismissable()) {
+    <button
+      class="hlx-notification__close"
+      matIconButton
+      aria-label="Dismiss"
+      (click)="onDismiss()"
+    >
+      <mat-icon>close</mat-icon>
+    </button>
   }
 </div>
 
-<div class="hlx-notification__content">
-  @if (title()) {
-  <div class="hlx-notification__title mat-headline-small">
-    {{ title() }}
-  </div>
-  }
-  <ng-content></ng-content>
-  @if (presentation() === 'inline') {
-  <div class="hlx-notification__actions">
-    <ng-container *ngTemplateOutlet="
-          actionsTemplate;
-          context: { action: this.action(), $implicit: actionsTemplate }
-        "></ng-container>
-  </div>
-  }
-</div>
-@if (presentation() === 'banner') {
 <div class="hlx-notification__actions">
-  <ng-container *ngTemplateOutlet="
-        actionsTemplate;
-        context: { action: this.action(), $implicit: actionsTemplate }
-      "></ng-container>
-  @if (!!dismissable()) {
-  <button mat-button [color]="severity()" (click)="onDismiss()">
-    Dismiss
-  </button>
-  }
-</div>
-}
-@if (presentation() === 'inline' && !!dismissable()) {
-<div class="hlx-notification__close">
-  <button mat-button [color]="severity()" (click)="onDismiss()">
-    <mat-icon>close</mat-icon>
-  </button>
-</div>
-}
-
-<ng-template #actionsTemplate>
   @if (action()) {
-  <button mat-button [color]="severity()" (click)="onAction()">
-    {{ action() }}
-  </button>
+    <button matButton (click)="onAction()">{{ action() }}</button>
+  }
+  @if (secondaryAction()) {
+    <button matButton (click)="onSecondaryAction()">
+      {{ secondaryAction() }}
+    </button>
   }
   <ng-content select="[actions]"></ng-content>
-</ng-template>
+  @if (presentation() === 'banner' && !!dismissable()) {
+    <button matButton (click)="onDismiss()">Dismiss</button>
+  }
+</div>

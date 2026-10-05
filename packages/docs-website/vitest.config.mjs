@@ -17,6 +17,10 @@ export default defineConfig({
         find: /^@cdx\/ngx-branding$/,
         replacement: resolve(projectRoot, '../ngx-branding/src/index.ts'),
       },
+      {
+        find: /^@cdx\/helix-icons$/,
+        replacement: resolve(projectRoot, '../helix-icons/src/index.ts'),
+      },
     ],
   },
   plugins: [

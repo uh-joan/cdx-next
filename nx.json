@@ -138,6 +138,7 @@
       },
       "include": [
         "packages/docs-website/**/*",
+        "packages/helix-icons/**/*",
         "packages/ngx-analytics/**/*",
         "packages/ngx-authentication/**/*",
         "packages/ngx-branding/**/*",

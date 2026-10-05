@@ -4,7 +4,7 @@ import { MatIcon } from '@angular/material/icon';
 
 import { InputViewerComponent } from '../../../../core/example-viewer/example-viewer.model';
 
-const htmlCode = `<div class="story hlx-btn-xxsmall">
+const htmlCode = `<div class="story hlx-density--3">
   <div class="story__box">
     <div class="story__row">
       <button matButton="filled">Button</button>
@@ -60,14 +60,14 @@ const styleCode = `.story {
 }
 
 .background-invert {
-  background-color: var(--mat-sys-inverse-surface);
+  background-color: #2a2b2d; /* Helix surface/invert */
 }`;
 
 const tsCode = `import { Component } from '@angular/core';
 import { MatButton } from '@angular/material/button';
 import { MatIcon } from '@angular/material/icon';
 
-// hlx-btn-xxsmall is the most compact Helix density (mat.button-density(-3)).
+// hlx-density--3 is the most compact button size in Helix (28px).
 @Component({
   selector: 'app-buttons-xxsmall-example',
   templateUrl: './buttons-xxsmall-example.html',

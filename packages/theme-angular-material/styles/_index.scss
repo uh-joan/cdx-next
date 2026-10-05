@@ -2,5 +2,8 @@
 @forward 'theme/default.scss' show $light-theme, $dark-theme;
 @forward 'theme/helix/helix.scss' show $helix-theme, $helix-dark-theme,
   $helix-error-theme, $helix-success-theme, $helix-invert-theme;
-@forward 'theme/helix/overrides.scss' show theme-helix-overrides;
+@forward 'theme/helix/overrides.scss' show theme-helix-overrides,
+  $elevation-none, $elevation-sm, $elevation-md, $elevation-lg;
 @forward 'theme/helix/variables/tokens.scss';
+@forward 'theme/helix/variables/primitives.scss';
+@forward 'theme/helix/variables/typography.scss';

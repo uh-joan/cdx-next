@@ -1,3 +1,4 @@
+import { provideHttpClient } from '@angular/common/http';
 import {
   ApplicationConfig,
   importProvidersFrom,
@@ -9,6 +10,7 @@ import {
   withComponentInputBinding,
   withViewTransitions,
 } from '@angular/router';
+import { provideHelixIcons } from '@cdx/helix-icons';
 import { OneTrustModule } from '@cdx/ngx-branding';
 import { provideTranslateService } from '@ngx-translate/core';
 import { provideHighcharts } from 'highcharts-angular';
@@ -20,6 +22,8 @@ export const appConfig: ApplicationConfig = {
   providers: [
     provideBrowserGlobalErrorListeners(),
     provideZonelessChangeDetection(),
+    provideHttpClient(),
+    provideHelixIcons(),
     provideHighcharts({
       modules: () => [import('highcharts/modules/accessibility')],
     }),

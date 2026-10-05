@@ -5,19 +5,72 @@
 >
   <h2>Overview</h2>
   <p>
-    Density is a system that allows you to apply size to components. Each level
-    has a specific margin that is applied to one or all components.
+    Density changes the size of components. Helix uses the same density scale as
+    the Figma library: 0 is the default size, and each step down makes the
+    component more compact.
   </p>
   <mat-divider></mat-divider>
 
   <h2>Applying Density</h2>
+  <p>
+    Add a <code>hlx-density-*</code> class to a component, or to a container to
+    apply it to every component inside. A class on an inner element overrides
+    the one on its container, so <code>hlx-density-0</code> restores the default
+    size inside a compact area.
+  </p>
+  <cdx-highlight [text]="densityExample" [language]="'html'"></cdx-highlight>
 
   <p>
-    To apply density to a component, you need to add the density class to the
-    component. The density class is made up of two parts: density and the level.
-    The level is always a negative number from 0 to -5. the smaller the number,
-    the more dense the component will be.
+    Each component only supports the levels defined for it in Figma. A level a
+    component doesn't support leaves that component at the size it would
+    otherwise have.
   </p>
-  <p>For example this is how you would apply density to a button:</p>
-  <cdx-highlight [text]="densityExample" [language]="'css'"></cdx-highlight>
+  <table mat-table [dataSource]="levels" class="hlx-table">
+    <ng-container matColumnDef="className">
+      <th mat-header-cell *matHeaderCellDef>Class</th>
+      <td mat-cell *matCellDef="let row"><code>{{ row.className }}</code></td>
+    </ng-container>
+    <ng-container matColumnDef="button">
+      <th mat-header-cell *matHeaderCellDef>Button / icon button</th>
+      <td mat-cell *matCellDef="let row">{{ row.button }}</td>
+    </ng-container>
+    <ng-container matColumnDef="formField">
+      <th mat-header-cell *matHeaderCellDef>Input / select</th>
+      <td mat-cell *matCellDef="let row">{{ row.formField }}</td>
+    </ng-container>
+    <ng-container matColumnDef="chip">
+      <th mat-header-cell *matHeaderCellDef>Chip</th>
+      <td mat-cell *matCellDef="let row">{{ row.chip }}</td>
+    </ng-container>
+    <ng-container matColumnDef="toggle">
+      <th mat-header-cell *matHeaderCellDef>Slide toggle</th>
+      <td mat-cell *matCellDef="let row">{{ row.toggle }}</td>
+    </ng-container>
+    <ng-container matColumnDef="table">
+      <th mat-header-cell *matHeaderCellDef>Table row / header</th>
+      <td mat-cell *matCellDef="let row">{{ row.table }}</td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="columns"></tr>
+    <tr mat-row *matRowDef="let row; columns: columns"></tr>
+  </table>
+
+  <mat-divider></mat-divider>
+
+  <h2>Deprecated classes</h2>
+  <p>
+    The older size classes still work and now produce the Figma sizes. Replace
+    them with the density classes when you next touch the code.
+  </p>
+  <table mat-table [dataSource]="deprecated" class="hlx-table">
+    <ng-container matColumnDef="old">
+      <th mat-header-cell *matHeaderCellDef>Old class</th>
+      <td mat-cell *matCellDef="let row"><code>{{ row.old }}</code></td>
+    </ng-container>
+    <ng-container matColumnDef="replacement">
+      <th mat-header-cell *matHeaderCellDef>Use instead</th>
+      <td mat-cell *matCellDef="let row"><code>{{ row.replacement }}</code></td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="deprecatedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: deprecatedColumns"></tr>
+  </table>
 </hlx-page>

@@ -36,7 +36,9 @@ import { ThemeOptionsBranding } from '@cdx/theme-angular-material';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HelixHeaderComponent implements AfterViewInit {
-  @HostBinding('class') classes = 'hlx-header';
+  @HostBinding('class') private get classes(): string {
+    return `hlx-header hlx-header--${this.condensed() ? 'condensed' : 'default'}`;
+  }
 
   @ContentChildren(
     'hlx-header-product-name, a[hlx-header-product-logo], img[hlx-header-product-logo], hlx-header-product-name, a[hlx-header-product-name]',
@@ -58,6 +60,11 @@ export class HelixHeaderComponent implements AfterViewInit {
 
   theme = input<ThemeOptionsBranding>();
   branded = input(true, { transform: booleanAttribute });
+  /**
+   * Figma Header "condensed" (one dark bar) when true, or "default" (dark
+   * utility bar above a white product bar) when false.
+   */
+  condensed = input(true, { transform: booleanAttribute });
   openExternalLink = input({
     transform: Boolean,
     required: false,

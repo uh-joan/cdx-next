@@ -39,10 +39,17 @@ const ELEMENT_APIS: ElementApis[] = [
     description: 'Optional button, only shown when a string is provided.',
   },
   {
+    property: 'secondaryAction',
+    type: 'string',
+    default: '-',
+    description: 'Optional second button, shown after the action button.',
+  },
+  {
     property: 'severity',
-    type: 'info, success, warn',
-    default: 'info',
-    description: 'Sets background and color styles',
+    type: 'primary, warn, negative, positive',
+    default: 'primary',
+    description:
+      'Sets background and colour styles. info and success are deprecated aliases for primary and positive.',
   },
   {
     property: 'dismissable',
@@ -74,26 +81,32 @@ export class Notifications {
       event: 'actionEvent',
       description: 'Custom event triggered on clicking provided action button.',
     },
+    {
+      event: 'secondaryActionEvent',
+      description:
+        'Custom event triggered on clicking provided secondary action button.',
+    },
   ]);
 
   displayedColumns2: string[] = ['property', 'type', 'default', 'description'];
   dataSource2 = new MatTableDataSource<ElementApis>(ELEMENT_APIS);
 
-  moduleText = `import { NotificationModule } from '@cdx/ngx-branding';`;
+  moduleText = `import { HelixNotificationComponent } from '@cdx/ngx-branding';`;
 
-  htmlText = `<cdx-notification
+  htmlText = `<hlx-notification
   title="Title"
-  severity="success"
+  severity="positive"
   action="Action"
+  secondaryAction="Details"
   presentation="inline"
   dismissable="true"
 >
   Notification message
-</cdx-notification>`;
+</hlx-notification>`;
 
-  contentProjectionText = `<cdx-notification
+  contentProjectionText = `<hlx-notification
   title="Title"
-  severity="success"
+  severity="positive"
   action="Action"
   presentation="inline"
   dismissable="true"
@@ -102,38 +115,48 @@ export class Notifications {
   <mat-icon icon>check</mat-icon>
   <button matButton actions>Projected Action</button>
   <button matButton actions>Another Action</button>
-</cdx-notification>`;
+</hlx-notification>`;
 
-  notificationInfoText = `
-<cdx-notification title="Title" severity="info" action="Action">
+  notificationPrimaryText = `
+<hlx-notification title="Title" severity="primary" action="Action">
   Notification message
-</cdx-notification>`;
-
-  notificationSuccessText = `
-<cdx-notification title="Title" severity="success" action="Action">
-  Notification message
-</cdx-notification>`;
+</hlx-notification>`;
 
   notificationWarnText = `
-<cdx-notification title="Title" severity="warn" action="Action">
+<hlx-notification title="Title" severity="warn" action="Action">
   Notification message
-</cdx-notification>`;
+</hlx-notification>`;
 
-  dismissableText = `<cdx-notification
+  notificationNegativeText = `
+<hlx-notification title="Title" severity="negative" action="Action">
+  Notification message
+</hlx-notification>`;
+
+  notificationPositiveText = `
+<hlx-notification title="Title" severity="positive" action="Action">
+  Notification message
+</hlx-notification>`;
+
+  dismissableText = `<hlx-notification
   action="Action"
   dismissable="true"
   (dismissEvent)="onDismiss($event)"
   (actionEvent)="onAction($event)"
+  (secondaryActionEvent)="onSecondaryAction($event)"
 >
   Notification message
-</cdx-notification>`;
+</hlx-notification>`;
 
-  eventListenerText = `onDismiss(event: CustomEvent) {
+  eventListenerText = `onDismiss() {
   // Handle event Dismiss triggered
 }
 
-onAction(event: CustomEvent) {
-  // Handle event Action triggered
+onAction(label: string) {
+  // Handle the action button
+}
+
+onSecondaryAction(label: string) {
+  // Handle the secondary action button
 }`;
 
   sampleList = Object.values(samples);

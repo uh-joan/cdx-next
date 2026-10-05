@@ -1,0 +1,10 @@
+<hlx-page
+  [title]="'AI Avatar'"
+  [subtitle]="'The AI avatar marks content and actions that come from an AI assistant.'"
+  [section]="'Components'"
+>
+  <h2>Examples</h2>
+  @for (sample of sampleList; track sample.exampleName) {
+  <hlx-example-viewer [inputViewerComponent]="sample"></hlx-example-viewer>
+  }
+</hlx-page>

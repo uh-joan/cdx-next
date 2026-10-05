@@ -18,6 +18,10 @@ export class Components {
           url: 'components-overview',
         },
         {
+          label: 'AI Avatar',
+          url: 'ai-avatar',
+        },
+        {
           label: 'Autocomplete',
           url: 'autocomplete',
         },
@@ -84,6 +88,10 @@ export class Components {
         {
           label: 'Highcharts',
           url: 'highcharts',
+        },
+        {
+          label: 'Hyperlink',
+          url: 'hyperlink',
         },
         {
           label: 'Icons',

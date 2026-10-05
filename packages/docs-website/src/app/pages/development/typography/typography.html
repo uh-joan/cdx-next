@@ -75,4 +75,12 @@
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
   </table>
+
+  <p>
+    Figma names each label style twice: <code>label-*</code> is Regular and
+    <code>label-*-bold</code> is SemiBold. The label classes default to
+    SemiBold, so add <code>.mat-weight-regular</code> for the Figma
+    <code>label-*</code> styles.
+  </p>
+  <cdx-highlight [text]="labelWeightHtml" [language]="'html'"></cdx-highlight>
 </hlx-page>
