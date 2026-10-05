@@ -17,6 +17,10 @@ bring our docs in line with it. Audited 2026-10-05.
 
 ## Findings
 
+> These are the findings of the original audit. The phased plan below tracks
+> what has been done since; only §3 (Supernova) and the asset decision are still
+> open.
+
 ### 1. Information architecture
 
 | Helix section | Helix pages                                                                                           | Ours                                                                                  | Gap                                                                                                                                   |
@@ -64,7 +68,7 @@ These Helix Code tabs iframe the wrong example (or a missing one):
 | ------------------- | ----------------------------- | --------------------------- |
 | Divider             | `examples/dialog`             | `examples/divider`          |
 | Expansion panel     | `examples/buttons`            | `examples/expansion-panel`  |
-| Hyperlink           | `examples/buttons`            | `examples/hyperlink` (new)  |
+| Hyperlink           | `examples/buttons`            | `examples/hyperlink`        |
 | Menu                | `examples/list`               | `examples/menu`             |
 | Paginator           | `examples/list`               | `examples/paginator`        |
 | Progress bar        | `examples/checkbox`           | `examples/progress-bar`     |
@@ -78,9 +82,13 @@ These Helix Code tabs iframe the wrong example (or a missing one):
 | Tabs                | `examples/buttons`            | `examples/tabs`             |
 | Tooltip             | `examples/buttons`            | `examples/tooltips`         |
 | Tree                | `examples/buttons`            | `examples/tree`             |
-| Icon button         | `examples/button/icon-button` | resolves to nothing         |
+| Icon button         | `examples/button/icon-button` | `examples/icon-button`      |
+| FAB                 | `examples/buttons/…-default`  | `examples/fab`              |
 
-All embeds also point at the v19 host and should move to the current one.
+All embeds also point at the v19 host and should move to the current one. The
+old URLs Helix uses today (`button/icon-button`, `buttons/buttons-fab-default`,
+Helix component names like `tooltip`) keep resolving on our side, as do
+`button-icon-button` and `button-fab`.
 
 ### 4. Content quality
 
@@ -118,26 +126,37 @@ All embeds also point at the v19 host and should move to the current one.
 - [x] Overview content for every component page that has a Helix page (Options /
       Usage / Do & Don't). Pages without a Helix page (autocomplete, form field,
       highcharts, notifications, stepper, time picker, toolbar) say that
-      guidance isn't published yet. Icon button and FAB guidance live on the
-      Buttons page until they get their own pages.
-- [ ] New pages: Hyperlink, Button - Icon button, Button - FAB
-- [ ] Align nav labels with Helix names; keep existing URLs, add redirects for
-      any renamed slugs
-- [ ] Component overview page content (Helix "Component overview")
+      guidance isn't published yet.
+- [x] New pages: Hyperlink (`/components/hyperlink`), Button - Icon button
+      (`/components/icon-button`), Button - FAB (`/components/fab`), each with
+      Overview/Code tabs and a story.
+- [x] Nav labels use the Helix names; URLs unchanged, so no redirects needed.
+      The site search index lists every page under the same names.
+- [x] Component overview page: every component with a link, description and the
+      Figma link from Helix where one exists.
 
 ### Phase 3: Patterns
 
-- [ ] Filters: overview, basic filters, filter modal, filter panel
-- [ ] Sidebar: overview, header with navigation and sidebar, nested navigation,
-      products working best with sidebar
-- [ ] Re-enable Patterns in the header nav
+- [x] Filters: overview, basic filters, filter modal, filter panel
+      (`/patterns/filters/…`)
+- [x] Sidebar: overview, header with navigation and sidebar, nested navigation,
+      products working best with sidebar (`/patterns/sidebar/…`)
+- [x] Re-enable Patterns in the header nav
+- [ ] Images (decision tree, Do/Don't illustrations) — blocked on the asset
+      decision
 
 ### Phase 4: Development, Services, Home
 
-- [ ] OTI snippet: add Pendo, Snowplow, ZenDesk, domain/subdomain and keys
-      sections
-- [ ] Home: align with Helix Welcome
-- [ ] Diff remaining Development/Services pages for drift
+- [x] OTI snippet: on review ours already had every Helix section (the audit was
+      wrong) plus more (Pendo backend integration, CNAME, versions). Fixed the
+      empty "Return type" column and broken snippets.
+- [x] Home: Helix welcome title and section cards, plus a Patterns card.
+- [x] Diff remaining Development/Services pages for drift. Ours is newer for
+      Session activity, Translations and Quick start (Angular 22, standalone);
+      fixed broken links and snippet bugs.
+- [ ] Confirm with the owners: Session activity says `expireWarningMinutes` must
+      be "bigger than" `expireDurationMinutes` (likely "smaller"; same on
+      Helix).
 
 ### Phase 5: Storybook (component playground)
 
@@ -191,7 +210,9 @@ Found while prototyping:
 - Some Helix options have no matching theme class or input, so stories
   approximate them: header "Condensed" (no navigation), divider "dark", button
   toggle Light/Dark and equal/variable width, slide toggle "three sizes" (one
-  size class plus density).
+  size class plus density), hyperlink Blue/Visited colors and semibold inline
+  links (no theme class or token), FAB "AI" color (no theme class). These are
+  theme gaps for the design/theme owners.
 
 #### Helix content issues to raise with design
 
@@ -202,7 +223,9 @@ Fixed or dropped while porting:
   the wrong component ("table", "slide toggle"); Badge and Select intros name
   the wrong Material framework.
 - Counts that don't match the list: Badge "four color themes" (lists two), Icon
-  "four" (lists three).
+  "four" (lists three), Hyperlink "two colors" (lists three), FAB "Icon buttons
+  have three color themes" (lists four).
+- Hyperlink has no intro text (just "…").
 - Badge Don't card "Ensure contrast and readability…" reads as a Do.
 - Header and Footer Usage sections are empty; Select has an empty "States"
   section.
