@@ -1,0 +1,23 @@
+{
+  "name": "@cdx/stylelint-config-helix",
+  "version": "22.0.0-alpha.1",
+  "description": "Shared Stylelint config for apps consuming the Helix design system.",
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@github.com/clarivate-prod/cdx-next.git",
+    "directory": "packages/stylelint-config-helix"
+  },
+  "main": "index.js",
+  "files": [
+    "index.js"
+  ],
+  "scripts": {
+    "deploy": "npm publish"
+  },
+  "dependencies": {
+    "stylelint-config-standard-scss": "^17.0.0"
+  },
+  "peerDependencies": {
+    "stylelint": ">=16"
+  }
+}
