@@ -31,7 +31,7 @@ export class Services {
           url: 'session-activity-management',
         },
         {
-          label: 'Oti Snippet',
+          label: 'OTI snippet',
           url: 'oti-snippet',
         },
         {
