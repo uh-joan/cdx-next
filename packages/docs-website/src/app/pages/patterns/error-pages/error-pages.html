@@ -1,0 +1,59 @@
+<hlx-page
+  [section]="'Patterns'"
+  [title]="'Error pages'"
+  [subtitle]="'Full-page states for 404, 403 and 500 — a centred hlx-empty-state with a pictogram, a plain explanation and one clear way forward, served by the router.'"
+  tabbed
+>
+  <div overview>
+    <p>
+      When a whole route can't be shown, give the user a real page — not a blank
+      screen or a bare code. Each error page is an <code>hlx-empty-state</code>
+      (<code>tone="error"</code>) centred in the content area, with a plain
+      explanation and one clear way forward — the same component as the in-region
+      <cdx-internal-link [inline]="true" [url]="'/patterns/page-states'" [text]="'Page states'"></cdx-internal-link>
+      error, at page scale, served by the router inside the
+      <cdx-internal-link [inline]="true" [url]="'/patterns/app-shell'" [text]="'App shell'"></cdx-internal-link>.
+    </p>
+
+    <h2>The three</h2>
+    <ul>
+      <li><strong>404</strong> — the page doesn't exist → go to home (or search).</li>
+      <li><strong>403</strong> — you don't have access → request access / go back.</li>
+      <li><strong>500</strong> — something went wrong our end → retry, then contact support.</li>
+    </ul>
+
+    <mat-divider></mat-divider>
+
+    <h2>Do</h2>
+    <ul>
+      <li>Build from <code>hlx-empty-state</code>; centre it in the content area.</li>
+      <li>Give one primary action that fits the error.</li>
+      <li>Explain in plain words; no codes-only pages, no stack traces.</li>
+      <li>Keep the shell (header/nav) around the error.</li>
+    </ul>
+
+    <h2>Don't</h2>
+    <ul>
+      <li>Show a bare code or a stack trace.</li>
+      <li>Leave the user with no way forward.</li>
+      <li>Use a full error page when only one region failed (that's a Page states error).</li>
+    </ul>
+  </div>
+
+  <div code>
+    <h2>An error page</h2>
+    <cdx-highlight [text]="pageSnippet" language="html"></cdx-highlight>
+    <p>
+      Route them inside the shell: a wildcard route for 404, a guard redirect for
+      403, and a global <code>ErrorHandler</code> for 500 (offer Retry).
+    </p>
+
+    <mat-divider></mat-divider>
+
+    <h2>Example</h2>
+    <p>Switch between the three codes — each is the same component with content that fits the error.</p>
+    @for (sample of sampleList; track sample.exampleName) {
+      <hlx-example-viewer [inputViewerComponent]="sample" />
+    }
+  </div>
+</hlx-page>
