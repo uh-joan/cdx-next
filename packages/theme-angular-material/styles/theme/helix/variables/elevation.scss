@@ -1,0 +1,12 @@
+// Figma "Elevation/Level 0–3" effect styles. Applied via the `.hlx-elevation-*`
+// classes and exposed as `--hlx-elevation-*` custom properties.
+$elevation-none: 0 0 0 1px rgb(42 43 45 / 8%);
+$elevation-sm:
+  0 0 1px rgb(0 0 0 / 12%),
+  0 1px 3px rgb(0 0 0 / 12%);
+$elevation-md:
+  0 0 4px rgb(0 0 0 / 12%),
+  0 4px 6px rgb(0 0 0 / 12%);
+$elevation-lg:
+  0 0 8px rgb(0 0 0 / 12%),
+  0 8px 12px rgb(0 0 0 / 12%);

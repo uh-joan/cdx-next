@@ -1,6 +1,7 @@
 @use 'variables/tokens' as t;
 @use 'variables/primitives' as p;
 @use 'variables/breakpoints' as bp;
+@use 'variables/elevation' as e;
 
 // Helix semantic design tokens, exposed as `--hlx-*` CSS custom properties so
 // apps can consume them at runtime in plain CSS (no Sass import needed). The map
@@ -77,7 +78,12 @@ $hlx-css-vars: (
   // fallback for forced-colors mode.
   'gradient-ai': t.$gradient-ai,
   'gradient-ai-start': t.$gradient-ai-start,
-  'gradient-ai-end': t.$gradient-ai-end
+  'gradient-ai-end': t.$gradient-ai-end,
+  // Elevation (also available as the .hlx-elevation-* utility classes)
+  'elevation-none': e.$elevation-none,
+  'elevation-sm': e.$elevation-sm,
+  'elevation-md': e.$elevation-md,
+  'elevation-lg': e.$elevation-lg
 );
 
 @mixin theme-helix-css-vars() {
