@@ -97,9 +97,10 @@ All embeds also point at the v19 host and should move to the current one.
 
 - [x] Reusable Do / Don't block: `<cdx-usage-guideline kind="do|dont">` cards
       inside a `<cdx-usage-guidelines>` grid (`components/usage-guideline`).
-- [ ] Component page tabs: **Overview** (guidance) / **Code** (existing
-      examples + Material API link), mirroring Helix. Decide together with Phase
-      5, since the Code tab is where Storybook would be embedded.
+- [x] Component page tabs: `<hlx-page tabbed>` with **Overview**
+      (`<div overview>`) and **Code** (`<div code>`: Material API link,
+      Storybook playground from `storybookId`, examples), addressable with
+      `?tab=code`.
 - [x] `/examples` slug aliases so every Helix embed resolves (`button`, `chip`,
       `icon`, `input-text-field`, `tooltip`, …).
 - [ ] Decide on image hosting (download Supernova assets into
@@ -114,8 +115,11 @@ All embeds also point at the v19 host and should move to the current one.
 
 ### Phase 2: Components
 
-- [ ] Overview content for all 34 Helix components (Options / Usage / Do &
-      Don't)
+- [x] Overview content for every component page that has a Helix page (Options /
+      Usage / Do & Don't). Pages without a Helix page (autocomplete, form field,
+      highcharts, notifications, stepper, time picker, toolbar) say that
+      guidance isn't published yet. Icon button and FAB guidance live on the
+      Buttons page until they get their own pages.
 - [ ] New pages: Hyperlink, Button - Icon button, Button - FAB
 - [ ] Align nav labels with Helix names; keep existing URLs, add redirects for
       any renamed slugs
@@ -141,10 +145,10 @@ Goal: every component documented with **all** of its configurations
 (color/theme, size, density, appearance, states, icons, disabled, …) as
 interactive Storybook controls, embedded in the component pages.
 
-**Prototype status:** `packages/storybook` (Nx project `storybook`) with Button,
-Header and Footer stories, embedded in the docs Buttons, Header and Footer pages
-via `<cdx-storybook-embed>`. Run it with `npx nx run storybook:storybook`
-(port 4400) next to the docs dev server.
+**Status:** `packages/storybook` (Nx project `storybook`) has stories for every
+docs component page (42 files, 200+ stories), each embedded in that page's Code
+tab. Run it with `npx nx run storybook:storybook` (port 4400) next to the docs
+dev server.
 
 - [x] Add a Storybook Nx project (Angular + Vite via
       `@analogjs/storybook-angular`, matching our Vite/Analog toolchain) that
@@ -156,18 +160,16 @@ via `<cdx-storybook-embed>`. Run it with `npx nx run storybook:storybook`
 - [ ] Stories with full `argTypes` per component:
   - [x] `@cdx/ngx-branding` Header and Footer (every input, projected content
         toggles, theme colors).
-  - [ ] Remaining `@cdx/ngx-branding` components (notification, rich tooltip).
+  - [x] Remaining `@cdx/ngx-branding` components (notification, rich tooltip).
   - [x] Button (variant × color × size × icon × disabled, plus a matrix story).
-  - [ ] Remaining Helix-styled Material components, following the Options
-        sections on Helix (e.g. Input: appearance × state × density ×
-        prefix/suffix icons).
+  - [x] Remaining Helix-styled Material components, following the Options
+        sections on Helix (e.g. Input: appearance × state × size × icons).
   - [ ] AI variants (AI button, FAB, avatar) per Foundations › AI.
 - [x] Autodocs and the a11y addon (violations reported, not yet failing).
 - [ ] Turn a11y violations into failures once existing ones are fixed.
 - [x] Embed component docs (primary story + controls table + all stories) on
       component pages: `<cdx-storybook-embed componentId="…">`.
-- [ ] Roll the embed out to every component page (Code tab / "Playground"
-      section).
+- [x] Roll the embed out to every component page (Code tab).
 - [ ] Deploy Storybook next to the docs site per version (`/storybook`): build
       `storybook:build-storybook` into the docs output after the docs build (the
       docs build empties its output dir). The embed reads `VITE_STORYBOOK_URL`,
@@ -182,6 +184,29 @@ Found while prototyping:
   instead.
 - The elevated button in the `hlx-btn-invert` color is white on the inverse
   surface background, so its label isn't visible. Worth checking with design.
+- The breadcrumbs story renders `xng-breadcrumb` with the Helix template instead
+  of the `<cdx-breadcrumb>` wrapper, because Storybook doesn't resolve
+  `@cdx/theme-xng-breadcrumb` from source yet.
+- Some Helix options have no matching theme class or input, so stories
+  approximate them: header "Condensed" (no navigation), divider "dark", button
+  toggle Light/Dark and equal/variable width, slide toggle "three sizes" (one
+  size class plus density).
+
+#### Helix content issues to raise with design
+
+Fixed or dropped while porting:
+
+- Copied from another page: Expansion panel's Usage (Button's Do/Don'ts);
+  Dialog's "Color and types" (Button's text); Tabs and Breadcrumbs intros name
+  the wrong component ("table", "slide toggle"); Badge and Select intros name
+  the wrong Material framework.
+- Counts that don't match the list: Badge "four color themes" (lists two), Icon
+  "four" (lists three).
+- Badge Don't card "Ensure contrast and readability…" reads as a Do.
+- Header and Footer Usage sections are empty; Select has an empty "States"
+  section.
+- Typos and missing spaces/periods ("Manus", "information.They",
+  "documentation.After", "UI element.There", missing closing quotes).
 
 ### Phase 6: Supernova (needs `supernova-helix` MCP authorized)
 
