@@ -182,3 +182,6 @@ Thumbs.db
 .angular
 .cursor/rules/nx-rules.mdc
 .github/instructions/nx.instructions.md
+
+# Claude Code local settings and worktrees
+.claude/
