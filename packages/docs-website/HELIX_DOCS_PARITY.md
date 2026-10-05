@@ -141,23 +141,47 @@ Goal: every component documented with **all** of its configurations
 (color/theme, size, density, appearance, states, icons, disabled, …) as
 interactive Storybook controls, embedded in the component pages.
 
-- [ ] Add a Storybook Nx project (Angular + Vite via
+**Prototype status:** `packages/storybook` (Nx project `storybook`) with Button,
+Header and Footer stories, embedded in the docs Buttons, Header and Footer pages
+via `<cdx-storybook-embed>`. Run it with `npx nx run storybook:storybook`
+(port 4400) next to the docs dev server.
+
+- [x] Add a Storybook Nx project (Angular + Vite via
       `@analogjs/storybook-angular`, matching our Vite/Analog toolchain) that
       loads the Helix theme, fonts and density setup.
-- [ ] Theme/density toolbar globals (light/dark, density 0 to -4) so every story
-      can be checked against Foundations rules.
+- [x] Density toolbar global (0 to -4) so every story can be checked against
+      Foundations rules.
+- [ ] Theme toolbar global (light/dark) once the Helix theme ships a dark
+      variant.
 - [ ] Stories with full `argTypes` per component:
-  - `@cdx/ngx-branding` components first (header, footer, …): these are ours, so
-    their inputs are the API.
-  - Helix-styled Material components next, following the Options sections on
-    Helix (e.g. Button: variant × color × density × icon × disabled; Input:
-    appearance × state × density × prefix/suffix icons).
-  - AI variants (AI button, FAB, avatar) per Foundations › AI.
-- [ ] Autodocs with Helix usage notes, and a11y addon checks on every story.
-- [ ] Embed the matching story on each component page (Code tab / "Playground"
-      section) next to the curated examples.
-- [ ] Deploy Storybook next to the docs site per version (`/storybook`).
+  - [x] `@cdx/ngx-branding` Header and Footer (every input, projected content
+        toggles, theme colors).
+  - [ ] Remaining `@cdx/ngx-branding` components (notification, rich tooltip).
+  - [x] Button (variant × color × size × icon × disabled, plus a matrix story).
+  - [ ] Remaining Helix-styled Material components, following the Options
+        sections on Helix (e.g. Input: appearance × state × density ×
+        prefix/suffix icons).
+  - [ ] AI variants (AI button, FAB, avatar) per Foundations › AI.
+- [x] Autodocs and the a11y addon (violations reported, not yet failing).
+- [ ] Turn a11y violations into failures once existing ones are fixed.
+- [x] Embed component docs (primary story + controls table + all stories) on
+      component pages: `<cdx-storybook-embed componentId="…">`.
+- [ ] Roll the embed out to every component page (Code tab / "Playground"
+      section).
+- [ ] Deploy Storybook next to the docs site per version (`/storybook`): build
+      `storybook:build-storybook` into the docs output after the docs build (the
+      docs build empties its output dir). The embed reads `VITE_STORYBOOK_URL`,
+      defaulting to `/storybook` in production.
 - [ ] Interaction/visual tests from stories in CI (optional, later).
+
+Found while prototyping:
+
+- The Helix theme mixin doesn't emit Material system tokens (`--mat-sys-*`), so
+  docs examples that use them (e.g. `.background-invert` in the button examples)
+  get no background. Storybook resolves colors with `mat.get-theme-color()`
+  instead.
+- The elevated button in the `hlx-btn-invert` color is white on the inverse
+  surface background, so its label isn't visible. Worth checking with design.
 
 ### Phase 6: Supernova (needs `supernova-helix` MCP authorized)
 

@@ -1,0 +1,11 @@
+<iframe
+  class="storybook-embed__frame"
+  [src]="iframeUrl()"
+  [title]="title()"
+  [style.height.px]="height()"
+  loading="lazy"
+></iframe>
+<cdx-external-link
+  [url]="storybookUrl()"
+  [text]="'Open all controls in Storybook'"
+></cdx-external-link>
