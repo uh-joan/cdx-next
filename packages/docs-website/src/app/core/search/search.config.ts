@@ -116,6 +116,9 @@ const patternsNavigationMap: NavigationItem[] = [
   { title: 'App shell', route: '/patterns/app-shell' },
   { title: 'Layout', route: '/patterns/app-shell' },
   { title: 'Responsive navigation', route: '/patterns/app-shell' },
+  { title: 'List with filters', route: '/patterns/list-with-filters' },
+  { title: 'Results page', route: '/patterns/list-with-filters' },
+  { title: 'Filter chips', route: '/patterns/list-with-filters' },
 ];
 
 const servicesNavigationMap: NavigationItem[] = [

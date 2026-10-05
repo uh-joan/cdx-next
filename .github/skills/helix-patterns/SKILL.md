@@ -22,11 +22,12 @@ signals, `@if`/`@for`/`@switch`, `inject()`, no `*ngIf`, no new NgModule.
 
 ## Catalog
 
-| Pattern     | Status | Summary                                                                                                                                                                                  | Reference                                  |
-| ----------- | ------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------ |
-| App shell   | beta   | The standard page chrome — Helix header with product name, primary navigation and global actions, a routed content area, and the footer — assembled once and driven by typed route data. | [app-shell](./references/app-shell.md)     |
-| Dialogs     | stable | A modal for one decision or one short task. Open it through a named size preset, structure the body with the Material dialog slots, and put the primary action on the right.             | [dialogs](./references/dialogs.md)         |
-| Page states | beta   | Every region that loads data has four states — loading, loaded, empty and error. Design all four from the start so a screen never shows a blank box or a frozen spinner.                 | [page-states](./references/page-states.md) |
+| Pattern           | Status | Summary                                                                                                                                                                                  | Reference                                              |
+| ----------------- | ------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------ |
+| App shell         | beta   | The standard page chrome — Helix header with product name, primary navigation and global actions, a routed content area, and the footer — assembled once and driven by typed route data. | [app-shell](./references/app-shell.md)                 |
+| Dialogs           | stable | A modal for one decision or one short task. Open it through a named size preset, structure the body with the Material dialog slots, and put the primary action on the right.             | [dialogs](./references/dialogs.md)                     |
+| List with filters | beta   | A results page: a toolbar with search and filters, the applied filters shown as removable chips, and a results table that handles its own loading, empty and error states.               | [list-with-filters](./references/list-with-filters.md) |
+| Page states       | beta   | Every region that loads data has four states — loading, loaded, empty and error. Design all four from the start so a screen never shows a blank box or a frozen spinner.                 | [page-states](./references/page-states.md)             |
 
 ## How to use
 

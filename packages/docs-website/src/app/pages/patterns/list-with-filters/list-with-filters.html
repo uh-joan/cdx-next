@@ -1,0 +1,77 @@
+<hlx-page
+  [section]="'Patterns'"
+  [title]="'List with filters'"
+  [subtitle]="'A results page: a toolbar with search and filters, the applied filters as removable chips, and a results table that handles its own loading, empty and error states.'"
+  tabbed
+>
+  <div overview>
+    <p>
+      A results page lets the user browse a collection and narrow it with filters.
+      It composes three things you already have: a <strong>toolbar</strong> (search
+      and a filter surface), the <strong>applied filters as removable chips</strong>,
+      and a <strong>results region</strong> that is a
+      <cdx-internal-link [inline]="true" [url]="'/patterns/page-states'" [text]="'Page states'"></cdx-internal-link>
+      region.
+    </p>
+
+    <h2>When to use it</h2>
+    <p>
+      Browsing or searching a collection — alerts, documents, drugs, trials — that
+      the user narrows with filters. A short fixed list, or a single record (use a
+      detail page), does not need it.
+    </p>
+
+    <mat-divider></mat-divider>
+
+    <h2>Anatomy</h2>
+    <ul>
+      <li><strong>Toolbar</strong> — a search field and a filter surface. For many or hierarchical filters, put them behind a Filter button that opens a dialog (see
+        <cdx-internal-link [inline]="true" [url]="'/patterns/dialogs'" [text]="'Dialogs'"></cdx-internal-link>)
+        or a panel (see
+        <cdx-internal-link [inline]="true" [url]="'/patterns/filters'" [text]="'Filters'"></cdx-internal-link>).
+      </li>
+      <li><strong>Applied filters</strong> — every active filter as a removable <code>mat-chip-row</code>, with a Clear all.</li>
+      <li><strong>Results</strong> — a <code>mat-table</code> for modest lists, or the
+        <cdx-internal-link [inline]="true" [url]="'/components/data-grid'" [text]="'Data grid'"></cdx-internal-link>
+        (AG Grid) for large datasets — wrapped in the four Page states.</li>
+    </ul>
+
+    <h2>Do</h2>
+    <ul>
+      <li>Derive the visible rows with <code>computed()</code> from filter signals.</li>
+      <li>Show every applied filter as a removable chip, with a Clear all.</li>
+      <li>Give the results region all four Page states; over-filtering to zero rows is the empty state.</li>
+      <li>Put many or hierarchical filters behind a Filter button.</li>
+    </ul>
+
+    <h2>Don't</h2>
+    <ul>
+      <li>Render an empty table on no matches.</li>
+      <li>Scatter filter controls with no single applied-state.</li>
+      <li>Hide which filters are active.</li>
+      <li>Keep a hand-synced copy of the filtered list.</li>
+    </ul>
+  </div>
+
+  <div code>
+    <h2>State is derived, not stored</h2>
+    <p>
+      Keep the filter inputs as signals and derive the visible rows with
+      <code>computed()</code>. The chips, the count and the table all read from the
+      same derived value.
+    </p>
+    <cdx-highlight [text]="deriveSnippet"></cdx-highlight>
+
+    <h2>Empty is a first-class state</h2>
+    <p>When filters match nothing, show an empty state with a way out — not a blank table.</p>
+    <cdx-highlight [text]="emptySnippet" language="html"></cdx-highlight>
+
+    <mat-divider></mat-divider>
+
+    <h2>Example</h2>
+    <p>Search, filter by phase, and remove chips — the table, count and empty state all derive from the filter signals.</p>
+    @for (sample of sampleList; track sample.exampleName) {
+      <hlx-example-viewer [inputViewerComponent]="sample" />
+    }
+  </div>
+</hlx-page>
