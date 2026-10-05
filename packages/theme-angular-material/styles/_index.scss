@@ -4,6 +4,7 @@
   $helix-error-theme, $helix-success-theme, $helix-invert-theme;
 @forward 'theme/helix/overrides.scss' show theme-helix-overrides,
   $elevation-none, $elevation-sm, $elevation-md, $elevation-lg;
+@forward 'theme/helix/css-vars.scss' show theme-helix-css-vars, $hlx-css-vars;
 @forward 'theme/helix/variables/tokens.scss';
 @forward 'theme/helix/variables/primitives.scss';
 @forward 'theme/helix/variables/typography.scss';
