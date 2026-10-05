@@ -129,6 +129,9 @@ const patternsNavigationMap: NavigationItem[] = [
   { title: 'Charts', route: '/patterns/charts' },
   { title: 'Highcharts', route: '/patterns/charts' },
   { title: 'Data visualization', route: '/patterns/charts' },
+  { title: 'Form layout', route: '/patterns/forms' },
+  { title: 'Forms', route: '/patterns/forms' },
+  { title: 'Validation', route: '/patterns/forms' },
 ];
 
 const servicesNavigationMap: NavigationItem[] = [

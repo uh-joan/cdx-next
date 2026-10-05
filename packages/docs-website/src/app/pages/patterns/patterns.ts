@@ -64,5 +64,9 @@ export class Patterns {
       heading: 'Charts',
       elements: [{ label: 'Overview', url: 'charts' }],
     },
+    {
+      heading: 'Form layout',
+      elements: [{ label: 'Overview', url: 'forms' }],
+    },
   ];
 }
