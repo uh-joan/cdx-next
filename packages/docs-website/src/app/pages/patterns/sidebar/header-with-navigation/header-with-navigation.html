@@ -1,0 +1,76 @@
+<hlx-page
+  [section]="'Patterns'"
+  [title]="'Header with navigation and sidebar'"
+  [subtitle]="'A sidebar component is a column of links that allow users to quickly access different pages or sections of your product or application.'"
+>
+  <h2>When to use</h2>
+  <p>
+    Use this layout when your product has complex information architecture and
+    multiple features or destinations.
+  </p>
+  <ul>
+    <li>
+      Prefer horizontal navigation (header) for primary structure when possible.
+    </li>
+    <li>
+      Add a sidebar when:
+      <ul>
+        <li>
+          You need secondary navigation because important items don’t fit in the
+          header.
+        </li>
+        <li>
+          Users need persistent access to certain tools or destinations if they
+          don’t fit in the header.
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  <mat-divider></mat-divider>
+
+  <h2>Use cases</h2>
+  <h3>1. Secondary navigation</h3>
+  <p>
+    High-priority destinations that users access frequently. If these don’t fit
+    in the header, place them in the sidebar:
+  </p>
+  <ul>
+    <li>Saved searches</li>
+    <li>Bookmarks</li>
+    <li>Alerts or Notifications</li>
+  </ul>
+  <h3>2. Quick access switching within modules</h3>
+  <ul>
+    <li>Example: navigating between product sections or modules.</li>
+    <li>
+      If this toggling can’t be supported cleanly in the header, add a sidebar
+      to preserve user context.
+    </li>
+  </ul>
+
+  <mat-divider></mat-divider>
+
+  <h2>Design considerations</h2>
+  <ul>
+    <li>
+      Use horizontal navigation in the header for primary and high-priority
+      destinations whenever possible to maximize space and clarity.
+    </li>
+  </ul>
+
+  <mat-divider></mat-divider>
+
+  <h2>Dos and don'ts</h2>
+  <cdx-usage-guidelines>
+    <cdx-usage-guideline kind="dont">
+      Don't repeat options from the horizontal menu; if you need to do it for a
+      legitimate reason, use the same icon in both places.
+    </cdx-usage-guideline>
+    <cdx-usage-guideline kind="dont">
+      Do not duplicate a section on the horizontal menu and sidebar. For
+      example: don't use the sidebar for one-time actions (like “Log out” or
+      “Profile Settings” — those belong in the header).
+    </cdx-usage-guideline>
+  </cdx-usage-guidelines>
+</hlx-page>

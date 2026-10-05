@@ -1,0 +1,23 @@
+// Shared styles for the long-form pattern guidance pages
+// (mirrors `pages/foundations/foundation-page.scss`).
+:host {
+  p,
+  li {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+  }
+
+  .pattern-table {
+    border-collapse: collapse;
+    margin-block: 16px;
+
+    th,
+    td {
+      border-bottom: 1px solid var(--mat-sys-outline-variant);
+      padding: 8px 16px;
+      text-align: start;
+      vertical-align: top;
+    }
+  }
+}
