@@ -21,7 +21,7 @@ export const appConfig: ApplicationConfig = {
     provideBrowserGlobalErrorListeners(),
     provideZonelessChangeDetection(),
     provideHighcharts({
-      modules: () => [import('highcharts/modules/accessibility')],
+      modules: () => [import('highcharts/esm/modules/accessibility.js')],
     }),
     provideRouter(
       routes,
