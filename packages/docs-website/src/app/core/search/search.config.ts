@@ -135,6 +135,8 @@ const patternsNavigationMap: NavigationItem[] = [
   { title: 'Entity detail', route: '/patterns/entity-detail' },
   { title: 'Snapshot', route: '/patterns/entity-detail' },
   { title: 'Record page', route: '/patterns/entity-detail' },
+  { title: 'Export', route: '/patterns/export' },
+  { title: 'Download', route: '/patterns/export' },
 ];
 
 const servicesNavigationMap: NavigationItem[] = [

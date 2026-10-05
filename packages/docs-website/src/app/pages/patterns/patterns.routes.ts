@@ -106,6 +106,11 @@ export const patternsRoutes: Routes = [
           import('./entity-detail/entity-detail').then((m) => m.EntityDetail),
       },
       {
+        path: 'export',
+        loadComponent: () =>
+          import('./export/export').then((m) => m.Export),
+      },
+      {
         path: 'data-grid',
         loadComponent: () =>
           import('./data-grid/data-grid').then((m) => m.DataGridPattern),
