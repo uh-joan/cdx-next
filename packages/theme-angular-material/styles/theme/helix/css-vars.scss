@@ -1,5 +1,6 @@
 @use 'variables/tokens' as t;
 @use 'variables/primitives' as p;
+@use 'variables/breakpoints' as bp;
 
 // Helix semantic design tokens, exposed as `--hlx-*` CSS custom properties so
 // apps can consume them at runtime in plain CSS (no Sass import needed). The map
@@ -64,7 +65,13 @@ $hlx-css-vars: (
   'spacing-10': p.$spacing-10,
   'spacing-11': p.$spacing-11,
   'spacing-12': p.$spacing-12,
-  'spacing-13': p.$spacing-13
+  'spacing-13': p.$spacing-13,
+  // Breakpoints (for JS/calc; @media conditions can't read custom properties —
+  // use the media-up/-down Sass mixins or CDK BreakpointObserver for those)
+  'breakpoint-sm': bp.$breakpoint-sm,
+  'breakpoint-md': bp.$breakpoint-md,
+  'breakpoint-lg': bp.$breakpoint-lg,
+  'breakpoint-xl': bp.$breakpoint-xl
 );
 
 @mixin theme-helix-css-vars() {

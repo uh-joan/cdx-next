@@ -1,0 +1,45 @@
+@use 'sass:map';
+
+// Helix responsive breakpoints. The values align with Angular CDK's
+// `BreakpointObserver` bands (XSmall < 600, Small 600–959, Medium 960–1279,
+// Large 1280–1919, XLarge 1920+), so SCSS media queries and TypeScript
+// `BreakpointObserver` usage agree. Mobile-first: `media-up` is the primary tool.
+$breakpoint-sm: 600px; // phone → small tablet
+$breakpoint-md: 960px; // tablet → small laptop
+$breakpoint-lg: 1280px; // laptop → desktop
+$breakpoint-xl: 1920px; // large desktop
+
+$breakpoints: (
+  sm: $breakpoint-sm,
+  md: $breakpoint-md,
+  lg: $breakpoint-lg,
+  xl: $breakpoint-xl,
+);
+
+@function breakpoint($name) {
+  @if not map.has-key($breakpoints, $name) {
+    @error "Unknown Helix breakpoint '#{$name}'. Use one of: #{map.keys($breakpoints)}.";
+  }
+  @return map.get($breakpoints, $name);
+}
+
+// Styles apply at this breakpoint and wider (min-width). Mobile-first default.
+@mixin media-up($name) {
+  @media (min-width: breakpoint($name)) {
+    @content;
+  }
+}
+
+// Styles apply below this breakpoint (max-width, exclusive of the boundary).
+@mixin media-down($name) {
+  @media (max-width: (breakpoint($name) - 0.02px)) {
+    @content;
+  }
+}
+
+// Styles apply from $min up to (but not including) $max.
+@mixin media-between($min, $max) {
+  @media (min-width: breakpoint($min)) and (max-width: (breakpoint($max) - 0.02px)) {
+    @content;
+  }
+}

@@ -22,8 +22,8 @@ custom properties for type scale rather than hardcoding font sizes.
 ## Runtime CSS custom properties (`--hlx-*`)
 
 The semantic tokens are also emitted as `--hlx-*` CSS custom properties by
-`theme-helix-overrides`, so any app that applies the Helix theme can consume them
-at runtime in plain CSS — no Sass import needed:
+`theme-helix-overrides`, so any app that applies the Helix theme can consume
+them at runtime in plain CSS — no Sass import needed:
 
 ```css
 .card {
@@ -41,6 +41,48 @@ Available: every `--hlx-surface-*`, `--hlx-text-*`, `--hlx-border-*`,
 these from component SCSS instead of hardcoding hex/px or inventing your own
 `var(--text-primary)` names. Component-internal (`$components-*`) and primitive
 (`ref-*`, `$color-*`) tokens are **not** exposed — use the semantic ones.
+
+## Breakpoints (`variables/breakpoints.scss`)
+
+Helix breakpoints align with Angular CDK's `BreakpointObserver` bands, so SCSS
+and TypeScript agree: `sm` 600, `md` 960, `lg` 1280, `xl` 1920 (px). Design
+mobile-first.
+
+In SCSS, use the media mixins instead of hardcoding widths:
+
+```scss
+@use '@cdx/theme-angular-material' as hlx;
+
+.nav {
+  display: flex;
+  @include hlx.media-down('md') {
+    // below 960px
+    display: none;
+  }
+}
+```
+
+`media-up($name)` is min-width (that breakpoint and wider), `media-down($name)`
+is max-width (below it), `media-between($min, $max)` is a range. The px values
+are also exposed as `--hlx-breakpoint-sm … --hlx-breakpoint-xl` custom
+properties for JS/`calc()` — but `@media` conditions cannot read custom
+properties, so use the mixins (or `BreakpointObserver`) for queries.
+
+In TypeScript, use the exported queries with `BreakpointObserver`:
+
+```ts
+import { HELIX_MEDIA } from '@cdx/theme-angular-material';
+// this breakpoint and wider: HELIX_MEDIA.gtMd; below it: HELIX_MEDIA.ltMd
+const isCompact = toSignal(
+  inject(BreakpointObserver)
+    .observe(HELIX_MEDIA.ltMd)
+    .pipe(map((s) => s.matches)),
+  { initialValue: false },
+);
+```
+
+`HELIX_BREAKPOINTS` gives the raw numbers if you need them. Prefer these over
+`innerWidth` checks or app-local breakpoint constants.
 
 ## Design tokens (`variables/tokens.scss`, built on `primitives.scss`)
 
