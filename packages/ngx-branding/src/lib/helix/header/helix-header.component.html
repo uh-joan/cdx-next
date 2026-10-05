@@ -1,3 +1,23 @@
+<!-- Slots render in the dark bar (condensed) or in the product bar (default) -->
+<ng-template #productTpl>
+  <div
+    class="hlx-header__product-identification"
+    [class.hlx-header__product-identification--only-product]="!branded()"
+    #productIdentification
+  >
+    <ng-content
+      select="a[hlx-header-product-logo], img[hlx-header-product-logo]"
+    ></ng-content>
+    <ng-content
+      select="hlx-header-product-name, a[hlx-header-product-name]"
+    ></ng-content>
+  </div>
+</ng-template>
+
+<ng-template #navigationTpl>
+  <ng-content></ng-content>
+</ng-template>
+
 <div
   class="hlx-header__global-bar"
   [style.background-color]="theme()?.header?.background"
@@ -24,28 +44,33 @@
         />
       </svg>
     }
-    @if (branded() && showDivider) {
-      <mat-divider class="hlx-product-divider" vertical></mat-divider>
+    @if (condensed()) {
+      @if (branded() && showDivider) {
+        <mat-divider class="hlx-product-divider" vertical></mat-divider>
+      }
+      <ng-container *ngTemplateOutlet="productTpl"></ng-container>
     }
-    <div
-      class="hlx-header__product-identification"
-      [class.hlx-header__product-identification--only-product]="!branded()"
-      #productIdentification
-    >
-      <ng-content
-        select="a[hlx-header-product-logo], img[hlx-header-product-logo]"
-      ></ng-content>
-      <ng-content
-        select="hlx-header-product-name, a[hlx-header-product-name]"
-      ></ng-content>
-    </div>
   </div>
 
   <div class="hlx-header__content" #headerGlobal>
-    <ng-content></ng-content>
-    @if (showHeaderGlobalDivider) {
-      <mat-divider vertical></mat-divider>
+    @if (condensed()) {
+      <ng-container *ngTemplateOutlet="navigationTpl"></ng-container>
+      @if (showHeaderGlobalDivider) {
+        <mat-divider vertical></mat-divider>
+      }
     }
     <ng-content select="hlx-header-global"></ng-content>
   </div>
 </div>
+
+@if (!condensed()) {
+  <div class="hlx-header__product-bar">
+    <ng-container *ngTemplateOutlet="productTpl"></ng-container>
+    <div class="hlx-header__tabs">
+      <ng-content select="[hlx-header-tabs]"></ng-content>
+    </div>
+    <div class="hlx-header__actions">
+      <ng-container *ngTemplateOutlet="navigationTpl"></ng-container>
+    </div>
+  </div>
+}

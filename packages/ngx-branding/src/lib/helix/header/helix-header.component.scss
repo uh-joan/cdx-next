@@ -63,8 +63,10 @@ $black-background: black;
 
   &__content {
     display: flex;
+    flex-shrink: 0;
     height: 1.5rem;
     gap: 10px;
+    white-space: nowrap;
   }
 
   .cdx-separator {
@@ -88,6 +90,54 @@ $black-background: black;
     align-items: inherit;
     column-gap: calc($header-spacing / 2);
     font-weight: 700;
+  }
+
+  // Figma Header type=default: 36px utility bar above a 64px product bar
+  &--default {
+    display: block;
+
+    .hlx-header__global-bar {
+      height: 36px;
+    }
+  }
+
+  &__product-bar {
+    display: flex;
+    height: 64px;
+    align-items: center;
+    padding: 0 $header-spacing;
+    background: cdx.$surface-primary;
+    box-shadow: cdx.$elevation-md;
+    color: cdx.$text-primary;
+    gap: $header-spacing;
+
+    .hlx-header__product-identification {
+      display: flex;
+      align-items: center;
+      font: var(--sys-display-medium, 700 24px / 32px 'Clarivate Regular');
+      white-space: nowrap;
+    }
+
+    .mat-mdc-button {
+      color: inherit;
+    }
+  }
+
+  &__tabs {
+    display: flex;
+    flex: 1;
+    align-self: stretch;
+    align-items: flex-end;
+    min-width: 0;
+
+    &:empty {
+      visibility: hidden;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
   }
 
   .mat-tab-nav-bar {

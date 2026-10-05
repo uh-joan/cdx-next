@@ -15,6 +15,11 @@ export const componentsRoutes: Routes = [
           ),
       },
       {
+        path: 'ai-avatar',
+        loadComponent: () =>
+          import('./ai-avatar/ai-avatar').then((m) => m.AiAvatar),
+      },
+      {
         path: 'autocomplete',
         loadComponent: () =>
           import('./autocomplete/autocomplete').then((m) => m.Autocomplete),

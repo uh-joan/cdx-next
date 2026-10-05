@@ -1,3 +1,4 @@
+import * as aiAvatar from './ai-avatar/examples';
 import * as autocomplete from './autocomplete/examples';
 import * as badge from './badge/examples';
 import * as breadcrumbs from './breadcrumbs/examples';
@@ -42,6 +43,7 @@ import * as tooltips from './tooltips/examples';
 import * as tree from './tree/examples';
 
 export const examplesMap: Record<string, unknown> = {
+  'ai-avatar': aiAvatar,
   autocomplete: autocomplete,
   badge: badge,
   breadcrumbs: breadcrumbs,

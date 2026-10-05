@@ -1,0 +1,141 @@
+@use '../../../../../theme-angular-material/styles/theme/helix/variables/tokens'
+  as hlx;
+@use '../../../../../theme-angular-material/styles/theme/helix/variables/primitives.scss'
+  as hlx-primitives;
+
+// Figma AI Avatar: four keyframes, 300ms each, linear smart animate
+$step: 300ms;
+$cycle: $step * 4;
+
+.hlx-ai-avatar {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  width: var(--hlx-ai-avatar-size, 32px);
+  height: var(--hlx-ai-avatar-size, 32px);
+  flex-shrink: 0;
+  border-radius: 50%;
+  isolation: isolate;
+  vertical-align: middle;
+
+  // The gradient sits on its own layer so it can rotate inside the circle
+  &::before {
+    position: absolute;
+    z-index: -1;
+    content: '';
+    inset: 0;
+  }
+
+  svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+    fill: hlx.$icon-invert;
+  }
+
+  &__sparkle {
+    transform-box: view-box;
+
+    &--large {
+      transform-origin: 12.8px 18.4px;
+    }
+
+    &--small {
+      transform-origin: 21.6px 21.6px;
+    }
+
+    &--medium {
+      transform-origin: 19.6px 10.8px;
+    }
+  }
+}
+
+.hlx-ai-avatar--gradient::before {
+  // The AI gradient start colour isn't a Figma variable yet
+  background: linear-gradient(
+    180deg,
+    #3595f0,
+    hlx-primitives.$color-purple-400
+  );
+}
+
+.hlx-ai-avatar--dark::before {
+  background: hlx.$surface-invert;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .hlx-ai-avatar--animated {
+    &::before {
+      animation: hlx-ai-avatar-turn $cycle linear infinite;
+    }
+
+    // SVG transforms on <path> combine with the translate attribute, so the
+    // pulse is applied through the CSS scale property instead.
+    .hlx-ai-avatar__sparkle--large {
+      animation: hlx-ai-avatar-large $cycle linear infinite;
+    }
+
+    .hlx-ai-avatar__sparkle--small {
+      animation: hlx-ai-avatar-small $cycle linear infinite;
+    }
+
+    .hlx-ai-avatar__sparkle--medium {
+      animation: hlx-ai-avatar-medium $cycle linear infinite;
+    }
+  }
+}
+
+// Figma turns the gradient a quarter anticlockwise on each keyframe
+@keyframes hlx-ai-avatar-turn {
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+@keyframes hlx-ai-avatar-large {
+  0%,
+  100% {
+    scale: 1;
+  }
+
+  25%,
+  75% {
+    scale: 0.625;
+  }
+
+  50% {
+    scale: 0.5;
+  }
+}
+
+@keyframes hlx-ai-avatar-small {
+  0%,
+  100% {
+    scale: 1;
+  }
+
+  25%,
+  75% {
+    scale: 1.333;
+  }
+
+  50% {
+    scale: 1.667;
+  }
+}
+
+@keyframes hlx-ai-avatar-medium {
+  0%,
+  100% {
+    scale: 1;
+  }
+
+  25%,
+  75% {
+    scale: 1.182;
+  }
+
+  50% {
+    scale: 1.364;
+  }
+}

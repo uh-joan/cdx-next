@@ -5,14 +5,14 @@
 >
   <h2>Installation</h2>
 
-  <p>Add the notification package from the cdx repository</p>
-  <cdx-highlight [text]="'npm install @cdx/ngx-notification'"></cdx-highlight>
+  <p>The notification is part of the branding package.</p>
+  <cdx-highlight [text]="'npm install @cdx/ngx-branding'"></cdx-highlight>
 
   <mat-divider></mat-divider>
 
   <h2>Usage</h2>
 
-  <p>Add Notification Module on your NgModule imports array.</p>
+  <p>Add the standalone component to your component's imports.</p>
   <cdx-highlight [text]="moduleText"></cdx-highlight>
   <p>Add the element where needed</p>
   <cdx-highlight [text]="htmlText" language="html"></cdx-highlight>
@@ -33,20 +33,27 @@
 
   <h2>Severity</h2>
   <p>
-    You can use <strong>info</strong>, <strong>success</strong> or
-    <strong>warn</strong> to adapt styles to match the status and severity of
-    the message.
+    Use <strong>primary</strong>, <strong>warn</strong>,
+    <strong>negative</strong> or <strong>positive</strong> to match the Figma
+    notification themes. <strong>info</strong> and
+    <strong>success</strong> still work as aliases for primary and positive.
+    <strong>warn</strong> is now the yellow warning style; use
+    <strong>negative</strong> for errors.
   </p>
   <cdx-highlight
-    [text]="notificationInfoText"
-    [language]="'html'"
-  ></cdx-highlight>
-  <cdx-highlight
-    [text]="notificationSuccessText"
+    [text]="notificationPrimaryText"
     [language]="'html'"
   ></cdx-highlight>
   <cdx-highlight
     [text]="notificationWarnText"
+    [language]="'html'"
+  ></cdx-highlight>
+  <cdx-highlight
+    [text]="notificationNegativeText"
+    [language]="'html'"
+  ></cdx-highlight>
+  <cdx-highlight
+    [text]="notificationPositiveText"
     [language]="'html'"
   ></cdx-highlight>
 

@@ -18,6 +18,10 @@ export class Components {
           url: 'components-overview',
         },
         {
+          label: 'AI Avatar',
+          url: 'ai-avatar',
+        },
+        {
           label: 'Autocomplete',
           url: 'autocomplete',
         },
