@@ -7,6 +7,7 @@ export * from './lib/header/header.component';
 export * from './lib/header/header-global.component';
 export * from './lib/header/header-product-name-or-logo.component';
 export * from './lib/helix/ai-avatar/helix-ai-avatar.component';
+export * from './lib/helix/empty-state/helix-empty-state.component';
 export * from './lib/helix/footer/helix-footer.component';
 export * from './lib/helix/footer/helix-footer-group.component';
 export * from './lib/helix/footer/helix-footer-group-title.directive';

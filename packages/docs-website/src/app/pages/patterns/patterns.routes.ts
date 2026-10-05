@@ -63,6 +63,11 @@ export const patternsRoutes: Routes = [
             (m) => m.SidebarProducts,
           ),
       },
+      {
+        path: 'page-states',
+        loadComponent: () =>
+          import('./page-states/page-states').then((m) => m.PageStates),
+      },
       // Previous placeholder page.
       {
         path: 'patterns-overview',

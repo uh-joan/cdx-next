@@ -1,0 +1,62 @@
+@use '../../../../../theme-angular-material/styles/theme/helix/variables/tokens'
+  as hlx;
+@use '../../../../../theme-angular-material/styles/theme/helix/variables/primitives'
+  as hlx-primitives;
+
+.hlx-empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: hlx-primitives.$spacing-2;
+  padding: hlx-primitives.$spacing-6 hlx-primitives.$spacing-3;
+  text-align: center;
+  color: hlx.$text-secondary;
+
+  &__media {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__icon.mat-icon {
+    width: 48px;
+    height: 48px;
+    font-size: 48px;
+    line-height: 1;
+    color: hlx.$icon-secondary;
+  }
+
+  &--error &__icon.mat-icon {
+    color: hlx.$icon-negative;
+  }
+
+  &__heading {
+    margin: 0;
+    font: var(--sys-headline-small, 600 18px / 24px 'Source Sans 3', sans-serif);
+    color: hlx.$text-primary;
+    text-wrap: balance;
+  }
+
+  &__message {
+    max-width: 48ch;
+    margin: 0;
+    font: var(--sys-body-medium, 400 14px / 20px 'Source Sans 3', sans-serif);
+    color: hlx.$text-secondary;
+    text-wrap: pretty;
+  }
+
+  // Collapse the optional slots when nothing is projected, so they add no gap.
+  &__body:not(:has(*)),
+  &__actions:not(:has(*)) {
+    display: none;
+  }
+
+  &__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: hlx-primitives.$spacing-1;
+    justify-content: center;
+    margin-top: hlx-primitives.$spacing-1;
+  }
+}

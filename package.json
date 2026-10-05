@@ -20,6 +20,8 @@
     "lint:nx": "run-s lint:nx:*",
     "lint:nx:format": "nx format:write --all --skip-nx-cache",
     "lint:nx:lint": "nx run-many --all --exclude=workspace --target=lint --skip-nx-cache",
+    "lint:patterns": "node tools/patterns/generate-pattern-ai.mjs --check",
+    "patterns:ai": "node tools/patterns/generate-pattern-ai.mjs",
     "publish:prerelease": "npm run publish:release:common -- --tag=alpha",
     "publish:release": "npm run publish:release:common -- --tag=latest",
     "publish:release:common": "nx run-many --all --exclude=workspace --target=deploy --parallel=1 --skip-nx-cache",
