@@ -1,0 +1,21 @@
+<div class="hlx-empty-state__media">
+  <ng-content select="[hlx-empty-state-media]">
+    <mat-icon class="hlx-empty-state__icon" aria-hidden="true">{{
+      resolvedIcon()
+    }}</mat-icon>
+  </ng-content>
+</div>
+
+<h2 class="hlx-empty-state__heading">{{ heading() }}</h2>
+
+@if (message()) {
+  <p class="hlx-empty-state__message">{{ message() }}</p>
+}
+
+<div class="hlx-empty-state__body">
+  <ng-content></ng-content>
+</div>
+
+<div class="hlx-empty-state__actions">
+  <ng-content select="[hlx-empty-state-actions]"></ng-content>
+</div>
