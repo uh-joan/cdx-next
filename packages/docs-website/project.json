@@ -34,6 +34,18 @@
         "{workspaceRoot}/coverage/{projectRoot}",
         "{workspaceRoot}/coverage/packages/docs-website"
       ]
+    },
+    "build-site": {
+      "executor": "nx:run-commands",
+      "dependsOn": ["build"],
+      "outputs": ["{workspaceRoot}/dist/packages/docs-website/storybook"],
+      "options": {
+        "command": "nx run storybook:build-storybook --outputDir=dist/packages/docs-website/storybook",
+        "forwardAllArgs": false
+      },
+      "configurations": {
+        "ci": {}
+      }
     }
   }
 }

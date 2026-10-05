@@ -11,7 +11,7 @@
   ],
   "scripts": {
     "build": "node tools/scripts/exclude-build.js",
-    "build:website": "nx run docs-website:build --skip-nx-cache",
+    "build:website": "nx run docs-website:build-site --skip-nx-cache",
     "commit": "cz",
     "deploy:cdn": "nx run-many --all --exclude=workspace --target=deploy:cdn --parallel=1 --skip-nx-cache",
     "deploy:website": "deploy-aws-s3-cloudfront --debug --non-interactive --source ./dist/packages/docs-website --delete --invalidation-path '/*'",

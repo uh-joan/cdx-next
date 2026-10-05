@@ -170,10 +170,11 @@ dev server.
 - [x] Embed component docs (primary story + controls table + all stories) on
       component pages: `<cdx-storybook-embed componentId="…">`.
 - [x] Roll the embed out to every component page (Code tab).
-- [ ] Deploy Storybook next to the docs site per version (`/storybook`): build
-      `storybook:build-storybook` into the docs output after the docs build (the
-      docs build empties its output dir). The embed reads `VITE_STORYBOOK_URL`,
-      defaulting to `/storybook` in production.
+- [x] Deploy Storybook next to the docs site (`/storybook`):
+      `npm run build:website` now runs `docs-website:build-site`, which builds
+      the docs and then Storybook into `dist/packages/docs-website/storybook`,
+      so the existing deploy step uploads both. The embed reads
+      `VITE_STORYBOOK_URL`, defaulting to `/storybook` in production.
 - [ ] Interaction/visual tests from stories in CI (optional, later).
 
 Found while prototyping:
