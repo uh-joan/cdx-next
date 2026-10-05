@@ -6,6 +6,7 @@
 @use '@angular/material' as mat;
 @use 'helix' as hlx;
 @use 'typography' as typography;
+@use 'css-vars' as css-vars;
 @use 'variables/primitives' as primitives;
 @use 'variables/tokens' as tokens;
 
@@ -32,6 +33,7 @@ $elevation-lg:
   @include theme-helix-density;
   @include theme-helix-controls;
   @include typography.theme-helix-typography;
+  @include css-vars.theme-helix-css-vars;
 
   $helix-default-round-shape: tokens.$border-radius-default;
   $helix-default-container-background: tokens.$surface-primary;

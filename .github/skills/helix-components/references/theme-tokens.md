@@ -16,8 +16,31 @@ Built with Angular Material's `mat.define-theme()`, combining a `theme-type`
 | `$helix-invert-theme`  | light      | `paletes.$secondary` (tertiary: `paletes.$primary`) | inverted surfaces (dark header/footer/tabs) |
 
 Typography uses `use-system-variables: true` with
-`system-variables-prefix: sys`, so components should reference `--mat-sys-*` CSS
+`system-variables-prefix: sys`, so components should reference `--sys-*` CSS
 custom properties for type scale rather than hardcoding font sizes.
+
+## Runtime CSS custom properties (`--hlx-*`)
+
+The semantic tokens are also emitted as `--hlx-*` CSS custom properties by
+`theme-helix-overrides`, so any app that applies the Helix theme can consume them
+at runtime in plain CSS — no Sass import needed:
+
+```css
+.card {
+  color: var(--hlx-text-primary);
+  background: var(--hlx-surface-minimal);
+  border: 1px solid var(--hlx-border-secondary);
+  border-radius: var(--hlx-border-radius-default);
+  padding: var(--hlx-spacing-2);
+}
+```
+
+Available: every `--hlx-surface-*`, `--hlx-text-*`, `--hlx-border-*`,
+`--hlx-icon-*`, `--hlx-border-radius-default`, and `--hlx-spacing-half` through
+`--hlx-spacing-13`. The names match the Sass tokens below (minus the `$`). Use
+these from component SCSS instead of hardcoding hex/px or inventing your own
+`var(--text-primary)` names. Component-internal (`$components-*`) and primitive
+(`ref-*`, `$color-*`) tokens are **not** exposed — use the semantic ones.
 
 ## Design tokens (`variables/tokens.scss`, built on `primitives.scss`)
 
