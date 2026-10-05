@@ -44,5 +44,9 @@ export class Patterns {
       heading: 'Dialogs',
       elements: [{ label: 'Overview', url: 'dialogs' }],
     },
+    {
+      heading: 'App shell',
+      elements: [{ label: 'Overview', url: 'app-shell' }],
+    },
   ];
 }
