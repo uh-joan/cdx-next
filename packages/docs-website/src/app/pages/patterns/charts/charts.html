@@ -1,0 +1,58 @@
+<hlx-page
+  [section]="'Patterns'"
+  [title]="'Charts'"
+  [subtitle]="'Build charts with the Helix Highcharts styled-mode theme so colour, type and axes come from the design system — never a hardcoded palette — and keep them accessible and readable.'"
+  tabbed
+>
+  <div overview>
+    <p>
+      Charts should look like the rest of the product: the same palette, type and
+      muted axes. Helix ships that as the Highcharts styled-mode theme in
+      <code>&#64;cdx/theme-highcharts</code>, so you render in <code>styledMode</code>
+      and let the theme supply colour and styling instead of setting it per chart.
+      See the
+      <cdx-internal-link [inline]="true" [url]="'/components/highcharts'" [text]="'Highcharts'"></cdx-internal-link>
+      component for the base wiring.
+    </p>
+
+    <h2>When to use it</h2>
+    <p>
+      Visualising quantitative data — trends, comparisons, distributions. A single
+      number or short comparison is better as a stat tile, a table or inline text.
+    </p>
+
+    <mat-divider></mat-divider>
+
+    <h2>Do</h2>
+    <ul>
+      <li>Render in <code>styledMode</code> with the Helix Highcharts theme.</li>
+      <li>Take the series palette from the theme; never hardcode colours (import <code>HLX_HIGHCHARTS_THEME_COLORS</code> for D3 / custom SVG).</li>
+      <li>Title the chart and both axes; enable accessibility; offer the data as a table.</li>
+      <li>Use a responsive container and let the chart reflow.</li>
+    </ul>
+
+    <h2>Don't</h2>
+    <ul>
+      <li>Hardcode a colour array in options or a constants file.</li>
+      <li>Encode meaning (good / bad, categories) in colour alone — pair it with a label, pattern or shape.</li>
+      <li>Pin a pixel width.</li>
+      <li>Reach for a pie chart with many slices.</li>
+    </ul>
+  </div>
+
+  <div code>
+    <h2>Theme the chart, don't colour it</h2>
+    <p>Apply the styled-mode theme in the component's styles:</p>
+    <cdx-highlight [text]="themeSnippet"></cdx-highlight>
+    <p>Then keep colours out of the options — the series palette is the theme's:</p>
+    <cdx-highlight [text]="optionsSnippet"></cdx-highlight>
+
+    <mat-divider></mat-divider>
+
+    <h2>Example</h2>
+    <p>A column chart in styled mode — the three series take the Helix categorical palette, with no colours set in the options.</p>
+    @for (sample of sampleList; track sample.exampleName) {
+      <hlx-example-viewer [inputViewerComponent]="sample" />
+    }
+  </div>
+</hlx-page>

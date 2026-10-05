@@ -91,6 +91,11 @@ export const patternsRoutes: Routes = [
           import('./ai-assistant/ai-assistant').then((m) => m.AiAssistant),
       },
       {
+        path: 'charts',
+        loadComponent: () =>
+          import('./charts/charts').then((m) => m.Charts),
+      },
+      {
         path: 'data-grid',
         loadComponent: () =>
           import('./data-grid/data-grid').then((m) => m.DataGridPattern),

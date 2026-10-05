@@ -126,6 +126,9 @@ const patternsNavigationMap: NavigationItem[] = [
   { title: 'Data grid wrapper', route: '/patterns/data-grid' },
   { title: 'AG Grid', route: '/patterns/data-grid' },
   { title: 'Grid persistence', route: '/patterns/data-grid' },
+  { title: 'Charts', route: '/patterns/charts' },
+  { title: 'Highcharts', route: '/patterns/charts' },
+  { title: 'Data visualization', route: '/patterns/charts' },
 ];
 
 const servicesNavigationMap: NavigationItem[] = [
