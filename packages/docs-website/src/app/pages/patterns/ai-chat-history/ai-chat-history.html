@@ -1,0 +1,56 @@
+<hlx-page
+  [section]="'Patterns'"
+  [title]="'AI chat history'"
+  [subtitle]="'A panel of past AI conversations, grouped by recency and titled by their first question, that the user can reopen, rename and delete — with real loading, empty and error states, not just the happy path.'"
+  tabbed
+>
+  <div overview>
+    <p>
+      An assistant the user returns to needs a <strong>history</strong> they can
+      navigate — not a flat log. Group past conversations by recency, title each by
+      its first question, and let the user reopen, rename and delete them, with every
+      list state handled. reg-ai's chat-history panel is the reference. It's the
+      <cdx-internal-link [inline]="true" [url]="'/foundations/ai'" [text]="'AI foundation'"></cdx-internal-link>'s
+      Trustworthy principle applied to the user's own record, and it pairs with the
+      <cdx-internal-link [inline]="true" [url]="'/patterns/ai-assistant'" [text]="'AI assistant'"></cdx-internal-link>.
+    </p>
+
+    <h2>Grouped, titled, resumable</h2>
+    <ul>
+      <li><strong>Grouped by recency</strong> — Today / Last 7 days / Older, newest first.</li>
+      <li><strong>Titled by the first question</strong>, truncated with the full text on a tooltip; pending chats show a skeleton.</li>
+      <li><strong>Managed in place</strong> — rename and delete from a hover/focus menu; the active chat is highlighted.</li>
+    </ul>
+
+    <mat-divider></mat-divider>
+
+    <h2>Do</h2>
+    <ul>
+      <li>Group by recency and title by the first question.</li>
+      <li>Rename and delete from a hover/focus menu; confirm deletes.</li>
+      <li>Handle loading, empty and error states, plus load-more.</li>
+      <li>Highlight the active conversation; offer a one-click new chat.</li>
+    </ul>
+
+    <h2>Don't</h2>
+    <ul>
+      <li>Ship a flat, undated list or id-only titles.</li>
+      <li>Make history read-only with no way to clean up.</li>
+      <li>Render only the loaded path.</li>
+      <li>Delete without confirmation.</li>
+    </ul>
+  </div>
+
+  <div code>
+    <h2>Group by recency, title by first question</h2>
+    <cdx-highlight [text]="groupSnippet"></cdx-highlight>
+
+    <mat-divider></mat-divider>
+
+    <h2>Example</h2>
+    <p>Conversations grouped Today / Last 7 days / Older. Hover or focus an entry for its Rename / Delete menu (delete confirms inline); the active chat is highlighted. Use the switch to see the loading and empty states.</p>
+    @for (sample of sampleList; track sample.exampleName) {
+      <hlx-example-viewer [inputViewerComponent]="sample" />
+    }
+  </div>
+</hlx-page>

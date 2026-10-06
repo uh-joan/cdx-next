@@ -85,6 +85,10 @@ export class Patterns {
       elements: [{ label: 'Overview', url: 'ai-sources' }],
     },
     {
+      heading: 'AI chat history',
+      elements: [{ label: 'Overview', url: 'ai-chat-history' }],
+    },
+    {
       heading: 'Data grid',
       elements: [{ label: 'Overview', url: 'data-grid' }],
     },

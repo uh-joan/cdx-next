@@ -138,6 +138,13 @@ export const patternsRoutes: Routes = [
           import('./ai-sources/ai-sources').then((m) => m.AiSources),
       },
       {
+        path: 'ai-chat-history',
+        loadComponent: () =>
+          import('./ai-chat-history/ai-chat-history').then(
+            (m) => m.AiChatHistory,
+          ),
+      },
+      {
         path: 'charts',
         loadComponent: () =>
           import('./charts/charts').then((m) => m.Charts),
