@@ -20,7 +20,9 @@ components:
   - MatCheckbox
   - MatButton
   - ReactiveFormsModule
-hlx-classes: []
+hlx-classes:
+  - hlx-field-borderless
+  - hlx-input-small
 tokens:
   - spacing-2
   - spacing-3
@@ -61,6 +63,12 @@ rules:
       Actions sit in a bar at the end: the primary submit on the right, Cancel to
       its left; disable submit while the form is invalid or saving and show a
       busy state on save.
+  - id: field-variants
+    text: >-
+      Use the shared field variants instead of overriding MDC: hlx-input-small /
+      hlx-input-x-small for density, and hlx-field-borderless for an inline-edit
+      title or a toolbar search where a boxed field is too heavy (the outline
+      appears on hover and focus). Don't hand-roll field chrome with ::ng-deep.
 anti-patterns:
   - id: multi-column
     text: Multi-column forms that zig-zag the eye, or two-up fields that stack badly on mobile.
@@ -72,6 +80,7 @@ anti-patterns:
     text: ngModel / template-driven forms in new code instead of typed reactive forms.
 examples:
   - edit
+  - borderless
 evidence:
   - cmc-gui-docker / cortellis-reg-ai-app / off-x-ui — forms built ad hoc; no shared form-layout guidance
   - helix docs — form-field, select, checkbox, radio documented as components but not composed into a form
@@ -130,6 +139,22 @@ submit(): void {
 Errors render only once the control is touched (Material does this for
 `mat-error`), so the user is not scolded mid-typing. Write messages that say how
 to fix it, in sentence case.
+
+## Field variants
+
+Reach for the shared variants rather than overriding MDC:
+
+- `hlx-input-small` / `hlx-input-x-small` — denser fields for compact UIs.
+- `hlx-field-borderless` — hides the outline at rest and shows it on hover and
+  focus, for an **inline-edit title** or a **toolbar search** where a boxed field
+  would be too heavy. It's driven by the Material outline-colour custom properties,
+  so it composes with density and the usual field states — no `::ng-deep`.
+
+```html
+<mat-form-field class="hlx-field-borderless" appearance="outline">
+  <input matInput [value]="title()" (input)="title.set($any($event.target).value)" />
+</mat-form-field>
+```
 
 ## Do
 
