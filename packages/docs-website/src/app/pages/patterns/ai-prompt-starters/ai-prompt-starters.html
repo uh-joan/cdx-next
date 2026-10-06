@@ -1,0 +1,55 @@
+<hlx-page
+  [section]="'Patterns'"
+  [title]="'AI prompt starters'"
+  [subtitle]="'The pre-conversation landing for an assistant: a short greeting, a few suggested-prompt cards that seed the composer, and the composer itself — so the user is not facing a blank box.'"
+  tabbed
+>
+  <div overview>
+    <p>
+      An assistant's first screen shouldn't be an empty box. Lead with a short
+      greeting, a few <strong>suggested-prompt cards</strong> that seed the
+      composer, and the composer itself. This is the empty state of the
+      <cdx-internal-link [inline]="true" [url]="'/patterns/ai-assistant'" [text]="'AI assistant'"></cdx-internal-link>
+      pattern, and follows the
+      <cdx-internal-link [inline]="true" [url]="'/foundations/ai'" [text]="'AI foundation'"></cdx-internal-link>.
+    </p>
+
+    <h2>When to use it</h2>
+    <p>The empty state of an assistant, before the first message — full-page or in a panel.</p>
+
+    <mat-divider></mat-divider>
+
+    <h2>Do</h2>
+    <ul>
+      <li>Seed the composer (editable, focused) on card click; never auto-send.</li>
+      <li>Offer three to six specific, product-relevant starters as real buttons.</li>
+      <li>Reuse the conversation's composer.</li>
+      <li>Signal AI with the Helix treatment (avatar / gradient title), lightly.</li>
+    </ul>
+
+    <h2>Don't</h2>
+    <ul>
+      <li>Fire the question on card click — let the user edit first.</li>
+      <li>Use vague "ask me anything" starters.</li>
+      <li>Build the tiles as clickable <code>div</code>s.</li>
+    </ul>
+  </div>
+
+  <div code>
+    <h2>Starters seed, they don't send</h2>
+    <p>
+      Clicking a starter fills the composer with an <strong>editable</strong>
+      prompt and focuses it — keeping the user in control (the foundation's
+      <em>Assistive</em> principle).
+    </p>
+    <cdx-highlight [text]="seedSnippet"></cdx-highlight>
+
+    <mat-divider></mat-divider>
+
+    <h2>Example</h2>
+    <p>Click a starter — it fills the composer (it doesn't send), ready to edit or ask.</p>
+    @for (sample of sampleList; track sample.exampleName) {
+      <hlx-example-viewer [inputViewerComponent]="sample" />
+    }
+  </div>
+</hlx-page>
