@@ -37,6 +37,12 @@ const config: StorybookConfig = {
           },
         ],
       },
+      // Pre-bundling highcharts-angular with esbuild strips the Angular input
+      // metadata off its standalone component (NG0303 on [Highcharts]); let the
+      // Angular Vite plugin process it as source instead.
+      optimizeDeps: {
+        exclude: ['highcharts-angular'],
+      },
     });
   },
 };

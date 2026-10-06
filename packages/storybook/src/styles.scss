@@ -3,10 +3,16 @@
 @use '@cdx/theme-angular-material' as hlx;
 @use '@cdx/ngx-branding/header/theme' as header;
 @use '@cdx/ngx-branding/footer/theme' as footer;
+@use '@cdx/theme-highcharts' as hlx-highcharts;
+
+// Base styled-mode CSS for the charts pattern story (styledMode charts take all
+// their colour and type from CSS).
+@import 'highcharts/css/highcharts.css';
 
 @include header.theme(hlx.$helix-theme);
 @include footer.theme(hlx.$helix-theme);
 @include hlx.default(hlx.$helix-theme, 'helix-theme-material');
+@include hlx-highcharts.hlx-highcharts-styled-mode-theme;
 
 .helix-theme-material {
   @include hlx.theme-helix-overrides;
