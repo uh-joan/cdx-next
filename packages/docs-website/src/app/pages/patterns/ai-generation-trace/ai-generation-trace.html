@@ -1,0 +1,58 @@
+<hlx-page
+  [section]="'Patterns'"
+  [title]="'AI generation trace'"
+  [subtitle]="'A collapsed “How was this generated?” disclosure under an AI answer, showing the steps the assistant took and the inputs it used — so users can understand and trust the result.'"
+  tabbed
+>
+  <div overview>
+    <p>
+      When provenance matters, give users a way to see how an answer was produced:
+      a collapsed <strong>"How was this generated?"</strong> disclosure under the
+      answer, holding the steps the assistant took and the inputs it used. It
+      extends the
+      <cdx-internal-link [inline]="true" [url]="'/patterns/ai-assistant'" [text]="'AI assistant'"></cdx-internal-link>
+      answer and serves the
+      <cdx-internal-link [inline]="true" [url]="'/foundations/ai'" [text]="'AI foundation'"></cdx-internal-link>'s
+      Transparent and Trustworthy principles.
+    </p>
+
+    <h2>Two shapes</h2>
+    <ul>
+      <li><strong>Step trace</strong> — an ordered list that fills in as the answer streams, each completed step marked done.</li>
+      <li><strong>Reasoning summary</strong> — a static recap of the query, how it was classified, and the filters applied, with sources linked.</li>
+    </ul>
+
+    <mat-divider></mat-divider>
+
+    <h2>Do</h2>
+    <ul>
+      <li>Keep it collapsed, below the answer, clearly labelled.</li>
+      <li>Show the real steps / filters / source counts; link sources.</li>
+      <li>Use a real, keyboard-operable disclosure.</li>
+    </ul>
+
+    <h2>Don't</h2>
+    <ul>
+      <li>Expand it by default.</li>
+      <li>Fabricate a "reasoning" that doesn't match what happened.</li>
+      <li>Reveal it on hover or via a click-div.</li>
+    </ul>
+  </div>
+
+  <div code>
+    <h2>Truthful, collapsed, accessible</h2>
+    <p>
+      The steps are what actually happened — real tools, filters and source counts.
+      If you can't describe the process truthfully, don't show a trace.
+    </p>
+    <cdx-highlight [text]="traceSnippet" language="html"></cdx-highlight>
+
+    <mat-divider></mat-divider>
+
+    <h2>Example</h2>
+    <p>Expand "How was this generated?" for the reasoning summary and step trace; use Replay to watch the steps complete.</p>
+    @for (sample of sampleList; track sample.exampleName) {
+      <hlx-example-viewer [inputViewerComponent]="sample" />
+    }
+  </div>
+</hlx-page>

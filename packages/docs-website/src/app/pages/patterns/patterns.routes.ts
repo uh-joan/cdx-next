@@ -98,6 +98,13 @@ export const patternsRoutes: Routes = [
           ),
       },
       {
+        path: 'ai-generation-trace',
+        loadComponent: () =>
+          import('./ai-generation-trace/ai-generation-trace').then(
+            (m) => m.AiGenerationTrace,
+          ),
+      },
+      {
         path: 'charts',
         loadComponent: () =>
           import('./charts/charts').then((m) => m.Charts),

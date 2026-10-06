@@ -61,6 +61,10 @@ export class Patterns {
       elements: [{ label: 'Overview', url: 'ai-prompt-starters' }],
     },
     {
+      heading: 'AI generation trace',
+      elements: [{ label: 'Overview', url: 'ai-generation-trace' }],
+    },
+    {
       heading: 'Data grid',
       elements: [{ label: 'Overview', url: 'data-grid' }],
     },
