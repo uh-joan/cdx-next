@@ -1125,6 +1125,18 @@ $density-slide-toggle: (
       small-disabled-state-foreground-color: tokens.$text-disabled,
     )
   );
+
+  // Borderless form field: on an outline mat-form-field, the outline is hidden
+  // at rest and only appears on hover and focus. For inline-edit fields, toolbar
+  // search and other places a boxed field would be visually heavy. Driven purely
+  // by the Material outline-colour custom properties — no MDC selectors — so it
+  // composes with density (hlx-input-small) and the usual field states.
+  .hlx-field-borderless {
+    --mat-form-field-outlined-outline-color: transparent;
+    --mat-form-field-outlined-hover-outline-color: #{tokens.$components-text-input-outlined-hover};
+    --mat-form-field-outlined-focus-outline-color: #{tokens.$components-text-input-outlined-focused};
+    --mat-form-field-outlined-disabled-outline-color: transparent;
+  }
 }
 
 @mixin theme-helix-icons() {
