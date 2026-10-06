@@ -63,6 +63,29 @@ const guidanceVersion = JSON.parse(
   readFileSync(join(repoRoot, 'packages/helix-ai/package.json'), 'utf8'),
 ).version;
 
+/**
+ * Scrub internal specifics from content destined for the PUBLIC standalone repo.
+ * The private cdx-next skill/docs keep the full detail; the exported bundle drops
+ * internal infra endpoints and the names of internal app repos so nothing
+ * company-internal is attributed in public. Applied only in `--export`.
+ */
+function sanitizeForPublic(s) {
+  return (
+    s
+      // Internal infra endpoints → generic placeholders.
+      .replaceAll(
+        'https://repo.clarivate.io/artifactory/api/npm/npm-central/',
+        '<your-org npm registry>',
+      )
+      .replace(
+        /https:\/\/cdn\.digital-experience\.clarivate\.io[^\s")'`]*/g,
+        '<your brand font CDN>',
+      )
+      // Internal app repo names → unattributed.
+      .replace(/\b(?:cortellis-reg-ai-app|off-x-ui|cmc-gui-docker)\b/g, 'an app')
+  );
+}
+
 const isCheck = process.argv.includes('--check');
 // `--export <dir>` emits the standalone helix-skills bundle (skills + AGENTS +
 // Copilot + a copy of the sync CLI) to <dir>, decoupled from @cdx/* — for the
@@ -479,14 +502,14 @@ if (exportDir) {
   );
 
   // Rewrite the bundle's own tree (keep a user .git if present) so renames/removals
-  // don't linger, then write.
+  // don't linger, then write — scrubbing internal specifics for the public repo.
   for (const sub of ['skills', 'src']) {
     const p = join(exportDir, sub);
     if (existsSync(p)) rmSync(p, { recursive: true });
   }
   for (const [file, content] of bundle) {
     mkdirSync(dirname(file), { recursive: true });
-    writeFileSync(file, content);
+    writeFileSync(file, sanitizeForPublic(content));
   }
   console.log(
     `✓ exported helix-skills bundle (${patterns.length} patterns + 2 skills) to ${relative(repoRoot, exportDir) || exportDir}`,
