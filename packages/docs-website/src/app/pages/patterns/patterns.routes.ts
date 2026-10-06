@@ -105,6 +105,13 @@ export const patternsRoutes: Routes = [
           ),
       },
       {
+        path: 'ai-usage-limits',
+        loadComponent: () =>
+          import('./ai-usage-limits/ai-usage-limits').then(
+            (m) => m.AiUsageLimits,
+          ),
+      },
+      {
         path: 'charts',
         loadComponent: () =>
           import('./charts/charts').then((m) => m.Charts),

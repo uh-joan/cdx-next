@@ -65,6 +65,10 @@ export class Patterns {
       elements: [{ label: 'Overview', url: 'ai-generation-trace' }],
     },
     {
+      heading: 'AI usage & limits',
+      elements: [{ label: 'Overview', url: 'ai-usage-limits' }],
+    },
+    {
       heading: 'Data grid',
       elements: [{ label: 'Overview', url: 'data-grid' }],
     },
