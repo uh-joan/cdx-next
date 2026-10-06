@@ -133,6 +133,11 @@ export const patternsRoutes: Routes = [
           ),
       },
       {
+        path: 'ai-sources',
+        loadComponent: () =>
+          import('./ai-sources/ai-sources').then((m) => m.AiSources),
+      },
+      {
         path: 'charts',
         loadComponent: () =>
           import('./charts/charts').then((m) => m.Charts),

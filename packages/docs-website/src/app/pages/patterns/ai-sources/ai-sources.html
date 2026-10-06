@@ -1,0 +1,58 @@
+<hlx-page
+  [section]="'Patterns'"
+  [title]="'AI sources & citations'"
+  [subtitle]="'Make an AI answer traceable — number claims with inline citations that reveal the cited passage and link to the source, and list the ranked source documents behind the answer, collapsed past a handful.'"
+  tabbed
+>
+  <div overview>
+    <p>
+      An AI answer is only as trustworthy as the user's ability to <strong>check
+      it</strong>. When the answer is grounded in documents, make every claim
+      traceable: number it with an inline citation that reveals the exact passage and
+      links to the source, and list the ranked documents behind the answer. reg-ai
+      does both; cmc turns source ids into focusable tooltip triggers. It's the
+      <cdx-internal-link [inline]="true" [url]="'/foundations/ai'" [text]="'AI foundation'"></cdx-internal-link>'s
+      Trustworthy principle made concrete, and it pairs with the
+      <cdx-internal-link [inline]="true" [url]="'/patterns/ai-assistant'" [text]="'AI assistant'"></cdx-internal-link>.
+    </p>
+
+    <h2>Two linked surfaces</h2>
+    <ul>
+      <li><strong>Inline citations</strong> — numbered references in the answer; on hover or focus they reveal the cited passage, a source link, and (for off-language sources) an AI translation with <em>see original</em>.</li>
+      <li><strong>Source list</strong> — the ranked documents behind the answer, numbered, with title, publisher, territory and last-updated. Show a handful; collapse the rest.</li>
+    </ul>
+
+    <mat-divider></mat-divider>
+
+    <h2>Do</h2>
+    <ul>
+      <li>Number claims and reveal the cited passage on hover and focus.</li>
+      <li>Rank the sources, show a few, collapse the rest.</li>
+      <li>Link every citation and document to the real source.</li>
+      <li>Give each document title, source, territory and last-updated.</li>
+      <li>Mark AI translations as AI and offer the original.</li>
+    </ul>
+
+    <h2>Don't</h2>
+    <ul>
+      <li>Leave claims uncited or citations dead.</li>
+      <li>Use a hover-only citation with no keyboard path.</li>
+      <li>Dump every document with no ranking or collapse.</li>
+      <li>Show translated text without disclosing it's AI.</li>
+    </ul>
+  </div>
+
+  <div code>
+    <h2>Rank, preview, collapse</h2>
+    <p>List the documents in relevance order and show a preview; collapse the rest behind "Show N more sources". These thresholds mirror reg-ai.</p>
+    <cdx-highlight [text]="collapseSnippet"></cdx-highlight>
+
+    <mat-divider></mat-divider>
+
+    <h2>Example</h2>
+    <p>Hover or focus a citation chip to reveal the cited passage and source link; source 2 is off-language, so it offers an AI translation with "See original". The ranked list shows three, then "Show 3 more sources".</p>
+    @for (sample of sampleList; track sample.exampleName) {
+      <hlx-example-viewer [inputViewerComponent]="sample" />
+    }
+  </div>
+</hlx-page>

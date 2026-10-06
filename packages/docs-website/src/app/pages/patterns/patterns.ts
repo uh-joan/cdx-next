@@ -81,6 +81,10 @@ export class Patterns {
       elements: [{ label: 'Overview', url: 'ai-entry-points' }],
     },
     {
+      heading: 'AI sources & citations',
+      elements: [{ label: 'Overview', url: 'ai-sources' }],
+    },
+    {
       heading: 'Data grid',
       elements: [{ label: 'Overview', url: 'data-grid' }],
     },
