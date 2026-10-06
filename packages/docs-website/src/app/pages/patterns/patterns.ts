@@ -77,6 +77,10 @@ export class Patterns {
       elements: [{ label: 'Overview', url: 'ai-generate-field' }],
     },
     {
+      heading: 'AI entry points',
+      elements: [{ label: 'Overview', url: 'ai-entry-points' }],
+    },
+    {
       heading: 'Data grid',
       elements: [{ label: 'Overview', url: 'data-grid' }],
     },
