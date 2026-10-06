@@ -52,6 +52,10 @@ rules:
     text: >-
       One composer component: an autosizing textarea that submits on Enter (newline
       on Shift+Enter), disabled while generating, with a labelled send button.
+  - id: stop-generating
+    text: >-
+      While a response streams, offer a Stop generating control (the send button
+      becomes a stop button) so the user can cut a long or wrong answer short.
   - id: citations-accessible
     text: >-
       Inline citations open an accessible popover (the rich tooltip), reachable by
@@ -129,12 +133,33 @@ real text, not `::before { content }`. Feedback is real buttons with
 
 - **Citations** — render an inline numbered `<button>` that opens the
   [rich tooltip](/components/tooltips) as a popover (keyboard- and focus-
-  reachable), showing the source excerpt and a link. Not a hover-only div.
+  reachable), showing the source **excerpt**, a **link** to the source, and — for
+  non-English sources — an **AI-translate toggle** (translate / translating /
+  see original, RTL-aware). Not a hover-only div. List the ranked sources below
+  the answer with a **"Show N more"** toggle once there are more than ~5.
 - **History** — a drawer (the [App shell](/patterns/app-shell) drawer) grouped by
   date, with the [Page states](/patterns/page-states) for loading / empty /
   error, and rename / delete through the [Dialogs](/patterns/dialogs) size
   presets.
-- **Thumbs-down** opens an inline reason form with a short privacy note.
+- **Structured feedback** — thumbs up/down and copy on each answer; **thumbs-down
+  opens an inline reason form** (a few reason checkboxes + an optional comment),
+  with a short "don't include personal information" note. Submit and clear map to
+  POST/DELETE on your feedback API.
+- **Disclosure** — show a persistent "AI-generated content: check for accuracy"
+  line near the thread (and include it in copied output), per the foundation's
+  *Transparent* principle.
+
+## While generating: stop & status
+
+Give a **Stop generating** control while a response streams (the send button
+becomes a stop button), so the user can cut a long or wrong answer short. Show the
+streaming **status as real text** in the live region, and — where useful — an
+**elapsed timer** ("Thinking 5s" → "Thought for 8s"); the staged labels
+(Thinking → Searching → Generating answer) belong here too. See the
+[AI generation trace](/patterns/ai-generation-trace) for the expandable step
+detail.
+
+## Markdown answers
 
 ## Markdown answers
 
