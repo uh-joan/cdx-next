@@ -119,6 +119,13 @@ export const patternsRoutes: Routes = [
           ),
       },
       {
+        path: 'ai-generate-field',
+        loadComponent: () =>
+          import('./ai-generate-field/ai-generate-field').then(
+            (m) => m.AiGenerateField,
+          ),
+      },
+      {
         path: 'charts',
         loadComponent: () =>
           import('./charts/charts').then((m) => m.Charts),
