@@ -6,6 +6,7 @@ import {
   type Decorator,
   type Preview,
 } from '@storybook/angular';
+import { provideHighcharts } from 'highcharts-angular';
 
 const DENSITIES = ['0', '-1', '-2', '-3', '-4'];
 
@@ -34,7 +35,13 @@ const preview: Preview = {
   tags: ['autodocs'],
   decorators: [
     applicationConfig({
-      providers: [provideTranslateService({ fallbackLang: 'en' })],
+      providers: [
+        provideTranslateService({ fallbackLang: 'en' }),
+        // Pattern examples that embed a Highcharts chart need the loader.
+        provideHighcharts({
+          modules: () => [import('highcharts/esm/modules/accessibility.js')],
+        }),
+      ],
     }),
     withHelixTheme,
   ],
