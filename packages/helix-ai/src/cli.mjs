@@ -17,6 +17,7 @@
  * Usage:
  *   npx @cdx/helix-ai sync [options]
  *     --all          write every format (default)
+ *     --strict       treat a @cdx/* major mismatch as an error (default: warn)
  *     --skill        write only the Agent Skill
  *     --agents       write only the AGENTS.md block
  *     --copilot      write only the Copilot instructions
@@ -39,7 +40,12 @@ import { fileURLToPath } from 'node:url';
 
 const here = dirname(fileURLToPath(import.meta.url));
 const pkgRoot = join(here, '..');
-const payloadDir = join(pkgRoot, 'payload');
+// Payload layout works in both homes: the @cdx/helix-ai package keeps it under
+// `payload/`; the standalone helix-skills repo keeps it at the repo root. Detect
+// whichever is present so the same CLI serves both.
+const payloadDir = existsSync(join(pkgRoot, 'payload'))
+  ? join(pkgRoot, 'payload')
+  : pkgRoot;
 const selfVersion = JSON.parse(
   readFileSync(join(pkgRoot, 'package.json'), 'utf8'),
 ).version;
@@ -54,6 +60,7 @@ function parseArgs(argv) {
     dir: process.cwd(),
     dryRun: false,
     force: false,
+    strict: false,
     help: false,
   };
   const rest = argv.slice(2);
@@ -62,6 +69,7 @@ function parseArgs(argv) {
     if (a === '--help' || a === '-h') opts.help = true;
     else if (a === '--dry-run') opts.dryRun = true;
     else if (a === '--force') opts.force = true;
+    else if (a === '--strict') opts.strict = true;
     else if (a === '--all') {
       /* default */
     } else if (a === '--skill') opts.formats.add('skill');
@@ -80,7 +88,7 @@ function parseArgs(argv) {
   return opts;
 }
 
-const HELP = `@cdx/helix-ai@${selfVersion}
+const HELP = `Helix AI guidance v${selfVersion}
 
 Sync Helix design-system AI coding guidance into a repo.
 
@@ -94,7 +102,8 @@ Options:
   --copilot      write only the Copilot instructions
   --dir <path>   target repo (default: current directory)
   --dry-run      print what would change, write nothing
-  --force        overwrite even on a detected @cdx/* major mismatch
+  --strict       treat a @cdx/* major mismatch as an error (default: warn)
+  --force        proceed even under --strict on a mismatch
   --help         show this help
 `;
 
@@ -223,17 +232,19 @@ function main() {
   }
 
   // Version-skew check against the @cdx/* actually installed in the target.
+  // Advisory by default (the guidance may be distributed independently of the
+  // package version, e.g. from the standalone helix-skills repo); --strict makes
+  // a major mismatch a hard stop, and --force overrides --strict.
   const installed = installedCdxVersion(targetDir);
   if (installed && major(installed.version) !== major(selfVersion)) {
-    const msg = `@cdx/helix-ai is ${selfVersion} but ${installed.name} in the target is ${installed.version} — the guidance may not match the installed Helix.`;
-    if (opts.force) {
-      console.warn(`⚠ ${msg} (continuing: --force)`);
-    } else {
+    const msg = `guidance is ${selfVersion} but ${installed.name} in the target is ${installed.version} — it may not match the installed Helix.`;
+    if (opts.strict && !opts.force) {
       console.error(
-        `✗ ${msg}\n  Install @cdx/helix-ai matching your @cdx/* major, or pass --force.`,
+        `✗ ${msg}\n  Use guidance matching your @cdx/* major, or pass --force.`,
       );
       process.exit(1);
     }
+    console.warn(`⚠ ${msg}`);
   } else if (!installed) {
     console.warn(
       '⚠ No @cdx/* package found in the target node_modules — cannot verify the guidance matches your installed Helix.',
@@ -251,7 +262,7 @@ function main() {
   }
   const verb = opts.dryRun ? 'Would write' : 'Wrote';
   console.log(
-    `${verb} Helix AI guidance (@cdx/helix-ai@${selfVersion}) into ${relative(process.cwd(), targetDir) || '.'}:`,
+    `${verb} Helix AI guidance (v${selfVersion}) into ${relative(process.cwd(), targetDir) || '.'}:`,
   );
   for (const c of changes) console.log(`  ${c}`);
   if (opts.dryRun) console.log('\n(dry run — nothing written)');

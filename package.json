@@ -24,6 +24,7 @@
     "lint:stories": "node tools/patterns/generate-storybook-stories.mjs --check",
     "patterns:ai": "node tools/patterns/generate-pattern-ai.mjs",
     "patterns:stories": "node tools/patterns/generate-storybook-stories.mjs",
+    "export:skills": "node tools/patterns/generate-pattern-ai.mjs --export ../helix-skills",
     "publish:prerelease": "npm run publish:release:common -- --tag=alpha",
     "publish:release": "npm run publish:release:common -- --tag=latest",
     "publish:release:common": "nx run-many --all --exclude=workspace --target=deploy --parallel=1 --skip-nx-cache",
