@@ -10,6 +10,7 @@ type TabsArgs = {
   alignTabs: 'start' | 'center' | 'end';
   headerPosition: 'above' | 'below';
   showIcons: boolean;
+  compact: boolean;
   disabledTab: boolean;
   selectedIndex: number;
 };
@@ -23,7 +24,7 @@ const meta: Meta<TabsArgs> = {
     docs: {
       description: {
         component:
-          'Helix tabs are the Angular Material `mat-tab-group` styled by the Helix theme. Use `hlx-tab-invert` on dark backgrounds; `fitInkBarToContent` sizes the active indicator to the label.',
+          'Helix tabs are the Angular Material `mat-tab-group` styled by the Helix theme. Use `hlx-tab-invert` on dark backgrounds; `hlx-tab-compact` for a shorter 36px tab bar in dense panels and toolbars; `fitInkBarToContent` sizes the active indicator to the label.',
       },
     },
   },
@@ -61,6 +62,11 @@ const meta: Meta<TabsArgs> = {
       description:
         'Leading icon on every tab (never mix icon and text-only tabs)',
     },
+    compact: {
+      control: 'boolean',
+      description:
+        'Apply `hlx-tab-compact` for a shorter 36px tab bar in dense panels and toolbars',
+    },
     disabledTab: {
       control: 'boolean',
       description: 'Disable the last tab',
@@ -78,6 +84,7 @@ const meta: Meta<TabsArgs> = {
     alignTabs: 'start',
     headerPosition: 'above',
     showIcons: false,
+    compact: false,
     disabledTab: false,
     selectedIndex: 0,
   },
@@ -94,6 +101,7 @@ const meta: Meta<TabsArgs> = {
       <div style="padding: 16px">
         <mat-tab-group
           [class.hlx-tab-invert]="color === 'invert'"
+          [class.hlx-tab-compact]="compact"
           [fitInkBarToContent]="fitInkBarToContent"
           [mat-stretch-tabs]="stretchTabs"
           [mat-align-tabs]="alignTabs"
@@ -129,6 +137,9 @@ export const FullWidthIndicator: Story = {
 };
 
 export const WithIcons: Story = { args: { showIcons: true } };
+
+/** Shorter 36px tab bar for dense panels and toolbars (`hlx-tab-compact`). */
+export const Compact: Story = { args: { compact: true } };
 
 /** Many tabs scroll horizontally to accommodate overflow. */
 export const Overflow: Story = {
