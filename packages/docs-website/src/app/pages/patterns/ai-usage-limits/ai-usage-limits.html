@@ -1,0 +1,56 @@
+<hlx-page
+  [section]="'Patterns'"
+  [title]="'AI usage & limits'"
+  [subtitle]="'Tell the user where they stand against AI limits — responses left, a context that is too long, a rate limit — before and when they hit them, with a clear way forward, using hlx-notification.'"
+  tabbed
+>
+  <div overview>
+    <p>
+      Assistants have limits — a daily response quota, a bounded context window, a
+      rate limit. Tell the user where they stand <em>before</em> they hit one, and
+      give a clear way forward when they do, using the
+      <cdx-internal-link [inline]="true" [url]="'/components/notifications'" [text]="'notification'"></cdx-internal-link>
+      component. This pairs with the
+      <cdx-internal-link [inline]="true" [url]="'/patterns/ai-assistant'" [text]="'AI assistant'"></cdx-internal-link>
+      and follows the
+      <cdx-internal-link [inline]="true" [url]="'/foundations/ai'" [text]="'AI foundation'"></cdx-internal-link>'s
+      Trustworthy principle.
+    </p>
+
+    <h2>Three limit states</h2>
+    <ul>
+      <li><strong>Quota remaining</strong> — quiet "N of M left today" near the composer.</li>
+      <li><strong>Context too long</strong> — a <code>warn</code> banner → Start a new chat.</li>
+      <li><strong>Quota reached / rate limited</strong> — a <code>negative</code> banner + disable the composer; say when it resets.</li>
+    </ul>
+
+    <mat-divider></mat-divider>
+
+    <h2>Do</h2>
+    <ul>
+      <li>Show remaining quota quietly, before it runs out.</li>
+      <li>Use <code>hlx-notification</code> (warn approaching, negative when blocked), with a next step.</li>
+      <li>Disable the composer when input can't be sent.</li>
+    </ul>
+
+    <h2>Don't</h2>
+    <ul>
+      <li>Hide the quota until the user is blocked.</li>
+      <li>Treat a limit as a red error with no way forward.</li>
+      <li>Leave the composer enabled when it can't send.</li>
+    </ul>
+  </div>
+
+  <div code>
+    <h2>A limit is a notification, not an error</h2>
+    <cdx-highlight [text]="bannerSnippet" language="html"></cdx-highlight>
+
+    <mat-divider></mat-divider>
+
+    <h2>Example</h2>
+    <p>Switch scenarios to see the quota, the context-limit warn banner, and the blocked state (composer disabled).</p>
+    @for (sample of sampleList; track sample.exampleName) {
+      <hlx-example-viewer [inputViewerComponent]="sample" />
+    }
+  </div>
+</hlx-page>
