@@ -1,0 +1,57 @@
+<hlx-page
+  [section]="'Patterns'"
+  [title]="'Inline AI actions'"
+  [subtitle]="'Bring the assistant to the content: AI actions (summarise, explain, ask about this) attached to a document or a selection, with the result shown in place or sent to the assistant — not a detour to a separate chat.'"
+  tabbed
+>
+  <div overview>
+    <p>
+      Sometimes the fastest path is to bring the assistant <strong>to the
+      content</strong> rather than sending the user to a chat. Attach AI actions —
+      summarise, explain, ask about this — to a document, a row or a text
+      selection, and either seed the assistant with a scoped prompt or show the
+      result in place. Builds on the
+      <cdx-internal-link [inline]="true" [url]="'/patterns/ai-assistant'" [text]="'AI assistant'"></cdx-internal-link>
+      and the
+      <cdx-internal-link [inline]="true" [url]="'/foundations/ai'" [text]="'AI foundation'"></cdx-internal-link>'s
+      Assistive principle.
+    </p>
+
+    <h2>Two triggers</h2>
+    <ul>
+      <li><strong>Per-item actions</strong> — an action row on a document/card ("Summarise", "Ask about this"). Explicit and discoverable.</li>
+      <li><strong>Selection action</strong> — a floating "Ask AI" button near a text selection, keyboard-reachable and dismissible.</li>
+    </ul>
+    <p>Both build a <strong>scoped prompt</strong> and either seed the composer (user edits, then sends) or render the result inline.</p>
+
+    <mat-divider></mat-divider>
+
+    <h2>Do</h2>
+    <ul>
+      <li>Scope each action to specific content and name that scope.</li>
+      <li>Seed the composer or show the result inline; never fire a hidden prompt.</li>
+      <li>Attach actions where the content is; mark them with the AI treatment.</li>
+      <li>Make them real, keyboard-reachable controls.</li>
+    </ul>
+
+    <h2>Don't</h2>
+    <ul>
+      <li>Send the user to a separate chat to ask about what's on screen.</li>
+      <li>Clutter every element with AI actions.</li>
+      <li>Use a hover-only selection button with no keyboard path.</li>
+    </ul>
+  </div>
+
+  <div code>
+    <h2>Seed a scoped prompt</h2>
+    <cdx-highlight [text]="seedSnippet"></cdx-highlight>
+
+    <mat-divider></mat-divider>
+
+    <h2>Example</h2>
+    <p>"Summarise" shows the AI result inline (avatar + disclosure); "Ask about this" would seed the assistant with a scoped prompt.</p>
+    @for (sample of sampleList; track sample.exampleName) {
+      <hlx-example-viewer [inputViewerComponent]="sample" />
+    }
+  </div>
+</hlx-page>

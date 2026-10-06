@@ -112,6 +112,13 @@ export const patternsRoutes: Routes = [
           ),
       },
       {
+        path: 'ai-inline-actions',
+        loadComponent: () =>
+          import('./ai-inline-actions/ai-inline-actions').then(
+            (m) => m.AiInlineActions,
+          ),
+      },
+      {
         path: 'charts',
         loadComponent: () =>
           import('./charts/charts').then((m) => m.Charts),

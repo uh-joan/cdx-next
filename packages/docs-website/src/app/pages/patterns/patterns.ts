@@ -69,6 +69,10 @@ export class Patterns {
       elements: [{ label: 'Overview', url: 'ai-usage-limits' }],
     },
     {
+      heading: 'Inline AI actions',
+      elements: [{ label: 'Overview', url: 'ai-inline-actions' }],
+    },
+    {
       heading: 'Data grid',
       elements: [{ label: 'Overview', url: 'data-grid' }],
     },
