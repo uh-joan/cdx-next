@@ -91,6 +91,13 @@ export const patternsRoutes: Routes = [
           import('./ai-assistant/ai-assistant').then((m) => m.AiAssistant),
       },
       {
+        path: 'ai-prompt-starters',
+        loadComponent: () =>
+          import('./ai-prompt-starters/ai-prompt-starters').then(
+            (m) => m.AiPromptStarters,
+          ),
+      },
+      {
         path: 'charts',
         loadComponent: () =>
           import('./charts/charts').then((m) => m.Charts),

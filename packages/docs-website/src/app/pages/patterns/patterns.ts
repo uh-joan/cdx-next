@@ -57,6 +57,10 @@ export class Patterns {
       elements: [{ label: 'Overview', url: 'ai-assistant' }],
     },
     {
+      heading: 'AI prompt starters',
+      elements: [{ label: 'Overview', url: 'ai-prompt-starters' }],
+    },
+    {
       heading: 'Data grid',
       elements: [{ label: 'Overview', url: 'data-grid' }],
     },
