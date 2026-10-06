@@ -24,6 +24,7 @@ import {
   readdirSync,
   existsSync,
   mkdirSync,
+  rmSync,
 } from 'node:fs';
 import { join, dirname, relative } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -46,7 +47,11 @@ const overridesScss = join(
 // into the @cdx/helix-ai payload; its `sync` CLI writes it into a consumer's
 // .claude/skills/helix-patterns (where Claude Code discovers it), plus the
 // committed AGENTS.md and Copilot instructions.
-const skillDir = join(repoRoot, '.github/skills/helix-patterns');
+const skillsRoot = join(repoRoot, '.github/skills');
+const skillDir = join(skillsRoot, 'helix-patterns');
+// Hand-authored skills mirrored into the @cdx/helix-ai payload verbatim, so the
+// CLI ships the whole Helix skill set (patterns + components + project setup).
+const siblingSkills = ['helix-components', 'helix-project-setup'];
 const agentsFile = join(repoRoot, 'AGENTS.md');
 const copilotFile = join(
   repoRoot,
@@ -97,6 +102,17 @@ function findGuides(dir) {
     const full = join(dir, entry.name);
     if (entry.isDirectory()) out.push(...findGuides(full));
     else if (entry.name.endsWith('.guide.md')) out.push(full);
+  }
+  return out;
+}
+
+/** List every file under `dir`, relative to it. */
+function listFilesRec(dir, base = dir) {
+  const out = [];
+  for (const entry of readdirSync(dir, { withFileTypes: true })) {
+    const full = join(dir, entry.name);
+    if (entry.isDirectory()) out.push(...listFilesRec(full, base));
+    else out.push(relative(base, full));
   }
   return out;
 }
@@ -294,7 +310,7 @@ async function formatMd(content, file) {
 }
 
 // Render the skill once (SKILL.md + one reference per pattern); it is emitted
-// both to this repo's .claude/skills (dogfood) and to the @cdx/helix-ai payload.
+// both to this repo's .github/skills (dogfood) and to the @cdx/helix-ai payload.
 const skillSkillMd = await formatMd(
   renderSkill(patterns),
   join(skillDir, 'SKILL.md'),
@@ -326,9 +342,24 @@ for (const [rel, content] of skillRefs) files.set(join(skillDir, rel), content);
 files.set(agentsFile, agentsFileContent);
 files.set(copilotFile, copilotContent);
 // 2) Distributable payload bundled into @cdx/helix-ai (written by its sync CLI).
-files.set(join(payloadDir, 'skill', 'SKILL.md'), skillSkillMd);
+// All three Helix skills ship, under payload/skills/<name>/.
+const payloadSkills = join(payloadDir, 'skills');
+files.set(join(payloadSkills, 'helix-patterns', 'SKILL.md'), skillSkillMd);
 for (const [rel, content] of skillRefs) {
-  files.set(join(payloadDir, 'skill', rel), content);
+  files.set(join(payloadSkills, 'helix-patterns', rel), content);
+}
+for (const name of siblingSkills) {
+  const dir = join(skillsRoot, name);
+  if (!existsSync(dir)) {
+    console.error(
+      `✗ sibling skill "${name}" not found at ${relative(repoRoot, dir)}`,
+    );
+    process.exit(1);
+  }
+  for (const rel of listFilesRec(dir)) {
+    // Mirror hand-authored skills byte-for-byte (no reformat).
+    files.set(join(payloadSkills, name, rel), readFileSync(join(dir, rel), 'utf8'));
+  }
 }
 files.set(join(payloadDir, 'agents-section.md'), agentsSection);
 files.set(join(payloadDir, 'copilot-instructions.md'), copilotContent);
@@ -342,6 +373,18 @@ if (isCheck) {
       console.error(`  ✗ stale: ${relative(repoRoot, file)}`);
     }
   }
+  // Flag any orphaned payload files (e.g. a removed skill/reference) so the
+  // shipped payload never drifts from the source.
+  if (existsSync(payloadDir)) {
+    const wanted = new Set([...files.keys()]);
+    for (const rel of listFilesRec(payloadDir)) {
+      const full = join(payloadDir, rel);
+      if (!wanted.has(full)) {
+        stale = true;
+        console.error(`  ✗ orphan payload file: ${relative(repoRoot, full)}`);
+      }
+    }
+  }
   if (stale) {
     console.error(
       '\nGenerated Helix guidance files are out of date.\n' +
@@ -350,15 +393,17 @@ if (isCheck) {
     process.exit(1);
   }
   console.log(
-    `✓ ${patterns.length} pattern(s) in sync (skill + AGENTS.md + Copilot + payload), all hlx-* classes valid.`,
+    `✓ ${patterns.length} pattern(s) in sync (skills + AGENTS.md + Copilot + payload), all hlx-* classes valid.`,
   );
 } else {
+  // Rewrite the payload from scratch so renamed/removed files don't linger.
+  if (existsSync(payloadDir)) rmSync(payloadDir, { recursive: true });
   for (const [file, content] of files) {
     mkdirSync(dirname(file), { recursive: true });
     writeFileSync(file, content);
     console.log(`  wrote ${relative(repoRoot, file)}`);
   }
   console.log(
-    `✓ generated guidance from ${patterns.length} pattern(s): skill, AGENTS.md, Copilot instructions, and @cdx/helix-ai payload.`,
+    `✓ generated guidance from ${patterns.length} pattern(s): 3 skills, AGENTS.md, Copilot instructions, and @cdx/helix-ai payload.`,
   );
 }

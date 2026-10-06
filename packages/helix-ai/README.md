@@ -6,11 +6,16 @@ installed.
 
 It writes, from the guidance bundled in this package:
 
-| Format               | Written to                                            | Read by                                                              |
-| -------------------- | ----------------------------------------------------- | -------------------------------------------------------------------- |
-| Agent Skill          | `.claude/skills/helix-patterns/`                      | Claude Code and skill-aware agents                                   |
-| AGENTS.md block      | a managed block in `AGENTS.md`                        | Cursor, Codex, the Copilot coding agent, and other cross-tool agents |
-| Copilot instructions | `.github/instructions/helix-patterns.instructions.md` | GitHub Copilot in the IDE                                            |
+| Format               | Written to                                                              | Read by                                                              |
+| -------------------- | ----------------------------------------------------------------------- | -------------------------------------------------------------------- |
+| Agent Skills         | `.claude/skills/{helix-patterns,helix-components,helix-project-setup}/` | Claude Code and skill-aware agents                                   |
+| AGENTS.md block      | a managed block in `AGENTS.md`                                          | Cursor, Codex, the Copilot coding agent, and other cross-tool agents |
+| Copilot instructions | `.github/instructions/helix-patterns.instructions.md`                   | GitHub Copilot in the IDE                                            |
+
+The skills cover **project setup** (`helix-project-setup` — install and theme a
+new app), **components** (`helix-components` — variants, tokens), and
+**patterns** (`helix-patterns` — composed UI), so `sync` bootstraps a greenfield
+repo as well as an existing one.
 
 The guidance is generated once from each pattern's `*.guide.md` in `cdx-next`
 (`tools/patterns/generate-pattern-ai.mjs`) and baked into this package at
