@@ -26,7 +26,7 @@ import {
   mkdirSync,
   rmSync,
 } from 'node:fs';
-import { join, dirname, relative } from 'node:path';
+import { join, dirname, relative, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import yaml from 'js-yaml';
 import prettier from 'prettier';
@@ -58,11 +58,18 @@ const copilotFile = join(
   '.github/instructions/helix-patterns.instructions.md',
 );
 const payloadDir = join(repoRoot, 'packages/helix-ai/payload');
+const cliSource = join(repoRoot, 'packages/helix-ai/src/cli.mjs');
 const guidanceVersion = JSON.parse(
   readFileSync(join(repoRoot, 'packages/helix-ai/package.json'), 'utf8'),
 ).version;
 
 const isCheck = process.argv.includes('--check');
+// `--export <dir>` emits the standalone helix-skills bundle (skills + AGENTS +
+// Copilot + a copy of the sync CLI) to <dir>, decoupled from @cdx/* — for the
+// public helix-skills repo. It does not touch this repo's files.
+const exportIdx = process.argv.indexOf('--export');
+const exportDir =
+  exportIdx !== -1 ? resolve(repoRoot, process.argv[exportIdx + 1] ?? '') : null;
 const errors = [];
 
 /** Parse `---\n<yaml>\n---\n<body>` into { data, body }. */
@@ -286,6 +293,64 @@ ${renderAgentsSection(patterns).trim()}
 `;
 }
 
+/** README for the standalone helix-skills distribution repo. */
+function renderStandaloneReadme(patterns) {
+  return `# helix-skills
+
+AI coding guidance for the **Helix** design system (Angular / Material 3) —
+Agent Skills, an \`AGENTS.md\` block and GitHub Copilot instructions, so
+Claude Code, Cursor and Copilot write correct, on-brand Helix code.
+
+> **Generated — do not edit by hand.** Authored in \`cdx-next\` (one
+> \`*.guide.md\` per pattern) and exported here with
+> \`node tools/patterns/generate-pattern-ai.mjs --export <dir>\`. This repo is a
+> distribution mirror, independent of the \`@cdx/*\` npm packages and registry.
+
+## What's here
+
+- \`skills/helix-project-setup\` — install and theme a new app
+- \`skills/helix-components\` — component variants and tokens
+- \`skills/helix-patterns\` — ${patterns.length} composed UI patterns
+- \`agents-section.md\` — the cross-tool \`AGENTS.md\` block
+- \`copilot-instructions.md\` — GitHub Copilot path instructions
+- \`src/cli.mjs\` — a zero-dependency sync CLI
+
+## Use it in your repo
+
+Run the bundled sync CLI (writes the skills to \`.claude/skills\`, merges the
+\`AGENTS.md\` block, and writes the Copilot file):
+
+\`\`\`bash
+npx github:uh-joan/helix-skills sync      # or: node /path/to/helix-skills/src/cli.mjs sync
+\`\`\`
+
+Or pull just the skills with the Agent Skills CLI:
+
+\`\`\`bash
+npx skills add uh-joan/helix-skills
+\`\`\`
+
+(While the repo is private, both need access to it.)
+
+## Versioning
+
+The guidance tracks a Helix major. Pin by **git tag** (e.g. \`v22\`) rather than
+an npm version:
+
+\`\`\`bash
+npx github:uh-joan/helix-skills#v22 sync
+\`\`\`
+
+The CLI warns if the \`@cdx/*\` version installed in your target repo doesn't
+match; pass \`--strict\` to make that a hard stop.
+
+## Note
+
+This is guidance, not the components. Your app still installs the real
+\`@cdx/*\` packages — the skills tell the agent how to compose them.
+`;
+}
+
 // ---- run -------------------------------------------------------------------
 
 const guides = findGuides(patternsDir).sort();
@@ -363,6 +428,71 @@ for (const name of siblingSkills) {
 }
 files.set(join(payloadDir, 'agents-section.md'), agentsSection);
 files.set(join(payloadDir, 'copilot-instructions.md'), copilotContent);
+
+// ---- standalone export (helix-skills repo) ---------------------------------
+if (exportDir) {
+  const bundle = new Map();
+  // Skills at the repo root so `npx skills add <repo>` discovers them, and so the
+  // shared CLI (which falls back to the repo root when there's no payload/) reads
+  // them. helix-patterns is generated; the siblings are mirrored verbatim.
+  bundle.set(join(exportDir, 'skills/helix-patterns/SKILL.md'), skillSkillMd);
+  for (const [rel, content] of skillRefs) {
+    bundle.set(join(exportDir, 'skills/helix-patterns', rel), content);
+  }
+  for (const name of siblingSkills) {
+    const dir = join(skillsRoot, name);
+    for (const rel of listFilesRec(dir)) {
+      bundle.set(
+        join(exportDir, 'skills', name, rel),
+        readFileSync(join(dir, rel), 'utf8'),
+      );
+    }
+  }
+  bundle.set(join(exportDir, 'agents-section.md'), agentsSection);
+  bundle.set(join(exportDir, 'copilot-instructions.md'), copilotContent);
+  bundle.set(join(exportDir, 'src/cli.mjs'), readFileSync(cliSource, 'utf8'));
+  bundle.set(
+    join(exportDir, 'package.json'),
+    JSON.stringify(
+      {
+        name: 'helix-skills',
+        version: guidanceVersion,
+        description:
+          'Helix design-system AI coding guidance (Agent Skills + AGENTS.md + Copilot instructions). Generated from cdx-next; distributed independently of @cdx/*.',
+        type: 'module',
+        bin: { 'helix-skills': 'src/cli.mjs' },
+        files: [
+          'src',
+          'skills',
+          'agents-section.md',
+          'copilot-instructions.md',
+          'README.md',
+        ],
+      },
+      null,
+      2,
+    ) + '\n',
+  );
+  bundle.set(
+    join(exportDir, 'README.md'),
+    await formatMd(renderStandaloneReadme(patterns), join(exportDir, 'README.md')),
+  );
+
+  // Rewrite the bundle's own tree (keep a user .git if present) so renames/removals
+  // don't linger, then write.
+  for (const sub of ['skills', 'src']) {
+    const p = join(exportDir, sub);
+    if (existsSync(p)) rmSync(p, { recursive: true });
+  }
+  for (const [file, content] of bundle) {
+    mkdirSync(dirname(file), { recursive: true });
+    writeFileSync(file, content);
+  }
+  console.log(
+    `✓ exported helix-skills bundle (${patterns.length} patterns + 2 skills) to ${relative(repoRoot, exportDir) || exportDir}`,
+  );
+  process.exit(0);
+}
 
 if (isCheck) {
   let stale = false;
