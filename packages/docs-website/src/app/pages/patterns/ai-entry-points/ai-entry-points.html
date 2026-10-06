@@ -1,0 +1,60 @@
+<hlx-page
+  [section]="'Patterns'"
+  [title]="'AI entry points'"
+  [subtitle]="'Where and how the user reaches AI — a header/rail trigger, a floating action button, and a one-time promo banner — all wearing the same Helix AI treatment so AI is recognisable and leads to one assistant surface.'"
+  tabbed
+>
+  <div overview>
+    <p>
+      Before the user can talk to the assistant, they have to <strong>find
+      it</strong>. Every app surfaces AI differently — reg-ai a sidebar rail, cmc a
+      header button, off-x a floating action button — and none uses the Helix AI
+      primitives, so each screen reinvents the look. This pattern settles
+      <strong>where</strong> AI lives and <strong>how</strong> the entry wears the AI
+      treatment, grounded in the
+      <cdx-internal-link [inline]="true" [url]="'/foundations/ai'" [text]="'AI foundation'"></cdx-internal-link>'s
+      Transparent principle. For AI scoped to on-screen content use
+      <cdx-internal-link [inline]="true" [url]="'/patterns/ai-inline-actions'" [text]="'inline AI actions'"></cdx-internal-link>;
+      the surface they all open is the
+      <cdx-internal-link [inline]="true" [url]="'/patterns/ai-assistant'" [text]="'AI assistant'"></cdx-internal-link>.
+    </p>
+
+    <h2>The three surfaces</h2>
+    <ul>
+      <li><strong>Primary trigger</strong> — a header button or rail (<code>hlx-btn-ai</code>). The always-there way in.</li>
+      <li><strong>Floating action button</strong> — an extended FAB (<code>hlx-btn-ai</code>) with an accessible name, for busy headers.</li>
+      <li><strong>Promo banner</strong> — a one-time, dismissible invitation using the AI gradient and an <code>hlx-ai-avatar</code>.</li>
+    </ul>
+
+    <mat-divider></mat-divider>
+
+    <h2>Do</h2>
+    <ul>
+      <li>Give one clear primary entry, marked with the AI treatment.</li>
+      <li>Label every trigger; give a FAB an accessible name.</li>
+      <li>Make the promo dismissible and keep it dismissed.</li>
+      <li>Lead every entry to the same assistant surface.</li>
+    </ul>
+
+    <h2>Don't</h2>
+    <ul>
+      <li>Ship a bare, unlabelled sparkle.</li>
+      <li>Reinvent the AI look per screen.</li>
+      <li>Make the promo permanent or interrupt the task with a modal.</li>
+    </ul>
+  </div>
+
+  <div code>
+    <h2>One treatment, one destination</h2>
+    <p>The header button, the FAB and the banner share the same gradient and sparkle, and every entry opens the same assistant surface. The promo introduces the capability once, then stays dismissed.</p>
+    <cdx-highlight [text]="promoSnippet"></cdx-highlight>
+
+    <mat-divider></mat-divider>
+
+    <h2>Example</h2>
+    <p>Three entry points on one shell — a header button, an extended FAB, and a dismissible promo banner. Each opens the same assistant; dismiss the promo and it stays gone.</p>
+    @for (sample of sampleList; track sample.exampleName) {
+      <hlx-example-viewer [inputViewerComponent]="sample" />
+    }
+  </div>
+</hlx-page>

@@ -126,6 +126,13 @@ export const patternsRoutes: Routes = [
           ),
       },
       {
+        path: 'ai-entry-points',
+        loadComponent: () =>
+          import('./ai-entry-points/ai-entry-points').then(
+            (m) => m.AiEntryPoints,
+          ),
+      },
+      {
         path: 'charts',
         loadComponent: () =>
           import('./charts/charts').then((m) => m.Charts),
