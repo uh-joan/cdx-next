@@ -661,6 +661,15 @@ Z'/>\
     --mat-tab-active-hover-indicator-color: #{tokens.$text-invert};
   }
 
+  // Compact tabs: a shorter tab bar (36px vs the default 48px) and a thinner
+  // active indicator, for dense in-panel tabs, side panels and toolbars where the
+  // default tab height is too tall. Custom-property driven — no MDC selectors — so
+  // it composes with hlx-tab-invert and the usual tab states.
+  .hlx-tab-compact {
+    --mat-tab-container-height: 36px;
+    --mat-tab-active-indicator-height: 2px;
+  }
+
   .hlx-btn-large {
     button.mdc-button {
       height: 56px;

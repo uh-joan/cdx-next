@@ -62,6 +62,28 @@
       <code>&lt;mat-icon svgIcon="hlx:ai-summary"&gt;&lt;/mat-icon&gt;</code>.
     </p>
 
+    <h2>Setup in your app</h2>
+    <p>
+      Wire icons once at the app level. Load a <strong>single</strong> Material
+      Symbols family (Outlined, the Helix settings) and register the custom icons
+      through <code>provideHelixIcons()</code> — don't scatter
+      <code>MatIconRegistry.addSvgIcon</code> calls across components.
+    </p>
+    <cdx-highlight [text]="setupSnippet"></cdx-highlight>
+
+    <h3>Do</h3>
+    <ul>
+      <li>Load one Material Symbols family (Outlined) once, in <code>index.html</code>.</li>
+      <li>Register custom, AI and pictogram icons once with <code>provideHelixIcons()</code>.</li>
+      <li>Reference Material icons by name; custom ones via the <code>hlx:</code> / <code>hlx-pictogram:</code> namespaces.</li>
+    </ul>
+    <h3>Don't</h3>
+    <ul>
+      <li>Load several Material icon families (Filled, Rounded, Sharp…) when you use one.</li>
+      <li>Ship a bespoke icon font — use the shared Helix set.</li>
+      <li>Register the same SVGs in multiple places; do it once at app config.</li>
+    </ul>
+
     <h2>Examples</h2>
     @for (sample of sampleList; track sample.exampleName) {
     <hlx-example-viewer [inputViewerComponent]="sample" />
