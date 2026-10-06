@@ -4,7 +4,8 @@
  *
  * Writes the guidance that ships with THIS package version into a target repo,
  * in the formats each AI tool reads:
- *   - Agent Skill   → <target>/.claude/skills/helix-patterns/   (Claude Code / skill-aware agents)
+ *   - Agent Skills  → <target>/.claude/skills/<name>/   (helix-patterns, helix-components,
+ *                     helix-project-setup — Claude Code / skill-aware agents)
  *   - AGENTS.md     → a managed block in <target>/AGENTS.md       (cross-tool: Cursor, Copilot agent, Codex, …)
  *   - Copilot       → <target>/.github/instructions/helix-patterns.instructions.md
  *
@@ -88,7 +89,7 @@ Usage:
 
 Options:
   --all          write every format (default)
-  --skill        write only the Agent Skill (.claude/skills/helix-patterns)
+  --skill        write only the Agent Skills (.claude/skills/*)
   --agents       write only the AGENTS.md block
   --copilot      write only the Copilot instructions
   --dir <path>   target repo (default: current directory)
@@ -139,20 +140,24 @@ function write(file, content, { dryRun }, changes) {
   writeFileSync(file, content);
 }
 
-function syncSkill(targetDir, opts, changes) {
-  const src = join(payloadDir, 'skill');
-  const dest = join(targetDir, '.claude', 'skills', 'helix-patterns');
-  const wanted = new Set(listFiles(src));
-  for (const rel of wanted) {
-    write(join(dest, rel), readFileSync(join(src, rel), 'utf8'), opts, changes);
-  }
-  // Remove stale files (e.g. a reference for a pattern that no longer exists),
-  // but only ones we own under the skill dir.
-  if (existsSync(dest)) {
-    for (const rel of listFiles(dest)) {
-      if (!wanted.has(rel)) {
-        changes.push(`remove  ${join(dest, rel)}`);
-        if (!opts.dryRun) rmSync(join(dest, rel));
+function syncSkills(targetDir, opts, changes) {
+  const skillsRoot = join(payloadDir, 'skills');
+  for (const name of readdirSync(skillsRoot)) {
+    const src = join(skillsRoot, name);
+    if (!statSync(src).isDirectory()) continue;
+    const dest = join(targetDir, '.claude', 'skills', name);
+    const wanted = new Set(listFiles(src));
+    for (const rel of wanted) {
+      write(join(dest, rel), readFileSync(join(src, rel), 'utf8'), opts, changes);
+    }
+    // Remove stale files (e.g. a reference that no longer exists), but only ones
+    // we own under this skill dir.
+    if (existsSync(dest)) {
+      for (const rel of listFiles(dest)) {
+        if (!wanted.has(rel)) {
+          changes.push(`remove  ${join(dest, rel)}`);
+          if (!opts.dryRun) rmSync(join(dest, rel));
+        }
       }
     }
   }
@@ -236,7 +241,7 @@ function main() {
   }
 
   const changes = [];
-  if (opts.formats.has('skill')) syncSkill(targetDir, opts, changes);
+  if (opts.formats.has('skill')) syncSkills(targetDir, opts, changes);
   if (opts.formats.has('agents')) syncAgents(targetDir, opts, changes);
   if (opts.formats.has('copilot')) syncCopilot(targetDir, opts, changes);
 

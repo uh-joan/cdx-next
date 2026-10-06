@@ -8,3 +8,8 @@
 .angular
 /.nx/workspace-data
 CHANGELOG.md
+
+# Generated/bundled AI-guidance payload for @cdx/helix-ai — mirrors its sources
+# byte-for-byte (the generator is its sole author); formatting it would break the
+# drift check in tools/patterns/generate-pattern-ai.mjs.
+packages/helix-ai/payload
