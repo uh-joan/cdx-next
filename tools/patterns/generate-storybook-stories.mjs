@@ -174,7 +174,7 @@ if (isCheck) {
     }
   }
   if (drift) {
-    console.error('\nRun `npm run gen:stories` and commit the result.');
+    console.error('\nRun `npm run patterns:stories` and commit the result.');
     process.exit(1);
   }
   console.log(`✓ ${wanted.size} pattern story file(s) in sync.`);
