@@ -73,6 +73,10 @@ export class Patterns {
       elements: [{ label: 'Overview', url: 'ai-inline-actions' }],
     },
     {
+      heading: 'AI generate & rewrite',
+      elements: [{ label: 'Overview', url: 'ai-generate-field' }],
+    },
+    {
       heading: 'Data grid',
       elements: [{ label: 'Overview', url: 'data-grid' }],
     },

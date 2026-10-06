@@ -1,0 +1,54 @@
+<hlx-page
+  [section]="'Patterns'"
+  [title]="'AI generate & rewrite'"
+  [subtitle]="'A one-shot AI action on a single field — draft, rewrite, shorten, fix — that proposes new text the user reviews and accepts, discards or regenerates, with an undo. Not a conversation.'"
+  tabbed
+>
+  <div overview>
+    <p>
+      Not every AI help is a conversation. Often the user just wants to draft or
+      revise <strong>one field</strong>. A one-shot action proposes new text and
+      lets the user <strong>accept, discard or regenerate</strong>, with an undo.
+      No app in the suite does this yet — it's net-new guidance, grounded in the
+      <cdx-internal-link [inline]="true" [url]="'/foundations/ai'" [text]="'AI foundation'"></cdx-internal-link>'s
+      Assistive principle (and where the
+      <cdx-internal-link [inline]="true" [url]="'/patterns/ai-assistant'" [text]="'AI assistant'"></cdx-internal-link>
+      pattern sends one-shot actions).
+    </p>
+
+    <h2>When to use it</h2>
+    <p>Writing or revising one field or block of text in place. An open-ended or multi-turn task is the assistant.</p>
+
+    <mat-divider></mat-divider>
+
+    <h2>Do</h2>
+    <ul>
+      <li>Propose the text for review; make Accept undoable and Discard lossless.</li>
+      <li>Offer specific, named actions (Draft, Rewrite, Shorten, Fix grammar).</li>
+      <li>Show generating and error states.</li>
+      <li>Mark the control and proposal as AI; note it should be checked.</li>
+    </ul>
+
+    <h2>Don't</h2>
+    <ul>
+      <li>Overwrite the field silently, with no review or undo.</li>
+      <li>Ship a vague "AI" button with no idea what it does.</li>
+      <li>Give one take with no regenerate.</li>
+      <li>Lose the user's original text on discard.</li>
+    </ul>
+  </div>
+
+  <div code>
+    <h2>Propose, don't replace</h2>
+    <p>The flow is always act → generating → proposal → accept / discard / regenerate. Accept replaces the field (undoable); Discard restores the original exactly.</p>
+    <cdx-highlight [text]="flowSnippet"></cdx-highlight>
+
+    <mat-divider></mat-divider>
+
+    <h2>Example</h2>
+    <p>Use the AI menu to Draft / Rewrite / Shorten the field — the suggestion appears for review; Accept it (then Undo), Regenerate, or Discard.</p>
+    @for (sample of sampleList; track sample.exampleName) {
+      <hlx-example-viewer [inputViewerComponent]="sample" />
+    }
+  </div>
+</hlx-page>
