@@ -22,7 +22,7 @@
       ],
       "@hlx/ngx-translations": ["packages/ngx-translations/src/index.ts"],
       "@hlx/oti-snippet": ["packages/oti-snippet/src/index.ts"],
-      "@cdx/theme-angular-material": [
+      "@hlx/theme-angular-material": [
         "packages/theme-angular-material/src/index.ts"
       ],
       "@cdx/theme-ag-grid": ["packages/theme-ag-grid/dist/theme-ag-grid.mjs"],

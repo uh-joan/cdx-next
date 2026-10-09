@@ -1,5 +1,5 @@
 {
-  "name": "@cdx/theme-angular-material",
+  "name": "@hlx/theme-angular-material",
   "version": "22.0.0-alpha.1",
   "exports": {
     ".": {
@@ -13,6 +13,6 @@
   },
   "peerDependencies": {
     "@angular/material": "^22",
-    "@cdx/colors": "22.0.0-alpha.1"
+    "@hlx/colors": "22.0.0-alpha.1"
   }
 }
