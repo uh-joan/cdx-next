@@ -7,7 +7,7 @@
 >
   <div
     class="cdx-circle cdx-circle--{{ currentTheme }}"
-    [class.cdx-circle-dark]="(currentMode$ | async) === 'dark'"
+    [class.cdx-circle-dark]="currentMode() === 'dark'"
   ></div>
 </button>
 <mat-menu #menu="matMenu">
@@ -15,7 +15,7 @@
     <button mat-menu-item (click)="selectTheme(theme)">
       <div
         class="cdx-circle cdx-circle--{{ theme }}"
-        [class.cdx-circle-dark]="(currentMode$ | async) === 'dark'"
+        [class.cdx-circle-dark]="currentMode() === 'dark'"
       ></div>
       {{ theme | titlecase }}
     </button>

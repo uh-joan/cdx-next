@@ -1,6 +1,5 @@
 import { TitleCasePipe } from '@angular/common';
 import { Component, computed, inject } from '@angular/core';
-import { toSignal } from '@angular/core/rxjs-interop';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTabsModule } from '@angular/material/tabs';
 import { RouterModule } from '@angular/router';
@@ -49,9 +48,7 @@ import { ThemeSelectorComponent } from '../theme-selector/theme-selector.compone
 })
 export class LayoutComponent {
   themeService = inject(ThemeService);
-  private currentTheme = toSignal(this.themeService.currentTheme$, {
-    initialValue: '',
-  });
+  private currentTheme = this.themeService.currentTheme;
   isHelix = computed(() => this.currentTheme() === 'helix');
 
   links = [
