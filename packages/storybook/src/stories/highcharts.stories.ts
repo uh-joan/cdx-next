@@ -1,4 +1,4 @@
-import { HIGHCHARTS_HLX_THEME } from '@cdx/theme-highcharts';
+import { HIGHCHARTS_HLX_THEME } from '@hlx/theme-highcharts';
 import {
   applicationConfig,
   type Meta,
@@ -102,7 +102,7 @@ const meta: Meta<HighchartsArgs> = {
     docs: {
       description: {
         component:
-          '`<highcharts-chart>` from `highcharts-angular` with the Helix theme `HIGHCHARTS_HLX_THEME` from `@cdx/theme-highcharts`. In an app, apply the theme once with `Highcharts.setOptions(HIGHCHARTS_HLX_THEME)`; here it is merged per chart so it can be toggled.',
+          '`<highcharts-chart>` from `highcharts-angular` with the Helix theme `HIGHCHARTS_HLX_THEME` from `@hlx/theme-highcharts`. In an app, apply the theme once with `Highcharts.setOptions(HIGHCHARTS_HLX_THEME)`; here it is merged per chart so it can be toggled.',
       },
     },
   },

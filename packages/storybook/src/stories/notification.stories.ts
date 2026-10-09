@@ -1,6 +1,6 @@
 import { MatButton } from '@angular/material/button';
 import { MatIcon } from '@angular/material/icon';
-import { HelixNotificationComponent } from '@cdx/ngx-branding';
+import { HelixNotificationComponent } from '@hlx/ngx-branding';
 import { type Meta, moduleMetadata, type StoryObj } from '@storybook/angular';
 
 type NotificationArgs = {
@@ -25,7 +25,7 @@ const meta: Meta<NotificationArgs> = {
     docs: {
       description: {
         component:
-          '`<hlx-notification>` from `@cdx/ngx-branding`. Severity sets the colors and default icon; `presentation` switches between an inline message and a full-width banner. Custom icons and extra buttons are projected with the `icon` and `actions` attributes.',
+          '`<hlx-notification>` from `@hlx/ngx-branding`. Severity sets the colors and default icon; `presentation` switches between an inline message and a full-width banner. Custom icons and extra buttons are projected with the `icon` and `actions` attributes.',
       },
     },
   },

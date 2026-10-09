@@ -13,9 +13,9 @@
     "noImplicitReturns": true,
     "noPropertyAccessFromIndexSignature": true,
     "paths": {
-      "@cdx/ngx-branding": ["packages/ngx-branding/src/index.ts"],
-      "@cdx/theme-highcharts": ["packages/theme-highcharts/src/index.ts"],
-      "@cdx/theme-angular-material": [
+      "@hlx/ngx-branding": ["packages/ngx-branding/src/index.ts"],
+      "@hlx/theme-highcharts": ["packages/theme-highcharts/src/index.ts"],
+      "@hlx/theme-angular-material": [
         "packages/theme-angular-material/src/index.ts"
       ]
     },

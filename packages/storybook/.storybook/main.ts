@@ -21,15 +21,15 @@ const config: StorybookConfig = {
         // Use library sources so stories don't depend on a prior build.
         alias: [
           {
-            find: /^@cdx\/ngx-branding$/,
+            find: /^@hlx\/ngx-branding$/,
             replacement: resolve(packagesDir, 'ngx-branding/src/index.ts'),
           },
           {
-            find: /^@cdx\/theme-highcharts$/,
+            find: /^@hlx\/theme-highcharts$/,
             replacement: resolve(packagesDir, 'theme-highcharts/src/index.ts'),
           },
           {
-            find: /^@cdx\/theme-angular-material$/,
+            find: /^@hlx\/theme-angular-material$/,
             replacement: resolve(
               packagesDir,
               'theme-angular-material/src/index.ts',
