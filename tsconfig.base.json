@@ -26,7 +26,7 @@
         "packages/theme-angular-material/src/index.ts"
       ],
       "@cdx/theme-ag-grid": ["packages/theme-ag-grid/dist/theme-ag-grid.mjs"],
-      "@cdx/theme-highcharts": [
+      "@hlx/theme-highcharts": [
         "packages/theme-highcharts/dist/theme-highcharts.mjs"
       ],
       "@hlx/theme-xng-breadcrumb": [

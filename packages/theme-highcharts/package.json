@@ -1,5 +1,5 @@
 {
-  "name": "@cdx/theme-highcharts",
+  "name": "@hlx/theme-highcharts",
   "version": "22.0.0-alpha.1",
   "type": "module",
   "exports": {
