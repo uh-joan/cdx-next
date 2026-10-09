@@ -86,7 +86,9 @@ export class LanguageSelectorComponent implements OnInit {
   private translateService: TranslateService = inject(TranslateService);
 
   ngOnInit(): void {
-    this.translateService.translations = this.APP_TRANSLATIONS;
+    Object.entries(this.APP_TRANSLATIONS).forEach(([lang, translations]) => {
+      this.translateService.setTranslation(lang, translations);
+    });
     this.ngxTranslationsService.mergeTranslationsLabels(
       Object.keys(this.APP_TRANSLATIONS),
     );
