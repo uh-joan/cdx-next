@@ -9,10 +9,10 @@ import {
   AnalyticsContextSchema,
   AnalyticsModule,
   CLARIVATE_IGLU_SCHEMA,
-} from '@cdx/ngx-analytics';
-import { AuthenticationModule } from '@cdx/ngx-authentication';
-import { OneTrustModule, OneTrustSettings } from '@cdx/ngx-branding';
-import { SessionActivityModule } from '@cdx/ngx-session-activity';
+} from '@hlx/ngx-analytics';
+import { AuthenticationModule } from '@hlx/ngx-authentication';
+import { OneTrustModule, OneTrustSettings } from '@hlx/ngx-branding';
+import { SessionActivityModule } from '@hlx/ngx-session-activity';
 import { provideTranslateService } from '@ngx-translate/core';
 
 import { routes } from './app.routes';
