@@ -19,7 +19,7 @@ export const HELIX_PICTOGRAM_NAMESPACE = 'hlx-pictogram';
 export interface HelixIconsOptions {
   /**
    * URL path where the app serves the pictogram SVGs, copied from
-   * `node_modules/@cdx/helix-icons/svg/pictograms`. Pictograms are fetched on
+   * `node_modules/@hlx/helix-icons/svg/pictograms`. Pictograms are fetched on
    * first use, so they add nothing to the bundle.
    */
   pictogramsPath?: string;
