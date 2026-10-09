@@ -27,10 +27,10 @@ export class ThemeSelectorComponent {
   themes = this.themeService.themes;
 
   constructor() {
-    this.currentTheme = this.themeService.currentTheme$.getValue();
+    this.currentTheme = this.themeService.currentTheme();
   }
 
-  currentMode$ = this.themeService.currentThemeMode$;
+  currentMode = this.themeService.currentThemeMode;
 
   selectTheme(theme: string) {
     this.themeService.selectTheme(theme);
