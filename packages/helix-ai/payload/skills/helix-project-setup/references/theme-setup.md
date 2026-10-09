@@ -5,9 +5,9 @@
 All `@use` rules must be at the very top of the file, before any other rule.
 
 ```scss
-@use '@cdx/theme-angular-material' as cdx;
-@use '@cdx/ngx-branding/header/theme' as header;
-@use '@cdx/ngx-branding/footer/theme' as footer;
+@use '@hlx/theme-angular-material' as cdx;
+@use '@hlx/ngx-branding/header/theme' as header;
+@use '@hlx/ngx-branding/footer/theme' as footer;
 
 @include cdx.default(cdx.$helix-theme, 'helix-theme-material');
 @include header.theme(cdx.$helix-theme);
@@ -33,7 +33,7 @@ Notes:
 - Never call `mat.core()` or `mat.all-component-themes()` yourself —
   `cdx.default` already does, and duplicating them doubles the emitted CSS.
 - Component SCSS files that need Helix tokens should
-  `@use '@cdx/theme-angular-material' as cdx;` locally. `@use` is scoped
+  `@use '@hlx/theme-angular-material' as cdx;` locally. `@use` is scoped
   per-file, so this is required in each file and emits no duplicate CSS for
   token-only usage.
 
@@ -86,7 +86,7 @@ import {
   HelixFooterGroupComponent,
   HelixFooterGroupTitleDirective,
   HelixFooterLinkDirective,
-} from '@cdx/ngx-branding';
+} from '@hlx/ngx-branding';
 
 @Component({
   selector: 'app-root',

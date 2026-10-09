@@ -1,7 +1,7 @@
 {
-  "name": "@cdx/helix-ai",
+  "name": "@hlx/helix-ai",
   "version": "22.0.0-alpha.1",
-  "description": "Sync Helix design-system AI coding guidance (Agent Skill + AGENTS.md + Copilot instructions) into a consumer repo, version-matched to the installed @cdx/* packages.",
+  "description": "Sync Helix design-system AI coding guidance (Agent Skill + AGENTS.md + Copilot instructions) into a consumer repo, version-matched to the installed @hlx/* packages.",
   "repository": {
     "type": "git",
     "url": "ssh://git@github.com/clarivate-prod/cdx-next.git",

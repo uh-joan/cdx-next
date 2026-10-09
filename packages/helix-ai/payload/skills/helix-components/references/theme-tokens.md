@@ -65,7 +65,7 @@ mobile-first.
 In SCSS, use the media mixins instead of hardcoding widths:
 
 ```scss
-@use '@cdx/theme-angular-material' as hlx;
+@use '@hlx/theme-angular-material' as hlx;
 
 .nav {
   display: flex;
@@ -85,7 +85,7 @@ properties, so use the mixins (or `BreakpointObserver`) for queries.
 In TypeScript, use the exported queries with `BreakpointObserver`:
 
 ```ts
-import { HELIX_MEDIA } from '@cdx/theme-angular-material';
+import { HELIX_MEDIA } from '@hlx/theme-angular-material';
 // this breakpoint and wider: HELIX_MEDIA.gtMd; below it: HELIX_MEDIA.ltMd
 const isCompact = toSignal(
   inject(BreakpointObserver)

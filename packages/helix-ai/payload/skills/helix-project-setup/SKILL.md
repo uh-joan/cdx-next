@@ -3,7 +3,7 @@ name: helix-project-setup
 description:
   'Set up or fix the Helix + Angular Material design system in any Angular
   project (new or existing). Use for "add Helix to my app", "install
-  @cdx/theme-angular-material", "configure styles.scss for Helix", "set up the
+  @hlx/theme-angular-material", "configure styles.scss for Helix", "set up the
   Clarivate header and footer", "mat-typography / helix-theme-material class",
   "Material Icons and Source Sans 3 fonts not loading", ".npmrc @cdx registry",
   "npx helix-check fails", or any Helix/CDX theme, branding, or Sass @use setup
@@ -26,7 +26,7 @@ Sass theme wiring, fonts, and Clarivate header/footer — then verify with
 ## Ground Rules
 
 - **Never invent versions.** Read the target project's `@angular/core` major and
-  match `@angular/material` and the `@cdx/*` packages to that same major.
+  match `@angular/material` and the `@hlx/*` packages to that same major.
 - **Sass: `@use` / `@forward` only.** `@import` is deprecated in Dart Sass and
   must not be added. Every `@use` must appear before any rule in the file.
 - **One theme include.** `cdx.default(...)` emits `mat.core()` and all component
@@ -66,7 +66,7 @@ Must be `https`, exact path, no trailing comment on the same line —
 
 ```bash
 ng add @angular/material@<angular-major>   # theme: Custom, typography: No, animations: Yes
-npm install @cdx/theme-angular-material @cdx/ngx-branding
+npm install @hlx/theme-angular-material @hlx/ngx-branding
 ```
 
 Optional packages and their peer dependencies are listed in
@@ -114,7 +114,7 @@ Do not report success while any check is red.
 ## Completion Criteria
 
 - [ ] `.npmrc` registry line present and exact.
-- [ ] `@angular/material`, `@cdx/theme-angular-material`, `@cdx/ngx-branding`
+- [ ] `@angular/material`, `@hlx/theme-angular-material`, `@hlx/ngx-branding`
       installed on a single consistent major.
 - [ ] Style entry point uses `@use` only, includes `cdx.default` exactly once,
       plus the header and footer theme mixins.

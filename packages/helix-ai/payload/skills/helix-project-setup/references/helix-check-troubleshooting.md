@@ -1,6 +1,6 @@
 # `npx helix-check` — what each check means and how to fix it
 
-`helix-check` ships in `@cdx/ngx-branding` and runs against `process.cwd()`. Run
+`helix-check` ships in `@hlx/ngx-branding` and runs against `process.cwd()`. Run
 it from the Angular project root (where `angular.json` and `package.json` live),
 after `npm install`.
 
@@ -15,14 +15,14 @@ after `npm install`.
 
 ## Packages
 
-Checks that `@cdx/ngx-branding`, `@cdx/theme-angular-material` and
+Checks that `@hlx/ngx-branding`, `@hlx/theme-angular-material` and
 `@angular/material` are installed in `node_modules` and that their **major**
 matches `HELIX_MAJOR_VERSION` in the shipped script.
 
 - Missing → `npm install` the package.
 - `⚠️ ... is incorrect. Version required: N` → align the package major with `N`.
-  If the project targets a newer Angular than the installed `@cdx/ngx-branding`,
-  upgrade `@cdx/ngx-branding` too: the expected major travels with that package,
+  If the project targets a newer Angular than the installed `@hlx/ngx-branding`,
+  upgrade `@hlx/ngx-branding` too: the expected major travels with that package,
   so an outdated branding install reports a stale expectation.
 
 ## Theme

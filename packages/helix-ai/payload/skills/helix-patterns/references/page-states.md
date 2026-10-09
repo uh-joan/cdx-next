@@ -57,7 +57,7 @@ of that with one component and one control-flow shape.
 - **Skeleton** (loading): `ngx-skeleton-loader`, laid out to match the real
   content so the page does not reflow when data arrives. See the
   [Skeleton loader](/components/skeleton-loader) component.
-- **Empty and error**: `<hlx-empty-state>` from `@cdx/ngx-branding`. It renders
+- **Empty and error**: `<hlx-empty-state>` from `@hlx/ngx-branding`. It renders
   a media slot (a pictogram, or a Material Symbol fallback), a heading, a
   message, optional body content, and an actions slot. `tone="error"` switches
   the icon colour and adds `role="alert"`.
