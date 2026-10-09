@@ -5,7 +5,7 @@ description:
   project (new or existing). Use for "add Helix to my app", "install
   @hlx/theme-angular-material", "configure styles.scss for Helix", "set up the
   Clarivate header and footer", "mat-typography / helix-theme-material class",
-  "Material Icons and Source Sans 3 fonts not loading", ".npmrc @cdx registry",
+  "Material Icons and Source Sans 3 fonts not loading", ".npmrc @hlx registry",
   "npx helix-check fails", or any Helix/CDX theme, branding, or Sass @use setup
   and verification task.'
 argument-hint: 'Optional: path to the Angular project to set up or audit'
@@ -43,7 +43,7 @@ Sass theme wiring, fonts, and Clarivate header/footer — then verify with
 Determine, before editing anything:
 
 - Angular major from `package.json`.
-- Whether `.npmrc` maps `@cdx` to the Clarivate registry.
+- Whether `.npmrc` maps `@hlx` to the Clarivate registry.
 - Whether Angular Material is already installed and which theme strategy it
   uses.
 - Style entry point from `angular.json` (`build.options.styles`) — usually
@@ -56,7 +56,7 @@ Determine, before editing anything:
 Create/patch `.npmrc` at the project root:
 
 ```
-@cdx:registry = https://repo.clarivate.io/artifactory/api/npm/npm-central/
+@hlx:registry = https://repo.clarivate.io/artifactory/api/npm/npm-hlx/
 ```
 
 Must be `https`, exact path, no trailing comment on the same line —

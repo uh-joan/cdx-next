@@ -1,4 +1,4 @@
-# Optional `@cdx` packages
+# Optional `@hlx` packages
 
 Install only what the project needs. Peer dependencies must be installed
 explicitly.

@@ -66,11 +66,11 @@ All published packages share one version and are released together.
 
 ## Using Helix in an app
 
-The packages are published to Clarivate's Artifactory. Point the `@cdx` scope at
+The packages are published to Clarivate's Artifactory. Point the `@hlx` scope at
 it in your app's `.npmrc`:
 
 ```ini
-@cdx:registry = https://repo.clarivate.io/artifactory/api/npm/npm-cdx/
+@hlx:registry = https://repo.clarivate.io/artifactory/api/npm/npm-hlx/
 ```
 
 Install the theme and the branding components:
@@ -122,7 +122,7 @@ examples, density, colours, typography and patterns.
 
 - **Node 26.7**, pinned in [`.nvmrc`](.nvmrc). With nvm: `nvm use`.
 - **npm**. The workspace uses npm workspaces (`packages/**`).
-- **Access to Clarivate's Artifactory**, for `@cdx` and internal dependencies.
+- **Access to Clarivate's Artifactory**, for `@hlx` and internal dependencies.
 
 ```bash
 npm ci

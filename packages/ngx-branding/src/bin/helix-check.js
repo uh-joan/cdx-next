@@ -67,7 +67,7 @@ function checkNpmrc() {
       npmrcContent = npmrcContent.replace(/http:\/\//g, 'https://');
 
       const requiredPattern =
-        /^\s*@cdx:registry\s*=\s*https:\/\/repo\.clarivate\.io\/artifactory\/api\/npm\/npm-central\/\s*$/m;
+        /^\s*@hlx:registry\s*=\s*https:\/\/repo\.clarivate\.io\/artifactory\/api\/npm\/npm-hlx\/\s*$/m;
 
       if (requiredPattern.test(npmrcContent)) {
         console.log(chalk.green(`✅ .npmrc file registry`));
