@@ -21,7 +21,7 @@
         "packages/ngx-session-activity/src/index.ts"
       ],
       "@cdx/ngx-translations": ["packages/ngx-translations/src/index.ts"],
-      "@cdx/oti-snippet": ["packages/oti-snippet/src/index.ts"],
+      "@hlx/oti-snippet": ["packages/oti-snippet/src/index.ts"],
       "@cdx/theme-angular-material": [
         "packages/theme-angular-material/src/index.ts"
       ],
