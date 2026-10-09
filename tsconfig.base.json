@@ -14,7 +14,7 @@
     "paths": {
       "@cdx/demo": ["packages/demo/src/index.ts"],
       "@cdx/ngx-analytics": ["packages/ngx-analytics/src/index.ts"],
-      "@cdx/ngx-authentication": ["packages/ngx-authentication/src/index.ts"],
+      "@hlx/ngx-authentication": ["packages/ngx-authentication/src/index.ts"],
       "@cdx/ngx-branding": ["packages/ngx-branding/src/index.ts"],
       "@hlx/helix-icons": ["packages/helix-icons/src/index.ts"],
       "@cdx/ngx-session-activity": [
