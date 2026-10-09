@@ -17,7 +17,7 @@
       "@hlx/ngx-authentication": ["packages/ngx-authentication/src/index.ts"],
       "@hlx/ngx-branding": ["packages/ngx-branding/src/index.ts"],
       "@hlx/helix-icons": ["packages/helix-icons/src/index.ts"],
-      "@cdx/ngx-session-activity": [
+      "@hlx/ngx-session-activity": [
         "packages/ngx-session-activity/src/index.ts"
       ],
       "@hlx/ngx-translations": ["packages/ngx-translations/src/index.ts"],
