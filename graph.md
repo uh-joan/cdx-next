@@ -7,10 +7,19 @@ node consumes another's output, a deterministic gate on every node, capped
 correction edges. Status lives in [progress.md](progress.md); gate results in
 [checks.md](checks.md).
 
-> **State: EXECUTING — leaf tier started.** Branch `hlx/scope-migration`. `main` is
-> untouched and is the recoverable version. Nodes N1, N3, N7 are done (see
-> progress.md); the rest are proposed/ready. Scope is **pure swap**: every package
-> keeps its sub-name, `@cdx/x` → `@hlx/x`; the `helix` binary is unchanged.
+> **State: COMPLETE.** Branch `hlx/scope-migration`; `main` untouched (`8a15a9e7`),
+> the recoverable version. All nodes N0–N23 passed (see progress.md / checks.md):
+> every one of the 18 publishable packages, both consumer apps, and storybook are
+> on `@hlx`. Scope is a **pure swap** (`@cdx/x` → `@hlx/x`; `helix` binary
+> unchanged). The Clarivate brand font was additionally **self-hosted** in
+> `@hlx/clarivate-font` and bundled by every app, retiring the `@cdx` CDN `<link>`.
+> Remaining `@cdx` strings are human-gated infra/registry (Open-Q 1–3), a
+> cross-product example, and historical changelog/ADR text.
+>
+> **Gate gotchas (learning edges):** `rg` skips hidden dirs by default — the whole
+> `.github/**` guidance tree was missed until re-scanned with `git grep` /
+> `rg --hidden`; and escaped-slash alias regexes `/^@cdx\/x$/` (vite/vitest/
+> storybook configs) don't contain the substring `@cdx/`.
 
 ## Inputs
 
@@ -143,5 +152,5 @@ nodes left (progress.md › Next action).
 
 1. **Registry mismatch (blocks publish, not rename).** `.npmrc` maps `@cdx` → Artifactory `.../npm-cdx/`, but `helix-check.js` requires `@cdx` → `.../npm-central/`. Before `@hlx` publishes, decide the `@hlx` registry home (`npm-hlx` vs reuse) and reconcile `npm-cdx` vs `npm-central`. **HARD STOP:** no `.npmrc`/registry edits in this run.
 2. **Transition window vs flag-day.** Plan recommends a dual-publish deprecation window (publish both scopes from one tree, `npm deprecate @cdx/*`). Dual-publish, `npm publish`, and `npm deprecate` are **HARD STOPS** here — the branch only re-homes source; publishing strategy is a human decision.
-3. **CDN / AWS infra.** `deploy:cdn` scripts embed `@cdx/...` destinations and the `cdx-cdn.digital-experience.clarivate.io` bucket; `Jenkinsfile` has `cdx` IAM role ARNs and the `@cdx/clarivate-font` CDN URL (also baked into `helix-check.js`). **HARD STOP** (CDN/AWS/IAM, Jenkins): these `@cdx/` strings are **frozen** and excluded from the `rg` gate until infra signs off.
+3. **CDN / AWS infra.** `deploy:cdn` scripts embed `@cdx/...` destinations and the `cdx-cdn.digital-experience.clarivate.io` bucket; `Jenkinsfile` has `cdx` IAM role ARNs. **HARD STOP** (CDN/AWS/IAM, Jenkins): these `@cdx/` strings are **frozen** and excluded from the `rg` gate until infra signs off. **Update:** the clarivate-font CDN **`<link>`** has been fully retired — `@hlx/clarivate-font` now self-hosts the web-font binaries and every app bundles the CSS, so no app, `helix-check`, or guidance references the CDN font URL any more. What remains frozen here is only the `deploy:cdn` **publish** scripts (clarivate-font, theme-snackbar, theme-highcharts, theme-ag-grid) + the Jenkins stage that calls them; they are now dead for the font and should be removed together by whoever owns CI.
 4. **Selector / prefix / identifier retirement.** `prefix: "cdx"` (5 `project.json`), `cdx-*` selectors, and `Cdx*` identifiers are a **separate, later** breaking step (plan §4.3, §6.6) — not part of the scope swap and not gated here.
