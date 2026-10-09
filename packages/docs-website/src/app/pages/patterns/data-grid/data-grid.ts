@@ -19,13 +19,13 @@ export class DataGridPattern {
   sampleList = Object.values(samples);
 
   providerSnippet = `// Registered once in app.config.ts
-import { provideHelixAgGrid } from '@cdx/theme-ag-grid';
+import { provideHelixAgGrid } from '@hlx/theme-ag-grid';
 
 export const appConfig: ApplicationConfig = {
   providers: [provideHelixAgGrid()],
 };`;
 
-  gridSnippet = `import { HELIX_DEFAULT_COL_DEF, helixGridTheme } from '@cdx/theme-ag-grid';
+  gridSnippet = `import { HELIX_DEFAULT_COL_DEF, helixGridTheme } from '@hlx/theme-ag-grid';
 
 @Component({
   template: \`

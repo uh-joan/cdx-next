@@ -1,6 +1,6 @@
 import { Component, computed, signal } from '@angular/core';
 import { MatButton } from '@angular/material/button';
-import { HelixEmptyStateComponent } from '@cdx/ngx-branding';
+import { HelixEmptyStateComponent } from '@hlx/ngx-branding';
 
 import { InputViewerComponent } from '../../../../core/example-viewer/example-viewer.model';
 
@@ -71,7 +71,7 @@ export const ErrorPagesStates: InputViewerComponent = {
   htmlCode,
   cssCode: styleCode,
   tsCode: `import { Component } from '@angular/core';
-import { HelixEmptyStateComponent } from '@cdx/ngx-branding';
+import { HelixEmptyStateComponent } from '@hlx/ngx-branding';
 import { MatButton } from '@angular/material/button';
 
 // Each error route renders one of these — hlx-empty-state centred in the content

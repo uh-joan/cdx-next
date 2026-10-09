@@ -10,7 +10,7 @@ import { toSignal } from '@angular/core/rxjs-interop';
 import { MatDivider } from '@angular/material/divider';
 import { MatTabLink, MatTabNav, MatTabNavPanel } from '@angular/material/tabs';
 import { ActivatedRoute, RouterLink } from '@angular/router';
-import { HelixFooterComponent } from '@cdx/ngx-branding';
+import { HelixFooterComponent } from '@hlx/ngx-branding';
 import { map } from 'rxjs';
 
 import { StorybookEmbed } from '../../components/storybook-embed/storybook-embed';

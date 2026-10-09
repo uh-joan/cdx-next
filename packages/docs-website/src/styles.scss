@@ -1,10 +1,10 @@
 /* stylelint-disable plugin/stylelint-bem-namics */
-@use '@cdx/theme-angular-material' as hlx;
+@use '@hlx/theme-angular-material' as hlx;
 @use '@angular/material' as mat;
-@use '@cdx/ngx-branding/header/theme' as header;
-@use '@cdx/ngx-branding/footer/theme' as footer;
+@use '@hlx/ngx-branding/header/theme' as header;
+@use '@hlx/ngx-branding/footer/theme' as footer;
 @use './assets/scss/_overrides';
-@use '@cdx/theme-highcharts' as hlx-highcharts;
+@use '@hlx/theme-highcharts' as hlx-highcharts;
 
 @import 'highlight.js/styles/atom-one-dark.css';
 @import 'ag-theme-helix.css';

@@ -16,7 +16,7 @@ import * as samples from './examples';
 export class Breadcrumbs {
   @HostBinding('class') hostClass = 'cdx-section';
 
-  breadcrumbModuleText = `import { CdxBreadcrumbModule } from '@cdx/theme-xng-breadcrumb';
+  breadcrumbModuleText = `import { CdxBreadcrumbModule } from '@hlx/theme-xng-breadcrumb';
 
   @NgModule({
       ...

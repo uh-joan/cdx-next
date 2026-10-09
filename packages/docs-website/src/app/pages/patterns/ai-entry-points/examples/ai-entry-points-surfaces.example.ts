@@ -2,7 +2,7 @@ import { Component, signal } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIcon } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { HelixAiAvatarComponent } from '@cdx/ngx-branding';
+import { HelixAiAvatarComponent } from '@hlx/ngx-branding';
 
 import { InputViewerComponent } from '../../../../core/example-viewer/example-viewer.model';
 
@@ -125,7 +125,7 @@ export const AiEntryPointsSurfaces: InputViewerComponent = {
   htmlCode,
   cssCode: styleCode,
   tsCode: `import { Component, signal } from '@angular/core';
-import { HelixAiAvatarComponent } from '@cdx/ngx-branding';
+import { HelixAiAvatarComponent } from '@hlx/ngx-branding';
 // + Material toolbar, button (incl. FAB), icon
 
 // Three entry points, one treatment, one destination. A labelled header button and

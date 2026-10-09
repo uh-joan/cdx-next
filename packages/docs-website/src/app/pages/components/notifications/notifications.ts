@@ -91,7 +91,7 @@ export class Notifications {
   displayedColumns2: string[] = ['property', 'type', 'default', 'description'];
   dataSource2 = new MatTableDataSource<ElementApis>(ELEMENT_APIS);
 
-  moduleText = `import { HelixNotificationComponent } from '@cdx/ngx-branding';`;
+  moduleText = `import { HelixNotificationComponent } from '@hlx/ngx-branding';`;
 
   htmlText = `<hlx-notification
   title="Title"

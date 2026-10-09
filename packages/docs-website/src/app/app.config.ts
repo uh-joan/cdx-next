@@ -10,8 +10,8 @@ import {
   withComponentInputBinding,
   withViewTransitions,
 } from '@angular/router';
-import { provideHelixIcons } from '@cdx/helix-icons';
-import { OneTrustModule } from '@cdx/ngx-branding';
+import { provideHelixIcons } from '@hlx/helix-icons';
+import { OneTrustModule } from '@hlx/ngx-branding';
 import { provideTranslateService } from '@ngx-translate/core';
 import { provideHighcharts } from 'highcharts-angular';
 import { HIGHLIGHT_OPTIONS } from 'ngx-highlightjs';

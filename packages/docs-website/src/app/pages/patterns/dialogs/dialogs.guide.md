@@ -88,7 +88,7 @@ off to stop a destructive button being focused, and bodies built from
 Open every dialog through a named preset, so widths are consistent and the set is
 small. The `.hlx-dialog-*` panel classes and their size tokens
 (`$dialog-size-sm` … `$dialog-size-side`, `$dialog-max-width`) ship from
-`@cdx/theme-angular-material` via `theme-helix-overrides`, so an app that applies
+`@hlx/theme-angular-material` via `theme-helix-overrides`, so an app that applies
 the Helix theme gets them for free. Wrap them in a small typed helper:
 
 ```ts

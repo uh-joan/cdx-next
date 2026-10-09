@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { HIGHCHARTS_HLX_THEME } from '@cdx/theme-highcharts';
+import { HIGHCHARTS_HLX_THEME } from '@hlx/theme-highcharts';
 import Highcharts from 'highcharts';
 import { HighchartsChartComponent } from 'highcharts-angular';
 
@@ -101,7 +101,7 @@ export const HighchartThemedComponent: InputViewerComponent = {
   cssCode: styleCode,
   tsCode: `import { Component } from '@angular/core';
 import { HighchartsChartComponent, providePartialHighcharts} from 'highcharts-angular';
-// import { HIGHCHARTS_CDX_THEME } from '@cdx/theme-highcharts';
+// import { HIGHCHARTS_CDX_THEME } from '@hlx/theme-highcharts';
 
 
 @Component({

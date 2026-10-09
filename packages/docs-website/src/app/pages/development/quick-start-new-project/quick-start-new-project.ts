@@ -39,9 +39,9 @@ export class QuickStartNewProject {
     'material',
   ];
 
-  addStyles = `@use '@cdx/theme-angular-material' as cdx;
-@use '@cdx/ngx-branding/header/theme' as header;
-@use '@cdx/ngx-branding/footer/theme' as footer;
+  addStyles = `@use '@hlx/theme-angular-material' as cdx;
+@use '@hlx/ngx-branding/header/theme' as header;
+@use '@hlx/ngx-branding/footer/theme' as footer;
 
 @include cdx.default;
 @include header.theme(cdx.$cdx-theme);
@@ -62,8 +62,8 @@ export class QuickStartNewProject {
 </body>`;
 
   headerFooterComponents = `//...
-import { HelixHeaderComponent, HelixHeaderGlobalComponent, HelixHeaderProductNameOrLogoComponent } from '@cdx/ngx-branding';
-import { HelixFooterComponent, HelixFooterGroupComponent, HelixFooterLinkDirective, HelixFooterGroupTitleDirective } from '@cdx/ngx-branding';
+import { HelixHeaderComponent, HelixHeaderGlobalComponent, HelixHeaderProductNameOrLogoComponent } from '@hlx/ngx-branding';
+import { HelixFooterComponent, HelixFooterGroupComponent, HelixFooterLinkDirective, HelixFooterGroupTitleDirective } from '@hlx/ngx-branding';
 
 @NgModule({
   //...
@@ -114,11 +114,11 @@ footer {
 
   packages: DataRow[] = [
     {
-      name: '@cdx/colors',
+      name: '@hlx/colors',
       description: 'Color palette and utility functions',
     },
     {
-      name: '@cdx/ngx-session-activity',
+      name: '@hlx/ngx-session-activity',
       description: 'Session Activity service',
       dependencies: [
         '"@ng-idle/core": "^16.0.0"',
@@ -127,41 +127,41 @@ footer {
       ],
     },
     {
-      name: '@cdx/ngx-translations',
+      name: '@hlx/ngx-translations',
       description: 'Translation service',
       dependencies: [`"@ngx-translate/core": ">=18.0.0"`],
     },
     {
-      name: '@cdx/ngx-analytics',
+      name: '@hlx/ngx-analytics',
       description: 'Analytics service',
       dependencies: ['"@snowplow/browser-tracker": "^4.10.0"'],
     },
     {
-      name: '@cdx/ngx-authentication',
+      name: '@hlx/ngx-authentication',
       description: 'Authentication service',
       dependencies: [
         '"@angular/material": "^22"',
         '"@angular/router": "^22"',
         '"@auth0/angular-jwt": "^5.2.0"',
-        '"@cdx/theme-angular-material": "22.0.0"',
+        '"@hlx/theme-angular-material": "22.0.0"',
       ],
     },
     {
-      name: '@cdx/theme-ag-grid',
+      name: '@hlx/theme-ag-grid',
       description: 'AG Grid theme',
       dependencies: [`"ag-grid-community": ">=36.0.0"`],
     },
     {
-      name: '@cdx/theme-highcharts',
+      name: '@hlx/theme-highcharts',
       description: 'Highcharts theme',
       dependencies: ['"highcharts": "^13.0.0"'],
     },
     {
-      name: '@cdx/theme-snackbar',
+      name: '@hlx/theme-snackbar',
       description: 'Snackbar theme',
     },
     {
-      name: '@cdx/theme-xng-breadcrumb',
+      name: '@hlx/theme-xng-breadcrumb',
       description: 'Breadcrumb theme',
     },
   ];

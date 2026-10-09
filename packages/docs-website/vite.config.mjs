@@ -7,7 +7,7 @@ import { defineConfig } from 'vite';
 const rootDir = fileURLToPath(new URL('.', import.meta.url));
 const pictogramsDir = resolve(rootDir, '../helix-icons/svg/pictograms');
 
-// Serves the @cdx/helix-icons pictograms at /assets/helix-pictograms, the
+// Serves the @hlx/helix-icons pictograms at /assets/helix-pictograms, the
 // default path provideHelixIcons() loads them from.
 function helixPictograms() {
   const prefix = '/assets/helix-pictograms/';
@@ -47,11 +47,11 @@ export default defineConfig({
     tsconfigPaths: true,
     alias: [
       {
-        find: /^@cdx\/ngx-branding$/,
+        find: /^@hlx\/ngx-branding$/,
         replacement: resolve(rootDir, '../ngx-branding/src/index.ts'),
       },
       {
-        find: /^@cdx\/helix-icons$/,
+        find: /^@hlx\/helix-icons$/,
         replacement: resolve(rootDir, '../helix-icons/src/index.ts'),
       },
     ],

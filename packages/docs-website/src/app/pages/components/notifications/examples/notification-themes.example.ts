@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { HelixNotificationComponent } from '@cdx/ngx-branding';
+import { HelixNotificationComponent } from '@hlx/ngx-branding';
 
 import { InputViewerComponent } from '../../../../core/example-viewer/example-viewer.model';
 
@@ -63,7 +63,7 @@ export const NotificationThemesComponent: InputViewerComponent = {
   htmlCode,
   cssCode: styleCode,
   tsCode: `import { Component } from '@angular/core';
-import { HelixNotificationComponent } from '@cdx/ngx-branding';
+import { HelixNotificationComponent } from '@hlx/ngx-branding';
 
 @Component({
   selector: 'app-notification-themes-example',

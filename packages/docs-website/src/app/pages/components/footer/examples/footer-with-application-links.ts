@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { HelixFooterComponent } from '@cdx/ngx-branding';
+import { HelixFooterComponent } from '@hlx/ngx-branding';
 
 import { InputViewerComponent } from '../../../../core/example-viewer/example-viewer.model';
 
@@ -33,7 +33,7 @@ export const FooterWithApplicationLinksComponent: InputViewerComponent = {
   htmlCode: htmlCode,
   cssCode: styleCode,
   tsCode: `import { Component } from '@angular/core';
-import { HelixFooter } from '@cdx/ngx-branding';
+import { HelixFooter } from '@hlx/ngx-branding';
 
 
 @Component({

@@ -9,8 +9,8 @@ import {
   HelixHeaderComponent,
   HelixHeaderGlobalComponent,
   HelixHeaderProductNameOrLogoComponent,
-} from '@cdx/ngx-branding';
-import { HELIX_MEDIA } from '@cdx/theme-angular-material';
+} from '@hlx/ngx-branding';
+import { HELIX_MEDIA } from '@hlx/theme-angular-material';
 import { map } from 'rxjs';
 
 import { InputViewerComponent } from '../../../../core/example-viewer/example-viewer.model';
@@ -114,7 +114,7 @@ export const AppShellBasic: InputViewerComponent = {
   tsCode: `import { BreakpointObserver } from '@angular/cdk/layout';
 import { Component, inject, signal } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
-import { HELIX_MEDIA } from '@cdx/theme-angular-material';
+import { HELIX_MEDIA } from '@hlx/theme-angular-material';
 import { map } from 'rxjs';
 
 // In a real app this is the Layout component with a <router-outlet/> in place of

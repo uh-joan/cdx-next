@@ -5,7 +5,7 @@ import {
   helixChipCellRenderer,
   helixDateCellRenderer,
   helixGridTheme,
-} from '@cdx/theme-ag-grid';
+} from '@hlx/theme-ag-grid';
 import { AgGridAngular } from 'ag-grid-angular';
 import {
   AllCommunityModule,
@@ -137,7 +137,7 @@ export const DataGridHelix: InputViewerComponent = {
   tsCode: `import { Component } from '@angular/core';
 import { AgGridAngular } from 'ag-grid-angular';
 import { ColDef, GridReadyEvent } from 'ag-grid-community';
-import { HELIX_DEFAULT_COL_DEF, helixGridTheme } from '@cdx/theme-ag-grid';
+import { HELIX_DEFAULT_COL_DEF, helixGridTheme } from '@hlx/theme-ag-grid';
 
 // Register modules once at bootstrap: provideHelixAgGrid() in app.config.ts.
 // The grid uses the Helix Theming-API theme (built from --hlx-* tokens) and the

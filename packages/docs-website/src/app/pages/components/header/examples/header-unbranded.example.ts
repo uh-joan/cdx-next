@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 import {
   HelixHeaderComponent,
   HelixHeaderProductNameOrLogoComponent,
-} from '@cdx/ngx-branding';
+} from '@hlx/ngx-branding';
 
 import { InputViewerComponent } from '../../../../core/example-viewer/example-viewer.model';
 
@@ -36,7 +36,7 @@ export const HeaderUnbrandedComponent: InputViewerComponent = {
 import {
   HelixHeaderComponent,
   HelixHeaderProductNameOrLogoComponent,
-} from '@cdx/ngx-branding';
+} from '@hlx/ngx-branding';
 
 
 @Component({

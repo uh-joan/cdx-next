@@ -1,4 +1,4 @@
-export const appModuleAuthAngular = `import { AuthenticationModule } from '@cdx/ngx-authentication';
+export const appModuleAuthAngular = `import { AuthenticationModule } from '@hlx/ngx-authentication';
 
 @NgModule({
   imports: [
@@ -10,7 +10,7 @@ export const appModuleAuthAngular = `import { AuthenticationModule } from '@cdx/
 })`;
 
 export const authenticationServiceAngular = `
-import { AuthenticationService } from '@cdx/ngx-authentication';
+import { AuthenticationService } from '@hlx/ngx-authentication';
 
 export class AppComponent implements OnInit {
   authenticated = false;
@@ -33,8 +33,8 @@ export class AppComponent implements OnInit {
   }
 }`;
 
-export const appModuleAuthAngular2 = `import { AuthenticationModule, HeaderGlobalUserProfileModule } from '@cdx/ngx-authentication';
-import { HeaderModule } from '@cdx/ngx-branding';
+export const appModuleAuthAngular2 = `import { AuthenticationModule, HeaderGlobalUserProfileModule } from '@hlx/ngx-authentication';
+import { HeaderModule } from '@hlx/ngx-branding';
 
 @NgModule({
   imports: [

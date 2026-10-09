@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { MatButton } from '@angular/material/button';
-import { RichTooltipDirective } from '@cdx/ngx-branding';
+import { RichTooltipDirective } from '@hlx/ngx-branding';
 
 import { InputViewerComponent } from '../../../../core/example-viewer/example-viewer.model';
 
@@ -32,7 +32,7 @@ const styleCode = `.story {
 
 const tsCode = `import { Component } from '@angular/core';
 import { MatButton } from '@angular/material/button';
-import { RichTooltipDirective } from '@cdx/ngx-branding';
+import { RichTooltipDirective } from '@hlx/ngx-branding';
 
 // hlxTooltip is a Helix (ngx-branding) directive, not an Angular Material one.
 @Component({

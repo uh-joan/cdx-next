@@ -13,7 +13,7 @@ const htmlCode = `<div class="story">
 
 const styleCode = `
 @import 'highcharts/css/highcharts.css';
-@use '@cdx/theme-highcharts' as highcharts;
+@use '@hlx/theme-highcharts' as highcharts;
 
 .highcharts-styled-container {
   @include highcharts.hlx-highcharts-styled-mode-theme;
@@ -135,7 +135,7 @@ export const HighchartStyledComponent: InputViewerComponent = {
   tsCode: `import { Component } from '@angular/core';
 import Highcharts from 'highcharts';
 import { HighchartsChartComponent } from 'highcharts-angular';
-import { HIGHCHARTS_HLX_THEME } from '@cdx/theme-highcharts';
+import { HIGHCHARTS_HLX_THEME } from '@hlx/theme-highcharts';
 
 
 @Component({

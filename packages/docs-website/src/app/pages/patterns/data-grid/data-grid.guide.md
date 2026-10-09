@@ -82,7 +82,7 @@ For a short, read-mostly list use a `mat-table` instead (see
 
 ```ts
 // provideHelixAgGrid() — registered once in app.config.ts
-import { provideHelixAgGrid } from '@cdx/theme-ag-grid';
+import { provideHelixAgGrid } from '@hlx/theme-ag-grid';
 
 export const appConfig: ApplicationConfig = {
   providers: [provideHelixAgGrid()],
@@ -91,7 +91,7 @@ export const appConfig: ApplicationConfig = {
 
 ```ts
 // helixGridTheme is an AG Grid v36 Theming-API theme built from --hlx-* tokens
-import { HELIX_DEFAULT_COL_DEF, helixGridTheme } from '@cdx/theme-ag-grid';
+import { HELIX_DEFAULT_COL_DEF, helixGridTheme } from '@hlx/theme-ag-grid';
 
 @Component({
   template: `
@@ -111,12 +111,12 @@ export class TrialsGrid {
 ```
 
 `provideHelixAgGrid`, `helixGridTheme` and `HELIX_DEFAULT_COL_DEF` ship from
-`@cdx/theme-ag-grid` (the Theming-API theme supersedes the package's legacy CSS
+`@hlx/theme-ag-grid` (the Theming-API theme supersedes the package's legacy CSS
 theme for new grids).
 
 ## Cell renderers
 
-Use the shared renderers from `@cdx/theme-ag-grid` rather than re-writing them per
+Use the shared renderers from `@hlx/theme-ag-grid` rather than re-writing them per
 grid. `helixChipCellRenderer` renders a short categorical value (status, phase,
 type) as a Helix chip, styled with `--hlx-*` tokens and built with `textContent`
 (no HTML injection). `helixDateCellRenderer` formats a date value consistently

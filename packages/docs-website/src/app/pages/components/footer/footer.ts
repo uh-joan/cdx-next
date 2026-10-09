@@ -15,7 +15,7 @@ import * as samples from './examples';
 export class Footer {
   @HostBinding('class') hostClass = 'cdx-section';
 
-  moduleText = `import { HelixFooterModule } from '@cdx/ngx-branding';`;
+  moduleText = `import { HelixFooterModule } from '@hlx/ngx-branding';`;
 
   sampleList = Object.values(samples);
 }

@@ -8,7 +8,7 @@ import { Router, RouterLink } from '@angular/router';
 import {
   HelixHeaderComponent,
   HelixHeaderGlobalComponent,
-} from '@cdx/ngx-branding';
+} from '@hlx/ngx-branding';
 
 import { APP_VERSION } from '../app-version';
 import { Search } from '../search/search';

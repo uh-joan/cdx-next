@@ -7,7 +7,7 @@ import { MatIcon } from '@angular/material/icon';
 import { MatInput } from '@angular/material/input';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatTableModule } from '@angular/material/table';
-import { HelixEmptyStateComponent } from '@cdx/ngx-branding';
+import { HelixEmptyStateComponent } from '@hlx/ngx-branding';
 
 import { InputViewerComponent } from '../../../../core/example-viewer/example-viewer.model';
 
@@ -193,7 +193,7 @@ export const ListWithFiltersPage: InputViewerComponent = {
   htmlCode,
   cssCode: styleCode,
   tsCode: `import { Component, computed, signal } from '@angular/core';
-import { HelixEmptyStateComponent } from '@cdx/ngx-branding';
+import { HelixEmptyStateComponent } from '@hlx/ngx-branding';
 // + Material form-field, input, button, menu, checkbox, chips, table, icon
 
 // Filter inputs are signals; the visible rows, the chips and the count all

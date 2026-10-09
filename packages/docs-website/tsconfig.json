@@ -13,9 +13,9 @@
     "noImplicitReturns": true,
     "noPropertyAccessFromIndexSignature": true,
     "paths": {
-      "@cdx/helix-icons": ["packages/helix-icons/src/index.ts"],
-      "@cdx/ngx-branding": ["packages/ngx-branding/src/index.ts"],
-      "@cdx/theme-angular-material": [
+      "@hlx/helix-icons": ["packages/helix-icons/src/index.ts"],
+      "@hlx/ngx-branding": ["packages/ngx-branding/src/index.ts"],
+      "@hlx/theme-angular-material": [
         "packages/theme-angular-material/src/index.ts"
       ],
       "src/app/*": ["packages/docs-website/src/app/*"]

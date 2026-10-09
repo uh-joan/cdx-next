@@ -2,7 +2,7 @@ import { Component, DestroyRef, inject, signal } from '@angular/core';
 import { MatButton } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatIcon } from '@angular/material/icon';
-import { HelixAiAvatarComponent } from '@cdx/ngx-branding';
+import { HelixAiAvatarComponent } from '@hlx/ngx-branding';
 
 import { InputViewerComponent } from '../../../../core/example-viewer/example-viewer.model';
 
@@ -99,7 +99,7 @@ export const AiInlineActions: InputViewerComponent = {
   htmlCode,
   cssCode: styleCode,
   tsCode: `import { Component, signal } from '@angular/core';
-import { HelixAiAvatarComponent } from '@cdx/ngx-branding';
+import { HelixAiAvatarComponent } from '@hlx/ngx-branding';
 // + Material card, button, icon
 
 // AI actions scoped to this document. "Summarise" shows the result inline (AI
