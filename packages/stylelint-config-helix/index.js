@@ -13,7 +13,7 @@
  *     — use `mat.*-overrides` or an `hlx-*` variant instead.
  *
  * Usage (app `.stylelintrc.json`):
- *   { "extends": ["@cdx/stylelint-config-helix"] }
+ *   { "extends": ["@hlx/stylelint-config-helix"] }
  */
 module.exports = {
   extends: ['stylelint-config-standard-scss'],

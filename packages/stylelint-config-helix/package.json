@@ -1,5 +1,5 @@
 {
-  "name": "@cdx/stylelint-config-helix",
+  "name": "@hlx/stylelint-config-helix",
   "version": "22.0.0-alpha.1",
   "description": "Shared Stylelint config for apps consuming the Helix design system.",
   "repository": {

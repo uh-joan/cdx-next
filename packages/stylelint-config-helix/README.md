@@ -1,4 +1,4 @@
-# @cdx/stylelint-config-helix
+# @hlx/stylelint-config-helix
 
 Shared [Stylelint](https://stylelint.io) config for apps consuming the Helix
 design system. It extends `stylelint-config-standard-scss` and adds the rules the
@@ -14,13 +14,13 @@ design-system review found teams most often break:
 ## Usage
 
 ```bash
-npm i -D @cdx/stylelint-config-helix stylelint
+npm i -D @hlx/stylelint-config-helix stylelint
 ```
 
 ```jsonc
 // .stylelintrc.json
 {
-  "extends": ["@cdx/stylelint-config-helix"]
+  "extends": ["@hlx/stylelint-config-helix"]
 }
 ```
 
@@ -29,7 +29,7 @@ defines design tokens:
 
 ```jsonc
 {
-  "extends": ["@cdx/stylelint-config-helix"],
+  "extends": ["@hlx/stylelint-config-helix"],
   "overrides": [
     { "files": ["src/styles/tokens.scss"], "rules": { "color-no-hex": null } }
   ]
