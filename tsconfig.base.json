@@ -12,7 +12,6 @@
     "module": "esnext",
     "moduleResolution": "bundler",
     "paths": {
-      "@cdx/demo": ["packages/demo/src/index.ts"],
       "@hlx/ngx-analytics": ["packages/ngx-analytics/src/index.ts"],
       "@hlx/ngx-authentication": ["packages/ngx-authentication/src/index.ts"],
       "@hlx/ngx-branding": ["packages/ngx-branding/src/index.ts"],
