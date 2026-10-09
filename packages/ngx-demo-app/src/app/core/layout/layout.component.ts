@@ -4,7 +4,7 @@ import { toSignal } from '@angular/core/rxjs-interop';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTabsModule } from '@angular/material/tabs';
 import { RouterModule } from '@angular/router';
-import { HeaderGlobalUserProfileComponent } from '@cdx/ngx-authentication';
+import { HeaderGlobalUserProfileComponent } from '@hlx/ngx-authentication';
 import {
   FooterModule,
   HeaderComponent,
@@ -12,7 +12,7 @@ import {
   HelixHeaderComponent,
   HelixHeaderGlobalComponent,
   HelixHeaderProductNameOrLogoComponent,
-} from '@cdx/ngx-branding';
+} from '@hlx/ngx-branding';
 import { TranslatePipe } from '@ngx-translate/core';
 
 import { ThemeService } from '../../services/theme.service';

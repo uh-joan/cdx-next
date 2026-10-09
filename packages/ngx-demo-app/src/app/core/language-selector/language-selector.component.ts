@@ -10,7 +10,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import {
   NgxTranslationsModule,
   NgxTranslationsService,
-} from '@cdx/ngx-translations';
+} from '@hlx/ngx-translations';
 import { TranslateService } from '@ngx-translate/core';
 
 import * as ar_SA from '../../../assets/i18n/ar_SA.json';
