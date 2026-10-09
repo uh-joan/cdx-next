@@ -127,8 +127,8 @@ console.log(chalk.blue('\n---------------------------------\n'));
 console.log(chalk.cyan.bold('📦 PACKAGES CHECK\n'));
 
 const requiredPackages = [
-  '@cdx/ngx-branding',
-  '@cdx/theme-angular-material',
+  '@hlx/ngx-branding',
+  '@hlx/theme-angular-material',
   '@angular/material',
 ];
 
