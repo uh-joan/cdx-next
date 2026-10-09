@@ -12,7 +12,7 @@
 ## Rules
 
 - Render Highcharts in styledMode and apply the Helix theme
-  (hlx-highcharts-styled-mode-theme from @cdx/theme-highcharts) — colour, font
+  (hlx-highcharts-styled-mode-theme from @hlx/theme-highcharts) — colour, font
   and axis styling then come from the design system, not from per-chart options.
 - The categorical series palette comes from the theme
   (HLX_HIGHCHARTS_THEME_COLORS). Never hardcode a colour array in the chart
@@ -42,7 +42,7 @@
 
 Charts should look like the rest of the product: the same palette, the same
 type, the same muted axes. Helix ships that as the **Highcharts styled-mode
-theme** in `@cdx/theme-highcharts`, so you render in `styledMode` and let the
+theme** in `@hlx/theme-highcharts`, so you render in `styledMode` and let the
 theme supply colour, font and axis styling — instead of setting them per chart
 (which is how every audited app ended up with a different hardcoded palette).
 
@@ -52,7 +52,7 @@ See the [Highcharts](/components/highcharts) component for the base wiring.
 
 ```scss
 @import 'highcharts/css/highcharts.css';
-@use '@cdx/theme-highcharts' as highcharts;
+@use '@hlx/theme-highcharts' as highcharts;
 
 .my-chart {
   @include highcharts.hlx-highcharts-styled-mode-theme;
@@ -73,7 +73,7 @@ chartOptions: Highcharts.Options = {
 For D3 or custom SVG, import the same palette so every chart in the app agrees:
 
 ```ts
-import { HLX_HIGHCHARTS_THEME_COLORS } from '@cdx/theme-highcharts';
+import { HLX_HIGHCHARTS_THEME_COLORS } from '@hlx/theme-highcharts';
 ```
 
 ## Colour carries no meaning on its own

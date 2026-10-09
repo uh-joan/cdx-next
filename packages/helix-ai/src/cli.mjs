@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * @cdx/helix-ai — sync Helix design-system AI coding guidance into a repo.
+ * @hlx/helix-ai — sync Helix design-system AI coding guidance into a repo.
  *
  * Writes the guidance that ships with THIS package version into a target repo,
  * in the formats each AI tool reads:
@@ -10,14 +10,14 @@
  *   - Copilot       → <target>/.github/instructions/helix-patterns.instructions.md
  *
  * The guidance is baked into this package at publish time, so the version you
- * install IS the version you get — install @cdx/helix-ai matching your @cdx/*
- * major and the guidance matches. The CLI also checks the @cdx/* version
+ * install IS the version you get — install @hlx/helix-ai matching your @hlx/*
+ * major and the guidance matches. The CLI also checks the @hlx/* version
  * actually installed in the target and warns on a major mismatch.
  *
  * Usage:
- *   npx @cdx/helix-ai sync [options]
+ *   npx @hlx/helix-ai sync [options]
  *     --all          write every format (default)
- *     --strict       treat a @cdx/* major mismatch as an error (default: warn)
+ *     --strict       treat a @hlx/* major mismatch as an error (default: warn)
  *     --skill        write only the Agent Skill
  *     --agents       write only the AGENTS.md block
  *     --copilot      write only the Copilot instructions
@@ -40,7 +40,7 @@ import { fileURLToPath } from 'node:url';
 
 const here = dirname(fileURLToPath(import.meta.url));
 const pkgRoot = join(here, '..');
-// Payload layout works in both homes: the @cdx/helix-ai package keeps it under
+// Payload layout works in both homes: the @hlx/helix-ai package keeps it under
 // `payload/`; the standalone helix-skills repo keeps it at the repo root. Detect
 // whichever is present so the same CLI serves both.
 const payloadDir = existsSync(join(pkgRoot, 'payload'))
@@ -93,7 +93,7 @@ const HELP = `Helix AI guidance v${selfVersion}
 Sync Helix design-system AI coding guidance into a repo.
 
 Usage:
-  npx @cdx/helix-ai sync [options]
+  npx @hlx/helix-ai sync [options]
 
 Options:
   --all          write every format (default)
@@ -102,17 +102,17 @@ Options:
   --copilot      write only the Copilot instructions
   --dir <path>   target repo (default: current directory)
   --dry-run      print what would change, write nothing
-  --strict       treat a @cdx/* major mismatch as an error (default: warn)
+  --strict       treat a @hlx/* major mismatch as an error (default: warn)
   --force        proceed even under --strict on a mismatch
   --help         show this help
 `;
 
-/** Read the @cdx/* major actually installed in the target, or null. */
+/** Read the @hlx/* major actually installed in the target, or null. */
 function installedCdxVersion(targetDir) {
   for (const name of [
-    '@cdx/theme-angular-material',
-    '@cdx/colors',
-    '@cdx/ngx-branding',
+    '@hlx/theme-angular-material',
+    '@hlx/colors',
+    '@hlx/ngx-branding',
   ]) {
     const p = join(targetDir, 'node_modules', name, 'package.json');
     if (existsSync(p)) {
@@ -220,7 +220,7 @@ function main() {
   }
   if (!existsSync(payloadDir)) {
     console.error(
-      'Guidance payload is missing from this package — reinstall @cdx/helix-ai.',
+      'Guidance payload is missing from this package — reinstall @hlx/helix-ai.',
     );
     process.exit(1);
   }
@@ -231,7 +231,7 @@ function main() {
     process.exit(1);
   }
 
-  // Version-skew check against the @cdx/* actually installed in the target.
+  // Version-skew check against the @hlx/* actually installed in the target.
   // Advisory by default (the guidance may be distributed independently of the
   // package version, e.g. from the standalone helix-skills repo); --strict makes
   // a major mismatch a hard stop, and --force overrides --strict.
@@ -240,14 +240,14 @@ function main() {
     const msg = `guidance is ${selfVersion} but ${installed.name} in the target is ${installed.version} — it may not match the installed Helix.`;
     if (opts.strict && !opts.force) {
       console.error(
-        `✗ ${msg}\n  Use guidance matching your @cdx/* major, or pass --force.`,
+        `✗ ${msg}\n  Use guidance matching your @hlx/* major, or pass --force.`,
       );
       process.exit(1);
     }
     console.warn(`⚠ ${msg}`);
   } else if (!installed) {
     console.warn(
-      '⚠ No @cdx/* package found in the target node_modules — cannot verify the guidance matches your installed Helix.',
+      '⚠ No @hlx/* package found in the target node_modules — cannot verify the guidance matches your installed Helix.',
     );
   }
 

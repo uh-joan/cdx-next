@@ -45,7 +45,7 @@ class SampleComponent {
 
   confirmDelete(): void {
     // helixDialog('sm', …) in a real app; the hlx-dialog-sm panel class ships
-    // from @cdx/theme-angular-material.
+    // from @hlx/theme-angular-material.
     this.dialog
       .open(ConfirmDeleteDialog, { panelClass: 'hlx-dialog-sm' })
       .afterClosed()

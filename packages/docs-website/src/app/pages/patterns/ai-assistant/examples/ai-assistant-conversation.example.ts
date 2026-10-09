@@ -9,7 +9,7 @@ import { MatButton, MatIconButton } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIcon } from '@angular/material/icon';
 import { MatInput } from '@angular/material/input';
-import { HelixAiAvatarComponent } from '@cdx/ngx-branding';
+import { HelixAiAvatarComponent } from '@hlx/ngx-branding';
 
 import { InputViewerComponent } from '../../../../core/example-viewer/example-viewer.model';
 
@@ -221,7 +221,7 @@ export const AiAssistantConversation: InputViewerComponent = {
   htmlCode,
   cssCode: styleCode,
   tsCode: `import { Component, computed, inject, DestroyRef, signal } from '@angular/core';
-import { HelixAiAvatarComponent } from '@cdx/ngx-branding';
+import { HelixAiAvatarComponent } from '@hlx/ngx-branding';
 // + Material form-field, input, button, icon
 
 // The streamed answer and status live in an aria-live="polite" region so screen

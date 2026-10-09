@@ -1,4 +1,4 @@
-export const modulesTranslationsAngular = `import { NgxTranslationsModule } from '@cdx/ngx-translations';
+export const modulesTranslationsAngular = `import { NgxTranslationsModule } from '@hlx/ngx-translations';
 import { provideTranslateService } from '@ngx-translate/core';
 
 bootstrapApplication(AppComponent, {
@@ -19,7 +19,7 @@ export const translationsTemplateAngular = `<header cdx-header>
 
 export const translationsSampleComponentAngular = `import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-import { NgxTranslationsService } from '@cdx/ngx-translations';
+import { NgxTranslationsService } from '@hlx/ngx-translations';
 import { TranslateService } from '@ngx-translate/core';
 
 import * as ar_SA from '../assets/i18n/ar_SA.json';

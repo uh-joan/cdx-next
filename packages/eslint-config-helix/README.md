@@ -1,8 +1,8 @@
-# @cdx/eslint-config-helix
+# @hlx/eslint-config-helix
 
 Shared ESLint (flat-config) **accessibility** rules for Angular templates in apps
 consuming the Helix design system. It is the a11y companion to
-[`@cdx/stylelint-config-helix`](../stylelint-config-helix).
+[`@hlx/stylelint-config-helix`](../stylelint-config-helix).
 
 It turns on the `@angular-eslint/eslint-plugin-template` rules the design-system
 review and the AI-output measurement care about:
@@ -18,12 +18,12 @@ review and the AI-output measurement care about:
 ## Usage
 
 ```bash
-npm i -D @cdx/eslint-config-helix
+npm i -D @hlx/eslint-config-helix
 ```
 
 ```js
 // eslint.config.mjs — spread AFTER your Angular template config
-import helixA11y from '@cdx/eslint-config-helix';
+import helixA11y from '@hlx/eslint-config-helix';
 
 export default [
   ...baseConfig,

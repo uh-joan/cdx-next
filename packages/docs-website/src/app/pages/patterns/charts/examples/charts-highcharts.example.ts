@@ -11,7 +11,7 @@ const htmlCode = `<div class="chart-card">
 // styledMode + the Helix Highcharts theme → colour, font and axes come from the
 // design system. No `colors:` in the options; the series palette is the theme's.
 const styleCode = `@import 'highcharts/css/highcharts.css';
-@use '@cdx/theme-highcharts' as highcharts;
+@use '@hlx/theme-highcharts' as highcharts;
 
 .hlx-chart {
   @include highcharts.hlx-highcharts-styled-mode-theme;
@@ -71,7 +71,7 @@ import Highcharts from 'highcharts';
 import { HighchartsChartComponent } from 'highcharts-angular';
 
 // styledMode + hlx-highcharts-styled-mode-theme: the series palette, font and
-// axes come from @cdx/theme-highcharts — no hardcoded colours in the options.
+// axes come from @hlx/theme-highcharts — no hardcoded colours in the options.
 @Component({
   selector: 'app-submissions-chart',
   imports: [HighchartsChartComponent],

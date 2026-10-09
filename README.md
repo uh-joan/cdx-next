@@ -9,7 +9,7 @@ header, footer and notifications, shared services, icons and pictograms, and the
 Helix documentation site.
 
 The packages track Angular majors: this branch targets **Angular 22** and
-publishes `22.x` versions of every `@cdx/*` package.
+publishes `22.x` versions of every `@hlx/*` package.
 
 ## Contents
 
@@ -29,31 +29,31 @@ All published packages share one version and are released together.
 
 | Package                       | What it is                                                                          |
 | ----------------------------- | ----------------------------------------------------------------------------------- |
-| `@cdx/theme-angular-material` | The Helix theme for Angular Material: tokens, typography, density, overrides        |
-| `@cdx/colors`                 | The colour palette as plain Sass variables                                          |
-| `@cdx/clarivate-font`         | The Clarivate brand font                                                            |
-| `@cdx/helix-icons`            | Clarivate's custom icons and pictograms (standard icons come from Material Symbols) |
+| `@hlx/theme-angular-material` | The Helix theme for Angular Material: tokens, typography, density, overrides        |
+| `@hlx/colors`                 | The colour palette as plain Sass variables                                          |
+| `@hlx/clarivate-font`         | The Clarivate brand font                                                            |
+| `@hlx/helix-icons`            | Clarivate's custom icons and pictograms (standard icons come from Material Symbols) |
 
 **Components and services**
 
 | Package                     | What it is                                                                           |
 | --------------------------- | ------------------------------------------------------------------------------------ |
-| `@cdx/ngx-branding`         | Header, footer, notification, AI avatar, empty state, rich tooltip, OneTrust         |
-| `@cdx/shared-branding`      | Shared header and footer styles                                                      |
-| `@cdx/ngx-authentication`   | Authentication broker and user profile menu                                          |
-| `@cdx/ngx-session-activity` | Inactivity detection and session timeout dialog                                      |
-| `@cdx/ngx-analytics`        | Analytics service with Clarivate's Snowplow (Iglu) schemas                           |
-| `@cdx/ngx-translations`     | Translations service and bundled i18n strings, built on `@ngx-translate`             |
-| `@cdx/oti-snippet`          | OneTrust cookie consent with analytics integrations such as Pendo; also a UMD script |
+| `@hlx/ngx-branding`         | Header, footer, notification, AI avatar, empty state, rich tooltip, OneTrust         |
+| `@hlx/shared-branding`      | Shared header and footer styles                                                      |
+| `@hlx/ngx-authentication`   | Authentication broker and user profile menu                                          |
+| `@hlx/ngx-session-activity` | Inactivity detection and session timeout dialog                                      |
+| `@hlx/ngx-analytics`        | Analytics service with Clarivate's Snowplow (Iglu) schemas                           |
+| `@hlx/ngx-translations`     | Translations service and bundled i18n strings, built on `@ngx-translate`             |
+| `@hlx/oti-snippet`          | OneTrust cookie consent with analytics integrations such as Pendo; also a UMD script |
 
 **Themes for third-party libraries**
 
 | Package                     | Library                           |
 | --------------------------- | --------------------------------- |
-| `@cdx/theme-ag-grid`        | AG Grid                           |
-| `@cdx/theme-highcharts`     | Highcharts                        |
-| `@cdx/theme-snackbar`       | Angular Material snack bar toasts |
-| `@cdx/theme-xng-breadcrumb` | xng-breadcrumb                    |
+| `@hlx/theme-ag-grid`        | AG Grid                           |
+| `@hlx/theme-highcharts`     | Highcharts                        |
+| `@hlx/theme-snackbar`       | Angular Material snack bar toasts |
+| `@hlx/theme-xng-breadcrumb` | xng-breadcrumb                    |
 
 **Apps (not published)**
 
@@ -76,15 +76,15 @@ it in your app's `.npmrc`:
 Install the theme and the branding components:
 
 ```bash
-npm install @cdx/theme-angular-material @cdx/ngx-branding
+npm install @hlx/theme-angular-material @hlx/ngx-branding
 ```
 
 Apply the Helix theme in your global `styles.scss`:
 
 ```scss
-@use '@cdx/theme-angular-material' as cdx;
-@use '@cdx/ngx-branding/header/theme' as header;
-@use '@cdx/ngx-branding/footer/theme' as footer;
+@use '@hlx/theme-angular-material' as cdx;
+@use '@hlx/ngx-branding/header/theme' as header;
+@use '@hlx/ngx-branding/footer/theme' as footer;
 
 @include cdx.default(cdx.$helix-theme, 'helix-theme-material');
 @include header.theme(cdx.$helix-theme);
@@ -101,7 +101,7 @@ Then add the theme class to `<body>`:
 <body class="mat-typography helix-theme-material"></body>
 ```
 
-For Clarivate's custom icons and pictograms, add `@cdx/helix-icons` and register
+For Clarivate's custom icons and pictograms, add `@hlx/helix-icons` and register
 it in `app.config.ts`. Standard icons keep using the Material Symbols font by
 name.
 
@@ -168,7 +168,7 @@ Jenkinsfile        CI pipeline
 
 ## Figma and AI tooling
 
-**Icons and pictograms from Figma.** `@cdx/helix-icons` is generated from the
+**Icons and pictograms from Figma.** `@hlx/helix-icons` is generated from the
 Helix Figma library. It exports only the icons that aren't in Material Symbols,
 plus every pictogram:
 

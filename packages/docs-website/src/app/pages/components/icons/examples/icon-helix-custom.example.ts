@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { MatIcon } from '@angular/material/icon';
-import { HELIX_ICONS } from '@cdx/helix-icons';
+import { HELIX_ICONS } from '@hlx/helix-icons';
 
 import { InputViewerComponent } from '../../../../core/example-viewer/example-viewer.model';
 
@@ -54,7 +54,7 @@ export const IconHelixCustomComponent: InputViewerComponent = {
   cssCode: styleCode,
   tsCode: `// app.config.ts
 import { provideHttpClient } from '@angular/common/http';
-import { provideHelixIcons } from '@cdx/helix-icons';
+import { provideHelixIcons } from '@hlx/helix-icons';
 
 export const appConfig: ApplicationConfig = {
   providers: [provideHttpClient(), provideHelixIcons()],

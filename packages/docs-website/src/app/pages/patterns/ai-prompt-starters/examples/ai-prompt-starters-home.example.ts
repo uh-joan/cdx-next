@@ -3,7 +3,7 @@ import { MatButton, MatIconButton } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIcon } from '@angular/material/icon';
 import { MatInput } from '@angular/material/input';
-import { HelixAiAvatarComponent } from '@cdx/ngx-branding';
+import { HelixAiAvatarComponent } from '@hlx/ngx-branding';
 
 import { InputViewerComponent } from '../../../../core/example-viewer/example-viewer.model';
 
@@ -114,7 +114,7 @@ export const AiPromptStartersHome: InputViewerComponent = {
   htmlCode,
   cssCode: styleCode,
   tsCode: `import { Component, ElementRef, signal, viewChild } from '@angular/core';
-import { HelixAiAvatarComponent } from '@cdx/ngx-branding';
+import { HelixAiAvatarComponent } from '@hlx/ngx-branding';
 // + Material form-field, input, button, icon
 
 // A starter card seeds the composer (editable) and focuses it — it never sends on

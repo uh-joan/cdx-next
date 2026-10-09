@@ -18,7 +18,7 @@ export class Highcharts {
 
   moduleText = `import * as Highcharts from 'highcharts';
   import { HighchartsChartComponent } from 'highcharts-angular';
-  import { HIGHCHARTS_HLX_THEME } from '@cdx/theme-highcharts';
+  import { HIGHCHARTS_HLX_THEME } from '@hlx/theme-highcharts';
   
   @NgModule({
     declarations: [MyHighchartsComponent],

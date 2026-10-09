@@ -10,8 +10,8 @@ import {
   HelixHeaderComponent,
   HelixHeaderGlobalComponent,
   HelixHeaderProductNameOrLogoComponent,
-} from '@cdx/ngx-branding';
-import { NgxTranslationsModule } from '@cdx/ngx-translations';
+} from '@hlx/ngx-branding';
+import { NgxTranslationsModule } from '@hlx/ngx-translations';
 
 import { LanguageSelector } from './language-selector/language-selector';
 import { ModeSelector } from './mode-selector/mode-selector';

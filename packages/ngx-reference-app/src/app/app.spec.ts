@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
-import { AnalyticsModule, AnalyticsService } from '@cdx/ngx-analytics';
+import { AnalyticsModule, AnalyticsService } from '@hlx/ngx-analytics';
 
 import { ThemeService } from '../core/layout/theme-selector/theme.service';
 import { App } from './app';

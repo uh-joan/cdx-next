@@ -64,7 +64,7 @@ type BreadcrumbsArgs = {
 };
 
 // Item styles from the docs example, plus the list spacing
-// that <cdx-breadcrumb> (@cdx/theme-xng-breadcrumb) applies.
+// that <cdx-breadcrumb> (@hlx/theme-xng-breadcrumb) applies.
 const helixItemStyles = `
   :host ::ng-deep .xng-breadcrumb-list { gap: 0.5rem; }
   :host ::ng-deep .xng-breadcrumb-separator { margin: 0; }
@@ -114,7 +114,7 @@ const meta: Meta<BreadcrumbsArgs> = {
     docs: {
       description: {
         component:
-          'Breadcrumbs are built on `xng-breadcrumb`, which derives the trail from the Angular router (`data.breadcrumb` on each route). `<cdx-breadcrumb>` from `@cdx/theme-xng-breadcrumb` is the Helix wrapper (chevron separator, home icon); this story renders `xng-breadcrumb` directly with the Helix item template from the examples so the separator and item options can be explored, using a small in-memory router: Home › Components › Navigation › Breadcrumbs.',
+          'Breadcrumbs are built on `xng-breadcrumb`, which derives the trail from the Angular router (`data.breadcrumb` on each route). `<cdx-breadcrumb>` from `@hlx/theme-xng-breadcrumb` is the Helix wrapper (chevron separator, home icon); this story renders `xng-breadcrumb` directly with the Helix item template from the examples so the separator and item options can be explored, using a small in-memory router: Home › Components › Navigation › Breadcrumbs.',
       },
     },
   },

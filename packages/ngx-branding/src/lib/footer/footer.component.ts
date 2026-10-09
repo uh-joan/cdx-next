@@ -7,7 +7,7 @@ import {
   input,
   ViewEncapsulation,
 } from '@angular/core';
-import { ThemeOptionsBranding } from '@cdx/theme-angular-material';
+import { ThemeOptionsBranding } from '@hlx/theme-angular-material';
 import { TranslatePipe } from '@ngx-translate/core';
 
 import { OneTrustService } from '../one-trust/one-trust.service';

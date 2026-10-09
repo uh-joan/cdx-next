@@ -1,5 +1,5 @@
 {
-  "name": "@cdx/eslint-config-helix",
+  "name": "@hlx/eslint-config-helix",
   "version": "22.0.0-alpha.1",
   "description": "Shared ESLint (flat-config) accessibility rules for Angular templates in Helix apps.",
   "repository": {

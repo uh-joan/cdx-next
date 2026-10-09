@@ -6,7 +6,7 @@ import {
   isDevMode,
   provideAppInitializer,
 } from '@angular/core';
-import { OneTrustModule } from '@cdx/ngx-branding';
+import { OneTrustModule } from '@hlx/ngx-branding';
 import { ContextPrimitive } from '@snowplow/browser-tracker';
 
 import {

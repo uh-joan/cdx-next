@@ -470,7 +470,7 @@ Other plain Material patterns:
 
 ```ts
 import { Component } from '@angular/core';
-import { HelixFooterComponent, HelixHeaderComponent } from '@cdx/ngx-branding';
+import { HelixFooterComponent, HelixHeaderComponent } from '@hlx/ngx-branding';
 
 @Component({
   selector: 'app-shell',
@@ -524,7 +524,7 @@ Token categories:
 SCSS example:
 
 ```scss
-@use '@cdx/theme-angular-material/styles/theme/helix/variables/tokens' as tokens;
+@use '@hlx/theme-angular-material/styles/theme/helix/variables/tokens' as tokens;
 
 .status-card {
   background: tokens.$surface-minimal;
@@ -561,7 +561,7 @@ CSS variable example:
 - Card: `MatCardModule`.
 - Datepicker: `MatDatepickerModule` plus form-field/input imports.
 - Stepper: `MatStepperModule` plus form-field/input and form APIs when needed.
-- Header/footer/notification/rich tooltip: imports from `@cdx/ngx-branding` such
+- Header/footer/notification/rich tooltip: imports from `@hlx/ngx-branding` such
   as `HelixHeaderComponent`, `HelixFooterComponent`,
   `HelixNotificationComponent`, `RichTooltipDirective`.
 

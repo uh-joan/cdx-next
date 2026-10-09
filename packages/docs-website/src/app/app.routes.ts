@@ -1,6 +1,6 @@
 import { importProvidersFrom } from '@angular/core';
 import { Routes } from '@angular/router';
-import { OneTrustModule } from '@cdx/ngx-branding';
+import { OneTrustModule } from '@hlx/ngx-branding';
 
 import { Layout } from './core/layout/layout';
 

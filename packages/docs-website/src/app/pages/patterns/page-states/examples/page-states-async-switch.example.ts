@@ -1,6 +1,6 @@
 import { Component, signal } from '@angular/core';
 import { MatButton } from '@angular/material/button';
-import { HelixEmptyStateComponent } from '@cdx/ngx-branding';
+import { HelixEmptyStateComponent } from '@hlx/ngx-branding';
 import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 
 import { InputViewerComponent } from '../../../../core/example-viewer/example-viewer.model';
@@ -99,7 +99,7 @@ export const PageStatesAsyncSwitch: InputViewerComponent = {
   tsCode: `import { Component, signal } from '@angular/core';
 import { MatButton } from '@angular/material/button';
 import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
-import { HelixEmptyStateComponent } from '@cdx/ngx-branding';
+import { HelixEmptyStateComponent } from '@hlx/ngx-branding';
 
 type Status = 'loading' | 'loaded' | 'empty' | 'error';
 

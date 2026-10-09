@@ -1,5 +1,5 @@
 {
-  "name": "@cdx/ngx-authentication",
+  "name": "@hlx/ngx-authentication",
   "version": "22.0.0-alpha.1",
   "repository": {
     "type": "git",
@@ -13,6 +13,6 @@
     "@angular/material": "^22",
     "@angular/router": "^22",
     "@auth0/angular-jwt": "^5.2.0",
-    "@cdx/theme-angular-material": "22.0.0-alpha.1"
+    "@hlx/theme-angular-material": "22.0.0-alpha.1"
   }
 }

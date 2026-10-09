@@ -1,6 +1,6 @@
 {
   "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
-  "allowedNonPeerDependencies": ["@cdx/colors"],
+  "allowedNonPeerDependencies": ["@hlx/colors"],
   "assets": ["styles/**/*.scss", "styles/**/*.css"],
   "dest": "../../dist/packages/theme-angular-material",
   "lib": {

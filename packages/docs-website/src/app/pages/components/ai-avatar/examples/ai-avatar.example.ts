@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { HelixAiAvatarComponent } from '@cdx/ngx-branding';
+import { HelixAiAvatarComponent } from '@hlx/ngx-branding';
 
 import { InputViewerComponent } from '../../../../core/example-viewer/example-viewer.model';
 
@@ -51,7 +51,7 @@ export const AiAvatarComponent: InputViewerComponent = {
   htmlCode,
   cssCode: styleCode,
   tsCode: `import { Component } from '@angular/core';
-import { HelixAiAvatarComponent } from '@cdx/ngx-branding';
+import { HelixAiAvatarComponent } from '@hlx/ngx-branding';
 
 // The animation is skipped for users who prefer reduced motion.
 @Component({

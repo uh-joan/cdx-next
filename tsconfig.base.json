@@ -12,24 +12,23 @@
     "module": "esnext",
     "moduleResolution": "bundler",
     "paths": {
-      "@cdx/demo": ["packages/demo/src/index.ts"],
-      "@cdx/ngx-analytics": ["packages/ngx-analytics/src/index.ts"],
-      "@cdx/ngx-authentication": ["packages/ngx-authentication/src/index.ts"],
-      "@cdx/ngx-branding": ["packages/ngx-branding/src/index.ts"],
-      "@cdx/helix-icons": ["packages/helix-icons/src/index.ts"],
-      "@cdx/ngx-session-activity": [
+      "@hlx/ngx-analytics": ["packages/ngx-analytics/src/index.ts"],
+      "@hlx/ngx-authentication": ["packages/ngx-authentication/src/index.ts"],
+      "@hlx/ngx-branding": ["packages/ngx-branding/src/index.ts"],
+      "@hlx/helix-icons": ["packages/helix-icons/src/index.ts"],
+      "@hlx/ngx-session-activity": [
         "packages/ngx-session-activity/src/index.ts"
       ],
-      "@cdx/ngx-translations": ["packages/ngx-translations/src/index.ts"],
-      "@cdx/oti-snippet": ["packages/oti-snippet/src/index.ts"],
-      "@cdx/theme-angular-material": [
+      "@hlx/ngx-translations": ["packages/ngx-translations/src/index.ts"],
+      "@hlx/oti-snippet": ["packages/oti-snippet/src/index.ts"],
+      "@hlx/theme-angular-material": [
         "packages/theme-angular-material/src/index.ts"
       ],
-      "@cdx/theme-ag-grid": ["packages/theme-ag-grid/dist/theme-ag-grid.mjs"],
-      "@cdx/theme-highcharts": [
+      "@hlx/theme-ag-grid": ["packages/theme-ag-grid/dist/theme-ag-grid.mjs"],
+      "@hlx/theme-highcharts": [
         "packages/theme-highcharts/dist/theme-highcharts.mjs"
       ],
-      "@cdx/theme-xng-breadcrumb": [
+      "@hlx/theme-xng-breadcrumb": [
         "packages/theme-xng-breadcrumb/src/index.ts"
       ]
     },

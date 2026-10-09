@@ -15,7 +15,7 @@ import * as samples from './examples';
 export class Header {
   @HostBinding('class') hostClass = 'cdx-section';
 
-  moduleText = `import { HelixHeaderModule } from '@cdx/ngx-branding';`;
+  moduleText = `import { HelixHeaderModule } from '@hlx/ngx-branding';`;
 
   sampleList = Object.values(samples);
 }

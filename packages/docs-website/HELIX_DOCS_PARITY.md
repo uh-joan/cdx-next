@@ -181,9 +181,9 @@ dev server.
 - [ ] Theme toolbar global (light/dark) once the Helix theme ships a dark
       variant.
 - [ ] Stories with full `argTypes` per component:
-  - [x] `@cdx/ngx-branding` Header and Footer (every input, projected content
+  - [x] `@hlx/ngx-branding` Header and Footer (every input, projected content
         toggles, theme colors).
-  - [x] Remaining `@cdx/ngx-branding` components (notification, rich tooltip).
+  - [x] Remaining `@hlx/ngx-branding` components (notification, rich tooltip).
   - [x] Button (variant × color × size × icon × disabled, plus a matrix story).
   - [x] Remaining Helix-styled Material components, following the Options
         sections on Helix (e.g. Input: appearance × state × size × icons).
@@ -210,7 +210,7 @@ Found while prototyping:
   surface background, so its label isn't visible. Worth checking with design.
 - The breadcrumbs story renders `xng-breadcrumb` with the Helix template instead
   of the `<cdx-breadcrumb>` wrapper, because Storybook doesn't resolve
-  `@cdx/theme-xng-breadcrumb` from source yet.
+  `@hlx/theme-xng-breadcrumb` from source yet.
 - Theme classes added from Helix values: `hlx-btn-ai` (AI gradient `#3595F0` →
   `#B175E1` at 150°, filled buttons and FABs), `hlx-link-blue` (`#1565C0`,
   visited `#282C75`), `hlx-link-visited`, `hlx-link-inline` (underline + 600),
@@ -219,7 +219,7 @@ Found while prototyping:
   The AI _stroked_ button (gradient outline) isn't themed yet.
 - Still approximated, needing design specs: the Helix **Default** header is two
   rows (dark Clarivate bar + white product bar with navigation) and doesn't
-  exist in `@cdx/ngx-branding`; our `hlx-header` is Helix's "Condensed". Also
+  exist in `@hlx/ngx-branding`; our `hlx-header` is Helix's "Condensed". Also
   divider "dark", button toggle Light/Dark and equal/variable width, slide
   toggle "three sizes".
 
@@ -272,12 +272,12 @@ single source that feeds both the docs site and AI tools. See
 - **Catalog (11).** page-states, dialogs, app-shell, list-with-filters,
   ai-assistant, data-grid, charts, forms, entity-detail, export, error-pages —
   each with Overview + Code tabs and runnable examples.
-- **Shipped to close pattern gaps.** `hlx-empty-state` (`@cdx/ngx-branding`);
+- **Shipped to close pattern gaps.** `hlx-empty-state` (`@hlx/ngx-branding`);
   `--hlx-*` custom properties (colour, spacing, breakpoints, elevation, AI
   gradient); dialog size tokens/classes; `.hlx-prose`; `hlx-menu-scrollable`; the
-  `@cdx/theme-ag-grid` TS API (`provideHelixAgGrid`, `helixGridTheme`,
-  `HELIX_DEFAULT_COL_DEF`, chip/date renderers); and the `@cdx/stylelint-config-helix`
-  and `@cdx/eslint-config-helix` lint presets.
+  `@hlx/theme-ag-grid` TS API (`provideHelixAgGrid`, `helixGridTheme`,
+  `HELIX_DEFAULT_COL_DEF`, chip/date renderers); and the `@hlx/stylelint-config-helix`
+  and `@hlx/eslint-config-helix` lint presets.
 - **Measured.** Two control-vs-treatment runs of AI output against the skill
   confirmed the approach and steered it toward shipping components/tokens.
 

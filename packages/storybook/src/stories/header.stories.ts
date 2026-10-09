@@ -4,7 +4,7 @@ import {
   HelixHeaderComponent,
   HelixHeaderGlobalComponent,
   HelixHeaderProductNameOrLogoComponent,
-} from '@cdx/ngx-branding';
+} from '@hlx/ngx-branding';
 import { type Meta, moduleMetadata, type StoryObj } from '@storybook/angular';
 
 type HeaderArgs = {
@@ -36,7 +36,7 @@ const meta: Meta<HeaderArgs> = {
     docs: {
       description: {
         component:
-          '`<header hlx-header>` from `@cdx/ngx-branding`. Use `branded` when Clarivate is the primary brand; turn it off when the product name takes precedence (Foundations › Branding). Helix header types: Default (logo, product name, navigation and global actions), Condensed (no app navigation) and No Clarivate logo (`branded` off).',
+          '`<header hlx-header>` from `@hlx/ngx-branding`. Use `branded` when Clarivate is the primary brand; turn it off when the product name takes precedence (Foundations › Branding). Helix header types: Default (logo, product name, navigation and global actions), Condensed (no app navigation) and No Clarivate logo (`branded` off).',
       },
     },
   },

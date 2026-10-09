@@ -1,8 +1,10 @@
 /* stylelint-disable plugin/stylelint-bem-namics */
 @use '@angular/material' as mat;
-@use '@cdx/theme-angular-material' as hlx;
-@use '@cdx/ngx-branding/header/theme' as header;
-@use '@cdx/ngx-branding/footer/theme' as footer;
+@use '@hlx/theme-angular-material' as hlx;
+@use '@hlx/ngx-branding/header/theme' as header;
+@use '@hlx/ngx-branding/footer/theme' as footer;
+
+@import '@hlx/clarivate-font/css/clarivate-font.css';
 
 @include hlx.default;
 @include header.theme(hlx.$light-theme);

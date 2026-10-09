@@ -1,5 +1,5 @@
 // The Helix AG Grid theme. The docs app loads it globally from its styles;
-// Storybook doesn't, so the story loads the published @cdx/theme-ag-grid copy
+// Storybook doesn't, so the story loads the published @hlx/theme-ag-grid copy
 // (its package exports don't expose the CSS file, hence the relative path).
 // eslint-disable-next-line @nx/enforce-module-boundaries
 import '../../../theme-ag-grid/ag-theme-helix.css';
@@ -77,7 +77,7 @@ const meta: Meta<DataGridArgs> = {
     docs: {
       description: {
         component:
-          'Helix data grids use AG Grid (`ag-grid-angular`) with the Helix AG Grid theme (`ag-theme-helix.css` from `@cdx/theme-ag-grid`). Use them for interactive tables with large data sets; for simple, static data use the Table component.',
+          'Helix data grids use AG Grid (`ag-grid-angular`) with the Helix AG Grid theme (`ag-theme-helix.css` from `@hlx/theme-ag-grid`). Use them for interactive tables with large data sets; for simple, static data use the Table component.',
       },
     },
   },

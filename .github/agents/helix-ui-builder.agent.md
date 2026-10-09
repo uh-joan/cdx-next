@@ -69,7 +69,7 @@ the examples, flag it rather than approximating.
 ### 3. Check for reuse and confirm placement
 
 Search the workspace before creating anything. Prefer an existing component in
-`packages/docs-website` or the `@cdx/*` libraries over a new one. Only create a
+`packages/docs-website` or the `@hlx/*` libraries over a new one. Only create a
 new component when nothing fits.
 
 This is a multi-package monorepo and the right home is rarely obvious — **ask

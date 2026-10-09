@@ -14,16 +14,16 @@ export default defineConfig({
     // resolution has no "." entry — point the bare specifier at the sources.
     alias: [
       {
-        find: /^@cdx\/ngx-branding$/,
+        find: /^@hlx\/ngx-branding$/,
         replacement: resolve(projectRoot, '../ngx-branding/src/index.ts'),
       },
       {
-        find: /^@cdx\/helix-icons$/,
+        find: /^@hlx\/helix-icons$/,
         replacement: resolve(projectRoot, '../helix-icons/src/index.ts'),
       },
       // Resolve from sources so tests don't depend on a prior library build.
       {
-        find: /^@cdx\/theme-highcharts$/,
+        find: /^@hlx\/theme-highcharts$/,
         replacement: resolve(projectRoot, '../theme-highcharts/src/index.ts'),
       },
     ],

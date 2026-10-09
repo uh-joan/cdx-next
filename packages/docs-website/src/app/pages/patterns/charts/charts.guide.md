@@ -26,7 +26,7 @@ rules:
   - id: styled-mode-theme
     text: >-
       Render Highcharts in styledMode and apply the Helix theme
-      (hlx-highcharts-styled-mode-theme from @cdx/theme-highcharts) — colour, font
+      (hlx-highcharts-styled-mode-theme from @hlx/theme-highcharts) — colour, font
       and axis styling then come from the design system, not from per-chart
       options.
   - id: palette-from-theme
@@ -65,16 +65,16 @@ anti-patterns:
 examples:
   - highcharts
 evidence:
-  - off-x-ui: chart colours hardcoded as hex in TypeScript; @cdx/theme-highcharts installed but never imported
+  - off-x-ui: chart colours hardcoded as hex in TypeScript; @hlx/theme-highcharts installed but never imported
   - cmc-gui-docker / cortellis-reg-ai-app: Highcharts used; palette not shared
-  - cdx-next: '@cdx/theme-highcharts ships the styled-mode theme + HLX_HIGHCHARTS_THEME_COLORS'
+  - cdx-next: '@hlx/theme-highcharts ships the styled-mode theme + HLX_HIGHCHARTS_THEME_COLORS'
 ---
 
 ## Overview
 
 Charts should look like the rest of the product: the same palette, the same
 type, the same muted axes. Helix ships that as the **Highcharts styled-mode
-theme** in `@cdx/theme-highcharts`, so you render in `styledMode` and let the
+theme** in `@hlx/theme-highcharts`, so you render in `styledMode` and let the
 theme supply colour, font and axis styling — instead of setting them per chart
 (which is how every audited app ended up with a different hardcoded palette).
 
@@ -84,7 +84,7 @@ See the [Highcharts](/components/highcharts) component for the base wiring.
 
 ```scss
 @import 'highcharts/css/highcharts.css';
-@use '@cdx/theme-highcharts' as highcharts;
+@use '@hlx/theme-highcharts' as highcharts;
 
 .my-chart {
   @include highcharts.hlx-highcharts-styled-mode-theme;
@@ -105,7 +105,7 @@ chartOptions: Highcharts.Options = {
 For D3 or custom SVG, import the same palette so every chart in the app agrees:
 
 ```ts
-import { HLX_HIGHCHARTS_THEME_COLORS } from '@cdx/theme-highcharts';
+import { HLX_HIGHCHARTS_THEME_COLORS } from '@hlx/theme-highcharts';
 ```
 
 ## Colour carries no meaning on its own

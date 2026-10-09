@@ -10,23 +10,23 @@ export default defineConfig({
   root: projectRoot,
   resolve: {
     alias: {
-      '@cdx/ngx-analytics': resolve(
+      '@hlx/ngx-analytics': resolve(
         workspaceRoot,
         'packages/ngx-analytics/src/index.ts',
       ),
-      '@cdx/ngx-authentication': resolve(
+      '@hlx/ngx-authentication': resolve(
         workspaceRoot,
         'packages/ngx-authentication/src/index.ts',
       ),
-      '@cdx/ngx-branding': resolve(
+      '@hlx/ngx-branding': resolve(
         workspaceRoot,
         'packages/ngx-branding/src/index.ts',
       ),
-      '@cdx/ngx-session-activity': resolve(
+      '@hlx/ngx-session-activity': resolve(
         workspaceRoot,
         'packages/ngx-session-activity/src/index.ts',
       ),
-      '@cdx/ngx-translations': resolve(
+      '@hlx/ngx-translations': resolve(
         workspaceRoot,
         'packages/ngx-translations/src/index.ts',
       ),

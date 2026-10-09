@@ -38,7 +38,7 @@ export class MigrationGuide {
   );
 
   headerFooterModule = `//...
-import { HelixHeaderModule, HelixFooterModule } from '@cdx/ngx-branding';
+import { HelixHeaderModule, HelixFooterModule } from '@hlx/ngx-branding';
 
 @NgModule({
   //...
@@ -51,8 +51,8 @@ import { HelixHeaderModule, HelixFooterModule } from '@cdx/ngx-branding';
 })`;
 
   headerFooterComponents = `//...
-import { HelixHeaderComponent, HelixHeaderGlobalComponent, HelixHeaderProductNameOrLogoComponent } from '@cdx/ngx-branding';
-import { HelixFooterComponent, HelixFooterGroupComponent, HelixFooterLinkDirective, HelixFooterGroupTitleDirective } from '@cdx/ngx-branding';
+import { HelixHeaderComponent, HelixHeaderGlobalComponent, HelixHeaderProductNameOrLogoComponent } from '@hlx/ngx-branding';
+import { HelixFooterComponent, HelixFooterGroupComponent, HelixFooterLinkDirective, HelixFooterGroupTitleDirective } from '@hlx/ngx-branding';
 
 @NgModule({
   //...

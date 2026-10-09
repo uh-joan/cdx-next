@@ -5,7 +5,7 @@ import {
   HelixHeaderComponent,
   HelixHeaderGlobalComponent,
   HelixHeaderProductNameOrLogoComponent,
-} from '@cdx/ngx-branding';
+} from '@hlx/ngx-branding';
 
 import { InputViewerComponent } from '../../../../core/example-viewer/example-viewer.model';
 
@@ -71,7 +71,7 @@ import {
   HelixHeaderComponent,
   HelixHeaderGlobalComponent,
   HelixHeaderProductNameOrLogoComponent,
-} from '@cdx/ngx-branding';
+} from '@hlx/ngx-branding';
 
 @Component({
   template: htmlCode,

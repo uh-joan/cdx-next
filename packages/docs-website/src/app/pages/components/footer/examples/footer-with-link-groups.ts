@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import {
   HelixFooterComponent,
   HelixFooterGroupComponent,
-} from '@cdx/ngx-branding';
+} from '@hlx/ngx-branding';
 
 import { InputViewerComponent } from '../../../../core/example-viewer/example-viewer.model';
 
@@ -79,7 +79,7 @@ import {
   HelixFooterComponent,
   HelixFooterGroupComponent,
   HelixFooterGroupTitleDirective,
-} from '@cdx/ngx-branding';
+} from '@hlx/ngx-branding';
 
 @Component({
   template: htmlCode,

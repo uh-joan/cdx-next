@@ -44,7 +44,7 @@ export class Typography {
 
   typographyCss = `
   @use '@angular/material' as mat;
-  @use '@cdx/theme-angular-material' as cdx;
+  @use '@hlx/theme-angular-material' as cdx;
 
   @include mat.typography-hierarchy(cdx.$helix-typography, 'body-1');
 `;

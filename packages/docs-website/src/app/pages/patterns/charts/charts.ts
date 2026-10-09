@@ -19,7 +19,7 @@ export class Charts {
   sampleList = Object.values(samples);
 
   themeSnippet = `@import 'highcharts/css/highcharts.css';
-@use '@cdx/theme-highcharts' as highcharts;
+@use '@hlx/theme-highcharts' as highcharts;
 
 .my-chart {
   @include highcharts.hlx-highcharts-styled-mode-theme;
@@ -35,5 +35,5 @@ export class Charts {
 };
 
 // D3 / custom SVG — import the same palette:
-import { HLX_HIGHCHARTS_THEME_COLORS } from '@cdx/theme-highcharts';`;
+import { HLX_HIGHCHARTS_THEME_COLORS } from '@hlx/theme-highcharts';`;
 }

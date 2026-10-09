@@ -1,4 +1,4 @@
-# @cdx/helix-icons
+# @hlx/helix-icons
 
 The Clarivate icons and pictograms from the Helix Figma library that are not
 part of Google's Material Symbols.
@@ -14,7 +14,7 @@ Material Symbols font:
 
 ```ts
 import { provideHttpClient } from '@angular/common/http';
-import { provideHelixIcons } from '@cdx/helix-icons';
+import { provideHelixIcons } from '@hlx/helix-icons';
 
 export const appConfig: ApplicationConfig = {
   providers: [provideHttpClient(), provideHelixIcons()],
@@ -41,7 +41,7 @@ use instead of bundled. Copy them into your app's assets:
 ```json
 {
   "glob": "**/*.svg",
-  "input": "node_modules/@cdx/helix-icons/svg/pictograms",
+  "input": "node_modules/@hlx/helix-icons/svg/pictograms",
   "output": "assets/helix-pictograms"
 }
 ```

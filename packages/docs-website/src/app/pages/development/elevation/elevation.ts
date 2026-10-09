@@ -54,7 +54,7 @@ export class Elevation {
   }`;
 
   colorsFromPalette = `
-  @use '@cdx/theme-angular-material' as cdx;
+  @use '@hlx/theme-angular-material' as cdx;
 
   .my-component {
       @include mat.chips-color(cdx.$helix-theme, $color-variant: primary);

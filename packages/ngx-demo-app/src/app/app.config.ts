@@ -5,8 +5,8 @@ import {
 } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { provideRouter } from '@angular/router';
-import { AuthenticationModule } from '@cdx/ngx-authentication';
-import { SessionActivityModule } from '@cdx/ngx-session-activity';
+import { AuthenticationModule } from '@hlx/ngx-authentication';
+import { SessionActivityModule } from '@hlx/ngx-session-activity';
 import { provideTranslateService } from '@ngx-translate/core';
 
 import { appRoutes } from './app.routes';

@@ -1,5 +1,5 @@
 import { Directive, effect, inject } from '@angular/core';
-import { AuthenticationService } from '@cdx/ngx-authentication';
+import { AuthenticationService } from '@hlx/ngx-authentication';
 
 import { LOGOUT_TYPE } from '../session-activity.model';
 import { SessionActivityService } from '../session-activity.service';

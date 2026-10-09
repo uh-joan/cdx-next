@@ -27,7 +27,7 @@ checker from the Angular project root, and then build the application.
 ## Non-Negotiable Rules
 
 1. Never invent versions. Read the target project's `@angular/core` major and
-   match `@angular/material` and `@cdx/*` packages to that major.
+   match `@angular/material` and `@hlx/*` packages to that major.
 2. Use Sass `@use` and `@forward` only. Never add deprecated `@import` rules.
 3. Put every `@use` at the top of a Sass file, before any style rule.
 4. Include `cdx.default(...)` exactly once. It already emits `mat.core()`,
@@ -93,7 +93,7 @@ During the Angular Material prompt choose:
 Install the core Helix packages:
 
 ```bash
-npm install @cdx/theme-angular-material @cdx/ngx-branding
+npm install @hlx/theme-angular-material @hlx/ngx-branding
 ```
 
 Do not pin versions from memory. Read peer dependency ranges from the package
@@ -104,16 +104,16 @@ Optional packages should be installed only when the project needs them:
 
 | Package | Purpose | Peer dependencies |
 | --- | --- | --- |
-| `@cdx/colors` | Color palette and utility functions | None |
-| `@cdx/ngx-session-activity` | Session activity and idle handling | `@ng-idle/core`, `@ng-idle/keepalive`, `@ngx-translate/core` |
-| `@cdx/ngx-translations` | Translation service | `@ngx-translate/core` |
-| `@cdx/ngx-analytics` | Analytics service | `@snowplow/browser-tracker` |
-| `@cdx/ngx-authentication` | Authentication service | `@angular/material`, `@angular/router`, `@auth0/angular-jwt`, `@cdx/theme-angular-material` |
-| `@cdx/theme-ag-grid` | AG Grid theme | `ag-grid-community` |
-| `@cdx/theme-highcharts` | Highcharts theme | `highcharts` |
-| `@cdx/theme-snackbar` | Snackbar theme | None |
-| `@cdx/theme-xng-breadcrumb` | Breadcrumb theme | `xng-breadcrumb` |
-| `@cdx/clarivate-font` | Clarivate icon and brand font | None |
+| `@hlx/colors` | Color palette and utility functions | None |
+| `@hlx/ngx-session-activity` | Session activity and idle handling | `@ng-idle/core`, `@ng-idle/keepalive`, `@ngx-translate/core` |
+| `@hlx/ngx-translations` | Translation service | `@ngx-translate/core` |
+| `@hlx/ngx-analytics` | Analytics service | `@snowplow/browser-tracker` |
+| `@hlx/ngx-authentication` | Authentication service | `@angular/material`, `@angular/router`, `@auth0/angular-jwt`, `@hlx/theme-angular-material` |
+| `@hlx/theme-ag-grid` | AG Grid theme | `ag-grid-community` |
+| `@hlx/theme-highcharts` | Highcharts theme | `highcharts` |
+| `@hlx/theme-snackbar` | Snackbar theme | None |
+| `@hlx/theme-xng-breadcrumb` | Breadcrumb theme | `xng-breadcrumb` |
+| `@hlx/clarivate-font` | Clarivate icon and brand font | None |
 
 Peer dependencies must be installed explicitly. Version ranges change between
 releases, so use the installed package metadata as the source of truth.
@@ -124,9 +124,12 @@ The global Sass entry point should use this structure. Replace the path only if
 the project's configured style entry point is different:
 
 ```scss
-@use '@cdx/theme-angular-material' as cdx;
-@use '@cdx/ngx-branding/header/theme' as header;
-@use '@cdx/ngx-branding/footer/theme' as footer;
+@use '@hlx/theme-angular-material' as cdx;
+@use '@hlx/ngx-branding/header/theme' as header;
+@use '@hlx/ngx-branding/footer/theme' as footer;
+
+// Clarivate brand font — bundled from the package (no CDN link).
+@import '@hlx/clarivate-font/css/clarivate-font.css';
 
 @include cdx.default(cdx.$helix-theme, 'helix-theme-material');
 @include header.theme(cdx.$helix-theme);
@@ -153,7 +156,7 @@ but keep the class name byte-identical in Sass and HTML.
 Component Sass files that need Helix tokens may use the package locally:
 
 ```scss
-@use '@cdx/theme-angular-material' as cdx;
+@use '@hlx/theme-angular-material' as cdx;
 ```
 
 A local token-only `@use` does not emit duplicate global theme CSS.
@@ -169,16 +172,13 @@ In `src/index.html`, put both classes on the body, or put
 </body>
 ```
 
-The Helix font links belong in the document `<head>`:
+The Google-hosted font links belong in the document `<head>`. The Clarivate
+brand font is not linked here — it is bundled via the
+`@import '@hlx/clarivate-font/css/clarivate-font.css';` in `styles.scss` above:
 
 ```html
 <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link
-  rel="preconnect"
-  href="https://cdn.digital-experience.clarivate.io"
-  crossorigin
-/>
 <link
   rel="stylesheet"
   href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp"
@@ -186,10 +186,6 @@ The Helix font links belong in the document `<head>`:
 <link
   rel="stylesheet"
   href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap"
-/>
-<link
-  rel="stylesheet"
-  href="https://cdn.digital-experience.clarivate.io/@cdx/clarivate-font/latest/clarivate-font.css"
 />
 ```
 
@@ -211,7 +207,7 @@ import {
   HelixHeaderComponent,
   HelixHeaderGlobalComponent,
   HelixHeaderProductNameOrLogoComponent,
-} from '@cdx/ngx-branding';
+} from '@hlx/ngx-branding';
 
 @Component({
   selector: 'app-root',
@@ -280,7 +276,7 @@ see.
 
 ## `helix-check` Troubleshooting
 
-`helix-check` ships in `@cdx/ngx-branding` and runs against the current working
+`helix-check` ships in `@hlx/ngx-branding` and runs against the current working
 directory.
 
 | Failure | Meaning | Repair |
@@ -290,7 +286,7 @@ directory.
 | `.npmrc file does not contain the right content` | The registry line does not match | Use the exact registry line above on its own |
 | `angular.json` or `package.json` not found | Wrong working directory | Run from the Angular project root |
 
-Package checks require `@cdx/ngx-branding`, `@cdx/theme-angular-material`, and
+Package checks require `@hlx/ngx-branding`, `@hlx/theme-angular-material`, and
 `@angular/material` in `node_modules`. Their major must match the
 `HELIX_MAJOR_VERSION` expected by the installed branding checker. A package can
 be present in `package.json` but absent or stale in `node_modules`; reinstall

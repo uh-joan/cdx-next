@@ -5,7 +5,7 @@ import {
   AnalyticsContextSchema,
   AnalyticsService,
   CLARIVATE_IGLU_SCHEMA,
-} from '@cdx/ngx-analytics';
+} from '@hlx/ngx-analytics';
 
 import { ThemeService } from '../core/layout/theme-selector/theme.service';
 

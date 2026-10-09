@@ -1,5 +1,5 @@
 import { MatButton } from '@angular/material/button';
-import { RichTooltipDirective } from '@cdx/ngx-branding';
+import { RichTooltipDirective } from '@hlx/ngx-branding';
 import { type Meta, moduleMetadata, type StoryObj } from '@storybook/angular';
 
 type RichTooltipArgs = {
@@ -19,7 +19,7 @@ const meta: Meta<RichTooltipArgs> = {
     docs: {
       description: {
         component:
-          '`[hlxTooltip]` from `@cdx/ngx-branding` shows an `ng-template` in a Helix-styled overlay. Use rich tooltips when an element or new feature needs more detail, with an optional title, links and buttons. Use `tooltipTrigger="click"` when the content is interactive.',
+          '`[hlxTooltip]` from `@hlx/ngx-branding` shows an `ng-template` in a Helix-styled overlay. Use rich tooltips when an element or new feature needs more detail, with an optional title, links and buttons. Use `tooltipTrigger="click"` when the content is interactive.',
       },
     },
   },

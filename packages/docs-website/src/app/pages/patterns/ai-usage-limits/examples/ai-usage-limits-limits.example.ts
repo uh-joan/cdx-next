@@ -3,7 +3,7 @@ import { MatButton, MatIconButton } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIcon } from '@angular/material/icon';
 import { MatInput } from '@angular/material/input';
-import { HelixNotificationComponent } from '@cdx/ngx-branding';
+import { HelixNotificationComponent } from '@hlx/ngx-branding';
 
 import { InputViewerComponent } from '../../../../core/example-viewer/example-viewer.model';
 
@@ -85,7 +85,7 @@ export const AiUsageLimits: InputViewerComponent = {
   htmlCode,
   cssCode: styleCode,
   tsCode: `import { Component, computed, signal } from '@angular/core';
-import { HelixNotificationComponent } from '@cdx/ngx-branding';
+import { HelixNotificationComponent } from '@hlx/ngx-branding';
 // + Material form-field, input, button, icon
 
 // Show remaining quota quietly; a warn banner when the context is too long (→ new

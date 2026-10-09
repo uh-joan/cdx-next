@@ -3,7 +3,7 @@ import {
   AnalyticsContextSchema,
   AnalyticsModule,
   CLARIVATE_IGLU_SCHEMA,
-} from '@cdx/ngx-analytics';
+} from '@hlx/ngx-analytics';
 
 ...
 

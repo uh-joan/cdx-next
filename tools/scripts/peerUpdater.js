@@ -31,7 +31,7 @@ function updateVersionInFile(filePath) {
       return;
     }
     Object.keys(deps).forEach((dependency) => {
-      if (dependency.includes('@cdx/') && deps[dependency] !== rootVersion) {
+      if (dependency.includes('@hlx/') && deps[dependency] !== rootVersion) {
         deps[dependency] = rootVersion;
         updated = true;
       }

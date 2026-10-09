@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { HelixHeaderComponent } from '@cdx/ngx-branding';
+import { HelixHeaderComponent } from '@hlx/ngx-branding';
 
 import { InputViewerComponent } from '../../../../core/example-viewer/example-viewer.model';
 
@@ -27,7 +27,7 @@ export const ExpansionPanelComponent: InputViewerComponent = {
   htmlCode: htmlCode,
   cssCode: styleCode,
   tsCode: `import { Component } from '@angular/core';
-import { HelixHeaderModule } from '@cdx/ngx-branding';
+import { HelixHeaderModule } from '@hlx/ngx-branding';
 
 @Component({
     template: htmlCode,

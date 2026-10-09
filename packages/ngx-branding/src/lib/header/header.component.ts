@@ -8,7 +8,7 @@ import {
   ViewChild,
   ViewEncapsulation,
 } from '@angular/core';
-import { ThemeOptionsBranding } from '@cdx/theme-angular-material';
+import { ThemeOptionsBranding } from '@hlx/theme-angular-material';
 
 @Component({
   // eslint-disable-next-line @angular-eslint/component-selector

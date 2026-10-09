@@ -183,13 +183,13 @@ export class Colors {
   color: var(--mat-sys-on-surface);
 }`;
 
-  colorsFromPalette = `@use '@cdx/theme-angular-material' as hlx;
+  colorsFromPalette = `@use '@hlx/theme-angular-material' as hlx;
   
 .my-error-component {
     @include mat.chips-color(hlx.$helix-theme, $color-variant: error);
 }`;
 
-  useTokens = `@use '@cdx/theme-angular-material' as hlx;
+  useTokens = `@use '@hlx/theme-angular-material' as hlx;
 
 .some-class {
   color: hlx.$text-primary;

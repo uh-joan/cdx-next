@@ -1,5 +1,5 @@
 export const sessionActivityModuleAngular = `
-import { SessionActivityModule } from '@cdx/ngx-session-activity';
+import { SessionActivityModule } from '@hlx/ngx-session-activity';
 
 @NgModule({
   imports: [
@@ -8,7 +8,7 @@ import { SessionActivityModule } from '@cdx/ngx-session-activity';
 })`;
 
 export const sessionActivityModuleSampleAngular = `
-import { SessionActivityModule } from '@cdx/ngx-session-activity';
+import { SessionActivityModule } from '@hlx/ngx-session-activity';
 
 @NgModule({
   imports: [
@@ -22,12 +22,12 @@ import { SessionActivityModule } from '@cdx/ngx-session-activity';
 })`;
 
 export const sessionActivityServiceComponentAngular = `
-import { AuthenticationService } from '@cdx/ngx-authentication';
+import { AuthenticationService } from '@hlx/ngx-authentication';
 import { effect, inject } from '@angular/core';
 import {
   LOGOUT_TYPE,
   SessionActivityService,
-} from '@cdx/ngx-session-activity';
+} from '@hlx/ngx-session-activity';
 
 export class AppComponent implements OnInit {
   authenticated = false;

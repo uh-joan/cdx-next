@@ -124,7 +124,7 @@ agree on where that happens:
 
 ```ts
 import { BreakpointObserver } from '@angular/cdk/layout';
-import { HELIX_MEDIA } from '@cdx/theme-angular-material';
+import { HELIX_MEDIA } from '@hlx/theme-angular-material';
 
 private readonly breakpoints = inject(BreakpointObserver);
 readonly isCompact = toSignal(

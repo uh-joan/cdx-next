@@ -7,7 +7,7 @@ import {
 } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
-import { HelixNotificationComponent } from '@cdx/ngx-branding';
+import { HelixNotificationComponent } from '@hlx/ngx-branding';
 
 import { InputViewerComponent } from '../../../../core/example-viewer/example-viewer.model';
 
@@ -119,7 +119,7 @@ export const NotificationPlaygroundComponent: InputViewerComponent = {
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
-import { HelixNotificationComponent } from '@cdx/ngx-branding';
+import { HelixNotificationComponent } from '@hlx/ngx-branding';
 
 @Component({
     template: htmlCode,

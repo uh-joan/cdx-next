@@ -5,9 +5,12 @@
 All `@use` rules must be at the very top of the file, before any other rule.
 
 ```scss
-@use '@cdx/theme-angular-material' as cdx;
-@use '@cdx/ngx-branding/header/theme' as header;
-@use '@cdx/ngx-branding/footer/theme' as footer;
+@use '@hlx/theme-angular-material' as cdx;
+@use '@hlx/ngx-branding/header/theme' as header;
+@use '@hlx/ngx-branding/footer/theme' as footer;
+
+// Clarivate brand font — bundled from the package (no CDN link).
+@import '@hlx/clarivate-font/css/clarivate-font.css';
 
 @include cdx.default(cdx.$helix-theme, 'helix-theme-material');
 @include header.theme(cdx.$helix-theme);
@@ -33,7 +36,7 @@ Notes:
 - Never call `mat.core()` or `mat.all-component-themes()` yourself —
   `cdx.default` already does, and duplicating them doubles the emitted CSS.
 - Component SCSS files that need Helix tokens should
-  `@use '@cdx/theme-angular-material' as cdx;` locally. `@use` is scoped
+  `@use '@hlx/theme-angular-material' as cdx;` locally. `@use` is scoped
   per-file, so this is required in each file and emits no duplicate CSS for
   token-only usage.
 
@@ -50,14 +53,13 @@ the theme class) so the Helix overrides win over Material defaults.
 
 ## Fonts (`src/index.html` `<head>`)
 
+Material Icons and Source Sans 3 are loaded from Google Fonts. The Clarivate
+brand font is **not** linked here — it is bundled via the
+`@import '@hlx/clarivate-font/css/clarivate-font.css';` in `styles.scss` above.
+
 ```html
 <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link
-  rel="preconnect"
-  href="https://cdn.digital-experience.clarivate.io"
-  crossorigin
-/>
 <link
   rel="stylesheet"
   href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp"
@@ -65,10 +67,6 @@ the theme class) so the Helix overrides win over Material defaults.
 <link
   rel="stylesheet"
   href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap"
-/>
-<link
-  rel="stylesheet"
-  href="https://cdn.digital-experience.clarivate.io/@cdx/clarivate-font/latest/clarivate-font.css"
 />
 ```
 
@@ -86,7 +84,7 @@ import {
   HelixFooterGroupComponent,
   HelixFooterGroupTitleDirective,
   HelixFooterLinkDirective,
-} from '@cdx/ngx-branding';
+} from '@hlx/ngx-branding';
 
 @Component({
   selector: 'app-root',

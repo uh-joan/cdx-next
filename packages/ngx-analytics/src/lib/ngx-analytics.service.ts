@@ -1,5 +1,5 @@
 import { inject, Service, signal } from '@angular/core';
-import { OneTrustService } from '@cdx/ngx-branding';
+import { OneTrustService } from '@hlx/ngx-branding';
 import {
   addGlobalContexts,
   clearGlobalContexts,

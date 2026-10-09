@@ -3,7 +3,7 @@ import {
   HelixFooterGroupComponent,
   HelixFooterGroupTitleDirective,
   HelixFooterLinkDirective,
-} from '@cdx/ngx-branding';
+} from '@hlx/ngx-branding';
 import { type Meta, moduleMetadata, type StoryObj } from '@storybook/angular';
 
 type FooterArgs = {
@@ -32,7 +32,7 @@ const meta: Meta<FooterArgs> = {
     docs: {
       description: {
         component:
-          "`<footer hlx-footer>` from `@cdx/ngx-branding`. Use `branded` when the product name takes precedence in the header, so the Clarivate logo appears in the footer (Foundations › Branding). Helix footer layouts: Row (default), Logo row (`branded`, only when the logo isn't in the header) and Column (link groups).",
+          "`<footer hlx-footer>` from `@hlx/ngx-branding`. Use `branded` when the product name takes precedence in the header, so the Clarivate logo appears in the footer (Foundations › Branding). Helix footer layouts: Row (default), Logo row (`branded`, only when the logo isn't in the header) and Column (link groups).",
       },
     },
   },

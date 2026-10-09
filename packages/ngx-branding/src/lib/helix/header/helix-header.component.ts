@@ -18,7 +18,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
-import { ThemeOptionsBranding } from '@cdx/theme-angular-material';
+import { ThemeOptionsBranding } from '@hlx/theme-angular-material';
 
 @Component({
   // eslint-disable-next-line @angular-eslint/component-selector

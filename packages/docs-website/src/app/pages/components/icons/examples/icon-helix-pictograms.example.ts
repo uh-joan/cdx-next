@@ -1,7 +1,7 @@
 import { Component, computed, signal } from '@angular/core';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatIcon } from '@angular/material/icon';
-import { HELIX_PICTOGRAMS } from '@cdx/helix-icons';
+import { HELIX_PICTOGRAMS } from '@hlx/helix-icons';
 
 import { InputViewerComponent } from '../../../../core/example-viewer/example-viewer.model';
 
@@ -88,7 +88,7 @@ export const IconHelixPictogramsComponent: InputViewerComponent = {
   tsCode: `// Pictograms load on first use from assets/helix-pictograms.
 // Copy them there in angular.json:
 //   { "glob": "**/*.svg",
-//     "input": "node_modules/@cdx/helix-icons/svg/pictograms",
+//     "input": "node_modules/@hlx/helix-icons/svg/pictograms",
 //     "output": "assets/helix-pictograms" }
 //
 // <mat-icon svgIcon="hlx-pictogram:pictogram-001-light-purple-blue"></mat-icon>`,
