@@ -1,5 +1,5 @@
 {
-  "name": "@cdx/theme-xng-breadcrumb",
+  "name": "@hlx/theme-xng-breadcrumb",
   "version": "22.0.0-alpha.1",
   "exports": {
     ".": {

@@ -29,7 +29,7 @@
       "@cdx/theme-highcharts": [
         "packages/theme-highcharts/dist/theme-highcharts.mjs"
       ],
-      "@cdx/theme-xng-breadcrumb": [
+      "@hlx/theme-xng-breadcrumb": [
         "packages/theme-xng-breadcrumb/src/index.ts"
       ]
     },
