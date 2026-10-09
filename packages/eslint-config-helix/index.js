@@ -13,10 +13,10 @@ const templateParser = templateParserImport.default ?? templateParserImport;
  * real interactive elements (not clickable `div`s), labelled controls, valid
  * ARIA, meaningful content, and no autofocus / positive tabindex.
  *
- * It is the accessibility companion to `@cdx/stylelint-config-helix`.
+ * It is the accessibility companion to `@hlx/stylelint-config-helix`.
  *
  * Usage (app `eslint.config.mjs`), spread AFTER your Angular template config:
- *   import helixA11y from '@cdx/eslint-config-helix';
+ *   import helixA11y from '@hlx/eslint-config-helix';
  *   export default [ ...baseConfig, ...nx.configs['flat/angular-template'], ...helixA11y ];
  */
 module.exports = [
