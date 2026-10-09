@@ -3,10 +3,8 @@
   font-style: normal;
   font-weight: 400;
   src:
-    url('https://clarivate.com/wp-content/themes/clarivate/src/fonts/RegularClarivate-RegularWEB.woff')
-      format('woff'),
-    url('https://clarivate.com/wp-content/themes/clarivate/src/fonts/RegularClarivate-RegularWEB.woff2')
-      format('woff2');
+    url('../fonts/RegularClarivate-RegularWEB.woff2') format('woff2'),
+    url('../fonts/RegularClarivate-RegularWEB.woff') format('woff');
 }
 
 @font-face {
@@ -14,10 +12,8 @@
   font-style: normal;
   font-weight: 700;
   src:
-    url('https://clarivate.com/wp-content/themes/clarivate/src/fonts/RegularClarivate-BoldWEB.woff')
-      format('woff'),
-    url('https://clarivate.com/wp-content/themes/clarivate/src/fonts/RegularClarivate-BoldWEB.woff2')
-      format('woff2');
+    url('../fonts/RegularClarivate-BoldWEB.woff2') format('woff2'),
+    url('../fonts/RegularClarivate-BoldWEB.woff') format('woff');
 }
 
 @font-face {
@@ -25,8 +21,6 @@
   font-style: normal;
   font-weight: 700;
   src:
-    url('https://clarivate.com/wp-content/themes/clarivate/src/fonts/RegularClarivate-BoldWEB.woff')
-      format('woff'),
-    url('https://clarivate.com/wp-content/themes/clarivate/src/fonts/RegularClarivate-BoldWEB.woff2')
-      format('woff2');
+    url('../fonts/RegularClarivate-BoldWEB.woff2') format('woff2'),
+    url('../fonts/RegularClarivate-BoldWEB.woff') format('woff');
 }

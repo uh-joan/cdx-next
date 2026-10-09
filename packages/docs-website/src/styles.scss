@@ -6,6 +6,7 @@
 @use './assets/scss/_overrides';
 @use '@hlx/theme-highcharts' as hlx-highcharts;
 
+@import '@hlx/clarivate-font/css/clarivate-font.css';
 @import 'highlight.js/styles/atom-one-dark.css';
 @import 'ag-theme-helix.css';
 

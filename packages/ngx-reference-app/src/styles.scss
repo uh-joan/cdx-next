@@ -4,6 +4,8 @@
 @use '@hlx/ngx-branding/header/theme' as header;
 @use '@hlx/ngx-branding/footer/theme' as footer;
 
+@import '@hlx/clarivate-font/css/clarivate-font.css';
+
 @include hlx.default;
 @include header.theme(hlx.$light-theme);
 @include footer.theme(hlx.$light-theme);

@@ -323,11 +323,39 @@ function checkThemeClass(scssFiles, htmlFiles) {
   return foundOverrides && foundInBody;
 }
 
+function checkClarivateFont(scssFiles) {
+  // The Clarivate brand font is bundled by importing @hlx/clarivate-font's CSS
+  // from an SCSS entry (no CDN <link> any more).
+  const importRegex = /@(?:import|use)\s+["']@hlx\/clarivate-font/;
+  const found = scssFiles.some((file) => {
+    try {
+      return importRegex.test(fs.readFileSync(file, 'utf8'));
+    } catch {
+      return false;
+    }
+  });
+
+  if (found) {
+    console.log(
+      chalk.green("✅ Clarivate Font is bundled from '@hlx/clarivate-font'."),
+    );
+  } else {
+    console.log(
+      chalk.red(
+        "❌ Clarivate Font is missing. Add `@import '@hlx/clarivate-font/css/clarivate-font.css';` to your styles.scss.",
+      ),
+    );
+  }
+  return found;
+}
+
 function checkStyles() {
   const scssFiles = getFilesRecursive(path.join(projectRoot, 'src'), '.scss');
   const htmlFiles = getFilesRecursive(path.join(projectRoot, 'src'), '.html');
 
-  return checkThemeClass(scssFiles, htmlFiles);
+  const themeValid = checkThemeClass(scssFiles, htmlFiles);
+  const fontValid = checkClarivateFont(scssFiles);
+  return themeValid && fontValid;
 }
 
 const stylesValid = checkStyles();
@@ -359,10 +387,6 @@ function checkIndexHtml() {
         {
           text: 'https://fonts.googleapis.com/css2?family=Source+Sans+3',
           message: 'Source Sans 3',
-        },
-        {
-          text: 'https://cdn.digital-experience.clarivate.io/@cdx/clarivate-font/latest/clarivate-font.css"',
-          message: 'Clarivate Font',
         },
       ];
 

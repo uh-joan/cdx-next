@@ -3,6 +3,8 @@
 @use '@hlx/ngx-branding/footer/theme' as footer;
 @use './themes/custom-theme';
 
+@import '@hlx/clarivate-font/css/clarivate-font.css';
+
 @include header.theme(cdx.$light-theme);
 @include footer.theme(cdx.$light-theme);
 @include cdx.default(cdx.$helix-theme, 'helix-theme-material');
