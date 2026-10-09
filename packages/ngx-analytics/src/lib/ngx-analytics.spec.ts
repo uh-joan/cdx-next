@@ -1,5 +1,5 @@
 import { TestBed } from '@angular/core/testing';
-import { OneTrustModule, OneTrustSettings } from '@cdx/ngx-branding';
+import { OneTrustModule, OneTrustSettings } from '@hlx/ngx-branding';
 import * as snowplowTracker from '@snowplow/browser-tracker';
 
 import {

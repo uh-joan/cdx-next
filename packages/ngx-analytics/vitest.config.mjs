@@ -10,7 +10,7 @@ export default defineConfig({
   root: projectRoot,
   resolve: {
     alias: {
-      '@cdx/ngx-branding': resolve(
+      '@hlx/ngx-branding': resolve(
         workspaceRoot,
         'packages/ngx-branding/src/index.ts',
       ),
