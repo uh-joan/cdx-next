@@ -50,7 +50,7 @@ Determine these facts first:
 
 - The Angular major from `package.json`, especially `@angular/core`.
 - Whether `@angular/material` is installed and which major it uses.
-- Whether `.npmrc` maps `@cdx` to the Clarivate registry.
+- Whether `.npmrc` maps `@hlx` to the Clarivate registry.
 - The style entry point from `angular.json` under `build.options.styles`,
   usually `src/styles.scss`.
 - Whether the app is standalone (`app.config.ts`) or NgModule-based
@@ -66,7 +66,7 @@ workspace. The checker only scans `src/` below its current working directory.
 At the Angular project root, `.npmrc` must contain this exact line on its own:
 
 ```ini
-@cdx:registry = https://repo.clarivate.io/artifactory/api/npm/npm-central/
+@hlx:registry = https://repo.clarivate.io/artifactory/api/npm/npm-hlx/
 ```
 
 Requirements:
@@ -74,7 +74,7 @@ Requirements:
 - Use `https`.
 - Keep the exact path and trailing slash.
 - Do not put a trailing comment on the same line.
-- Do not append a second conflicting `@cdx` registry entry.
+- Do not append a second conflicting `@hlx` registry entry.
 
 ## Package Installation
 
@@ -334,7 +334,7 @@ Do not mix application refactoring with Helix setup unless the user requests it.
 
 ## Completion Checklist
 
-- [ ] `.npmrc` contains the exact Clarivate `@cdx` registry line.
+- [ ] `.npmrc` contains the exact Clarivate `@hlx` registry line.
 - [ ] Angular Material, theme-angular-material, and ngx-branding are installed
       on one compatible major.
 - [ ] The style entry point uses `@use` only and includes `cdx.default` once.

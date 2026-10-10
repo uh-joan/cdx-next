@@ -10,7 +10,7 @@ after `npm install`.
 | ------------------------------------------------ | ----------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
 | `Node version is <v>` red                        | Below the minimum the script enforces           | Switch Node via nvm/fnm to a supported LTS                                                               |
 | `.npmrc file not found`                          | No `.npmrc` at project root                     | Create it                                                                                                |
-| `.npmrc file does not contain the right content` | Registry line does not match the expected regex | Use exactly `@cdx:registry = https://repo.clarivate.io/artifactory/api/npm/npm-central/` on its own line |
+| `.npmrc file does not contain the right content` | Registry line does not match the expected regex | Use exactly `@hlx:registry = https://repo.clarivate.io/artifactory/api/npm/npm-hlx/` on its own line |
 | `angular.json` / `package.json` not found        | Ran from the wrong directory                    | `cd` into the Angular project root                                                                       |
 
 ## Packages
