@@ -1,7 +1,6 @@
 {
   "name": "theme-angular-material",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "prefix": "cdx",
   "projectType": "library",
   "sourceRoot": "packages/theme-angular-material/src",
   "tags": [],
@@ -20,12 +19,6 @@
         "production": {
           "tsConfig": "packages/theme-angular-material/tsconfig.lib.prod.json"
         }
-      }
-    },
-    "deploy": {
-      "executor": "ngx-deploy-npm:deploy",
-      "options": {
-        "distFolderPath": "{workspaceRoot}/dist/packages/theme-angular-material"
       }
     },
     "lint": {

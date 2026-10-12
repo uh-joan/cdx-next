@@ -1,7 +1,6 @@
 {
   "name": "ngx-analytics",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "prefix": "cdx",
   "projectType": "library",
   "sourceRoot": "packages/ngx-analytics/src",
   "tags": [],
@@ -20,12 +19,6 @@
         "production": {
           "tsConfig": "packages/ngx-analytics/tsconfig.lib.prod.json"
         }
-      }
-    },
-    "deploy": {
-      "executor": "ngx-deploy-npm:deploy",
-      "options": {
-        "distFolderPath": "{workspaceRoot}/dist/packages/ngx-analytics"
       }
     },
     "lint": {

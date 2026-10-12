@@ -15,12 +15,6 @@
       },
       "outputs": ["{options.outputPath}"]
     },
-    "deploy": {
-      "executor": "ngx-deploy-npm:deploy",
-      "options": {
-        "distFolderPath": "{workspaceRoot}/dist/packages/oti-snippet"
-      }
-    },
     "test": {
       "executor": "nx:run-commands",
       "options": {

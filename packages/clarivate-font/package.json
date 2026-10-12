@@ -4,7 +4,7 @@
   "description": "Clarivate brand font (@font-face CSS + self-hosted web-font files), consumed by importing its CSS.",
   "repository": {
     "type": "git",
-    "url": "ssh://git@github.com/clarivate-prod/cdx-next.git",
+    "url": "git@github.com:uh-joan/cdx-next.git",
     "directory": "packages/clarivate-font"
   },
   "style": "css/clarivate-font.css",
@@ -18,8 +18,5 @@
   "files": [
     "css",
     "fonts"
-  ],
-  "scripts": {
-    "deploy:cdn": "deploy-aws-s3-cloudfront --bucket cdx-cdn.digital-experience.clarivate.io --distribution EF022SLU13YUI --source css --destination @cdx/clarivate-font/latest --non-interactive"
-  }
+  ]
 }

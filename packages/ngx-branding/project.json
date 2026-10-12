@@ -1,7 +1,6 @@
 {
   "name": "ngx-branding",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "prefix": "cdx",
   "projectType": "library",
   "sourceRoot": "packages/ngx-branding/src",
   "tags": [],
@@ -20,12 +19,6 @@
         "production": {
           "tsConfig": "packages/ngx-branding/tsconfig.lib.prod.json"
         }
-      }
-    },
-    "deploy": {
-      "executor": "ngx-deploy-npm:deploy",
-      "options": {
-        "distFolderPath": "{workspaceRoot}/dist/packages/ngx-branding"
       }
     },
     "lint": {

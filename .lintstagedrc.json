@@ -1,7 +1,4 @@
 {
   "*.{js,ts,jsx,tsx}": ["eslint --fix"],
-  "*.{md,mdx,html,js,json,ts,jsx,tsx,scss,css,yml,yaml}": ["prettier --write"],
-  "Jenkinsfile": [
-    "npm-groovy-lint --failon warning --noserver --no-insight --ignorepattern **/node_modules/** --files **/Jenkinsfile --fix"
-  ]
+  "*.{md,mdx,html,js,json,ts,jsx,tsx,scss,css,yml,yaml}": ["prettier --write"]
 }

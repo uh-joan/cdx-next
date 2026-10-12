@@ -1,7 +1,6 @@
 {
   "name": "ngx-translations",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "prefix": "cdx",
   "projectType": "library",
   "sourceRoot": "packages/ngx-translations/src",
   "tags": [],
@@ -20,13 +19,6 @@
         "production": {
           "tsConfig": "packages/ngx-translations/tsconfig.lib.prod.json"
         }
-      }
-    },
-    "deploy": {
-      "executor": "ngx-deploy-npm:deploy",
-      "options": {
-        "access": "public",
-        "distFolderPath": "{workspaceRoot}/dist/packages/ngx-translations"
       }
     },
     "lint": {

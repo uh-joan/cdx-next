@@ -13,9 +13,7 @@
   "main": "./dist/theme-highcharts.mjs",
   "types": "./dist/theme-highcharts.d.mts",
   "scripts": {
-    "build": "vite build",
-    "deploy": "npm publish",
-    "deploy:cdn": "deploy-aws-s3-cloudfront --bucket cdx-cdn.digital-experience.clarivate.io --distribution EF022SLU13YUI --source dist --destination @cdx/theme-highcharts/${VERSION:-latest} --non-interactive"
+    "build": "vite build"
   },
   "dependencies": {
     "highcharts": "^13.0.0"
