@@ -50,7 +50,7 @@ updateCurrentContext(): void {
   this.analyticsService.updateContextData(newContextData);
 }`;
 
-export const appModuleReact = `import { CLARIVATE_IGLU_SCHEMA, RcxAnalytics } from '@cdx/rcx-analytics';
+export const appModuleReact = `import { CLARIVATE_IGLU_SCHEMA, RcxAnalytics } from '@hlx/rcx-analytics';
 
 export const AnalyticsContext = createContext<RcxAnalytics>(
   new RcxAnalytics(
@@ -91,7 +91,7 @@ import {
   AnalyticsContextData,
   AnalyticsContextSchema,
   CLARIVATE_IGLU_SCHEMA,
-} from '@cdx/rcx-analytics';
+} from '@hlx/rcx-analytics';
 
 const newContextData: AnalyticsContextData = {
   newProp: 'newProp',

@@ -3,7 +3,7 @@
   "version": "22.0.0-alpha.1",
   "repository": {
     "type": "git",
-    "url": "ssh://git@github.com/clarivate-prod/cdx-next.git",
+    "url": "git@github.com:uh-joan/cdx-next.git",
     "directory": "packages/ngx-session-activity"
   },
   "dependencies": {

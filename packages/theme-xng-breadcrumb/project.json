@@ -1,7 +1,6 @@
 {
   "name": "theme-xng-breadcrumb",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "prefix": "cdx",
   "projectType": "library",
   "sourceRoot": "packages/theme-xng-breadcrumb/src",
   "tags": [],
@@ -20,12 +19,6 @@
         "production": {
           "tsConfig": "packages/theme-xng-breadcrumb/tsconfig.lib.prod.json"
         }
-      }
-    },
-    "deploy": {
-      "executor": "ngx-deploy-npm:deploy",
-      "options": {
-        "distFolderPath": "{workspaceRoot}/dist/packages/theme-xng-breadcrumb"
       }
     },
     "lint": {

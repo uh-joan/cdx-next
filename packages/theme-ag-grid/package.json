@@ -4,7 +4,7 @@
   "type": "module",
   "repository": {
     "type": "git",
-    "url": "ssh://git@github.com/clarivate-prod/cdx-next.git",
+    "url": "git@github.com:uh-joan/cdx-next.git",
     "directory": "packages/theme-ag-grid"
   },
   "exports": {
@@ -24,9 +24,7 @@
     "*.scss"
   ],
   "scripts": {
-    "build": "vite build",
-    "deploy": "npm publish",
-    "deploy:cdn": "deploy-aws-s3-cloudfront --bucket cdx-cdn.digital-experience.clarivate.io --distribution EF022SLU13YUI --source dist --destination @cdx/theme-ag-grid/${VERSION:-latest} --non-interactive"
+    "build": "vite build"
   },
   "peerDependencies": {
     "@angular/core": ">=22",

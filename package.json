@@ -1,10 +1,10 @@
 {
-  "name": "cdx",
+  "name": "helix",
   "version": "22.0.0-alpha.1",
   "private": true,
   "repository": {
     "type": "git",
-    "url": "ssh://git@github.com/clarivate-prod/cdx-next.git"
+    "url": "git@github.com:uh-joan/cdx-next.git"
   },
   "workspaces": [
     "packages/**"
@@ -13,8 +13,6 @@
     "build": "node tools/scripts/exclude-build.js",
     "build:website": "nx run docs-website:build-site --skip-nx-cache",
     "commit": "cz",
-    "deploy:cdn": "nx run-many --all --exclude=workspace --target=deploy:cdn --parallel=1 --skip-nx-cache",
-    "deploy:website": "deploy-aws-s3-cloudfront --debug --non-interactive --source ./dist/packages/docs-website --delete --invalidation-path '/*'",
     "lint": "run-s lint:*",
     "lint:commit": "commitlint --from cea7d787c9e",
     "lint:nx": "run-s lint:nx:*",
@@ -25,9 +23,6 @@
     "patterns:ai": "node tools/patterns/generate-pattern-ai.mjs",
     "patterns:stories": "node tools/patterns/generate-storybook-stories.mjs",
     "export:skills": "node tools/patterns/generate-pattern-ai.mjs --export ../helix-skills",
-    "publish:prerelease": "npm run publish:release:common -- --tag=alpha",
-    "publish:release": "npm run publish:release:common -- --tag=latest",
-    "publish:release:common": "nx run-many --all --exclude=workspace --target=deploy --parallel=1 --skip-nx-cache",
     "test": "nx run-many --all --exclude=workspace --target=test --skip-nx-cache"
   },
   "dependencies": {
@@ -86,7 +81,6 @@
     "commitizen": "^4.3.2",
     "common-tags": "^1.8.2",
     "cross-env": "^10.1.0",
-    "deploy-aws-s3-cloudfront": "^3.8.0",
     "eslint": "^9.39.5",
     "eslint-config-prettier": "10.1.8",
     "eslint-plugin-import": "^2.32.0",
@@ -97,8 +91,6 @@
     "jsonc-eslint-parser": "^3.2.0",
     "lint-staged": "^17.3.0",
     "ng-packagr": "22.1.1",
-    "ngx-deploy-npm": "9.2.1",
-    "npm-groovy-lint": "^18.0.0",
     "npm-run-all": "^4.1.5",
     "nx": "23.1.1",
     "nx-stylelint": "^19.0.0",

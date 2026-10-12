@@ -4,7 +4,7 @@
   "description": "Shared ESLint (flat-config) accessibility rules for Angular templates in Helix apps.",
   "repository": {
     "type": "git",
-    "url": "ssh://git@github.com/clarivate-prod/cdx-next.git",
+    "url": "git@github.com:uh-joan/cdx-next.git",
     "directory": "packages/eslint-config-helix"
   },
   "type": "commonjs",
@@ -12,9 +12,6 @@
   "files": [
     "index.js"
   ],
-  "scripts": {
-    "deploy": "npm publish"
-  },
   "peerDependencies": {
     "@angular-eslint/eslint-plugin-template": ">=19",
     "@angular-eslint/template-parser": ">=19",

@@ -4,7 +4,7 @@
   "description": "Sync Helix design-system AI coding guidance (Agent Skill + AGENTS.md + Copilot instructions) into a consumer repo, version-matched to the installed @hlx/* packages.",
   "repository": {
     "type": "git",
-    "url": "ssh://git@github.com/clarivate-prod/cdx-next.git",
+    "url": "git@github.com:uh-joan/cdx-next.git",
     "directory": "packages/helix-ai"
   },
   "type": "module",
@@ -15,8 +15,5 @@
     "src",
     "payload",
     "README.md"
-  ],
-  "scripts": {
-    "deploy": "npm publish"
-  }
+  ]
 }
